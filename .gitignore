@@ -1,0 +1,30 @@
+# Dependencies & build
+node_modules/
+.next/
+dist/
+build/
+coverage/
+.turbo/
+*.tsbuildinfo
+
+# Secrets — never commit Railway/prod credentials
+.env
+.env.*
+!.env.example
+
+# Logs & OS
+*.log
+.DS_Store
+.tmp/
+.cache/
+
+# Local tooling / agent noise
+.cursor/
+agent-transcripts/
+
+# Heavy runtime dumps (DB exports stay on Railway, not GitHub)
+*.sql.gz
+*.dump
+*.pgdump
+backups/
+data/exports/
