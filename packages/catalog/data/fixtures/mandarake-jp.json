@@ -1,0 +1,68 @@
+[
+  {
+    "externalId": "1298765432",
+    "partId": "x-bx-01-blade",
+    "title": "ベイブレードX ドランソード BX-01 中古",
+    "price": 880,
+    "currency": "JPY",
+    "status": "sold",
+    "condition": "used",
+    "url": "https://order.mandarake.co.jp/order/detailPage/item?itemCode=1298765432",
+    "observedAt": "2026-07-04T12:00:00Z"
+  },
+  {
+    "externalId": "1298765433",
+    "partId": "x-bx-01-blade",
+    "title": "Dran Sword BX-01 Beyblade X 美品",
+    "price": 1100,
+    "currency": "JPY",
+    "status": "sold",
+    "condition": "like_new",
+    "url": "https://order.mandarake.co.jp/order/detailPage/item?itemCode=1298765433",
+    "observedAt": "2026-06-18T10:30:00Z"
+  },
+  {
+    "externalId": "1298765440",
+    "partId": "x-bx-02-blade",
+    "title": "ウィザードアロー BX-02 ベイX",
+    "price": 750,
+    "currency": "JPY",
+    "status": "sold",
+    "condition": "used",
+    "url": "https://order.mandarake.co.jp/order/detailPage/item?itemCode=1298765440",
+    "observedAt": "2026-07-02T09:00:00Z"
+  },
+  {
+    "externalId": "1298765455",
+    "partId": "burst-b-34-layer",
+    "title": "ウィニングヴァルキリー B-34 レイヤー",
+    "price": 550,
+    "currency": "JPY",
+    "status": "sold",
+    "condition": "used",
+    "url": "https://order.mandarake.co.jp/order/detailPage/item?itemCode=1298765455",
+    "observedAt": "2026-06-08T15:00:00Z"
+  },
+  {
+    "externalId": "1298765466",
+    "partId": "metal-storm-wheel",
+    "title": "メタルファイト ストームペガサス BB28",
+    "price": 2200,
+    "currency": "JPY",
+    "status": "sold",
+    "condition": "used",
+    "url": "https://order.mandarake.co.jp/order/detailPage/item?itemCode=1298765466",
+    "observedAt": "2026-05-15T11:00:00Z"
+  },
+  {
+    "externalId": "1298765477",
+    "partId": "x-bx-03-blade",
+    "title": "ヘルズサイズ BX-03 中古",
+    "price": 680,
+    "currency": "JPY",
+    "status": "sold",
+    "condition": "used",
+    "url": "https://order.mandarake.co.jp/order/detailPage/item?itemCode=1298765477",
+    "observedAt": "2026-07-06T13:00:00Z"
+  }
+]

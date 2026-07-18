@@ -1,0 +1,782 @@
+[
+  {
+    "partId": "x-bx-01-blade",
+    "locale": "en",
+    "text": "Dran Sword BX-01",
+    "source": "catalog"
+  },
+  {
+    "partId": "x-bx-01-blade",
+    "locale": "ja",
+    "text": "ドランソード BX-01",
+    "source": "catalog"
+  },
+  {
+    "partId": "x-bx-01-blade",
+    "locale": "zh",
+    "text": "龍劍 BX-01",
+    "source": "catalog"
+  },
+  {
+    "partId": "x-bx-02-blade",
+    "locale": "en",
+    "text": "Wizard Arrow BX-02",
+    "source": "catalog"
+  },
+  {
+    "partId": "x-bx-02-blade",
+    "locale": "ja",
+    "text": "ウィザードアロー BX-02",
+    "source": "catalog"
+  },
+  {
+    "partId": "x-bx-03-blade",
+    "locale": "en",
+    "text": "Hells Scythe BX-03",
+    "source": "catalog"
+  },
+  {
+    "partId": "x-bx-03-blade",
+    "locale": "ja",
+    "text": "ヘルズサイズ BX-03",
+    "source": "catalog"
+  },
+  {
+    "partId": "burst-b-34-layer",
+    "locale": "en",
+    "text": "Winning Valkyrie B-34",
+    "source": "catalog"
+  },
+  {
+    "partId": "burst-b-34-layer",
+    "locale": "ja",
+    "text": "ウィニングヴァルキリー B-34",
+    "source": "catalog"
+  },
+  {
+    "partId": "burst-b-34-layer",
+    "locale": "zh",
+    "text": "勝利女武神 B-34",
+    "source": "catalog"
+  },
+  {
+    "partId": "burst-b-97-layer",
+    "locale": "en",
+    "text": "Heaven Pegasus B-97",
+    "source": "catalog"
+  },
+  {
+    "partId": "burst-b-97-layer",
+    "locale": "ja",
+    "text": "ヘブンペガサス B-97",
+    "source": "catalog"
+  },
+  {
+    "partId": "burst-b-168-layer",
+    "locale": "en",
+    "text": "Dynamite Belial B-168",
+    "source": "catalog"
+  },
+  {
+    "partId": "burst-b-168-layer",
+    "locale": "ja",
+    "text": "ダイナマイトベリアル B-168",
+    "source": "catalog"
+  },
+  {
+    "partId": "metal-storm-wheel",
+    "locale": "en",
+    "text": "Storm Pegasus BB28",
+    "source": "catalog"
+  },
+  {
+    "partId": "metal-storm-wheel",
+    "locale": "ja",
+    "text": "ストームペガサス BB28",
+    "source": "catalog"
+  },
+  {
+    "partId": "metal-rock-wheel",
+    "locale": "en",
+    "text": "Rock Leone BB30",
+    "source": "catalog"
+  },
+  {
+    "partId": "plastic-dragoon-ring",
+    "locale": "en",
+    "text": "Dragoon Attack Ring",
+    "source": "catalog"
+  },
+  {
+    "partId": "plastic-dragoon-ring",
+    "locale": "ja",
+    "text": "ドラグーン ベイブレード",
+    "source": "catalog"
+  },
+  {
+    "partId": "x-bx-01-blade",
+    "locale": "en",
+    "text": "Dran Sword",
+    "source": "catalog-expanded"
+  },
+  {
+    "partId": "x-bx-01-blade",
+    "locale": "ja",
+    "text": "ドランソード",
+    "source": "catalog-expanded"
+  },
+  {
+    "partId": "x-bx-01-blade",
+    "locale": "zh",
+    "text": "龍劍",
+    "source": "catalog-expanded"
+  },
+  {
+    "partId": "x-bx-01-blade",
+    "locale": "en",
+    "text": "BX-01",
+    "source": "catalog-expanded"
+  },
+  {
+    "partId": "x-bx-02-blade",
+    "locale": "en",
+    "text": "Wizard Arrow",
+    "source": "catalog-expanded"
+  },
+  {
+    "partId": "x-bx-02-blade",
+    "locale": "ja",
+    "text": "ウィザードアロー",
+    "source": "catalog-expanded"
+  },
+  {
+    "partId": "x-bx-02-blade",
+    "locale": "zh",
+    "text": "巫師之箭",
+    "source": "catalog-expanded"
+  },
+  {
+    "partId": "x-bx-02-blade",
+    "locale": "en",
+    "text": "BX-02",
+    "source": "catalog-expanded"
+  },
+  {
+    "partId": "x-bx-03-blade",
+    "locale": "en",
+    "text": "Hells Scythe",
+    "source": "catalog-expanded"
+  },
+  {
+    "partId": "x-bx-03-blade",
+    "locale": "ja",
+    "text": "ヘルズサイズ",
+    "source": "catalog-expanded"
+  },
+  {
+    "partId": "x-bx-03-blade",
+    "locale": "zh",
+    "text": "地獄鐮刀",
+    "source": "catalog-expanded"
+  },
+  {
+    "partId": "x-bx-03-blade",
+    "locale": "en",
+    "text": "BX-03",
+    "source": "catalog-expanded"
+  },
+  {
+    "partId": "x-bx-04-blade",
+    "locale": "en",
+    "text": "Knight Shield",
+    "source": "catalog-expanded"
+  },
+  {
+    "partId": "x-bx-04-blade",
+    "locale": "ja",
+    "text": "ナイトシールド",
+    "source": "catalog-expanded"
+  },
+  {
+    "partId": "x-bx-04-blade",
+    "locale": "zh",
+    "text": "騎士盾",
+    "source": "catalog-expanded"
+  },
+  {
+    "partId": "x-bx-04-blade",
+    "locale": "en",
+    "text": "BX-04",
+    "source": "catalog-expanded"
+  },
+  {
+    "partId": "x-bx-05-ratchet",
+    "locale": "en",
+    "text": "3-60",
+    "source": "catalog-expanded"
+  },
+  {
+    "partId": "x-bx-05-ratchet",
+    "locale": "ja",
+    "text": "3-60",
+    "source": "catalog-expanded"
+  },
+  {
+    "partId": "x-bx-05-ratchet",
+    "locale": "zh",
+    "text": "3-60",
+    "source": "catalog-expanded"
+  },
+  {
+    "partId": "x-bx-05-ratchet",
+    "locale": "en",
+    "text": "BX-05-R",
+    "source": "catalog-expanded"
+  },
+  {
+    "partId": "x-bx-06-bit",
+    "locale": "en",
+    "text": "Flat",
+    "source": "catalog-expanded"
+  },
+  {
+    "partId": "x-bx-06-bit",
+    "locale": "ja",
+    "text": "フラット",
+    "source": "catalog-expanded"
+  },
+  {
+    "partId": "x-bx-06-bit",
+    "locale": "zh",
+    "text": "平",
+    "source": "catalog-expanded"
+  },
+  {
+    "partId": "x-bx-06-bit",
+    "locale": "en",
+    "text": "BX-06-B",
+    "source": "catalog-expanded"
+  },
+  {
+    "partId": "x-bx-07-bit",
+    "locale": "en",
+    "text": "Ball",
+    "source": "catalog-expanded"
+  },
+  {
+    "partId": "x-bx-07-bit",
+    "locale": "ja",
+    "text": "ボール",
+    "source": "catalog-expanded"
+  },
+  {
+    "partId": "x-bx-07-bit",
+    "locale": "zh",
+    "text": "球",
+    "source": "catalog-expanded"
+  },
+  {
+    "partId": "x-bx-07-bit",
+    "locale": "en",
+    "text": "BX-07-B",
+    "source": "catalog-expanded"
+  },
+  {
+    "partId": "burst-b-34-layer",
+    "locale": "en",
+    "text": "Winning Valkyrie",
+    "source": "catalog-expanded"
+  },
+  {
+    "partId": "burst-b-34-layer",
+    "locale": "ja",
+    "text": "ウィニングヴァルキリー",
+    "source": "catalog-expanded"
+  },
+  {
+    "partId": "burst-b-34-layer",
+    "locale": "zh",
+    "text": "勝利女武神",
+    "source": "catalog-expanded"
+  },
+  {
+    "partId": "burst-b-34-layer",
+    "locale": "en",
+    "text": "B-34",
+    "source": "catalog-expanded"
+  },
+  {
+    "partId": "burst-b-97-layer",
+    "locale": "en",
+    "text": "Heaven Pegasus",
+    "source": "catalog-expanded"
+  },
+  {
+    "partId": "burst-b-97-layer",
+    "locale": "ja",
+    "text": "ヘブンペガサス",
+    "source": "catalog-expanded"
+  },
+  {
+    "partId": "burst-b-97-layer",
+    "locale": "zh",
+    "text": "天馬",
+    "source": "catalog-expanded"
+  },
+  {
+    "partId": "burst-b-97-layer",
+    "locale": "en",
+    "text": "B-97",
+    "source": "catalog-expanded"
+  },
+  {
+    "partId": "burst-b-127-layer",
+    "locale": "en",
+    "text": "Cho-Z Spriggan",
+    "source": "catalog-expanded"
+  },
+  {
+    "partId": "burst-b-127-layer",
+    "locale": "ja",
+    "text": "超Zスプリガン",
+    "source": "catalog-expanded"
+  },
+  {
+    "partId": "burst-b-127-layer",
+    "locale": "zh",
+    "text": "超Z 邪惡啟示",
+    "source": "catalog-expanded"
+  },
+  {
+    "partId": "burst-b-127-layer",
+    "locale": "en",
+    "text": "B-127",
+    "source": "catalog-expanded"
+  },
+  {
+    "partId": "burst-b-168-layer",
+    "locale": "en",
+    "text": "Dynamite Belial",
+    "source": "catalog-expanded"
+  },
+  {
+    "partId": "burst-b-168-layer",
+    "locale": "ja",
+    "text": "ダイナマイトベリアル",
+    "source": "catalog-expanded"
+  },
+  {
+    "partId": "burst-b-168-layer",
+    "locale": "zh",
+    "text": "動感邪惡啟示",
+    "source": "catalog-expanded"
+  },
+  {
+    "partId": "burst-b-168-layer",
+    "locale": "en",
+    "text": "B-168",
+    "source": "catalog-expanded"
+  },
+  {
+    "partId": "burst-0-disc",
+    "locale": "en",
+    "text": "0 Forge Disc",
+    "source": "catalog-expanded"
+  },
+  {
+    "partId": "burst-0-disc",
+    "locale": "ja",
+    "text": "0ディスク",
+    "source": "catalog-expanded"
+  },
+  {
+    "partId": "burst-0-disc",
+    "locale": "zh",
+    "text": "0 環",
+    "source": "catalog-expanded"
+  },
+  {
+    "partId": "burst-0-disc",
+    "locale": "en",
+    "text": "D-0",
+    "source": "catalog-expanded"
+  },
+  {
+    "partId": "burst-11-disc",
+    "locale": "en",
+    "text": "11 Forge Disc",
+    "source": "catalog-expanded"
+  },
+  {
+    "partId": "burst-11-disc",
+    "locale": "ja",
+    "text": "11ディスク",
+    "source": "catalog-expanded"
+  },
+  {
+    "partId": "burst-11-disc",
+    "locale": "zh",
+    "text": "11 環",
+    "source": "catalog-expanded"
+  },
+  {
+    "partId": "burst-11-disc",
+    "locale": "en",
+    "text": "D-11",
+    "source": "catalog-expanded"
+  },
+  {
+    "partId": "burst-dash-driver",
+    "locale": "en",
+    "text": "Dash Driver",
+    "source": "catalog-expanded"
+  },
+  {
+    "partId": "burst-dash-driver",
+    "locale": "ja",
+    "text": "ダッシュドライバー",
+    "source": "catalog-expanded"
+  },
+  {
+    "partId": "burst-dash-driver",
+    "locale": "zh",
+    "text": "衝刺軸",
+    "source": "catalog-expanded"
+  },
+  {
+    "partId": "burst-dash-driver",
+    "locale": "en",
+    "text": "DS-01",
+    "source": "catalog-expanded"
+  },
+  {
+    "partId": "burst-metal-driver",
+    "locale": "en",
+    "text": "Metal Driver",
+    "source": "catalog-expanded"
+  },
+  {
+    "partId": "burst-metal-driver",
+    "locale": "ja",
+    "text": "メタルドライバー",
+    "source": "catalog-expanded"
+  },
+  {
+    "partId": "burst-metal-driver",
+    "locale": "zh",
+    "text": "金屬軸",
+    "source": "catalog-expanded"
+  },
+  {
+    "partId": "burst-metal-driver",
+    "locale": "en",
+    "text": "MD-01",
+    "source": "catalog-expanded"
+  },
+  {
+    "partId": "metal-bb105-track",
+    "locale": "en",
+    "text": "BB105 Spin Track",
+    "source": "catalog-expanded"
+  },
+  {
+    "partId": "metal-bb105-track",
+    "locale": "ja",
+    "text": "BB105",
+    "source": "catalog-expanded"
+  },
+  {
+    "partId": "metal-bb105-track",
+    "locale": "zh",
+    "text": "BB105 旋轉軌道",
+    "source": "catalog-expanded"
+  },
+  {
+    "partId": "metal-bb105-track",
+    "locale": "en",
+    "text": "BB105",
+    "source": "catalog-expanded"
+  },
+  {
+    "partId": "metal-wf2-track",
+    "locale": "en",
+    "text": "WF2 Wing Face Spin Track",
+    "source": "catalog-expanded"
+  },
+  {
+    "partId": "metal-wf2-track",
+    "locale": "ja",
+    "text": "WF2",
+    "source": "catalog-expanded"
+  },
+  {
+    "partId": "metal-wf2-track",
+    "locale": "zh",
+    "text": "WF2 翼面軌道",
+    "source": "catalog-expanded"
+  },
+  {
+    "partId": "metal-wf2-track",
+    "locale": "en",
+    "text": "WF2",
+    "source": "catalog-expanded"
+  },
+  {
+    "partId": "metal-wd-tip",
+    "locale": "en",
+    "text": "Wide Defense",
+    "source": "catalog-expanded"
+  },
+  {
+    "partId": "metal-wd-tip",
+    "locale": "ja",
+    "text": "ワイドディフェンス",
+    "source": "catalog-expanded"
+  },
+  {
+    "partId": "metal-wd-tip",
+    "locale": "zh",
+    "text": "寬防禦",
+    "source": "catalog-expanded"
+  },
+  {
+    "partId": "metal-wd-tip",
+    "locale": "en",
+    "text": "WD",
+    "source": "catalog-expanded"
+  },
+  {
+    "partId": "metal-r2f-tip",
+    "locale": "en",
+    "text": "Right Rubber Flat",
+    "source": "catalog-expanded"
+  },
+  {
+    "partId": "metal-r2f-tip",
+    "locale": "ja",
+    "text": "ライトラバーフラット",
+    "source": "catalog-expanded"
+  },
+  {
+    "partId": "metal-r2f-tip",
+    "locale": "zh",
+    "text": "右橡膠平",
+    "source": "catalog-expanded"
+  },
+  {
+    "partId": "metal-r2f-tip",
+    "locale": "en",
+    "text": "R2F",
+    "source": "catalog-expanded"
+  },
+  {
+    "partId": "metal-storm-wheel",
+    "locale": "en",
+    "text": "Storm Pegasus",
+    "source": "catalog-expanded"
+  },
+  {
+    "partId": "metal-storm-wheel",
+    "locale": "ja",
+    "text": "ストームペガサス",
+    "source": "catalog-expanded"
+  },
+  {
+    "partId": "metal-storm-wheel",
+    "locale": "zh",
+    "text": "暴風天馬",
+    "source": "catalog-expanded"
+  },
+  {
+    "partId": "metal-storm-wheel",
+    "locale": "en",
+    "text": "BB28",
+    "source": "catalog-expanded"
+  },
+  {
+    "partId": "metal-rock-wheel",
+    "locale": "en",
+    "text": "Rock Leone",
+    "source": "catalog-expanded"
+  },
+  {
+    "partId": "metal-rock-wheel",
+    "locale": "ja",
+    "text": "ロックレオーネ",
+    "source": "catalog-expanded"
+  },
+  {
+    "partId": "metal-rock-wheel",
+    "locale": "zh",
+    "text": "岩石獅子",
+    "source": "catalog-expanded"
+  },
+  {
+    "partId": "metal-rock-wheel",
+    "locale": "en",
+    "text": "BB30",
+    "source": "catalog-expanded"
+  },
+  {
+    "partId": "plastic-dragoon-ring",
+    "locale": "ja",
+    "text": "ドラグーンアタックリング",
+    "source": "catalog-expanded"
+  },
+  {
+    "partId": "plastic-dragoon-ring",
+    "locale": "zh",
+    "text": "龍型攻擊環",
+    "source": "catalog-expanded"
+  },
+  {
+    "partId": "plastic-dragoon-ring",
+    "locale": "en",
+    "text": "A-01",
+    "source": "catalog-expanded"
+  },
+  {
+    "partId": "plastic-driger-ring",
+    "locale": "en",
+    "text": "Driger Attack Ring",
+    "source": "catalog-expanded"
+  },
+  {
+    "partId": "plastic-driger-ring",
+    "locale": "ja",
+    "text": "ドライガーアタックリング",
+    "source": "catalog-expanded"
+  },
+  {
+    "partId": "plastic-driger-ring",
+    "locale": "zh",
+    "text": "虎型攻擊環",
+    "source": "catalog-expanded"
+  },
+  {
+    "partId": "plastic-driger-ring",
+    "locale": "en",
+    "text": "A-03",
+    "source": "catalog-expanded"
+  },
+  {
+    "partId": "plastic-salg-ring",
+    "locale": "en",
+    "text": "Salamalyon Attack Ring",
+    "source": "catalog-expanded"
+  },
+  {
+    "partId": "plastic-salg-ring",
+    "locale": "ja",
+    "text": "サラマリオン",
+    "source": "catalog-expanded"
+  },
+  {
+    "partId": "plastic-salg-ring",
+    "locale": "zh",
+    "text": "沙龍攻擊環",
+    "source": "catalog-expanded"
+  },
+  {
+    "partId": "plastic-salg-ring",
+    "locale": "en",
+    "text": "A-05",
+    "source": "catalog-expanded"
+  },
+  {
+    "partId": "plastic-mg-weight",
+    "locale": "en",
+    "text": "Magnum Weight Disk",
+    "source": "catalog-expanded"
+  },
+  {
+    "partId": "plastic-mg-weight",
+    "locale": "ja",
+    "text": "マグナムウエイト",
+    "source": "catalog-expanded"
+  },
+  {
+    "partId": "plastic-mg-weight",
+    "locale": "zh",
+    "text": "Magnum 重量環",
+    "source": "catalog-expanded"
+  },
+  {
+    "partId": "plastic-mg-weight",
+    "locale": "en",
+    "text": "WD-MG",
+    "source": "catalog-expanded"
+  },
+  {
+    "partId": "plastic-10-balance",
+    "locale": "en",
+    "text": "10 Balance Weight Disk",
+    "source": "catalog-expanded"
+  },
+  {
+    "partId": "plastic-10-balance",
+    "locale": "ja",
+    "text": "10バランス",
+    "source": "catalog-expanded"
+  },
+  {
+    "partId": "plastic-10-balance",
+    "locale": "zh",
+    "text": "10 平衡環",
+    "source": "catalog-expanded"
+  },
+  {
+    "partId": "plastic-10-balance",
+    "locale": "en",
+    "text": "WD-10",
+    "source": "catalog-expanded"
+  },
+  {
+    "partId": "plastic-grip-base",
+    "locale": "en",
+    "text": "Grip Base",
+    "source": "catalog-expanded"
+  },
+  {
+    "partId": "plastic-grip-base",
+    "locale": "ja",
+    "text": "グリップベース",
+    "source": "catalog-expanded"
+  },
+  {
+    "partId": "plastic-grip-base",
+    "locale": "zh",
+    "text": "握把底",
+    "source": "catalog-expanded"
+  },
+  {
+    "partId": "plastic-grip-base",
+    "locale": "en",
+    "text": "BB-01",
+    "source": "catalog-expanded"
+  },
+  {
+    "partId": "plastic-dragoon-base",
+    "locale": "en",
+    "text": "Dragoon S Blade Base",
+    "source": "catalog-expanded"
+  },
+  {
+    "partId": "plastic-dragoon-base",
+    "locale": "ja",
+    "text": "ドラグーンS",
+    "source": "catalog-expanded"
+  },
+  {
+    "partId": "plastic-dragoon-base",
+    "locale": "zh",
+    "text": "龍型 S 底",
+    "source": "catalog-expanded"
+  },
+  {
+    "partId": "plastic-dragoon-base",
+    "locale": "en",
+    "text": "BB-01S",
+    "source": "catalog-expanded"
+  }
+]

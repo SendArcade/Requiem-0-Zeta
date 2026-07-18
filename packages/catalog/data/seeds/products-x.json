@@ -1,0 +1,3379 @@
+[
+  {
+    "id": "prod-x-bx-00-sealed",
+    "generation": "x",
+    "skuType": "sealed",
+    "nameEn": "BX-00 Basic Battle Set",
+    "nameJp": "BX-00 ベーシックバトルセット",
+    "productCodes": [
+      "BX-00"
+    ],
+    "attrs": {
+      "line": "BX",
+      "recipeKind": "contents",
+      "defaultComboPartIds": [
+        "x-blade-cobalt-dragoon",
+        "x-ratchet-1-60",
+        "x-bit-a"
+      ]
+    },
+    "partIds": [
+      "x-bit-a",
+      "x-bx-07-bit",
+      "x-bit-c",
+      "x-bit-db",
+      "x-bit-d",
+      "x-bit-e",
+      "x-bx-06-bit",
+      "x-bit-gf",
+      "x-bit-gn",
+      "x-bit-gp",
+      "x-bit-ht",
+      "x-bit-lf",
+      "x-bit-m",
+      "x-bit-n",
+      "x-bit-o",
+      "x-bit-p",
+      "x-bit-q",
+      "x-bit-ra",
+      "x-bit-t",
+      "x-bit-v",
+      "x-blade-cobalt-dragoon",
+      "x-blade-cobalt-drake",
+      "x-blade-croc-crunch",
+      "x-blade-draciel-shield",
+      "x-blade-dragoon-storm",
+      "x-blade-dran-buster",
+      "x-bx-01-blade",
+      "x-blade-dranzer-spiral",
+      "x-blade-driger-slash",
+      "x-blade-hells-chain",
+      "x-bx-03-blade",
+      "x-bx-04-blade",
+      "x-blade-leon-claw",
+      "x-blade-lightning-l-drago",
+      "x-blade-orochi-cluster",
+      "x-blade-phoenix-feather",
+      "x-blade-phoenix-wing",
+      "x-blade-rock-leone",
+      "x-blade-shark-edge",
+      "x-blade-shinobi-knife",
+      "x-blade-storm-pegasis",
+      "x-blade-storm-spriggan",
+      "x-blade-tusk-mammoth",
+      "x-blade-victory-valkyrie",
+      "x-blade-whale-wave",
+      "x-blade-xeno-xcalibur",
+      "x-ratchet-1-60",
+      "x-ratchet-1-80",
+      "x-ratchet-2-60",
+      "x-ratchet-2-70",
+      "x-ratchet-2-80",
+      "x-bx-05-ratchet",
+      "x-ratchet-3-70",
+      "x-ratchet-3-80",
+      "x-ratchet-4-60",
+      "x-ratchet-4-80",
+      "x-ratchet-5-60",
+      "x-ratchet-5-70",
+      "x-ratchet-6-60",
+      "x-ratchet-6-80",
+      "x-ratchet-7-60",
+      "x-ratchet-9-60",
+      "x-ratchet-9-80"
+    ]
+  },
+  {
+    "id": "prod-x-bx-01-complete-loose",
+    "generation": "x",
+    "skuType": "complete_loose",
+    "nameEn": "Dran Sword (3-60F)",
+    "nameJp": "ドランソード 完成品",
+    "productCodes": [
+      "BX-01"
+    ],
+    "attrs": {
+      "combo": "3-60F",
+      "line": "BX",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "x-bx-01-blade",
+      "x-bx-05-ratchet",
+      "x-bx-06-bit"
+    ]
+  },
+  {
+    "id": "prod-x-bx-01-complete-sealed",
+    "generation": "x",
+    "skuType": "complete_sealed",
+    "nameEn": "Dran Sword (Sealed)",
+    "nameJp": "ドランソード 未開封",
+    "productCodes": [
+      "BX-01"
+    ],
+    "attrs": {
+      "combo": "3-60F",
+      "line": "BX",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "x-bx-01-blade",
+      "x-bx-05-ratchet",
+      "x-bx-06-bit"
+    ]
+  },
+  {
+    "id": "prod-x-bx-01-starter",
+    "generation": "x",
+    "skuType": "starter",
+    "nameEn": "Dran Sword Starter",
+    "nameJp": "ドランソード スターター",
+    "productCodes": [
+      "BX-01"
+    ],
+    "attrs": {
+      "combo": "3-60F",
+      "line": "BX",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "x-bx-01-blade",
+      "x-bx-05-ratchet",
+      "x-bx-06-bit"
+    ]
+  },
+  {
+    "id": "prod-x-bx-02-complete-loose",
+    "generation": "x",
+    "skuType": "complete_loose",
+    "nameEn": "Wizard Arrow (4-60T)",
+    "nameJp": "ウィザードアロー 完成品",
+    "productCodes": [
+      "BX-02"
+    ],
+    "attrs": {
+      "combo": "4-60T",
+      "line": "BX",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "x-bx-02-blade",
+      "x-ratchet-4-60",
+      "x-bit-t"
+    ]
+  },
+  {
+    "id": "prod-x-bx-02-complete-sealed",
+    "generation": "x",
+    "skuType": "complete_sealed",
+    "nameEn": "Wizard Arrow (Sealed)",
+    "nameJp": "ウィザードアロー 未開封",
+    "productCodes": [
+      "BX-02"
+    ],
+    "attrs": {
+      "combo": "4-60T",
+      "line": "BX",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "x-bx-02-blade",
+      "x-ratchet-4-60",
+      "x-bit-t"
+    ]
+  },
+  {
+    "id": "prod-x-bx-02-starter",
+    "generation": "x",
+    "skuType": "starter",
+    "nameEn": "Wizard Arrow Starter",
+    "nameJp": "ウィザードアロー スターター",
+    "productCodes": [
+      "BX-02"
+    ],
+    "attrs": {
+      "combo": "4-60T",
+      "line": "BX",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "x-bx-02-blade",
+      "x-ratchet-4-60",
+      "x-bit-t"
+    ]
+  },
+  {
+    "id": "prod-x-bx-03-complete-loose",
+    "generation": "x",
+    "skuType": "complete_loose",
+    "nameEn": "Hells Scythe (4-80B)",
+    "nameJp": "ヘルズサイズ 完成品",
+    "productCodes": [
+      "BX-03"
+    ],
+    "attrs": {
+      "combo": "4-80B",
+      "line": "BX",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "x-bx-03-blade",
+      "x-ratchet-4-80",
+      "x-bx-07-bit"
+    ]
+  },
+  {
+    "id": "prod-x-bx-03-complete-sealed",
+    "generation": "x",
+    "skuType": "complete_sealed",
+    "nameEn": "Hells Scythe (Sealed)",
+    "nameJp": "ヘルズサイズ 未開封",
+    "productCodes": [
+      "BX-03"
+    ],
+    "attrs": {
+      "combo": "4-80B",
+      "line": "BX",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "x-bx-03-blade",
+      "x-ratchet-4-80",
+      "x-bx-07-bit"
+    ]
+  },
+  {
+    "id": "prod-x-bx-03-starter",
+    "generation": "x",
+    "skuType": "starter",
+    "nameEn": "Hells Scythe Starter",
+    "nameJp": "ヘルズサイズ スターター",
+    "productCodes": [
+      "BX-03"
+    ],
+    "attrs": {
+      "combo": "4-80B",
+      "line": "BX",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "x-bx-03-blade",
+      "x-ratchet-4-80",
+      "x-bx-07-bit"
+    ]
+  },
+  {
+    "id": "prod-x-bx-04-complete-loose",
+    "generation": "x",
+    "skuType": "complete_loose",
+    "nameEn": "Knight Shield (3-80N)",
+    "nameJp": "ナイトシールド 完成品",
+    "productCodes": [
+      "BX-04"
+    ],
+    "attrs": {
+      "combo": "3-80N",
+      "line": "BX",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "x-bx-04-blade",
+      "x-ratchet-3-80",
+      "x-bit-n"
+    ]
+  },
+  {
+    "id": "prod-x-bx-04-complete-sealed",
+    "generation": "x",
+    "skuType": "complete_sealed",
+    "nameEn": "Knight Shield (Sealed)",
+    "nameJp": "ナイトシールド 未開封",
+    "productCodes": [
+      "BX-04"
+    ],
+    "attrs": {
+      "combo": "3-80N",
+      "line": "BX",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "x-bx-04-blade",
+      "x-ratchet-3-80",
+      "x-bit-n"
+    ]
+  },
+  {
+    "id": "prod-x-bx-04-starter",
+    "generation": "x",
+    "skuType": "starter",
+    "nameEn": "Knight Shield Starter",
+    "nameJp": "ナイトシールド スターター",
+    "productCodes": [
+      "BX-04"
+    ],
+    "attrs": {
+      "combo": "3-80N",
+      "line": "BX",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "x-bx-04-blade",
+      "x-ratchet-3-80",
+      "x-bit-n"
+    ]
+  },
+  {
+    "id": "prod-x-bx-05-complete-loose",
+    "generation": "x",
+    "skuType": "complete_loose",
+    "nameEn": "Wizard Arrow (4-80B)",
+    "nameJp": "ウィザードアロー 完成品",
+    "productCodes": [
+      "BX-05"
+    ],
+    "attrs": {
+      "combo": "4-80B",
+      "line": "BX",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "x-bx-02-blade",
+      "x-ratchet-4-80",
+      "x-bx-07-bit"
+    ]
+  },
+  {
+    "id": "prod-x-bx-05-complete-sealed",
+    "generation": "x",
+    "skuType": "complete_sealed",
+    "nameEn": "Wizard Arrow (Sealed)",
+    "nameJp": "ウィザードアロー 未開封",
+    "productCodes": [
+      "BX-05"
+    ],
+    "attrs": {
+      "combo": "4-80B",
+      "line": "BX",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "x-bx-02-blade",
+      "x-ratchet-4-80",
+      "x-bx-07-bit"
+    ]
+  },
+  {
+    "id": "prod-x-bx-05-starter",
+    "generation": "x",
+    "skuType": "starter",
+    "nameEn": "Wizard Arrow Starter",
+    "nameJp": "ウィザードアロー スターター",
+    "productCodes": [
+      "BX-05"
+    ],
+    "attrs": {
+      "combo": "4-80B",
+      "line": "BX",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "x-bx-02-blade",
+      "x-ratchet-4-80",
+      "x-bx-07-bit"
+    ]
+  },
+  {
+    "id": "prod-x-bx-06-complete-loose",
+    "generation": "x",
+    "skuType": "complete_loose",
+    "nameEn": "Knight Shield (3-80N)",
+    "nameJp": "ナイトシールド 完成品",
+    "productCodes": [
+      "BX-06"
+    ],
+    "attrs": {
+      "combo": "3-80N",
+      "line": "BX",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "x-bx-04-blade",
+      "x-ratchet-3-80",
+      "x-bit-n"
+    ]
+  },
+  {
+    "id": "prod-x-bx-06-complete-sealed",
+    "generation": "x",
+    "skuType": "complete_sealed",
+    "nameEn": "Knight Shield (Sealed)",
+    "nameJp": "ナイトシールド 未開封",
+    "productCodes": [
+      "BX-06"
+    ],
+    "attrs": {
+      "combo": "3-80N",
+      "line": "BX",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "x-bx-04-blade",
+      "x-ratchet-3-80",
+      "x-bit-n"
+    ]
+  },
+  {
+    "id": "prod-x-bx-06-starter",
+    "generation": "x",
+    "skuType": "starter",
+    "nameEn": "Knight Shield Starter",
+    "nameJp": "ナイトシールド スターター",
+    "productCodes": [
+      "BX-06"
+    ],
+    "attrs": {
+      "combo": "3-80N",
+      "line": "BX",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "x-bx-04-blade",
+      "x-ratchet-3-80",
+      "x-bit-n"
+    ]
+  },
+  {
+    "id": "prod-x-bx-08-sealed",
+    "generation": "x",
+    "skuType": "sealed",
+    "nameEn": "BX-08 Random Booster Vol.1",
+    "nameJp": "BX-08 ランダムブースター Vol.1",
+    "productCodes": [
+      "BX-08"
+    ],
+    "attrs": {
+      "line": "BX",
+      "recipeKind": "contents",
+      "defaultComboPartIds": [
+        "x-bx-03-blade",
+        "x-ratchet-3-80",
+        "x-bx-07-bit"
+      ]
+    },
+    "partIds": [
+      "x-bx-07-bit",
+      "x-bit-n",
+      "x-bit-t",
+      "x-bx-03-blade",
+      "x-bx-04-blade",
+      "x-bx-02-blade",
+      "x-ratchet-3-80",
+      "x-ratchet-4-60",
+      "x-ratchet-4-80"
+    ]
+  },
+  {
+    "id": "prod-x-bx-13-complete-loose",
+    "generation": "x",
+    "skuType": "complete_loose",
+    "nameEn": "Knight Lance (4-80HN)",
+    "nameJp": null,
+    "productCodes": [
+      "BX-13"
+    ],
+    "attrs": {
+      "combo": "4-80HN",
+      "line": "BX",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "x-blade-knight-lance",
+      "x-ratchet-4-80",
+      "x-bit-hn"
+    ]
+  },
+  {
+    "id": "prod-x-bx-13-complete-sealed",
+    "generation": "x",
+    "skuType": "complete_sealed",
+    "nameEn": "Knight Lance (Sealed)",
+    "nameJp": null,
+    "productCodes": [
+      "BX-13"
+    ],
+    "attrs": {
+      "combo": "4-80HN",
+      "line": "BX",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "x-blade-knight-lance",
+      "x-ratchet-4-80",
+      "x-bit-hn"
+    ]
+  },
+  {
+    "id": "prod-x-bx-13-starter",
+    "generation": "x",
+    "skuType": "starter",
+    "nameEn": "Knight Lance Starter",
+    "nameJp": null,
+    "productCodes": [
+      "BX-13"
+    ],
+    "attrs": {
+      "combo": "4-80HN",
+      "line": "BX",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "x-blade-knight-lance",
+      "x-ratchet-4-80",
+      "x-bit-hn"
+    ]
+  },
+  {
+    "id": "prod-x-bx-14-sealed",
+    "generation": "x",
+    "skuType": "sealed",
+    "nameEn": "BX-14 Dual Pack",
+    "nameJp": "BX-14 デュアルパック",
+    "productCodes": [
+      "BX-14"
+    ],
+    "attrs": {
+      "line": "BX",
+      "recipeKind": "contents",
+      "defaultComboPartIds": [
+        "x-bx-01-blade",
+        "x-bx-05-ratchet",
+        "x-bx-07-bit"
+      ]
+    },
+    "partIds": [
+      "x-bx-07-bit",
+      "x-bit-lf",
+      "x-bit-n",
+      "x-bit-t",
+      "x-bx-01-blade",
+      "x-bx-03-blade",
+      "x-bx-04-blade",
+      "x-blade-shark-edge",
+      "x-bx-02-blade",
+      "x-bx-05-ratchet",
+      "x-ratchet-3-80",
+      "x-ratchet-4-60",
+      "x-ratchet-4-80"
+    ]
+  },
+  {
+    "id": "prod-x-bx-15-complete-loose",
+    "generation": "x",
+    "skuType": "complete_loose",
+    "nameEn": "Leon Claw (5-60P)",
+    "nameJp": null,
+    "productCodes": [
+      "BX-15"
+    ],
+    "attrs": {
+      "combo": "5-60P",
+      "line": "BX",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "x-blade-leon-claw",
+      "x-ratchet-5-60",
+      "x-bit-p"
+    ]
+  },
+  {
+    "id": "prod-x-bx-15-complete-sealed",
+    "generation": "x",
+    "skuType": "complete_sealed",
+    "nameEn": "Leon Claw (Sealed)",
+    "nameJp": null,
+    "productCodes": [
+      "BX-15"
+    ],
+    "attrs": {
+      "combo": "5-60P",
+      "line": "BX",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "x-blade-leon-claw",
+      "x-ratchet-5-60",
+      "x-bit-p"
+    ]
+  },
+  {
+    "id": "prod-x-bx-15-starter",
+    "generation": "x",
+    "skuType": "starter",
+    "nameEn": "Leon Claw Starter",
+    "nameJp": null,
+    "productCodes": [
+      "BX-15"
+    ],
+    "attrs": {
+      "combo": "5-60P",
+      "line": "BX",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "x-blade-leon-claw",
+      "x-ratchet-5-60",
+      "x-bit-p"
+    ]
+  },
+  {
+    "id": "prod-x-bx-16-sealed",
+    "generation": "x",
+    "skuType": "sealed",
+    "nameEn": "BX-16 Random Booster Vol.2",
+    "nameJp": "BX-16 ランダムブースター Vol.2",
+    "productCodes": [
+      "BX-16"
+    ],
+    "attrs": {
+      "line": "BX",
+      "recipeKind": "contents",
+      "defaultComboPartIds": [
+        "x-blade-viper-tail",
+        "x-ratchet-3-80",
+        "x-bx-06-bit"
+      ]
+    },
+    "partIds": [
+      "x-bx-06-bit",
+      "x-bit-hn",
+      "x-bit-o",
+      "x-blade-viper-tail",
+      "x-ratchet-3-80",
+      "x-ratchet-4-60",
+      "x-ratchet-5-80"
+    ]
+  },
+  {
+    "id": "prod-x-bx-17-complete-loose",
+    "generation": "x",
+    "skuType": "complete_loose",
+    "nameEn": "Dran Sword (3-60FRE)",
+    "nameJp": "ドランソード 完成品",
+    "productCodes": [
+      "BX-17"
+    ],
+    "attrs": {
+      "combo": "3-60FRE",
+      "line": "BX",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "x-bx-01-blade",
+      "x-bx-05-ratchet",
+      "x-bx-07-bit"
+    ]
+  },
+  {
+    "id": "prod-x-bx-17-complete-sealed",
+    "generation": "x",
+    "skuType": "complete_sealed",
+    "nameEn": "Dran Sword (Sealed)",
+    "nameJp": "ドランソード 未開封",
+    "productCodes": [
+      "BX-17"
+    ],
+    "attrs": {
+      "combo": "3-60FRE",
+      "line": "BX",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "x-bx-01-blade",
+      "x-bx-05-ratchet",
+      "x-bx-07-bit"
+    ]
+  },
+  {
+    "id": "prod-x-bx-17-starter",
+    "generation": "x",
+    "skuType": "starter",
+    "nameEn": "Dran Sword Starter",
+    "nameJp": "ドランソード スターター",
+    "productCodes": [
+      "BX-17"
+    ],
+    "attrs": {
+      "combo": "3-60FRE",
+      "line": "BX",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "x-bx-01-blade",
+      "x-bx-05-ratchet",
+      "x-bx-07-bit"
+    ]
+  },
+  {
+    "id": "prod-x-bx-19-sealed",
+    "generation": "x",
+    "skuType": "sealed",
+    "nameEn": "BX-19 Sealed Set",
+    "nameJp": "BX-19 未開封",
+    "productCodes": [
+      "BX-19"
+    ],
+    "attrs": {
+      "line": "BX",
+      "recipeKind": "contents",
+      "defaultComboPartIds": [
+        "x-blade-rhino-horn",
+        "x-ratchet-3-80",
+        "x-bit-s"
+      ]
+    },
+    "partIds": [
+      "x-bit-s",
+      "x-blade-rhino-horn",
+      "x-ratchet-3-80"
+    ]
+  },
+  {
+    "id": "prod-x-bx-20-complete-loose",
+    "generation": "x",
+    "skuType": "complete_loose",
+    "nameEn": "Shark Edge (3-80F)",
+    "nameJp": null,
+    "productCodes": [
+      "BX-20"
+    ],
+    "attrs": {
+      "combo": "3-80F",
+      "line": "BX",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "x-blade-shark-edge",
+      "x-ratchet-3-80",
+      "x-bx-06-bit"
+    ]
+  },
+  {
+    "id": "prod-x-bx-20-complete-sealed",
+    "generation": "x",
+    "skuType": "complete_sealed",
+    "nameEn": "Shark Edge (Sealed)",
+    "nameJp": null,
+    "productCodes": [
+      "BX-20"
+    ],
+    "attrs": {
+      "combo": "3-80F",
+      "line": "BX",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "x-blade-shark-edge",
+      "x-ratchet-3-80",
+      "x-bx-06-bit"
+    ]
+  },
+  {
+    "id": "prod-x-bx-20-starter",
+    "generation": "x",
+    "skuType": "starter",
+    "nameEn": "Shark Edge Starter",
+    "nameJp": null,
+    "productCodes": [
+      "BX-20"
+    ],
+    "attrs": {
+      "combo": "3-80F",
+      "line": "BX",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "x-blade-shark-edge",
+      "x-ratchet-3-80",
+      "x-bx-06-bit"
+    ]
+  },
+  {
+    "id": "prod-x-bx-21-sealed",
+    "generation": "x",
+    "skuType": "sealed",
+    "nameEn": "BX-21 Sealed Set",
+    "nameJp": "BX-21 未開封",
+    "productCodes": [
+      "BX-21"
+    ],
+    "attrs": {
+      "line": "BX",
+      "recipeKind": "contents",
+      "defaultComboPartIds": [
+        "x-blade-hells-chain",
+        "x-bx-05-ratchet",
+        "x-bit-ht"
+      ]
+    },
+    "partIds": [
+      "x-bit-ht",
+      "x-bit-lf",
+      "x-bit-n",
+      "x-blade-hells-chain",
+      "x-blade-knight-lance",
+      "x-bx-02-blade",
+      "x-bx-05-ratchet",
+      "x-ratchet-4-80",
+      "x-ratchet-5-60"
+    ]
+  },
+  {
+    "id": "prod-x-bx-22-complete-loose",
+    "generation": "x",
+    "skuType": "complete_loose",
+    "nameEn": "Dran Sword (3-60F)",
+    "nameJp": "ドランソード 完成品",
+    "productCodes": [
+      "BX-22"
+    ],
+    "attrs": {
+      "combo": "3-60F",
+      "line": "BX",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "x-bx-01-blade",
+      "x-bx-05-ratchet",
+      "x-bx-06-bit"
+    ]
+  },
+  {
+    "id": "prod-x-bx-22-complete-sealed",
+    "generation": "x",
+    "skuType": "complete_sealed",
+    "nameEn": "Dran Sword (Sealed)",
+    "nameJp": "ドランソード 未開封",
+    "productCodes": [
+      "BX-22"
+    ],
+    "attrs": {
+      "combo": "3-60F",
+      "line": "BX",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "x-bx-01-blade",
+      "x-bx-05-ratchet",
+      "x-bx-06-bit"
+    ]
+  },
+  {
+    "id": "prod-x-bx-22-starter",
+    "generation": "x",
+    "skuType": "starter",
+    "nameEn": "Dran Sword Starter",
+    "nameJp": "ドランソード スターター",
+    "productCodes": [
+      "BX-22"
+    ],
+    "attrs": {
+      "combo": "3-60F",
+      "line": "BX",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "x-bx-01-blade",
+      "x-bx-05-ratchet",
+      "x-bx-06-bit"
+    ]
+  },
+  {
+    "id": "prod-x-bx-23-sealed",
+    "generation": "x",
+    "skuType": "sealed",
+    "nameEn": "BX-23 Sealed Set",
+    "nameJp": "BX-23 未開封",
+    "productCodes": [
+      "BX-23"
+    ],
+    "attrs": {
+      "line": "BX",
+      "recipeKind": "contents",
+      "defaultComboPartIds": [
+        "x-blade-phoenix-wing",
+        "x-ratchet-9-60",
+        "x-bit-gf"
+      ]
+    },
+    "partIds": [
+      "x-bit-gf",
+      "x-blade-phoenix-wing",
+      "x-ratchet-9-60"
+    ]
+  },
+  {
+    "id": "prod-x-bx-24-sealed",
+    "generation": "x",
+    "skuType": "sealed",
+    "nameEn": "BX-24 Sealed Set",
+    "nameJp": "BX-24 未開封",
+    "productCodes": [
+      "BX-24"
+    ],
+    "attrs": {
+      "line": "BX",
+      "recipeKind": "contents",
+      "defaultComboPartIds": [
+        "x-blade-knight-lance",
+        "x-bx-05-ratchet",
+        "x-bx-06-bit"
+      ]
+    },
+    "partIds": [
+      "x-bx-06-bit",
+      "x-bit-gb",
+      "x-bit-hn",
+      "x-bit-t",
+      "x-blade-knight-lance",
+      "x-blade-leon-claw",
+      "x-blade-viper-tail",
+      "x-bx-02-blade",
+      "x-blade-wyvern-gale",
+      "x-bx-05-ratchet",
+      "x-ratchet-3-80",
+      "x-ratchet-4-60",
+      "x-ratchet-4-80",
+      "x-ratchet-5-60",
+      "x-ratchet-5-80"
+    ]
+  },
+  {
+    "id": "prod-x-bx-26-sealed",
+    "generation": "x",
+    "skuType": "sealed",
+    "nameEn": "BX-26 Sealed Set",
+    "nameJp": "BX-26 未開封",
+    "productCodes": [
+      "BX-26"
+    ],
+    "attrs": {
+      "line": "BX",
+      "recipeKind": "contents",
+      "defaultComboPartIds": [
+        "x-blade-unicorn-sting",
+        "x-ratchet-5-60",
+        "x-bit-gp"
+      ]
+    },
+    "partIds": [
+      "x-bit-gp",
+      "x-blade-unicorn-sting",
+      "x-ratchet-5-60"
+    ]
+  },
+  {
+    "id": "prod-x-bx-27-sealed",
+    "generation": "x",
+    "skuType": "sealed",
+    "nameEn": "BX-27 Sealed Set",
+    "nameJp": "BX-27 未開封",
+    "productCodes": [
+      "BX-27"
+    ],
+    "attrs": {
+      "line": "BX",
+      "recipeKind": "contents",
+      "defaultComboPartIds": [
+        "x-blade-sphinx-cowl",
+        "x-ratchet-4-80",
+        "x-bit-o"
+      ]
+    },
+    "partIds": [
+      "x-bit-o",
+      "x-blade-sphinx-cowl",
+      "x-ratchet-4-80",
+      "x-ratchet-5-60",
+      "x-ratchet-9-80"
+    ]
+  },
+  {
+    "id": "prod-x-bx-31-complete-loose",
+    "generation": "x",
+    "skuType": "complete_loose",
+    "nameEn": "Tyranno Beat (4-70Q)",
+    "nameJp": null,
+    "productCodes": [
+      "BX-31"
+    ],
+    "attrs": {
+      "combo": "4-70Q",
+      "line": "BX",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "x-blade-tyranno-beat",
+      "x-ratchet-4-70",
+      "x-bit-q"
+    ]
+  },
+  {
+    "id": "prod-x-bx-31-complete-sealed",
+    "generation": "x",
+    "skuType": "complete_sealed",
+    "nameEn": "Tyranno Beat (Sealed)",
+    "nameJp": null,
+    "productCodes": [
+      "BX-31"
+    ],
+    "attrs": {
+      "combo": "4-70Q",
+      "line": "BX",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "x-blade-tyranno-beat",
+      "x-ratchet-4-70",
+      "x-bit-q"
+    ]
+  },
+  {
+    "id": "prod-x-bx-31-starter",
+    "generation": "x",
+    "skuType": "starter",
+    "nameEn": "Tyranno Beat Starter",
+    "nameJp": null,
+    "productCodes": [
+      "BX-31"
+    ],
+    "attrs": {
+      "combo": "4-70Q",
+      "line": "BX",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "x-blade-tyranno-beat",
+      "x-ratchet-4-70",
+      "x-bit-q"
+    ]
+  },
+  {
+    "id": "prod-x-bx-33-sealed",
+    "generation": "x",
+    "skuType": "sealed",
+    "nameEn": "BX-33 Sealed Set",
+    "nameJp": "BX-33 未開封",
+    "productCodes": [
+      "BX-33"
+    ],
+    "attrs": {
+      "line": "BX",
+      "recipeKind": "contents",
+      "defaultComboPartIds": [
+        "x-blade-weiss-tiger",
+        "x-bx-05-ratchet",
+        "x-bit-u"
+      ]
+    },
+    "partIds": [
+      "x-bit-u",
+      "x-blade-weiss-tiger",
+      "x-bx-05-ratchet"
+    ]
+  },
+  {
+    "id": "prod-x-bx-34-complete-loose",
+    "generation": "x",
+    "skuType": "complete_loose",
+    "nameEn": "Cobalt Dragoon (2-60C)",
+    "nameJp": null,
+    "productCodes": [
+      "BX-34"
+    ],
+    "attrs": {
+      "combo": "2-60C",
+      "line": "BX",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "x-blade-cobalt-dragoon",
+      "x-ratchet-2-60",
+      "x-bit-c"
+    ]
+  },
+  {
+    "id": "prod-x-bx-34-complete-sealed",
+    "generation": "x",
+    "skuType": "complete_sealed",
+    "nameEn": "Cobalt Dragoon (Sealed)",
+    "nameJp": null,
+    "productCodes": [
+      "BX-34"
+    ],
+    "attrs": {
+      "combo": "2-60C",
+      "line": "BX",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "x-blade-cobalt-dragoon",
+      "x-ratchet-2-60",
+      "x-bit-c"
+    ]
+  },
+  {
+    "id": "prod-x-bx-34-starter",
+    "generation": "x",
+    "skuType": "starter",
+    "nameEn": "Cobalt Dragoon Starter",
+    "nameJp": null,
+    "productCodes": [
+      "BX-34"
+    ],
+    "attrs": {
+      "combo": "2-60C",
+      "line": "BX",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "x-blade-cobalt-dragoon",
+      "x-ratchet-2-60",
+      "x-bit-c"
+    ]
+  },
+  {
+    "id": "prod-x-bx-35-sealed",
+    "generation": "x",
+    "skuType": "sealed",
+    "nameEn": "BX-35 Sealed Set",
+    "nameJp": "BX-35 未開封",
+    "productCodes": [
+      "BX-35"
+    ],
+    "attrs": {
+      "line": "BX",
+      "recipeKind": "contents",
+      "defaultComboPartIds": [
+        "x-blade-black-shell",
+        "x-ratchet-1-60",
+        "x-bx-07-bit"
+      ]
+    },
+    "partIds": [
+      "x-bx-07-bit",
+      "x-bit-d",
+      "x-bit-h",
+      "x-bit-r",
+      "x-blade-black-shell",
+      "x-blade-phoenix-wing",
+      "x-blade-unicorn-sting",
+      "x-blade-viper-tail",
+      "x-blade-wizard-rod",
+      "x-ratchet-1-60",
+      "x-ratchet-3-70",
+      "x-ratchet-4-60",
+      "x-ratchet-5-70",
+      "x-ratchet-5-80",
+      "x-ratchet-9-80"
+    ]
+  },
+  {
+    "id": "prod-x-bx-36-complete-loose",
+    "generation": "x",
+    "skuType": "complete_loose",
+    "nameEn": "Whale Wave (5-80E)",
+    "nameJp": null,
+    "productCodes": [
+      "BX-36"
+    ],
+    "attrs": {
+      "combo": "5-80E",
+      "line": "BX",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "x-blade-whale-wave",
+      "x-ratchet-5-80",
+      "x-bit-e"
+    ]
+  },
+  {
+    "id": "prod-x-bx-36-complete-sealed",
+    "generation": "x",
+    "skuType": "complete_sealed",
+    "nameEn": "Whale Wave (Sealed)",
+    "nameJp": null,
+    "productCodes": [
+      "BX-36"
+    ],
+    "attrs": {
+      "combo": "5-80E",
+      "line": "BX",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "x-blade-whale-wave",
+      "x-ratchet-5-80",
+      "x-bit-e"
+    ]
+  },
+  {
+    "id": "prod-x-bx-36-starter",
+    "generation": "x",
+    "skuType": "starter",
+    "nameEn": "Whale Wave Starter",
+    "nameJp": null,
+    "productCodes": [
+      "BX-36"
+    ],
+    "attrs": {
+      "combo": "5-80E",
+      "line": "BX",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "x-blade-whale-wave",
+      "x-ratchet-5-80",
+      "x-bit-e"
+    ]
+  },
+  {
+    "id": "prod-x-bx-37-complete-loose",
+    "generation": "x",
+    "skuType": "complete_loose",
+    "nameEn": "Bear Scratch (5-60F)",
+    "nameJp": null,
+    "productCodes": [
+      "BX-37"
+    ],
+    "attrs": {
+      "combo": "5-60F",
+      "line": "BX",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "x-blade-bear-scratch",
+      "x-ratchet-5-60",
+      "x-bx-06-bit"
+    ]
+  },
+  {
+    "id": "prod-x-bx-37-complete-sealed",
+    "generation": "x",
+    "skuType": "complete_sealed",
+    "nameEn": "Bear Scratch (Sealed)",
+    "nameJp": null,
+    "productCodes": [
+      "BX-37"
+    ],
+    "attrs": {
+      "combo": "5-60F",
+      "line": "BX",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "x-blade-bear-scratch",
+      "x-ratchet-5-60",
+      "x-bx-06-bit"
+    ]
+  },
+  {
+    "id": "prod-x-bx-37-starter",
+    "generation": "x",
+    "skuType": "starter",
+    "nameEn": "Bear Scratch Starter",
+    "nameJp": null,
+    "productCodes": [
+      "BX-37"
+    ],
+    "attrs": {
+      "combo": "5-60F",
+      "line": "BX",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "x-blade-bear-scratch",
+      "x-ratchet-5-60",
+      "x-bx-06-bit"
+    ]
+  },
+  {
+    "id": "prod-x-bx-38-complete-loose",
+    "generation": "x",
+    "skuType": "complete_loose",
+    "nameEn": "Crimson Garuda (4-70TP)",
+    "nameJp": null,
+    "productCodes": [
+      "BX-38"
+    ],
+    "attrs": {
+      "combo": "4-70TP",
+      "line": "BX",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "x-blade-crimson-garuda",
+      "x-ratchet-4-70",
+      "x-bit-tp"
+    ]
+  },
+  {
+    "id": "prod-x-bx-38-complete-sealed",
+    "generation": "x",
+    "skuType": "complete_sealed",
+    "nameEn": "Crimson Garuda (Sealed)",
+    "nameJp": null,
+    "productCodes": [
+      "BX-38"
+    ],
+    "attrs": {
+      "combo": "4-70TP",
+      "line": "BX",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "x-blade-crimson-garuda",
+      "x-ratchet-4-70",
+      "x-bit-tp"
+    ]
+  },
+  {
+    "id": "prod-x-bx-38-starter",
+    "generation": "x",
+    "skuType": "starter",
+    "nameEn": "Crimson Garuda Starter",
+    "nameJp": null,
+    "productCodes": [
+      "BX-38"
+    ],
+    "attrs": {
+      "combo": "4-70TP",
+      "line": "BX",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "x-blade-crimson-garuda",
+      "x-ratchet-4-70",
+      "x-bit-tp"
+    ]
+  },
+  {
+    "id": "prod-x-bx-39-sealed",
+    "generation": "x",
+    "skuType": "sealed",
+    "nameEn": "BX-39 Sealed Set",
+    "nameJp": "BX-39 未開封",
+    "productCodes": [
+      "BX-39"
+    ],
+    "attrs": {
+      "line": "BX",
+      "recipeKind": "contents",
+      "defaultComboPartIds": [
+        "x-blade-shelter-drake",
+        "x-bx-05-ratchet",
+        "x-bit-d"
+      ]
+    },
+    "partIds": [
+      "x-bit-d",
+      "x-bit-gp",
+      "x-bit-o",
+      "x-blade-shelter-drake",
+      "x-bx-05-ratchet",
+      "x-ratchet-5-70",
+      "x-ratchet-7-80"
+    ]
+  },
+  {
+    "id": "prod-x-bx-44-sealed",
+    "generation": "x",
+    "skuType": "sealed",
+    "nameEn": "BX-44 Sealed Set",
+    "nameJp": "BX-44 未開封",
+    "productCodes": [
+      "BX-44"
+    ],
+    "attrs": {
+      "line": "BX",
+      "recipeKind": "contents",
+      "defaultComboPartIds": [
+        "x-blade-tricera-press",
+        "x-ratchet-m-85",
+        "x-bit-bs"
+      ]
+    },
+    "partIds": [
+      "x-bit-bs",
+      "x-blade-tricera-press",
+      "x-ratchet-m-85"
+    ]
+  },
+  {
+    "id": "prod-x-bx-45-complete-loose",
+    "generation": "x",
+    "skuType": "complete_loose",
+    "nameEn": "Samurai Calibur (6-70M)",
+    "nameJp": null,
+    "productCodes": [
+      "BX-45"
+    ],
+    "attrs": {
+      "combo": "6-70M",
+      "line": "BX",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "x-blade-samurai-calibur",
+      "x-ratchet-6-70",
+      "x-bit-m"
+    ]
+  },
+  {
+    "id": "prod-x-bx-45-complete-sealed",
+    "generation": "x",
+    "skuType": "complete_sealed",
+    "nameEn": "Samurai Calibur (Sealed)",
+    "nameJp": null,
+    "productCodes": [
+      "BX-45"
+    ],
+    "attrs": {
+      "combo": "6-70M",
+      "line": "BX",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "x-blade-samurai-calibur",
+      "x-ratchet-6-70",
+      "x-bit-m"
+    ]
+  },
+  {
+    "id": "prod-x-bx-45-starter",
+    "generation": "x",
+    "skuType": "starter",
+    "nameEn": "Samurai Calibur Starter",
+    "nameJp": null,
+    "productCodes": [
+      "BX-45"
+    ],
+    "attrs": {
+      "combo": "6-70M",
+      "line": "BX",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "x-blade-samurai-calibur",
+      "x-ratchet-6-70",
+      "x-bit-m"
+    ]
+  },
+  {
+    "id": "prod-x-bx-46-complete-loose",
+    "generation": "x",
+    "skuType": "complete_loose",
+    "nameEn": "Goat Tackle (7-70T)",
+    "nameJp": null,
+    "productCodes": [
+      "BX-46"
+    ],
+    "attrs": {
+      "combo": "7-70T",
+      "line": "BX",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "x-blade-goat-tackle",
+      "x-ratchet-7-70",
+      "x-bit-t"
+    ]
+  },
+  {
+    "id": "prod-x-bx-46-complete-sealed",
+    "generation": "x",
+    "skuType": "complete_sealed",
+    "nameEn": "Goat Tackle (Sealed)",
+    "nameJp": null,
+    "productCodes": [
+      "BX-46"
+    ],
+    "attrs": {
+      "combo": "7-70T",
+      "line": "BX",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "x-blade-goat-tackle",
+      "x-ratchet-7-70",
+      "x-bit-t"
+    ]
+  },
+  {
+    "id": "prod-x-bx-46-starter",
+    "generation": "x",
+    "skuType": "starter",
+    "nameEn": "Goat Tackle Starter",
+    "nameJp": null,
+    "productCodes": [
+      "BX-46"
+    ],
+    "attrs": {
+      "combo": "7-70T",
+      "line": "BX",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "x-blade-goat-tackle",
+      "x-ratchet-7-70",
+      "x-bit-t"
+    ]
+  },
+  {
+    "id": "prod-x-cx-00-sealed",
+    "generation": "x",
+    "skuType": "sealed",
+    "nameEn": "CX-00 Custom Line Set",
+    "nameJp": "CX-00 カスタムラインセット",
+    "productCodes": [
+      "CX-00"
+    ],
+    "attrs": {
+      "line": "CX",
+      "recipeKind": "contents",
+      "defaultComboPartIds": [
+        "x-blade-arc",
+        "x-ratchet-1-50",
+        "x-bit-a"
+      ]
+    },
+    "partIds": [
+      "x-bit-a",
+      "x-bit-bahamut",
+      "x-bit-dran",
+      "x-bit-i",
+      "x-bit-k",
+      "x-bit-leon",
+      "x-bit-lo",
+      "x-bit-pegasus",
+      "x-bit-perseus",
+      "x-bit-tr",
+      "x-bit-valkyrie",
+      "x-bit-v",
+      "x-bit-w",
+      "x-bit-wizard",
+      "x-blade-arc",
+      "x-blade-assault",
+      "x-blade-blast",
+      "x-blade-blitz",
+      "x-blade-brave",
+      "x-blade-break",
+      "x-blade-bumper",
+      "x-blade-dark",
+      "x-blade-fang",
+      "x-blade-jaggy",
+      "x-blade-knuckle",
+      "x-blade-round",
+      "x-blade-slash",
+      "x-blade-turn",
+      "x-blade-volt",
+      "x-ratchet-1-50",
+      "x-ratchet-2-70",
+      "x-ratchet-4-55",
+      "x-ratchet-4-60",
+      "x-ratchet-4-70",
+      "x-ratchet-6-60",
+      "x-ratchet-6-80"
+    ]
+  },
+  {
+    "id": "prod-x-cx-01-complete-loose",
+    "generation": "x",
+    "skuType": "complete_loose",
+    "nameEn": "Brave (6-60V)",
+    "nameJp": null,
+    "productCodes": [
+      "CX-01"
+    ],
+    "attrs": {
+      "combo": "6-60V",
+      "line": "CX",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "x-blade-brave",
+      "x-ratchet-6-60",
+      "x-bit-v"
+    ]
+  },
+  {
+    "id": "prod-x-cx-01-complete-sealed",
+    "generation": "x",
+    "skuType": "complete_sealed",
+    "nameEn": "Brave (Sealed)",
+    "nameJp": null,
+    "productCodes": [
+      "CX-01"
+    ],
+    "attrs": {
+      "combo": "6-60V",
+      "line": "CX",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "x-blade-brave",
+      "x-ratchet-6-60",
+      "x-bit-v"
+    ]
+  },
+  {
+    "id": "prod-x-cx-01-starter",
+    "generation": "x",
+    "skuType": "starter",
+    "nameEn": "Brave Starter",
+    "nameJp": null,
+    "productCodes": [
+      "CX-01"
+    ],
+    "attrs": {
+      "combo": "6-60V",
+      "line": "CX",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "x-blade-brave",
+      "x-ratchet-6-60",
+      "x-bit-v"
+    ]
+  },
+  {
+    "id": "prod-x-cx-02-complete-loose",
+    "generation": "x",
+    "skuType": "complete_loose",
+    "nameEn": "Arc (4-55LO)",
+    "nameJp": null,
+    "productCodes": [
+      "CX-02"
+    ],
+    "attrs": {
+      "combo": "4-55LO",
+      "line": "CX",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "x-blade-arc",
+      "x-ratchet-4-55",
+      "x-bit-wizard"
+    ]
+  },
+  {
+    "id": "prod-x-cx-02-complete-sealed",
+    "generation": "x",
+    "skuType": "complete_sealed",
+    "nameEn": "Arc (Sealed)",
+    "nameJp": null,
+    "productCodes": [
+      "CX-02"
+    ],
+    "attrs": {
+      "combo": "4-55LO",
+      "line": "CX",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "x-blade-arc",
+      "x-ratchet-4-55",
+      "x-bit-wizard"
+    ]
+  },
+  {
+    "id": "prod-x-cx-02-starter",
+    "generation": "x",
+    "skuType": "starter",
+    "nameEn": "Arc Starter",
+    "nameJp": null,
+    "productCodes": [
+      "CX-02"
+    ],
+    "attrs": {
+      "combo": "4-55LO",
+      "line": "CX",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "x-blade-arc",
+      "x-ratchet-4-55",
+      "x-bit-wizard"
+    ]
+  },
+  {
+    "id": "prod-x-cx-03-complete-loose",
+    "generation": "x",
+    "skuType": "complete_loose",
+    "nameEn": "Dark (6-80W)",
+    "nameJp": null,
+    "productCodes": [
+      "CX-03"
+    ],
+    "attrs": {
+      "combo": "6-80W",
+      "line": "CX",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "x-blade-dark",
+      "x-ratchet-6-80",
+      "x-bit-perseus"
+    ]
+  },
+  {
+    "id": "prod-x-cx-03-complete-sealed",
+    "generation": "x",
+    "skuType": "complete_sealed",
+    "nameEn": "Dark (Sealed)",
+    "nameJp": null,
+    "productCodes": [
+      "CX-03"
+    ],
+    "attrs": {
+      "combo": "6-80W",
+      "line": "CX",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "x-blade-dark",
+      "x-ratchet-6-80",
+      "x-bit-perseus"
+    ]
+  },
+  {
+    "id": "prod-x-cx-03-starter",
+    "generation": "x",
+    "skuType": "starter",
+    "nameEn": "Dark Starter",
+    "nameJp": null,
+    "productCodes": [
+      "CX-03"
+    ],
+    "attrs": {
+      "combo": "6-80W",
+      "line": "CX",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "x-blade-dark",
+      "x-ratchet-6-80",
+      "x-bit-perseus"
+    ]
+  },
+  {
+    "id": "prod-x-cx-05-complete-loose",
+    "generation": "x",
+    "skuType": "complete_loose",
+    "nameEn": "Whale Wave (7-60K)",
+    "nameJp": null,
+    "productCodes": [
+      "CX-05"
+    ],
+    "attrs": {
+      "combo": "7-60K",
+      "line": "CX",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "x-blade-whale-wave",
+      "x-ratchet-7-60",
+      "x-bit-rhino"
+    ]
+  },
+  {
+    "id": "prod-x-cx-05-complete-sealed",
+    "generation": "x",
+    "skuType": "complete_sealed",
+    "nameEn": "Whale Wave (Sealed)",
+    "nameJp": null,
+    "productCodes": [
+      "CX-05"
+    ],
+    "attrs": {
+      "combo": "7-60K",
+      "line": "CX",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "x-blade-whale-wave",
+      "x-ratchet-7-60",
+      "x-bit-rhino"
+    ]
+  },
+  {
+    "id": "prod-x-cx-05-starter",
+    "generation": "x",
+    "skuType": "starter",
+    "nameEn": "Whale Wave Starter",
+    "nameJp": null,
+    "productCodes": [
+      "CX-05"
+    ],
+    "attrs": {
+      "combo": "7-60K",
+      "line": "CX",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "x-blade-whale-wave",
+      "x-ratchet-7-60",
+      "x-bit-rhino"
+    ]
+  },
+  {
+    "id": "prod-x-cx-06-complete-loose",
+    "generation": "x",
+    "skuType": "complete_loose",
+    "nameEn": "Brush (9-70GR)",
+    "nameJp": null,
+    "productCodes": [
+      "CX-06"
+    ],
+    "attrs": {
+      "combo": "9-70GR",
+      "line": "CX",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "x-blade-brush",
+      "x-ratchet-9-70",
+      "x-bit-fox"
+    ]
+  },
+  {
+    "id": "prod-x-cx-06-complete-sealed",
+    "generation": "x",
+    "skuType": "complete_sealed",
+    "nameEn": "Brush (Sealed)",
+    "nameJp": null,
+    "productCodes": [
+      "CX-06"
+    ],
+    "attrs": {
+      "combo": "9-70GR",
+      "line": "CX",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "x-blade-brush",
+      "x-ratchet-9-70",
+      "x-bit-fox"
+    ]
+  },
+  {
+    "id": "prod-x-cx-06-starter",
+    "generation": "x",
+    "skuType": "starter",
+    "nameEn": "Brush Starter",
+    "nameJp": null,
+    "productCodes": [
+      "CX-06"
+    ],
+    "attrs": {
+      "combo": "9-70GR",
+      "line": "CX",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "x-blade-brush",
+      "x-ratchet-9-70",
+      "x-bit-fox"
+    ]
+  },
+  {
+    "id": "prod-x-cx-08-complete-loose",
+    "generation": "x",
+    "skuType": "complete_loose",
+    "nameEn": "Cobalt Dragoon (4-55WB)",
+    "nameJp": null,
+    "productCodes": [
+      "CX-08"
+    ],
+    "attrs": {
+      "combo": "4-55WB",
+      "line": "CX",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "x-blade-cobalt-dragoon",
+      "x-ratchet-4-55",
+      "x-bit-cerberus"
+    ]
+  },
+  {
+    "id": "prod-x-cx-08-complete-sealed",
+    "generation": "x",
+    "skuType": "complete_sealed",
+    "nameEn": "Cobalt Dragoon (Sealed)",
+    "nameJp": null,
+    "productCodes": [
+      "CX-08"
+    ],
+    "attrs": {
+      "combo": "4-55WB",
+      "line": "CX",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "x-blade-cobalt-dragoon",
+      "x-ratchet-4-55",
+      "x-bit-cerberus"
+    ]
+  },
+  {
+    "id": "prod-x-cx-08-starter",
+    "generation": "x",
+    "skuType": "starter",
+    "nameEn": "Cobalt Dragoon Starter",
+    "nameJp": null,
+    "productCodes": [
+      "CX-08"
+    ],
+    "attrs": {
+      "combo": "4-55WB",
+      "line": "CX",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "x-blade-cobalt-dragoon",
+      "x-ratchet-4-55",
+      "x-bit-cerberus"
+    ]
+  },
+  {
+    "id": "prod-x-cx-09-complete-loose",
+    "generation": "x",
+    "skuType": "complete_loose",
+    "nameEn": "Eclipse (5-70TK)",
+    "nameJp": null,
+    "productCodes": [
+      "CX-09"
+    ],
+    "attrs": {
+      "combo": "5-70TK",
+      "line": "CX",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "x-blade-eclipse",
+      "x-ratchet-5-70",
+      "x-bit-tk"
+    ]
+  },
+  {
+    "id": "prod-x-cx-09-complete-sealed",
+    "generation": "x",
+    "skuType": "complete_sealed",
+    "nameEn": "Eclipse (Sealed)",
+    "nameJp": null,
+    "productCodes": [
+      "CX-09"
+    ],
+    "attrs": {
+      "combo": "5-70TK",
+      "line": "CX",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "x-blade-eclipse",
+      "x-ratchet-5-70",
+      "x-bit-tk"
+    ]
+  },
+  {
+    "id": "prod-x-cx-09-starter",
+    "generation": "x",
+    "skuType": "starter",
+    "nameEn": "Eclipse Starter",
+    "nameJp": null,
+    "productCodes": [
+      "CX-09"
+    ],
+    "attrs": {
+      "combo": "5-70TK",
+      "line": "CX",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "x-blade-eclipse",
+      "x-ratchet-5-70",
+      "x-bit-tk"
+    ]
+  },
+  {
+    "id": "prod-x-cx-10-complete-loose",
+    "generation": "x",
+    "skuType": "complete_loose",
+    "nameEn": "Hunt (0-60DB)",
+    "nameJp": null,
+    "productCodes": [
+      "CX-10"
+    ],
+    "attrs": {
+      "combo": "0-60DB",
+      "line": "CX",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "x-blade-hunt",
+      "x-ratchet-0-60",
+      "x-bit-wolf"
+    ]
+  },
+  {
+    "id": "prod-x-cx-10-complete-sealed",
+    "generation": "x",
+    "skuType": "complete_sealed",
+    "nameEn": "Hunt (Sealed)",
+    "nameJp": null,
+    "productCodes": [
+      "CX-10"
+    ],
+    "attrs": {
+      "combo": "0-60DB",
+      "line": "CX",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "x-blade-hunt",
+      "x-ratchet-0-60",
+      "x-bit-wolf"
+    ]
+  },
+  {
+    "id": "prod-x-cx-10-starter",
+    "generation": "x",
+    "skuType": "starter",
+    "nameEn": "Hunt Starter",
+    "nameJp": null,
+    "productCodes": [
+      "CX-10"
+    ],
+    "attrs": {
+      "combo": "0-60DB",
+      "line": "CX",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "x-blade-hunt",
+      "x-ratchet-0-60",
+      "x-bit-wolf"
+    ]
+  },
+  {
+    "id": "prod-x-cx-11-complete-loose",
+    "generation": "x",
+    "skuType": "complete_loose",
+    "nameEn": "Shark Gill (5-60FB)",
+    "nameJp": null,
+    "productCodes": [
+      "CX-11"
+    ],
+    "attrs": {
+      "combo": "5-60FB",
+      "line": "CX",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "x-blade-shark-gill",
+      "x-ratchet-5-60",
+      "x-bit-emperor"
+    ]
+  },
+  {
+    "id": "prod-x-cx-11-complete-sealed",
+    "generation": "x",
+    "skuType": "complete_sealed",
+    "nameEn": "Shark Gill (Sealed)",
+    "nameJp": null,
+    "productCodes": [
+      "CX-11"
+    ],
+    "attrs": {
+      "combo": "5-60FB",
+      "line": "CX",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "x-blade-shark-gill",
+      "x-ratchet-5-60",
+      "x-bit-emperor"
+    ]
+  },
+  {
+    "id": "prod-x-cx-11-starter",
+    "generation": "x",
+    "skuType": "starter",
+    "nameEn": "Shark Gill Starter",
+    "nameJp": null,
+    "productCodes": [
+      "CX-11"
+    ],
+    "attrs": {
+      "combo": "5-60FB",
+      "line": "CX",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "x-blade-shark-gill",
+      "x-ratchet-5-60",
+      "x-bit-emperor"
+    ]
+  },
+  {
+    "id": "prod-x-cx-13-complete-loose",
+    "generation": "x",
+    "skuType": "complete_loose",
+    "nameEn": "Blitz (1-50I)",
+    "nameJp": null,
+    "productCodes": [
+      "CX-13"
+    ],
+    "attrs": {
+      "combo": "1-50I",
+      "line": "CX",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "x-blade-blitz",
+      "x-ratchet-1-50",
+      "x-bit-bahamut"
+    ]
+  },
+  {
+    "id": "prod-x-cx-13-complete-sealed",
+    "generation": "x",
+    "skuType": "complete_sealed",
+    "nameEn": "Blitz (Sealed)",
+    "nameJp": null,
+    "productCodes": [
+      "CX-13"
+    ],
+    "attrs": {
+      "combo": "1-50I",
+      "line": "CX",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "x-blade-blitz",
+      "x-ratchet-1-50",
+      "x-bit-bahamut"
+    ]
+  },
+  {
+    "id": "prod-x-cx-13-starter",
+    "generation": "x",
+    "skuType": "starter",
+    "nameEn": "Blitz Starter",
+    "nameJp": null,
+    "productCodes": [
+      "CX-13"
+    ],
+    "attrs": {
+      "combo": "1-50I",
+      "line": "CX",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "x-blade-blitz",
+      "x-ratchet-1-50",
+      "x-bit-bahamut"
+    ]
+  },
+  {
+    "id": "prod-x-cx-14-complete-loose",
+    "generation": "x",
+    "skuType": "complete_loose",
+    "nameEn": "Fortress (8-70UN)",
+    "nameJp": null,
+    "productCodes": [
+      "CX-14"
+    ],
+    "attrs": {
+      "combo": "8-70UN",
+      "line": "CX",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "x-blade-fortress",
+      "x-ratchet-8-70",
+      "x-bit-knight"
+    ]
+  },
+  {
+    "id": "prod-x-cx-14-complete-sealed",
+    "generation": "x",
+    "skuType": "complete_sealed",
+    "nameEn": "Fortress (Sealed)",
+    "nameJp": null,
+    "productCodes": [
+      "CX-14"
+    ],
+    "attrs": {
+      "combo": "8-70UN",
+      "line": "CX",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "x-blade-fortress",
+      "x-ratchet-8-70",
+      "x-bit-knight"
+    ]
+  },
+  {
+    "id": "prod-x-cx-14-starter",
+    "generation": "x",
+    "skuType": "starter",
+    "nameEn": "Fortress Starter",
+    "nameJp": null,
+    "productCodes": [
+      "CX-14"
+    ],
+    "attrs": {
+      "combo": "8-70UN",
+      "line": "CX",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "x-blade-fortress",
+      "x-ratchet-8-70",
+      "x-bit-knight"
+    ]
+  },
+  {
+    "id": "prod-x-cx-15-complete-loose",
+    "generation": "x",
+    "skuType": "complete_loose",
+    "nameEn": "Rage (4-55Y)",
+    "nameJp": null,
+    "productCodes": [
+      "CX-15"
+    ],
+    "attrs": {
+      "combo": "4-55Y",
+      "line": "CX",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "x-blade-rage",
+      "x-ratchet-4-55",
+      "x-bit-ragna"
+    ]
+  },
+  {
+    "id": "prod-x-cx-15-complete-sealed",
+    "generation": "x",
+    "skuType": "complete_sealed",
+    "nameEn": "Rage (Sealed)",
+    "nameJp": null,
+    "productCodes": [
+      "CX-15"
+    ],
+    "attrs": {
+      "combo": "4-55Y",
+      "line": "CX",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "x-blade-rage",
+      "x-ratchet-4-55",
+      "x-bit-ragna"
+    ]
+  },
+  {
+    "id": "prod-x-cx-15-starter",
+    "generation": "x",
+    "skuType": "starter",
+    "nameEn": "Rage Starter",
+    "nameJp": null,
+    "productCodes": [
+      "CX-15"
+    ],
+    "attrs": {
+      "combo": "4-55Y",
+      "line": "CX",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "x-blade-rage",
+      "x-ratchet-4-55",
+      "x-bit-ragna"
+    ]
+  },
+  {
+    "id": "prod-x-cx-17-complete-loose",
+    "generation": "x",
+    "skuType": "complete_loose",
+    "nameEn": "Samurai Saber (9-65LO)",
+    "nameJp": null,
+    "productCodes": [
+      "CX-17"
+    ],
+    "attrs": {
+      "combo": "9-65LO",
+      "line": "CX",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "x-blade-samurai-saber",
+      "x-ratchet-9-65",
+      "x-bit-gr"
+    ]
+  },
+  {
+    "id": "prod-x-cx-17-complete-sealed",
+    "generation": "x",
+    "skuType": "complete_sealed",
+    "nameEn": "Samurai Saber (Sealed)",
+    "nameJp": null,
+    "productCodes": [
+      "CX-17"
+    ],
+    "attrs": {
+      "combo": "9-65LO",
+      "line": "CX",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "x-blade-samurai-saber",
+      "x-ratchet-9-65",
+      "x-bit-gr"
+    ]
+  },
+  {
+    "id": "prod-x-cx-17-starter",
+    "generation": "x",
+    "skuType": "starter",
+    "nameEn": "Samurai Saber Starter",
+    "nameJp": null,
+    "productCodes": [
+      "CX-17"
+    ],
+    "attrs": {
+      "combo": "9-65LO",
+      "line": "CX",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "x-blade-samurai-saber",
+      "x-ratchet-9-65",
+      "x-bit-gr"
+    ]
+  },
+  {
+    "id": "prod-x-ux-00-sealed",
+    "generation": "x",
+    "skuType": "sealed",
+    "nameEn": "UX-00 Ultimate Starter",
+    "nameJp": "UX-00 アルティメットスターター",
+    "productCodes": [
+      "UX-00"
+    ],
+    "attrs": {
+      "line": "UX",
+      "recipeKind": "contents",
+      "defaultComboPartIds": [
+        "x-blade-aero-pegasus",
+        "x-ratchet-0-70",
+        "x-bit-a"
+      ]
+    },
+    "partIds": [
+      "x-bit-a",
+      "x-bit-bs",
+      "x-bit-db",
+      "x-bit-gn",
+      "x-bit-h",
+      "x-bit-l",
+      "x-bit-lf",
+      "x-bit-n",
+      "x-bit-z",
+      "x-blade-aero-pegasus",
+      "x-blade-dran-buster",
+      "x-blade-dran-dagger",
+      "x-bx-01-blade",
+      "x-blade-hells-hammer",
+      "x-blade-knight-mail",
+      "x-blade-samurai-saber",
+      "x-blade-scorpio-spear",
+      "x-blade-wizard-rod",
+      "x-ratchet-0-70",
+      "x-ratchet-1-60",
+      "x-ratchet-2-70",
+      "x-ratchet-2-80",
+      "x-ratchet-3-70",
+      "x-ratchet-3-85",
+      "x-ratchet-4-80",
+      "x-ratchet-5-70",
+      "x-ratchet-9-60"
+    ]
+  },
+  {
+    "id": "prod-x-ux-01-complete-loose",
+    "generation": "x",
+    "skuType": "complete_loose",
+    "nameEn": "Dran Buster (1-60A)",
+    "nameJp": null,
+    "productCodes": [
+      "UX-01"
+    ],
+    "attrs": {
+      "combo": "1-60A",
+      "line": "UX",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "x-blade-dran-buster",
+      "x-ratchet-1-60",
+      "x-bit-a"
+    ]
+  },
+  {
+    "id": "prod-x-ux-01-complete-sealed",
+    "generation": "x",
+    "skuType": "complete_sealed",
+    "nameEn": "Dran Buster (Sealed)",
+    "nameJp": null,
+    "productCodes": [
+      "UX-01"
+    ],
+    "attrs": {
+      "combo": "1-60A",
+      "line": "UX",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "x-blade-dran-buster",
+      "x-ratchet-1-60",
+      "x-bit-a"
+    ]
+  },
+  {
+    "id": "prod-x-ux-01-starter",
+    "generation": "x",
+    "skuType": "starter",
+    "nameEn": "Dran Buster Starter",
+    "nameJp": null,
+    "productCodes": [
+      "UX-01"
+    ],
+    "attrs": {
+      "combo": "1-60A",
+      "line": "UX",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "x-blade-dran-buster",
+      "x-ratchet-1-60",
+      "x-bit-a"
+    ]
+  },
+  {
+    "id": "prod-x-ux-02-complete-loose",
+    "generation": "x",
+    "skuType": "complete_loose",
+    "nameEn": "Hells Hammer (3-70H)",
+    "nameJp": null,
+    "productCodes": [
+      "UX-02"
+    ],
+    "attrs": {
+      "combo": "3-70H",
+      "line": "UX",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "x-blade-hells-hammer",
+      "x-ratchet-3-70",
+      "x-bit-h"
+    ]
+  },
+  {
+    "id": "prod-x-ux-02-complete-sealed",
+    "generation": "x",
+    "skuType": "complete_sealed",
+    "nameEn": "Hells Hammer (Sealed)",
+    "nameJp": null,
+    "productCodes": [
+      "UX-02"
+    ],
+    "attrs": {
+      "combo": "3-70H",
+      "line": "UX",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "x-blade-hells-hammer",
+      "x-ratchet-3-70",
+      "x-bit-h"
+    ]
+  },
+  {
+    "id": "prod-x-ux-02-starter",
+    "generation": "x",
+    "skuType": "starter",
+    "nameEn": "Hells Hammer Starter",
+    "nameJp": null,
+    "productCodes": [
+      "UX-02"
+    ],
+    "attrs": {
+      "combo": "3-70H",
+      "line": "UX",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "x-blade-hells-hammer",
+      "x-ratchet-3-70",
+      "x-bit-h"
+    ]
+  },
+  {
+    "id": "prod-x-ux-03-complete-loose",
+    "generation": "x",
+    "skuType": "complete_loose",
+    "nameEn": "Wizard Rod (5-70DB)",
+    "nameJp": null,
+    "productCodes": [
+      "UX-03"
+    ],
+    "attrs": {
+      "combo": "5-70DB",
+      "line": "UX",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "x-blade-wizard-rod",
+      "x-ratchet-5-70",
+      "x-bit-db"
+    ]
+  },
+  {
+    "id": "prod-x-ux-03-complete-sealed",
+    "generation": "x",
+    "skuType": "complete_sealed",
+    "nameEn": "Wizard Rod (Sealed)",
+    "nameJp": null,
+    "productCodes": [
+      "UX-03"
+    ],
+    "attrs": {
+      "combo": "5-70DB",
+      "line": "UX",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "x-blade-wizard-rod",
+      "x-ratchet-5-70",
+      "x-bit-db"
+    ]
+  },
+  {
+    "id": "prod-x-ux-03-starter",
+    "generation": "x",
+    "skuType": "starter",
+    "nameEn": "Wizard Rod Starter",
+    "nameJp": null,
+    "productCodes": [
+      "UX-03"
+    ],
+    "attrs": {
+      "combo": "5-70DB",
+      "line": "UX",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "x-blade-wizard-rod",
+      "x-ratchet-5-70",
+      "x-bit-db"
+    ]
+  },
+  {
+    "id": "prod-x-ux-05-complete-loose",
+    "generation": "x",
+    "skuType": "complete_loose",
+    "nameEn": "Shinobi Shadow (1-80MN)",
+    "nameJp": null,
+    "productCodes": [
+      "UX-05"
+    ],
+    "attrs": {
+      "combo": "1-80MN",
+      "line": "UX",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "x-blade-shinobi-shadow",
+      "x-ratchet-1-80",
+      "x-bit-mn"
+    ]
+  },
+  {
+    "id": "prod-x-ux-05-complete-sealed",
+    "generation": "x",
+    "skuType": "complete_sealed",
+    "nameEn": "Shinobi Shadow (Sealed)",
+    "nameJp": null,
+    "productCodes": [
+      "UX-05"
+    ],
+    "attrs": {
+      "combo": "1-80MN",
+      "line": "UX",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "x-blade-shinobi-shadow",
+      "x-ratchet-1-80",
+      "x-bit-mn"
+    ]
+  },
+  {
+    "id": "prod-x-ux-05-starter",
+    "generation": "x",
+    "skuType": "starter",
+    "nameEn": "Shinobi Shadow Starter",
+    "nameJp": null,
+    "productCodes": [
+      "UX-05"
+    ],
+    "attrs": {
+      "combo": "1-80MN",
+      "line": "UX",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "x-blade-shinobi-shadow",
+      "x-ratchet-1-80",
+      "x-bit-mn"
+    ]
+  },
+  {
+    "id": "prod-x-ux-06-complete-loose",
+    "generation": "x",
+    "skuType": "complete_loose",
+    "nameEn": "Leon Crest (7-60GN)",
+    "nameJp": null,
+    "productCodes": [
+      "UX-06"
+    ],
+    "attrs": {
+      "combo": "7-60GN",
+      "line": "UX",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "x-blade-leon-crest",
+      "x-ratchet-7-60",
+      "x-bit-gn"
+    ]
+  },
+  {
+    "id": "prod-x-ux-06-complete-sealed",
+    "generation": "x",
+    "skuType": "complete_sealed",
+    "nameEn": "Leon Crest (Sealed)",
+    "nameJp": null,
+    "productCodes": [
+      "UX-06"
+    ],
+    "attrs": {
+      "combo": "7-60GN",
+      "line": "UX",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "x-blade-leon-crest",
+      "x-ratchet-7-60",
+      "x-bit-gn"
+    ]
+  },
+  {
+    "id": "prod-x-ux-06-starter",
+    "generation": "x",
+    "skuType": "starter",
+    "nameEn": "Leon Crest Starter",
+    "nameJp": null,
+    "productCodes": [
+      "UX-06"
+    ],
+    "attrs": {
+      "combo": "7-60GN",
+      "line": "UX",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "x-blade-leon-crest",
+      "x-ratchet-7-60",
+      "x-bit-gn"
+    ]
+  },
+  {
+    "id": "prod-x-ux-07-complete-loose",
+    "generation": "x",
+    "skuType": "complete_loose",
+    "nameEn": "Wyvern Gale (2-60S)",
+    "nameJp": null,
+    "productCodes": [
+      "UX-07"
+    ],
+    "attrs": {
+      "combo": "2-60S",
+      "line": "UX",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "x-blade-wyvern-gale",
+      "x-ratchet-2-60",
+      "x-bit-g"
+    ]
+  },
+  {
+    "id": "prod-x-ux-07-complete-sealed",
+    "generation": "x",
+    "skuType": "complete_sealed",
+    "nameEn": "Wyvern Gale (Sealed)",
+    "nameJp": null,
+    "productCodes": [
+      "UX-07"
+    ],
+    "attrs": {
+      "combo": "2-60S",
+      "line": "UX",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "x-blade-wyvern-gale",
+      "x-ratchet-2-60",
+      "x-bit-g"
+    ]
+  },
+  {
+    "id": "prod-x-ux-07-starter",
+    "generation": "x",
+    "skuType": "starter",
+    "nameEn": "Wyvern Gale Starter",
+    "nameJp": null,
+    "productCodes": [
+      "UX-07"
+    ],
+    "attrs": {
+      "combo": "2-60S",
+      "line": "UX",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "x-blade-wyvern-gale",
+      "x-ratchet-2-60",
+      "x-bit-g"
+    ]
+  },
+  {
+    "id": "prod-x-ux-08-complete-loose",
+    "generation": "x",
+    "skuType": "complete_loose",
+    "nameEn": "Silver Wolf (3-80FB)",
+    "nameJp": null,
+    "productCodes": [
+      "UX-08"
+    ],
+    "attrs": {
+      "combo": "3-80FB",
+      "line": "UX",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "x-blade-silver-wolf",
+      "x-ratchet-3-80",
+      "x-bit-fb"
+    ]
+  },
+  {
+    "id": "prod-x-ux-08-complete-sealed",
+    "generation": "x",
+    "skuType": "complete_sealed",
+    "nameEn": "Silver Wolf (Sealed)",
+    "nameJp": null,
+    "productCodes": [
+      "UX-08"
+    ],
+    "attrs": {
+      "combo": "3-80FB",
+      "line": "UX",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "x-blade-silver-wolf",
+      "x-ratchet-3-80",
+      "x-bit-fb"
+    ]
+  },
+  {
+    "id": "prod-x-ux-08-starter",
+    "generation": "x",
+    "skuType": "starter",
+    "nameEn": "Silver Wolf Starter",
+    "nameJp": null,
+    "productCodes": [
+      "UX-08"
+    ],
+    "attrs": {
+      "combo": "3-80FB",
+      "line": "UX",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "x-blade-silver-wolf",
+      "x-ratchet-3-80",
+      "x-bit-fb"
+    ]
+  },
+  {
+    "id": "prod-x-ux-09-complete-loose",
+    "generation": "x",
+    "skuType": "complete_loose",
+    "nameEn": "Samurai Saber (2-70L)",
+    "nameJp": null,
+    "productCodes": [
+      "UX-09"
+    ],
+    "attrs": {
+      "combo": "2-70L",
+      "line": "UX",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "x-blade-samurai-saber",
+      "x-ratchet-2-70",
+      "x-bit-l"
+    ]
+  },
+  {
+    "id": "prod-x-ux-09-complete-sealed",
+    "generation": "x",
+    "skuType": "complete_sealed",
+    "nameEn": "Samurai Saber (Sealed)",
+    "nameJp": null,
+    "productCodes": [
+      "UX-09"
+    ],
+    "attrs": {
+      "combo": "2-70L",
+      "line": "UX",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "x-blade-samurai-saber",
+      "x-ratchet-2-70",
+      "x-bit-l"
+    ]
+  },
+  {
+    "id": "prod-x-ux-09-starter",
+    "generation": "x",
+    "skuType": "starter",
+    "nameEn": "Samurai Saber Starter",
+    "nameJp": null,
+    "productCodes": [
+      "UX-09"
+    ],
+    "attrs": {
+      "combo": "2-70L",
+      "line": "UX",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "x-blade-samurai-saber",
+      "x-ratchet-2-70",
+      "x-bit-l"
+    ]
+  },
+  {
+    "id": "prod-x-ux-10-complete-loose",
+    "generation": "x",
+    "skuType": "complete_loose",
+    "nameEn": "Knight Mail (3-85BS)",
+    "nameJp": null,
+    "productCodes": [
+      "UX-10"
+    ],
+    "attrs": {
+      "combo": "3-85BS",
+      "line": "UX",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "x-blade-knight-mail",
+      "x-ratchet-3-85",
+      "x-bit-ra"
+    ]
+  },
+  {
+    "id": "prod-x-ux-10-complete-sealed",
+    "generation": "x",
+    "skuType": "complete_sealed",
+    "nameEn": "Knight Mail (Sealed)",
+    "nameJp": null,
+    "productCodes": [
+      "UX-10"
+    ],
+    "attrs": {
+      "combo": "3-85BS",
+      "line": "UX",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "x-blade-knight-mail",
+      "x-ratchet-3-85",
+      "x-bit-ra"
+    ]
+  },
+  {
+    "id": "prod-x-ux-10-starter",
+    "generation": "x",
+    "skuType": "starter",
+    "nameEn": "Knight Mail Starter",
+    "nameJp": null,
+    "productCodes": [
+      "UX-10"
+    ],
+    "attrs": {
+      "combo": "3-85BS",
+      "line": "UX",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "x-blade-knight-mail",
+      "x-ratchet-3-85",
+      "x-bit-ra"
+    ]
+  },
+  {
+    "id": "prod-x-ux-11-complete-loose",
+    "generation": "x",
+    "skuType": "complete_loose",
+    "nameEn": "Impact Drake (9-60LR)",
+    "nameJp": null,
+    "productCodes": [
+      "UX-11"
+    ],
+    "attrs": {
+      "combo": "9-60LR",
+      "line": "UX",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "x-blade-impact-drake",
+      "x-ratchet-9-60",
+      "x-bit-lr"
+    ]
+  },
+  {
+    "id": "prod-x-ux-11-complete-sealed",
+    "generation": "x",
+    "skuType": "complete_sealed",
+    "nameEn": "Impact Drake (Sealed)",
+    "nameJp": null,
+    "productCodes": [
+      "UX-11"
+    ],
+    "attrs": {
+      "combo": "9-60LR",
+      "line": "UX",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "x-blade-impact-drake",
+      "x-ratchet-9-60",
+      "x-bit-lr"
+    ]
+  },
+  {
+    "id": "prod-x-ux-11-starter",
+    "generation": "x",
+    "skuType": "starter",
+    "nameEn": "Impact Drake Starter",
+    "nameJp": null,
+    "productCodes": [
+      "UX-11"
+    ],
+    "attrs": {
+      "combo": "9-60LR",
+      "line": "UX",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "x-blade-impact-drake",
+      "x-ratchet-9-60",
+      "x-bit-lr"
+    ]
+  },
+  {
+    "id": "prod-x-ux-12-complete-loose",
+    "generation": "x",
+    "skuType": "complete_loose",
+    "nameEn": "Phoenix Feather (2-60N)",
+    "nameJp": null,
+    "productCodes": [
+      "UX-12"
+    ],
+    "attrs": {
+      "combo": "2-60N",
+      "line": "UX",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "x-blade-phoenix-feather",
+      "x-ratchet-2-60",
+      "x-bit-n"
+    ]
+  },
+  {
+    "id": "prod-x-ux-12-complete-sealed",
+    "generation": "x",
+    "skuType": "complete_sealed",
+    "nameEn": "Phoenix Feather (Sealed)",
+    "nameJp": null,
+    "productCodes": [
+      "UX-12"
+    ],
+    "attrs": {
+      "combo": "2-60N",
+      "line": "UX",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "x-blade-phoenix-feather",
+      "x-ratchet-2-60",
+      "x-bit-n"
+    ]
+  },
+  {
+    "id": "prod-x-ux-12-starter",
+    "generation": "x",
+    "skuType": "starter",
+    "nameEn": "Phoenix Feather Starter",
+    "nameJp": null,
+    "productCodes": [
+      "UX-12"
+    ],
+    "attrs": {
+      "combo": "2-60N",
+      "line": "UX",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "x-blade-phoenix-feather",
+      "x-ratchet-2-60",
+      "x-bit-n"
+    ]
+  },
+  {
+    "id": "prod-x-ux-13-complete-loose",
+    "generation": "x",
+    "skuType": "complete_loose",
+    "nameEn": "Golem Rock (1-60UN)",
+    "nameJp": null,
+    "productCodes": [
+      "UX-13"
+    ],
+    "attrs": {
+      "combo": "1-60UN",
+      "line": "UX",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "x-blade-golem-rock",
+      "x-ratchet-1-60",
+      "x-bit-un"
+    ]
+  },
+  {
+    "id": "prod-x-ux-13-complete-sealed",
+    "generation": "x",
+    "skuType": "complete_sealed",
+    "nameEn": "Golem Rock (Sealed)",
+    "nameJp": null,
+    "productCodes": [
+      "UX-13"
+    ],
+    "attrs": {
+      "combo": "1-60UN",
+      "line": "UX",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "x-blade-golem-rock",
+      "x-ratchet-1-60",
+      "x-bit-un"
+    ]
+  },
+  {
+    "id": "prod-x-ux-13-starter",
+    "generation": "x",
+    "skuType": "starter",
+    "nameEn": "Golem Rock Starter",
+    "nameJp": null,
+    "productCodes": [
+      "UX-13"
+    ],
+    "attrs": {
+      "combo": "1-60UN",
+      "line": "UX",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "x-blade-golem-rock",
+      "x-ratchet-1-60",
+      "x-bit-un"
+    ]
+  },
+  {
+    "id": "prod-x-ux-14-complete-loose",
+    "generation": "x",
+    "skuType": "complete_loose",
+    "nameEn": "Scorpio Spear (0-70Z)",
+    "nameJp": null,
+    "productCodes": [
+      "UX-14"
+    ],
+    "attrs": {
+      "combo": "0-70Z",
+      "line": "UX",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "x-blade-scorpio-spear",
+      "x-ratchet-0-70",
+      "x-bit-z"
+    ]
+  },
+  {
+    "id": "prod-x-ux-14-complete-sealed",
+    "generation": "x",
+    "skuType": "complete_sealed",
+    "nameEn": "Scorpio Spear (Sealed)",
+    "nameJp": null,
+    "productCodes": [
+      "UX-14"
+    ],
+    "attrs": {
+      "combo": "0-70Z",
+      "line": "UX",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "x-blade-scorpio-spear",
+      "x-ratchet-0-70",
+      "x-bit-z"
+    ]
+  },
+  {
+    "id": "prod-x-ux-14-starter",
+    "generation": "x",
+    "skuType": "starter",
+    "nameEn": "Scorpio Spear Starter",
+    "nameJp": null,
+    "productCodes": [
+      "UX-14"
+    ],
+    "attrs": {
+      "combo": "0-70Z",
+      "line": "UX",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "x-blade-scorpio-spear",
+      "x-ratchet-0-70",
+      "x-bit-z"
+    ]
+  },
+  {
+    "id": "prod-x-ux-15-complete-loose",
+    "generation": "x",
+    "skuType": "complete_loose",
+    "nameEn": "Shark Scale (4-50UF)",
+    "nameJp": null,
+    "productCodes": [
+      "UX-15"
+    ],
+    "attrs": {
+      "combo": "4-50UF",
+      "line": "UX",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "x-blade-shark-scale",
+      "x-ratchet-4-50",
+      "x-bit-uf"
+    ]
+  },
+  {
+    "id": "prod-x-ux-15-complete-sealed",
+    "generation": "x",
+    "skuType": "complete_sealed",
+    "nameEn": "Shark Scale (Sealed)",
+    "nameJp": null,
+    "productCodes": [
+      "UX-15"
+    ],
+    "attrs": {
+      "combo": "4-50UF",
+      "line": "UX",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "x-blade-shark-scale",
+      "x-ratchet-4-50",
+      "x-bit-uf"
+    ]
+  },
+  {
+    "id": "prod-x-ux-15-starter",
+    "generation": "x",
+    "skuType": "starter",
+    "nameEn": "Shark Scale Starter",
+    "nameJp": null,
+    "productCodes": [
+      "UX-15"
+    ],
+    "attrs": {
+      "combo": "4-50UF",
+      "line": "UX",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "x-blade-shark-scale",
+      "x-ratchet-4-50",
+      "x-bit-uf"
+    ]
+  },
+  {
+    "id": "prod-x-ux-16-complete-loose",
+    "generation": "x",
+    "skuType": "complete_loose",
+    "nameEn": "Clock Mirage (9-65B)",
+    "nameJp": null,
+    "productCodes": [
+      "UX-16"
+    ],
+    "attrs": {
+      "combo": "9-65B",
+      "line": "UX",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "x-blade-clock-mirage",
+      "x-ratchet-9-65",
+      "x-bx-07-bit"
+    ]
+  },
+  {
+    "id": "prod-x-ux-16-complete-sealed",
+    "generation": "x",
+    "skuType": "complete_sealed",
+    "nameEn": "Clock Mirage (Sealed)",
+    "nameJp": null,
+    "productCodes": [
+      "UX-16"
+    ],
+    "attrs": {
+      "combo": "9-65B",
+      "line": "UX",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "x-blade-clock-mirage",
+      "x-ratchet-9-65",
+      "x-bx-07-bit"
+    ]
+  },
+  {
+    "id": "prod-x-ux-16-starter",
+    "generation": "x",
+    "skuType": "starter",
+    "nameEn": "Clock Mirage Starter",
+    "nameJp": null,
+    "productCodes": [
+      "UX-16"
+    ],
+    "attrs": {
+      "combo": "9-65B",
+      "line": "UX",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "x-blade-clock-mirage",
+      "x-ratchet-9-65",
+      "x-bx-07-bit"
+    ]
+  },
+  {
+    "id": "prod-x-ux-18-complete-loose",
+    "generation": "x",
+    "skuType": "complete_loose",
+    "nameEn": "Mummy Curse (7-55W)",
+    "nameJp": null,
+    "productCodes": [
+      "UX-18"
+    ],
+    "attrs": {
+      "combo": "7-55W",
+      "line": "UX",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "x-blade-mummy-curse",
+      "x-ratchet-7-55",
+      "x-bit-g"
+    ]
+  },
+  {
+    "id": "prod-x-ux-18-complete-sealed",
+    "generation": "x",
+    "skuType": "complete_sealed",
+    "nameEn": "Mummy Curse (Sealed)",
+    "nameJp": null,
+    "productCodes": [
+      "UX-18"
+    ],
+    "attrs": {
+      "combo": "7-55W",
+      "line": "UX",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "x-blade-mummy-curse",
+      "x-ratchet-7-55",
+      "x-bit-g"
+    ]
+  },
+  {
+    "id": "prod-x-ux-18-starter",
+    "generation": "x",
+    "skuType": "starter",
+    "nameEn": "Mummy Curse Starter",
+    "nameJp": null,
+    "productCodes": [
+      "UX-18"
+    ],
+    "attrs": {
+      "combo": "7-55W",
+      "line": "UX",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "x-blade-mummy-curse",
+      "x-ratchet-7-55",
+      "x-bit-g"
+    ]
+  }
+]

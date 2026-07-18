@@ -1,0 +1,1730 @@
+[
+  {
+    "id": "prod-plastic-bb-01s-starter",
+    "generation": "plastic",
+    "skuType": "starter",
+    "nameEn": "Dragoon S Starter",
+    "nameJp": "ドラグーンS スターター",
+    "productCodes": [
+      "BB-01S",
+      "A-1"
+    ],
+    "attrs": {
+      "combo": "S",
+      "line": "BB",
+      "seedAttribution": "Beyblade Fandom wiki Attack Ring/Blade Base recipes; Takara BB-/A- codes; parts.json",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "plastic-dragoon-ring",
+      "plastic-dragoon-base",
+      "plastic-10-balance"
+    ]
+  },
+  {
+    "id": "prod-plastic-bb-01s-complete-loose",
+    "generation": "plastic",
+    "skuType": "complete_loose",
+    "nameEn": "Dragoon S (Complete)",
+    "nameJp": "ドラグーンS 完成品",
+    "productCodes": [
+      "BB-01S",
+      "A-1"
+    ],
+    "attrs": {
+      "combo": "S",
+      "line": "BB",
+      "seedAttribution": "Beyblade Fandom wiki Attack Ring/Blade Base recipes; Takara BB-/A- codes; parts.json",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "plastic-dragoon-ring",
+      "plastic-dragoon-base",
+      "plastic-10-balance"
+    ]
+  },
+  {
+    "id": "prod-plastic-bb-01s-complete-sealed",
+    "generation": "plastic",
+    "skuType": "complete_sealed",
+    "nameEn": "Dragoon S Starter (Sealed)",
+    "nameJp": "ドラグーンS スターター 未開封",
+    "productCodes": [
+      "BB-01S",
+      "A-1"
+    ],
+    "attrs": {
+      "combo": "S",
+      "line": "BB",
+      "seedAttribution": "Beyblade Fandom wiki Attack Ring/Blade Base recipes; Takara BB-/A- codes; parts.json",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "plastic-dragoon-ring",
+      "plastic-dragoon-base",
+      "plastic-10-balance"
+    ]
+  },
+  {
+    "id": "prod-plastic-bb-02s-starter",
+    "generation": "plastic",
+    "skuType": "starter",
+    "nameEn": "Driger S Starter",
+    "nameJp": "ドライガーS スターター",
+    "productCodes": [
+      "BB-02S"
+    ],
+    "attrs": {
+      "combo": "S",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "plastic-driger-ring",
+      "plastic-blade-base-instant-release-driger-g-version",
+      "plastic-10-balance"
+    ]
+  },
+  {
+    "id": "prod-plastic-bb-02s-complete-loose",
+    "generation": "plastic",
+    "skuType": "complete_loose",
+    "nameEn": "Driger S (Complete)",
+    "nameJp": "ドライガーS 完成品",
+    "productCodes": [
+      "BB-02S"
+    ],
+    "attrs": {
+      "combo": "S",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "plastic-driger-ring",
+      "plastic-blade-base-instant-release-driger-g-version",
+      "plastic-10-balance"
+    ]
+  },
+  {
+    "id": "prod-plastic-bb-02s-complete-sealed",
+    "generation": "plastic",
+    "skuType": "complete_sealed",
+    "nameEn": "Driger S Starter (Sealed)",
+    "nameJp": "ドライガーS スターター 未開封",
+    "productCodes": [
+      "BB-02S"
+    ],
+    "attrs": {
+      "combo": "S",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "plastic-driger-ring",
+      "plastic-blade-base-instant-release-driger-g-version",
+      "plastic-10-balance"
+    ]
+  },
+  {
+    "id": "prod-plastic-bb-03s-starter",
+    "generation": "plastic",
+    "skuType": "starter",
+    "nameEn": "Draciel S Starter",
+    "nameJp": "ドラシエルS スターター",
+    "productCodes": [
+      "BB-03S"
+    ],
+    "attrs": {
+      "combo": "S",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "plastic-attack-ring-flying-defense",
+      "plastic-blade-base-hit-release-draciel-version",
+      "plastic-10-balance"
+    ]
+  },
+  {
+    "id": "prod-plastic-bb-03s-complete-loose",
+    "generation": "plastic",
+    "skuType": "complete_loose",
+    "nameEn": "Draciel S (Complete)",
+    "nameJp": "ドラシエルS 完成品",
+    "productCodes": [
+      "BB-03S"
+    ],
+    "attrs": {
+      "combo": "S",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "plastic-attack-ring-flying-defense",
+      "plastic-blade-base-hit-release-draciel-version",
+      "plastic-10-balance"
+    ]
+  },
+  {
+    "id": "prod-plastic-bb-03s-complete-sealed",
+    "generation": "plastic",
+    "skuType": "complete_sealed",
+    "nameEn": "Draciel S Starter (Sealed)",
+    "nameJp": "ドラシエルS スターター 未開封",
+    "productCodes": [
+      "BB-03S"
+    ],
+    "attrs": {
+      "combo": "S",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "plastic-attack-ring-flying-defense",
+      "plastic-blade-base-hit-release-draciel-version",
+      "plastic-10-balance"
+    ]
+  },
+  {
+    "id": "prod-plastic-bb-04s-starter",
+    "generation": "plastic",
+    "skuType": "starter",
+    "nameEn": "Dranzer S Starter",
+    "nameJp": "ドランザーS スターター",
+    "productCodes": [
+      "BB-04S"
+    ],
+    "attrs": {
+      "combo": "S",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "plastic-attack-ring-cross-dranzer",
+      "plastic-blade-base-hit-release-dranzer-version",
+      "plastic-10-balance"
+    ]
+  },
+  {
+    "id": "prod-plastic-bb-04s-complete-loose",
+    "generation": "plastic",
+    "skuType": "complete_loose",
+    "nameEn": "Dranzer S (Complete)",
+    "nameJp": "ドランザーS 完成品",
+    "productCodes": [
+      "BB-04S"
+    ],
+    "attrs": {
+      "combo": "S",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "plastic-attack-ring-cross-dranzer",
+      "plastic-blade-base-hit-release-dranzer-version",
+      "plastic-10-balance"
+    ]
+  },
+  {
+    "id": "prod-plastic-bb-04s-complete-sealed",
+    "generation": "plastic",
+    "skuType": "complete_sealed",
+    "nameEn": "Dranzer S Starter (Sealed)",
+    "nameJp": "ドランザーS スターター 未開封",
+    "productCodes": [
+      "BB-04S"
+    ],
+    "attrs": {
+      "combo": "S",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "plastic-attack-ring-cross-dranzer",
+      "plastic-blade-base-hit-release-dranzer-version",
+      "plastic-10-balance"
+    ]
+  },
+  {
+    "id": "prod-plastic-bb-05f-starter",
+    "generation": "plastic",
+    "skuType": "starter",
+    "nameEn": "Draciel F Starter",
+    "nameJp": "ドラシエルF スターター",
+    "productCodes": [
+      "BB-05F"
+    ],
+    "attrs": {
+      "combo": "F",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "plastic-attack-ring-flying-defense",
+      "plastic-blade-base-first-clutch-base",
+      "plastic-10-balance"
+    ]
+  },
+  {
+    "id": "prod-plastic-bb-05f-complete-loose",
+    "generation": "plastic",
+    "skuType": "complete_loose",
+    "nameEn": "Draciel F (Complete)",
+    "nameJp": "ドラシエルF 完成品",
+    "productCodes": [
+      "BB-05F"
+    ],
+    "attrs": {
+      "combo": "F",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "plastic-attack-ring-flying-defense",
+      "plastic-blade-base-first-clutch-base",
+      "plastic-10-balance"
+    ]
+  },
+  {
+    "id": "prod-plastic-bb-05f-complete-sealed",
+    "generation": "plastic",
+    "skuType": "complete_sealed",
+    "nameEn": "Draciel F Starter (Sealed)",
+    "nameJp": "ドラシエルF スターター 未開封",
+    "productCodes": [
+      "BB-05F"
+    ],
+    "attrs": {
+      "combo": "F",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "plastic-attack-ring-flying-defense",
+      "plastic-blade-base-first-clutch-base",
+      "plastic-10-balance"
+    ]
+  },
+  {
+    "id": "prod-plastic-bb-06f-starter",
+    "generation": "plastic",
+    "skuType": "starter",
+    "nameEn": "Dranzer F Starter",
+    "nameJp": "ドランザーF スターター",
+    "productCodes": [
+      "BB-06F"
+    ],
+    "attrs": {
+      "combo": "F",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "plastic-attack-ring-cross-dranzer",
+      "plastic-blade-base-hit-release-dranzer-version",
+      "plastic-10-balance"
+    ]
+  },
+  {
+    "id": "prod-plastic-bb-06f-complete-loose",
+    "generation": "plastic",
+    "skuType": "complete_loose",
+    "nameEn": "Dranzer F (Complete)",
+    "nameJp": "ドランザーF 完成品",
+    "productCodes": [
+      "BB-06F"
+    ],
+    "attrs": {
+      "combo": "F",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "plastic-attack-ring-cross-dranzer",
+      "plastic-blade-base-hit-release-dranzer-version",
+      "plastic-10-balance"
+    ]
+  },
+  {
+    "id": "prod-plastic-bb-06f-complete-sealed",
+    "generation": "plastic",
+    "skuType": "complete_sealed",
+    "nameEn": "Dranzer F Starter (Sealed)",
+    "nameJp": "ドランザーF スターター 未開封",
+    "productCodes": [
+      "BB-06F"
+    ],
+    "attrs": {
+      "combo": "F",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "plastic-attack-ring-cross-dranzer",
+      "plastic-blade-base-hit-release-dranzer-version",
+      "plastic-10-balance"
+    ]
+  },
+  {
+    "id": "prod-plastic-bb-07f-starter",
+    "generation": "plastic",
+    "skuType": "starter",
+    "nameEn": "Driger F Starter",
+    "nameJp": "ドライガーF スターター",
+    "productCodes": [
+      "BB-07F"
+    ],
+    "attrs": {
+      "combo": "F",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "plastic-driger-ring",
+      "plastic-blade-base-instant-release-driger-g-version",
+      "plastic-10-balance"
+    ]
+  },
+  {
+    "id": "prod-plastic-bb-07f-complete-loose",
+    "generation": "plastic",
+    "skuType": "complete_loose",
+    "nameEn": "Driger F (Complete)",
+    "nameJp": "ドライガーF 完成品",
+    "productCodes": [
+      "BB-07F"
+    ],
+    "attrs": {
+      "combo": "F",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "plastic-driger-ring",
+      "plastic-blade-base-instant-release-driger-g-version",
+      "plastic-10-balance"
+    ]
+  },
+  {
+    "id": "prod-plastic-bb-07f-complete-sealed",
+    "generation": "plastic",
+    "skuType": "complete_sealed",
+    "nameEn": "Driger F Starter (Sealed)",
+    "nameJp": "ドライガーF スターター 未開封",
+    "productCodes": [
+      "BB-07F"
+    ],
+    "attrs": {
+      "combo": "F",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "plastic-driger-ring",
+      "plastic-blade-base-instant-release-driger-g-version",
+      "plastic-10-balance"
+    ]
+  },
+  {
+    "id": "prod-plastic-bb-08f-starter",
+    "generation": "plastic",
+    "skuType": "starter",
+    "nameEn": "Dragoon F Starter",
+    "nameJp": "ドラグーンF スターター",
+    "productCodes": [
+      "BB-08F"
+    ],
+    "attrs": {
+      "combo": "F",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "plastic-dragoon-ring",
+      "plastic-blade-base-first-clutch-base",
+      "plastic-10-balance"
+    ]
+  },
+  {
+    "id": "prod-plastic-bb-08f-complete-loose",
+    "generation": "plastic",
+    "skuType": "complete_loose",
+    "nameEn": "Dragoon F (Complete)",
+    "nameJp": "ドラグーンF 完成品",
+    "productCodes": [
+      "BB-08F"
+    ],
+    "attrs": {
+      "combo": "F",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "plastic-dragoon-ring",
+      "plastic-blade-base-first-clutch-base",
+      "plastic-10-balance"
+    ]
+  },
+  {
+    "id": "prod-plastic-bb-08f-complete-sealed",
+    "generation": "plastic",
+    "skuType": "complete_sealed",
+    "nameEn": "Dragoon F Starter (Sealed)",
+    "nameJp": "ドラグーンF スターター 未開封",
+    "productCodes": [
+      "BB-08F"
+    ],
+    "attrs": {
+      "combo": "F",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "plastic-dragoon-ring",
+      "plastic-blade-base-first-clutch-base",
+      "plastic-10-balance"
+    ]
+  },
+  {
+    "id": "prod-plastic-a-05-starter",
+    "generation": "plastic",
+    "skuType": "starter",
+    "nameEn": "Salamalyon Starter",
+    "nameJp": "サラマリオン スターター",
+    "productCodes": [
+      "A-05",
+      "BB-17"
+    ],
+    "attrs": {
+      "combo": "Original",
+      "line": "A",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "plastic-salg-ring",
+      "plastic-blade-base-salamalyon-base",
+      "plastic-mg-weight"
+    ]
+  },
+  {
+    "id": "prod-plastic-a-05-complete-loose",
+    "generation": "plastic",
+    "skuType": "complete_loose",
+    "nameEn": "Salamalyon (Complete)",
+    "nameJp": "サラマリオン 完成品",
+    "productCodes": [
+      "A-05",
+      "BB-17"
+    ],
+    "attrs": {
+      "combo": "Original",
+      "line": "A",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "plastic-salg-ring",
+      "plastic-blade-base-salamalyon-base",
+      "plastic-mg-weight"
+    ]
+  },
+  {
+    "id": "prod-plastic-a-05-complete-sealed",
+    "generation": "plastic",
+    "skuType": "complete_sealed",
+    "nameEn": "Salamalyon Starter (Sealed)",
+    "nameJp": "サラマリオン スターター 未開封",
+    "productCodes": [
+      "A-05",
+      "BB-17"
+    ],
+    "attrs": {
+      "combo": "Original",
+      "line": "A",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "plastic-salg-ring",
+      "plastic-blade-base-salamalyon-base",
+      "plastic-mg-weight"
+    ]
+  },
+  {
+    "id": "prod-plastic-bb-12-starter",
+    "generation": "plastic",
+    "skuType": "starter",
+    "nameEn": "Griffolyon Starter",
+    "nameJp": "グリフォリオン スターター",
+    "productCodes": [
+      "BB-12"
+    ],
+    "attrs": {
+      "combo": "V",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "plastic-attack-ring-cross-griffon",
+      "plastic-blade-base-griffolyon-base",
+      "plastic-mg-weight"
+    ]
+  },
+  {
+    "id": "prod-plastic-bb-12-complete-loose",
+    "generation": "plastic",
+    "skuType": "complete_loose",
+    "nameEn": "Griffolyon (Complete)",
+    "nameJp": "グリフォリオン 完成品",
+    "productCodes": [
+      "BB-12"
+    ],
+    "attrs": {
+      "combo": "V",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "plastic-attack-ring-cross-griffon",
+      "plastic-blade-base-griffolyon-base",
+      "plastic-mg-weight"
+    ]
+  },
+  {
+    "id": "prod-plastic-bb-12-complete-sealed",
+    "generation": "plastic",
+    "skuType": "complete_sealed",
+    "nameEn": "Griffolyon Starter (Sealed)",
+    "nameJp": "グリフォリオン スターター 未開封",
+    "productCodes": [
+      "BB-12"
+    ],
+    "attrs": {
+      "combo": "V",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "plastic-attack-ring-cross-griffon",
+      "plastic-blade-base-griffolyon-base",
+      "plastic-mg-weight"
+    ]
+  },
+  {
+    "id": "prod-plastic-bb-22-starter",
+    "generation": "plastic",
+    "skuType": "starter",
+    "nameEn": "Dragoon V Starter",
+    "nameJp": "ドラグーンV スターター",
+    "productCodes": [
+      "BB-22"
+    ],
+    "attrs": {
+      "combo": "V",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "plastic-attack-ring-upper-dragoon",
+      "plastic-grip-base",
+      "plastic-mg-weight"
+    ]
+  },
+  {
+    "id": "prod-plastic-bb-22-complete-loose",
+    "generation": "plastic",
+    "skuType": "complete_loose",
+    "nameEn": "Dragoon V (Complete)",
+    "nameJp": "ドラグーンV 完成品",
+    "productCodes": [
+      "BB-22"
+    ],
+    "attrs": {
+      "combo": "V",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "plastic-attack-ring-upper-dragoon",
+      "plastic-grip-base",
+      "plastic-mg-weight"
+    ]
+  },
+  {
+    "id": "prod-plastic-bb-22-complete-sealed",
+    "generation": "plastic",
+    "skuType": "complete_sealed",
+    "nameEn": "Dragoon V Starter (Sealed)",
+    "nameJp": "ドラグーンV スターター 未開封",
+    "productCodes": [
+      "BB-22"
+    ],
+    "attrs": {
+      "combo": "V",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "plastic-attack-ring-upper-dragoon",
+      "plastic-grip-base",
+      "plastic-mg-weight"
+    ]
+  },
+  {
+    "id": "prod-plastic-bb-23-starter",
+    "generation": "plastic",
+    "skuType": "starter",
+    "nameEn": "Dranzer V Starter",
+    "nameJp": "ドランザーV スターター",
+    "productCodes": [
+      "BB-23"
+    ],
+    "attrs": {
+      "combo": "V",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "plastic-attack-ring-cross-dranzer",
+      "plastic-blade-base-semi-flat",
+      "plastic-mg-weight"
+    ]
+  },
+  {
+    "id": "prod-plastic-bb-23-complete-loose",
+    "generation": "plastic",
+    "skuType": "complete_loose",
+    "nameEn": "Dranzer V (Complete)",
+    "nameJp": "ドランザーV 完成品",
+    "productCodes": [
+      "BB-23"
+    ],
+    "attrs": {
+      "combo": "V",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "plastic-attack-ring-cross-dranzer",
+      "plastic-blade-base-semi-flat",
+      "plastic-mg-weight"
+    ]
+  },
+  {
+    "id": "prod-plastic-bb-23-complete-sealed",
+    "generation": "plastic",
+    "skuType": "complete_sealed",
+    "nameEn": "Dranzer V Starter (Sealed)",
+    "nameJp": "ドランザーV スターター 未開封",
+    "productCodes": [
+      "BB-23"
+    ],
+    "attrs": {
+      "combo": "V",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "plastic-attack-ring-cross-dranzer",
+      "plastic-blade-base-semi-flat",
+      "plastic-mg-weight"
+    ]
+  },
+  {
+    "id": "prod-plastic-bb-24-starter",
+    "generation": "plastic",
+    "skuType": "starter",
+    "nameEn": "Driger V Starter",
+    "nameJp": "ドライガーV スターター",
+    "productCodes": [
+      "BB-24"
+    ],
+    "attrs": {
+      "combo": "V",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "plastic-driger-ring",
+      "plastic-blade-base-customize-sharp",
+      "plastic-mg-weight"
+    ]
+  },
+  {
+    "id": "prod-plastic-bb-24-complete-loose",
+    "generation": "plastic",
+    "skuType": "complete_loose",
+    "nameEn": "Driger V (Complete)",
+    "nameJp": "ドライガーV 完成品",
+    "productCodes": [
+      "BB-24"
+    ],
+    "attrs": {
+      "combo": "V",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "plastic-driger-ring",
+      "plastic-blade-base-customize-sharp",
+      "plastic-mg-weight"
+    ]
+  },
+  {
+    "id": "prod-plastic-bb-24-complete-sealed",
+    "generation": "plastic",
+    "skuType": "complete_sealed",
+    "nameEn": "Driger V Starter (Sealed)",
+    "nameJp": "ドライガーV スターター 未開封",
+    "productCodes": [
+      "BB-24"
+    ],
+    "attrs": {
+      "combo": "V",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "plastic-driger-ring",
+      "plastic-blade-base-customize-sharp",
+      "plastic-mg-weight"
+    ]
+  },
+  {
+    "id": "prod-plastic-bb-25-starter",
+    "generation": "plastic",
+    "skuType": "starter",
+    "nameEn": "Draciel V Starter",
+    "nameJp": "ドラシエルV スターター",
+    "productCodes": [
+      "BB-25"
+    ],
+    "attrs": {
+      "combo": "V",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "plastic-attack-ring-flying-defense",
+      "plastic-blade-base-customize-clutch-base",
+      "plastic-mg-weight"
+    ]
+  },
+  {
+    "id": "prod-plastic-bb-25-complete-loose",
+    "generation": "plastic",
+    "skuType": "complete_loose",
+    "nameEn": "Draciel V (Complete)",
+    "nameJp": "ドラシエルV 完成品",
+    "productCodes": [
+      "BB-25"
+    ],
+    "attrs": {
+      "combo": "V",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "plastic-attack-ring-flying-defense",
+      "plastic-blade-base-customize-clutch-base",
+      "plastic-mg-weight"
+    ]
+  },
+  {
+    "id": "prod-plastic-bb-25-complete-sealed",
+    "generation": "plastic",
+    "skuType": "complete_sealed",
+    "nameEn": "Draciel V Starter (Sealed)",
+    "nameJp": "ドラシエルV スターター 未開封",
+    "productCodes": [
+      "BB-25"
+    ],
+    "attrs": {
+      "combo": "V",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "plastic-attack-ring-flying-defense",
+      "plastic-blade-base-customize-clutch-base",
+      "plastic-mg-weight"
+    ]
+  },
+  {
+    "id": "prod-plastic-bb-09-starter",
+    "generation": "plastic",
+    "skuType": "starter",
+    "nameEn": "Wyborg Starter",
+    "nameJp": "ワイボーグ スターター",
+    "productCodes": [
+      "BB-09"
+    ],
+    "attrs": {
+      "combo": "V2",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "plastic-attack-ring-upper-wolf",
+      "plastic-blade-base-jumping-base",
+      "plastic-mg-weight"
+    ]
+  },
+  {
+    "id": "prod-plastic-bb-09-complete-loose",
+    "generation": "plastic",
+    "skuType": "complete_loose",
+    "nameEn": "Wyborg (Complete)",
+    "nameJp": "ワイボーグ 完成品",
+    "productCodes": [
+      "BB-09"
+    ],
+    "attrs": {
+      "combo": "V2",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "plastic-attack-ring-upper-wolf",
+      "plastic-blade-base-jumping-base",
+      "plastic-mg-weight"
+    ]
+  },
+  {
+    "id": "prod-plastic-bb-09-complete-sealed",
+    "generation": "plastic",
+    "skuType": "complete_sealed",
+    "nameEn": "Wyborg Starter (Sealed)",
+    "nameJp": "ワイボーグ スターター 未開封",
+    "productCodes": [
+      "BB-09"
+    ],
+    "attrs": {
+      "combo": "V2",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "plastic-attack-ring-upper-wolf",
+      "plastic-blade-base-jumping-base",
+      "plastic-mg-weight"
+    ]
+  },
+  {
+    "id": "prod-plastic-bb-10-starter",
+    "generation": "plastic",
+    "skuType": "starter",
+    "nameEn": "Wolborg 2 Starter",
+    "nameJp": "ウルボーグ2 スターター",
+    "productCodes": [
+      "BB-10"
+    ],
+    "attrs": {
+      "combo": "V2",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "plastic-attack-ring-upper-wolf",
+      "plastic-blade-base-gyro-base",
+      "plastic-mg-weight"
+    ]
+  },
+  {
+    "id": "prod-plastic-bb-10-complete-loose",
+    "generation": "plastic",
+    "skuType": "complete_loose",
+    "nameEn": "Wolborg 2 (Complete)",
+    "nameJp": "ウルボーグ2 完成品",
+    "productCodes": [
+      "BB-10"
+    ],
+    "attrs": {
+      "combo": "V2",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "plastic-attack-ring-upper-wolf",
+      "plastic-blade-base-gyro-base",
+      "plastic-mg-weight"
+    ]
+  },
+  {
+    "id": "prod-plastic-bb-10-complete-sealed",
+    "generation": "plastic",
+    "skuType": "complete_sealed",
+    "nameEn": "Wolborg 2 Starter (Sealed)",
+    "nameJp": "ウルボーグ2 スターター 未開封",
+    "productCodes": [
+      "BB-10"
+    ],
+    "attrs": {
+      "combo": "V2",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "plastic-attack-ring-upper-wolf",
+      "plastic-blade-base-gyro-base",
+      "plastic-mg-weight"
+    ]
+  },
+  {
+    "id": "prod-plastic-bb-11-starter",
+    "generation": "plastic",
+    "skuType": "starter",
+    "nameEn": "Gaia Dragoon V Starter",
+    "nameJp": "ガイアドラグーンV スターター",
+    "productCodes": [
+      "BB-11"
+    ],
+    "attrs": {
+      "combo": "V2",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "plastic-dragoon-ring",
+      "plastic-blade-base-auto-change-base",
+      "plastic-mg-weight"
+    ]
+  },
+  {
+    "id": "prod-plastic-bb-11-complete-loose",
+    "generation": "plastic",
+    "skuType": "complete_loose",
+    "nameEn": "Gaia Dragoon V (Complete)",
+    "nameJp": "ガイアドラグーンV 完成品",
+    "productCodes": [
+      "BB-11"
+    ],
+    "attrs": {
+      "combo": "V2",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "plastic-dragoon-ring",
+      "plastic-blade-base-auto-change-base",
+      "plastic-mg-weight"
+    ]
+  },
+  {
+    "id": "prod-plastic-bb-11-complete-sealed",
+    "generation": "plastic",
+    "skuType": "complete_sealed",
+    "nameEn": "Gaia Dragoon V Starter (Sealed)",
+    "nameJp": "ガイアドラグーンV スターター 未開封",
+    "productCodes": [
+      "BB-11"
+    ],
+    "attrs": {
+      "combo": "V2",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "plastic-dragoon-ring",
+      "plastic-blade-base-auto-change-base",
+      "plastic-mg-weight"
+    ]
+  },
+  {
+    "id": "prod-plastic-bb-13-starter",
+    "generation": "plastic",
+    "skuType": "starter",
+    "nameEn": "Trygle Starter",
+    "nameJp": "トライグル スターター",
+    "productCodes": [
+      "BB-13"
+    ],
+    "attrs": {
+      "combo": "V2",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "plastic-attack-ring-tri-cutter",
+      "plastic-blade-base-customize-bearing-base",
+      "plastic-mg-weight"
+    ]
+  },
+  {
+    "id": "prod-plastic-bb-13-complete-loose",
+    "generation": "plastic",
+    "skuType": "complete_loose",
+    "nameEn": "Trygle (Complete)",
+    "nameJp": "トライグル 完成品",
+    "productCodes": [
+      "BB-13"
+    ],
+    "attrs": {
+      "combo": "V2",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "plastic-attack-ring-tri-cutter",
+      "plastic-blade-base-customize-bearing-base",
+      "plastic-mg-weight"
+    ]
+  },
+  {
+    "id": "prod-plastic-bb-13-complete-sealed",
+    "generation": "plastic",
+    "skuType": "complete_sealed",
+    "nameEn": "Trygle Starter (Sealed)",
+    "nameJp": "トライグル スターター 未開封",
+    "productCodes": [
+      "BB-13"
+    ],
+    "attrs": {
+      "combo": "V2",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "plastic-attack-ring-tri-cutter",
+      "plastic-blade-base-customize-bearing-base",
+      "plastic-mg-weight"
+    ]
+  },
+  {
+    "id": "prod-plastic-bb-14-starter",
+    "generation": "plastic",
+    "skuType": "starter",
+    "nameEn": "Trygator Starter",
+    "nameJp": "トライゲイター スターター",
+    "productCodes": [
+      "BB-14"
+    ],
+    "attrs": {
+      "combo": "V2",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "plastic-attack-ring-tri-cutter",
+      "plastic-blade-base-customize-clutch-base",
+      "plastic-mg-weight"
+    ]
+  },
+  {
+    "id": "prod-plastic-bb-14-complete-loose",
+    "generation": "plastic",
+    "skuType": "complete_loose",
+    "nameEn": "Trygator (Complete)",
+    "nameJp": "トライゲイター 完成品",
+    "productCodes": [
+      "BB-14"
+    ],
+    "attrs": {
+      "combo": "V2",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "plastic-attack-ring-tri-cutter",
+      "plastic-blade-base-customize-clutch-base",
+      "plastic-mg-weight"
+    ]
+  },
+  {
+    "id": "prod-plastic-bb-14-complete-sealed",
+    "generation": "plastic",
+    "skuType": "complete_sealed",
+    "nameEn": "Trygator Starter (Sealed)",
+    "nameJp": "トライゲイター スターター 未開封",
+    "productCodes": [
+      "BB-14"
+    ],
+    "attrs": {
+      "combo": "V2",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "plastic-attack-ring-tri-cutter",
+      "plastic-blade-base-customize-clutch-base",
+      "plastic-mg-weight"
+    ]
+  },
+  {
+    "id": "prod-plastic-bb-15-starter",
+    "generation": "plastic",
+    "skuType": "starter",
+    "nameEn": "Gigars Starter",
+    "nameJp": "ギガース スターター",
+    "productCodes": [
+      "BB-15"
+    ],
+    "attrs": {
+      "combo": "V2",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "plastic-attack-ring-eight-spiker",
+      "plastic-blade-base-customize-metal-sharp",
+      "plastic-mg-weight"
+    ]
+  },
+  {
+    "id": "prod-plastic-bb-15-complete-loose",
+    "generation": "plastic",
+    "skuType": "complete_loose",
+    "nameEn": "Gigars (Complete)",
+    "nameJp": "ギガース 完成品",
+    "productCodes": [
+      "BB-15"
+    ],
+    "attrs": {
+      "combo": "V2",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "plastic-attack-ring-eight-spiker",
+      "plastic-blade-base-customize-metal-sharp",
+      "plastic-mg-weight"
+    ]
+  },
+  {
+    "id": "prod-plastic-bb-15-complete-sealed",
+    "generation": "plastic",
+    "skuType": "complete_sealed",
+    "nameEn": "Gigars Starter (Sealed)",
+    "nameJp": "ギガース スターター 未開封",
+    "productCodes": [
+      "BB-15"
+    ],
+    "attrs": {
+      "combo": "V2",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "plastic-attack-ring-eight-spiker",
+      "plastic-blade-base-customize-metal-sharp",
+      "plastic-mg-weight"
+    ]
+  },
+  {
+    "id": "prod-plastic-bb-16-starter",
+    "generation": "plastic",
+    "skuType": "starter",
+    "nameEn": "Galeon Starter",
+    "nameJp": "ガレオン スターター",
+    "productCodes": [
+      "BB-16"
+    ],
+    "attrs": {
+      "combo": "V2",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "plastic-attack-ring-upper-claw",
+      "plastic-blade-base-customize-grip-base",
+      "plastic-mg-weight"
+    ]
+  },
+  {
+    "id": "prod-plastic-bb-16-complete-loose",
+    "generation": "plastic",
+    "skuType": "complete_loose",
+    "nameEn": "Galeon (Complete)",
+    "nameJp": "ガレオン 完成品",
+    "productCodes": [
+      "BB-16"
+    ],
+    "attrs": {
+      "combo": "V2",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "plastic-attack-ring-upper-claw",
+      "plastic-blade-base-customize-grip-base",
+      "plastic-mg-weight"
+    ]
+  },
+  {
+    "id": "prod-plastic-bb-16-complete-sealed",
+    "generation": "plastic",
+    "skuType": "complete_sealed",
+    "nameEn": "Galeon Starter (Sealed)",
+    "nameJp": "ガレオン スターター 未開封",
+    "productCodes": [
+      "BB-16"
+    ],
+    "attrs": {
+      "combo": "V2",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "plastic-attack-ring-upper-claw",
+      "plastic-blade-base-customize-grip-base",
+      "plastic-mg-weight"
+    ]
+  },
+  {
+    "id": "prod-plastic-bb-18-starter",
+    "generation": "plastic",
+    "skuType": "starter",
+    "nameEn": "Seaborg Starter",
+    "nameJp": "シーボーグ スターター",
+    "productCodes": [
+      "BB-18"
+    ],
+    "attrs": {
+      "combo": "V2",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "plastic-attack-ring-whale-crusher",
+      "plastic-blade-base-metal-ball-base",
+      "plastic-mg-weight"
+    ]
+  },
+  {
+    "id": "prod-plastic-bb-18-complete-loose",
+    "generation": "plastic",
+    "skuType": "complete_loose",
+    "nameEn": "Seaborg (Complete)",
+    "nameJp": "シーボーグ 完成品",
+    "productCodes": [
+      "BB-18"
+    ],
+    "attrs": {
+      "combo": "V2",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "plastic-attack-ring-whale-crusher",
+      "plastic-blade-base-metal-ball-base",
+      "plastic-mg-weight"
+    ]
+  },
+  {
+    "id": "prod-plastic-bb-18-complete-sealed",
+    "generation": "plastic",
+    "skuType": "complete_sealed",
+    "nameEn": "Seaborg Starter (Sealed)",
+    "nameJp": "シーボーグ スターター 未開封",
+    "productCodes": [
+      "BB-18"
+    ],
+    "attrs": {
+      "combo": "V2",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "plastic-attack-ring-whale-crusher",
+      "plastic-blade-base-metal-ball-base",
+      "plastic-mg-weight"
+    ]
+  },
+  {
+    "id": "prod-plastic-bb-19-starter",
+    "generation": "plastic",
+    "skuType": "starter",
+    "nameEn": "Rock Bison Starter",
+    "nameJp": "ロックバイソン スターター",
+    "productCodes": [
+      "BB-19"
+    ],
+    "attrs": {
+      "combo": "V2",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "plastic-attack-ring-war-bear",
+      "plastic-blade-base-normal-base-rock-bison-version",
+      "plastic-mg-weight"
+    ]
+  },
+  {
+    "id": "prod-plastic-bb-19-complete-loose",
+    "generation": "plastic",
+    "skuType": "complete_loose",
+    "nameEn": "Rock Bison (Complete)",
+    "nameJp": "ロックバイソン 完成品",
+    "productCodes": [
+      "BB-19"
+    ],
+    "attrs": {
+      "combo": "V2",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "plastic-attack-ring-war-bear",
+      "plastic-blade-base-normal-base-rock-bison-version",
+      "plastic-mg-weight"
+    ]
+  },
+  {
+    "id": "prod-plastic-bb-19-complete-sealed",
+    "generation": "plastic",
+    "skuType": "complete_sealed",
+    "nameEn": "Rock Bison Starter (Sealed)",
+    "nameJp": "ロックバイソン スターター 未開封",
+    "productCodes": [
+      "BB-19"
+    ],
+    "attrs": {
+      "combo": "V2",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "plastic-attack-ring-war-bear",
+      "plastic-blade-base-normal-base-rock-bison-version",
+      "plastic-mg-weight"
+    ]
+  },
+  {
+    "id": "prod-plastic-bb-20-starter",
+    "generation": "plastic",
+    "skuType": "starter",
+    "nameEn": "Flash Leopard Starter",
+    "nameJp": "フラッシュレオパード スターター",
+    "productCodes": [
+      "BB-20"
+    ],
+    "attrs": {
+      "combo": "V2",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "plastic-attack-ring-great-tiger",
+      "plastic-blade-base-phantom-grip",
+      "plastic-mg-weight"
+    ]
+  },
+  {
+    "id": "prod-plastic-bb-20-complete-loose",
+    "generation": "plastic",
+    "skuType": "complete_loose",
+    "nameEn": "Flash Leopard (Complete)",
+    "nameJp": "フラッシュレオパード 完成品",
+    "productCodes": [
+      "BB-20"
+    ],
+    "attrs": {
+      "combo": "V2",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "plastic-attack-ring-great-tiger",
+      "plastic-blade-base-phantom-grip",
+      "plastic-mg-weight"
+    ]
+  },
+  {
+    "id": "prod-plastic-bb-20-complete-sealed",
+    "generation": "plastic",
+    "skuType": "complete_sealed",
+    "nameEn": "Flash Leopard Starter (Sealed)",
+    "nameJp": "フラッシュレオパード スターター 未開封",
+    "productCodes": [
+      "BB-20"
+    ],
+    "attrs": {
+      "combo": "V2",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "plastic-attack-ring-great-tiger",
+      "plastic-blade-base-phantom-grip",
+      "plastic-mg-weight"
+    ]
+  },
+  {
+    "id": "prod-plastic-bb-100-starter",
+    "generation": "plastic",
+    "skuType": "starter",
+    "nameEn": "Dragoon GT Starter",
+    "nameJp": "ドラグーンGT スターター",
+    "productCodes": [
+      "BB-100"
+    ],
+    "attrs": {
+      "combo": "GT",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "plastic-attack-ring-upper-dragoon",
+      "plastic-blade-base-first-clutch-base-dragoon-gt-version",
+      "plastic-mg-weight"
+    ]
+  },
+  {
+    "id": "prod-plastic-bb-100-complete-loose",
+    "generation": "plastic",
+    "skuType": "complete_loose",
+    "nameEn": "Dragoon GT (Complete)",
+    "nameJp": "ドラグーンGT 完成品",
+    "productCodes": [
+      "BB-100"
+    ],
+    "attrs": {
+      "combo": "GT",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "plastic-attack-ring-upper-dragoon",
+      "plastic-blade-base-first-clutch-base-dragoon-gt-version",
+      "plastic-mg-weight"
+    ]
+  },
+  {
+    "id": "prod-plastic-bb-100-complete-sealed",
+    "generation": "plastic",
+    "skuType": "complete_sealed",
+    "nameEn": "Dragoon GT Starter (Sealed)",
+    "nameJp": "ドラグーンGT スターター 未開封",
+    "productCodes": [
+      "BB-100"
+    ],
+    "attrs": {
+      "combo": "GT",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "plastic-attack-ring-upper-dragoon",
+      "plastic-blade-base-first-clutch-base-dragoon-gt-version",
+      "plastic-mg-weight"
+    ]
+  },
+  {
+    "id": "prod-plastic-bb-101-starter",
+    "generation": "plastic",
+    "skuType": "starter",
+    "nameEn": "Dranzer GT Starter",
+    "nameJp": "ドランザーGT スターター",
+    "productCodes": [
+      "BB-101"
+    ],
+    "attrs": {
+      "combo": "GT",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "plastic-attack-ring-cross-dranzer",
+      "plastic-blade-base-hit-release-dranzer-gt-version",
+      "plastic-mg-weight"
+    ]
+  },
+  {
+    "id": "prod-plastic-bb-101-complete-loose",
+    "generation": "plastic",
+    "skuType": "complete_loose",
+    "nameEn": "Dranzer GT (Complete)",
+    "nameJp": "ドランザーGT 完成品",
+    "productCodes": [
+      "BB-101"
+    ],
+    "attrs": {
+      "combo": "GT",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "plastic-attack-ring-cross-dranzer",
+      "plastic-blade-base-hit-release-dranzer-gt-version",
+      "plastic-mg-weight"
+    ]
+  },
+  {
+    "id": "prod-plastic-bb-101-complete-sealed",
+    "generation": "plastic",
+    "skuType": "complete_sealed",
+    "nameEn": "Dranzer GT Starter (Sealed)",
+    "nameJp": "ドランザーGT スターター 未開封",
+    "productCodes": [
+      "BB-101"
+    ],
+    "attrs": {
+      "combo": "GT",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "plastic-attack-ring-cross-dranzer",
+      "plastic-blade-base-hit-release-dranzer-gt-version",
+      "plastic-mg-weight"
+    ]
+  },
+  {
+    "id": "prod-plastic-bb-102-starter",
+    "generation": "plastic",
+    "skuType": "starter",
+    "nameEn": "Driger GT Starter",
+    "nameJp": "ドライガーGT スターター",
+    "productCodes": [
+      "BB-102"
+    ],
+    "attrs": {
+      "combo": "GT",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "plastic-driger-ring",
+      "plastic-blade-base-instant-release-dragoon-gt-version",
+      "plastic-mg-weight"
+    ]
+  },
+  {
+    "id": "prod-plastic-bb-102-complete-loose",
+    "generation": "plastic",
+    "skuType": "complete_loose",
+    "nameEn": "Driger GT (Complete)",
+    "nameJp": "ドライガーGT 完成品",
+    "productCodes": [
+      "BB-102"
+    ],
+    "attrs": {
+      "combo": "GT",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "plastic-driger-ring",
+      "plastic-blade-base-instant-release-dragoon-gt-version",
+      "plastic-mg-weight"
+    ]
+  },
+  {
+    "id": "prod-plastic-bb-102-complete-sealed",
+    "generation": "plastic",
+    "skuType": "complete_sealed",
+    "nameEn": "Driger GT Starter (Sealed)",
+    "nameJp": "ドライガーGT スターター 未開封",
+    "productCodes": [
+      "BB-102"
+    ],
+    "attrs": {
+      "combo": "GT",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "plastic-driger-ring",
+      "plastic-blade-base-instant-release-dragoon-gt-version",
+      "plastic-mg-weight"
+    ]
+  },
+  {
+    "id": "prod-plastic-bb-00-sealed",
+    "generation": "plastic",
+    "skuType": "sealed",
+    "nameEn": "Beyblade Original Series Battle Set",
+    "nameJp": "ベイブレード オリジナルシリーズ バトルセット",
+    "productCodes": [
+      "BB-00"
+    ],
+    "attrs": {
+      "line": "Original",
+      "contents": "multi-starter",
+      "recipeKind": "contents",
+      "defaultComboPartIds": [
+        "plastic-dragoon-ring",
+        "plastic-10-balance",
+        "plastic-dragoon-base"
+      ]
+    },
+    "partIds": [
+      "plastic-dragoon-ring",
+      "plastic-driger-ring",
+      "plastic-dragoon-base",
+      "plastic-blade-base-instant-release-driger-g-version",
+      "plastic-10-balance"
+    ]
+  },
+  {
+    "id": "prod-plastic-customize-sealed",
+    "generation": "plastic",
+    "skuType": "sealed",
+    "nameEn": "Customize Clutch Base Set",
+    "nameJp": "カスタマイズクラッチベースセット",
+    "productCodes": [
+      "CUSTOMIZE"
+    ],
+    "attrs": {
+      "line": "V",
+      "contents": "customize-base",
+      "recipeKind": "contents"
+    },
+    "partIds": [
+      "plastic-blade-base-customize-clutch-base",
+      "plastic-blade-base-customize-grip-base",
+      "plastic-blade-base-customize-bearing-base",
+      "plastic-mg-weight"
+    ]
+  },
+  {
+    "id": "prod-plastic-engine-gear-sealed",
+    "generation": "plastic",
+    "skuType": "sealed",
+    "nameEn": "Engine Gear Stadium Set",
+    "nameJp": "エンジンギア スタジアムセット",
+    "productCodes": [
+      "ENGINE-GEAR"
+    ],
+    "attrs": {
+      "line": "G-Rev",
+      "contents": "stadium",
+      "recipeKind": "contents",
+      "defaultComboPartIds": [
+        "plastic-attack-ring-upper-dragoon",
+        "plastic-mg-weight",
+        "plastic-blade-base-engine-stopper-base"
+      ]
+    },
+    "partIds": [
+      "plastic-blade-base-engine-stopper-base",
+      "plastic-attack-ring-upper-dragoon",
+      "plastic-mg-weight"
+    ]
+  },
+  {
+    "id": "prod-plastic-g-rev-sealed",
+    "generation": "plastic",
+    "skuType": "sealed",
+    "nameEn": "G-Revolution Dual Pack",
+    "nameJp": "Gレボリューション デュアルパック",
+    "productCodes": [
+      "G-REV-SET"
+    ],
+    "attrs": {
+      "line": "G-Rev",
+      "contents": "dual",
+      "recipeKind": "contents",
+      "defaultComboPartIds": [
+        "plastic-attack-ring-reverse-dragon",
+        "plastic-mg-weight",
+        "plastic-blade-base-customize-metal-sharp"
+      ]
+    },
+    "partIds": [
+      "plastic-attack-ring-reverse-dragon",
+      "plastic-attack-ring-reverse-wolf",
+      "plastic-blade-base-customize-metal-sharp",
+      "plastic-mg-weight"
+    ]
+  }
+]

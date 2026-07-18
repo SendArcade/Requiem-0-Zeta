@@ -1,0 +1,2416 @@
+[
+  {
+    "id": "prod-metal-bb-28-starter",
+    "generation": "metal",
+    "skuType": "starter",
+    "nameEn": "Storm Pegasus 105RF Starter",
+    "nameJp": "ストームペガサス 105RF スターター",
+    "productCodes": [
+      "BB-28"
+    ],
+    "attrs": {
+      "combo": "105RF",
+      "line": "BB",
+      "seedAttribution": "Beyblade Fandom Metal Fight BB- starter combos; parts.json part IDs",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "metal-storm-wheel",
+      "metal-spin-track-105",
+      "metal-performance-tip-rubber-flat"
+    ]
+  },
+  {
+    "id": "prod-metal-bb-28-complete-loose",
+    "generation": "metal",
+    "skuType": "complete_loose",
+    "nameEn": "Storm Pegasus 105RF (Complete)",
+    "nameJp": "ストームペガサス 105RF 完成品",
+    "productCodes": [
+      "BB-28"
+    ],
+    "attrs": {
+      "combo": "105RF",
+      "line": "BB",
+      "seedAttribution": "Beyblade Fandom Metal Fight BB- starter combos; parts.json part IDs",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "metal-storm-wheel",
+      "metal-spin-track-105",
+      "metal-performance-tip-rubber-flat"
+    ]
+  },
+  {
+    "id": "prod-metal-bb-28-complete-sealed",
+    "generation": "metal",
+    "skuType": "complete_sealed",
+    "nameEn": "Storm Pegasus 105RF Starter (Sealed)",
+    "nameJp": "ストームペガサス 105RF スターター（未開封）",
+    "productCodes": [
+      "BB-28"
+    ],
+    "attrs": {
+      "combo": "105RF",
+      "line": "BB",
+      "seedAttribution": "Beyblade Fandom Metal Fight BB- starter combos; parts.json part IDs",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "metal-storm-wheel",
+      "metal-spin-track-105",
+      "metal-performance-tip-rubber-flat"
+    ]
+  },
+  {
+    "id": "prod-metal-bb-30-starter",
+    "generation": "metal",
+    "skuType": "starter",
+    "nameEn": "Rock Leone 145WB Starter",
+    "nameJp": "ロックレオーネ 145WB スターター",
+    "productCodes": [
+      "BB-30"
+    ],
+    "attrs": {
+      "combo": "145WB",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "metal-rock-wheel",
+      "metal-spin-track-145",
+      "metal-performance-tip-wide-ball"
+    ]
+  },
+  {
+    "id": "prod-metal-bb-30-complete-loose",
+    "generation": "metal",
+    "skuType": "complete_loose",
+    "nameEn": "Rock Leone 145WB (Complete)",
+    "nameJp": "ロックレオーネ 145WB 完成品",
+    "productCodes": [
+      "BB-30"
+    ],
+    "attrs": {
+      "combo": "145WB",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "metal-rock-wheel",
+      "metal-spin-track-145",
+      "metal-performance-tip-wide-ball"
+    ]
+  },
+  {
+    "id": "prod-metal-bb-30-complete-sealed",
+    "generation": "metal",
+    "skuType": "complete_sealed",
+    "nameEn": "Rock Leone 145WB Starter (Sealed)",
+    "nameJp": "ロックレオーネ 145WB スターター（未開封）",
+    "productCodes": [
+      "BB-30"
+    ],
+    "attrs": {
+      "combo": "145WB",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "metal-rock-wheel",
+      "metal-spin-track-145",
+      "metal-performance-tip-wide-ball"
+    ]
+  },
+  {
+    "id": "prod-metal-bb-47-starter",
+    "generation": "metal",
+    "skuType": "starter",
+    "nameEn": "Lightning L-Drago 100HF Starter",
+    "nameJp": "ライトニングLドラゴ 100HF スターター",
+    "productCodes": [
+      "BB-47"
+    ],
+    "attrs": {
+      "combo": "100HF",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "metal-metal-wheel-lightning",
+      "metal-spin-track-100",
+      "metal-performance-tip-hole-flat"
+    ]
+  },
+  {
+    "id": "prod-metal-bb-47-complete-loose",
+    "generation": "metal",
+    "skuType": "complete_loose",
+    "nameEn": "Lightning L-Drago 100HF (Complete)",
+    "nameJp": "ライトニングLドラゴ 100HF 完成品",
+    "productCodes": [
+      "BB-47"
+    ],
+    "attrs": {
+      "combo": "100HF",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "metal-metal-wheel-lightning",
+      "metal-spin-track-100",
+      "metal-performance-tip-hole-flat"
+    ]
+  },
+  {
+    "id": "prod-metal-bb-47-complete-sealed",
+    "generation": "metal",
+    "skuType": "complete_sealed",
+    "nameEn": "Lightning L-Drago 100HF Starter (Sealed)",
+    "nameJp": "ライトニングLドラゴ 100HF スターター（未開封）",
+    "productCodes": [
+      "BB-47"
+    ],
+    "attrs": {
+      "combo": "100HF",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "metal-metal-wheel-lightning",
+      "metal-spin-track-100",
+      "metal-performance-tip-hole-flat"
+    ]
+  },
+  {
+    "id": "prod-metal-bb-40-starter",
+    "generation": "metal",
+    "skuType": "starter",
+    "nameEn": "Flame Sagittario C145S Starter",
+    "nameJp": "フレイムサジタリオ C145S スターター",
+    "productCodes": [
+      "BB-40"
+    ],
+    "attrs": {
+      "combo": "C145S",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "metal-metal-wheel-flame",
+      "metal-spin-track-claw-145",
+      "metal-performance-tip-spike"
+    ]
+  },
+  {
+    "id": "prod-metal-bb-40-complete-loose",
+    "generation": "metal",
+    "skuType": "complete_loose",
+    "nameEn": "Flame Sagittario C145S (Complete)",
+    "nameJp": "フレイムサジタリオ C145S 完成品",
+    "productCodes": [
+      "BB-40"
+    ],
+    "attrs": {
+      "combo": "C145S",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "metal-metal-wheel-flame",
+      "metal-spin-track-claw-145",
+      "metal-performance-tip-spike"
+    ]
+  },
+  {
+    "id": "prod-metal-bb-40-complete-sealed",
+    "generation": "metal",
+    "skuType": "complete_sealed",
+    "nameEn": "Flame Sagittario C145S Starter (Sealed)",
+    "nameJp": "フレイムサジタリオ C145S スターター（未開封）",
+    "productCodes": [
+      "BB-40"
+    ],
+    "attrs": {
+      "combo": "C145S",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "metal-metal-wheel-flame",
+      "metal-spin-track-claw-145",
+      "metal-performance-tip-spike"
+    ]
+  },
+  {
+    "id": "prod-metal-bb-44-starter",
+    "generation": "metal",
+    "skuType": "starter",
+    "nameEn": "Poison Serpent 125SD Starter",
+    "nameJp": "ポイズンサーペント 125SD スターター",
+    "productCodes": [
+      "BB-44"
+    ],
+    "attrs": {
+      "combo": "125SD",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "metal-metal-wheel-poison",
+      "metal-spin-track-125",
+      "metal-performance-tip-semi-defense"
+    ]
+  },
+  {
+    "id": "prod-metal-bb-44-complete-loose",
+    "generation": "metal",
+    "skuType": "complete_loose",
+    "nameEn": "Poison Serpent 125SD (Complete)",
+    "nameJp": "ポイズンサーペント 125SD 完成品",
+    "productCodes": [
+      "BB-44"
+    ],
+    "attrs": {
+      "combo": "125SD",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "metal-metal-wheel-poison",
+      "metal-spin-track-125",
+      "metal-performance-tip-semi-defense"
+    ]
+  },
+  {
+    "id": "prod-metal-bb-44-complete-sealed",
+    "generation": "metal",
+    "skuType": "complete_sealed",
+    "nameEn": "Poison Serpent 125SD Starter (Sealed)",
+    "nameJp": "ポイズンサーペント 125SD スターター（未開封）",
+    "productCodes": [
+      "BB-44"
+    ],
+    "attrs": {
+      "combo": "125SD",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "metal-metal-wheel-poison",
+      "metal-spin-track-125",
+      "metal-performance-tip-semi-defense"
+    ]
+  },
+  {
+    "id": "prod-metal-bb-46-starter",
+    "generation": "metal",
+    "skuType": "starter",
+    "nameEn": "Dark Wolf 125BS Starter",
+    "nameJp": "ダークウルフ 125BS スターター",
+    "productCodes": [
+      "BB-46"
+    ],
+    "attrs": {
+      "combo": "125BS",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "metal-metal-wheel-dark",
+      "metal-spin-track-125",
+      "metal-performance-tip-bottom-spike"
+    ]
+  },
+  {
+    "id": "prod-metal-bb-46-complete-loose",
+    "generation": "metal",
+    "skuType": "complete_loose",
+    "nameEn": "Dark Wolf 125BS (Complete)",
+    "nameJp": "ダークウルフ 125BS 完成品",
+    "productCodes": [
+      "BB-46"
+    ],
+    "attrs": {
+      "combo": "125BS",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "metal-metal-wheel-dark",
+      "metal-spin-track-125",
+      "metal-performance-tip-bottom-spike"
+    ]
+  },
+  {
+    "id": "prod-metal-bb-46-complete-sealed",
+    "generation": "metal",
+    "skuType": "complete_sealed",
+    "nameEn": "Dark Wolf 125BS Starter (Sealed)",
+    "nameJp": "ダークウルフ 125BS スターター（未開封）",
+    "productCodes": [
+      "BB-46"
+    ],
+    "attrs": {
+      "combo": "125BS",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "metal-metal-wheel-dark",
+      "metal-spin-track-125",
+      "metal-performance-tip-bottom-spike"
+    ]
+  },
+  {
+    "id": "prod-metal-bb-48-starter",
+    "generation": "metal",
+    "skuType": "starter",
+    "nameEn": "Flame Libra T125ES Starter",
+    "nameJp": "フレイムリブラ T125ES スターター",
+    "productCodes": [
+      "BB-48"
+    ],
+    "attrs": {
+      "combo": "T125ES",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "metal-metal-wheel-flame",
+      "metal-spin-track-tornado-125",
+      "metal-performance-tip-eternal-spike"
+    ]
+  },
+  {
+    "id": "prod-metal-bb-48-complete-loose",
+    "generation": "metal",
+    "skuType": "complete_loose",
+    "nameEn": "Flame Libra T125ES (Complete)",
+    "nameJp": "フレイムリブラ T125ES 完成品",
+    "productCodes": [
+      "BB-48"
+    ],
+    "attrs": {
+      "combo": "T125ES",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "metal-metal-wheel-flame",
+      "metal-spin-track-tornado-125",
+      "metal-performance-tip-eternal-spike"
+    ]
+  },
+  {
+    "id": "prod-metal-bb-48-complete-sealed",
+    "generation": "metal",
+    "skuType": "complete_sealed",
+    "nameEn": "Flame Libra T125ES Starter (Sealed)",
+    "nameJp": "フレイムリブラ T125ES スターター（未開封）",
+    "productCodes": [
+      "BB-48"
+    ],
+    "attrs": {
+      "combo": "T125ES",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "metal-metal-wheel-flame",
+      "metal-spin-track-tornado-125",
+      "metal-performance-tip-eternal-spike"
+    ]
+  },
+  {
+    "id": "prod-metal-bb-51-starter",
+    "generation": "metal",
+    "skuType": "starter",
+    "nameEn": "Galaxy Pegasus W105R2F Starter",
+    "nameJp": "ギャラクシーペガサス W105R2F スターター",
+    "productCodes": [
+      "BB-51"
+    ],
+    "attrs": {
+      "combo": "W105R2F",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "metal-metal-wheel-galaxy",
+      "metal-spin-track-wing-105",
+      "metal-r2f-tip"
+    ]
+  },
+  {
+    "id": "prod-metal-bb-51-complete-loose",
+    "generation": "metal",
+    "skuType": "complete_loose",
+    "nameEn": "Galaxy Pegasus W105R2F (Complete)",
+    "nameJp": "ギャラクシーペガサス W105R2F 完成品",
+    "productCodes": [
+      "BB-51"
+    ],
+    "attrs": {
+      "combo": "W105R2F",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "metal-metal-wheel-galaxy",
+      "metal-spin-track-wing-105",
+      "metal-r2f-tip"
+    ]
+  },
+  {
+    "id": "prod-metal-bb-51-complete-sealed",
+    "generation": "metal",
+    "skuType": "complete_sealed",
+    "nameEn": "Galaxy Pegasus W105R2F Starter (Sealed)",
+    "nameJp": "ギャラクシーペガサス W105R2F スターター（未開封）",
+    "productCodes": [
+      "BB-51"
+    ],
+    "attrs": {
+      "combo": "W105R2F",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "metal-metal-wheel-galaxy",
+      "metal-spin-track-wing-105",
+      "metal-r2f-tip"
+    ]
+  },
+  {
+    "id": "prod-metal-bb-56-starter",
+    "generation": "metal",
+    "skuType": "starter",
+    "nameEn": "Big Bang Pegasis F:D Starter",
+    "nameJp": "ビッグバンペガシス F:D スターター",
+    "productCodes": [
+      "BB-56"
+    ],
+    "attrs": {
+      "combo": "F:D",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "metal-metal-wheel-galaxy",
+      "metal-spin-track-down-force-145",
+      "metal-performance-tip-final-drive"
+    ]
+  },
+  {
+    "id": "prod-metal-bb-56-complete-loose",
+    "generation": "metal",
+    "skuType": "complete_loose",
+    "nameEn": "Big Bang Pegasis F:D (Complete)",
+    "nameJp": "ビッグバンペガシス F:D 完成品",
+    "productCodes": [
+      "BB-56"
+    ],
+    "attrs": {
+      "combo": "F:D",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "metal-metal-wheel-galaxy",
+      "metal-spin-track-down-force-145",
+      "metal-performance-tip-final-drive"
+    ]
+  },
+  {
+    "id": "prod-metal-bb-56-complete-sealed",
+    "generation": "metal",
+    "skuType": "complete_sealed",
+    "nameEn": "Big Bang Pegasis F:D Starter (Sealed)",
+    "nameJp": "ビッグバンペガシス F:D スターター（未開封）",
+    "productCodes": [
+      "BB-56"
+    ],
+    "attrs": {
+      "combo": "F:D",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "metal-metal-wheel-galaxy",
+      "metal-spin-track-down-force-145",
+      "metal-performance-tip-final-drive"
+    ]
+  },
+  {
+    "id": "prod-metal-bb-62-starter",
+    "generation": "metal",
+    "skuType": "starter",
+    "nameEn": "Death Quetzalcoatl 125RDF Starter",
+    "nameJp": "デスクェツァルコアトル 125RDF スターター",
+    "productCodes": [
+      "BB-62"
+    ],
+    "attrs": {
+      "combo": "125RDF",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "metal-metal-wheel-death",
+      "metal-spin-track-125",
+      "metal-performance-tip-rubber-defense-flat"
+    ]
+  },
+  {
+    "id": "prod-metal-bb-62-complete-loose",
+    "generation": "metal",
+    "skuType": "complete_loose",
+    "nameEn": "Death Quetzalcoatl 125RDF (Complete)",
+    "nameJp": "デスクェツァルコアトル 125RDF 完成品",
+    "productCodes": [
+      "BB-62"
+    ],
+    "attrs": {
+      "combo": "125RDF",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "metal-metal-wheel-death",
+      "metal-spin-track-125",
+      "metal-performance-tip-rubber-defense-flat"
+    ]
+  },
+  {
+    "id": "prod-metal-bb-62-complete-sealed",
+    "generation": "metal",
+    "skuType": "complete_sealed",
+    "nameEn": "Death Quetzalcoatl 125RDF Starter (Sealed)",
+    "nameJp": "デスクェツァルコアトル 125RDF スターター（未開封）",
+    "productCodes": [
+      "BB-62"
+    ],
+    "attrs": {
+      "combo": "125RDF",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "metal-metal-wheel-death",
+      "metal-spin-track-125",
+      "metal-performance-tip-rubber-defense-flat"
+    ]
+  },
+  {
+    "id": "prod-metal-bb-78-starter",
+    "generation": "metal",
+    "skuType": "starter",
+    "nameEn": "Hell Kerbecs BD145DS Starter",
+    "nameJp": "ヘルケルベクス BD145DS スターター",
+    "productCodes": [
+      "BB-78"
+    ],
+    "attrs": {
+      "combo": "BD145DS",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "metal-metal-wheel-hellfire",
+      "metal-spin-track-down-force-145",
+      "metal-performance-tip-defense-spike"
+    ]
+  },
+  {
+    "id": "prod-metal-bb-78-complete-loose",
+    "generation": "metal",
+    "skuType": "complete_loose",
+    "nameEn": "Hell Kerbecs BD145DS (Complete)",
+    "nameJp": "ヘルケルベクス BD145DS 完成品",
+    "productCodes": [
+      "BB-78"
+    ],
+    "attrs": {
+      "combo": "BD145DS",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "metal-metal-wheel-hellfire",
+      "metal-spin-track-down-force-145",
+      "metal-performance-tip-defense-spike"
+    ]
+  },
+  {
+    "id": "prod-metal-bb-78-complete-sealed",
+    "generation": "metal",
+    "skuType": "complete_sealed",
+    "nameEn": "Hell Kerbecs BD145DS Starter (Sealed)",
+    "nameJp": "ヘルケルベクス BD145DS スターター（未開封）",
+    "productCodes": [
+      "BB-78"
+    ],
+    "attrs": {
+      "combo": "BD145DS",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "metal-metal-wheel-hellfire",
+      "metal-spin-track-down-force-145",
+      "metal-performance-tip-defense-spike"
+    ]
+  },
+  {
+    "id": "prod-metal-bb-88-starter",
+    "generation": "metal",
+    "skuType": "starter",
+    "nameEn": "L-Drago Destructor F:S Starter",
+    "nameJp": "Lドラゴ・デストラクター F:S スターター",
+    "productCodes": [
+      "BB-88"
+    ],
+    "attrs": {
+      "combo": "F:S",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "metal-metal-wheel-l-drago-destructor",
+      "metal-spin-track-145",
+      "metal-performance-tip-final-survive"
+    ]
+  },
+  {
+    "id": "prod-metal-bb-88-complete-loose",
+    "generation": "metal",
+    "skuType": "complete_loose",
+    "nameEn": "L-Drago Destructor F:S (Complete)",
+    "nameJp": "Lドラゴ・デストラクター F:S 完成品",
+    "productCodes": [
+      "BB-88"
+    ],
+    "attrs": {
+      "combo": "F:S",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "metal-metal-wheel-l-drago-destructor",
+      "metal-spin-track-145",
+      "metal-performance-tip-final-survive"
+    ]
+  },
+  {
+    "id": "prod-metal-bb-88-complete-sealed",
+    "generation": "metal",
+    "skuType": "complete_sealed",
+    "nameEn": "L-Drago Destructor F:S Starter (Sealed)",
+    "nameJp": "Lドラゴ・デストラクター F:S スターター（未開封）",
+    "productCodes": [
+      "BB-88"
+    ],
+    "attrs": {
+      "combo": "F:S",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "metal-metal-wheel-l-drago-destructor",
+      "metal-spin-track-145",
+      "metal-performance-tip-final-survive"
+    ]
+  },
+  {
+    "id": "prod-metal-bb-92-starter",
+    "generation": "metal",
+    "skuType": "starter",
+    "nameEn": "Cosmic Pegasus W105R2F Starter",
+    "nameJp": "コズミックペガサス W105R2F スターター",
+    "productCodes": [
+      "BB-92"
+    ],
+    "attrs": {
+      "combo": "W105R2F",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "metal-metal-wheel-cosmic",
+      "metal-spin-track-wing-105",
+      "metal-r2f-tip"
+    ]
+  },
+  {
+    "id": "prod-metal-bb-92-complete-loose",
+    "generation": "metal",
+    "skuType": "complete_loose",
+    "nameEn": "Cosmic Pegasus W105R2F (Complete)",
+    "nameJp": "コズミックペガサス W105R2F 完成品",
+    "productCodes": [
+      "BB-92"
+    ],
+    "attrs": {
+      "combo": "W105R2F",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "metal-metal-wheel-cosmic",
+      "metal-spin-track-wing-105",
+      "metal-r2f-tip"
+    ]
+  },
+  {
+    "id": "prod-metal-bb-92-complete-sealed",
+    "generation": "metal",
+    "skuType": "complete_sealed",
+    "nameEn": "Cosmic Pegasus W105R2F Starter (Sealed)",
+    "nameJp": "コズミックペガサス W105R2F スターター（未開封）",
+    "productCodes": [
+      "BB-92"
+    ],
+    "attrs": {
+      "combo": "W105R2F",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "metal-metal-wheel-cosmic",
+      "metal-spin-track-wing-105",
+      "metal-r2f-tip"
+    ]
+  },
+  {
+    "id": "prod-metal-bb-97-starter",
+    "generation": "metal",
+    "skuType": "starter",
+    "nameEn": "Galaxy Pegasus W105R2F DX Starter",
+    "nameJp": "ギャラクシーペガサス W105R2F DX スターター",
+    "productCodes": [
+      "BB-97"
+    ],
+    "attrs": {
+      "combo": "W105R2F",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "metal-metal-wheel-galaxy",
+      "metal-spin-track-wing-105",
+      "metal-r2f-tip"
+    ]
+  },
+  {
+    "id": "prod-metal-bb-97-complete-loose",
+    "generation": "metal",
+    "skuType": "complete_loose",
+    "nameEn": "Galaxy Pegasus W105R2F DX (Complete)",
+    "nameJp": "ギャラクシーペガサス W105R2F DX 完成品",
+    "productCodes": [
+      "BB-97"
+    ],
+    "attrs": {
+      "combo": "W105R2F",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "metal-metal-wheel-galaxy",
+      "metal-spin-track-wing-105",
+      "metal-r2f-tip"
+    ]
+  },
+  {
+    "id": "prod-metal-bb-97-complete-sealed",
+    "generation": "metal",
+    "skuType": "complete_sealed",
+    "nameEn": "Galaxy Pegasus W105R2F DX Starter (Sealed)",
+    "nameJp": "ギャラクシーペガサス W105R2F DX スターター（未開封）",
+    "productCodes": [
+      "BB-97"
+    ],
+    "attrs": {
+      "combo": "W105R2F",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "metal-metal-wheel-galaxy",
+      "metal-spin-track-wing-105",
+      "metal-r2f-tip"
+    ]
+  },
+  {
+    "id": "prod-metal-bb-100-starter",
+    "generation": "metal",
+    "skuType": "starter",
+    "nameEn": "Thermal Lacerta WA130HF Starter",
+    "nameJp": "サーマルラクerta WA130HF スターター",
+    "productCodes": [
+      "BB-100"
+    ],
+    "attrs": {
+      "combo": "WA130HF",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "metal-metal-wheel-thermal",
+      "metal-spin-track-wing-attack-130",
+      "metal-performance-tip-hole-flat"
+    ]
+  },
+  {
+    "id": "prod-metal-bb-100-complete-loose",
+    "generation": "metal",
+    "skuType": "complete_loose",
+    "nameEn": "Thermal Lacerta WA130HF (Complete)",
+    "nameJp": "サーマルラクerta WA130HF 完成品",
+    "productCodes": [
+      "BB-100"
+    ],
+    "attrs": {
+      "combo": "WA130HF",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "metal-metal-wheel-thermal",
+      "metal-spin-track-wing-attack-130",
+      "metal-performance-tip-hole-flat"
+    ]
+  },
+  {
+    "id": "prod-metal-bb-100-complete-sealed",
+    "generation": "metal",
+    "skuType": "complete_sealed",
+    "nameEn": "Thermal Lacerta WA130HF Starter (Sealed)",
+    "nameJp": "サーマルラクerta WA130HF スターター（未開封）",
+    "productCodes": [
+      "BB-100"
+    ],
+    "attrs": {
+      "combo": "WA130HF",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "metal-metal-wheel-thermal",
+      "metal-spin-track-wing-attack-130",
+      "metal-performance-tip-hole-flat"
+    ]
+  },
+  {
+    "id": "prod-metal-bb-104-starter",
+    "generation": "metal",
+    "skuType": "starter",
+    "nameEn": "Fang Leone 130W2D Starter",
+    "nameJp": "ファングレオーネ 130W2D スターター",
+    "productCodes": [
+      "BB-104"
+    ],
+    "attrs": {
+      "combo": "130W2D",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "metal-metal-wheel-fang",
+      "metal-spin-track-130",
+      "metal-wd-tip"
+    ]
+  },
+  {
+    "id": "prod-metal-bb-104-complete-loose",
+    "generation": "metal",
+    "skuType": "complete_loose",
+    "nameEn": "Fang Leone 130W2D (Complete)",
+    "nameJp": "ファングレオーネ 130W2D 完成品",
+    "productCodes": [
+      "BB-104"
+    ],
+    "attrs": {
+      "combo": "130W2D",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "metal-metal-wheel-fang",
+      "metal-spin-track-130",
+      "metal-wd-tip"
+    ]
+  },
+  {
+    "id": "prod-metal-bb-104-complete-sealed",
+    "generation": "metal",
+    "skuType": "complete_sealed",
+    "nameEn": "Fang Leone 130W2D Starter (Sealed)",
+    "nameJp": "ファングレオーネ 130W2D スターター（未開封）",
+    "productCodes": [
+      "BB-104"
+    ],
+    "attrs": {
+      "combo": "130W2D",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "metal-metal-wheel-fang",
+      "metal-spin-track-130",
+      "metal-wd-tip"
+    ]
+  },
+  {
+    "id": "prod-metal-bb-108-starter",
+    "generation": "metal",
+    "skuType": "starter",
+    "nameEn": "L-Drago Guardian S130MB Starter",
+    "nameJp": "Lドラゴ・ガーディアン S130MB スターター",
+    "productCodes": [
+      "BB-108"
+    ],
+    "attrs": {
+      "combo": "S130MB",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "metal-metal-wheel-l-drago-guardian",
+      "metal-spin-track-130",
+      "metal-performance-tip-metal-ball"
+    ]
+  },
+  {
+    "id": "prod-metal-bb-108-complete-loose",
+    "generation": "metal",
+    "skuType": "complete_loose",
+    "nameEn": "L-Drago Guardian S130MB (Complete)",
+    "nameJp": "Lドラゴ・ガーディアン S130MB 完成品",
+    "productCodes": [
+      "BB-108"
+    ],
+    "attrs": {
+      "combo": "S130MB",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "metal-metal-wheel-l-drago-guardian",
+      "metal-spin-track-130",
+      "metal-performance-tip-metal-ball"
+    ]
+  },
+  {
+    "id": "prod-metal-bb-108-complete-sealed",
+    "generation": "metal",
+    "skuType": "complete_sealed",
+    "nameEn": "L-Drago Guardian S130MB Starter (Sealed)",
+    "nameJp": "Lドラゴ・ガーディアン S130MB スターター（未開封）",
+    "productCodes": [
+      "BB-108"
+    ],
+    "attrs": {
+      "combo": "S130MB",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "metal-metal-wheel-l-drago-guardian",
+      "metal-spin-track-130",
+      "metal-performance-tip-metal-ball"
+    ]
+  },
+  {
+    "id": "prod-metal-bb-114-starter",
+    "generation": "metal",
+    "skuType": "starter",
+    "nameEn": "Flash Sagittario 230WD Starter",
+    "nameJp": "フラッシュサジタリオ 230WD スターター",
+    "productCodes": [
+      "BB-114"
+    ],
+    "attrs": {
+      "combo": "230WD",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "metal-metal-wheel-flash",
+      "metal-spin-track-230",
+      "metal-wd-tip"
+    ]
+  },
+  {
+    "id": "prod-metal-bb-114-complete-loose",
+    "generation": "metal",
+    "skuType": "complete_loose",
+    "nameEn": "Flash Sagittario 230WD (Complete)",
+    "nameJp": "フラッシュサジタリオ 230WD 完成品",
+    "productCodes": [
+      "BB-114"
+    ],
+    "attrs": {
+      "combo": "230WD",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "metal-metal-wheel-flash",
+      "metal-spin-track-230",
+      "metal-wd-tip"
+    ]
+  },
+  {
+    "id": "prod-metal-bb-114-complete-sealed",
+    "generation": "metal",
+    "skuType": "complete_sealed",
+    "nameEn": "Flash Sagittario 230WD Starter (Sealed)",
+    "nameJp": "フラッシュサジタリオ 230WD スターター（未開封）",
+    "productCodes": [
+      "BB-114"
+    ],
+    "attrs": {
+      "combo": "230WD",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "metal-metal-wheel-flash",
+      "metal-spin-track-230",
+      "metal-wd-tip"
+    ]
+  },
+  {
+    "id": "prod-metal-bb-116-starter",
+    "generation": "metal",
+    "skuType": "starter",
+    "nameEn": "Blitz Unicorno 105RS Starter",
+    "nameJp": "ブリッツユニコルノ 105RS スターター",
+    "productCodes": [
+      "BB-116"
+    ],
+    "attrs": {
+      "combo": "105RS",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "metal-metal-wheel-blitz",
+      "metal-spin-track-105",
+      "metal-performance-tip-rubber-spike"
+    ]
+  },
+  {
+    "id": "prod-metal-bb-116-complete-loose",
+    "generation": "metal",
+    "skuType": "complete_loose",
+    "nameEn": "Blitz Unicorno 105RS (Complete)",
+    "nameJp": "ブリッツユニコルノ 105RS 完成品",
+    "productCodes": [
+      "BB-116"
+    ],
+    "attrs": {
+      "combo": "105RS",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "metal-metal-wheel-blitz",
+      "metal-spin-track-105",
+      "metal-performance-tip-rubber-spike"
+    ]
+  },
+  {
+    "id": "prod-metal-bb-116-complete-sealed",
+    "generation": "metal",
+    "skuType": "complete_sealed",
+    "nameEn": "Blitz Unicorno 105RS Starter (Sealed)",
+    "nameJp": "ブリッツユニコルノ 105RS スターター（未開封）",
+    "productCodes": [
+      "BB-116"
+    ],
+    "attrs": {
+      "combo": "105RS",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "metal-metal-wheel-blitz",
+      "metal-spin-track-105",
+      "metal-performance-tip-rubber-spike"
+    ]
+  },
+  {
+    "id": "prod-metal-bb-118-starter",
+    "generation": "metal",
+    "skuType": "starter",
+    "nameEn": "Beat Lynx TH170EW Starter",
+    "nameJp": "ビートリンクス TH170EW スターター",
+    "productCodes": [
+      "BB-118"
+    ],
+    "attrs": {
+      "combo": "TH170EW",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "metal-metal-wheel-beat",
+      "metal-spin-track-triple-height-170",
+      "metal-performance-tip-eternal-wide-defense"
+    ]
+  },
+  {
+    "id": "prod-metal-bb-118-complete-loose",
+    "generation": "metal",
+    "skuType": "complete_loose",
+    "nameEn": "Beat Lynx TH170EW (Complete)",
+    "nameJp": "ビートリンクス TH170EW 完成品",
+    "productCodes": [
+      "BB-118"
+    ],
+    "attrs": {
+      "combo": "TH170EW",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "metal-metal-wheel-beat",
+      "metal-spin-track-triple-height-170",
+      "metal-performance-tip-eternal-wide-defense"
+    ]
+  },
+  {
+    "id": "prod-metal-bb-118-complete-sealed",
+    "generation": "metal",
+    "skuType": "complete_sealed",
+    "nameEn": "Beat Lynx TH170EW Starter (Sealed)",
+    "nameJp": "ビートリンクス TH170EW スターター（未開封）",
+    "productCodes": [
+      "BB-118"
+    ],
+    "attrs": {
+      "combo": "TH170EW",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "metal-metal-wheel-beat",
+      "metal-spin-track-triple-height-170",
+      "metal-performance-tip-eternal-wide-defense"
+    ]
+  },
+  {
+    "id": "prod-metal-bb-119-starter",
+    "generation": "metal",
+    "skuType": "starter",
+    "nameEn": "Death Byxis 145DS Starter",
+    "nameJp": "デスビクシス 145DS スターター",
+    "productCodes": [
+      "BB-119"
+    ],
+    "attrs": {
+      "combo": "145DS",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "metal-metal-wheel-death",
+      "metal-spin-track-145",
+      "metal-performance-tip-defense-spike"
+    ]
+  },
+  {
+    "id": "prod-metal-bb-119-complete-loose",
+    "generation": "metal",
+    "skuType": "complete_loose",
+    "nameEn": "Death Byxis 145DS (Complete)",
+    "nameJp": "デスビクシス 145DS 完成品",
+    "productCodes": [
+      "BB-119"
+    ],
+    "attrs": {
+      "combo": "145DS",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "metal-metal-wheel-death",
+      "metal-spin-track-145",
+      "metal-performance-tip-defense-spike"
+    ]
+  },
+  {
+    "id": "prod-metal-bb-119-complete-sealed",
+    "generation": "metal",
+    "skuType": "complete_sealed",
+    "nameEn": "Death Byxis 145DS Starter (Sealed)",
+    "nameJp": "デスビクシス 145DS スターター（未開封）",
+    "productCodes": [
+      "BB-119"
+    ],
+    "attrs": {
+      "combo": "145DS",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "metal-metal-wheel-death",
+      "metal-spin-track-145",
+      "metal-performance-tip-defense-spike"
+    ]
+  },
+  {
+    "id": "prod-metal-bb-71-starter",
+    "generation": "metal",
+    "skuType": "starter",
+    "nameEn": "Gravity Perseus AD145WD Starter",
+    "nameJp": "グラビティペルセウス AD145WD スターター",
+    "productCodes": [
+      "BB-71"
+    ],
+    "attrs": {
+      "combo": "AD145WD",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "metal-metal-wheel-gravity",
+      "metal-spin-track-armor-defense-145",
+      "metal-wd-tip"
+    ]
+  },
+  {
+    "id": "prod-metal-bb-71-complete-loose",
+    "generation": "metal",
+    "skuType": "complete_loose",
+    "nameEn": "Gravity Perseus AD145WD (Complete)",
+    "nameJp": "グラビティペルセウス AD145WD 完成品",
+    "productCodes": [
+      "BB-71"
+    ],
+    "attrs": {
+      "combo": "AD145WD",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "metal-metal-wheel-gravity",
+      "metal-spin-track-armor-defense-145",
+      "metal-wd-tip"
+    ]
+  },
+  {
+    "id": "prod-metal-bb-71-complete-sealed",
+    "generation": "metal",
+    "skuType": "complete_sealed",
+    "nameEn": "Gravity Perseus AD145WD Starter (Sealed)",
+    "nameJp": "グラビティペルセウス AD145WD スターター（未開封）",
+    "productCodes": [
+      "BB-71"
+    ],
+    "attrs": {
+      "combo": "AD145WD",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "metal-metal-wheel-gravity",
+      "metal-spin-track-armor-defense-145",
+      "metal-wd-tip"
+    ]
+  },
+  {
+    "id": "prod-metal-bb-76-starter",
+    "generation": "metal",
+    "skuType": "starter",
+    "nameEn": "Ray Striker TH170ES Starter",
+    "nameJp": "レイストライカー TH170ES スターター",
+    "productCodes": [
+      "BB-76"
+    ],
+    "attrs": {
+      "combo": "TH170ES",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "metal-metal-wheel-ray",
+      "metal-spin-track-triple-height-170",
+      "metal-performance-tip-eternal-spike"
+    ]
+  },
+  {
+    "id": "prod-metal-bb-76-complete-loose",
+    "generation": "metal",
+    "skuType": "complete_loose",
+    "nameEn": "Ray Striker TH170ES (Complete)",
+    "nameJp": "レイストライカー TH170ES 完成品",
+    "productCodes": [
+      "BB-76"
+    ],
+    "attrs": {
+      "combo": "TH170ES",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "metal-metal-wheel-ray",
+      "metal-spin-track-triple-height-170",
+      "metal-performance-tip-eternal-spike"
+    ]
+  },
+  {
+    "id": "prod-metal-bb-76-complete-sealed",
+    "generation": "metal",
+    "skuType": "complete_sealed",
+    "nameEn": "Ray Striker TH170ES Starter (Sealed)",
+    "nameJp": "レイストライカー TH170ES スターター（未開封）",
+    "productCodes": [
+      "BB-76"
+    ],
+    "attrs": {
+      "combo": "TH170ES",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "metal-metal-wheel-ray",
+      "metal-spin-track-triple-height-170",
+      "metal-performance-tip-eternal-spike"
+    ]
+  },
+  {
+    "id": "prod-metal-bb-70-starter",
+    "generation": "metal",
+    "skuType": "starter",
+    "nameEn": "Ray Unicorno D125CS Starter",
+    "nameJp": "レイユニコルノ D125CS スターター",
+    "productCodes": [
+      "BB-70"
+    ],
+    "attrs": {
+      "combo": "D125CS",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "metal-metal-wheel-ray",
+      "metal-spin-track-125",
+      "metal-performance-tip-coating-spike"
+    ]
+  },
+  {
+    "id": "prod-metal-bb-70-complete-loose",
+    "generation": "metal",
+    "skuType": "complete_loose",
+    "nameEn": "Ray Unicorno D125CS (Complete)",
+    "nameJp": "レイユニコルノ D125CS 完成品",
+    "productCodes": [
+      "BB-70"
+    ],
+    "attrs": {
+      "combo": "D125CS",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "metal-metal-wheel-ray",
+      "metal-spin-track-125",
+      "metal-performance-tip-coating-spike"
+    ]
+  },
+  {
+    "id": "prod-metal-bb-70-complete-sealed",
+    "generation": "metal",
+    "skuType": "complete_sealed",
+    "nameEn": "Ray Unicorno D125CS Starter (Sealed)",
+    "nameJp": "レイユニコルノ D125CS スターター（未開封）",
+    "productCodes": [
+      "BB-70"
+    ],
+    "attrs": {
+      "combo": "D125CS",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "metal-metal-wheel-ray",
+      "metal-spin-track-125",
+      "metal-performance-tip-coating-spike"
+    ]
+  },
+  {
+    "id": "prod-metal-bb-86-starter",
+    "generation": "metal",
+    "skuType": "starter",
+    "nameEn": "Screw Capricorn 90MF Starter",
+    "nameJp": "スクリューキプリコーン 90MF スターター",
+    "productCodes": [
+      "BB-86"
+    ],
+    "attrs": {
+      "combo": "90MF",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "metal-metal-wheel-counter",
+      "metal-spin-track-90",
+      "metal-performance-tip-metal-flat"
+    ]
+  },
+  {
+    "id": "prod-metal-bb-86-complete-loose",
+    "generation": "metal",
+    "skuType": "complete_loose",
+    "nameEn": "Screw Capricorn 90MF (Complete)",
+    "nameJp": "スクリューキプリコーン 90MF 完成品",
+    "productCodes": [
+      "BB-86"
+    ],
+    "attrs": {
+      "combo": "90MF",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "metal-metal-wheel-counter",
+      "metal-spin-track-90",
+      "metal-performance-tip-metal-flat"
+    ]
+  },
+  {
+    "id": "prod-metal-bb-86-complete-sealed",
+    "generation": "metal",
+    "skuType": "complete_sealed",
+    "nameEn": "Screw Capricorn 90MF Starter (Sealed)",
+    "nameJp": "スクリューキプリコーン 90MF スターター（未開封）",
+    "productCodes": [
+      "BB-86"
+    ],
+    "attrs": {
+      "combo": "90MF",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "metal-metal-wheel-counter",
+      "metal-spin-track-90",
+      "metal-performance-tip-metal-flat"
+    ]
+  },
+  {
+    "id": "prod-metal-bb-87-starter",
+    "generation": "metal",
+    "skuType": "starter",
+    "nameEn": "L-Drago Destroy F:S Starter",
+    "nameJp": "Lドラゴ・デストロイ F:S スターター",
+    "productCodes": [
+      "BB-87"
+    ],
+    "attrs": {
+      "combo": "F:S",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "metal-metal-wheel-l-drago-destructor",
+      "metal-spin-track-145",
+      "metal-performance-tip-final-survive"
+    ]
+  },
+  {
+    "id": "prod-metal-bb-87-complete-loose",
+    "generation": "metal",
+    "skuType": "complete_loose",
+    "nameEn": "L-Drago Destroy F:S (Complete)",
+    "nameJp": "Lドラゴ・デストロイ F:S 完成品",
+    "productCodes": [
+      "BB-87"
+    ],
+    "attrs": {
+      "combo": "F:S",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "metal-metal-wheel-l-drago-destructor",
+      "metal-spin-track-145",
+      "metal-performance-tip-final-survive"
+    ]
+  },
+  {
+    "id": "prod-metal-bb-87-complete-sealed",
+    "generation": "metal",
+    "skuType": "complete_sealed",
+    "nameEn": "L-Drago Destroy F:S Starter (Sealed)",
+    "nameJp": "Lドラゴ・デストロイ F:S スターター（未開封）",
+    "productCodes": [
+      "BB-87"
+    ],
+    "attrs": {
+      "combo": "F:S",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "metal-metal-wheel-l-drago-destructor",
+      "metal-spin-track-145",
+      "metal-performance-tip-final-survive"
+    ]
+  },
+  {
+    "id": "prod-metal-bb-99-starter",
+    "generation": "metal",
+    "skuType": "starter",
+    "nameEn": "Hell Crown 130FB Starter",
+    "nameJp": "ヘルクラウン 130FB スターター",
+    "productCodes": [
+      "BB-99"
+    ],
+    "attrs": {
+      "combo": "130FB",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "metal-metal-wheel-hellfire",
+      "metal-spin-track-130",
+      "metal-performance-tip-flat-ball"
+    ]
+  },
+  {
+    "id": "prod-metal-bb-99-complete-loose",
+    "generation": "metal",
+    "skuType": "complete_loose",
+    "nameEn": "Hell Crown 130FB (Complete)",
+    "nameJp": "ヘルクラウン 130FB 完成品",
+    "productCodes": [
+      "BB-99"
+    ],
+    "attrs": {
+      "combo": "130FB",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "metal-metal-wheel-hellfire",
+      "metal-spin-track-130",
+      "metal-performance-tip-flat-ball"
+    ]
+  },
+  {
+    "id": "prod-metal-bb-99-complete-sealed",
+    "generation": "metal",
+    "skuType": "complete_sealed",
+    "nameEn": "Hell Crown 130FB Starter (Sealed)",
+    "nameJp": "ヘルクラウン 130FB スターター（未開封）",
+    "productCodes": [
+      "BB-99"
+    ],
+    "attrs": {
+      "combo": "130FB",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "metal-metal-wheel-hellfire",
+      "metal-spin-track-130",
+      "metal-performance-tip-flat-ball"
+    ]
+  },
+  {
+    "id": "prod-metal-bb-105-starter",
+    "generation": "metal",
+    "skuType": "starter",
+    "nameEn": "Twisted Tempo 145RS Starter",
+    "nameJp": "ツイステッドテンポ 145RS スターター",
+    "productCodes": [
+      "BB-105"
+    ],
+    "attrs": {
+      "combo": "145RS",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "metal-metal-wheel-twisted",
+      "metal-spin-track-145",
+      "metal-performance-tip-rubber-spike"
+    ]
+  },
+  {
+    "id": "prod-metal-bb-105-complete-loose",
+    "generation": "metal",
+    "skuType": "complete_loose",
+    "nameEn": "Twisted Tempo 145RS (Complete)",
+    "nameJp": "ツイステッドテンポ 145RS 完成品",
+    "productCodes": [
+      "BB-105"
+    ],
+    "attrs": {
+      "combo": "145RS",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "metal-metal-wheel-twisted",
+      "metal-spin-track-145",
+      "metal-performance-tip-rubber-spike"
+    ]
+  },
+  {
+    "id": "prod-metal-bb-105-complete-sealed",
+    "generation": "metal",
+    "skuType": "complete_sealed",
+    "nameEn": "Twisted Tempo 145RS Starter (Sealed)",
+    "nameJp": "ツイステッドテンポ 145RS スターター（未開封）",
+    "productCodes": [
+      "BB-105"
+    ],
+    "attrs": {
+      "combo": "145RS",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "metal-metal-wheel-twisted",
+      "metal-spin-track-145",
+      "metal-performance-tip-rubber-spike"
+    ]
+  },
+  {
+    "id": "prod-metal-bb-117-starter",
+    "generation": "metal",
+    "skuType": "starter",
+    "nameEn": "Spiral Capricorn 90MF Starter",
+    "nameJp": "スパイラルキプリコーン 90MF スターター",
+    "productCodes": [
+      "BB-117"
+    ],
+    "attrs": {
+      "combo": "90MF",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "metal-metal-wheel-spiral",
+      "metal-spin-track-90",
+      "metal-performance-tip-metal-flat"
+    ]
+  },
+  {
+    "id": "prod-metal-bb-117-complete-loose",
+    "generation": "metal",
+    "skuType": "complete_loose",
+    "nameEn": "Spiral Capricorn 90MF (Complete)",
+    "nameJp": "スパイラルキプリコーン 90MF 完成品",
+    "productCodes": [
+      "BB-117"
+    ],
+    "attrs": {
+      "combo": "90MF",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "metal-metal-wheel-spiral",
+      "metal-spin-track-90",
+      "metal-performance-tip-metal-flat"
+    ]
+  },
+  {
+    "id": "prod-metal-bb-117-complete-sealed",
+    "generation": "metal",
+    "skuType": "complete_sealed",
+    "nameEn": "Spiral Capricorn 90MF Starter (Sealed)",
+    "nameJp": "スパイラルキプリコーン 90MF スターター（未開封）",
+    "productCodes": [
+      "BB-117"
+    ],
+    "attrs": {
+      "combo": "90MF",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "metal-metal-wheel-spiral",
+      "metal-spin-track-90",
+      "metal-performance-tip-metal-flat"
+    ]
+  },
+  {
+    "id": "prod-metal-bb-124-starter",
+    "generation": "metal",
+    "skuType": "starter",
+    "nameEn": "Vulcan Horogium 145BS Starter",
+    "nameJp": "ヴァルカンホロギウム 145BS スターター",
+    "productCodes": [
+      "BB-124"
+    ],
+    "attrs": {
+      "combo": "145BS",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "metal-metal-wheel-vulcan",
+      "metal-spin-track-145",
+      "metal-performance-tip-bottom-spike"
+    ]
+  },
+  {
+    "id": "prod-metal-bb-124-complete-loose",
+    "generation": "metal",
+    "skuType": "complete_loose",
+    "nameEn": "Vulcan Horogium 145BS (Complete)",
+    "nameJp": "ヴァルカンホロギウム 145BS 完成品",
+    "productCodes": [
+      "BB-124"
+    ],
+    "attrs": {
+      "combo": "145BS",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "metal-metal-wheel-vulcan",
+      "metal-spin-track-145",
+      "metal-performance-tip-bottom-spike"
+    ]
+  },
+  {
+    "id": "prod-metal-bb-124-complete-sealed",
+    "generation": "metal",
+    "skuType": "complete_sealed",
+    "nameEn": "Vulcan Horogium 145BS Starter (Sealed)",
+    "nameJp": "ヴァルカンホロギウム 145BS スターター（未開封）",
+    "productCodes": [
+      "BB-124"
+    ],
+    "attrs": {
+      "combo": "145BS",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "metal-metal-wheel-vulcan",
+      "metal-spin-track-145",
+      "metal-performance-tip-bottom-spike"
+    ]
+  },
+  {
+    "id": "prod-metal-bb-126-starter",
+    "generation": "metal",
+    "skuType": "starter",
+    "nameEn": "Burn Fireblaze 125CS Starter",
+    "nameJp": "バーンファイアブレイズ 125CS スターター",
+    "productCodes": [
+      "BB-126"
+    ],
+    "attrs": {
+      "combo": "125CS",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "metal-metal-wheel-burn",
+      "metal-spin-track-125",
+      "metal-performance-tip-coating-spike"
+    ]
+  },
+  {
+    "id": "prod-metal-bb-126-complete-loose",
+    "generation": "metal",
+    "skuType": "complete_loose",
+    "nameEn": "Burn Fireblaze 125CS (Complete)",
+    "nameJp": "バーンファイアブレイズ 125CS 完成品",
+    "productCodes": [
+      "BB-126"
+    ],
+    "attrs": {
+      "combo": "125CS",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "metal-metal-wheel-burn",
+      "metal-spin-track-125",
+      "metal-performance-tip-coating-spike"
+    ]
+  },
+  {
+    "id": "prod-metal-bb-126-complete-sealed",
+    "generation": "metal",
+    "skuType": "complete_sealed",
+    "nameEn": "Burn Fireblaze 125CS Starter (Sealed)",
+    "nameJp": "バーンファイアブレイズ 125CS スターター（未開封）",
+    "productCodes": [
+      "BB-126"
+    ],
+    "attrs": {
+      "combo": "125CS",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "metal-metal-wheel-burn",
+      "metal-spin-track-125",
+      "metal-performance-tip-coating-spike"
+    ]
+  },
+  {
+    "id": "prod-metal-bb-129-starter",
+    "generation": "metal",
+    "skuType": "starter",
+    "nameEn": "Jade Jupiter ST230WF Starter",
+    "nameJp": "ジェイドジュピター ST230WF スターター",
+    "productCodes": [
+      "BB-129"
+    ],
+    "attrs": {
+      "combo": "ST230WF",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "metal-metal-wheel-jade",
+      "metal-spin-track-spike-230",
+      "metal-performance-tip-wide-flat"
+    ]
+  },
+  {
+    "id": "prod-metal-bb-129-complete-loose",
+    "generation": "metal",
+    "skuType": "complete_loose",
+    "nameEn": "Jade Jupiter ST230WF (Complete)",
+    "nameJp": "ジェイドジュピター ST230WF 完成品",
+    "productCodes": [
+      "BB-129"
+    ],
+    "attrs": {
+      "combo": "ST230WF",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "metal-metal-wheel-jade",
+      "metal-spin-track-spike-230",
+      "metal-performance-tip-wide-flat"
+    ]
+  },
+  {
+    "id": "prod-metal-bb-129-complete-sealed",
+    "generation": "metal",
+    "skuType": "complete_sealed",
+    "nameEn": "Jade Jupiter ST230WF Starter (Sealed)",
+    "nameJp": "ジェイドジュピター ST230WF スターター（未開封）",
+    "productCodes": [
+      "BB-129"
+    ],
+    "attrs": {
+      "combo": "ST230WF",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "metal-metal-wheel-jade",
+      "metal-spin-track-spike-230",
+      "metal-performance-tip-wide-flat"
+    ]
+  },
+  {
+    "id": "prod-metal-bb-130-starter",
+    "generation": "metal",
+    "skuType": "starter",
+    "nameEn": "Scythe Kronos AD145FB Starter",
+    "nameJp": "サイスクロノス AD145FB スターター",
+    "productCodes": [
+      "BB-130"
+    ],
+    "attrs": {
+      "combo": "AD145FB",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "metal-metal-wheel-scythe",
+      "metal-spin-track-armor-defense-145",
+      "metal-performance-tip-flat-ball"
+    ]
+  },
+  {
+    "id": "prod-metal-bb-130-complete-loose",
+    "generation": "metal",
+    "skuType": "complete_loose",
+    "nameEn": "Scythe Kronos AD145FB (Complete)",
+    "nameJp": "サイスクロノス AD145FB 完成品",
+    "productCodes": [
+      "BB-130"
+    ],
+    "attrs": {
+      "combo": "AD145FB",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "metal-metal-wheel-scythe",
+      "metal-spin-track-armor-defense-145",
+      "metal-performance-tip-flat-ball"
+    ]
+  },
+  {
+    "id": "prod-metal-bb-130-complete-sealed",
+    "generation": "metal",
+    "skuType": "complete_sealed",
+    "nameEn": "Scythe Kronos AD145FB Starter (Sealed)",
+    "nameJp": "サイスクロノス AD145FB スターター（未開封）",
+    "productCodes": [
+      "BB-130"
+    ],
+    "attrs": {
+      "combo": "AD145FB",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "metal-metal-wheel-scythe",
+      "metal-spin-track-armor-defense-145",
+      "metal-performance-tip-flat-ball"
+    ]
+  },
+  {
+    "id": "prod-metal-bb-132-starter",
+    "generation": "metal",
+    "skuType": "starter",
+    "nameEn": "Variares D:D Starter",
+    "nameJp": "ヴァリアレス D:D スターター",
+    "productCodes": [
+      "BB-132"
+    ],
+    "attrs": {
+      "combo": "D:D",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "metal-metal-wheel-variares",
+      "metal-spin-track-down-force-145",
+      "metal-performance-tip-delta-drive"
+    ]
+  },
+  {
+    "id": "prod-metal-bb-132-complete-loose",
+    "generation": "metal",
+    "skuType": "complete_loose",
+    "nameEn": "Variares D:D (Complete)",
+    "nameJp": "ヴァリアレス D:D 完成品",
+    "productCodes": [
+      "BB-132"
+    ],
+    "attrs": {
+      "combo": "D:D",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "metal-metal-wheel-variares",
+      "metal-spin-track-down-force-145",
+      "metal-performance-tip-delta-drive"
+    ]
+  },
+  {
+    "id": "prod-metal-bb-132-complete-sealed",
+    "generation": "metal",
+    "skuType": "complete_sealed",
+    "nameEn": "Variares D:D Starter (Sealed)",
+    "nameJp": "ヴァリアレス D:D スターター（未開封）",
+    "productCodes": [
+      "BB-132"
+    ],
+    "attrs": {
+      "combo": "D:D",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "metal-metal-wheel-variares",
+      "metal-spin-track-down-force-145",
+      "metal-performance-tip-delta-drive"
+    ]
+  },
+  {
+    "id": "prod-metal-bb-134-starter",
+    "generation": "metal",
+    "skuType": "starter",
+    "nameEn": "Phantom Orion B:D Starter",
+    "nameJp": "ファントムオリオン B:D スターター",
+    "productCodes": [
+      "BB-134"
+    ],
+    "attrs": {
+      "combo": "B:D",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "metal-metal-wheel-phantom",
+      "metal-spin-track-down-force-145",
+      "metal-performance-tip-bearing-drive"
+    ]
+  },
+  {
+    "id": "prod-metal-bb-134-complete-loose",
+    "generation": "metal",
+    "skuType": "complete_loose",
+    "nameEn": "Phantom Orion B:D (Complete)",
+    "nameJp": "ファントムオリオン B:D 完成品",
+    "productCodes": [
+      "BB-134"
+    ],
+    "attrs": {
+      "combo": "B:D",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "metal-metal-wheel-phantom",
+      "metal-spin-track-down-force-145",
+      "metal-performance-tip-bearing-drive"
+    ]
+  },
+  {
+    "id": "prod-metal-bb-134-complete-sealed",
+    "generation": "metal",
+    "skuType": "complete_sealed",
+    "nameEn": "Phantom Orion B:D Starter (Sealed)",
+    "nameJp": "ファントムオリオン B:D スターター（未開封）",
+    "productCodes": [
+      "BB-134"
+    ],
+    "attrs": {
+      "combo": "B:D",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "metal-metal-wheel-phantom",
+      "metal-spin-track-down-force-145",
+      "metal-performance-tip-bearing-drive"
+    ]
+  },
+  {
+    "id": "prod-metal-bb-136-starter",
+    "generation": "metal",
+    "skuType": "starter",
+    "nameEn": "Diablo Nemesis X:D Starter",
+    "nameJp": "ディアブロネメシス X:D スターター",
+    "productCodes": [
+      "BB-136"
+    ],
+    "attrs": {
+      "combo": "X:D",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "metal-metal-wheel-diablo",
+      "metal-spin-track-145",
+      "metal-performance-tip-defense"
+    ]
+  },
+  {
+    "id": "prod-metal-bb-136-complete-loose",
+    "generation": "metal",
+    "skuType": "complete_loose",
+    "nameEn": "Diablo Nemesis X:D (Complete)",
+    "nameJp": "ディアブロネメシス X:D 完成品",
+    "productCodes": [
+      "BB-136"
+    ],
+    "attrs": {
+      "combo": "X:D",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "metal-metal-wheel-diablo",
+      "metal-spin-track-145",
+      "metal-performance-tip-defense"
+    ]
+  },
+  {
+    "id": "prod-metal-bb-136-complete-sealed",
+    "generation": "metal",
+    "skuType": "complete_sealed",
+    "nameEn": "Diablo Nemesis X:D Starter (Sealed)",
+    "nameJp": "ディアブロネメシス X:D スターター（未開封）",
+    "productCodes": [
+      "BB-136"
+    ],
+    "attrs": {
+      "combo": "X:D",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "metal-metal-wheel-diablo",
+      "metal-spin-track-145",
+      "metal-performance-tip-defense"
+    ]
+  },
+  {
+    "id": "prod-metal-bb-60-starter",
+    "generation": "metal",
+    "skuType": "starter",
+    "nameEn": "Counter Leone 145D Starter",
+    "nameJp": "カウンターレオーネ 145D スターター",
+    "productCodes": [
+      "BB-60"
+    ],
+    "attrs": {
+      "combo": "145D",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "metal-metal-wheel-counter",
+      "metal-spin-track-145",
+      "metal-performance-tip-defense"
+    ]
+  },
+  {
+    "id": "prod-metal-bb-60-complete-loose",
+    "generation": "metal",
+    "skuType": "complete_loose",
+    "nameEn": "Counter Leone 145D (Complete)",
+    "nameJp": "カウンターレオーネ 145D 完成品",
+    "productCodes": [
+      "BB-60"
+    ],
+    "attrs": {
+      "combo": "145D",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "metal-metal-wheel-counter",
+      "metal-spin-track-145",
+      "metal-performance-tip-defense"
+    ]
+  },
+  {
+    "id": "prod-metal-bb-60-complete-sealed",
+    "generation": "metal",
+    "skuType": "complete_sealed",
+    "nameEn": "Counter Leone 145D Starter (Sealed)",
+    "nameJp": "カウンターレオーネ 145D スターター（未開封）",
+    "productCodes": [
+      "BB-60"
+    ],
+    "attrs": {
+      "combo": "145D",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "metal-metal-wheel-counter",
+      "metal-spin-track-145",
+      "metal-performance-tip-defense"
+    ]
+  },
+  {
+    "id": "prod-metal-bb-63-starter",
+    "generation": "metal",
+    "skuType": "starter",
+    "nameEn": "Meteo L-Drago LW105HF Starter",
+    "nameJp": "メテオLドラゴ LW105HF スターター",
+    "productCodes": [
+      "BB-63"
+    ],
+    "attrs": {
+      "combo": "LW105HF",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "metal-metal-wheel-meteo",
+      "metal-spin-track-left-wing-105",
+      "metal-performance-tip-hole-flat"
+    ]
+  },
+  {
+    "id": "prod-metal-bb-63-complete-loose",
+    "generation": "metal",
+    "skuType": "complete_loose",
+    "nameEn": "Meteo L-Drago LW105HF (Complete)",
+    "nameJp": "メテオLドラゴ LW105HF 完成品",
+    "productCodes": [
+      "BB-63"
+    ],
+    "attrs": {
+      "combo": "LW105HF",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "metal-metal-wheel-meteo",
+      "metal-spin-track-left-wing-105",
+      "metal-performance-tip-hole-flat"
+    ]
+  },
+  {
+    "id": "prod-metal-bb-63-complete-sealed",
+    "generation": "metal",
+    "skuType": "complete_sealed",
+    "nameEn": "Meteo L-Drago LW105HF Starter (Sealed)",
+    "nameJp": "メテオLドラゴ LW105HF スターター（未開封）",
+    "productCodes": [
+      "BB-63"
+    ],
+    "attrs": {
+      "combo": "LW105HF",
+      "line": "BB",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "metal-metal-wheel-meteo",
+      "metal-spin-track-left-wing-105",
+      "metal-performance-tip-hole-flat"
+    ]
+  },
+  {
+    "id": "prod-metal-bb-00-sealed",
+    "generation": "metal",
+    "skuType": "sealed",
+    "nameEn": "Metal Fusion Battle Set",
+    "nameJp": "メタルファイト バトルセット",
+    "productCodes": [
+      "BB-00"
+    ],
+    "attrs": {
+      "line": "BB",
+      "contents": "multi-starter",
+      "recipeKind": "contents",
+      "defaultComboPartIds": [
+        "metal-storm-wheel",
+        "metal-spin-track-105",
+        "metal-performance-tip-rubber-flat"
+      ]
+    },
+    "partIds": [
+      "metal-storm-wheel",
+      "metal-rock-wheel",
+      "metal-spin-track-105",
+      "metal-spin-track-145",
+      "metal-performance-tip-rubber-flat",
+      "metal-performance-tip-wide-ball"
+    ]
+  },
+  {
+    "id": "prod-metal-bb-82-sealed",
+    "generation": "metal",
+    "skuType": "sealed",
+    "nameEn": "Ultimate DX Set",
+    "nameJp": "アルティメットDXセット",
+    "productCodes": [
+      "BB-82"
+    ],
+    "attrs": {
+      "line": "BB",
+      "contents": "stadium",
+      "recipeKind": "contents",
+      "defaultComboPartIds": [
+        "metal-metal-wheel-galaxy",
+        "metal-spin-track-wing-105",
+        "metal-r2f-tip"
+      ]
+    },
+    "partIds": [
+      "metal-metal-wheel-galaxy",
+      "metal-metal-wheel-l-drago-destructor",
+      "metal-spin-track-wing-105",
+      "metal-r2f-tip"
+    ]
+  },
+  {
+    "id": "prod-metal-bb-105-set-sealed",
+    "generation": "metal",
+    "skuType": "sealed",
+    "nameEn": "Big Bang Pegasis DX Set",
+    "nameJp": "ビッグバンペガシスDXセット",
+    "productCodes": [
+      "BB-105-SET"
+    ],
+    "attrs": {
+      "line": "BB",
+      "contents": "dx-set",
+      "recipeKind": "contents",
+      "defaultComboPartIds": [
+        "metal-metal-wheel-galaxy",
+        "metal-spin-track-down-force-145",
+        "metal-performance-tip-final-drive"
+      ]
+    },
+    "partIds": [
+      "metal-metal-wheel-galaxy",
+      "metal-spin-track-down-force-145",
+      "metal-performance-tip-final-drive"
+    ]
+  },
+  {
+    "id": "prod-metal-bb-113-sealed",
+    "generation": "metal",
+    "skuType": "sealed",
+    "nameEn": "Random Booster Vol.1",
+    "nameJp": "ランダムブースター Vol.1",
+    "productCodes": [
+      "BB-113"
+    ],
+    "attrs": {
+      "line": "BB",
+      "contents": "random-booster",
+      "recipeKind": "contents",
+      "defaultComboPartIds": [
+        "metal-metal-wheel-flame",
+        "metal-spin-track-125",
+        "metal-performance-tip-semi-defense"
+      ]
+    },
+    "partIds": [
+      "metal-metal-wheel-flame",
+      "metal-metal-wheel-poison",
+      "metal-spin-track-125",
+      "metal-performance-tip-semi-defense"
+    ]
+  },
+  {
+    "id": "prod-metal-bb-118-set-sealed",
+    "generation": "metal",
+    "skuType": "sealed",
+    "nameEn": "Beyblade Super Deck Set",
+    "nameJp": "ベイブレード スーパーデッキセット",
+    "productCodes": [
+      "BB-118-SET"
+    ],
+    "attrs": {
+      "line": "BB",
+      "contents": "deck-set",
+      "recipeKind": "contents",
+      "defaultComboPartIds": [
+        "metal-metal-wheel-beat",
+        "metal-spin-track-triple-height-170",
+        "metal-performance-tip-eternal-spike"
+      ]
+    },
+    "partIds": [
+      "metal-metal-wheel-beat",
+      "metal-metal-wheel-twisted",
+      "metal-spin-track-triple-height-170",
+      "metal-performance-tip-eternal-spike"
+    ]
+  }
+]

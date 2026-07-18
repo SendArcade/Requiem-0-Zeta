@@ -1,0 +1,68 @@
+[
+  {
+    "externalId": "70451234",
+    "partId": "x-bx-01-blade",
+    "title": "ベイブレードX ドランソード BX-01 中古",
+    "price": 780,
+    "currency": "JPY",
+    "status": "sold",
+    "condition": "used",
+    "url": "https://www.suruga-ya.jp/product/detail/70451234",
+    "observedAt": "2026-07-05T10:00:00Z"
+  },
+  {
+    "externalId": "70451235",
+    "partId": "x-bx-01-blade",
+    "title": "Dran Sword BX-01 ベイブレードX 美品",
+    "price": 980,
+    "currency": "JPY",
+    "status": "sold",
+    "condition": "like_new",
+    "url": "https://www.suruga-ya.jp/product/detail/70451235",
+    "observedAt": "2026-06-22T08:30:00Z"
+  },
+  {
+    "externalId": "70451240",
+    "partId": "x-bx-02-blade",
+    "title": "ウィザードアロー BX-02 中古",
+    "price": 680,
+    "currency": "JPY",
+    "status": "sold",
+    "condition": "used",
+    "url": "https://www.suruga-ya.jp/product/detail/70451240",
+    "observedAt": "2026-07-01T12:00:00Z"
+  },
+  {
+    "externalId": "70451255",
+    "partId": "burst-b-97-layer",
+    "title": "ヘブンペガサス B-97 GT 中古",
+    "price": 2800,
+    "currency": "JPY",
+    "status": "sold",
+    "condition": "like_new",
+    "url": "https://www.suruga-ya.jp/product/detail/70451255",
+    "observedAt": "2026-06-14T16:00:00Z"
+  },
+  {
+    "externalId": "70451266",
+    "partId": "x-bx-04-blade",
+    "title": "ナイトシールド BX-04 新品",
+    "price": 1200,
+    "currency": "JPY",
+    "status": "sold",
+    "condition": "sealed",
+    "url": "https://www.suruga-ya.jp/product/detail/70451266",
+    "observedAt": "2026-05-30T09:00:00Z"
+  },
+  {
+    "externalId": "70451277",
+    "partId": "plastic-dragoon-ring",
+    "title": "プラスチック世代 ドラグーン アタックリング 中古",
+    "price": 1980,
+    "currency": "JPY",
+    "status": "sold",
+    "condition": "used",
+    "url": "https://www.suruga-ya.jp/product/detail/70451277",
+    "observedAt": "2026-04-20T11:00:00Z"
+  }
+]

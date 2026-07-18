@@ -1,0 +1,68 @@
+[
+  {
+    "externalId": "ya-3001",
+    "partId": "x-bx-01-blade",
+    "title": "ベイブレードX BEYBLADE X ドランソード 3-60F 赤 レッド",
+    "price": 2000,
+    "currency": "JPY",
+    "status": "sold",
+    "condition": "used",
+    "url": "https://auctions.yahoo.co.jp/jp/auction/m14526260763",
+    "observedAt": "2026-07-20T10:00:00Z"
+  },
+  {
+    "externalId": "ya-3002",
+    "partId": "x-bx-01-blade",
+    "title": "ベイブレードX ドランソード 3-60F ランチャーセット",
+    "price": 2300,
+    "currency": "JPY",
+    "status": "sold",
+    "condition": "used",
+    "url": "https://auctions.yahoo.co.jp/jp/auction/m17211718724",
+    "observedAt": "2026-07-18T14:30:00Z"
+  },
+  {
+    "externalId": "ya-3003",
+    "partId": "x-bx-04-blade",
+    "title": "ベイブレードX BX-14 ナイトシールド＆ドランソード",
+    "price": 3600,
+    "currency": "JPY",
+    "status": "sold",
+    "condition": "like_new",
+    "url": "https://auctions.yahoo.co.jp/jp/auction/m16097041692",
+    "observedAt": "2026-07-15T09:00:00Z"
+  },
+  {
+    "externalId": "ya-3004",
+    "partId": "x-bx-02-blade",
+    "title": "ベイブレードX ウィザードアロー 4-60N 中古",
+    "price": 1800,
+    "currency": "JPY",
+    "status": "sold",
+    "condition": "used",
+    "url": "https://paypayfleamarket.yahoo.co.jp/item/z651278494",
+    "observedAt": "2026-07-10T11:00:00Z"
+  },
+  {
+    "externalId": "ya-3005",
+    "partId": "x-bx-05-ratchet",
+    "title": "ベイブレードX ラチェット 4-50 ビット UF アンダーフラット 未使用",
+    "price": 1250,
+    "currency": "JPY",
+    "status": "sold",
+    "condition": "sealed",
+    "url": "https://paypayfleamarket.yahoo.co.jp/item/z651675064",
+    "observedAt": "2026-07-08T16:00:00Z"
+  },
+  {
+    "externalId": "ya-3006",
+    "partId": "burst-b-34-layer",
+    "title": "ベイブレード バースト B-34 ウィニングヴァルキリー 中古",
+    "price": 3200,
+    "currency": "JPY",
+    "status": "sold",
+    "condition": "used",
+    "url": "https://auctions.yahoo.co.jp/jp/auction/e1238182124",
+    "observedAt": "2026-06-28T08:00:00Z"
+  }
+]

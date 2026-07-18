@@ -1,0 +1,35 @@
+[
+  {
+    "externalId": "ebay-1001",
+    "partId": "x-bx-01-blade",
+    "title": "Beyblade X BX-01 Dran Sword 3-60F Starter Takara Tomy US Seller",
+    "price": 19.99,
+    "currency": "USD",
+    "status": "sold",
+    "condition": "used",
+    "url": "https://www.ebay.com/itm/25678901234567",
+    "observedAt": "2026-07-22T12:00:00Z"
+  },
+  {
+    "externalId": "ebay-1002",
+    "partId": "burst-b-34-layer",
+    "title": "Beyblade Burst B-34 Winning Valkyrie Layer Used",
+    "price": 12.5,
+    "currency": "USD",
+    "status": "sold",
+    "condition": "used",
+    "url": "https://www.ebay.com/itm/25678901234568",
+    "observedAt": "2026-07-18T09:30:00Z"
+  },
+  {
+    "externalId": "ebay-1003",
+    "partId": "x-bx-01-blade",
+    "title": "Hasbro Beyblade X Dran Sword Launcher Set New Sealed",
+    "price": 24.0,
+    "currency": "USD",
+    "status": "sold",
+    "condition": "sealed",
+    "url": "https://www.ebay.com/itm/25678901234569",
+    "observedAt": "2026-07-10T16:00:00Z"
+  }
+]
