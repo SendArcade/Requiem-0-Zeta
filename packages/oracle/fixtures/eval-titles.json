@@ -1,0 +1,1282 @@
+[
+  {
+    "title": "ベイブレードX ドランソード 3-60F 単品",
+    "expectedPartId": "x-bx-01-blade",
+    "expectedShape": "single_part",
+    "source": "curated"
+  },
+  {
+    "title": "【中古】ベイブレードX ドランソード BX-01 美品",
+    "expectedPartId": "x-bx-01-blade",
+    "expectedShape": "single_part",
+    "source": "curated"
+  },
+  {
+    "title": "ベイブレードXドランソード3-60F",
+    "expectedPartId": null,
+    "expectedShape": "complete_bey",
+    "source": "curated",
+    "note": "combo suffix without 単品"
+  },
+  {
+    "title": "ベイブレードX BX-01 スターター",
+    "expectedPartId": null,
+    "expectedShape": "complete_bey",
+    "source": "curated"
+  },
+  {
+    "title": "BX-01 ドランソード まとめ売り 10個セット",
+    "expectedPartId": null,
+    "expectedShape": "lot",
+    "source": "curated"
+  },
+  {
+    "title": "ベイブレードX Jリーグ BX-00 コバルトドラグーン ドランソード セット",
+    "expectedPartId": null,
+    "expectedShape": "lot",
+    "source": "curated"
+  },
+  {
+    "title": "戰鬥陀螺x 龙剑 3-60f 単品",
+    "expectedPartId": "x-bx-01-blade",
+    "expectedShape": "single_part",
+    "source": "curated",
+    "note": "Simplified Chinese via opencc"
+  },
+  {
+    "title": "【現貨】戰鬥陀螺X BX-01 龍劍 正版",
+    "expectedPartId": "x-bx-01-blade",
+    "expectedShape": "single_part",
+    "source": "curated"
+  },
+  {
+    "title": "WD-MG ウエイトディスク",
+    "expectedPartId": "plastic-mg-weight",
+    "expectedShape": "single_part",
+    "source": "curated"
+  },
+  {
+    "title": "Winning Valkyrie B-34 layer used",
+    "expectedPartId": "burst-b-34-layer",
+    "expectedShape": "single_part",
+    "source": "curated"
+  },
+  {
+    "title": "ベイブレード バースト 大量 まとめ 100個以上",
+    "expectedPartId": null,
+    "expectedShape": "lot",
+    "source": "curated"
+  },
+  {
+    "title": "戰鬥陀螺 全套 整組",
+    "expectedPartId": null,
+    "expectedShape": "lot",
+    "source": "curated"
+  },
+  {
+    "title": "ベイブレードX Aero Pegasus ブレード 単品",
+    "expectedPartId": "x-blade-aero-pegasus",
+    "expectedShape": "single_part",
+    "source": "synthetic"
+  },
+  {
+    "title": "ベイブレードX Aero Pegasus 3-60F",
+    "expectedPartId": null,
+    "expectedShape": "complete_bey",
+    "source": "synthetic"
+  },
+  {
+    "title": "Aero Pegasus まとめ売り",
+    "expectedPartId": null,
+    "expectedShape": "lot",
+    "source": "synthetic"
+  },
+  {
+    "title": "ベイブレードX Arc ブレード 単品",
+    "expectedPartId": "x-blade-arc",
+    "expectedShape": "single_part",
+    "source": "synthetic"
+  },
+  {
+    "title": "ベイブレードX Arc 3-60F",
+    "expectedPartId": null,
+    "expectedShape": "complete_bey",
+    "source": "synthetic"
+  },
+  {
+    "title": "Arc まとめ売り",
+    "expectedPartId": null,
+    "expectedShape": "lot",
+    "source": "synthetic"
+  },
+  {
+    "title": "ベイブレードX Assault ブレード 単品",
+    "expectedPartId": "x-blade-assault",
+    "expectedShape": "single_part",
+    "source": "synthetic"
+  },
+  {
+    "title": "ベイブレードX Assault 3-60F",
+    "expectedPartId": null,
+    "expectedShape": "complete_bey",
+    "source": "synthetic"
+  },
+  {
+    "title": "Assault まとめ売り",
+    "expectedPartId": null,
+    "expectedShape": "lot",
+    "source": "synthetic"
+  },
+  {
+    "title": "ベイブレードX Bear Scratch ブレード 単品",
+    "expectedPartId": "x-blade-bear-scratch",
+    "expectedShape": "single_part",
+    "source": "synthetic"
+  },
+  {
+    "title": "ベイブレードX BX-37 Bear Scratch 中古",
+    "expectedPartId": "x-blade-bear-scratch",
+    "expectedShape": "single_part",
+    "source": "synthetic"
+  },
+  {
+    "title": "ベイブレードX BX-37 スターター",
+    "expectedPartId": null,
+    "expectedShape": "complete_bey",
+    "source": "synthetic"
+  },
+  {
+    "title": "ベイブレードX Bear Scratch 3-60F",
+    "expectedPartId": null,
+    "expectedShape": "complete_bey",
+    "source": "synthetic"
+  },
+  {
+    "title": "Bear Scratch まとめ売り",
+    "expectedPartId": null,
+    "expectedShape": "lot",
+    "source": "synthetic"
+  },
+  {
+    "title": "ベイブレードX Black Shell ブレード 単品",
+    "expectedPartId": "x-blade-black-shell",
+    "expectedShape": "single_part",
+    "source": "synthetic"
+  },
+  {
+    "title": "ベイブレードX BX-35 Black Shell 中古",
+    "expectedPartId": "x-blade-black-shell",
+    "expectedShape": "single_part",
+    "source": "synthetic"
+  },
+  {
+    "title": "ベイブレードX BX-35 スターター",
+    "expectedPartId": null,
+    "expectedShape": "complete_bey",
+    "source": "synthetic"
+  },
+  {
+    "title": "ベイブレードX Black Shell 3-60F",
+    "expectedPartId": null,
+    "expectedShape": "complete_bey",
+    "source": "synthetic"
+  },
+  {
+    "title": "Black Shell まとめ売り",
+    "expectedPartId": null,
+    "expectedShape": "lot",
+    "source": "synthetic"
+  },
+  {
+    "title": "ベイブレードX Blast ブレード 単品",
+    "expectedPartId": "x-blade-blast",
+    "expectedShape": "single_part",
+    "source": "synthetic"
+  },
+  {
+    "title": "ベイブレードX Blast 3-60F",
+    "expectedPartId": null,
+    "expectedShape": "complete_bey",
+    "source": "synthetic"
+  },
+  {
+    "title": "Blast まとめ売り",
+    "expectedPartId": null,
+    "expectedShape": "lot",
+    "source": "synthetic"
+  },
+  {
+    "title": "ベイブレードX Blitz ブレード 単品",
+    "expectedPartId": "x-blade-blitz",
+    "expectedShape": "single_part",
+    "source": "synthetic"
+  },
+  {
+    "title": "ベイブレードX Blitz 3-60F",
+    "expectedPartId": null,
+    "expectedShape": "complete_bey",
+    "source": "synthetic"
+  },
+  {
+    "title": "Blitz まとめ売り",
+    "expectedPartId": null,
+    "expectedShape": "lot",
+    "source": "synthetic"
+  },
+  {
+    "title": "ベイブレードX Brave ブレード 単品",
+    "expectedPartId": "x-blade-brave",
+    "expectedShape": "single_part",
+    "source": "synthetic"
+  },
+  {
+    "title": "ベイブレードX Brave 3-60F",
+    "expectedPartId": null,
+    "expectedShape": "complete_bey",
+    "source": "synthetic"
+  },
+  {
+    "title": "Brave まとめ売り",
+    "expectedPartId": null,
+    "expectedShape": "lot",
+    "source": "synthetic"
+  },
+  {
+    "title": "ベイブレードX Break ブレード 単品",
+    "expectedPartId": "x-blade-break",
+    "expectedShape": "single_part",
+    "source": "synthetic"
+  },
+  {
+    "title": "ベイブレードX Break 3-60F",
+    "expectedPartId": null,
+    "expectedShape": "complete_bey",
+    "source": "synthetic"
+  },
+  {
+    "title": "Break まとめ売り",
+    "expectedPartId": null,
+    "expectedShape": "lot",
+    "source": "synthetic"
+  },
+  {
+    "title": "ベイブレードX Brush ブレード 単品",
+    "expectedPartId": "x-blade-brush",
+    "expectedShape": "single_part",
+    "source": "synthetic"
+  },
+  {
+    "title": "ベイブレードX Brush 3-60F",
+    "expectedPartId": null,
+    "expectedShape": "complete_bey",
+    "source": "synthetic"
+  },
+  {
+    "title": "Brush まとめ売り",
+    "expectedPartId": null,
+    "expectedShape": "lot",
+    "source": "synthetic"
+  },
+  {
+    "title": "ベイブレードX Bullet Griffon ブレード 単品",
+    "expectedPartId": "x-blade-bullet-griffon",
+    "expectedShape": "single_part",
+    "source": "synthetic"
+  },
+  {
+    "title": "ベイブレードX Bullet Griffon 3-60F",
+    "expectedPartId": null,
+    "expectedShape": "complete_bey",
+    "source": "synthetic"
+  },
+  {
+    "title": "Bullet Griffon まとめ売り",
+    "expectedPartId": null,
+    "expectedShape": "lot",
+    "source": "synthetic"
+  },
+  {
+    "title": "ベイブレードX Bumper ブレード 単品",
+    "expectedPartId": "x-blade-bumper",
+    "expectedShape": "single_part",
+    "source": "synthetic"
+  },
+  {
+    "title": "ベイブレードX Bumper 3-60F",
+    "expectedPartId": null,
+    "expectedShape": "complete_bey",
+    "source": "synthetic"
+  },
+  {
+    "title": "Bumper まとめ売り",
+    "expectedPartId": null,
+    "expectedShape": "lot",
+    "source": "synthetic"
+  },
+  {
+    "title": "ベイブレードX Charge ブレード 単品",
+    "expectedPartId": "x-blade-charge",
+    "expectedShape": "single_part",
+    "source": "synthetic"
+  },
+  {
+    "title": "ベイブレードX Charge 3-60F",
+    "expectedPartId": null,
+    "expectedShape": "complete_bey",
+    "source": "synthetic"
+  },
+  {
+    "title": "Charge まとめ売り",
+    "expectedPartId": null,
+    "expectedShape": "lot",
+    "source": "synthetic"
+  },
+  {
+    "title": "ベイブレードX Clock Mirage ブレード 単品",
+    "expectedPartId": "x-blade-clock-mirage",
+    "expectedShape": "single_part",
+    "source": "synthetic"
+  },
+  {
+    "title": "ベイブレードX Clock Mirage 3-60F",
+    "expectedPartId": null,
+    "expectedShape": "complete_bey",
+    "source": "synthetic"
+  },
+  {
+    "title": "Clock Mirage まとめ売り",
+    "expectedPartId": null,
+    "expectedShape": "lot",
+    "source": "synthetic"
+  },
+  {
+    "title": "ベイブレードX Cobalt Dragoon ブレード 単品",
+    "expectedPartId": "x-blade-cobalt-dragoon",
+    "expectedShape": "single_part",
+    "source": "synthetic"
+  },
+  {
+    "title": "ベイブレードX BX-00 Cobalt Dragoon 中古",
+    "expectedPartId": "x-blade-cobalt-dragoon",
+    "expectedShape": "single_part",
+    "source": "synthetic"
+  },
+  {
+    "title": "ベイブレードX BX-00 スターター",
+    "expectedPartId": null,
+    "expectedShape": "complete_bey",
+    "source": "synthetic"
+  },
+  {
+    "title": "ベイブレードX Cobalt Dragoon 3-60F",
+    "expectedPartId": null,
+    "expectedShape": "complete_bey",
+    "source": "synthetic"
+  },
+  {
+    "title": "Cobalt Dragoon まとめ売り",
+    "expectedPartId": null,
+    "expectedShape": "lot",
+    "source": "synthetic"
+  },
+  {
+    "title": "ベイブレードX Cobalt Drake ブレード 単品",
+    "expectedPartId": "x-blade-cobalt-drake",
+    "expectedShape": "single_part",
+    "source": "synthetic"
+  },
+  {
+    "title": "ベイブレードX BX-00 Cobalt Drake 中古",
+    "expectedPartId": "x-blade-cobalt-drake",
+    "expectedShape": "single_part",
+    "source": "synthetic"
+  },
+  {
+    "title": "ベイブレードX Cobalt Drake 3-60F",
+    "expectedPartId": null,
+    "expectedShape": "complete_bey",
+    "source": "synthetic"
+  },
+  {
+    "title": "Cobalt Drake まとめ売り",
+    "expectedPartId": null,
+    "expectedShape": "lot",
+    "source": "synthetic"
+  },
+  {
+    "title": "ベイブレードX Crimson Garuda ブレード 単品",
+    "expectedPartId": "x-blade-crimson-garuda",
+    "expectedShape": "single_part",
+    "source": "synthetic"
+  },
+  {
+    "title": "ベイブレードX BX-38 Crimson Garuda 中古",
+    "expectedPartId": "x-blade-crimson-garuda",
+    "expectedShape": "single_part",
+    "source": "synthetic"
+  },
+  {
+    "title": "ベイブレードX BX-38 スターター",
+    "expectedPartId": null,
+    "expectedShape": "complete_bey",
+    "source": "synthetic"
+  },
+  {
+    "title": "ベイブレードX Crimson Garuda 3-60F",
+    "expectedPartId": null,
+    "expectedShape": "complete_bey",
+    "source": "synthetic"
+  },
+  {
+    "title": "Crimson Garuda まとめ売り",
+    "expectedPartId": null,
+    "expectedShape": "lot",
+    "source": "synthetic"
+  },
+  {
+    "title": "ベイブレードX Croc Crunch ブレード 単品",
+    "expectedPartId": "x-blade-croc-crunch",
+    "expectedShape": "single_part",
+    "source": "synthetic"
+  },
+  {
+    "title": "ベイブレードX BX-00 Croc Crunch 中古",
+    "expectedPartId": "x-blade-croc-crunch",
+    "expectedShape": "single_part",
+    "source": "synthetic"
+  },
+  {
+    "title": "ベイブレードX Croc Crunch 3-60F",
+    "expectedPartId": null,
+    "expectedShape": "complete_bey",
+    "source": "synthetic"
+  },
+  {
+    "title": "Croc Crunch まとめ売り",
+    "expectedPartId": null,
+    "expectedShape": "lot",
+    "source": "synthetic"
+  },
+  {
+    "title": "ベイブレードX Dark ブレード 単品",
+    "expectedPartId": "x-blade-dark",
+    "expectedShape": "single_part",
+    "source": "synthetic"
+  },
+  {
+    "title": "ベイブレードX Dark 3-60F",
+    "expectedPartId": null,
+    "expectedShape": "complete_bey",
+    "source": "synthetic"
+  },
+  {
+    "title": "Dark まとめ売り",
+    "expectedPartId": null,
+    "expectedShape": "lot",
+    "source": "synthetic"
+  },
+  {
+    "title": "ベイブレードX Delta ブレード 単品",
+    "expectedPartId": "x-blade-delta",
+    "expectedShape": "single_part",
+    "source": "synthetic"
+  },
+  {
+    "title": "ベイブレードX Delta 3-60F",
+    "expectedPartId": null,
+    "expectedShape": "complete_bey",
+    "source": "synthetic"
+  },
+  {
+    "title": "Delta まとめ売り",
+    "expectedPartId": null,
+    "expectedShape": "lot",
+    "source": "synthetic"
+  },
+  {
+    "title": "ベイブレードX Draciel Shield ブレード 単品",
+    "expectedPartId": "x-blade-draciel-shield",
+    "expectedShape": "single_part",
+    "source": "synthetic"
+  },
+  {
+    "title": "ベイブレードX BX-00 Draciel Shield 中古",
+    "expectedPartId": "x-blade-draciel-shield",
+    "expectedShape": "single_part",
+    "source": "synthetic"
+  },
+  {
+    "title": "ベイブレードX Draciel Shield 3-60F",
+    "expectedPartId": null,
+    "expectedShape": "complete_bey",
+    "source": "synthetic"
+  },
+  {
+    "title": "Draciel Shield まとめ売り",
+    "expectedPartId": null,
+    "expectedShape": "lot",
+    "source": "synthetic"
+  },
+  {
+    "title": "ベイブレードX Dragoon Storm ブレード 単品",
+    "expectedPartId": "x-blade-dragoon-storm",
+    "expectedShape": "single_part",
+    "source": "synthetic"
+  },
+  {
+    "title": "ベイブレードX BX-00 Dragoon Storm 中古",
+    "expectedPartId": "x-blade-dragoon-storm",
+    "expectedShape": "single_part",
+    "source": "synthetic"
+  },
+  {
+    "title": "ベイブレードX Dragoon Storm 3-60F",
+    "expectedPartId": null,
+    "expectedShape": "complete_bey",
+    "source": "synthetic"
+  },
+  {
+    "title": "Dragoon Storm まとめ売り",
+    "expectedPartId": null,
+    "expectedShape": "lot",
+    "source": "synthetic"
+  },
+  {
+    "title": "ベイブレードX Dran Buster ブレード 単品",
+    "expectedPartId": "x-blade-dran-buster",
+    "expectedShape": "single_part",
+    "source": "synthetic"
+  },
+  {
+    "title": "ベイブレードX BX-00 Dran Buster 中古",
+    "expectedPartId": "x-blade-dran-buster",
+    "expectedShape": "single_part",
+    "source": "synthetic"
+  },
+  {
+    "title": "ベイブレードX Dran Buster 3-60F",
+    "expectedPartId": null,
+    "expectedShape": "complete_bey",
+    "source": "synthetic"
+  },
+  {
+    "title": "Dran Buster まとめ売り",
+    "expectedPartId": null,
+    "expectedShape": "lot",
+    "source": "synthetic"
+  },
+  {
+    "title": "ベイブレードX Dran Dagger ブレード 単品",
+    "expectedPartId": "x-blade-dran-dagger",
+    "expectedShape": "single_part",
+    "source": "synthetic"
+  },
+  {
+    "title": "ベイブレードX BX-20 Dran Dagger 中古",
+    "expectedPartId": "x-blade-dran-dagger",
+    "expectedShape": "single_part",
+    "source": "synthetic"
+  },
+  {
+    "title": "ベイブレードX BX-20 スターター",
+    "expectedPartId": null,
+    "expectedShape": "complete_bey",
+    "source": "synthetic"
+  },
+  {
+    "title": "ベイブレードX Dran Dagger 3-60F",
+    "expectedPartId": null,
+    "expectedShape": "complete_bey",
+    "source": "synthetic"
+  },
+  {
+    "title": "Dran Dagger まとめ売り",
+    "expectedPartId": null,
+    "expectedShape": "lot",
+    "source": "synthetic"
+  },
+  {
+    "title": "ベイブレードX ドランソード ブレード 単品",
+    "expectedPartId": "x-bx-01-blade",
+    "expectedShape": "single_part",
+    "source": "synthetic"
+  },
+  {
+    "title": "ベイブレードX BX-00 ドランソード 中古",
+    "expectedPartId": "x-bx-01-blade",
+    "expectedShape": "single_part",
+    "source": "synthetic"
+  },
+  {
+    "title": "ベイブレードX ドランソード 3-60F",
+    "expectedPartId": null,
+    "expectedShape": "complete_bey",
+    "source": "synthetic"
+  },
+  {
+    "title": "ドランソード まとめ売り",
+    "expectedPartId": null,
+    "expectedShape": "lot",
+    "source": "synthetic"
+  },
+  {
+    "title": "戰鬥陀螺X 龍劍 單品",
+    "expectedPartId": "x-bx-01-blade",
+    "expectedShape": "single_part",
+    "source": "synthetic"
+  },
+  {
+    "title": "ベイブレードX Dranzer Spiral ブレード 単品",
+    "expectedPartId": "x-blade-dranzer-spiral",
+    "expectedShape": "single_part",
+    "source": "synthetic"
+  },
+  {
+    "title": "ベイブレードX BX-00 Dranzer Spiral 中古",
+    "expectedPartId": "x-blade-dranzer-spiral",
+    "expectedShape": "single_part",
+    "source": "synthetic"
+  },
+  {
+    "title": "ベイブレードX Dranzer Spiral 3-60F",
+    "expectedPartId": null,
+    "expectedShape": "complete_bey",
+    "source": "synthetic"
+  },
+  {
+    "title": "Dranzer Spiral まとめ売り",
+    "expectedPartId": null,
+    "expectedShape": "lot",
+    "source": "synthetic"
+  },
+  {
+    "title": "ベイブレードX Driger Slash ブレード 単品",
+    "expectedPartId": "x-blade-driger-slash",
+    "expectedShape": "single_part",
+    "source": "synthetic"
+  },
+  {
+    "title": "ベイブレードX BX-00 Driger Slash 中古",
+    "expectedPartId": "x-blade-driger-slash",
+    "expectedShape": "single_part",
+    "source": "synthetic"
+  },
+  {
+    "title": "ベイブレードX Driger Slash 3-60F",
+    "expectedPartId": null,
+    "expectedShape": "complete_bey",
+    "source": "synthetic"
+  },
+  {
+    "title": "Driger Slash まとめ売り",
+    "expectedPartId": null,
+    "expectedShape": "lot",
+    "source": "synthetic"
+  },
+  {
+    "title": "ベイブレードX Dual ブレード 単品",
+    "expectedPartId": "x-blade-dual",
+    "expectedShape": "single_part",
+    "source": "synthetic"
+  },
+  {
+    "title": "ベイブレードX Dual 3-60F",
+    "expectedPartId": null,
+    "expectedShape": "complete_bey",
+    "source": "synthetic"
+  },
+  {
+    "title": "Dual まとめ売り",
+    "expectedPartId": null,
+    "expectedShape": "lot",
+    "source": "synthetic"
+  },
+  {
+    "title": "ベイブレードX Eclipse ブレード 単品",
+    "expectedPartId": "x-blade-eclipse",
+    "expectedShape": "single_part",
+    "source": "synthetic"
+  },
+  {
+    "title": "ベイブレードX Eclipse 3-60F",
+    "expectedPartId": null,
+    "expectedShape": "complete_bey",
+    "source": "synthetic"
+  },
+  {
+    "title": "Eclipse まとめ売り",
+    "expectedPartId": null,
+    "expectedShape": "lot",
+    "source": "synthetic"
+  },
+  {
+    "title": "ベイブレードX Erase ブレード 単品",
+    "expectedPartId": "x-blade-erase",
+    "expectedShape": "single_part",
+    "source": "synthetic"
+  },
+  {
+    "title": "ベイブレードX Erase 3-60F",
+    "expectedPartId": null,
+    "expectedShape": "complete_bey",
+    "source": "synthetic"
+  },
+  {
+    "title": "Erase まとめ売り",
+    "expectedPartId": null,
+    "expectedShape": "lot",
+    "source": "synthetic"
+  },
+  {
+    "title": "ベイブレードX Fang ブレード 単品",
+    "expectedPartId": "x-blade-fang",
+    "expectedShape": "single_part",
+    "source": "synthetic"
+  },
+  {
+    "title": "ベイブレードX Fang 3-60F",
+    "expectedPartId": null,
+    "expectedShape": "complete_bey",
+    "source": "synthetic"
+  },
+  {
+    "title": "Fang まとめ売り",
+    "expectedPartId": null,
+    "expectedShape": "lot",
+    "source": "synthetic"
+  },
+  {
+    "title": "ベイブレードX Flame ブレード 単品",
+    "expectedPartId": "x-blade-flame",
+    "expectedShape": "single_part",
+    "source": "synthetic"
+  },
+  {
+    "title": "ベイブレードX Flame 3-60F",
+    "expectedPartId": null,
+    "expectedShape": "complete_bey",
+    "source": "synthetic"
+  },
+  {
+    "title": "Flame まとめ売り",
+    "expectedPartId": null,
+    "expectedShape": "lot",
+    "source": "synthetic"
+  },
+  {
+    "title": "ベイブレードX Flare ブレード 単品",
+    "expectedPartId": "x-blade-flare",
+    "expectedShape": "single_part",
+    "source": "synthetic"
+  },
+  {
+    "title": "ベイブレードX Flare 3-60F",
+    "expectedPartId": null,
+    "expectedShape": "complete_bey",
+    "source": "synthetic"
+  },
+  {
+    "title": "Flare まとめ売り",
+    "expectedPartId": null,
+    "expectedShape": "lot",
+    "source": "synthetic"
+  },
+  {
+    "title": "ベイブレードX Flow ブレード 単品",
+    "expectedPartId": "x-blade-flow",
+    "expectedShape": "single_part",
+    "source": "synthetic"
+  },
+  {
+    "title": "ベイブレードX Flow 3-60F",
+    "expectedPartId": null,
+    "expectedShape": "complete_bey",
+    "source": "synthetic"
+  },
+  {
+    "title": "Flow まとめ売り",
+    "expectedPartId": null,
+    "expectedShape": "lot",
+    "source": "synthetic"
+  },
+  {
+    "title": "ベイブレードX Fortress ブレード 単品",
+    "expectedPartId": "x-blade-fortress",
+    "expectedShape": "single_part",
+    "source": "synthetic"
+  },
+  {
+    "title": "ベイブレードX Fortress 3-60F",
+    "expectedPartId": null,
+    "expectedShape": "complete_bey",
+    "source": "synthetic"
+  },
+  {
+    "title": "Fortress まとめ売り",
+    "expectedPartId": null,
+    "expectedShape": "lot",
+    "source": "synthetic"
+  },
+  {
+    "title": "ベイブレードX Free ブレード 単品",
+    "expectedPartId": "x-blade-free",
+    "expectedShape": "single_part",
+    "source": "synthetic"
+  },
+  {
+    "title": "ベイブレードX Free 3-60F",
+    "expectedPartId": null,
+    "expectedShape": "complete_bey",
+    "source": "synthetic"
+  },
+  {
+    "title": "Free まとめ売り",
+    "expectedPartId": null,
+    "expectedShape": "lot",
+    "source": "synthetic"
+  },
+  {
+    "title": "ベイブレードX Ghost Circle ブレード 単品",
+    "expectedPartId": "x-blade-ghost-circle",
+    "expectedShape": "single_part",
+    "source": "synthetic"
+  },
+  {
+    "title": "ベイブレードX Ghost Circle 3-60F",
+    "expectedPartId": null,
+    "expectedShape": "complete_bey",
+    "source": "synthetic"
+  },
+  {
+    "title": "Ghost Circle まとめ売り",
+    "expectedPartId": null,
+    "expectedShape": "lot",
+    "source": "synthetic"
+  },
+  {
+    "title": "ベイブレードX Goat Tackle ブレード 単品",
+    "expectedPartId": "x-blade-goat-tackle",
+    "expectedShape": "single_part",
+    "source": "synthetic"
+  },
+  {
+    "title": "ベイブレードX BX-46 Goat Tackle 中古",
+    "expectedPartId": "x-blade-goat-tackle",
+    "expectedShape": "single_part",
+    "source": "synthetic"
+  },
+  {
+    "title": "ベイブレードX BX-46 スターター",
+    "expectedPartId": null,
+    "expectedShape": "complete_bey",
+    "source": "synthetic"
+  },
+  {
+    "title": "ベイブレードX Goat Tackle 3-60F",
+    "expectedPartId": null,
+    "expectedShape": "complete_bey",
+    "source": "synthetic"
+  },
+  {
+    "title": "Goat Tackle まとめ売り",
+    "expectedPartId": null,
+    "expectedShape": "lot",
+    "source": "synthetic"
+  },
+  {
+    "title": "ベイブレードX Golem Rock ブレード 単品",
+    "expectedPartId": "x-blade-golem-rock",
+    "expectedShape": "single_part",
+    "source": "synthetic"
+  },
+  {
+    "title": "ベイブレードX Golem Rock 3-60F",
+    "expectedPartId": null,
+    "expectedShape": "complete_bey",
+    "source": "synthetic"
+  },
+  {
+    "title": "Golem Rock まとめ売り",
+    "expectedPartId": null,
+    "expectedShape": "lot",
+    "source": "synthetic"
+  },
+  {
+    "title": "ベイブレードX Guard ブレード 単品",
+    "expectedPartId": "x-blade-guard",
+    "expectedShape": "single_part",
+    "source": "synthetic"
+  },
+  {
+    "title": "ベイブレードX Guard 3-60F",
+    "expectedPartId": null,
+    "expectedShape": "complete_bey",
+    "source": "synthetic"
+  },
+  {
+    "title": "Guard まとめ売り",
+    "expectedPartId": null,
+    "expectedShape": "lot",
+    "source": "synthetic"
+  },
+  {
+    "title": "Acid Anubis layer Acid Anubis used",
+    "expectedPartId": "burst-layer-acid-anubis",
+    "expectedShape": "single_part",
+    "source": "synthetic"
+  },
+  {
+    "title": "Air Knight layer Air Knight used",
+    "expectedPartId": "burst-layer-air-knight",
+    "expectedShape": "single_part",
+    "source": "synthetic"
+  },
+  {
+    "title": "Air Knight K4 layer Air Knight K4 used",
+    "expectedPartId": "burst-layer-air-knight-k4",
+    "expectedShape": "single_part",
+    "source": "synthetic"
+  },
+  {
+    "title": "Alter Chronos layer Alter Chronos used",
+    "expectedPartId": "burst-layer-alter-chronos",
+    "expectedShape": "single_part",
+    "source": "synthetic"
+  },
+  {
+    "title": "Alter Cognite C3 layer Alter Cognite C3 used",
+    "expectedPartId": "burst-layer-alter-cognite-c3",
+    "expectedShape": "single_part",
+    "source": "synthetic"
+  },
+  {
+    "title": "Amaterios layer Amaterios used",
+    "expectedPartId": "burst-layer-amaterios",
+    "expectedShape": "single_part",
+    "source": "synthetic"
+  },
+  {
+    "title": "Arc Bahamut layer Arc Bahamut used",
+    "expectedPartId": "burst-layer-arc-bahamut",
+    "expectedShape": "single_part",
+    "source": "synthetic"
+  },
+  {
+    "title": "Arc Balkesh B3 layer Arc Balkesh B3 used",
+    "expectedPartId": "burst-layer-arc-balkesh-b3",
+    "expectedShape": "single_part",
+    "source": "synthetic"
+  },
+  {
+    "title": "Archer Hercules layer Archer Hercules used",
+    "expectedPartId": "burst-layer-archer-hercules",
+    "expectedShape": "single_part",
+    "source": "synthetic"
+  },
+  {
+    "title": "Archer Hercules H4 layer Archer Hercules H4 used",
+    "expectedPartId": "burst-layer-archer-hercules-h4",
+    "expectedShape": "single_part",
+    "source": "synthetic"
+  },
+  {
+    "title": "Asteroid Zeutron Z3 layer Asteroid Zeutron Z3 used",
+    "expectedPartId": "burst-layer-asteroid-zeutron-z3",
+    "expectedShape": "single_part",
+    "source": "synthetic"
+  },
+  {
+    "title": "Atlas Anubion A2 layer Atlas Anubion A2 used",
+    "expectedPartId": "burst-layer-atlas-anubion-a2",
+    "expectedShape": "single_part",
+    "source": "synthetic"
+  },
+  {
+    "title": "Balar B4 layer Balar B4 used",
+    "expectedPartId": "burst-layer-balar-b4",
+    "expectedShape": "single_part",
+    "source": "synthetic"
+  },
+  {
+    "title": "Baldur layer Baldur used",
+    "expectedPartId": "burst-layer-baldur",
+    "expectedShape": "single_part",
+    "source": "synthetic"
+  },
+  {
+    "title": "Beast Behemoth layer Beast Behemoth used",
+    "expectedPartId": "burst-layer-beast-behemoth",
+    "expectedShape": "single_part",
+    "source": "synthetic"
+  },
+  {
+    "title": "Beast Betromoth B2 layer Beast Betromoth B2 used",
+    "expectedPartId": "burst-layer-beast-betromoth-b2",
+    "expectedShape": "single_part",
+    "source": "synthetic"
+  },
+  {
+    "title": "Beat Kukulcan layer Beat Kukulcan used",
+    "expectedPartId": "burst-layer-beat-kukulcan",
+    "expectedShape": "single_part",
+    "source": "synthetic"
+  },
+  {
+    "title": "Behemoth Cyclops C4 layer Behemoth Cyclops C4 used",
+    "expectedPartId": "burst-layer-behemoth-cyclops-c4",
+    "expectedShape": "single_part",
+    "source": "synthetic"
+  },
+  {
+    "title": "Berserk Roktavor R3 layer Berserk Roktavor R3 used",
+    "expectedPartId": "burst-layer-berserk-roktavor-r3",
+    "expectedShape": "single_part",
+    "source": "synthetic"
+  },
+  {
+    "title": "Bigbang Genesis layer Bigbang Genesis used",
+    "expectedPartId": "burst-layer-bigbang-genesis",
+    "expectedShape": "single_part",
+    "source": "synthetic"
+  },
+  {
+    "title": "Blast Jinnius layer Blast Jinnius used",
+    "expectedPartId": "burst-layer-blast-jinnius",
+    "expectedShape": "single_part",
+    "source": "synthetic"
+  },
+  {
+    "title": "Blast Jinnius J3 layer Blast Jinnius J3 used",
+    "expectedPartId": "burst-layer-blast-jinnius-j3",
+    "expectedShape": "single_part",
+    "source": "synthetic"
+  },
+  {
+    "title": "Blaze Ragnaruk layer Blaze Ragnaruk used",
+    "expectedPartId": "burst-layer-blaze-ragnaruk",
+    "expectedShape": "single_part",
+    "source": "synthetic"
+  },
+  {
+    "title": "Bloody Longinus layer Bloody Longinus used",
+    "expectedPartId": "burst-layer-bloody-longinus",
+    "expectedShape": "single_part",
+    "source": "synthetic"
+  },
+  {
+    "title": "Boom Khalzar K3 layer Boom Khalzar K3 used",
+    "expectedPartId": "burst-layer-boom-khalzar-k3",
+    "expectedShape": "single_part",
+    "source": "synthetic"
+  },
+  {
+    "title": "Breaker Xcalius X4 layer Breaker Xcalius X4 used",
+    "expectedPartId": "burst-layer-breaker-xcalius-x4",
+    "expectedShape": "single_part",
+    "source": "synthetic"
+  },
+  {
+    "title": "Brutal Luinor L4 layer Brutal Luinor L4 used",
+    "expectedPartId": "burst-layer-brutal-luinor-l4",
+    "expectedShape": "single_part",
+    "source": "synthetic"
+  },
+  {
+    "title": "Burn Phoenix layer Burn Phoenix used",
+    "expectedPartId": "burst-layer-burn-phoenix",
+    "expectedShape": "single_part",
+    "source": "synthetic"
+  },
+  {
+    "title": "Buster Xcalibur layer Buster Xcalibur used",
+    "expectedPartId": "burst-layer-buster-xcalibur",
+    "expectedShape": "single_part",
+    "source": "synthetic"
+  },
+  {
+    "title": "Caynox layer Caynox used",
+    "expectedPartId": "burst-layer-caynox",
+    "expectedShape": "single_part",
+    "source": "synthetic"
+  },
+  {
+    "title": "ベイブレードX ラチェット 0-60 のみ",
+    "expectedPartId": "x-ratchet-0-60",
+    "expectedShape": "single_part",
+    "source": "synthetic"
+  },
+  {
+    "title": "ベイブレードX ラチェット 0-70 のみ",
+    "expectedPartId": "x-ratchet-0-70",
+    "expectedShape": "single_part",
+    "source": "synthetic"
+  },
+  {
+    "title": "ベイブレードX ラチェット 0-80 のみ",
+    "expectedPartId": "x-ratchet-0-80",
+    "expectedShape": "single_part",
+    "source": "synthetic"
+  },
+  {
+    "title": "ベイブレードX ラチェット 1-50 のみ",
+    "expectedPartId": "x-ratchet-1-50",
+    "expectedShape": "single_part",
+    "source": "synthetic"
+  },
+  {
+    "title": "ベイブレードX ラチェット 1-60 のみ",
+    "expectedPartId": "x-ratchet-1-60",
+    "expectedShape": "single_part",
+    "source": "synthetic"
+  },
+  {
+    "title": "ベイブレードX ラチェット 1-70 のみ",
+    "expectedPartId": "x-ratchet-1-70",
+    "expectedShape": "single_part",
+    "source": "synthetic"
+  },
+  {
+    "title": "ベイブレードX ラチェット 1-80 のみ",
+    "expectedPartId": "x-ratchet-1-80",
+    "expectedShape": "single_part",
+    "source": "synthetic"
+  },
+  {
+    "title": "ベイブレードX ラチェット 2-60 のみ",
+    "expectedPartId": "x-ratchet-2-60",
+    "expectedShape": "single_part",
+    "source": "synthetic"
+  },
+  {
+    "title": "ベイブレードX ラチェット 2-70 のみ",
+    "expectedPartId": "x-ratchet-2-70",
+    "expectedShape": "single_part",
+    "source": "synthetic"
+  },
+  {
+    "title": "ベイブレードX ラチェット 2-80 のみ",
+    "expectedPartId": "x-ratchet-2-80",
+    "expectedShape": "single_part",
+    "source": "synthetic"
+  },
+  {
+    "title": "ベイブレードX ラチェット 3-60 のみ",
+    "expectedPartId": "x-bx-05-ratchet",
+    "expectedShape": "single_part",
+    "source": "synthetic"
+  },
+  {
+    "title": "ベイブレードX ラチェット 3-70 のみ",
+    "expectedPartId": "x-ratchet-3-70",
+    "expectedShape": "single_part",
+    "source": "synthetic"
+  },
+  {
+    "title": "ベイブレードX ラチェット 3-80 のみ",
+    "expectedPartId": "x-ratchet-3-80",
+    "expectedShape": "single_part",
+    "source": "synthetic"
+  },
+  {
+    "title": "ベイブレードX ラチェット 3-85 のみ",
+    "expectedPartId": "x-ratchet-3-85",
+    "expectedShape": "single_part",
+    "source": "synthetic"
+  },
+  {
+    "title": "ベイブレードX ラチェット 4-50 のみ",
+    "expectedPartId": "x-ratchet-4-50",
+    "expectedShape": "single_part",
+    "source": "synthetic"
+  },
+  {
+    "title": "BX ビット Accel バラ",
+    "expectedPartId": "x-bit-a",
+    "expectedShape": "single_part",
+    "source": "synthetic"
+  },
+  {
+    "title": "BX ビット Bahamut バラ",
+    "expectedPartId": "x-bit-bahamut",
+    "expectedShape": "single_part",
+    "source": "synthetic"
+  },
+  {
+    "title": "BX ビット Ball バラ",
+    "expectedPartId": "x-bx-07-bit",
+    "expectedShape": "single_part",
+    "source": "synthetic"
+  },
+  {
+    "title": "BX ビット Bound Spike バラ",
+    "expectedPartId": "x-bit-bs",
+    "expectedShape": "single_part",
+    "source": "synthetic"
+  },
+  {
+    "title": "BX ビット Cerberus バラ",
+    "expectedPartId": "x-bit-cerberus",
+    "expectedShape": "single_part",
+    "source": "synthetic"
+  },
+  {
+    "title": "BX ビット Cyclone バラ",
+    "expectedPartId": "x-bit-c",
+    "expectedShape": "single_part",
+    "source": "synthetic"
+  },
+  {
+    "title": "BX ビット Disc Ball バラ",
+    "expectedPartId": "x-bit-db",
+    "expectedShape": "single_part",
+    "source": "synthetic"
+  },
+  {
+    "title": "BX ビット Dot バラ",
+    "expectedPartId": "x-bit-d",
+    "expectedShape": "single_part",
+    "source": "synthetic"
+  },
+  {
+    "title": "BX ビット Dran バラ",
+    "expectedPartId": "x-bit-dran",
+    "expectedShape": "single_part",
+    "source": "synthetic"
+  },
+  {
+    "title": "BX ビット Elevate バラ",
+    "expectedPartId": "x-bit-e",
+    "expectedShape": "single_part",
+    "source": "synthetic"
+  },
+  {
+    "title": "BX ビット Emperor バラ",
+    "expectedPartId": "x-bit-emperor",
+    "expectedShape": "single_part",
+    "source": "synthetic"
+  },
+  {
+    "title": "BX ビット Flat バラ",
+    "expectedPartId": "x-bx-06-bit",
+    "expectedShape": "single_part",
+    "source": "synthetic"
+  },
+  {
+    "title": "BX ビット Fox バラ",
+    "expectedPartId": "x-bit-fox",
+    "expectedShape": "single_part",
+    "source": "synthetic"
+  },
+  {
+    "title": "BX ビット Free Ball バラ",
+    "expectedPartId": "x-bit-fb",
+    "expectedShape": "single_part",
+    "source": "synthetic"
+  },
+  {
+    "title": "BX ビット Gear Ball バラ",
+    "expectedPartId": "x-bit-gb",
+    "expectedShape": "single_part",
+    "source": "synthetic"
+  }
+]

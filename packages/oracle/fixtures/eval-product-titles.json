@@ -1,0 +1,251 @@
+[
+  {
+    "title": "ベイブレードX BX-01 ドランソード スターター 3-60F タカラトミー",
+    "expectedProductId": "prod-x-bx-01-starter",
+    "expectedShape": "complete_bey",
+    "note": "X starter — unambiguous"
+  },
+  {
+    "title": "Beyblade X BX-01 Dran Sword Starter Set Takara Tomy",
+    "expectedProductId": "prod-x-bx-01-starter",
+    "expectedShape": "complete_bey"
+  },
+  {
+    "title": "ベイブレードX BX-01 ドランソード 3-60F 完成品 中古",
+    "expectedProductId": "prod-x-bx-01-complete-loose",
+    "expectedShape": "complete_bey",
+    "note": "Loose complete Bey with combo suffix"
+  },
+  {
+    "title": "BX-01 ドランソード 未開封 完成品",
+    "expectedProductId": "prod-x-bx-01-complete-sealed",
+    "expectedShape": "complete_bey"
+  },
+  {
+    "title": "ベイブレードX ドランソード 3-60F 単品 中古",
+    "expectedProductId": null,
+    "expectedShape": "single_part",
+    "note": "Loose blade — must NOT match whole product"
+  },
+  {
+    "title": "BX-01 ドランソード ブレードのみ",
+    "expectedProductId": null,
+    "expectedShape": "single_part"
+  },
+  {
+    "title": "Dran Sword BX-01 blade only used",
+    "expectedProductId": null,
+    "expectedShape": "single_part"
+  },
+  {
+    "title": "ベイブレード バースト B-34 ヴァルキリー スターター",
+    "expectedProductId": "prod-burst-b-34-starter",
+    "expectedShape": "complete_bey"
+  },
+  {
+    "title": "Beyblade Burst B-34 Starter Winning Valkyrie",
+    "expectedProductId": "prod-burst-b-34-starter",
+    "expectedShape": "complete_bey"
+  },
+  {
+    "title": "B-34 ヴァルキリー レイヤー 単品",
+    "expectedProductId": null,
+    "expectedShape": "single_part"
+  },
+  {
+    "title": "ベイブレードX BX-01 ドランソード3-60F",
+    "expectedProductId": "prod-x-bx-01-complete-loose",
+    "expectedShape": "complete_bey",
+    "note": "Combo suffix with product code"
+  },
+  {
+    "title": "BX-01 スターター まとめ 5点",
+    "expectedProductId": null,
+    "expectedShape": "lot",
+    "note": "Lot — never a product comp"
+  },
+  {
+    "title": "BX-01 & BX-02 セット",
+    "expectedProductId": null,
+    "expectedShape": "lot"
+  },
+  {
+    "title": "BX-01",
+    "expectedProductId": null,
+    "expectedShape": "single_part",
+    "note": "Bare code — ambiguous, no product match"
+  },
+
+  {
+    "title": "ベイブレード BB-01S ドラグーンS スターター タカラ",
+    "expectedProductId": "prod-plastic-bb-01s-starter",
+    "expectedShape": "complete_bey",
+    "note": "Plastic gen starter"
+  },
+  {
+    "title": "Beyblade Plastic BB-01S Dragoon S Starter",
+    "expectedProductId": "prod-plastic-bb-01s-starter",
+    "expectedShape": "complete_bey"
+  },
+  {
+    "title": "BB-01S ドラグーンS 完成品 中古",
+    "expectedProductId": "prod-plastic-bb-01s-complete-loose",
+    "expectedShape": "complete_bey",
+    "note": "Plastic complete loose"
+  },
+  {
+    "title": "BB-01S ドラグーンS 完成品 未開封",
+    "expectedProductId": "prod-plastic-bb-01s-complete-sealed",
+    "expectedShape": "complete_bey",
+    "note": "Plastic complete sealed"
+  },
+  {
+    "title": "BB-01S アタックリング 単品",
+    "expectedProductId": null,
+    "expectedShape": "single_part",
+    "note": "Plastic single part — never product"
+  },
+  {
+    "title": "ドラグーンS スターター BB-01S",
+    "expectedProductId": "prod-plastic-bb-01s-starter",
+    "expectedShape": "complete_bey"
+  },
+  {
+    "title": "未開封 ベイブレードドラグーンS スターターセット タカラ A-1",
+    "expectedProductId": "prod-plastic-bb-01s-starter",
+    "expectedShape": "complete_bey",
+    "note": "Classic Takara A-1 code for Dragoon S starter"
+  },
+
+  {
+    "title": "メタルファイト ベイブレード BB-28 ストームペガサス 105RF スターター",
+    "expectedProductId": "prod-metal-bb-28-starter",
+    "expectedShape": "complete_bey",
+    "note": "Metal gen starter"
+  },
+  {
+    "title": "Beyblade Metal Fight BB-28 Storm Pegasus 105RF Starter",
+    "expectedProductId": "prod-metal-bb-28-starter",
+    "expectedShape": "complete_bey"
+  },
+  {
+    "title": "BB-28 ストームペガサス 105RF 完成品",
+    "expectedProductId": "prod-metal-bb-28-complete-loose",
+    "expectedShape": "complete_bey"
+  },
+  {
+    "title": "BB-28 ストームペガサス 105RF 完成品 未開封",
+    "expectedProductId": "prod-metal-bb-28-complete-sealed",
+    "expectedShape": "complete_bey"
+  },
+  {
+    "title": "BB-30 ロックレオーネ 145WB スターター",
+    "expectedProductId": "prod-metal-bb-30-starter",
+    "expectedShape": "complete_bey"
+  },
+  {
+    "title": "メタルファイト BB-70 レイユニコルノ D125CS スターター",
+    "expectedProductId": "prod-metal-bb-70-starter",
+    "expectedShape": "complete_bey"
+  },
+  {
+    "title": "BB-28 ホイールのみ",
+    "expectedProductId": null,
+    "expectedShape": "single_part",
+    "note": "Metal single part"
+  },
+  {
+    "title": "BB-28 まとめ 5点",
+    "expectedProductId": null,
+    "expectedShape": "lot",
+    "note": "Metal lot"
+  },
+  {
+    "title": "BB-28 & BB-30 セット",
+    "expectedProductId": null,
+    "expectedShape": "lot"
+  },
+
+  {
+    "title": "B-34 Winning Valkyrie Starter",
+    "expectedProductId": "prod-burst-b-34-starter",
+    "expectedShape": "complete_bey"
+  },
+  {
+    "title": "B-34 ヴァルキリー 完成品 中古",
+    "expectedProductId": "prod-burst-b-34-complete-loose",
+    "expectedShape": "complete_bey"
+  },
+  {
+    "title": "B-34 ヴァルキリー 完成品 未開封",
+    "expectedProductId": "prod-burst-b-34-complete-sealed",
+    "expectedShape": "complete_bey"
+  },
+  {
+    "title": "B-97 ヘブンペガサス 完成品",
+    "expectedProductId": "prod-burst-b-97-complete-loose",
+    "expectedShape": "complete_bey"
+  },
+  {
+    "title": "B-168 スパーキング スターター",
+    "expectedProductId": "prod-burst-b-168-starter",
+    "expectedShape": "complete_bey"
+  },
+  {
+    "title": "Heaven Pegasus B-97 complete used",
+    "expectedProductId": "prod-burst-b-97-complete-loose",
+    "expectedShape": "complete_bey",
+    "note": "English complete + product code"
+  },
+  {
+    "title": "B-97 ヘブンペガサス レイヤー 単品",
+    "expectedProductId": null,
+    "expectedShape": "single_part"
+  },
+  {
+    "title": "B-34 まとめ売り 3点",
+    "expectedProductId": null,
+    "expectedShape": "lot"
+  },
+  {
+    "title": "B-34 & B-35 セット",
+    "expectedProductId": null,
+    "expectedShape": "lot"
+  },
+  {
+    "title": "BB28 ストームペガサス 105RF スターター",
+    "expectedProductId": "prod-metal-bb-28-starter",
+    "expectedShape": "complete_bey",
+    "note": "Unhyphenated live-style code BB28 → BB-28"
+  },
+  {
+    "title": "メタルファイトベイブレード　レイユニコルノD125CS スターターBB71",
+    "expectedProductId": null,
+    "expectedShape": "complete_bey",
+    "note": "Mislabel: Ray Unicorno combo + BB71 code — never auto-match Gravity Perseus"
+  },
+  {
+    "title": "BB-28 ストームペガサス 105RF 完成品 未開封",
+    "expectedProductId": "prod-metal-bb-28-complete-sealed",
+    "expectedShape": "complete_bey",
+    "note": "complete_sealed variant"
+  },
+  {
+    "title": "BB-28",
+    "expectedProductId": null,
+    "expectedShape": "single_part",
+    "note": "Bare metal code — no product match"
+  },
+  {
+    "title": "BB-01S",
+    "expectedProductId": null,
+    "expectedShape": "single_part",
+    "note": "Bare plastic code — no product match"
+  },
+  {
+    "title": "B-34",
+    "expectedProductId": null,
+    "expectedShape": "single_part",
+    "note": "Bare burst code — no product match"
+  }
+]

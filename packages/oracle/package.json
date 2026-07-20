@@ -1,0 +1,29 @@
+{
+  "name": "@beyoracle/oracle",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "eval:build": "tsx scripts/build-eval-set.ts",
+    "eval:run": "vitest run src/eval.test.ts"
+  },
+  "dependencies": {
+    "@beyoracle/shared": "workspace:*",
+    "@beyoracle/catalog": "workspace:*"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.3",
+    "vitest": "^3.0.5"
+  }
+}

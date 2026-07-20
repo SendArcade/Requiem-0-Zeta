@@ -1,0 +1,51 @@
+[
+  {
+    "id": "sparse-recent",
+    "assetId": "test-blade-a",
+    "note": "Sparse panel — v2 time decay should beat stale outlier",
+    "truth": 1000,
+    "comps": [
+      { "price": 980, "currency": "JPY", "source": "mercari_jp", "daysAgo": 5, "condition": "used" },
+      { "price": 1020, "currency": "JPY", "source": "mercari_jp", "daysAgo": 7, "condition": "used" },
+      { "price": 990, "currency": "JPY", "source": "mercari_jp", "daysAgo": 10, "condition": "used" },
+      { "price": 400, "currency": "JPY", "source": "mercari_jp", "daysAgo": 80, "condition": "used" }
+    ]
+  },
+  {
+    "id": "mad-outlier",
+    "assetId": "test-blade-b",
+    "note": "MAD outlier — v2 should drop spike comp",
+    "truth": 500,
+    "comps": [
+      { "price": 490, "currency": "JPY", "source": "mercari_jp", "daysAgo": 3, "condition": "used" },
+      { "price": 505, "currency": "JPY", "source": "mercari_jp", "daysAgo": 5, "condition": "used" },
+      { "price": 495, "currency": "JPY", "source": "mercari_jp", "daysAgo": 8, "condition": "used" },
+      { "price": 510, "currency": "JPY", "source": "mercari_jp", "daysAgo": 12, "condition": "used" },
+      { "price": 2500, "currency": "JPY", "source": "mercari_jp", "daysAgo": 4, "condition": "used" }
+    ]
+  },
+  {
+    "id": "tw-mix",
+    "assetId": "test-blade-c",
+    "note": "Cross-venue landed JPY — v2 uses landed prices",
+    "truth": 1100,
+    "comps": [
+      { "price": 1050, "currency": "JPY", "source": "mercari_jp", "daysAgo": 6, "condition": "used", "landedJpy": 1050 },
+      { "price": 1080, "currency": "JPY", "source": "yahoo_auctions_jp", "daysAgo": 9, "condition": "used", "landedJpy": 1080 },
+      { "price": 220, "currency": "TWD", "source": "shopee_tw", "daysAgo": 11, "condition": "used", "landedJpy": 1120 },
+      { "price": 210, "currency": "TWD", "source": "shopee_tw", "daysAgo": 14, "condition": "like_new", "landedJpy": 1070 }
+    ]
+  },
+  {
+    "id": "stable-median",
+    "assetId": "test-blade-d",
+    "note": "Tight cluster — v1 and v2 should agree",
+    "truth": 800,
+    "comps": [
+      { "price": 790, "currency": "JPY", "source": "mercari_jp", "daysAgo": 4, "condition": "used" },
+      { "price": 810, "currency": "JPY", "source": "mercari_jp", "daysAgo": 6, "condition": "used" },
+      { "price": 800, "currency": "JPY", "source": "mercari_jp", "daysAgo": 8, "condition": "used" },
+      { "price": 795, "currency": "JPY", "source": "mercari_jp", "daysAgo": 10, "condition": "used" }
+    ]
+  }
+]
