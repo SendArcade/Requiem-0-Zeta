@@ -1,0 +1,15 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "outDir": "./dist",
+    "rootDir": "./src"
+  },
+  "include": [
+    "src/**/*"
+  ],
+  "exclude": [
+    "src/adapters/mandarake-jp.ts",
+    "src/adapters/ruten-tw.ts",
+    "src/adapters/suruga-ya-jp.ts"
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "search": {
+    "TotalRows": 14381,
+    "Rows": [
+      {
+        "Id": "22630186592509",
+        "Priority": 0,
+        "StockStatus": 1
+      },
+      {
+        "Id": "22629118691557",
+        "Priority": 0,
+        "StockStatus": 3
+      }
+    ]
+  },
+  "prod": [
+    {
+      "ProdId": "22630186592509",
+      "ProdName": "BEYBLADE X 港版 戰鬥陀螺X UX-21 預購 8月15日出貨 QR跟台版一樣",
+      "SellerId": "24175828",
+      "CateId": "000500070007",
+      "Currency": "TWD",
+      "PriceRange": [1000, 5820],
+      "StockQty": 195,
+      "SoldQty": 3,
+      "PostTime": "2026/07/21 20:13:12",
+      "ShippingCost": 0
+    },
+    {
+      "ProdId": "22629118691557",
+      "ProdName": "日版 TAKARA TOMY BEYBLADE X 戰鬥陀螺 UX-20 榮耀女武神 LF 近全新",
+      "SellerId": "24175828",
+      "CateId": "000500070007",
+      "Currency": "TWD",
+      "PriceRange": [999, 2950],
+      "StockQty": 197,
+      "SoldQty": 39,
+      "PostTime": "2026/07/14 15:25:05",
+      "ShippingCost": 50
+    }
+  ]
+}

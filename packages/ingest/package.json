@@ -1,0 +1,44 @@
+{
+  "name": "@beyoracle/ingest",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "ingest:fixtures": "tsx src/cli/ingest-fixtures.ts",
+    "ingest:run": "tsx src/cli/ingest-run.ts",
+    "backfill:oracle": "tsx src/cli/backfill-oracle.ts",
+    "purge:bad-comps": "tsx src/cli/purge-bad-comps.ts",
+    "purge:bad-comps:dry": "PURGE_DRY_RUN=1 tsx src/cli/purge-bad-comps.ts",
+    "backfill:products": "tsx src/cli/product-backfill.ts",
+    "backfill:products:shard": "tsx src/cli/product-backfill-shard.ts",
+    "backfill:products:fleet-plan": "tsx src/cli/product-backfill-fleet-plan.ts",
+    "product:coverage": "tsx src/cli/product-coverage.ts",
+    "probe:mercari": "tsx src/cli/probe-mercari.ts",
+    "probe:yahoo": "tsx src/cli/probe-yahoo.ts"
+  },
+  "dependencies": {
+    "@beyoracle/catalog": "workspace:*",
+    "@beyoracle/db": "workspace:*",
+    "@beyoracle/events": "workspace:*",
+    "@beyoracle/oracle": "workspace:*",
+    "@beyoracle/shared": "workspace:*",
+    "drizzle-orm": "^0.39.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.7",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.3",
+    "vitest": "^3.0.5"
+  }
+}
