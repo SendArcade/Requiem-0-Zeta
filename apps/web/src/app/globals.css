@@ -1,0 +1,142 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+/* Token source of truth: src/lib/alt-design-tokens.ts (keep :root in sync) */
+:root {
+  /* ALT.xyz dark theme — Royal accent #7c50fc */
+  --bg: #0a0a0f;
+  --surface: #0f0f18;
+  --card: #141420;
+  --card-hover: #1a1a28;
+  --border: rgba(255, 255, 255, 0.08);
+  --border-strong: rgba(255, 255, 255, 0.14);
+  --text: #f4f4f5;
+  --muted: #71717a;
+  --muted-strong: #a1a1aa;
+  --accent: #7c50fc;
+  --accent-dim: #5b3bd4;
+  --price: #34d399;
+  --price-dim: #10b981;
+  --price-down: #f87171;
+  --success: #34d399;
+  --warning: #fbbf24;
+  --header-height: 3.5rem;
+  --gen-nav-height: 2.75rem;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Layout shell ── */
+
+.shell-main {
+  @apply mx-auto w-full max-w-7xl px-4 py-8 sm:px-6 lg:px-8;
+}
+
+/* ── Cards ── */
+
+.card {
+  @apply rounded-xl border border-[var(--border)] bg-[var(--card)] p-4 transition-colors;
+}
+
+.card:hover {
+  background: var(--card-hover);
+  border-color: var(--border-strong);
+}
+
+.card-interactive {
+  @apply card;
+}
+
+.card-interactive:hover {
+  border-color: color-mix(in srgb, var(--accent) 40%, transparent);
+}
+
+/* ── Buttons ── */
+
+.btn {
+  @apply inline-flex items-center justify-center rounded-lg px-4 py-2 text-sm font-medium transition-colors;
+}
+
+.btn-primary {
+  @apply btn bg-[var(--accent-dim)] text-white hover:bg-[var(--accent)];
+}
+
+.btn-ghost {
+  @apply btn border border-[var(--border)] text-[var(--text)] hover:border-[var(--border-strong)] hover:bg-[var(--surface)];
+}
+
+/* ── Inputs ── */
+
+.input {
+  @apply w-full rounded-lg border border-[var(--border)] bg-[var(--surface)] px-4 py-2.5 text-[var(--text)] placeholder:text-[var(--muted)] focus:outline-none;
+}
+
+.input:focus {
+  border-color: color-mix(in srgb, var(--accent) 60%, transparent);
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--accent) 30%, transparent);
+}
+
+.input-search {
+  @apply input py-2 text-sm;
+}
+
+/* ── Typography ── */
+
+.price-text {
+  color: var(--price);
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.text-label {
+  @apply text-xs font-medium uppercase tracking-wider text-[var(--muted)];
+}
+
+/* ── Navigation ── */
+
+.nav-link {
+  @apply text-sm text-[var(--muted)] transition-colors hover:text-[var(--text)];
+}
+
+.nav-link-active {
+  @apply text-[var(--text)] font-medium;
+}
+
+/* ── Generation pills ── */
+
+.gen-pill {
+  @apply inline-flex shrink-0 items-center rounded-full border border-[var(--border)] bg-[var(--surface)] px-3.5 py-1.5 text-sm font-medium text-[var(--muted-strong)] transition-colors hover:border-[var(--border-strong)] hover:bg-[var(--card)] hover:text-[var(--text)];
+}
+
+.gen-pill-active {
+  @apply text-[var(--accent)];
+  border-color: color-mix(in srgb, var(--accent) 50%, transparent);
+  background: color-mix(in srgb, var(--accent) 10%, transparent);
+}
+
+/* ── Badges ── */
+
+.badge {
+  @apply inline-flex rounded-full px-2 py-0.5 text-xs font-medium;
+}
+
+.badge-gen {
+  @apply badge border border-[var(--border)] bg-[var(--surface)] text-[var(--muted-strong)];
+}
+
+/* ── Header backdrop ── */
+
+.header-blur {
+  background: rgba(10, 10, 15, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
