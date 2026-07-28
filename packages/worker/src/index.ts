@@ -1,0 +1,243 @@
+import { closeDb } from "@beyoracle/db";
+import { closePublisher, getRedisUrl } from "@beyoracle/events";
+import {
+  bullmqOptsForJob,
+  CRON_TICK,
+  CONTROL_QUEUE,
+  parseJobPayload,
+} from "@beyoracle/jobs";
+import {
+  registerOracleRecomputeEnqueuer,
+  purgeBadComps,
+  recomputeAllOracleSnapshots,
+  runOracleBackfill,
+  runProductBackfill,
+  runProductBackfillShard,
+  parseShardCount,
+  shouldRunOracleBackfill,
+} from "@beyoracle/ingest";
+import type { Generation } from "@beyoracle/shared";
+import { Worker, Queue } from "bullmq";
+import { Redis } from "ioredis";
+import { bootstrapDatabaseIfNeeded } from "./bootstrap.js";
+import { dispatchCronTick, newTickId } from "./dispatch.js";
+import { enqueueOracleRecompute } from "./enqueue-oracle.js";
+import { enqueueProductBackfillFleet } from "./enqueue-product-backfill.js";
+import { handleJob, logJobMetrics } from "./handlers.js";
+
+const INTERVAL_MS = Number(process.env.INGEST_INTERVAL_MS ?? 15 * 60 * 1000);
+/** Higher concurrency when fleet-processing product backfill shards. */
+const WORKER_CONCURRENCY = Number(
+  process.env.WORKER_CONCURRENCY ??
+    (process.env.PRODUCT_BACKFILL_FLEET === "1" || process.env.PRODUCT_BACKFILL_ENQUEUE === "1"
+      ? 8
+      : 2)
+);
+
+/** Process-local guard — one backfill kickoff per worker boot even if env is re-read. */
+let backfillKickoffStarted = false;
+
+async function main() {
+  if (process.env.SKIP_DB_BOOTSTRAP !== "1") {
+    await bootstrapDatabaseIfNeeded();
+  }
+
+  if (process.env.PURGE_BAD_COMPS === "1") {
+    console.log("[worker] PURGE_BAD_COMPS=1 — re-validating persisted matches…");
+    const purged = await purgeBadComps({
+      dryRun: process.env.PURGE_DRY_RUN === "1",
+      deleteObservations: process.env.PURGE_DELETE_OBSERVATIONS === "1",
+    });
+    console.log("[worker] purge complete:", JSON.stringify(purged));
+  }
+
+  if (process.env.ORACLE_RECOMPUTE_ALL === "1") {
+    console.log("[worker] ORACLE_RECOMPUTE_ALL=1 — recomputing oracle snapshots…");
+    const recomputed = await recomputeAllOracleSnapshots();
+    console.log("[worker] recompute complete:", JSON.stringify(recomputed));
+  }
+
+  if (process.env.PRODUCT_BACKFILL === "1") {
+    // Static single-process backfill OR one shard of a static fleet.
+    const shardCountEnv = process.env.PRODUCT_BACKFILL_SHARD_COUNT;
+    const shardIdEnv = process.env.PRODUCT_BACKFILL_SHARD_ID;
+    if (shardCountEnv != null && shardIdEnv != null) {
+      const shardCount = parseShardCount(shardCountEnv);
+      const shardId = Number(shardIdEnv);
+      console.log(
+        `[worker] PRODUCT_BACKFILL=1 static shard ${shardId}/${shardCount}…`
+      );
+      const report = await runProductBackfillShard({
+        shardId,
+        shardCount,
+        priorityOnly: process.env.PRODUCT_BACKFILL_PRIORITY_ONLY === "1",
+        closeDb: false,
+      });
+      console.log("[worker] product backfill shard complete:", JSON.stringify(report));
+    } else {
+      console.log("[worker] PRODUCT_BACKFILL=1 — monolithic product backfill…");
+      const productReport = await runProductBackfill({
+        force: process.env.FORCE_PRODUCT_BACKFILL === "1",
+        priorityOnly: process.env.PRODUCT_BACKFILL_PRIORITY_ONLY === "1",
+      });
+      console.log("[worker] product backfill complete:", JSON.stringify(productReport));
+    }
+  }
+
+  const connection = new Redis(getRedisUrl(), { maxRetriesPerRequest: null });
+  const queue = new Queue(CONTROL_QUEUE, { connection });
+
+  registerOracleRecomputeEnqueuer((partIds: string[], reason: "ingest" | "manual" | "backfill", productIds?: string[]) =>
+    enqueueOracleRecompute(queue, partIds, reason, productIds)
+  );
+
+  // Pause cron fan-out during fleet product backfill to free capacity for shards.
+  const pauseCron =
+    process.env.BACKFILL_PAUSE_CRON_INGEST === "1" ||
+    process.env.PRODUCT_BACKFILL_FLEET === "1";
+
+  if (!pauseCron) {
+    await queue.add(
+      CRON_TICK,
+      parseJobPayload(CRON_TICK, {
+        tickId: newTickId(),
+        triggeredAt: new Date().toISOString(),
+      }),
+      {
+        repeat: { every: INTERVAL_MS },
+        jobId: "scheduled-cron-tick",
+        ...bullmqOptsForJob(CRON_TICK),
+      }
+    );
+    console.log(
+      `[worker] ${CRON_TICK} every ${INTERVAL_MS / 1000}s on queue ${CONTROL_QUEUE} (${getRedisUrl()})`
+    );
+  } else {
+    console.log(
+      "[worker] cron.tick paused (BACKFILL_PAUSE_CRON_INGEST or PRODUCT_BACKFILL_FLEET)"
+    );
+  }
+
+  console.log(`[worker] concurrency=${WORKER_CONCURRENCY}`);
+
+  const worker = new Worker(
+    CONTROL_QUEUE,
+    async (job) => {
+      const started = Date.now();
+      try {
+        const result = await handleJob(job, queue);
+        logJobMetrics({
+          jobName: job.name,
+          durationMs: Date.now() - started,
+          outcome: "success",
+        });
+        return result;
+      } catch (err) {
+        logJobMetrics({
+          jobName: job.name,
+          durationMs: Date.now() - started,
+          outcome: "failure",
+        });
+        throw err;
+      }
+    },
+    {
+      connection,
+      concurrency: WORKER_CONCURRENCY,
+      // Product shards run many live API calls — default 30s lock is too short.
+      lockDuration: Number(process.env.BULLMQ_LOCK_DURATION_MS ?? 10 * 60 * 1000),
+      stalledInterval: Number(process.env.BULLMQ_STALLED_INTERVAL_MS ?? 60_000),
+      maxStalledCount: 3,
+    }
+  );
+
+  worker.on("failed", (job, err) => {
+    console.error(`[worker] job ${job?.name}/${job?.id} failed:`, err.message);
+  });
+
+  if (!pauseCron) {
+    const bootTickId = `boot-${newTickId()}`;
+    await dispatchCronTick(queue, {
+      tickId: bootTickId,
+      triggeredAt: new Date().toISOString(),
+    });
+  }
+
+  // Fleet mode: enqueue all product.backfill.shard jobs once; every replica drains the queue.
+  // Set PRODUCT_BACKFILL_ENQUEUE=1 on a single replica (or one-shot) to avoid double-enqueue races
+  // (jobIds are idempotent, so double enqueue is safe but noisy).
+  if (
+    (process.env.PRODUCT_BACKFILL_ENQUEUE === "1" ||
+      process.env.PRODUCT_BACKFILL_FLEET === "1") &&
+    process.env.PRODUCT_BACKFILL_ENQUEUE_DONE !== "1"
+  ) {
+    const gensRaw = process.env.PRODUCT_BACKFILL_GENERATIONS?.trim();
+    const generations = gensRaw
+      ? (gensRaw.split(",").map((s) => s.trim()).filter(Boolean) as Generation[])
+      : undefined;
+    try {
+      const result = await enqueueProductBackfillFleet(queue, {
+        shardCount: parseShardCount(process.env.PRODUCT_BACKFILL_SHARD_COUNT),
+        generations,
+        priorityOnly: process.env.PRODUCT_BACKFILL_PRIORITY_ONLY === "1",
+        maxQueriesPerShard: process.env.PRODUCT_BACKFILL_MAX_QUERIES
+          ? Number(process.env.PRODUCT_BACKFILL_MAX_QUERIES)
+          : undefined,
+      });
+      console.log("[worker] product backfill fleet enqueued:", JSON.stringify(result));
+    } catch (err) {
+      console.error(
+        "[worker] product backfill fleet enqueue failed:",
+        (err as Error).message
+      );
+    }
+  }
+
+  if (process.env.ORACLE_BACKFILL === "1" && !backfillKickoffStarted) {
+    backfillKickoffStarted = true;
+    void shouldRunOracleBackfill()
+      .then((ok: boolean) => {
+        if (!ok) {
+          console.log(
+            "[worker] ORACLE_BACKFILL=1 but backfill already done/in progress — skip"
+          );
+          return undefined;
+        }
+        console.log("[worker] ORACLE_BACKFILL=1 — starting catalog backfill in background…");
+        return runOracleBackfill({
+          maxQueries: process.env.BACKFILL_MAX_QUERIES
+            ? Number(process.env.BACKFILL_MAX_QUERIES)
+            : undefined,
+          skipLiveIngest: process.env.SKIP_LIVE === "1",
+        });
+      })
+      .then((report: Awaited<ReturnType<typeof runOracleBackfill>> | undefined) => {
+        if (report) {
+          console.log("[worker] oracle backfill complete:", JSON.stringify(report));
+        }
+      })
+      .catch((err: Error) => {
+        console.error("[worker] oracle backfill failed:", err.message);
+      });
+  }
+
+  const shutdown = async () => {
+    console.log("[worker] shutting down…");
+    await worker.close();
+    await queue.close();
+    await connection.quit();
+    await closePublisher();
+    await closeDb();
+    process.exit(0);
+  };
+
+  process.on("SIGINT", shutdown);
+  process.on("SIGTERM", shutdown);
+}
+
+main().catch(async (err) => {
+  console.error("[worker] fatal:", err);
+  await closePublisher();
+  await closeDb();
+  process.exit(1);
+});

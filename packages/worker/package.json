@@ -1,0 +1,31 @@
+{
+  "name": "@beyoracle/worker",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "dev": "tsx src/index.ts",
+    "start": "node dist/index.js"
+  },
+  "dependencies": {
+    "@beyoracle/catalog": "workspace:*",
+    "@beyoracle/db": "workspace:*",
+    "@beyoracle/events": "workspace:*",
+    "@beyoracle/ingest": "workspace:*",
+    "@beyoracle/jobs": "workspace:*",
+    "@beyoracle/oracle": "workspace:*",
+    "@beyoracle/shared": "workspace:*",
+    "bullmq": "^5.34.8",
+    "drizzle-orm": "^0.39.1",
+    "ioredis": "^5.4.2"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.7",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.3",
+    "vitest": "^3.0.5"
+  }
+}
