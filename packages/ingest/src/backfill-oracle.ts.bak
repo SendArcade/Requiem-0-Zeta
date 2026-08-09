@@ -1,0 +1,184 @@
+import { loadAllFixtures } from "@beyoracle/catalog";
+import { getDb, parts, products } from "@beyoracle/db";
+import type { SourceId } from "@beyoracle/shared";
+import { buildBackfillQueryPlan } from "./backfill-query-plan.js";
+import { backfillLandedJpy } from "./backfill-landed.js";
+import { resolveIngestMatch } from "./match-ingest.js";
+import {
+  persistObservation,
+  recomputeOracleSnapshotsBatch,
+  recomputeProductOracleSnapshotsBatch,
+} from "./persist.js";
+import { listEnabledSources, runSourceIngest } from "./source-ingest.js";
+
+export interface BackfillOracleReport {
+  fixtureObservations: number;
+  fixtureMatched: number;
+  queryBatches: number;
+  queriesTotal: number;
+  sourcesPolled: SourceId[];
+  inserted: number;
+  updated: number;
+  matched: number;
+  partsRecomputed: number;
+  productsRecomputed: number;
+  landedBackfillUpdated: number;
+  errors: string[];
+}
+
+/** Insert fixture sold comps (idempotent) with product-first matching. */
+export async function backfillFixtureComps(): Promise<{
+  observations: number;
+  matched: number;
+}> {
+  const fixtures = loadAllFixtures();
+  let matched = 0;
+
+  for (const f of fixtures) {
+    const observation = {
+      id: `${f.source}:${f.externalId}`,
+      source: f.source,
+      externalId: f.externalId,
+      title: f.title,
+      price: f.price,
+      currency: f.currency,
+      status: f.status,
+      condition: f.condition,
+      url: f.url,
+      observedAt: new Date(f.observedAt),
+      rawJson: { fixture: true, backfill: true },
+    };
+
+    const ingestMatch = resolveIngestMatch(f.title);
+    const { partId, productId } = await persistObservation(observation, ingestMatch, {
+      isBundle: false,
+    });
+    if (partId || productId) matched++;
+  }
+
+  return { observations: fixtures.length, matched };
+}
+
+export async function recomputeAllOracleSnapshots(): Promise<{
+  parts: number;
+  products: number;
+}> {
+  const db = getDb();
+  const partRows = await db.select({ id: parts.id }).from(parts);
+  const productRows = await db.select({ id: products.id }).from(products);
+  const partIds = partRows.map((r) => r.id);
+  const productIds = productRows.map((r) => r.id);
+
+  await recomputeOracleSnapshotsBatch(partIds);
+  await recomputeProductOracleSnapshotsBatch(productIds);
+
+  return { parts: partIds.length, products: productIds.length };
+}
+
+/**
+ * Full oracle backfill: fixture comps → live ingest (batched) → landed JPY → recompute all marks.
+ */
+export async function runOracleBackfill(opts?: {
+  skipFixtures?: boolean;
+  skipLiveIngest?: boolean;
+  skipLanded?: boolean;
+  queryBatchSize?: number;
+  limitPerQuery?: number;
+  maxQueries?: number;
+}): Promise<BackfillOracleReport> {
+  const batchSize =
+    opts?.queryBatchSize ?? Number(process.env.BACKFILL_QUERY_BATCH ?? 25);
+  const limitPerQuery =
+    opts?.limitPerQuery ?? Number(process.env.INGEST_LIMIT_PER_QUERY ?? 40);
+
+  const report: BackfillOracleReport = {
+    fixtureObservations: 0,
+    fixtureMatched: 0,
+    queryBatches: 0,
+    queriesTotal: 0,
+    sourcesPolled: [],
+    inserted: 0,
+    updated: 0,
+    matched: 0,
+    partsRecomputed: 0,
+    productsRecomputed: 0,
+    landedBackfillUpdated: 0,
+    errors: [],
+  };
+
+  if (!opts?.skipFixtures) {
+    console.log("[backfill] inserting fixture sold comps…");
+    const fx = await backfillFixtureComps();
+    report.fixtureObservations = fx.observations;
+    report.fixtureMatched = fx.matched;
+    console.log(
+      `[backfill] fixtures: ${fx.observations} titles, ${fx.matched} matched`
+    );
+  }
+
+  const allQueries = buildBackfillQueryPlan({
+    maxQueries: opts?.maxQueries,
+  });
+  report.queriesTotal = allQueries.length;
+
+  if (!opts?.skipLiveIngest) {
+    const sources = listEnabledSources();
+    report.sourcesPolled = sources;
+
+    if (sources.length === 0) {
+      report.errors.push("No live sources enabled — set MERCARI_API_ENABLED=1 etc.");
+    } else {
+      console.log(
+        `[backfill] live ingest: ${allQueries.length} queries × ${sources.length} sources (batch ${batchSize})`
+      );
+
+      for (let i = 0; i < allQueries.length; i += batchSize) {
+        const batch = allQueries.slice(i, i + batchSize);
+        report.queryBatches++;
+        console.log(
+          `[backfill] batch ${report.queryBatches}/${Math.ceil(allQueries.length / batchSize)} (${batch.length} queries)`
+        );
+
+        for (const sourceId of sources) {
+          try {
+            const result = await runSourceIngest({
+              sourceId,
+              queries: batch,
+              limitPerQuery,
+              recordRun: true,
+            });
+            report.inserted += result.inserted;
+            report.updated += result.updated;
+            report.matched += result.matched;
+            report.errors.push(...result.errors);
+          } catch (err) {
+            report.errors.push(`${sourceId}: ${(err as Error).message}`);
+          }
+        }
+      }
+    }
+  }
+
+  if (!opts?.skipLanded) {
+    console.log("[backfill] landed JPY backfill…");
+    let cursor: string | undefined;
+    let totalUpdated = 0;
+    for (;;) {
+      const pass = await backfillLandedJpy({
+        batchSize: Number(process.env.BACKFILL_LANDED_BATCH ?? 500),
+        cursor,
+      });
+      totalUpdated += pass.updated;
+      if (!pass.hasMore) break;
+      cursor = pass.nextCursor;
+    }
+    report.landedBackfillUpdated = totalUpdated;
+  }
+
+  console.log("[backfill] recomputing all part + product oracle snapshots…");
+  const recompute = await recomputeAllOracleSnapshots();
+  report.partsRecomputed = recompute.parts;
+  report.productsRecomputed = recompute.products;
+
+  return report;
+}
