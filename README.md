@@ -1,4 +1,4 @@
-# Beyoracle
+# Requiem-0-Zeta
 
 ALT-style Beyblade oracle — multi-generation catalog, dual-corridor comps (Mercari JP + Shopee TW), transparent Oracle Value with source toggles.
 
