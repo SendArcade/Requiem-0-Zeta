@@ -1,0 +1,32 @@
+---
+description: Scavenge battle-tested code before writing from scratch
+alwaysApply: true
+---
+
+# Scavenge-first
+
+Before new modules (scrapers, matchers, charts, FX, job queues):
+
+1. **Search** GitHub / Apify / sibling repos / known OSS for battle-tested patterns.
+2. **Adapt + wrap** — prefer provider interfaces so swapped adapters don't rewrite core.
+3. **Cite** source in a short code comment or `docs/ATTRIBUTIONS.md`.
+4. Only build from scratch when nothing fit-for-purpose exists — note why in PR/decision log.
+
+## Scavenge targets (Beyoracle)
+
+- [PokeDao](https://github.com/ChicoPanama/PokeDao) — L0/L1/L2 + CardMatcher cascading match
+- [tcg_mcp pricing Protocol](https://github.com/seanlok/tcg-mcp) — `PricingSource` interface pattern
+- Apify Mercari sold comps actors (future live path)
+- Community Beyblade DBs (beybxdb, wiki dumps) — seed only, not sole source of truth
+
+## Provider pattern
+
+```typescript
+interface PricingSource {
+  id: SourceId;
+  search(query: string, opts?: SearchOpts): Promise<RawListing[]>;
+  normalize(raw: RawListing): Observation;
+}
+```
+
+Match oracle core stays adapter-agnostic.

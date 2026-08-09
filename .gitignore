@@ -18,9 +18,12 @@ coverage/
 .tmp/
 .cache/
 
-# Local tooling / agent noise
-.cursor/
+# Local tooling / agent noise — keep project rules and Spec Kit skills
+.cursor/*
+!.cursor/rules/
+!.cursor/rules/**
 agent-transcripts/
+
 
 # Heavy runtime dumps (DB exports stay on Railway, not GitHub)
 *.sql.gz

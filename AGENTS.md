@@ -8,10 +8,30 @@
 brain. It routes you to the two or three documents that match your task and
 maps the whole repo.
 
-1. [`blueprint/README.md`](blueprint/README.md) — entrypoint and navigation
-2. `.cursor/rules/` (especially `scavenge-first.mdc`)
-3. [`docs/CURRENT_STATE.md`](docs/CURRENT_STATE.md) — what's shipped and what's broken
-4. [`docs/ATTRIBUTIONS.md`](docs/ATTRIBUTIONS.md) — borrowed patterns
+1. [`.specify/memory/constitution.md`](.specify/memory/constitution.md) — **binding** (Railway-only DB, tally-before-delete)
+2. [`blueprint/README.md`](blueprint/README.md) — entrypoint and navigation
+3. `.cursor/rules/` (`railway-only.mdc`, `scavenge-first.mdc`)
+4. [`docs/RAILWAY_ONLY.md`](docs/RAILWAY_ONLY.md) + [`docs/CURRENT_STATE.md`](docs/CURRENT_STATE.md)
+5. [`docs/ATTRIBUTIONS.md`](docs/ATTRIBUTIONS.md) — borrowed patterns
+
+### Spec Kit (GitHub)
+
+This repo is Spec Kit–initialized. Prefer **Spec → Plan → Tasks → Implement**:
+
+- `/speckit-constitution` · `/speckit-specify` · `/speckit-plan` · `/speckit-tasks` · `/speckit-implement`
+- CLI: `specify` (install: `uv tool install specify-cli`)
+
+### Environment (NON-NEGOTIABLE)
+
+| | Where |
+|--|--------|
+| **Pricing DB / oracle marks / live comps** | **Railway Postgres only** |
+| **Workers / fleet / Redis** | **Railway only** |
+| **Source code** | GitHub `SendArcade/Requiem-0-Zeta` |
+| **Local laptop** | Edit code + unit tests — **not** a pricing database |
+
+**Do not** `pnpm docker:up` / local Postgres for pricing or backfill.  
+**Do** tally Railway row counts before any destructive local cleanup.
 
 ## Know this before you touch anything
 
@@ -40,19 +60,22 @@ maps the whole repo.
 pnpm install
 pnpm typecheck
 pnpm test                    # unit + eval regression (~213 labeled titles)
-pnpm docker:up && pnpm db:migrate && pnpm db:seed
-pnpm dev                    # web on :3000 (reads Postgres when seeded)
-pnpm worker:dev             # BullMQ scheduled ingest (Redis + live flags)
-pnpm backfill:products:fleet-plan   # parallel shard plan (full catalog)
-# Railway fleet: PRODUCT_BACKFILL_ENQUEUE=1 PRODUCT_BACKFILL_FLEET=1 PRODUCT_BACKFILL_SHARD_COUNT=64
-# See docs/PRODUCT_BACKFILL_FLEET.md
-pnpm ingest:run             # one-shot ingest → Postgres
-pnpm catalog:build          # rebuild parts.json from BeyBrew + Fandom wiki
-pnpm ingest:fixtures        # smoke ingest from fixtures (no DB)
+pnpm catalog:build           # rebuild parts.json from BeyBrew + Fandom wiki
+pnpm ingest:fixtures         # smoke adapters only (no pricing DB)
 
-# measure matcher accuracy against real Mercari sold listings
+# Pricing / oracle / backfill = Railway (not local Docker)
+# railway run --service worker pnpm product:coverage
+# Fleet: see docs/PRODUCT_BACKFILL_FLEET.md + docs/RAILWAY_ONLY.md
+pnpm backfill:products:fleet-plan
+
+# Local web UI only (fixtures or Railway-backed DATA_SOURCE when configured)
+pnpm dev                     # :3000 — does not require docker:up for pricing
+
+# measure matcher accuracy (can run without local DB; needs network for live)
 MERCARI_API_ENABLED=1 pnpm --filter @beyoracle/ingest probe:mercari
 ```
+
+Deprecated for pricing work: `pnpm docker:up`, local `db:seed` as “prod”.
 
 ## Env vars
 

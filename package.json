@@ -22,8 +22,10 @@
     "backfill:products:shard": "pnpm --filter @beyoracle/ingest backfill:products:shard",
     "backfill:products:fleet-plan": "pnpm --filter @beyoracle/ingest backfill:products:fleet-plan",
     "product:coverage": "pnpm --filter @beyoracle/ingest product:coverage",
-    "docker:up": "docker compose up -d",
-    "docker:down": "docker compose down"
+    "docker:up": "echo 'DEPRECATED for pricing DB — use Railway (docs/RAILWAY_ONLY.md). Refusing.' && exit 1",
+    "docker:down": "echo 'DEPRECATED for pricing DB — use Railway (docs/RAILWAY_ONLY.md).' && exit 1",
+    "docker:up:legacy": "docker compose up -d",
+    "docker:down:legacy": "docker compose down -v"
   },
   "devDependencies": {
     "typescript": "^5.7.3"

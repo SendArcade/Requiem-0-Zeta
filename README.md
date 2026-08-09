@@ -9,12 +9,24 @@ second brain, covering thesis, architecture, sources, and known defects.
 
 ```bash
 pnpm install
-cp .env.example .env
-pnpm db:seed
-pnpm dev
+cp .env.example .env   # local unit tests / optional web only
+pnpm typecheck && pnpm test
+pnpm dev               # UI; pricing data is on Railway in production
 ```
 
-Open [http://localhost:3000](http://localhost:3000).
+**Pricing database = Railway only** (not local Docker). See
+[`docs/RAILWAY_ONLY.md`](docs/RAILWAY_ONLY.md) and Spec Kit constitution
+[`.specify/memory/constitution.md`](.specify/memory/constitution.md).
+
+Open [http://localhost:3000](http://localhost:3000) for UI; production:
+[web on Railway](https://web-production-5c33a.up.railway.app).
+
+## Spec Kit
+
+```bash
+uv tool install specify-cli   # once
+# In agent: /speckit-specify → /speckit-plan → /speckit-tasks → /speckit-implement
+```
 
 ## Stack
 

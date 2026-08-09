@@ -1,0 +1,36 @@
+---
+description: Railway-only pricing DB — never local Docker for oracle/ingest
+alwaysApply: true
+---
+
+# Railway-only pricing database
+
+## System of record
+
+- **Postgres + Redis + workers = Railway** (`oracle` project).
+- **GitHub** holds code only (`SendArcade/Requiem-0-Zeta`).
+- Local Docker is **not** the pricing DB and is **not** required for normal work.
+
+## Do not
+
+1. Run `docker compose up`, `pnpm docker:up`, or start local Postgres/Redis for pricing/backfill.
+2. `pnpm db:seed` / migrate against a laptop DB expecting “real” oracle data.
+3. Delete Docker volumes, DBs, or branches without **tallying Railway first** (counts) and comparing.
+4. Assume local Docker was cloned from Railway (it was not).
+5. Invent sold comps or seed product marks from fixtures.
+
+## Do
+
+1. Ingest / backfill / purge / recompute / coverage via **Railway** (`railway run`, worker env, fleet jobs).
+2. Unit tests + typecheck locally without a pricing DB.
+3. Before destructive cleanup: query Railway row counts; log them; only then wipe disposable local junk.
+4. Read `.specify/memory/constitution.md` and `docs/PRODUCT_BACKFILL_FLEET.md` for fleet ops.
+
+## Quick Railway tallies (before any wipe)
+
+```text
+observations, product_matches, product_oracle_snapshots,
+products, parts, marks with n_comps >= 3 by generation
+```
+
+Use `railway connect Postgres --ssh` or an authorized `DATABASE_URL` tunnel — never print secrets.
