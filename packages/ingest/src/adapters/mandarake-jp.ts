@@ -114,7 +114,7 @@ export class MandarakeJpSource implements PricingSource {
       price: item.priceJpy,
       currency: "JPY",
       status: item.soldOut ? "sold" : "listing",
-      condition: inferConditionFromTitle(item.title),
+      condition: resolveListingCondition(item.title),
       url: item.url,
       observedAt: new Date().toISOString(),
       raw: {

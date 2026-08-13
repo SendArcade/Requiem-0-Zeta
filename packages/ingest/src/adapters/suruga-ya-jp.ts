@@ -82,7 +82,7 @@ export class SurugaYaJpSource implements PricingSource {
       price: item.priceJpy,
       currency: "JPY",
       status,
-      condition: inferConditionFromTitle(item.title),
+      condition: resolveListingCondition(item.title),
       url: item.url,
       observedAt: new Date().toISOString(),
       raw: {

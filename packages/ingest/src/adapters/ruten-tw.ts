@@ -86,7 +86,7 @@ export class RutenTwSource implements PricingSource {
       price: item.priceTwd,
       currency: "TWD",
       status: quality.status,
-      condition: inferConditionFromTitle(item.title),
+      condition: resolveListingCondition(item.title),
       url: item.url,
       observedAt: item.postTime ?? new Date().toISOString(),
       raw: {
