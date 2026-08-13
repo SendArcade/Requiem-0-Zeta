@@ -87,6 +87,7 @@ describe("cron tickId + fan-out", () => {
     expect(a.tickId).not.toBe(b.tickId);
     expect(a.tickId).not.toBe(frozen.tickId);
     expect(b.tickId).not.toBe(frozen.tickId);
+    expect(sweepStaleIngestRunsMock).toHaveBeenCalled();
 
     const jobIds = added.map((j) => String(j.opts.jobId));
     expect(new Set(jobIds).size).toBe(jobIds.length);
@@ -142,12 +143,17 @@ describe("syncScheduledCronTick", () => {
     });
     const result = await syncScheduledCronTick(queue, { pause: true, intervalMs: 900_000 });
     expect(removedKeys).toEqual(["cron.tick:scheduled-cron-tick:::900000"]);
+    expect(raw.removeRepeatable).toHaveBeenCalledWith(
+      "cron.tick",
+      { every: 900_000 },
+      CRON_REPEATABLE_JOB_ID
+    );
     expect(result).toEqual({ removed: 1, added: false });
     expect(raw.add).not.toHaveBeenCalled();
   });
 
   it("replaces the frozen repeatable without baking tickId into the payload", async () => {
-    const { queue, added, repeatables } = mockQueue();
+    const { queue, added, repeatables, raw } = mockQueue();
     repeatables.push({
       key: "cron.tick:scheduled-cron-tick:::900000",
       id: CRON_REPEATABLE_JOB_ID,
@@ -159,5 +165,10 @@ describe("syncScheduledCronTick", () => {
     expect(added[0]?.opts.jobId).toBe(CRON_REPEATABLE_JOB_ID);
     expect(added[0]?.opts.repeat).toEqual({ every: 900_000 });
     expect(added[0]?.data.tickId).toBeUndefined();
+    expect(raw.removeRepeatable).toHaveBeenCalledWith(
+      "cron.tick",
+      { every: 900_000 },
+      CRON_REPEATABLE_JOB_ID
+    );
   });
 });

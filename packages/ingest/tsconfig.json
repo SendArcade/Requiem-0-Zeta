@@ -10,6 +10,7 @@
   "exclude": [
     "src/adapters/mandarake-jp.ts",
     "src/adapters/ruten-tw.ts",
-    "src/adapters/suruga-ya-jp.ts"
+    "src/adapters/suruga-ya-jp.ts",
+    "src/**/*.test.ts"
   ]
 }
