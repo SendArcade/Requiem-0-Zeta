@@ -1,10 +1,16 @@
 import type { Condition, Currency, EvidenceKind, OracleSnapshotDTO, SourceId } from "@beyoracle/shared";
+import type { Generation, ProductDTO, SkuType } from "@beyoracle/shared";
 import {
   allSourcesMask,
+  BURST_FMV_FALLBACK_WINDOW_DAYS,
+  BURST_FMV_PRIMARY_WINDOW_DAYS,
   convertCurrency,
   DEFAULT_ORACLE_CONDITIONS,
+  DEFAULT_PUBLISHED_MIN_COMPS,
   feedsOracleMark,
   maskFromSources,
+  PRODUCT_ORACLE_WINDOW_DAYS,
+  productMarkConditions,
   resolveCompPriceJpy,
   resolveEvidenceKind,
   sourcesFromMask,
@@ -237,7 +243,7 @@ export function computeOracleValue(
 ): OracleSnapshotDTO | null {
   const {
     windowDays = 90,
-    minComps = 1,
+    minComps = DEFAULT_PUBLISHED_MIN_COMPS,
     targetCurrency = "JPY",
     sourcesMask = allSourcesMask(),
     conditions = DEFAULT_ORACLE_CONDITIONS,
@@ -332,6 +338,52 @@ export function buildTimeSeries(
           : convertCurrency(c.price, c.currency, targetCurrency),
     }))
     .sort((a, b) => a.date.localeCompare(b.date));
+}
+
+
+/** Burst: 7-day sold window, fall back to 90d only when 7d has fewer than min comps. */
+export function resolveProductOracleWindowDays(
+  generation: Generation,
+  comps: CompInput[],
+  opts: {
+    conditions: import("@beyoracle/shared").Condition[];
+    minComps?: number;
+    sourcesMask?: number;
+  }
+): number {
+  if (generation !== "burst") return PRODUCT_ORACLE_WINDOW_DAYS;
+  const minComps = opts.minComps ?? DEFAULT_PUBLISHED_MIN_COMPS;
+  const sourcesMask = opts.sourcesMask ?? allSourcesMask();
+  const primary = filterComps(comps, {
+    windowDays: BURST_FMV_PRIMARY_WINDOW_DAYS,
+    sourcesMask,
+    conditions: opts.conditions,
+  });
+  if (primary.length >= minComps) return BURST_FMV_PRIMARY_WINDOW_DAYS;
+  return BURST_FMV_FALLBACK_WINDOW_DAYS;
+}
+
+export function computeProductOracleValue(
+  product: Pick<ProductDTO, "id" | "generation" | "skuType">,
+  comps: CompInput[],
+  opts: Omit<OracleOptions, "windowDays" | "conditions" | "minComps"> & {
+    conditions?: import("@beyoracle/shared").Condition[];
+    minComps?: number;
+  } = {}
+) {
+  const conditions = opts.conditions ?? productMarkConditions(product.skuType as SkuType);
+  const minComps = opts.minComps ?? DEFAULT_PUBLISHED_MIN_COMPS;
+  const windowDays = resolveProductOracleWindowDays(product.generation, comps, {
+    conditions,
+    minComps,
+    sourcesMask: opts.sourcesMask,
+  });
+  return computeOracleValue(product.id, comps, {
+    ...opts,
+    conditions,
+    minComps,
+    windowDays,
+  });
 }
 
 export { filterComps };

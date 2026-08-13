@@ -46,6 +46,9 @@ describe("classifyListingShape", () => {
     expect(classifyListingShape("BB-01S ドラグーンS 完成品 中古")).toBe("complete_bey");
     expect(classifyListingShape("BB-28 ストームペガサス 105RF スターター")).toBe("complete_bey");
     expect(classifyListingShape("BB-28 まとめ 5点")).toBe("lot");
+    expect(classifyListingShape("ベイブレード B-34 まとめ")).toBe("lot");
+    expect(classifyListingShape("ベイブレードバースト B-34 2個")).toBe("lot");
+    expect(isIngestEligible("ベイブレードバースト B-34 2個")).toBe(false);
   });
 });
 

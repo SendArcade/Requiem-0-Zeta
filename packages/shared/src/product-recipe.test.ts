@@ -76,9 +76,10 @@ describe("productMarkConditions", () => {
     expect(productMarkConditions("complete_loose")).toEqual(DEFAULT_ORACLE_CONDITIONS);
   });
 
-  it("allows sealed NIB starters", () => {
-    expect(productMarkConditions("starter")).toContain("sealed");
-    expect(productMarkConditions("starter")).toContain("used");
+  it("keeps starter marks on opened starter+launcher (excludes sealed)", () => {
+    expect(productMarkConditions("starter")).toEqual(DEFAULT_ORACLE_CONDITIONS);
+    expect(productMarkConditions("starter")).not.toContain("sealed");
+    expect(productMarkConditions("complete_loose")).toEqual(DEFAULT_ORACLE_CONDITIONS);
   });
 });
 

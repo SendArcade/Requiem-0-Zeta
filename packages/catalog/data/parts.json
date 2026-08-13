@@ -4970,7 +4970,8 @@
     "nameJp": null,
     "nameZh": null,
     "productCodes": [
-      "Bloody Longinus"
+      "Bloody Longinus",
+      "B-110"
     ],
     "attrs": {
       "source": "fandom"
@@ -5082,7 +5083,8 @@
     "nameJp": null,
     "nameZh": null,
     "productCodes": [
-      "Cho-Z Achilles"
+      "Cho-Z Achilles",
+      "B-129"
     ],
     "attrs": {
       "source": "fandom"
@@ -5096,7 +5098,7 @@
     "nameJp": "超Zスプリガン",
     "nameZh": "超Z 邪惡啟示",
     "productCodes": [
-      "B-127",
+      "B-128",
       "Cho-Z Spriggan"
     ],
     "attrs": {
@@ -5112,7 +5114,8 @@
     "nameJp": null,
     "nameZh": null,
     "productCodes": [
-      "Cho-Z Valkyrie"
+      "Cho-Z Valkyrie",
+      "B-127"
     ],
     "attrs": {
       "source": "fandom"
@@ -5224,7 +5227,8 @@
     "nameJp": null,
     "nameZh": null,
     "productCodes": [
-      "Dead Phoenix"
+      "Dead Phoenix",
+      "B-131"
     ],
     "attrs": {
       "source": "fandom"
@@ -5661,11 +5665,12 @@
     "id": "burst-b-168-layer",
     "generation": "burst",
     "partType": "layer",
-    "nameEn": "Dynamite Belial",
-    "nameJp": "ダイナマイトベリアル",
+    "nameEn": "Rage Longinus",
+    "nameJp": "レイジロンギヌス",
     "nameZh": "動感邪惡啟示",
     "productCodes": [
-      "B-168"
+      "B-168",
+      "Rage Longinus"
     ],
     "attrs": {
       "type": "Attack"
@@ -5959,7 +5964,8 @@
     "nameJp": null,
     "nameZh": null,
     "productCodes": [
-      "Geist Fafnir"
+      "Geist Fafnir",
+      "B-122"
     ],
     "attrs": {
       "source": "fandom"
@@ -6141,7 +6147,8 @@
     "nameJp": "ヘブンペガサス",
     "nameZh": "天馬",
     "productCodes": [
-      "B-97"
+      "B-148",
+      "Heaven Pegasus"
     ],
     "attrs": {
       "type": "Stamina"
@@ -6493,7 +6500,8 @@
     "nameJp": null,
     "nameZh": null,
     "productCodes": [
-      "Legend Spriggan"
+      "Legend Spriggan",
+      "B-86"
     ],
     "attrs": {
       "source": "fandom"
@@ -6704,7 +6712,8 @@
     "nameJp": null,
     "nameZh": null,
     "productCodes": [
-      "Nightmare Longinus"
+      "Nightmare Longinus",
+      "B-97"
     ],
     "attrs": {
       "source": "fandom"
@@ -7376,7 +7385,8 @@
     "nameJp": null,
     "nameZh": null,
     "productCodes": [
-      "Spriggan Requiem"
+      "Spriggan Requiem",
+      "B-100"
     ],
     "attrs": {
       "source": "fandom"
@@ -7642,7 +7652,8 @@
     "nameJp": null,
     "nameZh": null,
     "productCodes": [
-      "Twin Nemesis"
+      "Twin Nemesis",
+      "B-102"
     ],
     "attrs": {
       "source": "fandom"
@@ -7782,7 +7793,8 @@
     "nameJp": null,
     "nameZh": null,
     "productCodes": [
-      "Valkyrie"
+      "Valkyrie",
+      "B-01"
     ],
     "attrs": {
       "source": "fandom"
@@ -7821,13 +7833,15 @@
     "generation": "burst",
     "partType": "layer",
     "nameEn": "Victory Valkyrie",
-    "nameJp": null,
+    "nameJp": "ビクトリーヴァルキリー",
     "nameZh": null,
     "productCodes": [
+      "B-34",
       "Victory Valkyrie"
     ],
     "attrs": {
-      "source": "fandom"
+      "source": "fandom",
+      "type": "Attack"
     }
   },
   {
@@ -7908,7 +7922,7 @@
     "nameJp": "ウィニングヴァルキリー",
     "nameZh": "勝利女武神",
     "productCodes": [
-      "B-34",
+      "B-104",
       "Winning Valkyrie"
     ],
     "attrs": {
@@ -16885,6 +16899,35 @@
       "defense": 0,
       "stamina": 0,
       "source": "beybrew"
+    }
+  },
+  {
+    "id": "burst-disc-z",
+    "generation": "burst",
+    "partType": "forge_disc",
+    "nameEn": "Z Forge Disc",
+    "nameJp": "Zディスク",
+    "nameZh": null,
+    "productCodes": [
+      "Z"
+    ],
+    "attrs": {
+      "source": "curated"
+    }
+  },
+  {
+    "id": "burst-b-180-layer",
+    "generation": "burst",
+    "partType": "layer",
+    "nameEn": "Dynamite Belial",
+    "nameJp": "ダイナマイトベリアル",
+    "nameZh": "動感邪惡啟示",
+    "productCodes": [
+      "B-180",
+      "Dynamite Belial"
+    ],
+    "attrs": {
+      "type": "Attack"
     }
   }
 ]

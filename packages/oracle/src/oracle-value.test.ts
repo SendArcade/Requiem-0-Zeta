@@ -12,7 +12,17 @@ import {
 } from "./robust-estimator.js";
 import { shrinkTowardPrior } from "./shrinkage.js";
 import { estimateRegionPremium, buildRegionEstimates } from "./region.js";
-import { computeOracleValue } from "./oracle-value.js";
+import {
+  computeOracleValue,
+  computeProductOracleValue,
+  resolveProductOracleWindowDays,
+} from "./oracle-value.js";
+import {
+  BURST_FMV_FALLBACK_WINDOW_DAYS,
+  BURST_FMV_PRIMARY_WINDOW_DAYS,
+  DEFAULT_PUBLISHED_MIN_COMPS,
+  productMarkConditions,
+} from "@beyoracle/shared";
 
 describe("robust estimator", () => {
   it("decays older comps", () => {
@@ -212,5 +222,130 @@ describe("oracle v2 pipeline", () => {
     });
     expect(snap!.nComps).toBe(5);
     expect(snap!.value).not.toBe(999);
+  });
+});
+
+function daysAgo(n: number): Date {
+  const d = new Date();
+  d.setDate(d.getDate() - n);
+  return d;
+}
+
+function soldComp(opts: {
+  price: number;
+  daysAgo: number;
+  condition: "sealed" | "used" | "like_new" | "unknown";
+}) {
+  return {
+    price: opts.price,
+    currency: "JPY" as const,
+    source: "mercari_jp" as const,
+    observedAt: daysAgo(opts.daysAgo),
+    status: "sold" as const,
+    condition: opts.condition,
+    landedJpy: opts.price,
+  };
+}
+
+describe("burst FMV windows and sealed isolation", () => {
+  const starter = {
+    id: "prod-burst-b-01-starter",
+    generation: "burst" as const,
+    skuType: "starter" as const,
+  };
+  const loose = {
+    id: "prod-burst-b-01-complete-loose",
+    generation: "burst" as const,
+    skuType: "complete_loose" as const,
+  };
+  const sealedSku = {
+    id: "prod-burst-b-01-sealed",
+    generation: "burst" as const,
+    skuType: "complete_sealed" as const,
+  };
+
+  it("uses 7-day window when primary n >= min comps", () => {
+    const comps = [1, 2, 3].map((i) =>
+      soldComp({ price: 1000 + i, daysAgo: 2, condition: "used" })
+    );
+    const windowDays = resolveProductOracleWindowDays(starter.generation, comps, {
+      conditions: productMarkConditions("starter"),
+      minComps: DEFAULT_PUBLISHED_MIN_COMPS,
+    });
+    expect(windowDays).toBe(BURST_FMV_PRIMARY_WINDOW_DAYS);
+    const snap = computeProductOracleValue(starter, comps, { engine: "v1" });
+    expect(snap).not.toBeNull();
+    expect(snap!.nComps).toBe(3);
+  });
+
+  it("falls back to 90d only when 7d n < 3", () => {
+    const comps = [
+      soldComp({ price: 1100, daysAgo: 2, condition: "used" }),
+      soldComp({ price: 1200, daysAgo: 2, condition: "used" }),
+      soldComp({ price: 1300, daysAgo: 20, condition: "used" }),
+      soldComp({ price: 1400, daysAgo: 40, condition: "used" }),
+    ];
+    const windowDays = resolveProductOracleWindowDays(starter.generation, comps, {
+      conditions: productMarkConditions("starter"),
+      minComps: DEFAULT_PUBLISHED_MIN_COMPS,
+    });
+    expect(windowDays).toBe(BURST_FMV_FALLBACK_WINDOW_DAYS);
+    const snap = computeProductOracleValue(starter, comps, { engine: "v1" });
+    expect(snap).not.toBeNull();
+    expect(snap!.nComps).toBe(4);
+  });
+
+  it("never mixes sealed comps into starter or default/loose windows", () => {
+    const comps = [
+      soldComp({ price: 900, daysAgo: 1, condition: "used" }),
+      soldComp({ price: 950, daysAgo: 1, condition: "like_new" }),
+      soldComp({ price: 980, daysAgo: 2, condition: "unknown" }),
+      soldComp({ price: 8000, daysAgo: 1, condition: "sealed" }),
+      soldComp({ price: 8100, daysAgo: 2, condition: "sealed" }),
+      soldComp({ price: 8200, daysAgo: 3, condition: "sealed" }),
+    ];
+    const starterSnap = computeProductOracleValue(starter, comps, { engine: "v1" });
+    const looseSnap = computeProductOracleValue(loose, comps, { engine: "v1" });
+    expect(starterSnap).not.toBeNull();
+    expect(looseSnap).not.toBeNull();
+    expect(starterSnap!.nComps).toBe(3);
+    expect(looseSnap!.nComps).toBe(3);
+    expect(starterSnap!.value).toBeLessThan(2000);
+    expect(looseSnap!.value).toBeLessThan(2000);
+    expect(starterSnap!.conditions).not.toContain("sealed");
+    expect(looseSnap!.conditions).not.toContain("sealed");
+  });
+
+  it("sealed comps do not count toward 7d fallback for starter", () => {
+    const comps = [
+      soldComp({ price: 900, daysAgo: 1, condition: "used" }),
+      soldComp({ price: 8000, daysAgo: 1, condition: "sealed" }),
+      soldComp({ price: 8100, daysAgo: 1, condition: "sealed" }),
+      soldComp({ price: 8200, daysAgo: 1, condition: "sealed" }),
+      soldComp({ price: 1000, daysAgo: 20, condition: "used" }),
+      soldComp({ price: 1100, daysAgo: 30, condition: "used" }),
+    ];
+    const windowDays = resolveProductOracleWindowDays(starter.generation, comps, {
+      conditions: productMarkConditions("starter"),
+      minComps: DEFAULT_PUBLISHED_MIN_COMPS,
+    });
+    expect(windowDays).toBe(BURST_FMV_FALLBACK_WINDOW_DAYS);
+    const snap = computeProductOracleValue(starter, comps, { engine: "v1" });
+    expect(snap!.nComps).toBe(3);
+    expect(snap!.value).toBeLessThan(2000);
+  });
+
+  it("complete_sealed mark uses sealed comps only", () => {
+    const comps = [
+      soldComp({ price: 8000, daysAgo: 1, condition: "sealed" }),
+      soldComp({ price: 8100, daysAgo: 2, condition: "sealed" }),
+      soldComp({ price: 8200, daysAgo: 2, condition: "sealed" }),
+      soldComp({ price: 900, daysAgo: 1, condition: "used" }),
+    ];
+    const snap = computeProductOracleValue(sealedSku, comps, { engine: "v1" });
+    expect(snap).not.toBeNull();
+    expect(snap!.nComps).toBe(3);
+    expect(snap!.value).toBeGreaterThan(7000);
+    expect(snap!.conditions).toEqual(["sealed"]);
   });
 });

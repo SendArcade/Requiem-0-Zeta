@@ -44,8 +44,9 @@
   },
   {
     "title": "Beyblade Burst B-34 Starter Winning Valkyrie",
-    "expectedProductId": "prod-burst-b-34-starter",
-    "expectedShape": "complete_bey"
+    "expectedProductId": null,
+    "expectedShape": "complete_bey",
+    "note": "Winning name must not land on B-34 Victory"
   },
   {
     "title": "B-34 ヴァルキリー レイヤー 単品",
@@ -75,7 +76,6 @@
     "expectedShape": "single_part",
     "note": "Bare code — ambiguous, no product match"
   },
-
   {
     "title": "ベイブレード BB-01S ドラグーンS スターター タカラ",
     "expectedProductId": "prod-plastic-bb-01s-starter",
@@ -116,7 +116,6 @@
     "expectedShape": "complete_bey",
     "note": "Classic Takara A-1 code for Dragoon S starter"
   },
-
   {
     "title": "メタルファイト ベイブレード BB-28 ストームペガサス 105RF スターター",
     "expectedProductId": "prod-metal-bb-28-starter",
@@ -165,11 +164,11 @@
     "expectedProductId": null,
     "expectedShape": "lot"
   },
-
   {
     "title": "B-34 Winning Valkyrie Starter",
-    "expectedProductId": "prod-burst-b-34-starter",
-    "expectedShape": "complete_bey"
+    "expectedProductId": null,
+    "expectedShape": "complete_bey",
+    "note": "Winning name must not land on B-34 Victory"
   },
   {
     "title": "B-34 ヴァルキリー 完成品 中古",
@@ -178,24 +177,26 @@
   },
   {
     "title": "B-34 ヴァルキリー 完成品 未開封",
-    "expectedProductId": "prod-burst-b-34-complete-sealed",
+    "expectedProductId": "prod-burst-b-34-sealed",
     "expectedShape": "complete_bey"
   },
   {
     "title": "B-97 ヘブンペガサス 完成品",
-    "expectedProductId": "prod-burst-b-97-complete-loose",
-    "expectedShape": "complete_bey"
+    "expectedProductId": null,
+    "expectedShape": "complete_bey",
+    "note": "Heaven Pegasus must not land on B-97 Nightmare"
   },
   {
     "title": "B-168 スパーキング スターター",
-    "expectedProductId": "prod-burst-b-168-starter",
-    "expectedShape": "complete_bey"
+    "expectedProductId": null,
+    "expectedShape": "complete_bey",
+    "note": "B-168 is Rage Longinus booster — no starter SKU"
   },
   {
     "title": "Heaven Pegasus B-97 complete used",
-    "expectedProductId": "prod-burst-b-97-complete-loose",
+    "expectedProductId": null,
     "expectedShape": "complete_bey",
-    "note": "English complete + product code"
+    "note": "Heaven Pegasus must not land on B-97 Nightmare"
   },
   {
     "title": "B-97 ヘブンペガサス レイヤー 単品",

@@ -14,14 +14,13 @@ import {
   productMatches,
   productOracleSnapshots,
 } from "@beyoracle/db";
-import { matchToProduct, computeOracleValue, buildTimeSeries } from "@beyoracle/oracle";
+import { matchToProduct, computeOracleValue, computeProductOracleValue, resolveProductOracleWindowDays, buildTimeSeries } from "@beyoracle/oracle";
 import type { ProductDTO } from "@beyoracle/shared";
 import {
   allSourcesMask,
   analyzeProductRecipe,
   convertCurrency,
   DEFAULT_PUBLISHED_MIN_COMPS,
-  PRODUCT_ORACLE_WINDOW_DAYS,
   isLiveMarketplaceComp,
   productMarkConditions,
   feedsOracleMark,
@@ -179,13 +178,18 @@ export async function getProductDataFromDb(
   const sourcesMask =
     sources.length === SOURCES.length ? allSourcesMask() : maskFromSources(sources);
 
+  const windowDays = resolveProductOracleWindowDays(product.generation, compsInput, {
+    conditions: markConditions,
+    minComps: DEFAULT_PUBLISHED_MIN_COMPS,
+    sourcesMask,
+  });
+
   const oracle = recipe.canPublishMark
-    ? computeOracleValue(productId, compsInput, {
+    ? computeProductOracleValue(product, compsInput, {
         targetCurrency: displayCurrency,
         sourcesMask,
         conditions: markConditions,
         minComps: DEFAULT_PUBLISHED_MIN_COMPS,
-        windowDays: PRODUCT_ORACLE_WINDOW_DAYS,
       })
     : null;
 
@@ -193,7 +197,7 @@ export async function getProductDataFromDb(
     sourcesMask,
     targetCurrency: displayCurrency,
     conditions: markConditions,
-    windowDays: PRODUCT_ORACLE_WINDOW_DAYS,
+    windowDays,
   });
 
   return {
@@ -250,13 +254,18 @@ export function getProductDataFromFixtures(
   const sourcesMask =
     sources.length === SOURCES.length ? allSourcesMask() : maskFromSources(sources);
 
+  const windowDays = resolveProductOracleWindowDays(product.generation, compsInput, {
+    conditions: markConditions,
+    minComps: DEFAULT_PUBLISHED_MIN_COMPS,
+    sourcesMask,
+  });
+
   const oracle = recipe.canPublishMark
-    ? computeOracleValue(productId, compsInput, {
+    ? computeProductOracleValue(product, compsInput, {
         targetCurrency: displayCurrency,
         sourcesMask: allSourcesMask(),
         conditions: markConditions,
         minComps: DEFAULT_PUBLISHED_MIN_COMPS,
-        windowDays: PRODUCT_ORACLE_WINDOW_DAYS,
       })
     : null;
 
@@ -264,7 +273,7 @@ export function getProductDataFromFixtures(
     sourcesMask,
     targetCurrency: displayCurrency,
     conditions: markConditions,
-    windowDays: PRODUCT_ORACLE_WINDOW_DAYS,
+    windowDays,
   });
 
   const condSet = new Set(markConditions);

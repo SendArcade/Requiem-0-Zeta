@@ -38,6 +38,16 @@ const parts: PartDTO[] = [
     nameEn: "Winning Valkyrie",
     nameJp: "ウィニングヴァルキリー",
     nameZh: "勝利女武神",
+    productCodes: ["B-104"],
+    attrs: {},
+  },
+  {
+    id: "burst-layer-victory-valkyrie",
+    generation: "burst",
+    partType: "layer",
+    nameEn: "Victory Valkyrie",
+    nameJp: "ビクトリーヴァルキリー",
+    nameZh: null,
     productCodes: ["B-34"],
     attrs: {},
   },
@@ -45,7 +55,7 @@ const parts: PartDTO[] = [
 
 const aliases: AliasDTO[] = [
   { partId: "x-bx-01-blade", locale: "ja", text: "ドランソード BX-01", source: "catalog" },
-  { partId: "burst-b-34-layer", locale: "en", text: "Winning Valkyrie B-34", source: "catalog" },
+  { partId: "burst-b-34-layer", locale: "en", text: "Winning Valkyrie B-104", source: "catalog" },
 ];
 
 const ctx = { parts, aliases };
@@ -86,8 +96,13 @@ describe("matcher", () => {
   });
 
   it("matches English alias exact", () => {
-    const m = matchTitle("Winning Valkyrie B-34 layer used", ctx);
+    const m = matchTitle("Winning Valkyrie B-104 layer used", ctx);
     expect(m?.partId).toBe("burst-b-34-layer");
+  });
+
+  it("does not land Winning titles on the B-34 Victory layer", () => {
+    const m = matchTitle("Winning Valkyrie B-34 layer used", ctx);
+    expect(m?.partId).not.toBe("burst-layer-victory-valkyrie");
   });
 
   it("matches fuzzy for partial English title", () => {
@@ -417,5 +432,18 @@ describe("product multi-month history from dated comps", () => {
     expect(snap).not.toBeNull();
     expect(snap!.nComps).toBe(3);
     expect(snap!.value).toBeLessThan(5000);
+  });
+});
+
+describe("Burst identity product matcher", () => {
+  it("does not land Winning product titles on B-34 or Heaven Pegasus on B-97", async () => {
+    const { loadProductMatcherContext } = await import("@beyoracle/catalog");
+    const ctx = loadProductMatcherContext();
+    const winning = matchToProduct("Beyblade Burst B-34 Starter Winning Valkyrie", ctx);
+    expect(winning?.productId ?? null).not.toMatch(/b-34/);
+    const heaven = matchToProduct("Heaven Pegasus B-97 complete used", ctx);
+    expect(heaven?.productId ?? null).not.toMatch(/b-97/);
+    const heavenJp = matchToProduct("B-97 ヘブンペガサス 完成品", ctx);
+    expect(heavenJp?.productId ?? null).not.toMatch(/b-97/);
   });
 });

@@ -14,6 +14,7 @@ import {
   buildOracleContext,
   cohortCompsMap,
   computeOracleValue,
+  computeProductOracleValue,
   type CompInput,
 } from "@beyoracle/oracle";
 import type { MatchMethod, ObservationDTO, SourceId } from "@beyoracle/shared";
@@ -21,9 +22,7 @@ import {
   computeLandedJpy,
   allSourcesMask,
   DEFAULT_PUBLISHED_MIN_COMPS,
-  PRODUCT_ORACLE_WINDOW_DAYS,
   isLiveMarketplaceComp,
-  productMarkConditions,
   isIngestEligible,
   isProductMarkEligible,
   looksLikeBeybladeListing,
@@ -455,13 +454,10 @@ export async function recomputeProductOracleSnapshot(productId: string): Promise
 
   const comps = liveRows.map((r) => rowToCompInput(r));
 
-  // Multi-month secondary market (vintage plastic/metal need longer lookback).
-  const snap = computeOracleValue(productId, comps, {
+  // Burst: 7d then 90d fallback. Other gens: multi-month window. Sealed never in default/starter pool.
+  const snap = computeProductOracleValue(product, comps, {
     sourcesMask: allSourcesMask(),
     targetCurrency: "JPY",
-    minComps: DEFAULT_PUBLISHED_MIN_COMPS,
-    conditions: productMarkConditions(product.skuType),
-    windowDays: PRODUCT_ORACLE_WINDOW_DAYS,
   });
 
   if (!snap) {
