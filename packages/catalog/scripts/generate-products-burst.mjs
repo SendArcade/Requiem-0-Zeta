@@ -38,8 +38,8 @@ function add(product) {
   products.push(product);
 }
 
-function starterSkus(code, nameEn, nameJp, partIds, attrs = {}) {
-  for (const skuType of ["starter", "complete_loose", "complete_sealed"]) {
+function packSkus(code, nameEn, nameJp, partIds, attrs = {}, skuTypes = ["starter", "complete_loose", "complete_sealed"]) {
+  for (const skuType of skuTypes) {
     const suffix =
       skuType === "complete_sealed"
         ? " (Sealed)"
@@ -69,10 +69,10 @@ function starterSkus(code, nameEn, nameJp, partIds, attrs = {}) {
 const STARTERS = [
   {
     code: "B-01",
-    nameEn: "Valkyrie",
-    nameJp: null,
-    combo: "Boost Variable",
-    partIds: ["burst-layer-valkyrie", "burst-disc-boost", "burst-driver-variable"],
+    nameEn: "Valkyrie Wing Accel DX",
+    nameJp: "ヴァルキリー",
+    combo: "Wing Accel",
+    partIds: ["burst-layer-valkyrie", "burst-disc-wing", "burst-driver-accel"],
   },
   {
     code: "B-02",
@@ -144,44 +144,41 @@ const STARTERS = [
     combo: "8 Trans",
     partIds: ["burst-layer-spriggan", "burst-disc-8", "burst-driver-trans"],
   },
+  // Mint B-104 Winning first so renaming B-34 to Victory does not drop Winning.
   {
-    code: "B-34",
+    code: "B-104",
     nameEn: "Winning Valkyrie",
     nameJp: "ウィニングヴァルキリー",
-    combo: "12 Variable",
-    partIds: ["burst-b-34-layer", "burst-disc-12", "burst-driver-variable"],
+    combo: "12 Volcanic",
+    partIds: ["burst-b-34-layer", "burst-disc-12", "burst-driver-volcanic"],
+  },
+  {
+    code: "B-34",
+    nameEn: "Victory Valkyrie",
+    nameJp: "ビクトリーヴァルキリー",
+    combo: "Boost Variable",
+    partIds: ["burst-layer-victory-valkyrie", "burst-disc-boost", "burst-driver-variable"],
   },
   {
     code: "B-86",
-    nameEn: "Cho-Z Achilles",
-    nameJp: null,
-    combo: "0 Zeta",
-    partIds: ["burst-layer-cho-z-achilles", "burst-0-disc", "burst-driver-zeta"],
+    nameEn: "Legend Spriggan",
+    nameJp: "レジェンドスプリガン",
+    combo: "7 Merge",
+    partIds: ["burst-layer-legend-spriggan", "burst-disc-7", "burst-driver-merge"],
   },
   {
     code: "B-97",
-    nameEn: "Heaven Pegasus",
-    nameJp: "ヘブンペガサス",
-    combo: "10 Atomic",
-    partIds: ["burst-b-97-layer", "burst-disc-10", "burst-driver-atomic"],
-  },
-  {
-    code: "B-102",
-    nameEn: "Dead Phoenix",
-    nameJp: null,
-    combo: "0 Friction",
-    partIds: ["burst-layer-dead-phoenix", "burst-0-disc", "burst-driver-friction"],
+    nameEn: "Nightmare Longinus",
+    nameJp: "ナイトメアロンギヌス",
+    combo: "Destroy",
+    partIds: ["burst-layer-nightmare-longinus", "burst-disc-heavy", "burst-driver-destroy"],
   },
   {
     code: "B-110",
-    nameEn: "Spriggan Requiem",
-    nameJp: null,
-    combo: "0 Evolution",
-    partIds: [
-      "burst-layer-spriggan-requiem",
-      "burst-0-disc",
-      "burst-driver-evolution",
-    ],
+    nameEn: "Bloody Longinus",
+    nameJp: "ブラッディロンギヌス",
+    combo: "13 Jolt",
+    partIds: ["burst-layer-bloody-longinus", "burst-disc-13", "burst-driver-jolt"],
   },
   {
     code: "B-115",
@@ -192,22 +189,80 @@ const STARTERS = [
   },
   {
     code: "B-127",
-    nameEn: "Cho-Z Spriggan",
-    nameJp: "超Zスプリガン",
-    combo: "13 Accel",
-    partIds: ["burst-b-127-layer", "burst-disc-13", "burst-driver-accel"],
+    nameEn: "Cho-Z Valkyrie",
+    nameJp: "超Zヴァルキリー",
+    combo: "Z Evolution",
+    partIds: ["burst-layer-cho-z-valkyrie", "burst-disc-zenith", "burst-driver-evolution"],
   },
   {
-    code: "B-168",
+    code: "B-100",
+    nameEn: "Spriggan Requiem",
+    nameJp: "スプリガンレクイエム",
+    combo: "0 Zeta",
+    partIds: ["burst-layer-spriggan-requiem", "burst-0-disc", "burst-driver-zeta"],
+  },
+  {
+    code: "B-128",
+    nameEn: "Cho-Z Spriggan",
+    nameJp: "超Zスプリガン",
+    combo: "0 Atomic",
+    partIds: ["burst-b-127-layer", "burst-0-disc", "burst-driver-atomic"],
+  },
+  {
+    code: "B-131",
+    nameEn: "Dead Phoenix",
+    nameJp: "デッドフェニックス",
+    combo: "0 Friction",
+    partIds: ["burst-layer-dead-phoenix", "burst-0-disc", "burst-driver-friction"],
+  },
+  {
+    code: "B-148",
+    nameEn: "Heaven Pegasus",
+    nameJp: "ヘブンペガサス",
+    combo: "10 Atomic",
+    partIds: ["burst-b-97-layer", "burst-disc-10", "burst-driver-atomic"],
+  },
+  {
+    code: "B-180",
     nameEn: "Dynamite Belial",
     nameJp: "ダイナマイトベリアル",
     combo: "Over Power",
-    partIds: ["burst-b-168-layer", "burst-disc-over", "burst-driver-power"],
+    partIds: ["burst-b-180-layer", "burst-disc-over", "burst-driver-power"],
   },
 ];
 
+/** Boosters: complete_loose + complete_sealed only (no starter). */
+const BOOSTERS = [
+  {
+    code: "B-102",
+    nameEn: "Twin Nemesis",
+    nameJp: "ツインネメシス",
+    combo: "3 Unite",
+    partIds: ["burst-layer-twin-nemesis", "burst-disc-3", "burst-driver-unite"],
+  },
+  {
+    code: "B-168",
+    nameEn: "Rage Longinus",
+    nameJp: "レイジロンギヌス",
+    combo: "Giga Revolve",
+    partIds: ["burst-b-168-layer", "burst-disc-giga", "burst-driver-revolve"],
+  },
+];
+
+function starterSkus(code, nameEn, nameJp, partIds, attrs = {}) {
+  packSkus(code, nameEn, nameJp, partIds, attrs, ["starter", "complete_loose", "complete_sealed"]);
+}
+
+function boosterSkus(code, nameEn, nameJp, partIds, attrs = {}) {
+  packSkus(code, nameEn, nameJp, partIds, attrs, ["complete_loose", "complete_sealed"]);
+}
+
 for (const s of STARTERS) {
   starterSkus(s.code, s.nameEn, s.nameJp, s.partIds, { combo: s.combo });
+}
+
+for (const s of BOOSTERS) {
+  boosterSkus(s.code, s.nameEn, s.nameJp, s.partIds, { combo: s.combo, pack: "booster" });
 }
 
 /** Random booster / multi-pack sealed SKUs */

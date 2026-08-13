@@ -6,8 +6,13 @@
     "nameEn": "Dran Sword",
     "nameJp": "ドランソード",
     "nameZh": "龍劍",
-    "productCodes": ["BX-01"],
-    "attrs": { "system": "X", "type": "Attack" }
+    "productCodes": [
+      "BX-01"
+    ],
+    "attrs": {
+      "system": "X",
+      "type": "Attack"
+    }
   },
   {
     "id": "x-bx-02-blade",
@@ -16,8 +21,13 @@
     "nameEn": "Wizard Arrow",
     "nameJp": "ウィザードアロー",
     "nameZh": "巫師之箭",
-    "productCodes": ["BX-02"],
-    "attrs": { "system": "X", "type": "Stamina" }
+    "productCodes": [
+      "BX-02"
+    ],
+    "attrs": {
+      "system": "X",
+      "type": "Stamina"
+    }
   },
   {
     "id": "x-bx-03-blade",
@@ -26,8 +36,13 @@
     "nameEn": "Hells Scythe",
     "nameJp": "ヘルズサイズ",
     "nameZh": "地獄鐮刀",
-    "productCodes": ["BX-03"],
-    "attrs": { "system": "X", "type": "Balance" }
+    "productCodes": [
+      "BX-03"
+    ],
+    "attrs": {
+      "system": "X",
+      "type": "Balance"
+    }
   },
   {
     "id": "x-bx-04-blade",
@@ -36,8 +51,13 @@
     "nameEn": "Knight Shield",
     "nameJp": "ナイトシールド",
     "nameZh": "騎士盾",
-    "productCodes": ["BX-04"],
-    "attrs": { "system": "X", "type": "Defense" }
+    "productCodes": [
+      "BX-04"
+    ],
+    "attrs": {
+      "system": "X",
+      "type": "Defense"
+    }
   },
   {
     "id": "x-bx-05-ratchet",
@@ -46,8 +66,13 @@
     "nameEn": "3-60",
     "nameJp": "3-60",
     "nameZh": "3-60",
-    "productCodes": ["BX-05-R"],
-    "attrs": { "height": "60", "teeth": "3" }
+    "productCodes": [
+      "BX-05-R"
+    ],
+    "attrs": {
+      "height": "60",
+      "teeth": "3"
+    }
   },
   {
     "id": "x-bx-06-bit",
@@ -56,8 +81,12 @@
     "nameEn": "Flat",
     "nameJp": "フラット",
     "nameZh": "平",
-    "productCodes": ["BX-06-B"],
-    "attrs": { "type": "Attack" }
+    "productCodes": [
+      "BX-06-B"
+    ],
+    "attrs": {
+      "type": "Attack"
+    }
   },
   {
     "id": "x-bx-07-bit",
@@ -66,8 +95,12 @@
     "nameEn": "Ball",
     "nameJp": "ボール",
     "nameZh": "球",
-    "productCodes": ["BX-07-B"],
-    "attrs": { "type": "Stamina" }
+    "productCodes": [
+      "BX-07-B"
+    ],
+    "attrs": {
+      "type": "Stamina"
+    }
   },
   {
     "id": "burst-b-34-layer",
@@ -76,8 +109,12 @@
     "nameEn": "Winning Valkyrie",
     "nameJp": "ウィニングヴァルキリー",
     "nameZh": "勝利女武神",
-    "productCodes": ["B-34"],
-    "attrs": { "type": "Attack" }
+    "productCodes": [
+      "B-104"
+    ],
+    "attrs": {
+      "type": "Attack"
+    }
   },
   {
     "id": "burst-b-97-layer",
@@ -86,8 +123,12 @@
     "nameEn": "Heaven Pegasus",
     "nameJp": "ヘブンペガサス",
     "nameZh": "天馬",
-    "productCodes": ["B-97"],
-    "attrs": { "type": "Stamina" }
+    "productCodes": [
+      "B-148"
+    ],
+    "attrs": {
+      "type": "Stamina"
+    }
   },
   {
     "id": "burst-b-127-layer",
@@ -96,8 +137,12 @@
     "nameEn": "Cho-Z Spriggan",
     "nameJp": "超Zスプリガン",
     "nameZh": "超Z 邪惡啟示",
-    "productCodes": ["B-127"],
-    "attrs": { "type": "Balance" }
+    "productCodes": [
+      "B-128"
+    ],
+    "attrs": {
+      "type": "Balance"
+    }
   },
   {
     "id": "burst-b-168-layer",
@@ -106,8 +151,12 @@
     "nameEn": "Dynamite Belial",
     "nameJp": "ダイナマイトベリアル",
     "nameZh": "動感邪惡啟示",
-    "productCodes": ["B-168"],
-    "attrs": { "type": "Attack" }
+    "productCodes": [
+      "B-180"
+    ],
+    "attrs": {
+      "type": "Attack"
+    }
   },
   {
     "id": "burst-0-disc",
@@ -116,8 +165,12 @@
     "nameEn": "0 Forge Disc",
     "nameJp": "0ディスク",
     "nameZh": "0 環",
-    "productCodes": ["D-0"],
-    "attrs": { "weight": "7.2g" }
+    "productCodes": [
+      "D-0"
+    ],
+    "attrs": {
+      "weight": "7.2g"
+    }
   },
   {
     "id": "burst-11-disc",
@@ -126,8 +179,12 @@
     "nameEn": "11 Forge Disc",
     "nameJp": "11ディスク",
     "nameZh": "11 環",
-    "productCodes": ["D-11"],
-    "attrs": { "weight": "21.5g" }
+    "productCodes": [
+      "D-11"
+    ],
+    "attrs": {
+      "weight": "21.5g"
+    }
   },
   {
     "id": "burst-dash-driver",
@@ -136,8 +193,12 @@
     "nameEn": "Dash Driver",
     "nameJp": "ダッシュドライバー",
     "nameZh": "衝刺軸",
-    "productCodes": ["DS-01"],
-    "attrs": { "type": "Attack" }
+    "productCodes": [
+      "DS-01"
+    ],
+    "attrs": {
+      "type": "Attack"
+    }
   },
   {
     "id": "burst-metal-driver",
@@ -146,8 +207,12 @@
     "nameEn": "Metal Driver",
     "nameJp": "メタルドライバー",
     "nameZh": "金屬軸",
-    "productCodes": ["MD-01"],
-    "attrs": { "type": "Defense" }
+    "productCodes": [
+      "MD-01"
+    ],
+    "attrs": {
+      "type": "Defense"
+    }
   },
   {
     "id": "metal-bb105-track",
@@ -156,8 +221,12 @@
     "nameEn": "BB105 Spin Track",
     "nameJp": "BB105",
     "nameZh": "BB105 旋轉軌道",
-    "productCodes": ["BB105"],
-    "attrs": { "height": "105" }
+    "productCodes": [
+      "BB105"
+    ],
+    "attrs": {
+      "height": "105"
+    }
   },
   {
     "id": "metal-wf2-track",
@@ -166,8 +235,12 @@
     "nameEn": "WF2 Wing Face Spin Track",
     "nameJp": "WF2",
     "nameZh": "WF2 翼面軌道",
-    "productCodes": ["WF2"],
-    "attrs": { "height": "145" }
+    "productCodes": [
+      "WF2"
+    ],
+    "attrs": {
+      "height": "145"
+    }
   },
   {
     "id": "metal-wd-tip",
@@ -176,8 +249,12 @@
     "nameEn": "Wide Defense",
     "nameJp": "ワイドディフェンス",
     "nameZh": "寬防禦",
-    "productCodes": ["WD"],
-    "attrs": { "type": "Stamina" }
+    "productCodes": [
+      "WD"
+    ],
+    "attrs": {
+      "type": "Stamina"
+    }
   },
   {
     "id": "metal-r2f-tip",
@@ -186,8 +263,12 @@
     "nameEn": "Right Rubber Flat",
     "nameJp": "ライトラバーフラット",
     "nameZh": "右橡膠平",
-    "productCodes": ["R2F"],
-    "attrs": { "type": "Attack" }
+    "productCodes": [
+      "R2F"
+    ],
+    "attrs": {
+      "type": "Attack"
+    }
   },
   {
     "id": "metal-storm-wheel",
@@ -196,8 +277,12 @@
     "nameEn": "Storm Pegasus",
     "nameJp": "ストームペガサス",
     "nameZh": "暴風天馬",
-    "productCodes": ["BB28"],
-    "attrs": { "type": "Attack" }
+    "productCodes": [
+      "BB28"
+    ],
+    "attrs": {
+      "type": "Attack"
+    }
   },
   {
     "id": "metal-rock-wheel",
@@ -206,8 +291,12 @@
     "nameEn": "Rock Leone",
     "nameJp": "ロックレオーネ",
     "nameZh": "岩石獅子",
-    "productCodes": ["BB30"],
-    "attrs": { "type": "Defense" }
+    "productCodes": [
+      "BB30"
+    ],
+    "attrs": {
+      "type": "Defense"
+    }
   },
   {
     "id": "plastic-dragoon-ring",
@@ -216,8 +305,12 @@
     "nameEn": "Dragoon Attack Ring",
     "nameJp": "ドラグーンアタックリング",
     "nameZh": "龍型攻擊環",
-    "productCodes": ["A-01"],
-    "attrs": { "series": "Original" }
+    "productCodes": [
+      "A-01"
+    ],
+    "attrs": {
+      "series": "Original"
+    }
   },
   {
     "id": "plastic-driger-ring",
@@ -226,8 +319,12 @@
     "nameEn": "Driger Attack Ring",
     "nameJp": "ドライガーアタックリング",
     "nameZh": "虎型攻擊環",
-    "productCodes": ["A-03"],
-    "attrs": { "series": "Original" }
+    "productCodes": [
+      "A-03"
+    ],
+    "attrs": {
+      "series": "Original"
+    }
   },
   {
     "id": "plastic-salg-ring",
@@ -236,8 +333,12 @@
     "nameEn": "Salamalyon Attack Ring",
     "nameJp": "サラマリオン",
     "nameZh": "沙龍攻擊環",
-    "productCodes": ["A-05"],
-    "attrs": { "series": "Original" }
+    "productCodes": [
+      "A-05"
+    ],
+    "attrs": {
+      "series": "Original"
+    }
   },
   {
     "id": "plastic-mg-weight",
@@ -246,8 +347,12 @@
     "nameEn": "Magnum Weight Disk",
     "nameJp": "マグナムウエイト",
     "nameZh": "Magnum 重量環",
-    "productCodes": ["WD-MG"],
-    "attrs": { "weight": "heavy" }
+    "productCodes": [
+      "WD-MG"
+    ],
+    "attrs": {
+      "weight": "heavy"
+    }
   },
   {
     "id": "plastic-10-balance",
@@ -256,8 +361,12 @@
     "nameEn": "10 Balance Weight Disk",
     "nameJp": "10バランス",
     "nameZh": "10 平衡環",
-    "productCodes": ["WD-10"],
-    "attrs": { "weight": "10g" }
+    "productCodes": [
+      "WD-10"
+    ],
+    "attrs": {
+      "weight": "10g"
+    }
   },
   {
     "id": "plastic-grip-base",
@@ -266,8 +375,12 @@
     "nameEn": "Grip Base",
     "nameJp": "グリップベース",
     "nameZh": "握把底",
-    "productCodes": ["BB-01"],
-    "attrs": { "type": "Attack" }
+    "productCodes": [
+      "BB-01"
+    ],
+    "attrs": {
+      "type": "Attack"
+    }
   },
   {
     "id": "plastic-dragoon-base",
@@ -276,7 +389,55 @@
     "nameEn": "Dragoon S Blade Base",
     "nameJp": "ドラグーンS",
     "nameZh": "龍型 S 底",
-    "productCodes": ["BB-01S"],
-    "attrs": { "type": "Attack" }
+    "productCodes": [
+      "BB-01S"
+    ],
+    "attrs": {
+      "type": "Attack"
+    }
+  },
+  {
+    "id": "burst-layer-victory-valkyrie",
+    "generation": "burst",
+    "partType": "layer",
+    "nameEn": "Victory Valkyrie",
+    "nameJp": "ビクトリーヴァルキリー",
+    "nameZh": null,
+    "productCodes": [
+      "B-34",
+      "Victory Valkyrie"
+    ],
+    "attrs": {
+      "type": "Attack"
+    }
+  },
+  {
+    "id": "burst-disc-z",
+    "generation": "burst",
+    "partType": "forge_disc",
+    "nameEn": "Z Forge Disc",
+    "nameJp": "Zディスク",
+    "nameZh": null,
+    "productCodes": [
+      "Z"
+    ],
+    "attrs": {
+      "source": "curated"
+    }
+  },
+  {
+    "id": "burst-layer-rage-longinus",
+    "generation": "burst",
+    "partType": "layer",
+    "nameEn": "Rage Longinus",
+    "nameJp": "レイジロンギヌス",
+    "nameZh": null,
+    "productCodes": [
+      "B-168"
+    ],
+    "attrs": {
+      "type": "Attack",
+      "source": "curated"
+    }
   }
 ]

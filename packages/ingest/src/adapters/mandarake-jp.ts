@@ -3,6 +3,7 @@ import type { ObservationDTO } from "@beyoracle/shared";
 import { computeLandedJpySync } from "@beyoracle/shared";
 import {
   inferConditionFromTitle,
+  resolveListingCondition,
   makeObservationId,
   type PricingSource,
   type RawListing,
@@ -181,7 +182,7 @@ export class MandarakeJpSource implements PricingSource {
       price: raw.price,
       currency: raw.currency,
       status: raw.status,
-      condition: raw.condition ?? inferConditionFromTitle(raw.title),
+      condition: resolveListingCondition(raw.title, raw.condition),
       url: raw.url,
       observedAt,
       rawJson: raw.raw ?? {},

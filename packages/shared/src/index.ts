@@ -313,7 +313,9 @@ export const SEALED_ORACLE_CONDITIONS: Condition[] = ["sealed"];
 
 /**
  * Condition pool for a product mark — variants stay separated:
- * complete_sealed → sealed only; complete_loose → used secondary; starter → used + sealed NIB.
+ * complete_sealed / sealed → factory MIB only;
+ * complete_loose → used secondary (default mark);
+ * starter → opened starter+launcher only (never sealed/NIB).
  */
 export function productMarkConditions(skuType: SkuType): Condition[] {
   switch (skuType) {
@@ -321,8 +323,6 @@ export function productMarkConditions(skuType: SkuType): Condition[] {
     case "sealed":
       return [...SEALED_ORACLE_CONDITIONS];
     case "starter":
-      // Live JP titles often sell NIB starters as スターター 未開封 (condition=sealed).
-      return ["used", "like_new", "unknown", "sealed"];
     case "complete_loose":
     default:
       return [...DEFAULT_ORACLE_CONDITIONS];
@@ -337,6 +337,10 @@ export const DEFAULT_PUBLISHED_MIN_COMPS = 3;
 
 /** Product oracle lookback — multi-month secondary market (plastic/metal need longer windows). */
 export const PRODUCT_ORACLE_WINDOW_DAYS = 180;
+
+/** Burst FMV: prefer 7-day sold comps; fall back to 90d only if 7d has fewer than min comps. */
+export const BURST_FMV_PRIMARY_WINDOW_DAYS = 7;
+export const BURST_FMV_FALLBACK_WINDOW_DAYS = 90;
 
 /**
  * Seed/demo fixtures never feed published product marks or product-page comps.

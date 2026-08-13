@@ -12,6 +12,8 @@ export {
 export { runProductEval, type ProductEvalCase, type ProductEvalReport } from "./product-eval.js";
 export {
   computeOracleValue,
+  computeProductOracleValue,
+  resolveProductOracleWindowDays,
   computeOracleByCondition,
   recomputeWithSources,
   buildTimeSeries,

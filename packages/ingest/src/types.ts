@@ -33,10 +33,20 @@ export interface PricingSource {
 
 export function inferConditionFromTitle(title: string): Condition {
   const t = title.toLowerCase();
-  if (/新品|未開封|sealed|全新/.test(t)) return "sealed";
+  if (/新品|未開封|未使用|\bsealed\b|\bmib\b|new in box|全新/.test(t)) return "sealed";
   if (/美品|近全新|like.?new|9\.?5成新/.test(t)) return "like_new";
   if (/中古|used|二手|傷/.test(t)) return "used";
   return "unknown";
+}
+
+/** Title 未開封/新品/MIB/未使用 wins over marketplace "used". */
+export function resolveListingCondition(
+  title: string,
+  marketplace?: Condition
+): Condition {
+  const fromTitle = inferConditionFromTitle(title);
+  if (fromTitle === "sealed") return "sealed";
+  return marketplace ?? fromTitle;
 }
 
 export function makeObservationId(source: SourceId, externalId: string): string {

@@ -44,43 +44,43 @@
   {
     "partId": "burst-b-34-layer",
     "locale": "en",
-    "text": "Winning Valkyrie B-34",
+    "text": "Winning Valkyrie B-104",
     "source": "catalog"
   },
   {
     "partId": "burst-b-34-layer",
     "locale": "ja",
-    "text": "ウィニングヴァルキリー B-34",
+    "text": "ウィニングヴァルキリー B-104",
     "source": "catalog"
   },
   {
     "partId": "burst-b-34-layer",
     "locale": "zh",
-    "text": "勝利女武神 B-34",
+    "text": "勝利女武神 B-104",
     "source": "catalog"
   },
   {
     "partId": "burst-b-97-layer",
     "locale": "en",
-    "text": "Heaven Pegasus B-97",
+    "text": "Heaven Pegasus B-148",
     "source": "catalog"
   },
   {
     "partId": "burst-b-97-layer",
     "locale": "ja",
-    "text": "ヘブンペガサス B-97",
+    "text": "ヘブンペガサス B-148",
     "source": "catalog"
   },
   {
     "partId": "burst-b-168-layer",
     "locale": "en",
-    "text": "Dynamite Belial B-168",
+    "text": "Dynamite Belial B-180",
     "source": "catalog"
   },
   {
     "partId": "burst-b-168-layer",
     "locale": "ja",
-    "text": "ダイナマイトベリアル B-168",
+    "text": "ダイナマイトベリアル B-180",
     "source": "catalog"
   },
   {
@@ -302,7 +302,7 @@
   {
     "partId": "burst-b-34-layer",
     "locale": "en",
-    "text": "B-34",
+    "text": "B-104",
     "source": "catalog-expanded"
   },
   {
@@ -10576,5 +10576,41 @@
     "locale": "en",
     "text": "Turbo(RatchetIntegratedBit)",
     "source": "compact"
+  },
+  {
+    "partId": "burst-layer-victory-valkyrie",
+    "locale": "en",
+    "text": "Victory Valkyrie B-34",
+    "source": "catalog"
+  },
+  {
+    "partId": "burst-layer-victory-valkyrie",
+    "locale": "ja",
+    "text": "ビクトリーヴァルキリー B-34",
+    "source": "catalog"
+  },
+  {
+    "partId": "burst-disc-z",
+    "locale": "en",
+    "text": "Z",
+    "source": "code"
+  },
+  {
+    "partId": "burst-layer-rage-longinus",
+    "locale": "en",
+    "text": "B-168",
+    "source": "code"
+  },
+  {
+    "partId": "burst-layer-rage-longinus",
+    "locale": "en",
+    "text": "Rage Longinus",
+    "source": "catalog"
+  },
+  {
+    "partId": "burst-layer-rage-longinus",
+    "locale": "ja",
+    "text": "レイジロンギヌス",
+    "source": "catalog"
   }
 ]
