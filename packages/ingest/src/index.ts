@@ -63,7 +63,14 @@ export {
   ORACLE_BACKFILL_JOB,
   isBackfillInFlight,
 } from "./backfill-oracle.js";
-export { startIngestRun, getLastSuccessfulIngestRun } from "./runs.js";
+export {
+  startIngestRun,
+  getLastSuccessfulIngestRun,
+  sweepStaleIngestRuns,
+  isRunningIngestRunStale,
+  ingestRunStaleMs,
+  DEFAULT_INGEST_RUN_STALE_MS,
+} from "./runs.js";
 export {
   persistIngestBatch,
   persistObservation,

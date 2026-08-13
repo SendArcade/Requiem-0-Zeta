@@ -62,3 +62,26 @@ export function bullmqOptsForJob(name: JobName) {
     removeOnFail: p.removeOnFail,
   };
 }
+
+/** Default 60m lock — product.backfill.shard runs many live API calls past 10m. */
+export const DEFAULT_BULLMQ_LOCK_DURATION_MS = 60 * 60 * 1000;
+export const DEFAULT_BULLMQ_LOCK_RENEW_MS = 30_000;
+
+export function bullmqWorkerLockOpts(
+  env: Record<string, string | undefined> = {}
+): {
+  lockDuration: number;
+  lockRenewTime: number;
+} {
+  const lockDuration = Number(
+    env.BULLMQ_LOCK_DURATION_MS ?? DEFAULT_BULLMQ_LOCK_DURATION_MS
+  );
+  const lockRenewTime = Number(
+    env.BULLMQ_LOCK_RENEW_MS ??
+      Math.min(
+        DEFAULT_BULLMQ_LOCK_RENEW_MS,
+        Math.max(5_000, Math.floor(lockDuration / 3))
+      )
+  );
+  return { lockDuration, lockRenewTime };
+}

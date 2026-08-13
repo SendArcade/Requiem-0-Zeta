@@ -1,10 +1,9 @@
 import { closeDb } from "@beyoracle/db";
 import { closePublisher, getRedisUrl } from "@beyoracle/events";
 import {
-  bullmqOptsForJob,
+  bullmqWorkerLockOpts,
   CRON_TICK,
   CONTROL_QUEUE,
-  parseJobPayload,
 } from "@beyoracle/jobs";
 import {
   registerOracleRecomputeEnqueuer,
@@ -15,14 +14,17 @@ import {
   runProductBackfillShard,
   parseShardCount,
   shouldRunOracleBackfill,
+  sweepStaleIngestRuns,
 } from "@beyoracle/ingest";
-import type { Generation } from "@beyoracle/shared";
 import { Worker, Queue } from "bullmq";
 import { Redis } from "ioredis";
 import { bootstrapDatabaseIfNeeded } from "./bootstrap.js";
-import { dispatchCronTick, newTickId } from "./dispatch.js";
+import { dispatchCronTick, syncScheduledCronTick } from "./dispatch.js";
 import { enqueueOracleRecompute } from "./enqueue-oracle.js";
-import { enqueueProductBackfillFleet } from "./enqueue-product-backfill.js";
+import {
+  enqueueProductBackfillFleet,
+  parseProductBackfillGenerations,
+} from "./enqueue-product-backfill.js";
 import { handleJob, logJobMetrics } from "./handlers.js";
 
 const INTERVAL_MS = Number(process.env.INGEST_INTERVAL_MS ?? 15 * 60 * 1000);
@@ -70,6 +72,7 @@ async function main() {
       const report = await runProductBackfillShard({
         shardId,
         shardCount,
+        generations: parseProductBackfillGenerations(),
         priorityOnly: process.env.PRODUCT_BACKFILL_PRIORITY_ONLY === "1",
         closeDb: false,
       });
@@ -79,6 +82,7 @@ async function main() {
       const productReport = await runProductBackfill({
         force: process.env.FORCE_PRODUCT_BACKFILL === "1",
         priorityOnly: process.env.PRODUCT_BACKFILL_PRIORITY_ONLY === "1",
+        generations: parseProductBackfillGenerations(),
       });
       console.log("[worker] product backfill complete:", JSON.stringify(productReport));
     }
@@ -91,34 +95,42 @@ async function main() {
     enqueueOracleRecompute(queue, partIds, reason, productIds)
   );
 
+  try {
+    const swept = await sweepStaleIngestRuns();
+    if (swept > 0) {
+      console.log(`[worker] swept ${swept} stale ingest_runs on boot`);
+    }
+  } catch (err) {
+    console.warn("[worker] sweepStaleIngestRuns failed:", (err as Error).message);
+  }
+
   // Pause cron fan-out during fleet product backfill to free capacity for shards.
+  // Must remove the Redis repeatable first — BACKFILL_PAUSE_CRON_INGEST=1 does not
+  // otherwise stop `scheduled-cron-tick`, and the frozen Aug-5 tickId payload lives there.
   const pauseCron =
     process.env.BACKFILL_PAUSE_CRON_INGEST === "1" ||
     process.env.PRODUCT_BACKFILL_FLEET === "1";
 
-  if (!pauseCron) {
-    await queue.add(
-      CRON_TICK,
-      parseJobPayload(CRON_TICK, {
-        tickId: newTickId(),
-        triggeredAt: new Date().toISOString(),
-      }),
-      {
-        repeat: { every: INTERVAL_MS },
-        jobId: "scheduled-cron-tick",
-        ...bullmqOptsForJob(CRON_TICK),
-      }
-    );
+  const cronSync = await syncScheduledCronTick(queue, {
+    pause: pauseCron,
+    intervalMs: INTERVAL_MS,
+  });
+  if (cronSync.added) {
     console.log(
-      `[worker] ${CRON_TICK} every ${INTERVAL_MS / 1000}s on queue ${CONTROL_QUEUE} (${getRedisUrl()})`
+      `[worker] ${CRON_TICK} every ${INTERVAL_MS / 1000}s on queue ${CONTROL_QUEUE} (${getRedisUrl()}) (removed ${cronSync.removed} prior repeatable)`
     );
   } else {
     console.log(
-      "[worker] cron.tick paused (BACKFILL_PAUSE_CRON_INGEST or PRODUCT_BACKFILL_FLEET)"
+      `[worker] cron.tick paused (BACKFILL_PAUSE_CRON_INGEST or PRODUCT_BACKFILL_FLEET); removed ${cronSync.removed} repeatable scheduled-cron-tick`
     );
   }
 
   console.log(`[worker] concurrency=${WORKER_CONCURRENCY}`);
+
+  const lockOpts = bullmqWorkerLockOpts(process.env);
+  console.log(
+    `[worker] lockDuration=${lockOpts.lockDuration}ms lockRenewTime=${lockOpts.lockRenewTime}ms`
+  );
 
   const worker = new Worker(
     CONTROL_QUEUE,
@@ -144,8 +156,9 @@ async function main() {
     {
       connection,
       concurrency: WORKER_CONCURRENCY,
-      // Product shards run many live API calls — default 30s lock is too short.
-      lockDuration: Number(process.env.BULLMQ_LOCK_DURATION_MS ?? 10 * 60 * 1000),
+      // Product shards run many live API calls — 10m lock stalled 26/31 observed.
+      lockDuration: lockOpts.lockDuration,
+      lockRenewTime: lockOpts.lockRenewTime,
       stalledInterval: Number(process.env.BULLMQ_STALLED_INTERVAL_MS ?? 60_000),
       maxStalledCount: 3,
     }
@@ -156,9 +169,7 @@ async function main() {
   });
 
   if (!pauseCron) {
-    const bootTickId = `boot-${newTickId()}`;
     await dispatchCronTick(queue, {
-      tickId: bootTickId,
       triggeredAt: new Date().toISOString(),
     });
   }
@@ -166,15 +177,13 @@ async function main() {
   // Fleet mode: enqueue all product.backfill.shard jobs once; every replica drains the queue.
   // Set PRODUCT_BACKFILL_ENQUEUE=1 on a single replica (or one-shot) to avoid double-enqueue races
   // (jobIds are idempotent, so double enqueue is safe but noisy).
+  // Default generations = burst (Wave 0+1 identity recut). Set PRODUCT_BACKFILL_GENERATIONS=all for full catalog.
   if (
     (process.env.PRODUCT_BACKFILL_ENQUEUE === "1" ||
       process.env.PRODUCT_BACKFILL_FLEET === "1") &&
     process.env.PRODUCT_BACKFILL_ENQUEUE_DONE !== "1"
   ) {
-    const gensRaw = process.env.PRODUCT_BACKFILL_GENERATIONS?.trim();
-    const generations = gensRaw
-      ? (gensRaw.split(",").map((s) => s.trim()).filter(Boolean) as Generation[])
-      : undefined;
+    const generations = parseProductBackfillGenerations();
     try {
       const result = await enqueueProductBackfillFleet(queue, {
         shardCount: parseShardCount(process.env.PRODUCT_BACKFILL_SHARD_COUNT),

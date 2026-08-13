@@ -1,6 +1,10 @@
 /**
  * Enqueue product.backfill.shard jobs for the full catalog fleet.
  * Idempotent jobIds — safe to re-run (BullMQ dedupes by jobId while pending/active).
+ *
+ * Next fleet pass is Burst-only (Wave 0+1 identity recut). Override with
+ * PRODUCT_BACKFILL_GENERATIONS=all (or plastic,metal,burst,x) for the full catalog.
+ * Do not write venue yen as marks.
  */
 import {
   bullmqOptsForJob,
@@ -15,6 +19,9 @@ import {
 } from "@beyoracle/ingest";
 import type { Generation } from "@beyoracle/shared";
 import type { Queue } from "bullmq";
+import { parseProductBackfillGenerations } from "./backfill-generations.js";
+
+export { parseProductBackfillGenerations } from "./backfill-generations.js";
 
 export async function enqueueProductBackfillFleet(
   queue: Queue,
@@ -26,14 +33,15 @@ export async function enqueueProductBackfillFleet(
   }
 ): Promise<{ shardCount: number; enqueued: number; totalProducts: number }> {
   const shardCount = parseShardCount(opts?.shardCount);
+  const generations = opts?.generations ?? parseProductBackfillGenerations();
   const partition = assertShardPartition(shardCount, {
-    generations: opts?.generations,
+    generations,
     priorityOnly: opts?.priorityOnly,
   });
 
   const jobs = buildProductBackfillShardJobs({
     shardCount,
-    generations: opts?.generations,
+    generations,
     priorityOnly: opts?.priorityOnly,
     maxQueriesPerShard: opts?.maxQueriesPerShard,
     runId: process.env.PRODUCT_BACKFILL_RUN_ID,
