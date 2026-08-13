@@ -1,11 +1,16 @@
 # Worker service config — set in Railway UI as custom config path: /railway.worker.toml
 # Or set service variable: RAILWAY_DOCKERFILE_PATH=packages/worker/Dockerfile
 #
-# Full-catalog parallel product backfill fleet:
+# Cron ingest: worker boot removes Redis repeatable `scheduled-cron-tick` then re-adds
+# it without a frozen tickId. BACKFILL_PAUSE_CRON_INGEST=1 actually pauses only because
+# of that remove. Do not railway variable set from this change.
+#
+# Later product backfill (Burst-only identity recut):
 #   See docs/PRODUCT_BACKFILL_FLEET.md
-#   1) Set PRODUCT_BACKFILL_ENQUEUE=1 PRODUCT_BACKFILL_FLEET=1 PRODUCT_BACKFILL_SHARD_COUNT=64
-#   2) Scale this service to many replicas (16–64+)
-#   3) After queue drains: PRODUCT_BACKFILL_ENQUEUE=0 PRODUCT_BACKFILL_FLEET=0
+#   PRODUCT_BACKFILL_GENERATIONS=burst  (code default; use `all` for full catalog)
+#   BULLMQ_LOCK_DURATION_MS=3600000 BULLMQ_LOCK_RENEW_MS=30000  (code defaults)
+# Do NOT start a 64-shard PRODUCT_BACKFILL_FLEET from this change.
+# Do not write venue yen as marks.
 
 [build]
 builder = "DOCKERFILE"

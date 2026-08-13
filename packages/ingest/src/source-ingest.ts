@@ -98,79 +98,83 @@ export async function runSourceIngest(opts: {
     errors: [],
   };
 
-  const live = sourceLiveEnabled(source);
-  const fixtureMode =
-    !live && (process.env.INGEST_ALLOW_FIXTURES === "1" || opts.queries.length === 0);
+  try {
+    const live = sourceLiveEnabled(source);
+    const fixtureMode =
+      !live && (process.env.INGEST_ALLOW_FIXTURES === "1" || opts.queries.length === 0);
 
-  if (!live && !fixtureMode) {
-    report.errors.push(
-      `${opts.sourceId} disabled — set ${SOURCE_ENV_FLAGS[opts.sourceId]}=1 or INGEST_ALLOW_FIXTURES=1`
-    );
-    await run?.finish({ status: "failed", stats: report, errors: report.errors });
-    return report;
-  }
-
-  const queries = fixtureMode ? [""] : opts.queries.filter(Boolean);
-  const batch: Array<{
-    observation: ReturnType<PricingSource["normalize"]>;
-    match: ReturnType<typeof resolveIngestMatch>;
-  }> = [];
-  const bundleObservations: ReturnType<PricingSource["normalize"]>[] = [];
-
-  for (const query of queries) {
-    report.queriesRun++;
-    try {
-      const raw = await source.search(
-        query,
-        searchOptsForSource(opts.sourceId, limit)
+    if (!live && !fixtureMode) {
+      report.errors.push(
+        `${opts.sourceId} disabled — set ${SOURCE_ENV_FLAGS[opts.sourceId]}=1 or INGEST_ALLOW_FIXTURES=1`
       );
-      report.listingsFetched += raw.length;
+      return report;
+    }
 
-      for (const r of raw) {
-        if (!looksLikeBeybladeListing(r.title)) continue;
+    const queries = fixtureMode ? [""] : opts.queries.filter(Boolean);
+    const batch: Array<{
+      observation: ReturnType<PricingSource["normalize"]>;
+      match: ReturnType<typeof resolveIngestMatch>;
+    }> = [];
+    const bundleObservations: ReturnType<PricingSource["normalize"]>[] = [];
 
-        const shape = classifyListingShape(r.title);
-        if (shape === "lot") {
-          bundleObservations.push(source.normalize(r));
-          continue;
+    for (const query of queries) {
+      report.queriesRun++;
+      try {
+        const raw = await source.search(
+          query,
+          searchOptsForSource(opts.sourceId, limit)
+        );
+        report.listingsFetched += raw.length;
+
+        for (const r of raw) {
+          if (!looksLikeBeybladeListing(r.title)) continue;
+
+          const shape = classifyListingShape(r.title);
+          if (shape === "lot") {
+            bundleObservations.push(source.normalize(r));
+            continue;
+          }
+          if (!isIngestEligible(r.title)) continue;
+
+          const observation = source.normalize(r);
+          if (!shouldPersistMarketListing(observation)) continue;
+          const match = resolveIngestMatch(observation.title, { shape });
+          batch.push({ observation, match });
         }
-        if (!isIngestEligible(r.title)) continue;
+      } catch (err) {
+        report.errors.push(`${query || "(fixtures)"}: ${(err as Error).message}`);
+      }
+    }
 
-        const observation = source.normalize(r);
-        if (!shouldPersistMarketListing(observation)) continue;
-        const match = resolveIngestMatch(observation.title, { shape });
-        batch.push({ observation, match });
+    try {
+      const persist = await persistIngestBatch(batch);
+      report.inserted = persist.inserted;
+      report.updated = persist.updated;
+      report.matched = persist.matched;
+      report.partsTouched = persist.partsTouched.size;
+      report.productsTouched = persist.productsTouched.size;
+      report.productsTouchedIds = [...persist.productsTouched];
+
+      if (bundleObservations.length > 0) {
+        const bundles = await persistBundleObservations(bundleObservations);
+        report.inserted += bundles.inserted;
+        report.updated += bundles.updated;
       }
     } catch (err) {
-      report.errors.push(`${query || "(fixtures)"}: ${(err as Error).message}`);
+      report.errors.push(`persist: ${(err as Error).message}`);
     }
-  }
 
-  try {
-    const persist = await persistIngestBatch(batch);
-    report.inserted = persist.inserted;
-    report.updated = persist.updated;
-    report.matched = persist.matched;
-    report.partsTouched = persist.partsTouched.size;
-    report.productsTouched = persist.productsTouched.size;
-    report.productsTouchedIds = [...persist.productsTouched];
-
-    if (bundleObservations.length > 0) {
-      const bundles = await persistBundleObservations(bundleObservations);
-      report.inserted += bundles.inserted;
-      report.updated += bundles.updated;
-    }
+    return report;
   } catch (err) {
-    report.errors.push(`persist: ${(err as Error).message}`);
+    report.errors.push((err as Error).message);
+    throw err;
+  } finally {
+    await run?.finish({
+      status: report.errors.length ? "failed" : "success",
+      stats: report,
+      errors: report.errors,
+    });
   }
-
-  await run?.finish({
-    status: report.errors.length ? "failed" : "success",
-    stats: report,
-    errors: report.errors,
-  });
-
-  return report;
 }
 
 export function listEnabledSources(): SourceId[] {
@@ -201,4 +205,3 @@ export function listBackfillSources(): SourceId[] {
   }
   return picked;
 }
-

@@ -52,7 +52,7 @@ Goal: fill **all publishable complete Beyblade SKUs** (starter / complete_loose 
 | `BACKFILL_PAUSE_CRON_INGEST` | `1` | Free capacity for backfill |
 | `PRODUCT_BACKFILL_QUERY_BATCH` | `10`–`20` | Queries per batch inside a shard |
 | `INGEST_LIMIT_PER_QUERY` | `25`–`40` | Listings per marketplace query |
-| `PRODUCT_BACKFILL_GENERATIONS` | omit = all | Or `plastic,metal,burst,x` |
+| `PRODUCT_BACKFILL_GENERATIONS` | `burst` | Next pass is Burst-only (Wave 0+1 identity recut). Use `all` for the full catalog. Do not write venue yen as marks. |
 
 ### 3. Scale
 
@@ -121,6 +121,10 @@ If you outgrow one DB:
 1. Keep **one write primary** for observations/matches.
 2. Scale **workers** (stateless) not Postgres shards first.
 3. Add read replicas for web only if needed.
+
+## Cron ingest vs fleet
+
+Worker boot **removes** Redis repeatable `scheduled-cron-tick` before re-adding. That drops the frozen Aug-5 `tickId` payload and makes `BACKFILL_PAUSE_CRON_INGEST=1` actually pause. Shard jobs use a 60m BullMQ lock plus `lockRenewTime` (override with `BULLMQ_LOCK_DURATION_MS` / `BULLMQ_LOCK_RENEW_MS`). Do not write venue yen as marks.
 
 ## Rate limits
 

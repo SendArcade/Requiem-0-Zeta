@@ -37,10 +37,10 @@ export async function handleJob(
 ): Promise<unknown> {
   switch (job.name) {
       case CRON_TICK: {
-        const payload = parseJobPayload(CRON_TICK, job.data);
-        const result = await dispatchCronTick(queue, payload);
+        parseJobPayload(CRON_TICK, job.data ?? {});
+        const result = await dispatchCronTick(queue);
         console.log(
-          `[worker] ${CRON_TICK} ${payload.tickId}: enqueued ${result.sourcesEnqueued} source jobs`
+          `[worker] ${CRON_TICK} ${result.tickId}: enqueued ${result.sourcesEnqueued} source jobs`
         );
         return result;
       }

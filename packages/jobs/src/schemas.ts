@@ -2,8 +2,9 @@ import { z } from "zod";
 import { SOURCES } from "@beyoracle/shared";
 
 export const cronTickPayload = z.object({
-  tickId: z.string(),
-  triggeredAt: z.string(),
+  /** Ignored by dispatchCronTick — generated fresh per fire so repeatable payloads cannot freeze it. */
+  tickId: z.string().optional(),
+  triggeredAt: z.string().optional(),
 });
 
 export const ingestSourcePayload = z.object({
