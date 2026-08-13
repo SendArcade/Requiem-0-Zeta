@@ -94,6 +94,31 @@ function titleContainsName(normTitle: string, part: PartDTO): boolean {
   });
 }
 
+
+function distinctiveNames(part: PartDTO): string[] {
+  return partNames(part).filter((n) => n.length >= 6);
+}
+
+/** Seller mislabel: title names a different part than the extracted product code. */
+function titleConflictsWithOtherPart(
+  title: string,
+  part: PartDTO,
+  ctx: MatcherContext
+): boolean {
+  if (titleContainsName(normalizeText(title), part)) return false;
+  const selfNames = distinctiveNames(part);
+  for (const other of ctx.parts) {
+    if (other.id === part.id) continue;
+    if (other.generation !== part.generation) continue;
+    for (const name of distinctiveNames(other)) {
+      if (!normalizedContains(title, name)) continue;
+      if (selfNames.some((b) => b.includes(name) || name.includes(b))) continue;
+      return true;
+    }
+  }
+  return false;
+}
+
 function findByProductCode(
   title: string,
   ctx: MatcherContext,
@@ -118,6 +143,7 @@ function findByProductCode(
 
   if (candidates.length === 0) return null;
   if (candidates.length === 1) {
+    if (titleConflictsWithOtherPart(title, candidates[0]!, ctx)) return null;
     return {
       partId: candidates[0]!.id,
       confidence: 0.98,
@@ -407,7 +433,8 @@ function isWholeBeyProductCandidate(product: ProductDTO): boolean {
   if (
     product.skuType !== "starter" &&
     product.skuType !== "complete_loose" &&
-    product.skuType !== "complete_sealed"
+    product.skuType !== "complete_sealed" &&
+    product.skuType !== "sealed"
   ) {
     return false;
   }
@@ -474,6 +501,7 @@ export function matchToProduct(
   for (const product of ctx.products) {
     if (opts?.generation && product.generation !== opts.generation) continue;
     if (!isWholeBeyProductCandidate(product)) continue;
+    if (titleNamesConflictingProduct(title, product, ctx.products)) continue;
     for (const code of product.productCodes) {
       const catalogCode = canonicalizeProductCode(code);
       if (codes.some((c) => canonicalizeProductCode(c) === catalogCode)) {

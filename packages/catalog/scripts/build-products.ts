@@ -415,7 +415,7 @@ function buildBurstProducts(parts: PartDTO[]): ProductDTO[] {
       code: "B-104",
       layerId: "burst-b-34-layer",
       discId: "burst-disc-12",
-      driverId: "burst-driver-variable",
+      driverId: "burst-driver-volcanic",
       nameEn: "Winning Valkyrie",
       nameJp: "ウィニングヴァルキリー",
     },
@@ -426,6 +426,62 @@ function buildBurstProducts(parts: PartDTO[]): ProductDTO[] {
       driverId: "burst-driver-variable",
       nameEn: "Victory Valkyrie",
       nameJp: "ビクトリーヴァルキリー",
+    },
+    {
+      code: "B-129",
+      layerId: "burst-layer-cho-z-achilles",
+      discId: "burst-0-disc",
+      driverId: "burst-driver-zeta",
+      nameEn: "Cho-Z Achilles",
+      nameJp: "超Zアキレス",
+    },
+    {
+      code: "B-148",
+      layerId: "burst-b-97-layer",
+      discId: "burst-disc-10",
+      driverId: "burst-driver-atomic",
+      nameEn: "Heaven Pegasus",
+      nameJp: "ヘブンペガサス",
+    },
+    {
+      code: "B-131",
+      layerId: "burst-layer-dead-phoenix",
+      discId: "burst-0-disc",
+      driverId: "burst-driver-friction",
+      nameEn: "Dead Phoenix",
+      nameJp: "デッドフェニックス",
+    },
+    {
+      code: "B-100",
+      layerId: "burst-layer-spriggan-requiem",
+      discId: "burst-0-disc",
+      driverId: "burst-driver-evolution",
+      nameEn: "Spriggan Requiem",
+      nameJp: "スプリガンレクイエム",
+    },
+    {
+      code: "B-180",
+      layerId: "burst-b-180-layer",
+      discId: "burst-disc-over",
+      driverId: "burst-driver-power",
+      nameEn: "Dynamite Belial",
+      nameJp: "ダイナマイトベリアル",
+    },
+    {
+      code: "B-122",
+      layerId: "burst-layer-geist-fafnir",
+      discId: "burst-disc-8",
+      driverId: "burst-driver-absorb",
+      nameEn: "Geist Fafnir",
+      nameJp: "ガイストファブニル",
+    },
+    {
+      code: "B-128",
+      layerId: "burst-b-127-layer",
+      discId: "burst-0-disc",
+      driverId: "burst-driver-atomic",
+      nameEn: "Cho-Z Spriggan",
+      nameJp: "超Zスプリガン",
     },
     {
       code: "B-86",
@@ -450,7 +506,7 @@ function buildBurstProducts(parts: PartDTO[]): ProductDTO[] {
       driverId: "burst-driver-unite",
       nameEn: "Twin Nemesis",
       nameJp: "ツインネメシス",
-      skuTypes: ["complete_loose", "complete_sealed"],
+      skuTypes: ["complete_loose", "sealed"],
     },
     {
       code: "B-110",
@@ -470,21 +526,22 @@ function buildBurstProducts(parts: PartDTO[]): ProductDTO[] {
     },
     {
       code: "B-168",
-      layerId: "burst-layer-rage-longinus",
+      layerId: "burst-b-168-layer",
       discId: "burst-disc-giga",
       driverId: "burst-driver-revolve",
       nameEn: "Rage Longinus",
       nameJp: "レイジロンギヌス",
-      skuTypes: ["complete_loose", "complete_sealed"],
+      skuTypes: ["complete_loose", "sealed"],
     },
   ];
 
   for (const r of burstRecipes) {
     const partIds = [r.layerId, r.discId, r.driverId].filter(Boolean) as string[];
-    const skuTypes = r.skuTypes ?? (["starter", "complete_loose", "complete_sealed"] as SkuType[]);
+    const skuTypes = r.skuTypes ?? (["starter", "complete_loose", "sealed"] as SkuType[]);
     for (const skuType of skuTypes) {
+      const sealed = skuType === "sealed" || skuType === "complete_sealed";
       const suffix =
-        skuType === "complete_sealed"
+        sealed
           ? " (Sealed)"
           : skuType === "complete_loose"
             ? " (Complete)"
@@ -495,70 +552,13 @@ function buildBurstProducts(parts: PartDTO[]): ProductDTO[] {
         skuType,
         nameEn: `${r.nameEn}${suffix}`,
         nameJp: r.nameJp
-          ? `${r.nameJp}${skuType === "complete_sealed" ? " 未開封" : skuType === "complete_loose" ? " 完成品" : " スターター"}`
+          ? `${r.nameJp}${sealed ? " 未開封" : skuType === "complete_loose" ? " 完成品" : " スターター"}`
           : null,
         productCodes: [r.code],
-        attrs: {},
+        attrs: { recipeKind: "assembled" },
         partIds,
       });
     }
-  }
-
-  addProduct(products, seen, {
-    id: "prod-burst-b-00-sealed",
-    generation: "burst",
-    skuType: "sealed",
-    nameEn: "B-00 Random Booster Vol.1",
-    nameJp: "B-00 ランダムブースター Vol.1",
-    productCodes: ["B-00"],
-    attrs: { volume: 1 },
-    partIds: ["burst-b-34-layer"],
-  });
-
-  // Popular Cho-Z / GT / Superking layers — complete_loose (layer-only recipe; disc/driver unknown)
-  const layerOnlyNames = [
-    "Achilles",
-    "Spriggan",
-    "Dragon",
-    "Fafnir",
-    "Diabolos",
-    "Lucifer",
-    "Valkyrie",
-    "Pegasus",
-    "Salamander",
-    "Ashura",
-    "Rage",
-    "Joker",
-    "Tempest",
-    "Roar",
-    "Brave",
-    "Cobalt",
-    "King",
-    "Deathscyther",
-    "Wyvern",
-    "Hades",
-    "Excalibur",
-    "Garuda",
-    "Kraken",
-    "Leopard",
-    "Phoenix",
-  ];
-
-  const layers = parts.filter((p) => p.generation === "burst" && p.partType === "layer");
-  for (const hint of layerOnlyNames) {
-    const layer = layers.find((l) => l.nameEn.toLowerCase().includes(hint.toLowerCase()));
-    if (!layer) continue;
-    const code = layer.productCodes.find((c) => /^B-\d/.test(c)) ?? layer.productCodes[0] ?? layer.id;
-    addProduct(products, seen, {
-      id: `prod-burst-${slug(layer.nameEn)}-complete-loose`,
-      generation: "burst",
-      skuType: "complete_loose",
-      nameEn: `${layer.nameEn} (Complete)`,
-      nameJp: layer.nameJp ? `${layer.nameJp} 完成品` : null,
-      productCodes: [code],
-      attrs: { recipeKind: "partial", recipe: "layer_only" },
-      partIds: [layer.id],
-    });
   }
 
   return products;

@@ -5,9 +5,18 @@
     "skuType": "starter",
     "nameEn": "Dran Sword 3-60F Starter",
     "nameJp": "ドランソード 3-60F スターター",
-    "productCodes": ["BX-01"],
-    "attrs": { "combo": "3-60F", "line": "BX" },
-    "partIds": ["x-bx-01-blade", "x-bx-05-ratchet", "x-bx-06-bit"]
+    "productCodes": [
+      "BX-01"
+    ],
+    "attrs": {
+      "combo": "3-60F",
+      "line": "BX"
+    },
+    "partIds": [
+      "x-bx-01-blade",
+      "x-bx-05-ratchet",
+      "x-bx-06-bit"
+    ]
   },
   {
     "id": "prod-x-bx-01-complete-sealed",
@@ -15,9 +24,18 @@
     "skuType": "complete_sealed",
     "nameEn": "Dran Sword 3-60F Starter (Sealed)",
     "nameJp": "ドランソード 3-60F スターター 未開封",
-    "productCodes": ["BX-01"],
-    "attrs": { "combo": "3-60F", "line": "BX" },
-    "partIds": ["x-bx-01-blade", "x-bx-05-ratchet", "x-bx-06-bit"]
+    "productCodes": [
+      "BX-01"
+    ],
+    "attrs": {
+      "combo": "3-60F",
+      "line": "BX"
+    },
+    "partIds": [
+      "x-bx-01-blade",
+      "x-bx-05-ratchet",
+      "x-bx-06-bit"
+    ]
   },
   {
     "id": "prod-x-bx-02-starter",
@@ -25,9 +43,18 @@
     "skuType": "starter",
     "nameEn": "Wizard Arrow 4-60B Starter",
     "nameJp": "ウィザードアロー 4-60B スターター",
-    "productCodes": ["BX-02"],
-    "attrs": { "combo": "4-60B", "line": "BX" },
-    "partIds": ["x-bx-02-blade", "x-ratchet-4-60", "x-bx-07-bit"]
+    "productCodes": [
+      "BX-02"
+    ],
+    "attrs": {
+      "combo": "4-60B",
+      "line": "BX"
+    },
+    "partIds": [
+      "x-bx-02-blade",
+      "x-ratchet-4-60",
+      "x-bx-07-bit"
+    ]
   },
   {
     "id": "prod-x-bx-03-starter",
@@ -35,9 +62,18 @@
     "skuType": "starter",
     "nameEn": "Hells Scythe 5-60B Starter",
     "nameJp": "ヘルズサイズ 5-60B スターター",
-    "productCodes": ["BX-03"],
-    "attrs": { "combo": "5-60B", "line": "BX" },
-    "partIds": ["x-bx-03-blade", "x-ratchet-5-60", "x-bx-07-bit"]
+    "productCodes": [
+      "BX-03"
+    ],
+    "attrs": {
+      "combo": "5-60B",
+      "line": "BX"
+    },
+    "partIds": [
+      "x-bx-03-blade",
+      "x-ratchet-5-60",
+      "x-bx-07-bit"
+    ]
   },
   {
     "id": "prod-x-bx-04-starter",
@@ -45,9 +81,18 @@
     "skuType": "starter",
     "nameEn": "Knight Shield 4-60F Starter",
     "nameJp": "ナイトシールド 4-60F スターター",
-    "productCodes": ["BX-04"],
-    "attrs": { "combo": "4-60F", "line": "BX" },
-    "partIds": ["x-bx-04-blade", "x-ratchet-4-60", "x-bx-06-bit"]
+    "productCodes": [
+      "BX-04"
+    ],
+    "attrs": {
+      "combo": "4-60F",
+      "line": "BX"
+    },
+    "partIds": [
+      "x-bx-04-blade",
+      "x-ratchet-4-60",
+      "x-bx-06-bit"
+    ]
   },
   {
     "id": "prod-x-bx-00-sealed",
@@ -55,8 +100,13 @@
     "skuType": "sealed",
     "nameEn": "BX-00 Basic Battle Set",
     "nameJp": "BX-00 ベーシックバトルセット",
-    "productCodes": ["BX-00"],
-    "attrs": { "line": "BX", "contents": "multi-starter" },
+    "productCodes": [
+      "BX-00"
+    ],
+    "attrs": {
+      "line": "BX",
+      "contents": "multi-starter"
+    },
     "partIds": [
       "x-bx-01-blade",
       "x-bx-02-blade",
@@ -74,9 +124,19 @@
     "skuType": "sealed",
     "nameEn": "BX-08 Random Booster Vol.1",
     "nameJp": "BX-08 ランダムブースター Vol.1",
-    "productCodes": ["BX-08"],
-    "attrs": { "line": "BX", "volume": 1 },
-    "partIds": ["x-bx-02-blade", "x-bx-03-blade", "x-ratchet-4-60", "x-bx-07-bit"]
+    "productCodes": [
+      "BX-08"
+    ],
+    "attrs": {
+      "line": "BX",
+      "volume": 1
+    },
+    "partIds": [
+      "x-bx-02-blade",
+      "x-bx-03-blade",
+      "x-ratchet-4-60",
+      "x-bx-07-bit"
+    ]
   },
   {
     "id": "prod-x-bx-14-sealed",
@@ -84,9 +144,18 @@
     "skuType": "sealed",
     "nameEn": "BX-14 Dual Pack",
     "nameJp": "BX-14 デュアルパック",
-    "productCodes": ["BX-14"],
-    "attrs": { "line": "BX" },
-    "partIds": ["x-bx-01-blade", "x-bx-02-blade", "x-ratchet-4-60", "x-bx-06-bit"]
+    "productCodes": [
+      "BX-14"
+    ],
+    "attrs": {
+      "line": "BX"
+    },
+    "partIds": [
+      "x-bx-01-blade",
+      "x-bx-02-blade",
+      "x-ratchet-4-60",
+      "x-bx-06-bit"
+    ]
   },
   {
     "id": "prod-x-ux-00-starter",
@@ -94,9 +163,17 @@
     "skuType": "starter",
     "nameEn": "UX-00 Ultimate Starter",
     "nameJp": "UX-00 アルティメットスターター",
-    "productCodes": ["UX-00"],
-    "attrs": { "line": "UX" },
-    "partIds": ["x-bx-01-blade", "x-ratchet-9-60", "x-bit-a"]
+    "productCodes": [
+      "UX-00"
+    ],
+    "attrs": {
+      "line": "UX"
+    },
+    "partIds": [
+      "x-bx-01-blade",
+      "x-ratchet-9-60",
+      "x-bit-a"
+    ]
   },
   {
     "id": "prod-x-cx-01-starter",
@@ -104,9 +181,17 @@
     "skuType": "starter",
     "nameEn": "CX-01 Custom Line Starter",
     "nameJp": "CX-01 カスタムライン スターター",
-    "productCodes": ["CX-01"],
-    "attrs": { "line": "CX" },
-    "partIds": ["x-bx-01-blade", "x-ratchet-4-60", "x-bit-v"]
+    "productCodes": [
+      "CX-01"
+    ],
+    "attrs": {
+      "line": "CX"
+    },
+    "partIds": [
+      "x-bx-01-blade",
+      "x-ratchet-4-60",
+      "x-bit-v"
+    ]
   },
   {
     "id": "prod-x-bx-01-complete-loose",
@@ -114,9 +199,17 @@
     "skuType": "complete_loose",
     "nameEn": "Dran Sword 3-60F (Complete)",
     "nameJp": "ドランソード 3-60F 完成品",
-    "productCodes": ["BX-01"],
-    "attrs": { "combo": "3-60F" },
-    "partIds": ["x-bx-01-blade", "x-bx-05-ratchet", "x-bx-06-bit"]
+    "productCodes": [
+      "BX-01"
+    ],
+    "attrs": {
+      "combo": "3-60F"
+    },
+    "partIds": [
+      "x-bx-01-blade",
+      "x-bx-05-ratchet",
+      "x-bx-06-bit"
+    ]
   },
   {
     "id": "prod-x-bx-02-complete-loose",
@@ -124,79 +217,17 @@
     "skuType": "complete_loose",
     "nameEn": "Wizard Arrow 4-60B (Complete)",
     "nameJp": "ウィザードアロー 4-60B 完成品",
-    "productCodes": ["BX-02"],
-    "attrs": { "combo": "4-60B" },
-    "partIds": ["x-bx-02-blade", "x-ratchet-4-60", "x-bx-07-bit"]
-  },
-  {
-    "id": "prod-burst-b-34-starter",
-    "generation": "burst",
-    "skuType": "starter",
-    "nameEn": "Winning Valkyrie Starter",
-    "nameJp": "ウィニングヴァルキリー スターター",
-    "productCodes": ["B-34"],
-    "attrs": { "combo": "12 Variable" },
-    "partIds": ["burst-b-34-layer", "burst-disc-12", "burst-driver-variable"]
-  },
-  {
-    "id": "prod-burst-b-34-complete-sealed",
-    "generation": "burst",
-    "skuType": "complete_sealed",
-    "nameEn": "Winning Valkyrie Starter (Sealed)",
-    "nameJp": "ウィニングヴァルキリー スターター 未開封",
-    "productCodes": ["B-34"],
-    "attrs": { "combo": "12 Variable" },
-    "partIds": ["burst-b-34-layer", "burst-disc-12", "burst-driver-variable"]
-  },
-  {
-    "id": "prod-burst-b-97-starter",
-    "generation": "burst",
-    "skuType": "starter",
-    "nameEn": "Heaven Pegasus Starter",
-    "nameJp": "ヘブンペガサス スターター",
-    "productCodes": ["B-97"],
-    "attrs": {},
-    "partIds": ["burst-b-97-layer"]
-  },
-  {
-    "id": "prod-burst-b-127-starter",
-    "generation": "burst",
-    "skuType": "starter",
-    "nameEn": "Cho-Z Spriggan Starter",
-    "nameJp": "超Zスプリガン スターター",
-    "productCodes": ["B-127"],
-    "attrs": {},
-    "partIds": ["burst-b-127-layer"]
-  },
-  {
-    "id": "prod-burst-b-168-starter",
-    "generation": "burst",
-    "skuType": "starter",
-    "nameEn": "Dynamite Belial Starter",
-    "nameJp": "ダイナマイトベリアル スターター",
-    "productCodes": ["B-168"],
-    "attrs": {},
-    "partIds": ["burst-b-168-layer"]
-  },
-  {
-    "id": "prod-burst-b-97-complete-loose",
-    "generation": "burst",
-    "skuType": "complete_loose",
-    "nameEn": "Heaven Pegasus (Complete)",
-    "nameJp": "ヘブンペガサス 完成品",
-    "productCodes": ["B-97"],
-    "attrs": {},
-    "partIds": ["burst-b-97-layer"]
-  },
-  {
-    "id": "prod-burst-b-00-sealed",
-    "generation": "burst",
-    "skuType": "sealed",
-    "nameEn": "B-00 Random Booster Vol.1",
-    "nameJp": "B-00 ランダムブースター Vol.1",
-    "productCodes": ["B-00"],
-    "attrs": { "volume": 1 },
-    "partIds": ["burst-b-34-layer"]
+    "productCodes": [
+      "BX-02"
+    ],
+    "attrs": {
+      "combo": "4-60B"
+    },
+    "partIds": [
+      "x-bx-02-blade",
+      "x-ratchet-4-60",
+      "x-bx-07-bit"
+    ]
   },
   {
     "id": "prod-x-bx-03-complete-loose",
@@ -204,8 +235,16 @@
     "skuType": "complete_loose",
     "nameEn": "Hells Scythe 5-60B (Complete)",
     "nameJp": "ヘルズサイズ 5-60B 完成品",
-    "productCodes": ["BX-03"],
-    "attrs": { "combo": "5-60B" },
-    "partIds": ["x-bx-03-blade", "x-ratchet-5-60", "x-bx-07-bit"]
+    "productCodes": [
+      "BX-03"
+    ],
+    "attrs": {
+      "combo": "5-60B"
+    },
+    "partIds": [
+      "x-bx-03-blade",
+      "x-ratchet-5-60",
+      "x-bx-07-bit"
+    ]
   }
 ]

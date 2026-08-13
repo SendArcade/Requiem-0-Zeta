@@ -2,7 +2,6 @@ import { loadFixtureObservations } from "@beyoracle/catalog";
 import type { ObservationDTO } from "@beyoracle/shared";
 import { computeLandedJpySync } from "@beyoracle/shared";
 import {
-  inferConditionFromTitle,
   resolveListingCondition,
   makeObservationId,
   type PricingSource,

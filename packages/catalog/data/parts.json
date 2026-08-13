@@ -5083,7 +5083,8 @@
     "nameJp": null,
     "nameZh": null,
     "productCodes": [
-      "Cho-Z Achilles"
+      "Cho-Z Achilles",
+      "B-129"
     ],
     "attrs": {
       "source": "fandom"
@@ -5963,7 +5964,8 @@
     "nameJp": null,
     "nameZh": null,
     "productCodes": [
-      "Geist Fafnir"
+      "Geist Fafnir",
+      "B-122"
     ],
     "attrs": {
       "source": "fandom"
@@ -16910,21 +16912,6 @@
       "Z"
     ],
     "attrs": {
-      "source": "curated"
-    }
-  },
-  {
-    "id": "burst-layer-rage-longinus",
-    "generation": "burst",
-    "partType": "layer",
-    "nameEn": "Rage Longinus",
-    "nameJp": "レイジロンギヌス",
-    "nameZh": null,
-    "productCodes": [
-      "B-168"
-    ],
-    "attrs": {
-      "type": "Attack",
       "source": "curated"
     }
   },

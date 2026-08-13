@@ -1,104 +1,59 @@
 [
   {
-    "id": "prod-burst-b-00-sealed",
-    "generation": "burst",
-    "skuType": "sealed",
-    "nameEn": "B-00 Random Booster Vol.1",
-    "nameJp": "B-00 ランダムブースター Vol.1",
-    "productCodes": [
-      "B-00"
-    ],
-    "attrs": {
-      "recipeKind": "contents",
-      "volume": 1,
-      "line": "RB",
-      "defaultComboPartIds": [
-        "burst-b-34-layer",
-        "burst-disc-12",
-        "burst-driver-variable"
-      ]
-    },
-    "partIds": [
-      "burst-b-34-layer",
-      "burst-disc-12",
-      "burst-driver-variable",
-      "burst-layer-storm-spriggan",
-      "burst-disc-knuckle"
-    ]
-  },
-  {
-    "id": "prod-burst-b-01-booster-sealed",
-    "generation": "burst",
-    "skuType": "sealed",
-    "nameEn": "Valkyrie Booster Pack",
-    "nameJp": null,
-    "productCodes": [
-      "B-01 Booster"
-    ],
-    "attrs": {
-      "recipeKind": "contents",
-      "line": "booster"
-    },
-    "partIds": [
-      "burst-layer-valkyrie",
-      "burst-disc-boost"
-    ]
-  },
-  {
     "id": "prod-burst-b-01-complete-loose",
     "generation": "burst",
     "skuType": "complete_loose",
-    "nameEn": "Valkyrie (Complete)",
-    "nameJp": null,
+    "nameEn": "Valkyrie Wing Accel DX (Complete)",
+    "nameJp": "ヴァルキリー 完成品",
     "productCodes": [
       "B-01"
     ],
     "attrs": {
       "recipeKind": "assembled",
-      "combo": "Boost Variable"
+      "combo": "Wing Accel"
     },
     "partIds": [
       "burst-layer-valkyrie",
-      "burst-disc-boost",
-      "burst-driver-variable"
+      "burst-disc-wing",
+      "burst-driver-accel"
     ]
   },
   {
-    "id": "prod-burst-b-01-complete-sealed",
+    "id": "prod-burst-b-01-sealed",
     "generation": "burst",
-    "skuType": "complete_sealed",
-    "nameEn": "Valkyrie (Sealed)",
-    "nameJp": null,
+    "skuType": "sealed",
+    "nameEn": "Valkyrie Wing Accel DX (Sealed)",
+    "nameJp": "ヴァルキリー 未開封",
     "productCodes": [
       "B-01"
     ],
     "attrs": {
       "recipeKind": "assembled",
-      "combo": "Boost Variable"
+      "combo": "Wing Accel"
     },
     "partIds": [
       "burst-layer-valkyrie",
-      "burst-disc-boost",
-      "burst-driver-variable"
+      "burst-disc-wing",
+      "burst-driver-accel"
     ]
   },
   {
     "id": "prod-burst-b-01-starter",
     "generation": "burst",
     "skuType": "starter",
-    "nameEn": "Valkyrie Starter",
-    "nameJp": null,
+    "nameEn": "Valkyrie Wing Accel DX Starter",
+    "nameJp": "ヴァルキリー スターター",
     "productCodes": [
       "B-01"
     ],
     "attrs": {
       "recipeKind": "assembled",
-      "combo": "Boost Variable"
+      "combo": "Wing Accel"
     },
     "partIds": [
       "burst-layer-valkyrie",
-      "burst-disc-boost",
-      "burst-driver-variable"
+      "burst-disc-wing",
+      "burst-driver-accel"
     ]
   },
   {
@@ -121,9 +76,9 @@
     ]
   },
   {
-    "id": "prod-burst-b-02-complete-sealed",
+    "id": "prod-burst-b-02-sealed",
     "generation": "burst",
-    "skuType": "complete_sealed",
+    "skuType": "sealed",
     "nameEn": "Roktavor (Sealed)",
     "nameJp": null,
     "productCodes": [
@@ -178,9 +133,9 @@
     ]
   },
   {
-    "id": "prod-burst-b-03-complete-sealed",
+    "id": "prod-burst-b-03-sealed",
     "generation": "burst",
-    "skuType": "complete_sealed",
+    "skuType": "sealed",
     "nameEn": "Kerbeus (Sealed)",
     "nameJp": null,
     "productCodes": [
@@ -216,52 +171,6 @@
     ]
   },
   {
-    "id": "prod-burst-b-04-rb-sealed",
-    "generation": "burst",
-    "skuType": "sealed",
-    "nameEn": "B-04 Random Booster Vol.1",
-    "nameJp": "B-04 ランダムブースター Vol.1",
-    "productCodes": [
-      "B-04 RB"
-    ],
-    "attrs": {
-      "recipeKind": "contents",
-      "volume": 1,
-      "line": "RB",
-      "defaultComboPartIds": [
-        "burst-layer-storm-spriggan",
-        "burst-disc-knuckle",
-        "burst-driver-accel"
-      ]
-    },
-    "partIds": [
-      "burst-layer-storm-spriggan",
-      "burst-layer-kaiser-kerbeus",
-      "burst-disc-knuckle",
-      "burst-disc-6",
-      "burst-driver-accel",
-      "burst-driver-iron"
-    ]
-  },
-  {
-    "id": "prod-burst-b-05-booster-sealed",
-    "generation": "burst",
-    "skuType": "sealed",
-    "nameEn": "Amaterios Booster Pack",
-    "nameJp": null,
-    "productCodes": [
-      "B-05 Booster"
-    ],
-    "attrs": {
-      "recipeKind": "contents",
-      "line": "booster"
-    },
-    "partIds": [
-      "burst-layer-amaterios",
-      "burst-disc-aero"
-    ]
-  },
-  {
     "id": "prod-burst-b-05-complete-loose",
     "generation": "burst",
     "skuType": "complete_loose",
@@ -281,9 +190,9 @@
     ]
   },
   {
-    "id": "prod-burst-b-05-complete-sealed",
+    "id": "prod-burst-b-05-sealed",
     "generation": "burst",
-    "skuType": "complete_sealed",
+    "skuType": "sealed",
     "nameEn": "Amaterios (Sealed)",
     "nameJp": null,
     "productCodes": [
@@ -338,9 +247,9 @@
     ]
   },
   {
-    "id": "prod-burst-b-06-complete-sealed",
+    "id": "prod-burst-b-06-sealed",
     "generation": "burst",
-    "skuType": "complete_sealed",
+    "skuType": "sealed",
     "nameEn": "Yegdrion (Sealed)",
     "nameJp": null,
     "productCodes": [
@@ -395,9 +304,9 @@
     ]
   },
   {
-    "id": "prod-burst-b-07-complete-sealed",
+    "id": "prod-burst-b-07-sealed",
     "generation": "burst",
-    "skuType": "complete_sealed",
+    "skuType": "sealed",
     "nameEn": "Wyvern (Sealed)",
     "nameJp": null,
     "productCodes": [
@@ -433,34 +342,6 @@
     ]
   },
   {
-    "id": "prod-burst-b-08-rb-sealed",
-    "generation": "burst",
-    "skuType": "sealed",
-    "nameEn": "B-08 Random Booster Vol.2",
-    "nameJp": "B-08 ランダムブースター Vol.2",
-    "productCodes": [
-      "B-08 RB"
-    ],
-    "attrs": {
-      "recipeKind": "contents",
-      "volume": 2,
-      "line": "RB",
-      "defaultComboPartIds": [
-        "burst-layer-rising-ragnaruk",
-        "burst-disc-7",
-        "burst-driver-destroy"
-      ]
-    },
-    "partIds": [
-      "burst-layer-rising-ragnaruk",
-      "burst-layer-nova-neptune",
-      "burst-disc-7",
-      "burst-disc-yell",
-      "burst-driver-destroy",
-      "burst-driver-survive"
-    ]
-  },
-  {
     "id": "prod-burst-b-09-complete-loose",
     "generation": "burst",
     "skuType": "complete_loose",
@@ -480,9 +361,9 @@
     ]
   },
   {
-    "id": "prod-burst-b-09-complete-sealed",
+    "id": "prod-burst-b-09-sealed",
     "generation": "burst",
-    "skuType": "complete_sealed",
+    "skuType": "sealed",
     "nameEn": "Horusood (Sealed)",
     "nameJp": null,
     "productCodes": [
@@ -537,9 +418,9 @@
     ]
   },
   {
-    "id": "prod-burst-b-10-complete-sealed",
+    "id": "prod-burst-b-10-sealed",
     "generation": "burst",
-    "skuType": "complete_sealed",
+    "skuType": "sealed",
     "nameEn": "Treptune (Sealed)",
     "nameJp": null,
     "productCodes": [
@@ -575,60 +456,157 @@
     ]
   },
   {
+    "id": "prod-burst-b-100-complete-loose",
+    "generation": "burst",
+    "skuType": "complete_loose",
+    "nameEn": "Spriggan Requiem (Complete)",
+    "nameJp": "スプリガンレクイエム 完成品",
+    "productCodes": [
+      "B-100"
+    ],
+    "attrs": {
+      "recipeKind": "assembled",
+      "combo": "0 Zeta"
+    },
+    "partIds": [
+      "burst-layer-spriggan-requiem",
+      "burst-0-disc",
+      "burst-driver-zeta"
+    ]
+  },
+  {
+    "id": "prod-burst-b-100-sealed",
+    "generation": "burst",
+    "skuType": "sealed",
+    "nameEn": "Spriggan Requiem (Sealed)",
+    "nameJp": "スプリガンレクイエム 未開封",
+    "productCodes": [
+      "B-100"
+    ],
+    "attrs": {
+      "recipeKind": "assembled",
+      "combo": "0 Zeta"
+    },
+    "partIds": [
+      "burst-layer-spriggan-requiem",
+      "burst-0-disc",
+      "burst-driver-zeta"
+    ]
+  },
+  {
+    "id": "prod-burst-b-100-starter",
+    "generation": "burst",
+    "skuType": "starter",
+    "nameEn": "Spriggan Requiem Starter",
+    "nameJp": "スプリガンレクイエム スターター",
+    "productCodes": [
+      "B-100"
+    ],
+    "attrs": {
+      "recipeKind": "assembled",
+      "combo": "0 Zeta"
+    },
+    "partIds": [
+      "burst-layer-spriggan-requiem",
+      "burst-0-disc",
+      "burst-driver-zeta"
+    ]
+  },
+  {
     "id": "prod-burst-b-102-complete-loose",
     "generation": "burst",
     "skuType": "complete_loose",
-    "nameEn": "Dead Phoenix (Complete)",
-    "nameJp": null,
+    "nameEn": "Twin Nemesis (Complete)",
+    "nameJp": "ツインネメシス 完成品",
     "productCodes": [
       "B-102"
     ],
     "attrs": {
       "recipeKind": "assembled",
-      "combo": "0 Friction"
+      "combo": "3 Unite",
+      "pack": "booster"
     },
     "partIds": [
-      "burst-layer-dead-phoenix",
-      "burst-0-disc",
-      "burst-driver-friction"
+      "burst-layer-twin-nemesis",
+      "burst-disc-3",
+      "burst-driver-unite"
     ]
   },
   {
-    "id": "prod-burst-b-102-complete-sealed",
+    "id": "prod-burst-b-102-sealed",
     "generation": "burst",
-    "skuType": "complete_sealed",
-    "nameEn": "Dead Phoenix (Sealed)",
-    "nameJp": null,
+    "skuType": "sealed",
+    "nameEn": "Twin Nemesis (Sealed)",
+    "nameJp": "ツインネメシス 未開封",
     "productCodes": [
       "B-102"
     ],
     "attrs": {
       "recipeKind": "assembled",
-      "combo": "0 Friction"
+      "combo": "3 Unite",
+      "pack": "booster"
     },
     "partIds": [
-      "burst-layer-dead-phoenix",
-      "burst-0-disc",
-      "burst-driver-friction"
+      "burst-layer-twin-nemesis",
+      "burst-disc-3",
+      "burst-driver-unite"
     ]
   },
   {
-    "id": "prod-burst-b-102-starter",
+    "id": "prod-burst-b-104-complete-loose",
+    "generation": "burst",
+    "skuType": "complete_loose",
+    "nameEn": "Winning Valkyrie (Complete)",
+    "nameJp": "ウィニングヴァルキリー 完成品",
+    "productCodes": [
+      "B-104"
+    ],
+    "attrs": {
+      "recipeKind": "assembled",
+      "combo": "12 Volcanic"
+    },
+    "partIds": [
+      "burst-b-34-layer",
+      "burst-disc-12",
+      "burst-driver-volcanic"
+    ]
+  },
+  {
+    "id": "prod-burst-b-104-sealed",
+    "generation": "burst",
+    "skuType": "sealed",
+    "nameEn": "Winning Valkyrie (Sealed)",
+    "nameJp": "ウィニングヴァルキリー 未開封",
+    "productCodes": [
+      "B-104"
+    ],
+    "attrs": {
+      "recipeKind": "assembled",
+      "combo": "12 Volcanic"
+    },
+    "partIds": [
+      "burst-b-34-layer",
+      "burst-disc-12",
+      "burst-driver-volcanic"
+    ]
+  },
+  {
+    "id": "prod-burst-b-104-starter",
     "generation": "burst",
     "skuType": "starter",
-    "nameEn": "Dead Phoenix Starter",
-    "nameJp": null,
+    "nameEn": "Winning Valkyrie Starter",
+    "nameJp": "ウィニングヴァルキリー スターター",
     "productCodes": [
-      "B-102"
+      "B-104"
     ],
     "attrs": {
       "recipeKind": "assembled",
-      "combo": "0 Friction"
+      "combo": "12 Volcanic"
     },
     "partIds": [
-      "burst-layer-dead-phoenix",
-      "burst-0-disc",
-      "burst-driver-friction"
+      "burst-b-34-layer",
+      "burst-disc-12",
+      "burst-driver-volcanic"
     ]
   },
   {
@@ -651,9 +629,9 @@
     ]
   },
   {
-    "id": "prod-burst-b-11-complete-sealed",
+    "id": "prod-burst-b-11-sealed",
     "generation": "burst",
-    "skuType": "complete_sealed",
+    "skuType": "sealed",
     "nameEn": "Spriggan (Sealed)",
     "nameJp": null,
     "productCodes": [
@@ -692,376 +670,533 @@
     "id": "prod-burst-b-110-complete-loose",
     "generation": "burst",
     "skuType": "complete_loose",
-    "nameEn": "Spriggan Requiem (Complete)",
-    "nameJp": null,
+    "nameEn": "Bloody Longinus (Complete)",
+    "nameJp": "ブラッディロンギヌス 完成品",
     "productCodes": [
       "B-110"
     ],
     "attrs": {
       "recipeKind": "assembled",
-      "combo": "0 Evolution"
+      "combo": "13 Jolt"
     },
     "partIds": [
-      "burst-layer-spriggan-requiem",
-      "burst-0-disc",
-      "burst-driver-evolution"
+      "burst-layer-bloody-longinus",
+      "burst-disc-13",
+      "burst-driver-jolt"
     ]
   },
   {
-    "id": "prod-burst-b-110-complete-sealed",
+    "id": "prod-burst-b-110-sealed",
     "generation": "burst",
-    "skuType": "complete_sealed",
-    "nameEn": "Spriggan Requiem (Sealed)",
-    "nameJp": null,
+    "skuType": "sealed",
+    "nameEn": "Bloody Longinus (Sealed)",
+    "nameJp": "ブラッディロンギヌス 未開封",
     "productCodes": [
       "B-110"
     ],
     "attrs": {
       "recipeKind": "assembled",
-      "combo": "0 Evolution"
+      "combo": "13 Jolt"
     },
     "partIds": [
-      "burst-layer-spriggan-requiem",
-      "burst-0-disc",
-      "burst-driver-evolution"
+      "burst-layer-bloody-longinus",
+      "burst-disc-13",
+      "burst-driver-jolt"
     ]
   },
   {
     "id": "prod-burst-b-110-starter",
     "generation": "burst",
     "skuType": "starter",
-    "nameEn": "Spriggan Requiem Starter",
-    "nameJp": null,
+    "nameEn": "Bloody Longinus Starter",
+    "nameJp": "ブラッディロンギヌス スターター",
     "productCodes": [
       "B-110"
     ],
     "attrs": {
       "recipeKind": "assembled",
-      "combo": "0 Evolution"
+      "combo": "13 Jolt"
     },
     "partIds": [
-      "burst-layer-spriggan-requiem",
-      "burst-0-disc",
-      "burst-driver-evolution"
+      "burst-layer-bloody-longinus",
+      "burst-disc-13",
+      "burst-driver-jolt"
     ]
   },
   {
-    "id": "prod-burst-b-115-complete-loose",
+    "id": "prod-burst-b-122-complete-loose",
     "generation": "burst",
     "skuType": "complete_loose",
     "nameEn": "Geist Fafnir (Complete)",
-    "nameJp": null,
+    "nameJp": "ガイストファブニル 完成品",
     "productCodes": [
-      "B-115"
+      "B-122"
     ],
     "attrs": {
       "recipeKind": "assembled",
-      "combo": "1 Eternal"
+      "combo": "8 Absorb"
     },
     "partIds": [
       "burst-layer-geist-fafnir",
-      "burst-disc-1",
-      "burst-driver-eternal"
+      "burst-disc-8",
+      "burst-driver-absorb"
     ]
   },
   {
-    "id": "prod-burst-b-115-complete-sealed",
+    "id": "prod-burst-b-122-sealed",
     "generation": "burst",
-    "skuType": "complete_sealed",
+    "skuType": "sealed",
     "nameEn": "Geist Fafnir (Sealed)",
-    "nameJp": null,
+    "nameJp": "ガイストファブニル 未開封",
     "productCodes": [
-      "B-115"
+      "B-122"
     ],
     "attrs": {
       "recipeKind": "assembled",
-      "combo": "1 Eternal"
+      "combo": "8 Absorb"
     },
     "partIds": [
       "burst-layer-geist-fafnir",
-      "burst-disc-1",
-      "burst-driver-eternal"
+      "burst-disc-8",
+      "burst-driver-absorb"
     ]
   },
   {
-    "id": "prod-burst-b-115-starter",
+    "id": "prod-burst-b-122-starter",
     "generation": "burst",
     "skuType": "starter",
     "nameEn": "Geist Fafnir Starter",
-    "nameJp": null,
+    "nameJp": "ガイストファブニル スターター",
     "productCodes": [
-      "B-115"
+      "B-122"
     ],
     "attrs": {
       "recipeKind": "assembled",
-      "combo": "1 Eternal"
+      "combo": "8 Absorb"
     },
     "partIds": [
       "burst-layer-geist-fafnir",
-      "burst-disc-1",
-      "burst-driver-eternal"
-    ]
-  },
-  {
-    "id": "prod-burst-b-125-rb-sealed",
-    "generation": "burst",
-    "skuType": "sealed",
-    "nameEn": "B-125 Random Booster Vol.13",
-    "nameJp": "B-125 ランダムブースター Vol.13",
-    "productCodes": [
-      "B-125 RB"
-    ],
-    "attrs": {
-      "recipeKind": "contents",
-      "volume": 13,
-      "line": "RB",
-      "defaultComboPartIds": [
-        "burst-b-168-layer",
-        "burst-disc-over",
-        "burst-driver-power"
-      ]
-    },
-    "partIds": [
-      "burst-b-168-layer",
-      "burst-layer-perfect-phoenix",
-      "burst-disc-over",
-      "burst-disc-moon",
-      "burst-driver-power"
+      "burst-disc-8",
+      "burst-driver-absorb"
     ]
   },
   {
     "id": "prod-burst-b-127-complete-loose",
     "generation": "burst",
     "skuType": "complete_loose",
-    "nameEn": "Cho-Z Spriggan (Complete)",
-    "nameJp": "超Zスプリガン 完成品",
+    "nameEn": "Cho-Z Valkyrie (Complete)",
+    "nameJp": "超Zヴァルキリー 完成品",
     "productCodes": [
       "B-127"
     ],
     "attrs": {
       "recipeKind": "assembled",
-      "combo": "13 Accel"
+      "combo": "Z Evolution"
     },
     "partIds": [
-      "burst-b-127-layer",
-      "burst-disc-13",
-      "burst-driver-accel"
+      "burst-layer-cho-z-valkyrie",
+      "burst-disc-z",
+      "burst-driver-evolution"
     ]
   },
   {
-    "id": "prod-burst-b-127-complete-sealed",
+    "id": "prod-burst-b-127-sealed",
     "generation": "burst",
-    "skuType": "complete_sealed",
-    "nameEn": "Cho-Z Spriggan (Sealed)",
-    "nameJp": "超Zスプリガン 未開封",
+    "skuType": "sealed",
+    "nameEn": "Cho-Z Valkyrie (Sealed)",
+    "nameJp": "超Zヴァルキリー 未開封",
     "productCodes": [
       "B-127"
     ],
     "attrs": {
       "recipeKind": "assembled",
-      "combo": "13 Accel"
+      "combo": "Z Evolution"
     },
     "partIds": [
-      "burst-b-127-layer",
-      "burst-disc-13",
-      "burst-driver-accel"
+      "burst-layer-cho-z-valkyrie",
+      "burst-disc-z",
+      "burst-driver-evolution"
     ]
   },
   {
     "id": "prod-burst-b-127-starter",
     "generation": "burst",
     "skuType": "starter",
-    "nameEn": "Cho-Z Spriggan Starter",
-    "nameJp": "超Zスプリガン スターター",
+    "nameEn": "Cho-Z Valkyrie Starter",
+    "nameJp": "超Zヴァルキリー スターター",
     "productCodes": [
       "B-127"
     ],
     "attrs": {
       "recipeKind": "assembled",
-      "combo": "13 Accel"
+      "combo": "Z Evolution"
     },
     "partIds": [
-      "burst-b-127-layer",
-      "burst-disc-13",
-      "burst-driver-accel"
+      "burst-layer-cho-z-valkyrie",
+      "burst-disc-z",
+      "burst-driver-evolution"
     ]
   },
   {
-    "id": "prod-burst-b-13-rb-sealed",
+    "id": "prod-burst-b-128-complete-loose",
     "generation": "burst",
-    "skuType": "sealed",
-    "nameEn": "B-13 Random Booster Vol.3",
-    "nameJp": "B-13 ランダムブースター Vol.3",
+    "skuType": "complete_loose",
+    "nameEn": "Cho-Z Spriggan (Complete)",
+    "nameJp": "超Zスプリガン 完成品",
     "productCodes": [
-      "B-13 RB"
+      "B-128"
     ],
     "attrs": {
-      "recipeKind": "contents",
-      "volume": 3,
-      "line": "RB",
-      "defaultComboPartIds": [
-        "burst-layer-god-valkyrie",
-        "burst-disc-10",
-        "burst-driver-atomic"
-      ]
+      "recipeKind": "assembled",
+      "combo": "0 Atomic"
     },
     "partIds": [
-      "burst-layer-god-valkyrie",
-      "burst-layer-nightmare-longinus",
+      "burst-b-127-layer",
+      "burst-0-disc",
+      "burst-driver-atomic"
+    ]
+  },
+  {
+    "id": "prod-burst-b-128-sealed",
+    "generation": "burst",
+    "skuType": "sealed",
+    "nameEn": "Cho-Z Spriggan (Sealed)",
+    "nameJp": "超Zスプリガン 未開封",
+    "productCodes": [
+      "B-128"
+    ],
+    "attrs": {
+      "recipeKind": "assembled",
+      "combo": "0 Atomic"
+    },
+    "partIds": [
+      "burst-b-127-layer",
+      "burst-0-disc",
+      "burst-driver-atomic"
+    ]
+  },
+  {
+    "id": "prod-burst-b-128-starter",
+    "generation": "burst",
+    "skuType": "starter",
+    "nameEn": "Cho-Z Spriggan Starter",
+    "nameJp": "超Zスプリガン スターター",
+    "productCodes": [
+      "B-128"
+    ],
+    "attrs": {
+      "recipeKind": "assembled",
+      "combo": "0 Atomic"
+    },
+    "partIds": [
+      "burst-b-127-layer",
+      "burst-0-disc",
+      "burst-driver-atomic"
+    ]
+  },
+  {
+    "id": "prod-burst-b-129-complete-loose",
+    "generation": "burst",
+    "skuType": "complete_loose",
+    "nameEn": "Cho-Z Achilles (Complete)",
+    "nameJp": "超Zアキレス 完成品",
+    "productCodes": [
+      "B-129"
+    ],
+    "attrs": {
+      "recipeKind": "assembled",
+      "combo": "00 Dimension"
+    },
+    "partIds": [
+      "burst-layer-cho-z-achilles",
+      "burst-disc-00",
+      "burst-driver-dimension"
+    ]
+  },
+  {
+    "id": "prod-burst-b-129-sealed",
+    "generation": "burst",
+    "skuType": "sealed",
+    "nameEn": "Cho-Z Achilles (Sealed)",
+    "nameJp": "超Zアキレス 未開封",
+    "productCodes": [
+      "B-129"
+    ],
+    "attrs": {
+      "recipeKind": "assembled",
+      "combo": "00 Dimension"
+    },
+    "partIds": [
+      "burst-layer-cho-z-achilles",
+      "burst-disc-00",
+      "burst-driver-dimension"
+    ]
+  },
+  {
+    "id": "prod-burst-b-129-starter",
+    "generation": "burst",
+    "skuType": "starter",
+    "nameEn": "Cho-Z Achilles Starter",
+    "nameJp": "超Zアキレス スターター",
+    "productCodes": [
+      "B-129"
+    ],
+    "attrs": {
+      "recipeKind": "assembled",
+      "combo": "00 Dimension"
+    },
+    "partIds": [
+      "burst-layer-cho-z-achilles",
+      "burst-disc-00",
+      "burst-driver-dimension"
+    ]
+  },
+  {
+    "id": "prod-burst-b-131-complete-loose",
+    "generation": "burst",
+    "skuType": "complete_loose",
+    "nameEn": "Dead Phoenix (Complete)",
+    "nameJp": "デッドフェニックス 完成品",
+    "productCodes": [
+      "B-131"
+    ],
+    "attrs": {
+      "recipeKind": "assembled",
+      "combo": "0 Friction"
+    },
+    "partIds": [
+      "burst-layer-dead-phoenix",
+      "burst-0-disc",
+      "burst-driver-friction"
+    ]
+  },
+  {
+    "id": "prod-burst-b-131-sealed",
+    "generation": "burst",
+    "skuType": "sealed",
+    "nameEn": "Dead Phoenix (Sealed)",
+    "nameJp": "デッドフェニックス 未開封",
+    "productCodes": [
+      "B-131"
+    ],
+    "attrs": {
+      "recipeKind": "assembled",
+      "combo": "0 Friction"
+    },
+    "partIds": [
+      "burst-layer-dead-phoenix",
+      "burst-0-disc",
+      "burst-driver-friction"
+    ]
+  },
+  {
+    "id": "prod-burst-b-131-starter",
+    "generation": "burst",
+    "skuType": "starter",
+    "nameEn": "Dead Phoenix Starter",
+    "nameJp": "デッドフェニックス スターター",
+    "productCodes": [
+      "B-131"
+    ],
+    "attrs": {
+      "recipeKind": "assembled",
+      "combo": "0 Friction"
+    },
+    "partIds": [
+      "burst-layer-dead-phoenix",
+      "burst-0-disc",
+      "burst-driver-friction"
+    ]
+  },
+  {
+    "id": "prod-burst-b-148-complete-loose",
+    "generation": "burst",
+    "skuType": "complete_loose",
+    "nameEn": "Heaven Pegasus (Complete)",
+    "nameJp": "ヘブンペガサス 完成品",
+    "productCodes": [
+      "B-148"
+    ],
+    "attrs": {
+      "recipeKind": "assembled",
+      "combo": "10 Atomic"
+    },
+    "partIds": [
+      "burst-b-97-layer",
       "burst-disc-10",
-      "burst-disc-tapered",
-      "burst-driver-atomic",
-      "burst-driver-trans"
+      "burst-driver-atomic"
+    ]
+  },
+  {
+    "id": "prod-burst-b-148-sealed",
+    "generation": "burst",
+    "skuType": "sealed",
+    "nameEn": "Heaven Pegasus (Sealed)",
+    "nameJp": "ヘブンペガサス 未開封",
+    "productCodes": [
+      "B-148"
+    ],
+    "attrs": {
+      "recipeKind": "assembled",
+      "combo": "10 Atomic"
+    },
+    "partIds": [
+      "burst-b-97-layer",
+      "burst-disc-10",
+      "burst-driver-atomic"
+    ]
+  },
+  {
+    "id": "prod-burst-b-148-starter",
+    "generation": "burst",
+    "skuType": "starter",
+    "nameEn": "Heaven Pegasus Starter",
+    "nameJp": "ヘブンペガサス スターター",
+    "productCodes": [
+      "B-148"
+    ],
+    "attrs": {
+      "recipeKind": "assembled",
+      "combo": "10 Atomic"
+    },
+    "partIds": [
+      "burst-b-97-layer",
+      "burst-disc-10",
+      "burst-driver-atomic"
     ]
   },
   {
     "id": "prod-burst-b-168-complete-loose",
     "generation": "burst",
     "skuType": "complete_loose",
+    "nameEn": "Rage Longinus (Complete)",
+    "nameJp": "レイジロンギヌス 完成品",
+    "productCodes": [
+      "B-168"
+    ],
+    "attrs": {
+      "recipeKind": "assembled",
+      "combo": "Giga Revolve",
+      "pack": "booster"
+    },
+    "partIds": [
+      "burst-b-168-layer",
+      "burst-disc-giga",
+      "burst-driver-revolve"
+    ]
+  },
+  {
+    "id": "prod-burst-b-168-sealed",
+    "generation": "burst",
+    "skuType": "sealed",
+    "nameEn": "Rage Longinus (Sealed)",
+    "nameJp": "レイジロンギヌス 未開封",
+    "productCodes": [
+      "B-168"
+    ],
+    "attrs": {
+      "recipeKind": "assembled",
+      "combo": "Giga Revolve",
+      "pack": "booster"
+    },
+    "partIds": [
+      "burst-b-168-layer",
+      "burst-disc-giga",
+      "burst-driver-revolve"
+    ]
+  },
+  {
+    "id": "prod-burst-b-180-complete-loose",
+    "generation": "burst",
+    "skuType": "complete_loose",
     "nameEn": "Dynamite Belial (Complete)",
     "nameJp": "ダイナマイトベリアル 完成品",
     "productCodes": [
-      "B-168"
+      "B-180"
     ],
     "attrs": {
       "recipeKind": "assembled",
       "combo": "Over Power"
     },
     "partIds": [
-      "burst-b-168-layer",
+      "burst-b-180-layer",
       "burst-disc-over",
       "burst-driver-power"
     ]
   },
   {
-    "id": "prod-burst-b-168-complete-sealed",
+    "id": "prod-burst-b-180-sealed",
     "generation": "burst",
-    "skuType": "complete_sealed",
+    "skuType": "sealed",
     "nameEn": "Dynamite Belial (Sealed)",
     "nameJp": "ダイナマイトベリアル 未開封",
     "productCodes": [
-      "B-168"
+      "B-180"
     ],
     "attrs": {
       "recipeKind": "assembled",
       "combo": "Over Power"
     },
     "partIds": [
-      "burst-b-168-layer",
+      "burst-b-180-layer",
       "burst-disc-over",
       "burst-driver-power"
     ]
   },
   {
-    "id": "prod-burst-b-168-starter",
+    "id": "prod-burst-b-180-starter",
     "generation": "burst",
     "skuType": "starter",
     "nameEn": "Dynamite Belial Starter",
     "nameJp": "ダイナマイトベリアル スターター",
     "productCodes": [
-      "B-168"
+      "B-180"
     ],
     "attrs": {
       "recipeKind": "assembled",
       "combo": "Over Power"
     },
     "partIds": [
-      "burst-b-168-layer",
+      "burst-b-180-layer",
       "burst-disc-over",
       "burst-driver-power"
-    ]
-  },
-  {
-    "id": "prod-burst-b-18-rb-sealed",
-    "generation": "burst",
-    "skuType": "sealed",
-    "nameEn": "B-18 Random Booster Vol.4",
-    "nameJp": "B-18 ランダムブースター Vol.4",
-    "productCodes": [
-      "B-18 RB"
-    ],
-    "attrs": {
-      "recipeKind": "contents",
-      "volume": 4,
-      "line": "RB",
-      "defaultComboPartIds": [
-        "burst-layer-legend-spriggan",
-        "burst-11-disc",
-        "burst-driver-jolt"
-      ]
-    },
-    "partIds": [
-      "burst-layer-legend-spriggan",
-      "burst-layer-xeno-xcalibur",
-      "burst-11-disc",
-      "burst-disc-giga",
-      "burst-driver-jolt",
-      "burst-driver-orbit"
-    ]
-  },
-  {
-    "id": "prod-burst-b-24-rb-sealed",
-    "generation": "burst",
-    "skuType": "sealed",
-    "nameEn": "B-24 Random Booster Vol.5",
-    "nameJp": "B-24 ランダムブースター Vol.5",
-    "productCodes": [
-      "B-24 RB"
-    ],
-    "attrs": {
-      "recipeKind": "contents",
-      "volume": 5,
-      "line": "RB",
-      "defaultComboPartIds": [
-        "burst-layer-cho-z-valkyrie",
-        "burst-0-disc",
-        "burst-driver-zeta"
-      ]
-    },
-    "partIds": [
-      "burst-layer-cho-z-valkyrie",
-      "burst-layer-z-achilles",
-      "burst-0-disc",
-      "burst-disc-boost",
-      "burst-driver-zeta",
-      "burst-driver-destroy"
     ]
   },
   {
     "id": "prod-burst-b-34-complete-loose",
     "generation": "burst",
     "skuType": "complete_loose",
-    "nameEn": "Winning Valkyrie (Complete)",
-    "nameJp": "ウィニングヴァルキリー 完成品",
+    "nameEn": "Victory Valkyrie (Complete)",
+    "nameJp": "ビクトリーヴァルキリー 完成品",
     "productCodes": [
       "B-34"
     ],
     "attrs": {
       "recipeKind": "assembled",
-      "combo": "12 Variable"
+      "combo": "Boost Variable"
     },
     "partIds": [
-      "burst-b-34-layer",
-      "burst-disc-12",
+      "burst-layer-victory-valkyrie",
+      "burst-disc-boost",
       "burst-driver-variable"
     ]
   },
   {
-    "id": "prod-burst-b-34-complete-sealed",
+    "id": "prod-burst-b-34-sealed",
     "generation": "burst",
-    "skuType": "complete_sealed",
-    "nameEn": "Winning Valkyrie (Sealed)",
-    "nameJp": "ウィニングヴァルキリー 未開封",
+    "skuType": "sealed",
+    "nameEn": "Victory Valkyrie (Sealed)",
+    "nameJp": "ビクトリーヴァルキリー 未開封",
     "productCodes": [
       "B-34"
     ],
     "attrs": {
       "recipeKind": "assembled",
-      "combo": "12 Variable"
+      "combo": "Boost Variable"
     },
     "partIds": [
-      "burst-b-34-layer",
-      "burst-disc-12",
+      "burst-layer-victory-valkyrie",
+      "burst-disc-boost",
       "burst-driver-variable"
     ]
   },
@@ -1069,468 +1204,133 @@
     "id": "prod-burst-b-34-starter",
     "generation": "burst",
     "skuType": "starter",
-    "nameEn": "Winning Valkyrie Starter",
-    "nameJp": "ウィニングヴァルキリー スターター",
+    "nameEn": "Victory Valkyrie Starter",
+    "nameJp": "ビクトリーヴァルキリー スターター",
     "productCodes": [
       "B-34"
     ],
     "attrs": {
       "recipeKind": "assembled",
-      "combo": "12 Variable"
+      "combo": "Boost Variable"
     },
     "partIds": [
-      "burst-b-34-layer",
-      "burst-disc-12",
+      "burst-layer-victory-valkyrie",
+      "burst-disc-boost",
       "burst-driver-variable"
-    ]
-  },
-  {
-    "id": "prod-burst-b-36-rb-sealed",
-    "generation": "burst",
-    "skuType": "sealed",
-    "nameEn": "B-36 Random Booster Vol.6",
-    "nameJp": "B-36 ランダムブースター Vol.6",
-    "productCodes": [
-      "B-36 RB"
-    ],
-    "attrs": {
-      "recipeKind": "contents",
-      "volume": 6,
-      "line": "RB",
-      "defaultComboPartIds": [
-        "burst-layer-cho-z-achilles",
-        "burst-disc-13",
-        "burst-driver-evolution"
-      ]
-    },
-    "partIds": [
-      "burst-layer-cho-z-achilles",
-      "burst-b-127-layer",
-      "burst-disc-13",
-      "burst-disc-nexus",
-      "burst-driver-evolution",
-      "burst-driver-friction"
-    ]
-  },
-  {
-    "id": "prod-burst-b-51-rb-sealed",
-    "generation": "burst",
-    "skuType": "sealed",
-    "nameEn": "B-51 Random Booster Vol.7",
-    "nameJp": "B-51 ランダムブースター Vol.7",
-    "productCodes": [
-      "B-51 RB"
-    ],
-    "attrs": {
-      "recipeKind": "contents",
-      "volume": 7,
-      "line": "RB",
-      "defaultComboPartIds": [
-        "burst-b-97-layer",
-        "burst-disc-10",
-        "burst-driver-atomic"
-      ]
-    },
-    "partIds": [
-      "burst-b-97-layer",
-      "burst-layer-geist-fafnir",
-      "burst-disc-10",
-      "burst-disc-1",
-      "burst-driver-atomic",
-      "burst-driver-eternal"
-    ]
-  },
-  {
-    "id": "prod-burst-b-63-rb-sealed",
-    "generation": "burst",
-    "skuType": "sealed",
-    "nameEn": "B-63 Random Booster Vol.8",
-    "nameJp": "B-63 ランダムブースター Vol.8",
-    "productCodes": [
-      "B-63 RB"
-    ],
-    "attrs": {
-      "recipeKind": "contents",
-      "volume": 8,
-      "line": "RB",
-      "defaultComboPartIds": [
-        "burst-layer-spriggan-requiem",
-        "burst-disc-limited",
-        "burst-driver-evolution"
-      ]
-    },
-    "partIds": [
-      "burst-layer-spriggan-requiem",
-      "burst-layer-dead-phoenix",
-      "burst-disc-limited",
-      "burst-disc-jerk",
-      "burst-driver-evolution",
-      "burst-driver-friction"
     ]
   },
   {
     "id": "prod-burst-b-86-complete-loose",
     "generation": "burst",
     "skuType": "complete_loose",
-    "nameEn": "Cho-Z Achilles (Complete)",
-    "nameJp": null,
+    "nameEn": "Legend Spriggan (Complete)",
+    "nameJp": "レジェンドスプリガン 完成品",
     "productCodes": [
       "B-86"
     ],
     "attrs": {
       "recipeKind": "assembled",
-      "combo": "0 Zeta"
+      "combo": "7 Merge"
     },
     "partIds": [
-      "burst-layer-cho-z-achilles",
-      "burst-0-disc",
-      "burst-driver-zeta"
+      "burst-layer-legend-spriggan",
+      "burst-disc-7",
+      "burst-driver-merge"
     ]
   },
   {
-    "id": "prod-burst-b-86-complete-sealed",
+    "id": "prod-burst-b-86-sealed",
     "generation": "burst",
-    "skuType": "complete_sealed",
-    "nameEn": "Cho-Z Achilles (Sealed)",
-    "nameJp": null,
+    "skuType": "sealed",
+    "nameEn": "Legend Spriggan (Sealed)",
+    "nameJp": "レジェンドスプリガン 未開封",
     "productCodes": [
       "B-86"
     ],
     "attrs": {
       "recipeKind": "assembled",
-      "combo": "0 Zeta"
+      "combo": "7 Merge"
     },
     "partIds": [
-      "burst-layer-cho-z-achilles",
-      "burst-0-disc",
-      "burst-driver-zeta"
+      "burst-layer-legend-spriggan",
+      "burst-disc-7",
+      "burst-driver-merge"
     ]
   },
   {
     "id": "prod-burst-b-86-starter",
     "generation": "burst",
     "skuType": "starter",
-    "nameEn": "Cho-Z Achilles Starter",
-    "nameJp": null,
+    "nameEn": "Legend Spriggan Starter",
+    "nameJp": "レジェンドスプリガン スターター",
     "productCodes": [
       "B-86"
     ],
     "attrs": {
       "recipeKind": "assembled",
-      "combo": "0 Zeta"
+      "combo": "7 Merge"
     },
     "partIds": [
-      "burst-layer-cho-z-achilles",
-      "burst-0-disc",
-      "burst-driver-zeta"
+      "burst-layer-legend-spriggan",
+      "burst-disc-7",
+      "burst-driver-merge"
     ]
   },
   {
     "id": "prod-burst-b-97-complete-loose",
     "generation": "burst",
     "skuType": "complete_loose",
-    "nameEn": "Heaven Pegasus (Complete)",
-    "nameJp": "ヘブンペガサス 完成品",
+    "nameEn": "Nightmare Longinus (Complete)",
+    "nameJp": "ナイトメアロンギヌス 完成品",
     "productCodes": [
       "B-97"
     ],
     "attrs": {
       "recipeKind": "assembled",
-      "combo": "10 Atomic"
+      "combo": "Destroy"
     },
     "partIds": [
-      "burst-b-97-layer",
-      "burst-disc-10",
-      "burst-driver-atomic"
+      "burst-layer-nightmare-longinus",
+      "burst-disc-heavy",
+      "burst-driver-destroy"
     ]
   },
   {
-    "id": "prod-burst-b-97-complete-sealed",
+    "id": "prod-burst-b-97-sealed",
     "generation": "burst",
-    "skuType": "complete_sealed",
-    "nameEn": "Heaven Pegasus (Sealed)",
-    "nameJp": "ヘブンペガサス 未開封",
+    "skuType": "sealed",
+    "nameEn": "Nightmare Longinus (Sealed)",
+    "nameJp": "ナイトメアロンギヌス 未開封",
     "productCodes": [
       "B-97"
     ],
     "attrs": {
       "recipeKind": "assembled",
-      "combo": "10 Atomic"
+      "combo": "Destroy"
     },
     "partIds": [
-      "burst-b-97-layer",
-      "burst-disc-10",
-      "burst-driver-atomic"
+      "burst-layer-nightmare-longinus",
+      "burst-disc-heavy",
+      "burst-driver-destroy"
     ]
   },
   {
     "id": "prod-burst-b-97-starter",
     "generation": "burst",
     "skuType": "starter",
-    "nameEn": "Heaven Pegasus Starter",
-    "nameJp": "ヘブンペガサス スターター",
+    "nameEn": "Nightmare Longinus Starter",
+    "nameJp": "ナイトメアロンギヌス スターター",
     "productCodes": [
       "B-97"
     ],
     "attrs": {
       "recipeKind": "assembled",
-      "combo": "10 Atomic"
+      "combo": "Destroy"
     },
     "partIds": [
-      "burst-b-97-layer",
-      "burst-disc-10",
-      "burst-driver-atomic"
-    ]
-  },
-  {
-    "id": "prod-burst-b-99-rb-sealed",
-    "generation": "burst",
-    "skuType": "sealed",
-    "nameEn": "B-99 Random Booster Vol.11",
-    "nameJp": "B-99 ランダムブースター Vol.11",
-    "productCodes": [
-      "B-99 RB"
-    ],
-    "attrs": {
-      "recipeKind": "contents",
-      "volume": 11,
-      "line": "RB",
-      "defaultComboPartIds": [
-        "burst-layer-drain-fafnir",
-        "burst-disc-ring",
-        "burst-driver-unite"
-      ]
-    },
-    "partIds": [
-      "burst-layer-drain-fafnir",
-      "burst-layer-maximum-garuda",
-      "burst-disc-ring",
-      "burst-disc-sting",
-      "burst-driver-unite",
-      "burst-driver-power"
-    ]
-  },
-  {
-    "id": "prod-burst-burn-phoenix-complete-loose",
-    "generation": "burst",
-    "skuType": "complete_loose",
-    "nameEn": "Burn Phoenix (Layer only)",
-    "nameJp": null,
-    "productCodes": [
-      "Burn Phoenix"
-    ],
-    "attrs": {
-      "recipeKind": "partial",
-      "recipe": "layer_only"
-    },
-    "partIds": [
-      "burst-layer-burn-phoenix"
-    ]
-  },
-  {
-    "id": "prod-burst-cho-z-achilles-complete-loose",
-    "generation": "burst",
-    "skuType": "complete_loose",
-    "nameEn": "Cho-Z Achilles (Layer only)",
-    "nameJp": null,
-    "productCodes": [
-      "Cho-Z Achilles"
-    ],
-    "attrs": {
-      "recipeKind": "partial",
-      "recipe": "layer_only"
-    },
-    "partIds": [
-      "burst-layer-cho-z-achilles"
-    ]
-  },
-  {
-    "id": "prod-burst-cho-z-spriggan-complete-loose",
-    "generation": "burst",
-    "skuType": "complete_loose",
-    "nameEn": "Cho-Z Spriggan (Layer only)",
-    "nameJp": "超Zスプリガン レイヤーのみ",
-    "productCodes": [
-      "B-127"
-    ],
-    "attrs": {
-      "recipeKind": "partial",
-      "recipe": "layer_only"
-    },
-    "partIds": [
-      "burst-b-127-layer"
-    ]
-  },
-  {
-    "id": "prod-burst-cho-z-valkyrie-complete-loose",
-    "generation": "burst",
-    "skuType": "complete_loose",
-    "nameEn": "Cho-Z Valkyrie (Layer only)",
-    "nameJp": null,
-    "productCodes": [
-      "Cho-Z Valkyrie"
-    ],
-    "attrs": {
-      "recipeKind": "partial",
-      "recipe": "layer_only"
-    },
-    "partIds": [
-      "burst-layer-cho-z-valkyrie"
-    ]
-  },
-  {
-    "id": "prod-burst-corocoro-amaterios-sealed",
-    "generation": "burst",
-    "skuType": "sealed",
-    "nameEn": "CoroCoro Limited Shadow Amaterios",
-    "nameJp": null,
-    "productCodes": [
-      "CoroCoro Amaterios"
-    ],
-    "attrs": {
-      "recipeKind": "contents",
-      "line": "corocoro",
-      "limited": true
-    },
-    "partIds": [
-      "burst-layer-shadow-amaterios",
-      "burst-disc-limited"
-    ]
-  },
-  {
-    "id": "prod-burst-dark-deathscyther-complete-loose",
-    "generation": "burst",
-    "skuType": "complete_loose",
-    "nameEn": "Dark Deathscyther (Layer only)",
-    "nameJp": null,
-    "productCodes": [
-      "Dark Deathscyther"
-    ],
-    "attrs": {
-      "recipeKind": "partial",
-      "recipe": "layer_only"
-    },
-    "partIds": [
-      "burst-layer-dark-deathscyther"
-    ]
-  },
-  {
-    "id": "prod-burst-dead-hades-complete-loose",
-    "generation": "burst",
-    "skuType": "complete_loose",
-    "nameEn": "Dead Hades (Layer only)",
-    "nameJp": null,
-    "productCodes": [
-      "Dead Hades"
-    ],
-    "attrs": {
-      "recipeKind": "partial",
-      "recipe": "layer_only"
-    },
-    "partIds": [
-      "burst-layer-dead-hades"
-    ]
-  },
-  {
-    "id": "prod-burst-drain-fafnir-complete-loose",
-    "generation": "burst",
-    "skuType": "complete_loose",
-    "nameEn": "Drain Fafnir (Layer only)",
-    "nameJp": null,
-    "productCodes": [
-      "Drain Fafnir"
-    ],
-    "attrs": {
-      "recipeKind": "partial",
-      "recipe": "layer_only"
-    },
-    "partIds": [
-      "burst-layer-drain-fafnir"
-    ]
-  },
-  {
-    "id": "prod-burst-heat-salamander-s4-complete-loose",
-    "generation": "burst",
-    "skuType": "complete_loose",
-    "nameEn": "Heat Salamander S4 (Layer only)",
-    "nameJp": null,
-    "productCodes": [
-      "Heat Salamander S4"
-    ],
-    "attrs": {
-      "recipeKind": "partial",
-      "recipe": "layer_only"
-    },
-    "partIds": [
-      "burst-layer-heat-salamander-s4"
-    ]
-  },
-  {
-    "id": "prod-burst-heaven-pegasus-complete-loose",
-    "generation": "burst",
-    "skuType": "complete_loose",
-    "nameEn": "Heaven Pegasus (Layer only)",
-    "nameJp": "ヘブンペガサス レイヤーのみ",
-    "productCodes": [
-      "B-97"
-    ],
-    "attrs": {
-      "recipeKind": "partial",
-      "recipe": "layer_only"
-    },
-    "partIds": [
-      "burst-b-97-layer"
-    ]
-  },
-  {
-    "id": "prod-burst-king-kerbeus-k2-complete-loose",
-    "generation": "burst",
-    "skuType": "complete_loose",
-    "nameEn": "King Kerbeus K2 (Layer only)",
-    "nameJp": null,
-    "productCodes": [
-      "King Kerbeus K2"
-    ],
-    "attrs": {
-      "recipeKind": "partial",
-      "recipe": "layer_only"
-    },
-    "partIds": [
-      "burst-layer-king-kerbeus-k2"
-    ]
-  },
-  {
-    "id": "prod-burst-kraken-k4-complete-loose",
-    "generation": "burst",
-    "skuType": "complete_loose",
-    "nameEn": "Kraken K4 (Layer only)",
-    "nameJp": null,
-    "productCodes": [
-      "Kraken K4"
-    ],
-    "attrs": {
-      "recipeKind": "partial",
-      "recipe": "layer_only"
-    },
-    "partIds": [
-      "burst-layer-kraken-k4"
-    ]
-  },
-  {
-    "id": "prod-burst-maximum-garuda-complete-loose",
-    "generation": "burst",
-    "skuType": "complete_loose",
-    "nameEn": "Maximum Garuda (Layer only)",
-    "nameJp": null,
-    "productCodes": [
-      "Maximum Garuda"
-    ],
-    "attrs": {
-      "recipeKind": "partial",
-      "recipe": "layer_only"
-    },
-    "partIds": [
-      "burst-layer-maximum-garuda"
+      "burst-layer-nightmare-longinus",
+      "burst-disc-heavy",
+      "burst-driver-destroy"
     ]
   },
   {
@@ -1553,9 +1353,9 @@
     ]
   },
   {
-    "id": "prod-burst-ragnaruk-complete-sealed",
+    "id": "prod-burst-ragnaruk-sealed",
     "generation": "burst",
-    "skuType": "complete_sealed",
+    "skuType": "sealed",
     "nameEn": "Ragnaruk (Sealed)",
     "nameJp": null,
     "productCodes": [
@@ -1591,57 +1391,6 @@
     ]
   },
   {
-    "id": "prod-burst-tempest-wyvron-w3-complete-loose",
-    "generation": "burst",
-    "skuType": "complete_loose",
-    "nameEn": "Tempest Wyvron W3 (Layer only)",
-    "nameJp": null,
-    "productCodes": [
-      "Tempest Wyvron W3"
-    ],
-    "attrs": {
-      "recipeKind": "partial",
-      "recipe": "layer_only"
-    },
-    "partIds": [
-      "burst-layer-tempest-wyvron-w3"
-    ]
-  },
-  {
-    "id": "prod-burst-tornado-wyvern-complete-loose",
-    "generation": "burst",
-    "skuType": "complete_loose",
-    "nameEn": "Tornado Wyvern (Layer only)",
-    "nameJp": null,
-    "productCodes": [
-      "Tornado Wyvern"
-    ],
-    "attrs": {
-      "recipeKind": "partial",
-      "recipe": "layer_only"
-    },
-    "partIds": [
-      "burst-layer-tornado-wyvern"
-    ]
-  },
-  {
-    "id": "prod-burst-vice-leopard-l4-complete-loose",
-    "generation": "burst",
-    "skuType": "complete_loose",
-    "nameEn": "Vice Leopard L4 (Layer only)",
-    "nameJp": null,
-    "productCodes": [
-      "Vice Leopard L4"
-    ],
-    "attrs": {
-      "recipeKind": "partial",
-      "recipe": "layer_only"
-    },
-    "partIds": [
-      "burst-layer-vice-leopard-l4"
-    ]
-  },
-  {
     "id": "prod-burst-xcalibur-complete-loose",
     "generation": "burst",
     "skuType": "complete_loose",
@@ -1661,9 +1410,9 @@
     ]
   },
   {
-    "id": "prod-burst-xcalibur-complete-sealed",
+    "id": "prod-burst-xcalibur-sealed",
     "generation": "burst",
-    "skuType": "complete_sealed",
+    "skuType": "sealed",
     "nameEn": "Xcalibur (Sealed)",
     "nameJp": null,
     "productCodes": [

@@ -72,13 +72,13 @@
     "source": "catalog"
   },
   {
-    "partId": "burst-b-168-layer",
+    "partId": "burst-b-180-layer",
     "locale": "en",
     "text": "Dynamite Belial B-180",
     "source": "catalog"
   },
   {
-    "partId": "burst-b-168-layer",
+    "partId": "burst-b-180-layer",
     "locale": "ja",
     "text": "ダイナマイトベリアル B-180",
     "source": "catalog"
@@ -326,7 +326,7 @@
   {
     "partId": "burst-b-97-layer",
     "locale": "en",
-    "text": "B-97",
+    "text": "B-148",
     "source": "catalog-expanded"
   },
   {
@@ -350,17 +350,17 @@
   {
     "partId": "burst-b-127-layer",
     "locale": "en",
-    "text": "B-127",
+    "text": "B-128",
     "source": "catalog-expanded"
   },
   {
-    "partId": "burst-b-168-layer",
+    "partId": "burst-b-180-layer",
     "locale": "en",
     "text": "Dynamite Belial",
     "source": "catalog-expanded"
   },
   {
-    "partId": "burst-b-168-layer",
+    "partId": "burst-b-180-layer",
     "locale": "ja",
     "text": "ダイナマイトベリアル",
     "source": "catalog-expanded"
@@ -3624,7 +3624,7 @@
     "source": "compact"
   },
   {
-    "partId": "burst-b-168-layer",
+    "partId": "burst-b-180-layer",
     "locale": "en",
     "text": "DynamiteBelial",
     "source": "compact"
@@ -10596,21 +10596,75 @@
     "source": "code"
   },
   {
-    "partId": "burst-layer-rage-longinus",
-    "locale": "en",
-    "text": "B-168",
-    "source": "code"
-  },
-  {
-    "partId": "burst-layer-rage-longinus",
+    "partId": "burst-b-168-layer",
     "locale": "en",
     "text": "Rage Longinus",
     "source": "catalog"
   },
   {
-    "partId": "burst-layer-rage-longinus",
+    "partId": "burst-b-168-layer",
+    "locale": "en",
+    "text": "Rage Longinus B-168",
+    "source": "catalog"
+  },
+  {
+    "partId": "burst-b-168-layer",
     "locale": "ja",
     "text": "レイジロンギヌス",
+    "source": "catalog"
+  },
+  {
+    "partId": "burst-layer-nightmare-longinus",
+    "locale": "en",
+    "text": "Nightmare Longinus B-97",
+    "source": "catalog"
+  },
+  {
+    "partId": "burst-layer-bloody-longinus",
+    "locale": "en",
+    "text": "Bloody Longinus B-110",
+    "source": "catalog"
+  },
+  {
+    "partId": "burst-layer-spriggan-requiem",
+    "locale": "en",
+    "text": "Spriggan Requiem B-100",
+    "source": "catalog"
+  },
+  {
+    "partId": "burst-layer-cho-z-valkyrie",
+    "locale": "en",
+    "text": "Cho-Z Valkyrie B-127",
+    "source": "catalog"
+  },
+  {
+    "partId": "burst-layer-legend-spriggan",
+    "locale": "en",
+    "text": "Legend Spriggan B-86",
+    "source": "catalog"
+  },
+  {
+    "partId": "burst-layer-twin-nemesis",
+    "locale": "en",
+    "text": "Twin Nemesis B-102",
+    "source": "catalog"
+  },
+  {
+    "partId": "burst-layer-cho-z-achilles",
+    "locale": "en",
+    "text": "Cho-Z Achilles B-129",
+    "source": "catalog"
+  },
+  {
+    "partId": "burst-layer-geist-fafnir",
+    "locale": "en",
+    "text": "Geist Fafnir B-122",
+    "source": "catalog"
+  },
+  {
+    "partId": "burst-layer-dead-phoenix",
+    "locale": "en",
+    "text": "Dead Phoenix B-131",
     "source": "catalog"
   }
 ]

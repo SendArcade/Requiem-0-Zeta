@@ -148,11 +148,11 @@
     "id": "burst-b-168-layer",
     "generation": "burst",
     "partType": "layer",
-    "nameEn": "Dynamite Belial",
-    "nameJp": "ダイナマイトベリアル",
-    "nameZh": "動感邪惡啟示",
+    "nameEn": "Rage Longinus",
+    "nameJp": "レイジロンギヌス",
+    "nameZh": "憤怒長槍",
     "productCodes": [
-      "B-180"
+      "B-168"
     ],
     "attrs": {
       "type": "Attack"
@@ -426,18 +426,45 @@
     }
   },
   {
-    "id": "burst-layer-rage-longinus",
+    "id": "burst-b-180-layer",
     "generation": "burst",
     "partType": "layer",
-    "nameEn": "Rage Longinus",
-    "nameJp": "レイジロンギヌス",
-    "nameZh": null,
+    "nameEn": "Dynamite Belial",
+    "nameJp": "ダイナマイトベリアル",
+    "nameZh": "動感邪惡啟示",
     "productCodes": [
-      "B-168"
+      "B-180"
     ],
     "attrs": {
-      "type": "Attack",
-      "source": "curated"
+      "type": "Attack"
+    }
+  },
+  {
+    "id": "burst-layer-cho-z-achilles",
+    "generation": "burst",
+    "partType": "layer",
+    "nameEn": "Cho-Z Achilles",
+    "nameJp": "超Zアキレス",
+    "productCodes": [
+      "Cho-Z Achilles",
+      "B-129"
+    ],
+    "attrs": {
+      "type": "Attack"
+    }
+  },
+  {
+    "id": "burst-layer-geist-fafnir",
+    "generation": "burst",
+    "partType": "layer",
+    "nameEn": "Geist Fafnir",
+    "nameJp": "ガイストファブニル",
+    "productCodes": [
+      "Geist Fafnir",
+      "B-122"
+    ],
+    "attrs": {
+      "type": "Stamina"
     }
   }
 ]

@@ -6,6 +6,7 @@ const MARK_SKU_TYPES: ReadonlySet<SkuType> = new Set([
   "starter",
   "complete_loose",
   "complete_sealed",
+  "sealed",
 ]);
 
 export interface ProductValidationIssue {

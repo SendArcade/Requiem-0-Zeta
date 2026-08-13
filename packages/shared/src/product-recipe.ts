@@ -32,6 +32,7 @@ const MARK_ELIGIBLE_SKU: ReadonlySet<SkuType> = new Set([
   "starter",
   "complete_loose",
   "complete_sealed",
+  "sealed",
 ]);
 
 function readRecipeKind(product: ProductDTO): RecipeKind | null {
