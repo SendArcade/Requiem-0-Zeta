@@ -7,6 +7,7 @@ describe("parseProductBackfillGenerations", () => {
     expect(parseProductBackfillGenerations(undefined)).toEqual(["burst"]);
     expect(parseProductBackfillGenerations("")).toEqual(["burst"]);
     expect(parseProductBackfillGenerations("burst")).toEqual(["burst"]);
+    expect(parseProductBackfillGenerations("nope")).toEqual(["burst"]);
   });
 
   it("accepts all / * for the full catalog without mixing sealed FMV work", () => {
@@ -37,5 +38,22 @@ describe("bullmqWorkerLockOpts", () => {
     });
     expect(opts.lockDuration).toBe(3_600_000);
     expect(opts.lockRenewTime).toBe(15_000);
+  });
+
+  it("falls back when lock env is invalid and keeps renew below duration", () => {
+    const bad = bullmqWorkerLockOpts({
+      BULLMQ_LOCK_DURATION_MS: "nope",
+      BULLMQ_LOCK_RENEW_MS: "-1",
+    });
+    expect(bad.lockDuration).toBe(DEFAULT_BULLMQ_LOCK_DURATION_MS);
+    expect(bad.lockRenewTime).toBeGreaterThan(0);
+    expect(bad.lockRenewTime).toBeLessThan(bad.lockDuration);
+
+    const tight = bullmqWorkerLockOpts({
+      BULLMQ_LOCK_DURATION_MS: "8000",
+      BULLMQ_LOCK_RENEW_MS: "8000",
+    });
+    expect(tight.lockDuration).toBe(8_000);
+    expect(tight.lockRenewTime).toBeLessThan(tight.lockDuration);
   });
 });

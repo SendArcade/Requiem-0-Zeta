@@ -67,21 +67,29 @@ export function bullmqOptsForJob(name: JobName) {
 export const DEFAULT_BULLMQ_LOCK_DURATION_MS = 60 * 60 * 1000;
 export const DEFAULT_BULLMQ_LOCK_RENEW_MS = 30_000;
 
+function parsePositiveMs(raw: string | undefined, fallback: number): number {
+  const n = Number(raw ?? fallback);
+  return Number.isFinite(n) && n > 0 ? n : fallback;
+}
+
 export function bullmqWorkerLockOpts(
   env: Record<string, string | undefined> = {}
 ): {
   lockDuration: number;
   lockRenewTime: number;
 } {
-  const lockDuration = Number(
-    env.BULLMQ_LOCK_DURATION_MS ?? DEFAULT_BULLMQ_LOCK_DURATION_MS
+  const lockDuration = parsePositiveMs(
+    env.BULLMQ_LOCK_DURATION_MS,
+    DEFAULT_BULLMQ_LOCK_DURATION_MS
   );
-  const lockRenewTime = Number(
-    env.BULLMQ_LOCK_RENEW_MS ??
-      Math.min(
-        DEFAULT_BULLMQ_LOCK_RENEW_MS,
-        Math.max(5_000, Math.floor(lockDuration / 3))
-      )
+  const defaultRenew = Math.min(
+    DEFAULT_BULLMQ_LOCK_RENEW_MS,
+    Math.max(5_000, Math.floor(lockDuration / 3))
   );
+  let lockRenewTime = parsePositiveMs(env.BULLMQ_LOCK_RENEW_MS, defaultRenew);
+  // Renew must stay strictly below lock duration so BullMQ can extend.
+  if (lockRenewTime >= lockDuration) {
+    lockRenewTime = Math.max(1_000, Math.floor(lockDuration / 2));
+  }
   return { lockDuration, lockRenewTime };
 }

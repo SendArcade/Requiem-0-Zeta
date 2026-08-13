@@ -151,6 +151,18 @@ export async function syncScheduledCronTick(
     }
   }
 
+  // Explicit removeRepeatable for scheduled-cron-tick — key format varies by BullMQ version.
+  try {
+    const dropped = await queue.removeRepeatable(
+      CRON_TICK,
+      { every: opts.intervalMs },
+      SCHEDULED_CRON_JOB_ID
+    );
+    if (dropped) removed++;
+  } catch {
+    // already gone / older API
+  }
+
   const schedulersApi = queue as Queue & {
     getJobSchedulers?: () => Promise<Array<{ id?: string | null; name?: string }>>;
     removeJobScheduler?: (id: string) => Promise<unknown>;
