@@ -1,4 +1,12 @@
-import { getDb, closeDb, matches, observations, productMatches } from "@beyoracle/db";
+import {
+  getDb,
+  closeDb,
+  matches,
+  observations,
+  productMatches,
+  products,
+} from "@beyoracle/db";
+import type { Generation } from "@beyoracle/shared";
 import {
   classifyListingShape,
   isCompEligible,
@@ -7,15 +15,22 @@ import {
   looksLikeBeybladeListing,
 } from "@beyoracle/shared";
 import { eq, inArray } from "drizzle-orm";
-import { recomputeAllOracleSnapshots } from "./backfill-oracle.js";
 import { resolveIngestMatch, type IngestMatch } from "./match-ingest.js";
 import { shouldPersistMatch } from "./match-confidence-routing.js";
+import {
+  recomputeOracleSnapshotsBatch,
+  recomputeProductOracleSnapshotsBatch,
+} from "./persist.js";
 
 export type PurgeBadCompsOptions = {
   /** Log counts only — no deletes or recompute. */
   dryRun?: boolean;
   /** Also delete orphaned observations (legacy behavior). Default false — preserve raw market rows. */
   deleteObservations?: boolean;
+  /** Limit product-match scan to these generations (e.g. burst). */
+  generations?: Generation[];
+  /** Skip part-level match purge (faster burst product pass). */
+  skipPartMatches?: boolean;
 };
 
 export type PurgeBadCompsResult = {
@@ -74,49 +89,66 @@ export async function purgeBadComps(
 ): Promise<PurgeBadCompsResult> {
   const dryRun = opts.dryRun ?? false;
   const deleteObservations = opts.deleteObservations ?? false;
+  const skipPartMatches = opts.skipPartMatches ?? false;
 
   const db = getDb();
   const badPartMatchIds: string[] = [];
   const badProductMatchIds: string[] = [];
   const badObsIds = new Set<string>();
+  const touchedPartIds = new Set<string>();
+  const touchedProductIds = new Set<string>();
   const samples: string[] = [];
 
-  const partRows = await db
-    .select({
-      matchId: matches.id,
-      observationId: matches.observationId,
-      partId: matches.partId,
-      confidence: matches.confidence,
-      title: observations.title,
-    })
-    .from(matches)
-    .innerJoin(observations, eq(matches.observationId, observations.id));
+  if (!skipPartMatches) {
+    const partRows = await db
+      .select({
+        matchId: matches.id,
+        observationId: matches.observationId,
+        partId: matches.partId,
+        confidence: matches.confidence,
+        title: observations.title,
+      })
+      .from(matches)
+      .innerJoin(observations, eq(matches.observationId, observations.id));
 
-  for (const row of partRows) {
-    if (isStaleOrWrongMatch(row.title, "part", row.partId, row.confidence)) {
-      badPartMatchIds.push(row.matchId);
-      badObsIds.add(row.observationId);
-      if (samples.length < 8) samples.push(`[part] ${row.title.slice(0, 80)}`);
+    for (const row of partRows) {
+      if (isStaleOrWrongMatch(row.title, "part", row.partId, row.confidence)) {
+        badPartMatchIds.push(row.matchId);
+        badObsIds.add(row.observationId);
+        touchedPartIds.add(row.partId);
+        if (samples.length < 8) samples.push(`[part] ${row.title.slice(0, 80)}`);
+      }
     }
   }
 
-  const productRows = await db
-    .select({
-      matchId: productMatches.id,
-      observationId: productMatches.observationId,
-      productId: productMatches.productId,
-      confidence: productMatches.confidence,
-      title: observations.title,
-    })
-    .from(productMatches)
-    .innerJoin(observations, eq(productMatches.observationId, observations.id));
+  const productSelect = {
+    matchId: productMatches.id,
+    observationId: productMatches.observationId,
+    productId: productMatches.productId,
+    confidence: productMatches.confidence,
+    title: observations.title,
+  };
 
-  for (const row of productRows) {
-    if (
-      isStaleOrWrongMatch(row.title, "product", row.productId, row.confidence)
-    ) {
+  const productRows = opts.generations?.length
+    ? await db
+        .select(productSelect)
+        .from(productMatches)
+        .innerJoin(observations, eq(productMatches.observationId, observations.id))
+        .innerJoin(products, eq(productMatches.productId, products.id))
+        .where(inArray(products.generation, opts.generations))
+    : await db
+        .select(productSelect)
+        .from(productMatches)
+        .innerJoin(observations, eq(productMatches.observationId, observations.id));
+
+  for (const [i, row] of productRows.entries()) {
+    if (i > 0 && i % 25 === 0) {
+      console.log(`[purge] scanned ${i}/${productRows.length} product matches…`);
+    }
+    if (isStaleOrWrongMatch(row.title, "product", row.productId, row.confidence)) {
       badProductMatchIds.push(row.matchId);
       badObsIds.add(row.observationId);
+      touchedProductIds.add(row.productId);
       if (samples.length < 8) samples.push(`[product] ${row.title.slice(0, 80)}`);
     }
   }
@@ -168,7 +200,17 @@ export async function purgeBadComps(
     purgedObservations = allBadObsIds.length;
   }
 
-  const recompute = await recomputeAllOracleSnapshots();
+  let recomputedParts = 0;
+  let recomputedProducts = 0;
+  if (touchedPartIds.size > 0) {
+    await recomputeOracleSnapshotsBatch(touchedPartIds);
+    recomputedParts = touchedPartIds.size;
+  }
+  if (touchedProductIds.size > 0) {
+    await recomputeProductOracleSnapshotsBatch(touchedProductIds);
+    recomputedProducts = touchedProductIds.size;
+  }
+
   await closeDb();
 
   return {
@@ -176,8 +218,8 @@ export async function purgeBadComps(
     badProductMatches: badProductMatchIds.length,
     purgedObservations,
     preservedObservations: deleteObservations ? 0 : badObsIds.size,
-    recomputedParts: recompute.parts,
-    recomputedProducts: recompute.products,
+    recomputedParts,
+    recomputedProducts,
     samples,
   };
 }

@@ -102,10 +102,9 @@ Shuna: seed these parts on Railway before part-level match inserts stop failing.
 
 ## Blockers before publish (ordered)
 
-1. **Shuna:** sync `products.name_en` on Railway from catalog seeds (Wave 0+1 identity recut); seed parts `burst-disc-z`, `burst-b-180-layer`.
-2. **Matcher:** drop bare B-code false positives (complete_loose rows for B-03, B-06, B-10, B-104, B-131, B-168); reject wrong-TT titles (B-34 yp1002, B-97 mp1011, B-127 yp1005).
-3. **Ingest:** route 未開封 comps to sealed SKU rows only; purge sealed from starter default pools in `product_matches`.
-4. **Diablo:** re-run this verify after fixes; still **DOWN** until every touched row passes.
+1. ~~**Shuna:** sync `products.name_en` on Railway from catalog seeds; seed `burst-disc-z`, `burst-b-180-layer`.~~ **Done 2026-08-15** — `pnpm catalog:sync -- --generation=burst`: 2 parts, 6 aliases, 437 product rows refreshed (Victory/Nightmare/Bloody Longinus/Cho-Z Valkyrie names live in Postgres).
+2. ~~**Matcher/ingest:** `PURGE_DRY_RUN=1 pnpm purge:bad-comps` on Railway (full DB is slow), then apply; drop bare B-code false positives + sealed-on-starter matches.~~ **Partial 2026-08-15** — burst-scoped `purge:bad-comps` removed 6 wrong-TT matches; SQL junk pass removed 22 non-Beyblade B-code false positives; `burst:recompute` refreshed 22 products. **Still FAIL** publish bar (B-97 mark ¥1000, B-104 ¥599, sealed pollution on starters, B-01/B-110/B-102 no mark).
+3. **Diablo:** re-run this verify after matcher hardening; still **DOWN** until every touched row passes.
 
 ## Ops (unchanged)
 

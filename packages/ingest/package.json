@@ -20,6 +20,8 @@
     "backfill:oracle": "tsx src/cli/backfill-oracle.ts",
     "purge:bad-comps": "tsx src/cli/purge-bad-comps.ts",
     "purge:bad-comps:dry": "PURGE_DRY_RUN=1 tsx src/cli/purge-bad-comps.ts",
+    "burst:purge-fast": "tsx src/cli/burst-purge-fast.ts",
+    "burst:recompute": "tsx src/cli/burst-recompute-products.ts",
     "backfill:products": "tsx src/cli/product-backfill.ts",
     "backfill:products:shard": "tsx src/cli/product-backfill-shard.ts",
     "backfill:products:fleet-plan": "tsx src/cli/product-backfill-fleet-plan.ts",
