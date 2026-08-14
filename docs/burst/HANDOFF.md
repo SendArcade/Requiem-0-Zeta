@@ -2,7 +2,19 @@
 
 Resume from this file if usage dies. Rimuru owns merge/deploy. Semi: suggestions only; stop only for destructive deletes or spend.
 
-Written 2026-08-14 ~23:42 MYT.
+Written 2026-08-14 ~23:42 MYT. Updated 2026-08-15 ~03:05 UTC (Kaijin + Souei done).
+
+## Agent progress (2026-08-15 UTC)
+
+- **Kaijin:** Postgres via Railway token. 26 touched IDs confirmed (Aug 14
+  `product_matches`); 7 oracle snapshots (all starters); FK gaps
+  `burst-disc-z`, `burst-b-180-layer`. Full list in `verify-pass2.md`.
+- **Souei:** Full verify of all 26 vs `venue-bands.md` — **0 publishable**.
+  Details in `verify-pass2.md`. Blockers: stale `products.name_en` on Railway
+  (catalog seeds correct), bare B-code false positives on complete_loose rows,
+  sealed comps on starter SKUs, B-97 mark below band.
+- **Diablo:** still blocked. Do not republish.
+- **Shuna next:** sync product names + seed 2 missing parts.
 
 ## Repo
 - GitHub: https://github.com/SendArcade/Requiem-0-Zeta (private)
@@ -69,13 +81,15 @@ Semi order 2026-08-14: full venue+item verify of every touched product (not a sa
 - Diablo: bar after Souei verify, not before
 
 ## Next (in order)
-1. Kaijin: 33 product ids from Postgres; distinct `part_id`s failing `matches_part_id_fkey`.
-2. Souei: full venue+item verify those products vs `venue-bands.md`.
-3. Diablo publish bar. Still do not republish Burst FMV until that passes.
-4. Kill hung PID 266 if still a live backfill on replica 0b19a5bc.
-5. Do not unpause cron (`PRODUCT_BACKFILL_FLEET=0` and `BACKFILL_PAUSE_CRON_INGEST=0`) until you explicitly want ticks.
-6. Wave 2 catalog + `takara-gaps.md` after Burst marks are honest.
-7. Metal / Plastic / X last.
+1. ~~Kaijin: 33 product ids from Postgres; distinct `part_id`s failing `matches_part_id_fkey`.~~ **Done** → `verify-pass2.md`
+2. ~~Souei: full venue+item verify those products vs `venue-bands.md`.~~ **Done — all FAIL** → `verify-pass2.md`
+3. **Shuna:** sync Railway `products.name_en` from catalog seeds; seed `burst-disc-z`, `burst-b-180-layer`.
+4. **Matcher/ingest:** purge false-positive B-code comps + sealed-on-starter matches; re-run pass 2 verify subset.
+5. **Diablo publish bar** after Shuna + matcher fixes. Still do not republish until passes.
+6. Kill hung PID 266 if still a live backfill on replica 0b19a5bc.
+7. Do not unpause cron until you explicitly want ticks.
+8. Wave 2 catalog + `takara-gaps.md` after Burst marks are honest.
+9. Metal / Plastic / X last.
 
 ## If usage dies now
 Best leftover state: `main` with this handoff. PR #2/#3/#4 + compile fix deployed. Worker lock 60m. Zombies drained. Cron paused. Pass 1+2 done (33/76 marks). Publish still down. Resume = Postgres 33 ids, then Souei verify, then Diablo bar. Do not enqueue a 64-shard fleet.
