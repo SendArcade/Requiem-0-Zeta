@@ -17,4 +17,11 @@ export {
   GENERATION_LABELS,
   type FixtureObservation,
 } from "./load.js";
-export { syncCatalogProducts } from "./sync-catalog.js";
+export {
+  syncCatalogIdentity,
+  syncCatalogParts,
+  syncCatalogProductIdentity,
+  syncCatalogProductParts,
+  syncCatalogProducts,
+  type SyncCatalogReport,
+} from "./sync-catalog.js";

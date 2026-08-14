@@ -16,6 +16,7 @@
     "build": "tsc",
     "typecheck": "tsc --noEmit",
     "seed": "tsx src/seed.ts",
+    "catalog:sync": "tsx src/cli/sync-catalog-cli.ts",
     "catalog:build": "tsx scripts/build-catalog.ts",
     "products:build": "tsx scripts/build-products.ts",
     "products:burst": "node scripts/generate-products-burst.mjs",

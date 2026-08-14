@@ -9,6 +9,7 @@
     "db:migrate": "pnpm --filter @beyoracle/db migrate",
     "db:seed": "pnpm --filter @beyoracle/catalog seed",
     "catalog:build": "pnpm --filter @beyoracle/catalog catalog:build",
+    "catalog:sync": "pnpm --filter @beyoracle/catalog catalog:sync",
     "eval:run": "pnpm --filter @beyoracle/oracle eval:run",
     "eval:scoreboard": "pnpm --filter @beyoracle/oracle eval:scoreboard",
     "dev": "pnpm --filter @beyoracle/web dev",
