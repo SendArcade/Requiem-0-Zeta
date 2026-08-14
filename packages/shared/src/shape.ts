@@ -20,7 +20,22 @@ const CATALOG_CODE_IN_TITLE =
   /\b(BX-\d{2}|UX-\d{2}|CX-\d{2}|B-\d{2,3}|BB-?\d{2}[A-Z]?|A-\d{2}|D-\d+|DS-\d+|MD-\d+|WD-[A-Z0-9]+|BB105|WF2|R2F|WD)\b/i;
 
 const BEYBLADE_SIGNAL =
-  /ベイブレード|beyblade\s*x?|beybladex|戰鬥陀螺|战斗陀螺|爆旋陀螺/i;
+  /ベイ(?:ブレード|)|バースト|beyblade\s*x?|beybladex|takara|タカラ|戰鬥陀螺|战斗陀螺|爆旋陀螺/i;
+
+/** Bare B-XX collides with unrelated manufacturer SKUs (car parts, model kits, apparel). */
+const BURST_B_CODE = /\bB-\d{2,3}\b/i;
+
+/** Legacy / X codes — low false-positive rate outside Bey listings. */
+const LEGACY_CATALOG_CODE =
+  /\b(BX-\d{2}|UX-\d{2}|CX-\d{2}|BB-?\d{2}[A-Z]?|A-\d{2}|D-\d+|DS-\d+|MD-\d+|WD-[A-Z0-9]+|BB105|WF2|R2F|WD)\b/i;
+
+/** Known non-Beyblade categories that share manufacturer-style codes in titles. */
+const NON_BEYBLADE_JUNK =
+  /フジミ|プラモデル|トヨタ|toyota|\bbmw\b|ヘッドランプ|headlamp|リーバイス|levis|levi'?s|denso|デンソー|\bosg\b|ルアー|\blure\b|ミラー|mirror|釣具|tackle|フィギュア(?!.*ベイ)|\bjeans\b|デニム|denim|シャツ|shirt|Masterworks|マスターワークス/i;
+
+/** Secondary Bey context when a bare Burst B-code appears without explicit bey signal. */
+const BURST_CONTEXT_SIGNAL =
+  /スターター|starter|ブースター|booster|スタートダッシュ|entry set|デッキセット|deck set|スタートダッシュセット|バトルエントリー|3on3|カスタマイズセット|完成品|未開封|開封|\bcomplete\b|\bassembled\b|\bnib\b|new in box|レイヤー|layer|ディスク|disc|ドライバー|driver|フレーム|frame|ランチャー|launcher|ヴァルキリー|valkyrie|ロンギヌス|longinus|スプリガン|spriggan|ペガサス|pegasus|フェニックス|phoenix|アキレス|achilles|ラグナルク|ragnaruk|ネメシス|nemesis|ベリアル|belial|ウィニング|winning|ビクトリー|victory|ナイトメア|nightmare|ブラッディ|bloody|レジェンド|legend|heaven|ヘブン|超Z|cho.?z|バースト|burst|タカラ|takara/i;
 
 const MULTI_ITEM_JOINER = /[＆&＋+]/;
 
@@ -63,7 +78,10 @@ function looksLikeLot(title: string): boolean {
 
 /** Title looks like a Beyblade listing — gate before matcher auto-accept. */
 export function looksLikeBeybladeListing(title: string): boolean {
+  if (NON_BEYBLADE_JUNK.test(title)) return false;
   if (BEYBLADE_SIGNAL.test(title)) return true;
+  if (LEGACY_CATALOG_CODE.test(title)) return true;
+  if (BURST_B_CODE.test(title)) return BURST_CONTEXT_SIGNAL.test(title);
   return CATALOG_CODE_IN_TITLE.test(title);
 }
 

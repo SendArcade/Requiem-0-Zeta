@@ -15,7 +15,7 @@ Written 2026-08-14 ~23:42 MYT. Updated 2026-08-15 ~03:05 UTC (Kaijin + Souei don
   sealed comps on starter SKUs, B-97 mark below band.
 - **Shuna:** **Done 2026-08-15** — `pnpm catalog:sync` on Railway (`2 parts`, `437 product rows` refreshed). Key names fixed in Postgres.
 - **Diablo:** still blocked. Do not republish.
-- **Matcher:** **Partial 2026-08-15** — burst `purge:bad-comps` (6 wrong-TT rows) + SQL junk pass (22 false positives) + recompute. Publish still blocked.
+- **Matcher:** **Partial 2026-08-15** — burst `purge:bad-comps` (6 wrong-TT rows) + SQL junk pass (22 false positives) + recompute. **Hardening in progress** — `looksLikeBeybladeListing` now requires burst context for bare B-codes + junk rejection; sealed comps route to sealed SKU rows in matcher scoring.
 - **Diablo:** still blocked. Do not republish.
 
 ## Repo
@@ -86,8 +86,8 @@ Semi order 2026-08-14: full venue+item verify of every touched product (not a sa
 1. ~~Kaijin: 33 product ids from Postgres; distinct `part_id`s failing `matches_part_id_fkey`.~~ **Done** → `verify-pass2.md`
 2. ~~Souei: full venue+item verify those products vs `venue-bands.md`.~~ **Done — all FAIL** → `verify-pass2.md`
 3. ~~**Shuna:** sync Railway `products.name_en` from catalog seeds; seed `burst-disc-z`, `burst-b-180-layer`.~~ **Done** (`pnpm catalog:sync`)
-4. ~~**Matcher/ingest:** burst purge + junk cleanup on Railway.~~ **Partial** — 28 bad `product_matches` removed, 22 products recomputed. Matcher hardening still needed (B-code-only titles, sealed→sealed SKU routing).
-5. **Diablo publish bar** after matcher hardening. Still do not republish until passes.
+4. ~~**Matcher/ingest:** burst purge + junk cleanup on Railway.~~ **Partial** — 28 bad `product_matches` removed, 22 products recomputed. **Matcher hardening landed in code** (B-code context gate, junk rejection, sealed→sealed SKU scoring) — apply `burst:purge-fast` on Railway after deploy.
+5. **Diablo publish bar** after Railway purge + re-verify. Still do not republish until passes.
 6. Kill hung PID 266 if still a live backfill on replica 0b19a5bc.
 7. Do not unpause cron until you explicitly want ticks.
 8. Wave 2 catalog + `takara-gaps.md` after Burst marks are honest.

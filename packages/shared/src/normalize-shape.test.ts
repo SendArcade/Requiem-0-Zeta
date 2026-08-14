@@ -26,6 +26,20 @@ describe("classifyListingShape", () => {
     expect(looksLikeBeybladeListing("BX-01 ドランソード 美品")).toBe(true);
   });
 
+  it("rejects bare B-code listings without beyblade context", () => {
+    expect(looksLikeBeybladeListing("トヨタ ヘッドランプ B-104 中古")).toBe(false);
+    expect(looksLikeBeybladeListing("フジミ 1/144 模型 B-03")).toBe(false);
+    expect(looksLikeBeybladeListing("Levis 501 B-131 ジーンズ")).toBe(false);
+    expect(looksLikeBeybladeListing("DENSO B-03 センサー")).toBe(false);
+    expect(looksLikeBeybladeListing("B-104 美品")).toBe(false);
+  });
+
+  it("accepts burst listings with context beyond bare B-code", () => {
+    expect(looksLikeBeybladeListing("B-34 ヴァルキリー 完成品 未開封")).toBe(true);
+    expect(looksLikeBeybladeListing("Heaven Pegasus B-97 complete used")).toBe(true);
+    expect(looksLikeBeybladeListing("ベイブレードバースト B-104 スターター")).toBe(true);
+  });
+
   it("classifies complete beys as ingest-eligible", () => {
     expect(classifyListingShape("ベイブレードX BX-01 スターター")).toBe("complete_bey");
     expect(isIngestEligible("ベイブレードX BX-01 スターター")).toBe(true);

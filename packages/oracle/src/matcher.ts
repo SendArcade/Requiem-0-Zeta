@@ -367,6 +367,12 @@ function scoreProductForTitle(product: ProductDTO, title: string): number {
   }
 
   if (product.skuType === "starter" && hasStarterMarker) score += 1;
+  // Unopened packaging belongs on sealed SKU rows, not starter/loose pools.
+  if (product.skuType === "sealed" && hasSealedMarker) score += 3;
+  if (product.skuType === "starter" && hasSealedMarker) score -= 3;
+  if (product.skuType === "complete_loose" && hasSealedMarker && !hasCompleteMarker) {
+    score -= 3;
+  }
   // Prefer complete_sealed when title has both complete + sealed language.
   if (product.skuType === "complete_sealed" && isCompleteSealedTitle) score += 4;
   if (product.skuType === "complete_loose" && isCompleteSealedTitle) score -= 4;
