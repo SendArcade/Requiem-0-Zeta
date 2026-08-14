@@ -98,3 +98,53 @@ ignore rules). Live ingest:
 
 Fixtures validate plumbing, not accuracy. Full checklist in
 [`blueprint/11-verification.md`](blueprint/11-verification.md).
+
+## Cursor Cloud specific instructions
+
+Toolchain: Node ≥20 (VM has 22.x) + pnpm 9.15.4 via Corepack. Install with
+`pnpm install --frozen-lockfile` (this is the environment update script). No
+Postgres/Redis/Docker is needed for local dev — the Railway-only rule stands.
+
+**Internal packages must be compiled to `dist/` before `pnpm typecheck`, `pnpm test`,
+and `pnpm dev`.** Every `@beyoracle/*` package resolves via its `package.json`
+`exports` → `dist/` (the web app also lists `db`/`ingest`/`events` in
+`serverExternalPackages`, so they are loaded from `dist/`, not source). A fresh
+checkout has no `dist/`, so those commands fail until you build.
+
+Build gotcha — `catalog` ↔ `oracle` package.json cycle: a single clean
+`pnpm build` is non-deterministic and usually fails because `oracle` compiles
+before `catalog/dist` exists. `catalog` builds fine without `oracle`
+(`tsconfig` excludes `src/seed.ts`, the only file importing `oracle`), so build
+`catalog` first. Deterministic recipe from a clean tree:
+
+```bash
+pnpm --filter @beyoracle/shared --filter @beyoracle/db --filter @beyoracle/events --filter @beyoracle/jobs build
+pnpm --filter @beyoracle/catalog exec tsc
+pnpm -r build            # oracle now resolves catalog; builds ingest/worker/web too
+```
+
+Once `dist/` exists, a plain `pnpm build` succeeds in one pass. Hot reload does
+NOT pick up edits to internal packages — rebuild the changed package (e.g.
+`pnpm --filter @beyoracle/oracle build`) and restart `pnpm dev`.
+
+Run the web app locally on fixtures (no DB/Redis):
+
+```bash
+DATA_SOURCE=fixtures REDIS_ENABLED=0 pnpm dev   # :3000
+```
+
+Fast, reliable local paths (no product matcher): part/asset oracle —
+`GET /api/asset/{partId}` and page `/asset/{partId}` (Oracle Value + IQR band +
+per-condition marks + source toggles via `?sources=` / `?conditions=`).
+
+Slow/avoid in fixtures mode: broad `GET /api/search`, `/product/{id}`,
+`/browse/products`. The product matcher rebuilds its full context **per fixture**
+and is CPU-bound; a broad search can peg Node's single thread and block the
+whole dev server (kill the `next-server` PID and restart if that happens). The
+**watchlist** needs Postgres (Railway), so it does nothing in fixtures mode.
+
+Known pre-existing `pnpm test` failures in `packages/oracle` (WIP product
+matcher, unrelated to setup): `product-eval.test.ts` passes only with a longer
+timeout (~123s vs vitest's 5s default), and the "Burst identity product matcher"
+case in `matcher.test.ts` asserts `.toMatch()` on a non-string object and fails
+fast. The rest of the suite (48/50) passes.
