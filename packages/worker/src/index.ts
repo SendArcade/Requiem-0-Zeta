@@ -58,11 +58,20 @@ async function main() {
   }
 
   if (process.env.BURST_WAVE0_MAINTENANCE === "1") {
-    console.log("[worker] BURST_WAVE0_MAINTENANCE=1 — Wave 0 purge/rematch/recompute…");
-    const report = await runBurstWave0Maintenance({
-      dryRun: process.env.BURST_WAVE0_DRY_RUN === "1",
-    });
-    console.log("[worker] wave0 maintenance complete:", JSON.stringify(report));
+    if (process.env.BURST_WAVE0_MAINTENANCE_DONE === "1") {
+      console.log(
+        "[worker] BURST_WAVE0_MAINTENANCE=1 but BURST_WAVE0_MAINTENANCE_DONE=1 — skip"
+      );
+    } else {
+      console.log("[worker] BURST_WAVE0_MAINTENANCE=1 — Wave 0 purge/rematch/recompute…");
+      const report = await runBurstWave0Maintenance({
+        dryRun: process.env.BURST_WAVE0_DRY_RUN === "1",
+      });
+      console.log("[worker] wave0 maintenance complete:", JSON.stringify(report));
+      console.log(
+        "[worker] set BURST_WAVE0_MAINTENANCE_DONE=1 and unset BURST_WAVE0_MAINTENANCE after reviewing logs"
+      );
+    }
   }
 
   if (process.env.ORACLE_RECOMPUTE_ALL === "1") {
