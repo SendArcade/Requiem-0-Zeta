@@ -18,6 +18,14 @@ function formatUsd(n: number) {
   return `$${n.toFixed(2)}`;
 }
 
+function retailShelfLabel(sources: string[]): string {
+  const labels: string[] = [];
+  if (sources.includes("walmart_us")) labels.push("Walmart");
+  if (sources.includes("amazon_us")) labels.push("Amazon");
+  if (labels.length === 0) return "US big-box shelf";
+  return labels.join(" · ") + " shelf";
+}
+
 function formatJpy(n: number) {
   return `¥${Math.round(n).toLocaleString("ja-JP")}`;
 }
@@ -128,7 +136,9 @@ export function ProductPageClient({ initial }: { initial: ProductData }) {
 
         {retailReference && (!oracle || sparse) && (
           <div className="mt-4 rounded-lg border border-slate-500/30 bg-slate-500/10 px-4 py-3 text-sm">
-            <p className="font-medium text-slate-300">US retail reference (Walmart shelf)</p>
+            <p className="font-medium text-slate-300">
+              US retail reference ({retailShelfLabel(retailReference.sources)})
+            </p>
             <p className="mt-1 text-2xl font-bold tabular-nums text-slate-200">
               {formatUsd(retailReference.value)}
               <span className="ml-2 text-sm font-normal text-[var(--muted)]">

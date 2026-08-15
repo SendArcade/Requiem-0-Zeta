@@ -16,6 +16,9 @@ import {
   parseShardCount,
   shouldRunOracleBackfill,
   sweepStaleIngestRuns,
+  buildUsRetailQueryPlan,
+  listEnabledSources,
+  runSourceIngest,
 } from "@beyoracle/ingest";
 import { Worker, Queue } from "bullmq";
 import { Redis } from "ioredis";
@@ -106,6 +109,35 @@ async function main() {
         generations: parseProductBackfillGenerations(),
       });
       console.log("[worker] product backfill complete:", JSON.stringify(productReport));
+    }
+  }
+
+  if (process.env.US_RETAIL_INGEST_BOOT === "1") {
+    if (process.env.US_RETAIL_INGEST_BOOT_DONE === "1") {
+      console.log(
+        "[worker] US_RETAIL_INGEST_BOOT=1 but US_RETAIL_INGEST_BOOT_DONE=1 — skip"
+      );
+    } else {
+      const sources = listEnabledSources();
+      const queries = buildUsRetailQueryPlan({
+        maxQueries: process.env.US_RETAIL_BOOT_MAX_QUERIES
+          ? Number(process.env.US_RETAIL_BOOT_MAX_QUERIES)
+          : undefined,
+      });
+      console.log(
+        `[worker] US_RETAIL_INGEST_BOOT=1 — one-shot retail ingest for ${sources.join(", ") || "(none)"}`
+      );
+      for (const sourceId of sources) {
+        const report = await runSourceIngest({
+          sourceId,
+          queries,
+          recordRun: true,
+        });
+        console.log(`[worker] US retail boot ${sourceId}:`, JSON.stringify(report));
+      }
+      console.log(
+        "[worker] set US_RETAIL_INGEST_BOOT_DONE=1 and unset US_RETAIL_INGEST_BOOT after reviewing logs"
+      );
     }
   }
 

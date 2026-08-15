@@ -12,17 +12,28 @@ import {
 } from "@beyoracle/jobs";
 import {
   buildIngestQueryPlan,
+  buildUsRetailQueryPlan,
   isBackfillInFlight,
   listEnabledSources,
   startIngestRun,
   sweepStaleIngestRuns,
 } from "@beyoracle/ingest";
+import type { SourceId } from "@beyoracle/shared";
+import { US_RETAIL_SOURCES } from "@beyoracle/shared";
 
 const ALERTS_DELAY_MS = Number(process.env.ALERTS_DELAY_MS ?? 90_000);
 
 /** Stable BullMQ repeatable / job-scheduler id — payload must not freeze tickId. */
 export const SCHEDULED_CRON_JOB_ID = "scheduled-cron-tick";
 export const CRON_REPEATABLE_JOB_ID = SCHEDULED_CRON_JOB_ID;
+
+const US_RETAIL_SOURCE_SET = new Set<SourceId>(US_RETAIL_SOURCES);
+
+function queriesForSource(sourceId: SourceId): string[] {
+  return US_RETAIL_SOURCE_SET.has(sourceId)
+    ? buildUsRetailQueryPlan()
+    : buildIngestQueryPlan();
+}
 
 export function ingestSourceJobId(sourceId: string, tickId: string): string {
   return ("ingest-" + sourceId + "-" + tickId).slice(0, 200);
@@ -74,10 +85,12 @@ export async function dispatchCronTick(
       return { sourcesEnqueued: 0, tickId };
     }
 
-    const queries = buildIngestQueryPlan();
     const sources = listEnabledSources();
+    let queryCount = 0;
 
     for (const sourceId of sources) {
+      const queries = queriesForSource(sourceId);
+      queryCount += queries.length;
       const data: IngestSourcePayload = {
         sourceId,
         queries,
@@ -104,7 +117,7 @@ export async function dispatchCronTick(
     );
 
     sourcesEnqueued = sources.length;
-    stats = { sourcesEnqueued, queries: queries.length, tickId };
+    stats = { sourcesEnqueued, queries: queryCount, tickId };
     status = errors.length ? "failed" : "success";
     return { sourcesEnqueued, tickId };
   } catch (err) {

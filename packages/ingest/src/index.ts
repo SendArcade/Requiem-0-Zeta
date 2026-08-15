@@ -23,6 +23,7 @@ export {
 } from "./adapters/yahoo-auctions/client.js";
 export { getSources, ingestFromSource, ingestFixturesSmoke } from "./pipeline.js";
 export { runScheduledIngest, SCHEDULED_INGEST_QUERIES, buildIngestQueryPlan, runSourceIngest, listEnabledSources } from "./scheduled.js";
+export { buildUsRetailQueryPlan } from "./us-retail-query-plan.js";
 export { backfillLandedJpy } from "./backfill-landed.js";
 export { buildBackfillQueryPlan } from "./backfill-query-plan.js";
 export {

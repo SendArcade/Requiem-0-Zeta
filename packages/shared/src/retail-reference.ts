@@ -4,7 +4,7 @@ import type { EvidenceKind } from "./provenance.js";
 import { feedsOracleMark, resolveEvidenceKind } from "./provenance.js";
 
 /** US big-box retail — ask/shelf only, never sold comps. */
-export const US_RETAIL_SOURCES: SourceId[] = ["walmart_us"];
+export const US_RETAIL_SOURCES: SourceId[] = ["walmart_us", "amazon_us"];
 
 export interface RetailReferenceInput {
   price: number;

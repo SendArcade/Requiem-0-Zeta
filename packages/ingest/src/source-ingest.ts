@@ -3,6 +3,7 @@ import { getSources } from "./pipeline.js";
 import { persistBundleObservations, persistIngestBatch } from "./persist.js";
 import { startIngestRun } from "./runs.js";
 import type { SourceId } from "@beyoracle/shared";
+import { US_RETAIL_SOURCES } from "@beyoracle/shared";
 import {
   classifyListingShape,
   isIngestEligible,
@@ -32,6 +33,7 @@ const SOURCE_ENV_FLAGS: Record<SourceId, string> = {
   suruga_ya_jp: "SURUGAYA_API_ENABLED",
   ebay_com: "EBAY_SOLD_ENABLED",
   walmart_us: "WALMART_API_ENABLED",
+  amazon_us: "AMAZON_API_ENABLED",
 };
 
 function sourceLiveEnabled(source: PricingSource): boolean {
@@ -47,9 +49,12 @@ function searchOptsForSource(sourceId: SourceId, limit: number): SearchOpts {
   const liveCorridor =
     (sourceId === "ruten_tw" && process.env.RUTEN_API_ENABLED === "1") ||
     (sourceId === "suruga_ya_jp" && process.env.SURUGAYA_API_ENABLED === "1") ||
-    (sourceId === "walmart_us" && process.env.WALMART_API_ENABLED === "1");
+    (sourceId === "walmart_us" && process.env.WALMART_API_ENABLED === "1") ||
+    (sourceId === "amazon_us" && process.env.AMAZON_API_ENABLED === "1");
   if (liveCorridor) {
-    if (sourceId === "walmart_us") return { limit, status: "listing" };
+    if (sourceId === "walmart_us" || sourceId === "amazon_us") {
+      return { limit, status: "listing" };
+    }
     return { limit };
   }
   return { status: "sold", limit };
@@ -68,6 +73,9 @@ function shouldPersistMarketListing(observation: {
   }
   if (observation.source === "walmart_us") {
     return process.env.WALMART_MARKET_INGEST === "1" || process.env.WALMART_API_ENABLED === "1";
+  }
+  if (observation.source === "amazon_us") {
+    return process.env.AMAZON_MARKET_INGEST === "1" || process.env.AMAZON_API_ENABLED === "1";
   }
   return false;
 }
@@ -185,10 +193,36 @@ export async function runSourceIngest(opts: {
   }
 }
 
+export function parseWorkerIngestSources(): SourceId[] | null {
+  const raw = process.env.WORKER_INGEST_SOURCES?.trim();
+  if (!raw) return null;
+  const allowed = new Set(getSources().map((s) => s.id));
+  const picked = raw
+    .split(",")
+    .map((s) => s.trim())
+    .filter((s): s is SourceId => allowed.has(s as SourceId));
+  if (picked.length === 0) {
+    console.warn(
+      `[ingest] WORKER_INGEST_SOURCES=${raw} matched no known sources — ignoring filter`
+    );
+    return null;
+  }
+  return picked;
+}
+
 export function listEnabledSources(): SourceId[] {
-  return getSources()
+  let enabled = getSources()
     .filter((s) => sourceLiveEnabled(s) || process.env.INGEST_ALLOW_FIXTURES === "1")
     .map((s) => s.id);
+
+  const workerFilter = parseWorkerIngestSources();
+  if (workerFilter) {
+    enabled = enabled.filter((id) => workerFilter.includes(id));
+  } else {
+    enabled = enabled.filter((id) => !US_RETAIL_SOURCES.includes(id));
+  }
+
+  return enabled;
 }
 
 export { sourceLiveEnabled };

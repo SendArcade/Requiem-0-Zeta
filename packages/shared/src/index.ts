@@ -26,6 +26,7 @@ export const SOURCES = [
   "suruga_ya_jp",
   "ebay_com",
   "walmart_us",
+  "amazon_us",
 ] as const;
 export type SourceId = (typeof SOURCES)[number];
 
@@ -38,6 +39,7 @@ export const SOURCE_LABELS: Record<SourceId, string> = {
   suruga_ya_jp: "Suruga-ya",
   ebay_com: "eBay US",
   walmart_us: "Walmart US",
+  amazon_us: "Amazon US",
 };
 
 export const CURRENCIES = ["JPY", "TWD", "USD"] as const;
@@ -158,6 +160,7 @@ export const SOURCE_MASK: Record<SourceId, number> = {
   suruga_ya_jp: 32,
   ebay_com: 64,
   walmart_us: 128,
+  amazon_us: 256,
 };
 
 export function maskFromSources(sources: SourceId[]): number {

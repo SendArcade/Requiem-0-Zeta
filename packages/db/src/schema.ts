@@ -29,6 +29,7 @@ export const sourceEnum = pgEnum("source", [
   "suruga_ya_jp",
   "ebay_com",
   "walmart_us",
+  "amazon_us",
 ]);
 export const conditionEnum = pgEnum("condition", ["sealed", "like_new", "used", "unknown"]);
 export const observationStatusEnum = pgEnum("observation_status", ["listing", "sold"]);

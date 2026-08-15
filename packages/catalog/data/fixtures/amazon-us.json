@@ -1,0 +1,24 @@
+[
+  {
+    "externalId": "B0C1234567",
+    "partId": "x-bx-01-blade",
+    "title": "Hasbro Beyblade X Dran Sword 3-60F Starter Set",
+    "price": 19.99,
+    "currency": "USD",
+    "status": "listing",
+    "condition": "sealed",
+    "url": "https://www.amazon.com/dp/B0C1234567",
+    "observedAt": "2026-08-10T12:00:00Z"
+  },
+  {
+    "externalId": "B0C7654321",
+    "partId": "x-bx-00-blade",
+    "title": "Takara Tomy Beyblade X BX-00 Cobalt Dragoon 3-60F Starter Pack",
+    "price": 24.95,
+    "currency": "USD",
+    "status": "listing",
+    "condition": "sealed",
+    "url": "https://www.amazon.com/dp/B0C7654321",
+    "observedAt": "2026-08-10T12:00:00Z"
+  }
+]

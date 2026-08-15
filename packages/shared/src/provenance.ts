@@ -34,6 +34,7 @@ export const SOURCE_DEFAULT_EVIDENCE: Record<SourceId, EvidenceKind> = {
   mandarake_jp: "active_ask",
   suruga_ya_jp: "dealer_buyback_offer",
   walmart_us: "active_ask",
+  amazon_us: "active_ask",
 };
 
 function priceKindToEvidence(raw: string): EvidenceKind | null {

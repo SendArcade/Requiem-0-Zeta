@@ -68,4 +68,4 @@ export async function runScheduledIngest(
 
 export { SCHEDULED_INGEST_QUERIES } from "./queries.js";
 export { buildIngestQueryPlan } from "./query-plan.js";
-export { runSourceIngest, listEnabledSources } from "./source-ingest.js";
+export { runSourceIngest, listEnabledSources, parseWorkerIngestSources } from "./source-ingest.js";
