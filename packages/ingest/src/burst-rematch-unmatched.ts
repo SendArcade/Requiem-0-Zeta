@@ -63,6 +63,35 @@ export async function runBurstRematchLooseWave0(opts: {
   return processRematchRows(rows, { dryRun, restrictProductIds: new Set(WAVE0_FAILING_STARTERS) });
 }
 
+/** Broader gap rematch — any open/used sold row for B-97/B-104/B-110 (not sealed). */
+export async function runBurstRematchGapWave0(opts: {
+  dryRun?: boolean;
+} = {}): Promise<BurstRematchResult> {
+  const dryRun = opts.dryRun ?? false;
+  const db = getDb();
+
+  const rows = await db
+    .select({
+      id: observations.id,
+      title: observations.title,
+      rawJson: observations.rawJson,
+      status: observations.status,
+    })
+    .from(observations)
+    .leftJoin(productMatches, eq(productMatches.observationId, observations.id))
+    .where(
+      and(
+        eq(observations.status, "sold"),
+        isNull(productMatches.id),
+        WAVE0_GAP_B_CODE_SQL,
+        NOT_SEALED_TITLE,
+        sql`${observations.title} ~* 'ベイ|バースト|beyblade|takara|タカラ|ロンギヌス|ヴァルキリー|スターター|starter'`
+      )
+    );
+
+  return processRematchRows(rows, { dryRun, restrictProductIds: new Set(WAVE0_FAILING_STARTERS) });
+}
+
 async function processRematchRows(
   rows: Array<{ id: string; title: string; rawJson: unknown; status: string }>,
   opts: { dryRun: boolean; restrictProductIds?: Set<string> }

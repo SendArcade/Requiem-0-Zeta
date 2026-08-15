@@ -5,7 +5,11 @@
  */
 import { closeDb } from "@beyoracle/db";
 import { buildWave0GapQueryPlan, WAVE0_FAILING_STARTERS } from "./burst-wave0-targets.js";
-import { runBurstRematchLooseWave0 } from "./burst-rematch-unmatched.js";
+import {
+  runBurstRematchGapWave0,
+  runBurstRematchLooseWave0,
+  runBurstRematchUnmatched,
+} from "./burst-rematch-unmatched.js";
 import { purgeWave0BelowBand } from "./burst-wave0-purge-below-band.js";
 import { listProductBackfillSources } from "./product-backfill.js";
 import { recomputeProductOracleSnapshotsBatch } from "./persist.js";
@@ -21,6 +25,8 @@ export type BurstWave0IngestReport = {
   matched: number;
   ingestErrors: string[];
   rematchLoose: Awaited<ReturnType<typeof runBurstRematchLooseWave0>>;
+  rematchGap: Awaited<ReturnType<typeof runBurstRematchGapWave0>>;
+  rematchSealed: Awaited<ReturnType<typeof runBurstRematchUnmatched>>;
   purgeBelowBand: Awaited<ReturnType<typeof purgeWave0BelowBand>>;
   recomputedProducts: number;
   verify: Awaited<ReturnType<typeof verifyWave0>> | null;
@@ -53,6 +59,26 @@ export async function runBurstWave0Ingest(opts: {
     matched: 0,
     ingestErrors: [],
     rematchLoose: {
+      candidates: 0,
+      scanned: 0,
+      matched: 0,
+      gateSkip: 0,
+      nonBurst: 0,
+      lowConf: 0,
+      recomputedProducts: 0,
+      samples: [],
+    },
+    rematchGap: {
+      candidates: 0,
+      scanned: 0,
+      matched: 0,
+      gateSkip: 0,
+      nonBurst: 0,
+      lowConf: 0,
+      recomputedProducts: 0,
+      samples: [],
+    },
+    rematchSealed: {
       candidates: 0,
       scanned: 0,
       matched: 0,
@@ -131,6 +157,16 @@ export async function runBurstWave0Ingest(opts: {
   report.rematchLoose = await runBurstRematchLooseWave0({ dryRun });
   console.log(
     `[burst:wave0-ingest] loose rematch matched=${report.rematchLoose.matched}/${report.rematchLoose.candidates}`
+  );
+
+  report.rematchGap = await runBurstRematchGapWave0({ dryRun });
+  console.log(
+    `[burst:wave0-ingest] gap rematch matched=${report.rematchGap.matched}/${report.rematchGap.candidates}`
+  );
+
+  report.rematchSealed = await runBurstRematchUnmatched({ dryRun, wave0Only: true });
+  console.log(
+    `[burst:wave0-ingest] sealed rematch matched=${report.rematchSealed.matched}/${report.rematchSealed.candidates}`
   );
 
   report.purgeBelowBand = await purgeWave0BelowBand({ dryRun });

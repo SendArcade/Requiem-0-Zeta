@@ -11,6 +11,7 @@ import {
   recomputeAllOracleSnapshots,
   runBurstWave0Maintenance,
   runBurstWave0Ingest,
+  runBurstWave0Loop,
   runOracleBackfill,
   runProductBackfill,
   runProductBackfillShard,
@@ -245,7 +246,27 @@ async function main() {
     }
   }
 
-  if (process.env.BURST_WAVE0_INGEST === "1") {
+  if (process.env.BURST_WAVE0_LOOP === "1") {
+    if (process.env.BURST_WAVE0_LOOP_DONE === "1") {
+      console.log("[worker] BURST_WAVE0_LOOP=1 but BURST_WAVE0_LOOP_DONE=1 — skip");
+    } else {
+      void (async () => {
+        try {
+          console.log("[worker] BURST_WAVE0_LOOP=1 — autonomous Wave 0 loop (background)…");
+          const report = await runBurstWave0Loop({
+            dryRun: process.env.BURST_WAVE0_DRY_RUN === "1",
+            closeDb: false,
+          });
+          console.log("[worker] wave0 loop complete:", JSON.stringify(report));
+          console.log(
+            "[worker] set BURST_WAVE0_LOOP_DONE=1 and unset BURST_WAVE0_LOOP after reviewing logs"
+          );
+        } catch (err) {
+          console.error("[worker] BURST_WAVE0_LOOP failed:", (err as Error).message);
+        }
+      })();
+    }
+  } else if (process.env.BURST_WAVE0_INGEST === "1") {
     if (process.env.BURST_WAVE0_INGEST_DONE === "1") {
       console.log("[worker] BURST_WAVE0_INGEST=1 but BURST_WAVE0_INGEST_DONE=1 — skip");
     } else {
