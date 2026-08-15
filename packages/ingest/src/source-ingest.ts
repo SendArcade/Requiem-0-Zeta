@@ -31,6 +31,7 @@ const SOURCE_ENV_FLAGS: Record<SourceId, string> = {
   mandarake_jp: "MANDARAKE_API_ENABLED",
   suruga_ya_jp: "SURUGAYA_API_ENABLED",
   ebay_com: "EBAY_SOLD_ENABLED",
+  walmart_us: "WALMART_API_ENABLED",
 };
 
 function sourceLiveEnabled(source: PricingSource): boolean {
@@ -45,8 +46,12 @@ function getSourceById(sourceId: SourceId): PricingSource | undefined {
 function searchOptsForSource(sourceId: SourceId, limit: number): SearchOpts {
   const liveCorridor =
     (sourceId === "ruten_tw" && process.env.RUTEN_API_ENABLED === "1") ||
-    (sourceId === "suruga_ya_jp" && process.env.SURUGAYA_API_ENABLED === "1");
-  if (liveCorridor) return { limit };
+    (sourceId === "suruga_ya_jp" && process.env.SURUGAYA_API_ENABLED === "1") ||
+    (sourceId === "walmart_us" && process.env.WALMART_API_ENABLED === "1");
+  if (liveCorridor) {
+    if (sourceId === "walmart_us") return { limit, status: "listing" };
+    return { limit };
+  }
   return { status: "sold", limit };
 }
 
@@ -60,6 +65,9 @@ function shouldPersistMarketListing(observation: {
   }
   if (observation.source === "suruga_ya_jp") {
     return process.env.SURUGAYA_MARKET_INGEST === "1";
+  }
+  if (observation.source === "walmart_us") {
+    return process.env.WALMART_MARKET_INGEST === "1" || process.env.WALMART_API_ENABLED === "1";
   }
   return false;
 }

@@ -20,6 +20,7 @@ import {
   allSourcesMask,
   analyzeProductRecipe,
   convertCurrency,
+  computeRetailReference,
   DEFAULT_PUBLISHED_MIN_COMPS,
   isLiveMarketplaceComp,
   productMarkConditions,
@@ -30,6 +31,7 @@ import {
   resolveEvidenceKind,
   SOURCES,
   type ProductRecipeAnalysis,
+  type RetailReference,
 } from "@beyoracle/shared";
 import { and, eq, inArray } from "drizzle-orm";
 import type { CompRow } from "./data-types";
@@ -54,6 +56,8 @@ export interface ProductData {
   parts: NonNullable<ReturnType<typeof getPartById>>[];
   recipe: ProductRecipeAnalysis;
   oracle: ReturnType<typeof computeOracleValue>;
+  /** US retail shelf reference when sold comps are thin — not Oracle Value. */
+  retailReference: RetailReference | null;
   comps: CompRow[];
   chart: Array<{ date: string; price: number }>;
   conditions: Condition[];
@@ -200,12 +204,30 @@ export async function getProductDataFromDb(
     windowDays,
   });
 
+  const allCompRows = await loadProductCompRows(
+    productId,
+    sources,
+    displayCurrency,
+    markConditions
+  );
+  const retailReference = computeRetailReference(
+    allCompRows.map((c) => ({
+      price: c.price,
+      currency: c.currency,
+      source: c.source,
+      status: c.evidenceKind === "active_ask" ? "listing" : "sold",
+      evidenceKind: c.evidenceKind,
+    })),
+    { targetCurrency: "USD" }
+  );
+
   return {
     product,
     parts,
     recipe,
     oracle,
-    comps: await loadProductCompRows(productId, sources, displayCurrency, markConditions),
+    retailReference,
+    comps: allCompRows,
     chart,
     conditions: markConditions,
   };
@@ -299,11 +321,23 @@ export function getProductDataFromFixtures(
     })
     .sort((a, b) => b.observedAt.localeCompare(a.observedAt));
 
+  const retailReference = computeRetailReference(
+    comps.map((c) => ({
+      price: c.price,
+      currency: c.currency,
+      source: c.source,
+      status: c.evidenceKind === "active_ask" ? "listing" : "sold",
+      evidenceKind: c.evidenceKind,
+    })),
+    { targetCurrency: "USD" }
+  );
+
   return {
     product,
     parts,
     recipe,
     oracle,
+    retailReference,
     comps,
     chart,
     conditions: markConditions,

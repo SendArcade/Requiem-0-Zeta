@@ -158,7 +158,15 @@ seller and customer" rather than observed transactions, and weighted to Plastic-
 Useful as a sanity band for legacy generations, not as a comp source.
 
 **camelcamelcamel** — Amazon-only price history; does carry some Takara Tomy Beyblade ASINs.
-Retail signal only.
+Retail signal only. Planned sibling source `amazon_us` (same `active_ask` lane as Walmart).
+
+**CamelMart / Walmart US** — [CamelMart](https://camelmart.com) is the Walmart sibling of
+camelcamelcamel (price history + drop alerts). Walmart shelf/list prices are reliable for
+**current US Hasbro/Takara retail SKUs** but are **ask/MSRP**, not sold comps. Shipped as
+`walmart_us` with `active_ask` provenance — feeds **US retail reference** on product pages when
+sold depth is thin; never mixed into Oracle Value median. Live: `WALMART_API_ENABLED=1` (HTML
+search or Affiliate API when credentialed). Affiliate path: `WALMART_PUBLISHER_ID`,
+`WALMART_CONSUMER_ID`, `WALMART_ACCESS_TOKEN`.
 
 **Community datasets** — none. WBO's Bey Marketplace is MyBB forum threads with prices in prose
 and a photo-verification rule; there is no structured trade log to mine. The "Beycord Revival"

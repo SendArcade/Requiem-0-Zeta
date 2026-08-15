@@ -1,0 +1,35 @@
+[
+  {
+    "externalId": "5012345678",
+    "partId": "x-bx-01-blade",
+    "title": "Hasbro Beyblade X Dran Sword 3-60F Starter Set",
+    "price": 14.97,
+    "currency": "USD",
+    "status": "listing",
+    "condition": "sealed",
+    "url": "https://www.walmart.com/ip/5012345678",
+    "observedAt": "2026-08-10T12:00:00Z"
+  },
+  {
+    "externalId": "5098765432",
+    "partId": "x-bx-00-blade",
+    "title": "Beyblade X BX-00 Cobalt Dragoon 3-60F Starter Pack",
+    "price": 24.96,
+    "currency": "USD",
+    "status": "listing",
+    "condition": "sealed",
+    "url": "https://www.walmart.com/ip/5098765432",
+    "observedAt": "2026-08-10T12:00:00Z"
+  },
+  {
+    "externalId": "5076543210",
+    "partId": "burst-b-34-layer",
+    "title": "Hasbro Beyblade Burst Evolution Starter Pack",
+    "price": 9.96,
+    "currency": "USD",
+    "status": "listing",
+    "condition": "sealed",
+    "url": "https://www.walmart.com/ip/5076543210",
+    "observedAt": "2026-08-05T09:00:00Z"
+  }
+]

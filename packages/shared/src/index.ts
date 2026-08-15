@@ -25,6 +25,7 @@ export const SOURCES = [
   "mandarake_jp",
   "suruga_ya_jp",
   "ebay_com",
+  "walmart_us",
 ] as const;
 export type SourceId = (typeof SOURCES)[number];
 
@@ -36,6 +37,7 @@ export const SOURCE_LABELS: Record<SourceId, string> = {
   mandarake_jp: "Mandarake",
   suruga_ya_jp: "Suruga-ya",
   ebay_com: "eBay US",
+  walmart_us: "Walmart US",
 };
 
 export const CURRENCIES = ["JPY", "TWD", "USD"] as const;
@@ -155,6 +157,7 @@ export const SOURCE_MASK: Record<SourceId, number> = {
   mandarake_jp: 16,
   suruga_ya_jp: 32,
   ebay_com: 64,
+  walmart_us: 128,
 };
 
 export function maskFromSources(sources: SourceId[]): number {
@@ -208,6 +211,12 @@ export {
   type ProductRecipeSlot,
   type RecipeKind,
 } from "./product-recipe.js";
+export {
+  computeRetailReference,
+  US_RETAIL_SOURCES,
+  type RetailReference,
+  type RetailReferenceInput,
+} from "./retail-reference.js";
 export {
   EVIDENCE_KINDS,
   EVIDENCE_LABELS,

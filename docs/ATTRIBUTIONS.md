@@ -15,6 +15,7 @@ Patterns and inspiration borrowed for Beyoracle MVP.
 | [scikit-learn-contrib/category_encoders](https://github.com/scikit-learn-contrib/category_encoders) | James-Stein shrinkage for sparse comps (planned) | `docs/VALUATION_RESEARCH.md` |
 | Apify `kitebuilds/resale-sold-comps` | Mercari sold-comps fallback provider (live + fixture shape) | `packages/ingest/src/adapters/apify/mercari-sold.ts` |
 | Apify `jpmarketdata/yahoo-auction-sold-comps` | Yahoo closed-auction sold-comps fallback provider | `packages/ingest/src/adapters/apify/yahoo-sold.ts` |
+| [CamelMart](https://camelmart.com) / Walmart US shelf | US retail ask reference (MSRP-oriented); not sold comps | `packages/ingest/src/adapters/walmart-us.ts` |
 | Yahoo Auctions closed search | `__NEXT_DATA__` JSON parse for sold comps | `packages/ingest/src/adapters/yahoo-auctions/client.ts` |
 | eBay sold search (free scrape) | `LH_Sold=1&LH_Complete=1` HTML parse — no Marketplace Insights API | `packages/ingest/src/adapters/ebay/client.ts` |
 

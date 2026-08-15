@@ -3,6 +3,7 @@ import { matchObservation } from "@beyoracle/oracle";
 import type { ObservationDTO } from "@beyoracle/shared";
 import { isIngestEligible } from "@beyoracle/shared";
 import { EbayComSource } from "./adapters/ebay-com.js";
+import { WalmartUsSource } from "./adapters/walmart-us.js";
 import { MandarakeJpSource } from "./adapters/mandarake-jp.js";
 import { MercariJpSource } from "./adapters/mercari-jp.js";
 import { RutenTwSource } from "./adapters/ruten-tw.js";
@@ -20,6 +21,7 @@ export function getSources(): PricingSource[] {
     new MandarakeJpSource(),
     new SurugaYaJpSource(),
     new EbayComSource(),
+    new WalmartUsSource(),
   ];
 }
 

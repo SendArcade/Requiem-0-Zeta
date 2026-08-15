@@ -14,6 +14,10 @@ const SKU_LABELS: Record<string, string> = {
   complete_sealed: "Complete Bey (sealed)",
 };
 
+function formatUsd(n: number) {
+  return `$${n.toFixed(2)}`;
+}
+
 function formatJpy(n: number) {
   return `¥${Math.round(n).toLocaleString("ja-JP")}`;
 }
@@ -25,7 +29,7 @@ function confidenceColor(c: string) {
 }
 
 export function ProductPageClient({ initial }: { initial: ProductData }) {
-  const { product, parts, recipe, oracle, comps, chart } = initial;
+  const { product, parts, recipe, oracle, retailReference, comps, chart } = initial;
   const sparse =
     oracle != null &&
     (oracle.nComps < DEFAULT_PUBLISHED_MIN_COMPS || oracle.confidence === "low");
@@ -118,6 +122,23 @@ export function ProductPageClient({ initial }: { initial: ProductData }) {
             <p className="mt-1 text-[var(--muted)]">
               Only {oracle.nComps} sold comp{oracle.nComps !== 1 ? "s" : ""} — treat this Oracle
               Value as directional, not definitive.
+            </p>
+          </div>
+        )}
+
+        {retailReference && (!oracle || sparse) && (
+          <div className="mt-4 rounded-lg border border-slate-500/30 bg-slate-500/10 px-4 py-3 text-sm">
+            <p className="font-medium text-slate-300">US retail reference (Walmart shelf)</p>
+            <p className="mt-1 text-2xl font-bold tabular-nums text-slate-200">
+              {formatUsd(retailReference.value)}
+              <span className="ml-2 text-sm font-normal text-[var(--muted)]">
+                {formatUsd(retailReference.low)} – {formatUsd(retailReference.high)} ·{" "}
+                {retailReference.nAsks} ask{retailReference.nAsks !== 1 ? "s" : ""}
+              </span>
+            </p>
+            <p className="mt-1 text-[var(--muted)]">
+              Current US big-box shelf price — not a sold comp. Useful when JP sold depth is thin;
+              skews toward MSRP.
             </p>
           </div>
         )}

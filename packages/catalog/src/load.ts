@@ -97,6 +97,7 @@ const FIXTURE_FILES = {
   shopee_tw: "fixtures/shopee-tw.json",
   yahoo_auctions_jp: "fixtures/yahoo-auctions-jp.json",
   ebay_com: "fixtures/ebay-com.json",
+  walmart_us: "fixtures/walmart-us.json",
 } satisfies Partial<Record<SourceId, string>>;
 
 export function loadFixtureObservations(source: SourceId): FixtureObservation[] {

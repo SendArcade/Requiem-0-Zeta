@@ -49,7 +49,8 @@ on this axis before wiring it in.
 | Class | Examples | Oracle use |
 |---|---|---|
 | **Sold comps** | Mercari `STATUS_SOLD_OUT`, Yahoo closed search, Apify sold actors | Primary comps input |
-| **Ask / retail** | Suruga-ya shelf price, Mandarake list, Shopee active listing | Floor / sentiment only — not median input |
+| **US retail ask** | Walmart US (`walmart_us`), future Amazon US | Retail reference band when sold depth thin — MSRP-skew OK; **never** median input |
+| **Ask / retail (JP)** | Suruga-ya shelf price, Mandarake list, Shopee active listing | Floor / sentiment only — not median input |
 | **Demand weights** | Shopee `historical_sold`, Ruten `sold_count` | Units moved at unknown price — never a comp |
 
 Persist `status: "sold" | "listing"` at the schema level. Reject ask-only rows
@@ -87,6 +88,9 @@ client) + venue-specific mappers in `mercari-sold.ts` / `yahoo-sold.ts`.
 | `YAHOO_AUCTIONS_ENABLED=1` | Turn on live Yahoo closed search |
 | `MERCARI_LIVE_PROVIDER` | Comma chain: `dpop`, `apify`, or `dpop,apify` (default: `dpop`, then `apify` when `APIFY_TOKEN` set) |
 | `YAHOO_LIVE_PROVIDER` | Comma chain: `self`, `apify`, or `self,apify` (default: `self`, then `apify` when `APIFY_TOKEN` set) |
+| `WALMART_API_ENABLED=1` | Live Walmart US retail search (ask/listing — not sold comps) |
+| `WALMART_MARKET_INGEST=1` | Persist Walmart listing rows during ingest |
+| `WALMART_PUBLISHER_ID` / `WALMART_CONSUMER_ID` / `WALMART_ACCESS_TOKEN` | Optional Affiliate API (preferred over HTML scrape) |
 | `APIFY_TOKEN` | Apify API token — enables fallback (and explicit `apify` primary) |
 | `APIFY_TIMEOUT_MS` | Local fetch timeout for sync actor runs (default 330000) |
 | `MERCARI_STRICT=1` / `YAHOO_AUCTIONS_STRICT=1` | Throw on live failure instead of fixtures |
