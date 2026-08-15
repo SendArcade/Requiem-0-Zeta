@@ -94,7 +94,7 @@ client) + venue-specific mappers in `mercari-sold.ts` / `yahoo-sold.ts`.
 | `YAHOO_MIN_INTERVAL_MS`, `YAHOO_MAX_PAGES`, `YAHOO_CIRCUIT_FAILURES` | Self-scrape politeness + circuit breaker |
 | `YAHOO_NORMALIZE_HYPHEN_QUERIES=1` | Rewrite `Absorb-S` → `Absorb S` (Yahoo 404 on hyphen form) |
 
-**Force Apify-only on Railway when DPoP/self is blocked:**
+**Apify fallback:** optional — requires `APIFY_TOKEN` (paid). **Skip when no budget;** DPoP + Yahoo self-scrape remain primary.
 
 ```bash
 MERCARI_API_ENABLED=1 MERCARI_LIVE_PROVIDER=apify APIFY_TOKEN=*** ...

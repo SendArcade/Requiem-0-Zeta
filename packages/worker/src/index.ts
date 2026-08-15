@@ -9,6 +9,7 @@ import {
   registerOracleRecomputeEnqueuer,
   purgeBadComps,
   recomputeAllOracleSnapshots,
+  runBurstWave0Maintenance,
   runOracleBackfill,
   runProductBackfill,
   runProductBackfillShard,
@@ -46,11 +47,22 @@ async function main() {
 
   if (process.env.PURGE_BAD_COMPS === "1") {
     console.log("[worker] PURGE_BAD_COMPS=1 — re-validating persisted matches…");
+    const generations = process.env.PURGE_GENERATIONS?.split(",").map((s) => s.trim()).filter(Boolean);
     const purged = await purgeBadComps({
       dryRun: process.env.PURGE_DRY_RUN === "1",
       deleteObservations: process.env.PURGE_DELETE_OBSERVATIONS === "1",
+      generations: generations?.length ? (generations as import("@beyoracle/shared").Generation[]) : undefined,
+      skipPartMatches: process.env.PURGE_SKIP_PART_MATCHES === "1",
     });
     console.log("[worker] purge complete:", JSON.stringify(purged));
+  }
+
+  if (process.env.BURST_WAVE0_MAINTENANCE === "1") {
+    console.log("[worker] BURST_WAVE0_MAINTENANCE=1 — Wave 0 purge/rematch/recompute…");
+    const report = await runBurstWave0Maintenance({
+      dryRun: process.env.BURST_WAVE0_DRY_RUN === "1",
+    });
+    console.log("[worker] wave0 maintenance complete:", JSON.stringify(report));
   }
 
   if (process.env.ORACLE_RECOMPUTE_ALL === "1") {

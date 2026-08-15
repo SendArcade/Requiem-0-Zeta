@@ -24,6 +24,8 @@
     "burst:recompute": "tsx src/cli/burst-recompute-products.ts",
     "burst:rematch-unmatched": "tsx src/cli/burst-rematch-unmatched.ts",
     "burst:wave0-status": "tsx src/cli/burst-wave0-status.ts",
+    "burst:wave0-verify": "tsx src/cli/burst-wave0-verify.ts",
+    "burst:wave0-maintenance": "tsx src/cli/burst-wave0-maintenance.ts",
     "backfill:products": "tsx src/cli/product-backfill.ts",
     "backfill:products:shard": "tsx src/cli/product-backfill-shard.ts",
     "backfill:products:fleet-plan": "tsx src/cli/product-backfill-fleet-plan.ts",

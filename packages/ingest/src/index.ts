@@ -85,3 +85,7 @@ export { approveReviewQueueItem, rejectReviewQueueItem } from "./review-queue.js
 export { fetchSaleEventsSince, fetchRecentProductSales } from "./persist.js";
 export { purgeBadComps, isStaleOrWrongMatch } from "./purge-bad-comps.js";
 export type { PurgeBadCompsOptions, PurgeBadCompsResult } from "./purge-bad-comps.js";
+export { runBurstWave0Maintenance } from "./burst-wave0-maintenance.js";
+export type { BurstWave0MaintenanceReport } from "./burst-wave0-maintenance.js";
+export { verifyWave0, formatWave0Verify } from "./burst-wave0-verify-lib.js";
+export type { Wave0VerifyReport } from "./burst-wave0-verify-lib.js";

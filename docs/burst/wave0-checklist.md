@@ -50,12 +50,17 @@ Code shipped:
 
 ### B. Railway cleanup (operator)
 
-**Done 2026-08-15:** purge (4 junk + 32 sealed-on-starter) + **`burst:rematch-unmatched` (28 → sealed SKUs)** + recompute. `product_matches` 162→**154**. Burst marks **9/76** (B-34-sealed ¥11,800 n=3). B-110 starter mark **null** after sealed peel. Souei re-verify next.
+**Done 2026-08-15:** purge (4 junk + 32 sealed-on-starter) + **`burst:rematch-unmatched` (28 → sealed SKUs)** + recompute. `product_matches` 162→**154**. Burst marks **9/76** (B-34-sealed ¥11,800 n=3). B-110 starter mark **null** after sealed peel.
+
+**Next on Railway (no Apify):** run full maintenance + verify:
 
 ```bash
-pnpm --filter @beyoracle/ingest burst:rematch-unmatched   # Wave0 sealed (default)
+pnpm --filter @beyoracle/ingest burst:wave0-maintenance   # purge + stale + sealed rematch + recompute
+pnpm --filter @beyoracle/ingest burst:wave0-verify        # 7/7 Diablo bar
 pnpm --filter @beyoracle/ingest burst:wave0-status        # ops snapshot
 ```
+
+Worker one-shot: `BURST_WAVE0_MAINTENANCE=1` on boot (unset after logs).
 
 **Expect:** `burst:purge-fast` removes bare B-code junk that survived SQL pass; product_matches
 count drops; some Wave 0 marks may go null (correct — better no mark than wrong mark).
