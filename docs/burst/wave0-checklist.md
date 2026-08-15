@@ -50,6 +50,8 @@ Code shipped:
 
 ### B. Railway cleanup (operator)
 
+**Done 2026-08-15:** `burst:purge-fast` (4 junk) + `purge:bad-comps` burst (32 sealed-on-starter) + recompute. `product_matches` 162→126. Marks 7/76 unchanged — sealed comps removed from starter pools; need rematch to `*-sealed` rows + Souei re-verify.
+
 ```bash
 export RAILWAY_TOKEN=...   # project token with Postgres access
 npx railway tcp-proxy create --service Postgres --port 5432 \

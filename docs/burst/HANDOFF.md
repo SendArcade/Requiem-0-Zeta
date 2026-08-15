@@ -15,7 +15,7 @@ Written 2026-08-14 ~23:42 MYT. Updated 2026-08-15 ~03:25 UTC (Wave 0 checklist +
   sealed comps on starter SKUs, B-97 mark below band.
 - **Shuna:** **Done 2026-08-15** — `pnpm catalog:sync` on Railway (`2 parts`, `437 product rows` refreshed). Key names fixed in Postgres.
 - **Diablo:** still blocked. Do not republish.
-- **Matcher:** **Partial 2026-08-15** — burst purge (28 rows) + **code hardening** (B-code gate, junk reject, sealed→sealed SKU, persist `isProductCompEligible` gate). Apply `burst:purge-fast` on Railway after deploy → `wave0-checklist.md`.
+- **Matcher:** **Applied 2026-08-15** on Railway — `burst:purge-fast` 4 junk rows; `purge:bad-comps` 32 sealed-on-starter rows; `product_matches` burst 162→126; marks still 7/76 (Wave 0 0/7 Diablo PASS).
 - **Diablo:** still blocked. Do not republish.
 
 ## Repo
