@@ -19,6 +19,8 @@ import {
   buildUsRetailQueryPlan,
   listEnabledSources,
   runSourceIngest,
+  verifyWave0,
+  formatWave0Verify,
 } from "@beyoracle/ingest";
 import { Worker, Queue } from "bullmq";
 import { Redis } from "ioredis";
@@ -73,6 +75,19 @@ async function main() {
       console.log("[worker] wave0 maintenance complete:", JSON.stringify(report));
       console.log(
         "[worker] set BURST_WAVE0_MAINTENANCE_DONE=1 and unset BURST_WAVE0_MAINTENANCE after reviewing logs"
+      );
+    }
+  }
+
+  if (process.env.BURST_WAVE0_VERIFY === "1") {
+    if (process.env.BURST_WAVE0_VERIFY_DONE === "1") {
+      console.log("[worker] BURST_WAVE0_VERIFY=1 but BURST_WAVE0_VERIFY_DONE=1 — skip");
+    } else {
+      console.log("[worker] BURST_WAVE0_VERIFY=1 — Diablo bar check…");
+      const report = await verifyWave0();
+      console.log(formatWave0Verify(report));
+      console.log(
+        "[worker] set BURST_WAVE0_VERIFY_DONE=1 and unset BURST_WAVE0_VERIFY after reviewing logs"
       );
     }
   }
