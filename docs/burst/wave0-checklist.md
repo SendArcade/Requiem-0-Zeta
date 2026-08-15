@@ -52,15 +52,19 @@ Code shipped:
 
 **Done 2026-08-15:** purge (4 junk + 32 sealed-on-starter) + **`burst:rematch-unmatched` (28 → sealed SKUs)** + recompute. `product_matches` 162→**154**. Burst marks **9/76** (B-34-sealed ¥11,800 n=3). B-110 starter mark **null** after sealed peel.
 
-**Next on Railway (no Apify):** run full maintenance + verify:
+**Done 2026-08-15:** maintenance on 16 replicas; verify **4/7 PASS** (B-34, B-86, B-100, B-127).
+**FAIL:** B-97 (mark ¥1,000 below band ¥2,200), B-104 (¥599 below floor ¥600), B-110 (no mark, n=0).
+Zero stale/wrong-TT on all 7 — matcher cleanup held.
+
+**Next on Railway (no Apify):** targeted gap ingest for the 3 failing SKUs:
 
 ```bash
-pnpm --filter @beyoracle/ingest burst:wave0-maintenance   # purge + stale + sealed rematch + recompute
-pnpm --filter @beyoracle/ingest burst:wave0-verify        # 7/7 Diablo bar
-pnpm --filter @beyoracle/ingest burst:wave0-status        # ops snapshot
+pnpm --filter @beyoracle/ingest burst:wave0-ingest   # Mercari/Yahoo ingest + loose rematch + below-band purge + verify
+pnpm --filter @beyoracle/ingest burst:wave0-verify   # 7/7 Diablo bar
+pnpm --filter @beyoracle/ingest burst:wave0-status   # ops snapshot
 ```
 
-Worker one-shot: `BURST_WAVE0_MAINTENANCE=1` on boot (unset after logs).
+Worker one-shot: `BURST_WAVE0_INGEST=1` on boot (unset after logs). Prior maintenance: `BURST_WAVE0_MAINTENANCE=1`.
 
 **Expect:** `burst:purge-fast` removes bare B-code junk that survived SQL pass; product_matches
 count drops; some Wave 0 marks may go null (correct — better no mark than wrong mark).
@@ -83,15 +87,15 @@ Re-run venue+item verify for the 7 starter (+ sealed) rows. Update `verify-pass2
 
 | SKU | Snapshot? | Blocker (short) | PASS |
 |---|---|---|---|
-| B-34 | starter ¥1,499 n=3; **sealed ¥11,800 n=3** | sealed row live | **review** |
-| B-86 | starter ¥1,450 n=3 | sealed n=1 only | **review** |
-| B-97 | starter ¥1,000 n=5 | mark below band | **FAIL** |
-| B-100 | starter ¥2,000 n=5 | sealed matches=3, no sealed mark | **FAIL** |
-| B-104 | starter ¥599 n=3 | below band floor | **FAIL** |
-| B-110 | **no starter mark** | 5 used matches; sealed peeled | **FAIL** |
-| B-127 | starter ¥699 n=3 | wrong-TT comp risk | **FAIL** |
+| B-34 | starter ¥1,499 n=3 | — | **PASS** |
+| B-86 | starter ¥1,450 n=3 | — | **PASS** |
+| B-97 | starter ¥1,000 n=5 | mark below band (¥2,200 floor) | **FAIL** |
+| B-100 | starter ¥2,000 n=5 | — | **PASS** |
+| B-104 | starter ¥599 n=3 | ¥1 below band floor (¥600) | **FAIL** |
+| B-110 | **no starter mark** | n=0; needs loose comps | **FAIL** |
+| B-127 | starter ¥699 n=3 | — | **PASS** |
 
-**Wave 0 score: 0/7 PASS** — unpublish correct.
+**Wave 0 score: 4/7 PASS** — unpublish correct until gap ingest clears B-97/B-104/B-110.
 
 ---
 

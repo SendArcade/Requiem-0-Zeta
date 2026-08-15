@@ -10,6 +10,7 @@ import {
   purgeBadComps,
   recomputeAllOracleSnapshots,
   runBurstWave0Maintenance,
+  runBurstWave0Ingest,
   runOracleBackfill,
   runProductBackfill,
   runProductBackfillShard,
@@ -75,6 +76,26 @@ async function main() {
       console.log("[worker] wave0 maintenance complete:", JSON.stringify(report));
       console.log(
         "[worker] set BURST_WAVE0_MAINTENANCE_DONE=1 and unset BURST_WAVE0_MAINTENANCE after reviewing logs"
+      );
+    }
+  }
+
+  if (process.env.BURST_WAVE0_INGEST === "1") {
+    if (process.env.BURST_WAVE0_INGEST_DONE === "1") {
+      console.log(
+        "[worker] BURST_WAVE0_INGEST=1 but BURST_WAVE0_INGEST_DONE=1 — skip"
+      );
+    } else {
+      console.log("[worker] BURST_WAVE0_INGEST=1 — targeted gap ingest (B-97/B-104/B-110)…");
+      const report = await runBurstWave0Ingest({
+        dryRun: process.env.BURST_WAVE0_DRY_RUN === "1",
+        skipIngest: process.env.BURST_WAVE0_SKIP_INGEST === "1",
+        skipVerify: process.env.BURST_WAVE0_SKIP_VERIFY === "1",
+        closeDb: false,
+      });
+      console.log("[worker] wave0 ingest complete:", JSON.stringify(report));
+      console.log(
+        "[worker] set BURST_WAVE0_INGEST_DONE=1 and unset BURST_WAVE0_INGEST after reviewing logs"
       );
     }
   }
