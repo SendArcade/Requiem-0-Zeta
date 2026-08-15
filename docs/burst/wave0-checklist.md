@@ -50,20 +50,11 @@ Code shipped:
 
 ### B. Railway cleanup (operator)
 
-**Done 2026-08-15:** `burst:purge-fast` (4 junk) + `purge:bad-comps` burst (32 sealed-on-starter) + recompute. `product_matches` 162→126. Marks 7/76 unchanged — sealed comps removed from starter pools; need rematch to `*-sealed` rows + Souei re-verify.
+**Done 2026-08-15:** purge (4 junk + 32 sealed-on-starter) + **`burst:rematch-unmatched` (28 → sealed SKUs)** + recompute. `product_matches` 162→**154**. Burst marks **9/76** (B-34-sealed ¥11,800 n=3). B-110 starter mark **null** after sealed peel. Souei re-verify next.
 
 ```bash
-export RAILWAY_TOKEN=...   # project token with Postgres access
-npx railway tcp-proxy create --service Postgres --port 5432 \
-  -p 5dd67894-2e52-46a6-ae44-7fcf58fe2055 -e production
-# DATABASE_URL → proxy host:port
-
-PURGE_DRY_RUN=1 pnpm --filter @beyoracle/ingest burst:purge-fast   # inspect count
-pnpm --filter @beyoracle/ingest burst:purge-fast                     # apply fast gate purge
-PURGE_GENERATIONS=burst PURGE_SKIP_PART_MATCHES=1 pnpm purge:bad-comps  # rematch wrong IDs
-pnpm --filter @beyoracle/ingest burst:recompute
-pnpm product:coverage -- --generation=burst
-# delete tcp-proxy when done
+pnpm --filter @beyoracle/ingest burst:rematch-unmatched   # Wave0 sealed (default)
+pnpm --filter @beyoracle/ingest burst:wave0-status        # ops snapshot
 ```
 
 **Expect:** `burst:purge-fast` removes bare B-code junk that survived SQL pass; product_matches
@@ -87,13 +78,13 @@ Re-run venue+item verify for the 7 starter (+ sealed) rows. Update `verify-pass2
 
 | SKU | Snapshot? | Blocker (short) | PASS |
 |---|---|---|---|
-| B-34 | yes ¥1,499 | 1 wrong-TT comp (Winning) | FAIL |
-| B-86 | yes ¥1,450 | was DB name; synced | **review** |
-| B-97 | yes ¥1,000 | mark below band; wrong-TT comp | FAIL |
-| B-100 | yes ¥2,000 | sealed pollution in match set | FAIL |
-| B-104 | yes ¥599 | marginal below band floor | FAIL |
-| B-110 | no | pool/window; sealed on starter | FAIL |
-| B-127 | yes ¥699 | 1 wrong-TT comp (Cho-Z Spriggan) | FAIL |
+| B-34 | starter ¥1,499 n=3; **sealed ¥11,800 n=3** | sealed row live | **review** |
+| B-86 | starter ¥1,450 n=3 | sealed n=1 only | **review** |
+| B-97 | starter ¥1,000 n=5 | mark below band | **FAIL** |
+| B-100 | starter ¥2,000 n=5 | sealed matches=3, no sealed mark | **FAIL** |
+| B-104 | starter ¥599 n=3 | below band floor | **FAIL** |
+| B-110 | **no starter mark** | 5 used matches; sealed peeled | **FAIL** |
+| B-127 | starter ¥699 n=3 | wrong-TT comp risk | **FAIL** |
 
 **Wave 0 score: 0/7 PASS** — unpublish correct.
 

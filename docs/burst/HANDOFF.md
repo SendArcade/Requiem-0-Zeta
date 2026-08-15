@@ -15,7 +15,7 @@ Written 2026-08-14 ~23:42 MYT. Updated 2026-08-15 ~03:25 UTC (Wave 0 checklist +
   sealed comps on starter SKUs, B-97 mark below band.
 - **Shuna:** **Done 2026-08-15** — `pnpm catalog:sync` on Railway (`2 parts`, `437 product rows` refreshed). Key names fixed in Postgres.
 - **Diablo:** still blocked. Do not republish.
-- **Matcher:** **Applied 2026-08-15** on Railway — `burst:purge-fast` 4 junk rows; `purge:bad-comps` 32 sealed-on-starter rows; `product_matches` burst 162→126; marks still 7/76 (Wave 0 0/7 Diablo PASS).
+- **Matcher:** **Applied 2026-08-15** — purge + **28 sealed rematch** to `*-sealed` rows. Burst 9/76 marks. B-110 starter mark dropped (sealed isolation). Publish blocked pending Souei.
 - **Diablo:** still blocked. Do not republish.
 
 ## Repo
@@ -86,9 +86,9 @@ Semi order 2026-08-14: full venue+item verify of every touched product (not a sa
 1. ~~Kaijin: 33 product ids from Postgres; distinct `part_id`s failing `matches_part_id_fkey`.~~ **Done** → `verify-pass2.md`
 2. ~~Souei: full venue+item verify those products vs `venue-bands.md`.~~ **Done — all FAIL** → `verify-pass2.md`
 3. ~~**Shuna:** sync Railway `products.name_en` from catalog seeds; seed `burst-disc-z`, `burst-b-180-layer`.~~ **Done** (`pnpm catalog:sync`)
-4. ~~**Matcher/ingest:** burst purge + code hardening.~~ **Code done** — Railway apply + Souei re-verify → `wave0-checklist.md`.
-5. **Wave 0 (7 SKUs):** B-34 B-86 B-97 B-100 B-104 B-110 B-127 — all must PASS Diablo before publish. **0/7 today.**
-6. **Diablo publish bar** after Wave 0 green. Still do not republish until passes.
+4. ~~**Matcher/ingest:** burst purge + rematch sealed rows.~~ **Done 2026-08-15** — 28 sealed comps on `*-sealed` SKUs; B-34-sealed mark live. `burst:wave0-status` for ops.
+5. **Souei re-verify** Wave 0 (7 starters) — update `verify-pass2.md`. **Publish still DOWN.**
+6. Fix B-97/B-104 marks (wrong comps in used pool) + B-110 starter n≥3 used.
 7. Kill hung PID 266 if still a live backfill on replica 0b19a5bc.
 8. Do not unpause cron until Wave 0 green.
 9. Wave 2 catalog + `takara-gaps.md` after Burst Wave 0 publishes.
