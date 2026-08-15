@@ -1,16 +1,19 @@
 /**
  * Drop used starter comps whose landed JPY sits below Wave 0 venue-band floor.
- * Targets B-97 / B-104 skew (and any future gap SKU in WAVE0_FAILING_STARTERS).
+ * Only when ≥3 in-band comps remain — avoids zeroing marks before fresh ingest lands.
  */
 import { getDb, observations, productMatches } from "@beyoracle/db";
-import { and, eq, isNotNull, lt } from "drizzle-orm";
+import { and, eq, gte, isNotNull, lt, lte } from "drizzle-orm";
 import { WAVE0_STARTER_BANDS } from "./burst-wave0-ids.js";
 import { WAVE0_FAILING_STARTERS } from "./burst-wave0-targets.js";
 import { recomputeProductOracleSnapshotsBatch } from "./persist.js";
 
+const MIN_COMPS_AFTER_PURGE = 3;
+
 export type PurgeWave0BelowBandResult = {
   scanned: number;
   purged: number;
+  skippedProducts: string[];
   samples: string[];
   recomputedProducts: number;
 };
@@ -21,6 +24,7 @@ export async function purgeWave0BelowBand(opts: {
   const dryRun = opts.dryRun ?? false;
   const db = getDb();
   const samples: string[] = [];
+  const skippedProducts: string[] = [];
   const touched = new Set<string>();
   let scanned = 0;
   let purged = 0;
@@ -29,7 +33,21 @@ export async function purgeWave0BelowBand(opts: {
     const band = WAVE0_STARTER_BANDS[productId];
     if (!band) continue;
 
-    const rows = await db
+    const inBandRows = await db
+      .select({ id: productMatches.id })
+      .from(productMatches)
+      .innerJoin(observations, eq(productMatches.observationId, observations.id))
+      .where(
+        and(
+          eq(productMatches.productId, productId),
+          eq(observations.condition, "used"),
+          isNotNull(observations.landedJpy),
+          gte(observations.landedJpy, band.min),
+          lte(observations.landedJpy, band.max)
+        )
+      );
+
+    const belowBandRows = await db
       .select({
         matchId: productMatches.id,
         title: observations.title,
@@ -46,8 +64,18 @@ export async function purgeWave0BelowBand(opts: {
         )
       );
 
-    for (const row of rows) {
-      scanned++;
+    scanned += belowBandRows.length;
+
+    if (belowBandRows.length === 0) continue;
+
+    if (inBandRows.length < MIN_COMPS_AFTER_PURGE) {
+      skippedProducts.push(
+        `${productId} (${inBandRows.length} in-band, ${belowBandRows.length} below — need ingest first)`
+      );
+      continue;
+    }
+
+    for (const row of belowBandRows) {
       touched.add(productId);
       if (samples.length < 12) {
         samples.push(
@@ -67,5 +95,11 @@ export async function purgeWave0BelowBand(opts: {
     recomputedProducts = touched.size;
   }
 
-  return { scanned, purged, samples, recomputedProducts };
+  if (skippedProducts.length > 0) {
+    console.log(
+      `[burst:wave0-purge-below-band] skipped ${skippedProducts.length} products (insufficient in-band pool): ${skippedProducts.join("; ")}`
+    );
+  }
+
+  return { scanned, purged, skippedProducts, samples, recomputedProducts };
 }

@@ -65,6 +65,7 @@ export async function runBurstWave0Ingest(opts: {
     purgeBelowBand: {
       scanned: 0,
       purged: 0,
+      skippedProducts: [],
       samples: [],
       recomputedProducts: 0,
     },
