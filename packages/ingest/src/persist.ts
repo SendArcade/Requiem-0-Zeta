@@ -24,6 +24,8 @@ import {
   DEFAULT_PUBLISHED_MIN_COMPS,
   isLiveMarketplaceComp,
   isIngestEligible,
+  isProductCompEligible,
+  isCompEligible,
   isProductMarkEligible,
   looksLikeBeybladeListing,
   resolveEvidenceKind,
@@ -231,8 +233,13 @@ export async function persistObservation(
 
     if (match && !isBundle) {
       const confidence = match.match.confidence;
+      const title = observation.title;
+      const eligible =
+        match.kind === "product"
+          ? isProductCompEligible(title)
+          : isCompEligible(title);
 
-      if (shouldPersistMatch(confidence)) {
+      if (shouldPersistMatch(confidence) && eligible) {
         if (match.kind === "product") {
           productId = match.match.productId;
           await tx.insert(productMatches).values({
@@ -252,7 +259,7 @@ export async function persistObservation(
             method: match.match.method as MatchMethod,
           });
         }
-      } else if (shouldQueueForReview(confidence)) {
+      } else if (shouldQueueForReview(confidence) && eligible) {
         await tx.insert(matchReviewQueue).values({
           id: randomUUID(),
           observationId: obsId,

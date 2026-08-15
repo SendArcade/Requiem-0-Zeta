@@ -1,4 +1,4 @@
-import { describe, it, expect } from "vitest";
+import { describe, it, expect, beforeAll } from "vitest";
 import type { AliasDTO, PartDTO } from "@beyoracle/shared";
 import {
   classifyListingShape,
@@ -436,14 +436,29 @@ describe("product multi-month history from dated comps", () => {
 });
 
 describe("Burst identity product matcher", () => {
-  it("does not land Winning product titles on B-34 or Heaven Pegasus on B-97", async () => {
+  let productCtx: Awaited<
+    ReturnType<(typeof import("@beyoracle/catalog"))["loadProductMatcherContext"]>
+  >;
+
+  beforeAll(async () => {
     const { loadProductMatcherContext } = await import("@beyoracle/catalog");
-    const ctx = loadProductMatcherContext();
-    const winning = matchToProduct("Beyblade Burst B-34 Starter Winning Valkyrie", ctx);
-    expect(winning?.productId ?? null).not.toMatch(/b-34/);
-    const heaven = matchToProduct("Heaven Pegasus B-97 complete used", ctx);
-    expect(heaven?.productId ?? null).not.toMatch(/b-97/);
-    const heavenJp = matchToProduct("B-97 ヘブンペガサス 完成品", ctx);
-    expect(heavenJp?.productId ?? null).not.toMatch(/b-97/);
-  });
+    productCtx = loadProductMatcherContext();
+  }, 30_000);
+
+  it(
+    "rejects wrong-TT titles and routes sealed packaging to sealed SKU",
+    () => {
+      expect(
+        matchToProduct("Beyblade Burst B-34 Starter Winning Valkyrie", productCtx)
+      ).toBeNull();
+      expect(matchToProduct("Heaven Pegasus B-97 complete used", productCtx)).toBeNull();
+      expect(matchToProduct("B-97 ヘブンペガサス 完成品", productCtx)).toBeNull();
+
+      const sealed = matchToProduct("B-01 ヴァルキリー スターター 未開封", productCtx);
+      expect(sealed?.productId).toBe("prod-burst-b-01-sealed");
+      const used = matchToProduct("B-34 ビクトリーヴァルキリー スターター 中古", productCtx);
+      expect(used?.productId).toBe("prod-burst-b-34-starter");
+    },
+    30_000
+  );
 });

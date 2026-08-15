@@ -1,0 +1,113 @@
+# Wave 0 exit checklist — Burst FMV
+
+**Goal:** first **honest, publishable** ALT-style marks on Wave 1 majors only.
+No fleet, no pass 3, no cron unpause until this doc is green.
+
+**North star:** 7 SKUs × Diablo PASS × Souei sign-off × comp audit visible on web.
+
+---
+
+## Scope (Wave 0 only)
+
+| B-code | product_id (starter) | sealed row | venue band doc |
+|---|---|---|---|
+| B-34 | `prod-burst-b-34-starter` | `prod-burst-b-34-sealed` | `venue-bands.md` B-34 |
+| B-86 | `prod-burst-b-86-starter` | `prod-burst-b-86-sealed` | B-86 |
+| B-97 | `prod-burst-b-97-starter` | `prod-burst-b-97-sealed` | B-97 |
+| B-100 | `prod-burst-b-100-starter` | `prod-burst-b-100-sealed` | B-100 |
+| B-104 | `prod-burst-b-104-starter` | `prod-burst-b-104-sealed` | B-104 |
+| B-110 | `prod-burst-b-110-starter` | `prod-burst-b-110-sealed` | B-110 |
+| B-127 | `prod-burst-b-127-starter` | `prod-burst-b-127-sealed` | B-127 |
+
+**Out of scope until Wave 0 green:** Wave 2 held SKUs (B-122, B-129, B-148, B-180), `complete_loose`
+rows with historical junk, 64-shard fleet, cron unpause.
+
+---
+
+## Diablo PASS criteria (per SKU)
+
+All must be true on the **starter** row (default public mark = opened starter + launcher):
+
+1. **Identity** — `products.name_en` / listing titles match Takara truth (see `HANDOFF.md` identity table).
+2. **Pool** — mark computed from ≥3 **used** sold comps (sealed excluded from starter pool).
+3. **No bundles** — zero `product_matches` with lot shape or まとめ language.
+4. **No wrong-TT comps** — e.g. no Heaven Pegasus on B-97, no Winning on B-34.
+5. **Venue band** — landed starter mark within `venue-bands.md` starter_used / used cluster (not sealed band).
+6. **Sealed isolation** — 未開封 comps live on `*-sealed` rows only, not starter.
+7. **Live evidence** — each comp has item URL; Souei opened page or cached venue ref.
+
+---
+
+## Execution order
+
+### A. Deploy matcher hardening (branch `cursor/burst-souei-verify-2345`)
+
+Code shipped:
+
+- `looksLikeBeybladeListing` — bare `B-XX` needs burst context; junk regex rejects car parts / kits / apparel.
+- Product matcher — sealed titles score to `*-sealed` SKU, away from starter.
+- Persist gate — product matches require `isProductCompEligible(title)`.
+
+### B. Railway cleanup (operator)
+
+```bash
+export RAILWAY_TOKEN=...   # project token with Postgres access
+npx railway tcp-proxy create --service Postgres --port 5432 \
+  -p 5dd67894-2e52-46a6-ae44-7fcf58fe2055 -e production
+# DATABASE_URL → proxy host:port
+
+PURGE_DRY_RUN=1 pnpm --filter @beyoracle/ingest burst:purge-fast   # inspect count
+pnpm --filter @beyoracle/ingest burst:purge-fast                     # apply fast gate purge
+PURGE_GENERATIONS=burst PURGE_SKIP_PART_MATCHES=1 pnpm purge:bad-comps  # rematch wrong IDs
+pnpm --filter @beyoracle/ingest burst:recompute
+pnpm product:coverage -- --generation=burst
+# delete tcp-proxy when done
+```
+
+**Expect:** `burst:purge-fast` removes bare B-code junk that survived SQL pass; product_matches
+count drops; some Wave 0 marks may go null (correct — better no mark than wrong mark).
+
+### C. Souei re-verify (Wave 0 rows only)
+
+Re-run venue+item verify for the 7 starter (+ sealed) rows. Update `verify-pass2.md` section
+"Wave 0" — do **not** republish until all 7 PASS.
+
+### D. Publish (Diablo only after 7/7 PASS)
+
+```bash
+# Only after Souei sign-off — unpublish remains default until then
+# Flip publish flags per existing Diablo runbook (Railway worker env)
+```
+
+---
+
+## Current status (2026-08-15)
+
+| SKU | Snapshot? | Blocker (short) | PASS |
+|---|---|---|---|
+| B-34 | yes ¥1,499 | 1 wrong-TT comp (Winning) | FAIL |
+| B-86 | yes ¥1,450 | was DB name; synced | **review** |
+| B-97 | yes ¥1,000 | mark below band; wrong-TT comp | FAIL |
+| B-100 | yes ¥2,000 | sealed pollution in match set | FAIL |
+| B-104 | yes ¥599 | marginal below band floor | FAIL |
+| B-110 | no | pool/window; sealed on starter | FAIL |
+| B-127 | yes ¥699 | 1 wrong-TT comp (Cho-Z Spriggan) | FAIL |
+
+**Wave 0 score: 0/7 PASS** — unpublish correct.
+
+---
+
+## Stop rules
+
+- Do **not** start pass 3 backfill or 64-shard fleet.
+- Do **not** unpause cron until Wave 0 is green.
+- Do **not** expand to Wave 2 catalog until Wave 0 publishes.
+- Kill hung PID 266 on replica `0b19a5bc…` if still running (ops only).
+
+---
+
+## When Wave 0 is green
+
+1. Announce 7 Burst FMV marks on web (evidence + source toggles).
+2. Expand to B-01 + B-102 boosters (sealed-heavy SKUs) as Wave 0b.
+3. Then Metal / Plastic / X using same quality-first playbook.

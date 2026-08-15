@@ -2,7 +2,7 @@
 
 Resume from this file if usage dies. Rimuru owns merge/deploy. Semi: suggestions only; stop only for destructive deletes or spend.
 
-Written 2026-08-14 ~23:42 MYT. Updated 2026-08-15 ~03:05 UTC (Kaijin + Souei done).
+Written 2026-08-14 ~23:42 MYT. Updated 2026-08-15 ~03:25 UTC (Wave 0 checklist + persist gate).
 
 ## Agent progress (2026-08-15 UTC)
 
@@ -15,7 +15,7 @@ Written 2026-08-14 ~23:42 MYT. Updated 2026-08-15 ~03:05 UTC (Kaijin + Souei don
   sealed comps on starter SKUs, B-97 mark below band.
 - **Shuna:** **Done 2026-08-15** — `pnpm catalog:sync` on Railway (`2 parts`, `437 product rows` refreshed). Key names fixed in Postgres.
 - **Diablo:** still blocked. Do not republish.
-- **Matcher:** **Partial 2026-08-15** — burst `purge:bad-comps` (6 wrong-TT rows) + SQL junk pass (22 false positives) + recompute. **Hardening in progress** — `looksLikeBeybladeListing` now requires burst context for bare B-codes + junk rejection; sealed comps route to sealed SKU rows in matcher scoring.
+- **Matcher:** **Partial 2026-08-15** — burst purge (28 rows) + **code hardening** (B-code gate, junk reject, sealed→sealed SKU, persist `isProductCompEligible` gate). Apply `burst:purge-fast` on Railway after deploy → `wave0-checklist.md`.
 - **Diablo:** still blocked. Do not republish.
 
 ## Repo
@@ -86,12 +86,13 @@ Semi order 2026-08-14: full venue+item verify of every touched product (not a sa
 1. ~~Kaijin: 33 product ids from Postgres; distinct `part_id`s failing `matches_part_id_fkey`.~~ **Done** → `verify-pass2.md`
 2. ~~Souei: full venue+item verify those products vs `venue-bands.md`.~~ **Done — all FAIL** → `verify-pass2.md`
 3. ~~**Shuna:** sync Railway `products.name_en` from catalog seeds; seed `burst-disc-z`, `burst-b-180-layer`.~~ **Done** (`pnpm catalog:sync`)
-4. ~~**Matcher/ingest:** burst purge + junk cleanup on Railway.~~ **Partial** — 28 bad `product_matches` removed, 22 products recomputed. **Matcher hardening landed in code** (B-code context gate, junk rejection, sealed→sealed SKU scoring) — apply `burst:purge-fast` on Railway after deploy.
-5. **Diablo publish bar** after Railway purge + re-verify. Still do not republish until passes.
-6. Kill hung PID 266 if still a live backfill on replica 0b19a5bc.
-7. Do not unpause cron until you explicitly want ticks.
-8. Wave 2 catalog + `takara-gaps.md` after Burst marks are honest.
-9. Metal / Plastic / X last.
+4. ~~**Matcher/ingest:** burst purge + code hardening.~~ **Code done** — Railway apply + Souei re-verify → `wave0-checklist.md`.
+5. **Wave 0 (7 SKUs):** B-34 B-86 B-97 B-100 B-104 B-110 B-127 — all must PASS Diablo before publish. **0/7 today.**
+6. **Diablo publish bar** after Wave 0 green. Still do not republish until passes.
+7. Kill hung PID 266 if still a live backfill on replica 0b19a5bc.
+8. Do not unpause cron until Wave 0 green.
+9. Wave 2 catalog + `takara-gaps.md` after Burst Wave 0 publishes.
+10. Metal / Plastic / X last.
 
 ## If usage dies now
 Best leftover state: `main` with this handoff. PR #2/#3/#4 + compile fix deployed. Worker lock 60m. Zombies drained. Cron paused. Pass 1+2 done (33/76 marks). Publish still down. Resume = Postgres 33 ids, then Souei verify, then Diablo bar. Do not enqueue a 64-shard fleet.
