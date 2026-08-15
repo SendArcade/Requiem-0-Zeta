@@ -115,6 +115,9 @@ export async function runBurstWave0Ingest(opts: {
           report.updated += r.updated;
           report.matched += r.matched;
           report.ingestErrors.push(...r.errors);
+          console.log(
+            `[burst:wave0-ingest] ${r.sourceId} batch ${Math.floor(i / batchSize) + 1}: fetched=${r.listingsFetched} matched=${r.matched} inserted=${r.inserted}`
+          );
         }
       }
     }
