@@ -79,19 +79,6 @@ async function main() {
     }
   }
 
-  if (process.env.BURST_WAVE0_VERIFY === "1") {
-    if (process.env.BURST_WAVE0_VERIFY_DONE === "1") {
-      console.log("[worker] BURST_WAVE0_VERIFY=1 but BURST_WAVE0_VERIFY_DONE=1 — skip");
-    } else {
-      console.log("[worker] BURST_WAVE0_VERIFY=1 — Diablo bar check…");
-      const report = await verifyWave0();
-      console.log(formatWave0Verify(report));
-      console.log(
-        "[worker] set BURST_WAVE0_VERIFY_DONE=1 and unset BURST_WAVE0_VERIFY after reviewing logs"
-      );
-    }
-  }
-
   if (process.env.ORACLE_RECOMPUTE_ALL === "1") {
     console.log("[worker] ORACLE_RECOMPUTE_ALL=1 — recomputing oracle snapshots…");
     const recomputed = await recomputeAllOracleSnapshots();
@@ -235,6 +222,27 @@ async function main() {
   worker.on("failed", (job, err) => {
     console.error(`[worker] job ${job?.name}/${job?.id} failed:`, err.message);
   });
+
+  if (process.env.BURST_WAVE0_VERIFY === "1") {
+    if (process.env.BURST_WAVE0_VERIFY_DONE === "1") {
+      console.log("[worker] BURST_WAVE0_VERIFY=1 but BURST_WAVE0_VERIFY_DONE=1 — skip");
+    } else {
+      void (async () => {
+        try {
+          console.log("[worker] BURST_WAVE0_VERIFY=1 — Diablo bar check (background)…");
+          const report = await verifyWave0();
+          for (const line of formatWave0Verify(report).split("\n")) {
+            console.log(line);
+          }
+          console.log(
+            "[worker] set BURST_WAVE0_VERIFY_DONE=1 and unset BURST_WAVE0_VERIFY after reviewing logs"
+          );
+        } catch (err) {
+          console.error("[worker] BURST_WAVE0_VERIFY failed:", (err as Error).message);
+        }
+      })();
+    }
+  }
 
   if (!pauseCron) {
     await dispatchCronTick(queue, {
