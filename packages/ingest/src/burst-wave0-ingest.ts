@@ -15,6 +15,87 @@ import { listProductBackfillSources } from "./product-backfill.js";
 import { recomputeProductOracleSnapshotsBatch } from "./persist.js";
 import { runSourceIngest } from "./source-ingest.js";
 import { formatWave0Verify, verifyWave0 } from "./burst-wave0-verify-lib.js";
+import type { SourceId } from "@beyoracle/shared";
+import type { SourceIngestReport } from "./source-ingest.js";
+
+function sleep(ms: number): Promise<void> {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+function sequentialSources(): boolean {
+  return (
+    process.env.WAVE0_INGEST_SEQUENTIAL !== "0" &&
+    (process.env.BURST_WAVE0_LOOP === "1" || process.env.BURST_WAVE0_INGEST === "1" || process.env.WAVE0_INGEST_SEQUENTIAL === "1")
+  );
+}
+
+async function runSourceIngestWithRetry(opts: {
+  sourceId: SourceId;
+  queries: string[];
+  limitPerQuery: number;
+  retries: number;
+}): Promise<SourceIngestReport> {
+  let last: SourceIngestReport | null = null;
+  for (let attempt = 1; attempt <= opts.retries; attempt++) {
+    try {
+      last = await runSourceIngest({
+        sourceId: opts.sourceId,
+        queries: opts.queries,
+        limitPerQuery: opts.limitPerQuery,
+        recordRun: false,
+      });
+      if (last.errors.length === 0 || attempt === opts.retries) return last;
+      console.warn(
+        `[burst:wave0-ingest] ${opts.sourceId} batch retry ${attempt}/${opts.retries} (${last.errors.length} errors)`
+      );
+    } catch (err) {
+      if (attempt === opts.retries) throw err;
+      console.warn(
+        `[burst:wave0-ingest] ${opts.sourceId} batch attempt ${attempt} failed: ${(err as Error).message}`
+      );
+    }
+    await sleep(Number(process.env.WAVE0_INGEST_RETRY_PAUSE_MS ?? 5_000));
+  }
+  return last!;
+}
+
+async function ingestBatchForSources(
+  sources: SourceId[],
+  batch: string[],
+  limitPerQuery: number,
+  batchNum: number,
+  report: BurstWave0IngestReport
+): Promise<void> {
+  const retries = Number(process.env.WAVE0_INGEST_RETRIES ?? 2);
+  const runOne = async (sourceId: SourceId) => {
+    const r = await runSourceIngestWithRetry({
+      sourceId,
+      queries: batch,
+      limitPerQuery,
+      retries,
+    });
+    report.inserted += r.inserted;
+    report.updated += r.updated;
+    report.matched += r.matched;
+    report.ingestErrors.push(...r.errors);
+    console.log(
+      `[burst:wave0-ingest] ${r.sourceId} batch ${batchNum}: fetched=${r.listingsFetched} matched=${r.matched} inserted=${r.inserted}`
+    );
+  };
+
+  if (sequentialSources()) {
+    for (const sourceId of sources) {
+      await runOne(sourceId);
+    }
+  } else {
+    const results = await Promise.allSettled(sources.map((sourceId) => runOne(sourceId)));
+    for (const result of results) {
+      if (result.status === "rejected") {
+        report.ingestErrors.push((result.reason as Error).message);
+      }
+    }
+  }
+}
 
 export type BurstWave0IngestReport = {
   dryRun: boolean;
@@ -114,37 +195,19 @@ export async function runBurstWave0Ingest(opts: {
       const limitPerQuery =
         opts.limitPerQuery ?? Number(process.env.INGEST_LIMIT_PER_QUERY ?? 40);
       const batchSize = Number(process.env.WAVE0_INGEST_QUERY_BATCH ?? 12);
+      const batchPauseMs = Number(process.env.WAVE0_INGEST_BATCH_PAUSE_MS ?? 3_000);
 
       for (let i = 0; i < queries.length; i += batchSize) {
         const batch = queries.slice(i, i + batchSize);
+        const batchNum = Math.floor(i / batchSize) + 1;
         console.log(
-          `[burst:wave0-ingest] ingest batch ${Math.floor(i / batchSize) + 1} (${batch.length} queries)`
+          `[burst:wave0-ingest] ingest batch ${batchNum} (${batch.length} queries) sequential=${sequentialSources()}`
         );
 
-        const results = await Promise.allSettled(
-          sources.map((sourceId) =>
-            runSourceIngest({
-              sourceId,
-              queries: batch,
-              limitPerQuery,
-              recordRun: false,
-            })
-          )
-        );
+        await ingestBatchForSources(sources, batch, limitPerQuery, batchNum, report);
 
-        for (const result of results) {
-          if (result.status === "rejected") {
-            report.ingestErrors.push((result.reason as Error).message);
-            continue;
-          }
-          const r = result.value;
-          report.inserted += r.inserted;
-          report.updated += r.updated;
-          report.matched += r.matched;
-          report.ingestErrors.push(...r.errors);
-          console.log(
-            `[burst:wave0-ingest] ${r.sourceId} batch ${Math.floor(i / batchSize) + 1}: fetched=${r.listingsFetched} matched=${r.matched} inserted=${r.inserted}`
-          );
+        if (i + batchSize < queries.length && batchPauseMs > 0) {
+          await sleep(batchPauseMs);
         }
       }
     }

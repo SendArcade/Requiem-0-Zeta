@@ -15,19 +15,27 @@ const VENUE_ANCHOR_QUERIES: Record<(typeof WAVE0_FAILING_STARTERS)[number], stri
     "B-110 ブラッディロンギヌス スターター",
     "B-110 Bloody Longinus starter",
     "ブラッディロンギヌス B-110 中古",
-    "B-110 ロングinus スターターセット",
+    "B-110 ロンギヌス スターターセット",
+    "B-110 ベイブレード スターター 中古",
+    "ブラッディロンギヌス スターターセット",
   ],
   "prod-burst-b-97-starter": [
     "B-97 ナイトメアロンギヌス スターター",
     "B-97 Nightmare Longinus starter",
     "ナイトメアロンギヌス B-97 中古",
     "B-97 ロンギヌス スターター",
+    "B-97 ベイブレード スターター 中古",
+    "ナイトメアロンギヌス スターターセット",
+    "B-97 ナイトメア ロンギヌス",
   ],
   "prod-burst-b-104-starter": [
     "B-104 ウィニングヴァルキリー スターター",
     "B-104 Winning Valkyrie starter",
     "ウィニングヴァルキリー B-104 中古",
     "B-104 スターター ランチャー",
+    "B-104 ベイブレード スターター 中古",
+    "ウィニングヴァルキリー スターターセット",
+    "B-104 ヴァルキリー 中古",
   ],
 };
 

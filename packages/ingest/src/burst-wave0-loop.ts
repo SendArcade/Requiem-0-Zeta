@@ -3,6 +3,7 @@
  * Railway: BURST_WAVE0_LOOP=1 on worker boot (background).
  */
 import { runBurstWave0Ingest } from "./burst-wave0-ingest.js";
+import { resetYahooLiveCircuitForWave0 } from "./adapters/yahoo-auctions-jp.js";
 import type { Wave0VerifyReport } from "./burst-wave0-verify-lib.js";
 
 export type BurstWave0LoopReport = {
@@ -51,6 +52,7 @@ export async function runBurstWave0Loop(opts: {
   for (let iter = 1; iter <= maxIterations; iter++) {
     report.iterations = iter;
     console.log(`[burst:wave0-loop] ── iteration ${iter}/${maxIterations} ──`);
+    resetYahooLiveCircuitForWave0();
 
     const ingest = await runBurstWave0Ingest({
       dryRun,

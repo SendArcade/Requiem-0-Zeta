@@ -9,6 +9,7 @@ import {
 } from "../types.js";
 import { parseLiveProviderChain } from "./apify/client.js";
 import { searchMercariSoldViaApify } from "./apify/mercari-sold.js";
+import { ingestNoFixtureFallback } from "../ingest-live-policy.js";
 import {
   conditionFromMercariId,
   MercariClient,
@@ -28,7 +29,7 @@ export class MercariJpSource implements PricingSource {
 
   /** When set, a live failure throws instead of silently using fixtures. */
   private strict(): boolean {
-    return process.env.MERCARI_STRICT === "1";
+    return process.env.MERCARI_STRICT === "1" || ingestNoFixtureFallback();
   }
 
   private liveProviders(): string[] {
@@ -41,6 +42,8 @@ export class MercariJpSource implements PricingSource {
   private getClient(): MercariClient {
     this.client ??= new MercariClient({
       minIntervalMs: Number(process.env.MERCARI_MIN_INTERVAL_MS ?? 1_200),
+      timeoutMs: Number(process.env.MERCARI_TIMEOUT_MS ?? 30_000),
+      maxRetries: Number(process.env.MERCARI_MAX_RETRIES ?? 4),
     });
     return this.client;
   }
@@ -52,7 +55,12 @@ export class MercariJpSource implements PricingSource {
       try {
         return await this.searchLive(query, limit);
       } catch (err) {
-        if (this.strict()) throw err;
+        if (this.strict()) {
+          console.warn(
+            `[mercari_jp] live search failed (${(err as Error).message}); returning empty (strict live)`
+          );
+          return [];
+        }
         console.warn(
           `[mercari_jp] live search failed (${(err as Error).message}); falling back to fixtures`
         );

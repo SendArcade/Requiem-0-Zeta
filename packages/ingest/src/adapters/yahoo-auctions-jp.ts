@@ -9,6 +9,7 @@ import {
 } from "../types.js";
 import { parseLiveProviderChain } from "./apify/client.js";
 import { searchYahooSoldViaApify } from "./apify/yahoo-sold.js";
+import { ingestNoFixtureFallback } from "../ingest-live-policy.js";
 import {
   conditionFromYahoo,
   YahooAuctionsClient,
@@ -33,7 +34,7 @@ export class YahooAuctionsJpSource implements PricingSource {
   }
 
   private strict(): boolean {
-    return process.env.YAHOO_AUCTIONS_STRICT === "1";
+    return process.env.YAHOO_AUCTIONS_STRICT === "1" || ingestNoFixtureFallback();
   }
 
   private liveProviders(): string[] {
@@ -46,6 +47,8 @@ export class YahooAuctionsJpSource implements PricingSource {
   private getClient(): YahooAuctionsClient {
     this.client ??= new YahooAuctionsClient({
       minIntervalMs: Number(process.env.YAHOO_MIN_INTERVAL_MS ?? 1_500),
+      timeoutMs: Number(process.env.YAHOO_TIMEOUT_MS ?? 45_000),
+      maxRetries: Number(process.env.YAHOO_MAX_RETRIES ?? 4),
     });
     return this.client;
   }
@@ -59,7 +62,12 @@ export class YahooAuctionsJpSource implements PricingSource {
         yahooLiveFailureStreak = 0;
         return listings;
       } catch (err) {
-        if (this.strict()) throw err;
+        if (this.strict()) {
+          console.warn(
+            `[yahoo_auctions_jp] live search failed (${(err as Error).message}); returning empty (strict live)`
+          );
+          return [];
+        }
         yahooLiveFailureStreak++;
         const threshold = Number(process.env.YAHOO_CIRCUIT_FAILURES ?? 5);
         if (yahooLiveFailureStreak >= threshold) {
@@ -74,6 +82,9 @@ export class YahooAuctionsJpSource implements PricingSource {
         }
       }
     } else if (yahooLiveCircuitOpen && this.liveEnabled() && query.trim()) {
+      if (ingestNoFixtureFallback()) {
+        return [];
+      }
       // fixtures only — avoid per-query timeout noise from blocked datacenter IPs
     }
 
@@ -194,8 +205,13 @@ export class YahooAuctionsJpSource implements PricingSource {
   }
 }
 
-/** Test hook — reset module-level circuit breaker between cases. */
-export function resetYahooLiveCircuitForTests(): void {
+/** Reset Yahoo circuit between Wave 0 loop iterations (timeouts should not poison the run). */
+export function resetYahooLiveCircuitForWave0(): void {
   yahooLiveFailureStreak = 0;
   yahooLiveCircuitOpen = false;
+}
+
+/** Test hook — reset module-level circuit breaker between cases. */
+export function resetYahooLiveCircuitForTests(): void {
+  resetYahooLiveCircuitForWave0();
 }
