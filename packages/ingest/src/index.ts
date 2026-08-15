@@ -92,6 +92,15 @@ export { runBurstWave0Ingest } from "./burst-wave0-ingest.js";
 export type { BurstWave0IngestReport } from "./burst-wave0-ingest.js";
 export { runBurstWave0Loop } from "./burst-wave0-loop.js";
 export type { BurstWave0LoopReport } from "./burst-wave0-loop.js";
+export {
+  runGenerationOracleLoop,
+  runMultiGenerationOracleLoops,
+  parseGenerationOracleLoops,
+} from "./generation-oracle-loop.js";
+export type {
+  GenerationOracleLoopReport,
+  MultiGenerationOracleLoopReport,
+} from "./generation-oracle-loop.js";
 export { buildWave0GapQueryPlan, WAVE0_FAILING_STARTERS } from "./burst-wave0-targets.js";
 export { purgeWave0BelowBand } from "./burst-wave0-purge-below-band.js";
 export type { PurgeWave0BelowBandResult } from "./burst-wave0-purge-below-band.js";

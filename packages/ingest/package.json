@@ -28,6 +28,7 @@
     "burst:wave0-maintenance": "tsx src/cli/burst-wave0-maintenance.ts",
     "burst:wave0-ingest": "tsx src/cli/burst-wave0-ingest.ts",
     "burst:wave0-loop": "tsx src/cli/burst-wave0-loop.ts",
+    "gen:oracle-loop": "tsx src/cli/generation-oracle-loop.ts",
     "backfill:products": "tsx src/cli/product-backfill.ts",
     "backfill:products:shard": "tsx src/cli/product-backfill-shard.ts",
     "backfill:products:fleet-plan": "tsx src/cli/product-backfill-fleet-plan.ts",

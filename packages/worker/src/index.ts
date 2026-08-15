@@ -12,6 +12,7 @@ import {
   runBurstWave0Maintenance,
   runBurstWave0Ingest,
   runBurstWave0Loop,
+  runMultiGenerationOracleLoops,
   runOracleBackfill,
   runProductBackfill,
   runProductBackfillShard,
@@ -266,7 +267,32 @@ async function main() {
         }
       })();
     }
-  } else if (process.env.BURST_WAVE0_INGEST === "1") {
+  }
+
+  if (process.env.GENERATION_ORACLE_LOOP?.trim()) {
+    if (process.env.GENERATION_ORACLE_LOOP_DONE === "1") {
+      console.log(
+        "[worker] GENERATION_ORACLE_LOOP set but GENERATION_ORACLE_LOOP_DONE=1 — skip"
+      );
+    } else {
+      void (async () => {
+        try {
+          console.log(
+            `[worker] GENERATION_ORACLE_LOOP=${process.env.GENERATION_ORACLE_LOOP} — parallel gen loops (background)…`
+          );
+          const report = await runMultiGenerationOracleLoops({ closeDb: false });
+          console.log("[worker] generation oracle loops complete:", JSON.stringify(report));
+          console.log(
+            "[worker] set GENERATION_ORACLE_LOOP_DONE=1 and unset GENERATION_ORACLE_LOOP after reviewing logs"
+          );
+        } catch (err) {
+          console.error("[worker] GENERATION_ORACLE_LOOP failed:", (err as Error).message);
+        }
+      })();
+    }
+  }
+
+  if (process.env.BURST_WAVE0_INGEST === "1") {
     if (process.env.BURST_WAVE0_INGEST_DONE === "1") {
       console.log("[worker] BURST_WAVE0_INGEST=1 but BURST_WAVE0_INGEST_DONE=1 — skip");
     } else {

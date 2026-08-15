@@ -5,6 +5,7 @@ export function ingestNoFixtureFallback(): boolean {
     process.env.BURST_WAVE0_STRICT_LIVE === "1" ||
     process.env.BURST_WAVE0_LOOP === "1" ||
     process.env.BURST_WAVE0_INGEST === "1" ||
+    Boolean(process.env.GENERATION_ORACLE_LOOP?.trim()) ||
     process.env.MERCARI_STRICT === "1" ||
     process.env.YAHOO_AUCTIONS_STRICT === "1"
   );
