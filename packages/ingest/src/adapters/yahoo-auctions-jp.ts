@@ -7,6 +7,8 @@ import {
   type RawListing,
   type SearchOpts,
 } from "../types.js";
+import { parseLiveProviderChain } from "./apify/client.js";
+import { searchYahooSoldViaApify } from "./apify/yahoo-sold.js";
 import {
   conditionFromYahoo,
   YahooAuctionsClient,
@@ -34,6 +36,13 @@ export class YahooAuctionsJpSource implements PricingSource {
     return process.env.YAHOO_AUCTIONS_STRICT === "1";
   }
 
+  private liveProviders(): string[] {
+    return parseLiveProviderChain(process.env.YAHOO_LIVE_PROVIDER, {
+      primary: "self",
+      fallback: "apify",
+    });
+  }
+
   private getClient(): YahooAuctionsClient {
     this.client ??= new YahooAuctionsClient({
       minIntervalMs: Number(process.env.YAHOO_MIN_INTERVAL_MS ?? 1_500),
@@ -46,12 +55,9 @@ export class YahooAuctionsJpSource implements PricingSource {
 
     if (this.liveEnabled() && query.trim() && !yahooLiveCircuitOpen) {
       try {
-        const items = await this.getClient().searchSold(query, {
-          maxItems: limit,
-          maxPages: Number(process.env.YAHOO_MAX_PAGES ?? 5),
-        });
+        const listings = await this.searchLive(query, limit);
         yahooLiveFailureStreak = 0;
-        return items.map((item) => this.toRawListing(item, query));
+        return listings;
       } catch (err) {
         if (this.strict()) throw err;
         yahooLiveFailureStreak++;
@@ -74,7 +80,47 @@ export class YahooAuctionsJpSource implements PricingSource {
     return this.searchFixtures(query, limit, opts);
   }
 
-  private toRawListing(item: YahooItem, query: string): RawListing {
+  private async searchLive(query: string, limit: number): Promise<RawListing[]> {
+    const providers = this.liveProviders();
+    let lastError: unknown;
+
+    for (const provider of providers) {
+      try {
+        if (provider === "self") {
+          return await this.searchSelf(query, limit);
+        }
+        if (provider === "apify") {
+          return await searchYahooSoldViaApify(query, limit);
+        }
+        console.warn(`[yahoo_auctions_jp] unknown live provider "${provider}" — skipping`);
+      } catch (err) {
+        lastError = err;
+        if (providers.length > 1) {
+          console.warn(
+            `[yahoo_auctions_jp] ${provider} live path failed (${(err as Error).message}); trying next provider`
+          );
+        }
+      }
+    }
+
+    throw lastError instanceof Error
+      ? lastError
+      : new Error("Yahoo live search failed with no providers");
+  }
+
+  private async searchSelf(query: string, limit: number): Promise<RawListing[]> {
+    const items = await this.getClient().searchSold(query, {
+      maxItems: limit,
+      maxPages: Number(process.env.YAHOO_MAX_PAGES ?? 5),
+    });
+    return items.map((item) => this.toRawListing(item, query, "self"));
+  }
+
+  private toRawListing(
+    item: YahooItem,
+    query: string,
+    provider: "self" | "apify" = "self"
+  ): RawListing {
     return {
       externalId: item.auctionId,
       title: item.title,
@@ -87,6 +133,7 @@ export class YahooAuctionsJpSource implements PricingSource {
       observedAt: new Date(item.endTime).toISOString(),
       raw: {
         live: true,
+        provider,
         query,
         venue: item.isFleamarketItem ? "yahoo_fleamarket" : "yahoo_auction",
         bidCount: item.bidCount,
@@ -145,4 +192,10 @@ export class YahooAuctionsJpSource implements PricingSource {
       rawJson: raw.raw ?? {},
     };
   }
+}
+
+/** Test hook — reset module-level circuit breaker between cases. */
+export function resetYahooLiveCircuitForTests(): void {
+  yahooLiveFailureStreak = 0;
+  yahooLiveCircuitOpen = false;
 }

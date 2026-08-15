@@ -13,7 +13,8 @@ Patterns and inspiration borrowed for Beyoracle MVP.
 | [AndreyAkinshin/perfolizer](https://github.com/AndreyAkinshin/perfolizer) | Weighted quantile / trimmed median pattern (oracle v2) | `packages/oracle/src/robust-estimator.ts` |
 | [reidjohnson/hpipy](https://github.com/reidjohnson/hpipy) | Chained median-of-ratios cohort index (Apache-2.0) | `packages/oracle/src/cohort-index.ts` |
 | [scikit-learn-contrib/category_encoders](https://github.com/scikit-learn-contrib/category_encoders) | James-Stein shrinkage for sparse comps (planned) | `docs/VALUATION_RESEARCH.md` |
-| Apify `kitebuilds/resale-sold-comps` | Mercari sold-comps search shape (fixture mode) | `packages/ingest/src/adapters/mercari-jp.ts` |
+| Apify `kitebuilds/resale-sold-comps` | Mercari sold-comps fallback provider (live + fixture shape) | `packages/ingest/src/adapters/apify/mercari-sold.ts` |
+| Apify `jpmarketdata/yahoo-auction-sold-comps` | Yahoo closed-auction sold-comps fallback provider | `packages/ingest/src/adapters/apify/yahoo-sold.ts` |
 | Yahoo Auctions closed search | `__NEXT_DATA__` JSON parse for sold comps | `packages/ingest/src/adapters/yahoo-auctions/client.ts` |
 | eBay sold search (free scrape) | `LH_Sold=1&LH_Complete=1` HTML parse — no Marketplace Insights API | `packages/ingest/src/adapters/ebay/client.ts` |
 

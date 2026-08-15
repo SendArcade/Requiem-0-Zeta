@@ -7,6 +7,8 @@ import {
   type RawListing,
   type SearchOpts,
 } from "../types.js";
+import { parseLiveProviderChain } from "./apify/client.js";
+import { searchMercariSoldViaApify } from "./apify/mercari-sold.js";
 import {
   conditionFromMercariId,
   MercariClient,
@@ -27,6 +29,13 @@ export class MercariJpSource implements PricingSource {
   /** When set, a live failure throws instead of silently using fixtures. */
   private strict(): boolean {
     return process.env.MERCARI_STRICT === "1";
+  }
+
+  private liveProviders(): string[] {
+    return parseLiveProviderChain(process.env.MERCARI_LIVE_PROVIDER, {
+      primary: "dpop",
+      fallback: "apify",
+    });
   }
 
   private getClient(): MercariClient {
@@ -54,15 +63,47 @@ export class MercariJpSource implements PricingSource {
   }
 
   private async searchLive(query: string, limit: number): Promise<RawListing[]> {
+    const providers = this.liveProviders();
+    let lastError: unknown;
+
+    for (const provider of providers) {
+      try {
+        if (provider === "dpop") {
+          return await this.searchDpop(query, limit);
+        }
+        if (provider === "apify") {
+          return await searchMercariSoldViaApify(query, limit);
+        }
+        console.warn(`[mercari_jp] unknown live provider "${provider}" — skipping`);
+      } catch (err) {
+        lastError = err;
+        if (providers.length > 1) {
+          console.warn(
+            `[mercari_jp] ${provider} live path failed (${(err as Error).message}); trying next provider`
+          );
+        }
+      }
+    }
+
+    throw lastError instanceof Error
+      ? lastError
+      : new Error("Mercari live search failed with no providers");
+  }
+
+  private async searchDpop(query: string, limit: number): Promise<RawListing[]> {
     const items = await this.getClient().searchSold(query, {
       maxItems: limit,
       maxPages: Number(process.env.MERCARI_MAX_PAGES ?? 5),
     });
 
-    return items.map((item) => this.toRawListing(item, query));
+    return items.map((item) => this.toRawListing(item, query, "dpop"));
   }
 
-  private toRawListing(item: MercariItem, query: string): RawListing {
+  private toRawListing(
+    item: MercariItem,
+    query: string,
+    provider: "dpop" | "apify" = "dpop"
+  ): RawListing {
     // Sold items carry no explicit sale timestamp; `updated` is the closest proxy.
     const soldAtSeconds = item.updated ?? item.created;
 
@@ -76,7 +117,12 @@ export class MercariJpSource implements PricingSource {
       condition: conditionFromMercariId(item.itemConditionId),
       url: mercariItemUrl(item.id),
       observedAt: new Date((soldAtSeconds ?? Date.now() / 1000) * 1000).toISOString(),
-      raw: { live: true, query, item: item as unknown as Record<string, unknown> },
+      raw: {
+        live: true,
+        provider,
+        query,
+        item: item as unknown as Record<string, unknown>,
+      },
     };
   }
 

@@ -6,6 +6,9 @@ This is the working summary. The full ranked research — access mechanics,
 costs, ToS risk, per-country tables — is
 [docs/SOURCE_MAP.md](../docs/SOURCE_MAP.md). Read that before adding a venue.
 
+**Operational contract:** adapter checklist, provider chains, probe bars, and
+env vars are in [docs/INGEST_STANDARDS.md](../docs/INGEST_STANDARDS.md).
+
 ## The axis that matters: sold vs ask
 
 Most marketplaces expose only **active listings**, meaning asking prices. Asking
@@ -19,8 +22,8 @@ Classify every candidate on this axis first.
 
 | Source | Status | Access |
 |---|---|---|
-| **Mercari JP** | Live + fixtures | `api.mercari.jp` DPoP search, `STATUS_SOLD_OUT` |
-| **Yahoo Auctions JP** | Live + fixtures | Closed search `__NEXT_DATA__`, ~46k sold / 180d |
+| **Mercari JP** | Live + fixtures | DPoP search primary; Apify `kitebuilds/resale-sold-comps` fallback |
+| **Yahoo Auctions JP** | Live + fixtures | Closed search `__NEXT_DATA__` primary; Apify `jpmarketdata/yahoo-auction-sold-comps` fallback |
 | **Shopee TW** | Fixtures only | Public API blocked (403); needs commercial parser |
 
 Mercari is the reference adapter — see [03-architecture](03-architecture.md).
@@ -44,6 +47,8 @@ additional marketplace multiplies matcher error.
 PriceCharting (verified zero Beyblade coverage).
 
 ## Adding a source
+
+Follow [docs/INGEST_STANDARDS.md](../docs/INGEST_STANDARDS.md) end-to-end. Short form:
 
 1. Read [docs/SOURCE_MAP.md](../docs/SOURCE_MAP.md) for the access path — do not
    re-research it.

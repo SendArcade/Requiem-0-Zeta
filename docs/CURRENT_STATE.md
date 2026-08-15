@@ -112,12 +112,16 @@ curl 'http://localhost:3000/api/asset/{partId}?pool=sealed'
 | `MERCARI_STRICT=1` | Throw on live failure instead of falling back to fixtures |
 | `MERCARI_MIN_INTERVAL_MS` | Politeness delay between live requests (default 1200) |
 | `MERCARI_MAX_PAGES` | Page cap per query (default 5) |
+| `MERCARI_LIVE_PROVIDER` | Comma chain `dpop` / `apify` (default `dpop`, then `apify` when `APIFY_TOKEN` set) |
+| `APIFY_TOKEN` | Apify API token — enables Mercari/Yahoo Apify fallback providers |
+| `APIFY_TIMEOUT_MS` | Timeout for Apify sync actor runs (default 330000) |
 | `SHOPEE_API_ENABLED=1` | Attempt live Shopee TW (blocked by anti-bot — see below) |
 | `SHOPEE_STRICT=1` | Throw on Shopee failure instead of falling back to fixtures |
 | `YAHOO_AUCTIONS_ENABLED=1` | Enable live Yahoo Auctions JP closed-search sold comps |
 | `YAHOO_AUCTIONS_STRICT=1` | Throw on Yahoo failure instead of falling back to fixtures |
 | `YAHOO_MIN_INTERVAL_MS` | Politeness delay between Yahoo requests (default 1500) |
 | `YAHOO_MAX_PAGES` | Page cap per query (default 5) |
+| `YAHOO_LIVE_PROVIDER` | Comma chain `self` / `apify` (default `self`, then `apify` when `APIFY_TOKEN` set) |
 | `ORACLE_BACKFILL=1` | Worker boot: run `runOracleBackfill()` once (skipped if `ORACLE_BACKFILL_DONE=1` or ingest run already success/running) |
 | `ORACLE_BACKFILL_DONE=1` | Run-once guard after backfill completes |
 | `BACKFILL_PAUSE_CRON_INGEST=1` | Pause scheduled ingest fan-out while backfill runs |
@@ -133,9 +137,14 @@ curl 'http://localhost:3000/api/asset/{partId}?pool=sealed'
 depends on marketplace uptime. Without `MERCARI_API_ENABLED=1`, every search
 returns fixture JSON and looks "offline."
 
-`packages/ingest/src/adapters/mercari/` wraps `api.mercari.jp/v2/entities:search`.
-Auth is a per-request DPoP proof (RFC 9449, ES256, ephemeral P-256 key) — no
-account or token. Verified live 2026-07-29.
+Primary path: `packages/ingest/src/adapters/mercari/` wraps
+`api.mercari.jp/v2/entities:search` with a per-request DPoP proof (RFC 9449,
+ES256, ephemeral P-256 key) — no account or token. Verified live 2026-07-29.
+
+**Apify fallback:** when DPoP/self-scrape fails and `APIFY_TOKEN` is set, the
+adapter tries Apify actor `kitebuilds/resale-sold-comps` (see
+[docs/INGEST_STANDARDS.md](INGEST_STANDARDS.md)). Force with
+`MERCARI_LIVE_PROVIDER=apify`.
 
 ```bash
 MERCARI_API_ENABLED=1 pnpm --filter @beyoracle/ingest probe:mercari
@@ -152,10 +161,14 @@ Lower v3.1 headline rate is expected — fewer false-positive matches, not worse
 
 ## Live Yahoo Auctions JP path
 
-`packages/ingest/src/adapters/yahoo-auctions/` reads Yahoo's closed search
-(落札相場) via the embedded `__NEXT_DATA__` JSON — no login, no token.
-Covers Yahoo Auctions and Yahoo!フリマ in one response. ~46k sold Beyblade X
+Primary path: `packages/ingest/src/adapters/yahoo-auctions/` reads Yahoo's
+closed search (落札相場) via the embedded `__NEXT_DATA__` JSON — no login, no
+token. Covers Yahoo Auctions and Yahoo!フリマ in one response. ~46k sold Beyblade X
 records per rolling 180 days.
+
+**Apify fallback:** when self-scrape fails and `APIFY_TOKEN` is set, the adapter
+tries Apify actor `jpmarketdata/yahoo-auction-sold-comps`. Force with
+`YAHOO_LIVE_PROVIDER=apify`.
 
 Yahoo returns **HTTP 404 with an empty listing** for some hyphenated part-name
 queries (e.g. `Absorb-S`); the client treats 404 as zero results instead of
