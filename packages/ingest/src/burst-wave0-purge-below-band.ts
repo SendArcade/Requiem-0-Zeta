@@ -2,8 +2,8 @@
  * Drop used starter comps whose landed JPY sits below Wave 0 venue-band floor.
  * Only when ≥3 in-band comps remain — avoids zeroing marks before fresh ingest lands.
  */
-import { getDb, observations, productMatches } from "@beyoracle/db";
-import { and, eq, gte, isNotNull, lt, lte } from "drizzle-orm";
+import { getDb, observations, productMatches, productOracleSnapshots } from "@beyoracle/db";
+import { and, desc, eq, gte, isNotNull, lt, lte } from "drizzle-orm";
 import { WAVE0_STARTER_BANDS } from "./burst-wave0-ids.js";
 import { WAVE0_FAILING_STARTERS } from "./burst-wave0-targets.js";
 import { recomputeProductOracleSnapshotsBatch } from "./persist.js";
@@ -68,7 +68,16 @@ export async function purgeWave0BelowBand(opts: {
 
     if (belowBandRows.length === 0) continue;
 
-    if (inBandRows.length < MIN_COMPS_AFTER_PURGE) {
+    const snapRows = await db
+      .select({ value: productOracleSnapshots.value })
+      .from(productOracleSnapshots)
+      .where(eq(productOracleSnapshots.productId, productId))
+      .orderBy(desc(productOracleSnapshots.nComps))
+      .limit(1);
+    const currentMark = snapRows[0]?.value == null ? null : Number(snapRows[0]!.value);
+    const markBelowFloor = currentMark != null && currentMark < band.min;
+
+    if (inBandRows.length < MIN_COMPS_AFTER_PURGE && !markBelowFloor) {
       skippedProducts.push(
         `${productId} (${inBandRows.length} in-band, ${belowBandRows.length} below — need ingest first)`
       );

@@ -29,7 +29,7 @@ export async function summarizeWave0Status(): Promise<Wave0StatusSummary> {
   const sealedIds = WAVE0_STARTERS.map((id) => `'${wave0SealedId(id)}'`).join(",");
 
   const starters = (await db.execute(sql.raw(`
-    select p.id, p.product_codes, p.name_en,
+    select distinct on (p.id) p.id, p.product_codes, p.name_en,
       s.value, s.n_comps,
       (select count(*)::int from product_matches pm where pm.product_id = p.id) as match_count,
       (select count(*)::int from product_matches pm
@@ -38,16 +38,16 @@ export async function summarizeWave0Status(): Promise<Wave0StatusSummary> {
     from products p
     left join product_oracle_snapshots s on s.product_id = p.id
     where p.id in (${ids})
-    order by p.id
+    order by p.id, s.n_comps desc nulls last, s.as_of desc nulls last
   `))) as Record<string, unknown>[];
 
   const sealed = (await db.execute(sql.raw(`
-    select p.id, s.value, s.n_comps,
+    select distinct on (p.id) p.id, s.value, s.n_comps,
       (select count(*)::int from product_matches pm where pm.product_id = p.id) as match_count
     from products p
     left join product_oracle_snapshots s on s.product_id = p.id
     where p.id in (${sealedIds})
-    order by p.id
+    order by p.id, s.n_comps desc nulls last, s.as_of desc nulls last
   `))) as Record<string, unknown>[];
 
   const pm = await db.execute(sql`

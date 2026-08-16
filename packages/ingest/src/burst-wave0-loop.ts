@@ -89,7 +89,7 @@ export async function runBurstWave0Loop(opts: {
       console.log(`[burst:wave0-loop] still failing: ${failing.join("; ")}`);
     }
 
-    if (passCount === 7) {
+    if (passCount === 7 && verify?.total === 7) {
       report.complete = true;
       console.log(`[burst:wave0-loop] DONE — 7/7 PASS on iteration ${iter}`);
       break;

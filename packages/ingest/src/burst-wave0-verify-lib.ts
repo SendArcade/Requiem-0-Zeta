@@ -79,9 +79,18 @@ export async function verifyWave0(): Promise<Wave0VerifyReport> {
     };
   });
 
-  const passCount = rows.filter((r) => r.pass).length;
+  // Defense in depth — one row per Wave 0 starter SKU (7 total).
+  const deduped = new Map<string, Wave0VerifyRow>();
+  for (const row of rows) {
+    deduped.set(row.productId, row);
+  }
+  const uniqueRows = WAVE0_STARTERS.map((id) => deduped.get(id)).filter(
+    (r): r is Wave0VerifyRow => r != null
+  );
 
-  return { rows, passCount, total: rows.length };
+  const passCount = uniqueRows.filter((r) => r.pass).length;
+
+  return { rows: uniqueRows, passCount, total: uniqueRows.length };
 }
 
 export function formatWave0Verify(report: Wave0VerifyReport): string {
