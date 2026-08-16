@@ -1,5 +1,6 @@
 import { getDb } from "@beyoracle/db";
 import { sql } from "drizzle-orm";
+import { allSourcesMask } from "@beyoracle/shared";
 import { WAVE0_STARTERS, wave0SealedId } from "./burst-wave0-ids.js";
 
 export type Wave0RowStatus = {
@@ -28,26 +29,30 @@ export async function summarizeWave0Status(): Promise<Wave0StatusSummary> {
   const ids = WAVE0_STARTERS.map((id) => `'${id}'`).join(",");
   const sealedIds = WAVE0_STARTERS.map((id) => `'${wave0SealedId(id)}'`).join(",");
 
+  const publishedMask = allSourcesMask();
+
   const starters = (await db.execute(sql.raw(`
-    select distinct on (p.id) p.id, p.product_codes, p.name_en,
+    select p.id, p.product_codes, p.name_en,
       s.value, s.n_comps,
       (select count(*)::int from product_matches pm where pm.product_id = p.id) as match_count,
       (select count(*)::int from product_matches pm
         join observations o on o.id = pm.observation_id
         where pm.product_id = p.id and o.condition = 'used') as used_match_count
     from products p
-    left join product_oracle_snapshots s on s.product_id = p.id
+    left join product_oracle_snapshots s
+      on s.product_id = p.id and s.sources_mask = ${publishedMask}
     where p.id in (${ids})
-    order by p.id, s.n_comps desc nulls last, s.as_of desc nulls last
+    order by p.id
   `))) as Record<string, unknown>[];
 
   const sealed = (await db.execute(sql.raw(`
-    select distinct on (p.id) p.id, s.value, s.n_comps,
+    select p.id, s.value, s.n_comps,
       (select count(*)::int from product_matches pm where pm.product_id = p.id) as match_count
     from products p
-    left join product_oracle_snapshots s on s.product_id = p.id
+    left join product_oracle_snapshots s
+      on s.product_id = p.id and s.sources_mask = ${publishedMask}
     where p.id in (${sealedIds})
-    order by p.id, s.n_comps desc nulls last, s.as_of desc nulls last
+    order by p.id
   `))) as Record<string, unknown>[];
 
   const pm = await db.execute(sql`

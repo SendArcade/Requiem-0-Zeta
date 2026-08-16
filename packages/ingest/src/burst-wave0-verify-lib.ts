@@ -79,14 +79,10 @@ export async function verifyWave0(): Promise<Wave0VerifyReport> {
     };
   });
 
-  // Defense in depth — one row per Wave 0 starter SKU (7 total).
-  const deduped = new Map<string, Wave0VerifyRow>();
-  for (const row of rows) {
-    deduped.set(row.productId, row);
-  }
-  const uniqueRows = WAVE0_STARTERS.map((id) => deduped.get(id)).filter(
-    (r): r is Wave0VerifyRow => r != null
-  );
+  // One verify row per starter — status SQL already uses published all-sources mask.
+  const uniqueRows = WAVE0_STARTERS.map((id) =>
+    rows.find((r) => r.productId === id)
+  ).filter((r): r is Wave0VerifyRow => r != null);
 
   const passCount = uniqueRows.filter((r) => r.pass).length;
 

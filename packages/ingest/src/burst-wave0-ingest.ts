@@ -98,6 +98,7 @@ export async function runBurstWave0Ingest(opts: {
       skippedProducts: [],
       samples: [],
       recomputedProducts: 0,
+      diagnosticOnly: true,
     },
     recomputedProducts: 0,
     verify: null,
@@ -167,7 +168,7 @@ export async function runBurstWave0Ingest(opts: {
 
   report.purgeBelowBand = await purgeWave0BelowBand({ dryRun });
   console.log(
-    `[burst:wave0-ingest] below-band purge ${report.purgeBelowBand.purged}/${report.purgeBelowBand.scanned}`
+    `[burst:wave0-ingest] below-band ${report.purgeBelowBand.diagnosticOnly ? "diagnostic" : "purge"} scanned=${report.purgeBelowBand.scanned} purged=${report.purgeBelowBand.purged}`
   );
 
   if (!dryRun) {
