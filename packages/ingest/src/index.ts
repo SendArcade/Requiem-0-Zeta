@@ -117,3 +117,9 @@ export {
   fixWave0MisclassifiedConditions,
   wave0OracleWindowDays,
 } from "./burst-wave0-recompute.js";
+export { runBurstWave1Ingest } from "./burst-wave1-ingest.js";
+export type { BurstWave1IngestReport } from "./burst-wave1-ingest.js";
+export { buildWave1QueryPlan, wave1ProductIds } from "./burst-wave1-targets.js";
+export { WAVE1_BURST_PRODUCTS, WAVE1_NEW_PRODUCTS } from "./burst-wave1-ids.js";
+export { summarizeWave1Status, formatWave1Status } from "./burst-wave1-status-lib.js";
+export type { Wave1StatusSummary } from "./burst-wave1-status-lib.js";

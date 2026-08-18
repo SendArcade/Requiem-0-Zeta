@@ -11,6 +11,7 @@ import {
   recomputeAllOracleSnapshots,
   runBurstWave0Maintenance,
   runBurstWave0Ingest,
+  runBurstWave1Ingest,
   runBurstWave0Loop,
   runMultiGenerationOracleLoops,
   runOracleBackfill,
@@ -333,6 +334,31 @@ async function main() {
           );
         } catch (err) {
           console.error("[worker] BURST_WAVE0_INGEST failed:", (err as Error).message);
+        }
+      })();
+    }
+  }
+
+  if (process.env.BURST_WAVE1_INGEST === "1") {
+    if (process.env.BURST_WAVE1_INGEST_DONE === "1") {
+      console.log("[worker] BURST_WAVE1_INGEST=1 but BURST_WAVE1_INGEST_DONE=1 — skip");
+    } else {
+      void (async () => {
+        try {
+          console.log(
+            "[worker] BURST_WAVE1_INGEST=1 — Wave 1 burst expansion (B-01/B-102/B-168 + sealed rows)…"
+          );
+          const report = await runBurstWave1Ingest({
+            dryRun: process.env.BURST_WAVE1_DRY_RUN === "1",
+            skipIngest: process.env.BURST_WAVE1_SKIP_INGEST === "1",
+            closeDb: false,
+          });
+          console.log("[worker] wave1 ingest complete:", JSON.stringify(report));
+          console.log(
+            "[worker] set BURST_WAVE1_INGEST_DONE=1 and unset BURST_WAVE1_INGEST after reviewing logs"
+          );
+        } catch (err) {
+          console.error("[worker] BURST_WAVE1_INGEST failed:", (err as Error).message);
         }
       })();
     }
