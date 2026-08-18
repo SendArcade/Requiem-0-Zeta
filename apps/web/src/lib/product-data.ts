@@ -185,6 +185,19 @@ function oracleFromPersistedSnapshot(
   };
 }
 
+function isPublishedMarkView(
+  product: ProductDTO,
+  sources: SourceId[],
+  conditions?: Condition[]
+): boolean {
+  if (sources.length !== SOURCES.length) return false;
+  const defaultConds = productMarkConditions(product.skuType);
+  if (!conditions || conditions.length === 0) return true;
+  if (conditions.length !== defaultConds.length) return false;
+  const want = new Set(defaultConds);
+  return conditions.every((c) => want.has(c));
+}
+
 export async function getProductDataFromDb(
   productId: string,
   sources: SourceId[] = [...SOURCES],
@@ -207,10 +220,9 @@ export async function getProductDataFromDb(
     sourcesMask,
   });
 
-  const useDefaultSources =
-    sources.length === SOURCES.length && (!conditions || conditions.length === 0);
+  const usePublishedSnapshot = isPublishedMarkView(product, sources, conditions);
   const persisted =
-    useDefaultSources && recipe.canPublishMark
+    usePublishedSnapshot && recipe.canPublishMark
       ? await getProductSnapshotFromDb(productId)
       : null;
 
