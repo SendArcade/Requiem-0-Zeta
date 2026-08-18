@@ -166,6 +166,25 @@ function productRecipe(product: ProductDTO) {
   return analyzeProductRecipe(product, parts);
 }
 
+/** Map persisted DB snapshot → oracle DTO for product hero (published mark). */
+function oracleFromPersistedSnapshot(
+  productId: string,
+  snap: NonNullable<Awaited<ReturnType<typeof getProductSnapshotFromDb>>>
+): ReturnType<typeof computeProductOracleValue> {
+  return {
+    assetId: productId,
+    sourcesMask: snap.sourcesMask,
+    value: snap.value,
+    low: snap.low,
+    high: snap.high,
+    nComps: snap.nComps,
+    asOf: snap.asOf,
+    currency: snap.currency as Currency,
+    confidence: snap.confidence as "high" | "medium" | "low",
+    engine: "v1",
+  };
+}
+
 export async function getProductDataFromDb(
   productId: string,
   sources: SourceId[] = [...SOURCES],
@@ -188,13 +207,22 @@ export async function getProductDataFromDb(
     sourcesMask,
   });
 
+  const useDefaultSources =
+    sources.length === SOURCES.length && (!conditions || conditions.length === 0);
+  const persisted =
+    useDefaultSources && recipe.canPublishMark
+      ? await getProductSnapshotFromDb(productId)
+      : null;
+
   const oracle = recipe.canPublishMark
-    ? computeProductOracleValue(product, compsInput, {
-        targetCurrency: displayCurrency,
-        sourcesMask,
-        conditions: markConditions,
-        minComps: DEFAULT_PUBLISHED_MIN_COMPS,
-      })
+    ? persisted && persisted.nComps >= DEFAULT_PUBLISHED_MIN_COMPS
+      ? oracleFromPersistedSnapshot(productId, persisted)
+      : computeProductOracleValue(product, compsInput, {
+          targetCurrency: displayCurrency,
+          sourcesMask,
+          conditions: markConditions,
+          minComps: DEFAULT_PUBLISHED_MIN_COMPS,
+        })
     : null;
 
   const chart = buildTimeSeries(compsInput, {

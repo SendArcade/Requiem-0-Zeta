@@ -88,7 +88,7 @@ export function ProductPageClient({ initial }: { initial: ProductData }) {
                   {oracle.low != null && oracle.high != null && (
                     <> · 90% CI {formatJpy(oracle.low)} – {formatJpy(oracle.high)}</>
                   )}{" "}
-                  · {oracle.nComps} sold comp{oracle.nComps !== 1 ? "s" : ""} (90d)
+                  · {oracle.nComps} sold comp{oracle.nComps !== 1 ? "s" : ""}
                 </div>
               </>
             ) : (

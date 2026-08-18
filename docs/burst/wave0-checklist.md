@@ -76,26 +76,34 @@ Re-run venue+item verify for the 7 starter (+ sealed) rows. Update `verify-pass2
 
 ### D. Publish (Diablo only after 7/7 PASS)
 
+**Done 2026-08-18:** 7/7 verify on Railway worker. Web deploy uses persisted
+`product_oracle_snapshots` for product-page Oracle Value (browse/search already did).
+
+Operator cleanup after ship:
+
 ```bash
-# Only after Souei sign-off — unpublish remains default until then
-# Flip publish flags per existing Diablo runbook (Railway worker env)
+# Worker — stop one-shot Wave0 flags
+railway variable delete BURST_WAVE0_INGEST --service worker
+railway variable set BURST_WAVE0_INGEST_DONE=1 WAVE0_SHIPPED=1 --service worker
 ```
+
+Cron stays paused until Wave 0b / fleet explicitly approved (`BACKFILL_PAUSE_CRON_INGEST=1`).
 
 ---
 
-## Current status (2026-08-15)
+## Current status (2026-08-18)
 
-| SKU | Snapshot? | Blocker (short) | PASS |
-|---|---|---|---|
-| B-34 | starter ¥1,499 n=3 | — | **PASS** |
-| B-86 | starter ¥1,450 n=3 | — | **PASS** |
-| B-97 | starter ¥1,000 n=5 | mark below band (¥2,200 floor) | **FAIL** |
-| B-100 | starter ¥2,000 n=5 | — | **PASS** |
-| B-104 | starter ¥599 n=3 | ¥1 below band floor (¥600) | **FAIL** |
-| B-110 | **no starter mark** | n=0; needs loose comps | **FAIL** |
-| B-127 | starter ¥699 n=3 | — | **PASS** |
+| SKU | Mark | n | PASS |
+|---|---|---:|:---:|
+| B-34 | ¥1,499 | 3 | **PASS** |
+| B-86 | ¥1,450 | 3 | **PASS** |
+| B-97 | ¥4,000 | 5 | **PASS** |
+| B-100 | ¥2,000 | 5 | **PASS** |
+| B-104 | ¥700 | 3 | **PASS** |
+| B-110 | ¥777 | 5 | **PASS** |
+| B-127 | ¥699 | 3 | **PASS** |
 
-**Wave 0 score: 4/7 PASS** — unpublish correct until gap ingest clears B-97/B-104/B-110.
+**Wave 0 score: 7/7 PASS — shipped 2026-08-18.**
 
 ---
 
