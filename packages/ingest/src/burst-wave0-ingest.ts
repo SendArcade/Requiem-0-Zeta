@@ -12,7 +12,7 @@ import {
 } from "./burst-rematch-unmatched.js";
 import { purgeWave0BelowBand } from "./burst-wave0-purge-below-band.js";
 import { listProductBackfillSources } from "./product-backfill.js";
-import { recomputeProductOracleSnapshotsBatch } from "./persist.js";
+import { recomputeWave0FailingStarters } from "./burst-wave0-recompute.js";
 import { ingestQueryBatch } from "./ingest-batch.js";
 import { formatWave0Verify, verifyWave0 } from "./burst-wave0-verify-lib.js";
 
@@ -172,10 +172,10 @@ export async function runBurstWave0Ingest(opts: {
   );
 
   if (!dryRun) {
-    await recomputeProductOracleSnapshotsBatch(new Set(WAVE0_FAILING_STARTERS));
-    report.recomputedProducts = WAVE0_FAILING_STARTERS.length;
+    const recompute = await recomputeWave0FailingStarters();
+    report.recomputedProducts = recompute.recomputed;
     console.log(
-      `[burst:wave0-ingest] recomputed ${report.recomputedProducts} failing starters`
+      `[burst:wave0-ingest] recomputed ${report.recomputedProducts} failing starters (windowDays=${recompute.windowDays}, conditionsFixed=${recompute.conditionsFixed})`
     );
   }
 

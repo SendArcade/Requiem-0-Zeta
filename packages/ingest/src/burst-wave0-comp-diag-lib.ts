@@ -18,6 +18,7 @@ import { filterComps, resolveProductOracleWindowDays } from "@beyoracle/oracle";
 import { eq } from "drizzle-orm";
 import { WAVE0_FAILING_STARTERS } from "./burst-wave0-targets.js";
 import { WAVE0_STARTER_BANDS } from "./burst-wave0-ids.js";
+import { wave0OracleWindowDays } from "./burst-wave0-recompute.js";
 
 export type Wave0CompDiagRow = {
   title: string;
@@ -112,12 +113,15 @@ export async function diagnoseWave0CompPool(productId: string): Promise<Wave0Com
   const conditions: Condition[] = product
     ? productMarkConditions(product.skuType)
     : [...DEFAULT_ORACLE_CONDITIONS];
-  const windowDays = product
-    ? resolveProductOracleWindowDays(product.generation, comps, {
-        conditions,
-        minComps: DEFAULT_PUBLISHED_MIN_COMPS,
-      })
-    : BURST_FMV_FALLBACK_WINDOW_DAYS;
+  const isWave0Failing = (WAVE0_FAILING_STARTERS as readonly string[]).includes(productId);
+  const windowDays = isWave0Failing
+    ? wave0OracleWindowDays()
+    : product
+      ? resolveProductOracleWindowDays(product.generation, comps, {
+          conditions,
+          minComps: DEFAULT_PUBLISHED_MIN_COMPS,
+        })
+      : BURST_FMV_FALLBACK_WINDOW_DAYS;
 
   const filtered = filterComps(comps, {
     windowDays,

@@ -18,6 +18,11 @@ const VENUE_ANCHOR_QUERIES: Record<(typeof WAVE0_FAILING_STARTERS)[number], stri
     "B-110 ロンギヌス スターターセット",
     "B-110 ベイブレード スターター 中古",
     "ブラッディロンギヌス スターターセット",
+    "B-110 スターター 美品",
+    "ブラッディロンギヌス 1300",
+    "B-110 1180",
+    "B-110 777",
+    "B-110 13 Jolt",
   ],
   "prod-burst-b-97-starter": [
     "B-97 ナイトメアロンギヌス スターター",
@@ -27,6 +32,11 @@ const VENUE_ANCHOR_QUERIES: Record<(typeof WAVE0_FAILING_STARTERS)[number], stri
     "B-97 ベイブレード スターター 中古",
     "ナイトメアロンギヌス スターターセット",
     "B-97 ナイトメア ロンギヌス",
+    "ナイトメアロンギヌス 5400",
+    "B-97 5790",
+    "B-97 2200",
+    "B-97 スターター 美品",
+    "Nightmare Longinus Ds starter",
   ],
   "prod-burst-b-104-starter": [
     "B-104 ウィニングヴァルキリー スターター",
@@ -36,6 +46,10 @@ const VENUE_ANCHOR_QUERIES: Record<(typeof WAVE0_FAILING_STARTERS)[number], stri
     "B-104 ベイブレード スターター 中古",
     "ウィニングヴァルキリー スターターセット",
     "B-104 ヴァルキリー 中古",
+    "B-104 開封 中古 スターター",
+    "B-104 1200",
+    "B-104 ランチャー付き",
+    "Winning Valkyrie 12 Vl starter",
   ],
 };
 
@@ -65,7 +79,7 @@ export function buildWave0GapQueryPlan(opts?: { maxQueries?: number }): string[]
     if (p?.nameJp) add(`${p.productCodes[0] ?? ""} ${p.nameJp}`.trim());
   }
 
-  const max = opts?.maxQueries ?? Number(process.env.WAVE0_INGEST_MAX_QUERIES ?? 48);
+  const max = opts?.maxQueries ?? Number(process.env.WAVE0_INGEST_MAX_QUERIES ?? 64);
   return out.slice(0, max);
 }
 

@@ -369,15 +369,19 @@ export function computeProductOracleValue(
   opts: Omit<OracleOptions, "windowDays" | "conditions" | "minComps"> & {
     conditions?: import("@beyoracle/shared").Condition[];
     minComps?: number;
+    /** Explicit window — skips burst 7d/90d auto-resolve (Wave0 sparse liquidity). */
+    windowDays?: number;
   } = {}
 ) {
   const conditions = opts.conditions ?? productMarkConditions(product.skuType as SkuType);
   const minComps = opts.minComps ?? DEFAULT_PUBLISHED_MIN_COMPS;
-  const windowDays = resolveProductOracleWindowDays(product.generation, comps, {
-    conditions,
-    minComps,
-    sourcesMask: opts.sourcesMask,
-  });
+  const windowDays =
+    opts.windowDays ??
+    resolveProductOracleWindowDays(product.generation, comps, {
+      conditions,
+      minComps,
+      sourcesMask: opts.sourcesMask,
+    });
   return computeOracleValue(product.id, comps, {
     ...opts,
     conditions,

@@ -77,7 +77,7 @@ function venueMultiplierFromRaw(
   return 1;
 }
 
-function rowToCompInput(r: Omit<ObsCompRow, "partId">): CompInput {
+export function rowToCompInput(r: Omit<ObsCompRow, "partId">): CompInput {
   return {
     price: r.price,
     currency: r.currency as CompInput["currency"],

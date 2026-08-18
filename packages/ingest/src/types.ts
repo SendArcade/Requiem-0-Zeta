@@ -35,17 +35,20 @@ export function inferConditionFromTitle(title: string): Condition {
   const t = title.toLowerCase();
   if (/新品|未開封|未使用|\bsealed\b|\bmib\b|new in box|全新/.test(t)) return "sealed";
   if (/美品|近全新|like.?new|9\.?5成新/.test(t)) return "like_new";
+  // 開封 (opened) without 未開封 — starter_used pool, not sealed retail
+  if (/開封/.test(title) && !/未開封|新品未開封/.test(title)) return "used";
   if (/中古|used|二手|傷/.test(t)) return "used";
   return "unknown";
 }
 
-/** Title 未開封/新品/MIB/未使用 wins over marketplace "used". */
+/** Title 未開封/新品/MIB/未使用 wins over marketplace "used"; loose title cues win over marketplace "sealed". */
 export function resolveListingCondition(
   title: string,
   marketplace?: Condition
 ): Condition {
   const fromTitle = inferConditionFromTitle(title);
   if (fromTitle === "sealed") return "sealed";
+  if (fromTitle === "used" || fromTitle === "like_new") return fromTitle;
   return marketplace ?? fromTitle;
 }
 

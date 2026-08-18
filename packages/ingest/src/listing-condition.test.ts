@@ -21,4 +21,11 @@ describe("resolveListingCondition", () => {
     expect(resolveListingCondition("B-01 Valkyrie", "used")).toBe("used");
     expect(resolveListingCondition("B-01 Valkyrie")).toBe("unknown");
   });
+
+  it("title 開封/中古 overrides Yahoo marketplace sealed", () => {
+    expect(
+      resolveListingCondition("B-104 スターター ウイニングヴァルキリー 開封 中古", "sealed")
+    ).toBe("used");
+    expect(resolveListingCondition("B-110 スターター 中古", "sealed")).toBe("used");
+  });
 });

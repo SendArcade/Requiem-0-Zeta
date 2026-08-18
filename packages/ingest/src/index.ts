@@ -112,3 +112,8 @@ export { verifyWave0, formatWave0Verify } from "./burst-wave0-verify-lib.js";
 export type { Wave0VerifyReport } from "./burst-wave0-verify-lib.js";
 export { runWave0CompDiag, diagnoseWave0CompPool } from "./burst-wave0-comp-diag-lib.js";
 export type { Wave0CompDiagReport } from "./burst-wave0-comp-diag-lib.js";
+export {
+  recomputeWave0FailingStarters,
+  fixWave0MisclassifiedConditions,
+  wave0OracleWindowDays,
+} from "./burst-wave0-recompute.js";
