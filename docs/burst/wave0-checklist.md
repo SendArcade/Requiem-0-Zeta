@@ -119,5 +119,5 @@ Cron stays paused until Wave 0b / fleet explicitly approved (`BACKFILL_PAUSE_CRO
 ## When Wave 0 is green
 
 1. Announce 7 Burst FMV marks on web (evidence + source toggles).
-2. Expand to B-01 + B-102 boosters (sealed-heavy SKUs) as Wave 0b.
+2. Expand to B-01 + B-102 boosters (sealed-heavy SKUs) as Wave 0b — see [`wave1-checklist.md`](wave1-checklist.md).
 3. Then Metal / Plastic / X using same quality-first playbook.
