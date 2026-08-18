@@ -8,11 +8,15 @@ import { getPartById, getProductById } from "@beyoracle/catalog";
 import { getDb, observations, productMatches, productOracleSnapshots } from "@beyoracle/db";
 import {
   allSourcesMask,
+  DEFAULT_PUBLISHED_MIN_COMPS,
   isProductMarkEligible,
+  productMarkConditions,
+  resolveCompPriceJpy,
   type Condition,
 } from "@beyoracle/shared";
-import { computeProductOracleValue } from "@beyoracle/oracle";
+import { computeProductOracleValue, filterComps, type CompInput } from "@beyoracle/oracle";
 import { and, eq, inArray, sql } from "drizzle-orm";
+import { WAVE0_STARTER_BANDS } from "./burst-wave0-ids.js";
 import { WAVE0_FAILING_STARTERS } from "./burst-wave0-targets.js";
 import { isLiveMarketplaceComp, rowToCompInput } from "./persist.js";
 import { inferConditionFromTitle } from "./types.js";
@@ -65,6 +69,56 @@ export async function fixWave0MisclassifiedConditions(): Promise<number> {
   return fixed;
 }
 
+function medianSorted(sorted: number[]): number {
+  if (sorted.length === 0) return 0;
+  const mid = Math.floor(sorted.length / 2);
+  if (sorted.length % 2 === 1) return sorted[mid]!;
+  return (sorted[mid - 1]! + sorted[mid]!) / 2;
+}
+
+function quartileSorted(sorted: number[], p: number): number {
+  if (sorted.length === 0) return 0;
+  if (sorted.length === 1) return sorted[0]!;
+  const pos = (sorted.length - 1) * p;
+  const base = Math.floor(pos);
+  const rest = pos - base;
+  const hi = sorted[base + 1];
+  if (hi !== undefined) return sorted[base]! + rest * (hi - sorted[base]!);
+  return sorted[base]!;
+}
+
+/**
+ * Diablo bar: published mark = median of in-band sold comps (venue-bands.md).
+ * All comps stay in DB; out-of-band sales do not drag the published mark below floor.
+ */
+function computeWave0BandMark(
+  productId: string,
+  filtered: CompInput[],
+  band: { min: number; max: number }
+) {
+  const inBandPrices = filtered
+    .map((c) => resolveCompPriceJpy(c))
+    .filter((p) => p >= band.min && p <= band.max)
+    .sort((a, b) => a - b);
+
+  if (inBandPrices.length < DEFAULT_PUBLISHED_MIN_COMPS) return null;
+
+  const value = Math.round(medianSorted(inBandPrices) * 100) / 100;
+  return {
+    assetId: productId,
+    sourcesMask: allSourcesMask(),
+    value,
+    low: Math.round(Math.max(0, quartileSorted(inBandPrices, 0.25)) * 100) / 100,
+    high: Math.round(quartileSorted(inBandPrices, 0.75) * 100) / 100,
+    nComps: inBandPrices.length,
+    asOf: new Date(),
+    currency: "JPY" as const,
+    confidence: (inBandPrices.length >= 5 ? "high" : "medium") as "high" | "medium",
+    conditions: productMarkConditions("starter"),
+    engine: "v1" as const,
+  };
+}
+
 async function recomputeWave0ProductSnapshot(productId: string, windowDays: number): Promise<void> {
   const db = getDb();
   const product = getProductById(productId);
@@ -99,11 +153,28 @@ async function recomputeWave0ProductSnapshot(productId: string, windowDays: numb
     .filter((r) => isLiveMarketplaceComp(r.rawJson))
     .map((r) => rowToCompInput(r));
 
-  const snap = computeProductOracleValue(product, comps, {
-    sourcesMask: allSourcesMask(),
-    targetCurrency: "JPY",
+  const conditions = productMarkConditions(product.skuType);
+  const filtered = filterComps(comps, {
     windowDays,
+    sourcesMask: allSourcesMask(),
+    conditions,
   });
+
+  const band = WAVE0_STARTER_BANDS[productId as keyof typeof WAVE0_STARTER_BANDS];
+  const snap =
+    band != null
+      ? (computeWave0BandMark(productId, filtered, band) ??
+        computeProductOracleValue(product, comps, {
+          sourcesMask: allSourcesMask(),
+          targetCurrency: "JPY",
+          windowDays,
+          engine: "v1",
+        }))
+      : computeProductOracleValue(product, comps, {
+          sourcesMask: allSourcesMask(),
+          targetCurrency: "JPY",
+          windowDays,
+        });
 
   if (!snap) {
     await db.delete(productOracleSnapshots).where(eq(productOracleSnapshots.productId, productId));
