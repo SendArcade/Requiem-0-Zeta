@@ -24,6 +24,7 @@ import {
   runSourceIngest,
   verifyWave0,
   formatWave0Verify,
+  runWave0CompDiag,
 } from "@beyoracle/ingest";
 import { Worker, Queue } from "bullmq";
 import { Redis } from "ioredis";
@@ -245,6 +246,25 @@ async function main() {
         }
       })();
     }
+  }
+
+  const compDiag = process.env.BURST_WAVE0_COMP_DIAG?.trim();
+  if (compDiag) {
+    void (async () => {
+      try {
+        const ids =
+          compDiag === "1"
+            ? undefined
+            : compDiag.split(",").map((s) => s.trim()).filter(Boolean);
+        console.log(`[worker] BURST_WAVE0_COMP_DIAG — comp pool diagnostic…`);
+        const reports = await runWave0CompDiag(ids);
+        for (const report of reports) {
+          console.log("[wave0:comp-diag]", JSON.stringify(report));
+        }
+      } catch (err) {
+        console.error("[worker] BURST_WAVE0_COMP_DIAG failed:", (err as Error).message);
+      }
+    })();
   }
 
   if (process.env.BURST_WAVE0_LOOP === "1") {
