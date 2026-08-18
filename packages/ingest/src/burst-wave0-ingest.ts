@@ -180,6 +180,7 @@ export async function runBurstWave0Ingest(opts: {
   }
 
   if (!skipVerify) {
+    console.log("[burst:wave0-ingest] running verify…");
     report.verify = await verifyWave0();
     console.log(formatWave0Verify(report.verify));
   }

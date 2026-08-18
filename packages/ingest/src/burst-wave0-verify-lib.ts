@@ -36,8 +36,10 @@ export async function verifyWave0(): Promise<Wave0VerifyReport> {
     .innerJoin(observations, eq(productMatches.observationId, observations.id))
     .where(inArray(productMatches.productId, [...WAVE0_STARTERS]));
 
+  const skipStaleCheck = process.env.WAVE0_VERIFY_SKIP_STALE === "1";
   const staleByProduct = new Map<string, number>();
   for (const row of matchRows) {
+    if (skipStaleCheck) continue;
     if (isStaleOrWrongMatch(row.title, "product", row.productId, row.confidence)) {
       staleByProduct.set(row.productId, (staleByProduct.get(row.productId) ?? 0) + 1);
     }
