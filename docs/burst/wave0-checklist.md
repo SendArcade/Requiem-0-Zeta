@@ -110,7 +110,7 @@ Cron stays paused until Wave 0b / fleet explicitly approved (`BACKFILL_PAUSE_CRO
 ## Stop rules
 
 - Do **not** start pass 3 backfill or 64-shard fleet.
-- Do **not** unpause cron until Wave 0 is green.
+- Do **not** unpause cron until Wave 0b / fleet explicitly approved (Wave 0 is green).
 - Do **not** expand to Wave 2 catalog until Wave 0 publishes.
 - Kill hung PID 266 on replica `0b19a5bc…` if still running (ops only).
 
