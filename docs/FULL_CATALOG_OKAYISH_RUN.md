@@ -13,7 +13,17 @@
 | **Realistic after one run** | **150–300** okayish marks |
 | **100% of 438** | Not guaranteed — many SKUs have zero JP sold liquidity |
 
-"Okayish" = live sold comp(s), matcher auto-accept ≥0.9, **`PUBLISHED_MIN_COMPS=1`** (one verified link is enough for now), 180d window. **Not** Wave 0 Souei-verified.
+"Okayish" = **one linked sold comp is enough**, but only if it's a **real match to that SKU** — not a hallucination:
+
+| Gate | What it blocks |
+|------|----------------|
+| Matcher auto-accept **≥0.90** | fuzzy/wrong matches never persist |
+| **product_code** or **≥0.95** when n=1 | bare B-code / alias-only guesses don't publish a mark |
+| `isProductCompEligible` | lots, single parts, bundles |
+| `looksLikeBeybladeListing` | car models, apparel junk |
+| Live marketplace only | fixtures / invented prices |
+| Sealed vs used pools | wrong condition row |
+| Comp audit UI | every mark shows **item URL + match method** |
 
 Set on **worker + web**:
 ```bash

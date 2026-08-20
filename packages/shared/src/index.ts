@@ -357,6 +357,18 @@ export function resolvePublishedMinComps(): number {
   return DEFAULT_PUBLISHED_MIN_COMPS;
 }
 
+/**
+ * Okayish single-comp marks: only B-code / product_code matches or ≥0.95 confidence.
+ * All comps still persist in DB — this gate applies to published oracle snapshots only.
+ */
+export function isOkayishPublishComp(
+  match: { method: string; confidence: number },
+  publishedMinComps = resolvePublishedMinComps()
+): boolean {
+  if (publishedMinComps > 1) return true;
+  return match.method === "product_code" || match.confidence >= 0.95;
+}
+
 /** Product oracle lookback — multi-month secondary market (plastic/metal need longer windows). */
 export const PRODUCT_ORACLE_WINDOW_DAYS = 180;
 

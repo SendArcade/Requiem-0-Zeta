@@ -23,6 +23,7 @@ import {
   allSourcesMask,
   DEFAULT_PUBLISHED_MIN_COMPS,
   resolvePublishedMinComps,
+  isOkayishPublishComp,
   isLiveMarketplaceComp,
   isIngestEligible,
   isProductCompEligible,
@@ -452,13 +453,24 @@ export async function recomputeProductOracleSnapshot(productId: string): Promise
       landedJpy: observations.landedJpy,
       fxRateAtSale: observations.fxRateAtSale,
       rawJson: observations.rawJson,
+      matchMethod: productMatches.method,
+      matchConfidence: productMatches.confidence,
     })
     .from(productMatches)
     .innerJoin(observations, eq(productMatches.observationId, observations.id))
     .where(and(eq(productMatches.productId, productId), compEligibleFilter));
 
+  const minComps = resolvePublishedMinComps();
+
   // Published product marks only from real marketplace comps — never seed/demo fixtures.
-  const liveRows = rows.filter((r) => isLiveMarketplaceComp(r.rawJson));
+  const liveRows = rows
+    .filter((r) => isLiveMarketplaceComp(r.rawJson))
+    .filter((r) =>
+      isOkayishPublishComp(
+        { method: r.matchMethod, confidence: r.matchConfidence },
+        minComps
+      )
+    );
 
   const comps = liveRows.map((r) => rowToCompInput(r));
 
@@ -466,7 +478,7 @@ export async function recomputeProductOracleSnapshot(productId: string): Promise
   const snap = computeProductOracleValue(product, comps, {
     sourcesMask: allSourcesMask(),
     targetCurrency: "JPY",
-    minComps: resolvePublishedMinComps(),
+    minComps,
   });
 
   if (!snap) {
