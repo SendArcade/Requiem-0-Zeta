@@ -148,8 +148,8 @@ async function main() {
     }
   }
 
-  const connection = new Redis(getRedisUrl(), { maxRetriesPerRequest: null });
-  const queue = new Queue(CONTROL_QUEUE, { connection });
+  const queueConnection = new Redis(getRedisUrl(), { maxRetriesPerRequest: null });
+  const queue = new Queue(CONTROL_QUEUE, { connection: queueConnection });
 
   registerOracleRecomputeEnqueuer((partIds: string[], reason: "ingest" | "manual" | "backfill", productIds?: string[]) =>
     enqueueOracleRecompute(queue, partIds, reason, productIds)
@@ -192,6 +192,36 @@ async function main() {
     `[worker] lockDuration=${lockOpts.lockDuration}ms lockRenewTime=${lockOpts.lockRenewTime}ms`
   );
 
+  // Enqueue fleet shards before starting the BullMQ Worker — Queue and Worker must
+  // not share one ioredis connection (blocking BRPOPLPUSH vs queue.add).
+  if (
+    (process.env.PRODUCT_BACKFILL_ENQUEUE === "1" ||
+      process.env.PRODUCT_BACKFILL_FLEET === "1") &&
+    process.env.PRODUCT_BACKFILL_ENQUEUE_DONE !== "1"
+  ) {
+    const generations = parseProductBackfillGenerations();
+    try {
+      const result = await enqueueProductBackfillFleet(queue, {
+        shardCount: parseShardCount(process.env.PRODUCT_BACKFILL_SHARD_COUNT),
+        generations,
+        priorityOnly: process.env.PRODUCT_BACKFILL_PRIORITY_ONLY === "1",
+        maxQueriesPerShard: (() => {
+          const raw = process.env.PRODUCT_BACKFILL_MAX_QUERIES;
+          if (!raw) return undefined;
+          const n = Number(raw);
+          return n > 0 ? n : undefined;
+        })(),
+      });
+      console.log("[worker] product backfill fleet enqueued:", JSON.stringify(result));
+    } catch (err) {
+      console.error(
+        "[worker] product backfill fleet enqueue failed:",
+        (err as Error).message
+      );
+    }
+  }
+
+  const workerConnection = new Redis(getRedisUrl(), { maxRetriesPerRequest: null });
   const worker = new Worker(
     CONTROL_QUEUE,
     async (job) => {
@@ -214,7 +244,7 @@ async function main() {
       }
     },
     {
-      connection,
+      connection: workerConnection,
       concurrency: WORKER_CONCURRENCY,
       // Product shards run many live API calls — 10m lock stalled 26/31 observed.
       lockDuration: lockOpts.lockDuration,
@@ -226,6 +256,10 @@ async function main() {
 
   worker.on("failed", (job, err) => {
     console.error(`[worker] job ${job?.name}/${job?.id} failed:`, err.message);
+  });
+
+  worker.on("active", (job) => {
+    console.log(`[worker] active ${job.name}/${job.id}`);
   });
 
   if (process.env.BURST_WAVE0_VERIFY === "1") {
@@ -370,37 +404,6 @@ async function main() {
     });
   }
 
-  // Fleet mode: enqueue all product.backfill.shard jobs once; every replica drains the queue.
-  // Set PRODUCT_BACKFILL_ENQUEUE=1 on a single replica (or one-shot) to avoid double-enqueue races
-  // (jobIds are idempotent, so double enqueue is safe but noisy).
-  // Default generations = burst (Wave 0+1 identity recut). Set PRODUCT_BACKFILL_GENERATIONS=all for full catalog.
-  if (
-    (process.env.PRODUCT_BACKFILL_ENQUEUE === "1" ||
-      process.env.PRODUCT_BACKFILL_FLEET === "1") &&
-    process.env.PRODUCT_BACKFILL_ENQUEUE_DONE !== "1"
-  ) {
-    const generations = parseProductBackfillGenerations();
-    try {
-      const result = await enqueueProductBackfillFleet(queue, {
-        shardCount: parseShardCount(process.env.PRODUCT_BACKFILL_SHARD_COUNT),
-        generations,
-        priorityOnly: process.env.PRODUCT_BACKFILL_PRIORITY_ONLY === "1",
-        maxQueriesPerShard: (() => {
-          const raw = process.env.PRODUCT_BACKFILL_MAX_QUERIES;
-          if (!raw) return undefined;
-          const n = Number(raw);
-          return n > 0 ? n : undefined;
-        })(),
-      });
-      console.log("[worker] product backfill fleet enqueued:", JSON.stringify(result));
-    } catch (err) {
-      console.error(
-        "[worker] product backfill fleet enqueue failed:",
-        (err as Error).message
-      );
-    }
-  }
-
   if (process.env.ORACLE_BACKFILL === "1" && !backfillKickoffStarted) {
     backfillKickoffStarted = true;
     void shouldRunOracleBackfill()
@@ -433,7 +436,8 @@ async function main() {
     console.log("[worker] shutting down…");
     await worker.close();
     await queue.close();
-    await connection.quit();
+    await workerConnection.quit();
+    await queueConnection.quit();
     await closePublisher();
     await closeDb();
     process.exit(0);
