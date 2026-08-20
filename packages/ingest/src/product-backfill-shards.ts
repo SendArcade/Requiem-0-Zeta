@@ -281,6 +281,7 @@ export async function runProductBackfillShard(opts: {
 
       // Sequential sources to stay polite; parallel shards provide fleet scale.
       for (const sourceId of sources) {
+        const sourceStarted = Date.now();
         try {
           const r = await runSourceIngest({
             sourceId,
@@ -298,8 +299,18 @@ export async function runProductBackfillShard(opts: {
             }
           }
           report.errors.push(...r.errors);
+          console.log(
+            `[product-backfill-shard ${shardId}] batch ${report.queryBatches}/${totalBatches} ` +
+              `${sourceId}: queries=${r.queriesRun} listings=${r.listingsFetched} ` +
+              `+${r.inserted} matched=${r.matched} (${Date.now() - sourceStarted}ms)`
+          );
         } catch (err) {
           report.errors.push(`${sourceId}: ${(err as Error).message}`);
+          console.warn(
+            `[product-backfill-shard ${shardId}] batch ${report.queryBatches}/${totalBatches} ` +
+              `${sourceId} failed:`,
+            (err as Error).message
+          );
         }
       }
     }

@@ -53,8 +53,12 @@ railway variable set \
   WORKER_CONCURRENCY=8 \
   --service worker
 
-# 3. Redeploy worker (enqueues 64 shard jobs on boot)
+# 3. Redeploy worker (enqueues 64 shard jobs on boot when ENQUEUE=1 + new RUN_ID)
+#    FLEET=1 alone does NOT re-enqueue on redeploy. Redis claim dedupes per RUN_ID.
+#    Set DRAIN_QUEUE=1 only when replacing a bad/stale queue pass.
+railway variable set PRODUCT_BACKFILL_DRAIN_QUEUE=1 --service worker  # one-shot
 railway up --service worker --detach
+railway variable delete PRODUCT_BACKFILL_DRAIN_QUEUE --service worker
 
 # 4. Watch
 railway logs --service worker --lines 200 | grep product-backfill-shard

@@ -33,6 +33,7 @@ import { bootstrapDatabaseIfNeeded } from "./bootstrap.js";
 import { dispatchCronTick, syncScheduledCronTick } from "./dispatch.js";
 import { enqueueOracleRecompute } from "./enqueue-oracle.js";
 import {
+  claimProductBackfillFleetEnqueue,
   enqueueProductBackfillFleet,
   drainProductBackfillShardJobs,
   parseProductBackfillGenerations,
@@ -193,28 +194,41 @@ async function main() {
     `[worker] lockDuration=${lockOpts.lockDuration}ms lockRenewTime=${lockOpts.lockRenewTime}ms`
   );
 
-  // Enqueue fleet shards before starting the BullMQ Worker — Queue and Worker must
-  // not share one ioredis connection (blocking BRPOPLPUSH vs queue.add).
+  // Enqueue once per run id (Redis claim) when PRODUCT_BACKFILL_ENQUEUE=1 only.
+  // PRODUCT_BACKFILL_FLEET=1 alone must NOT re-drain/re-enqueue on every redeploy.
+  const fleetRunId =
+    process.env.PRODUCT_BACKFILL_RUN_ID?.trim() || "run-default";
   if (
-    (process.env.PRODUCT_BACKFILL_ENQUEUE === "1" ||
-      process.env.PRODUCT_BACKFILL_FLEET === "1") &&
+    process.env.PRODUCT_BACKFILL_ENQUEUE === "1" &&
     process.env.PRODUCT_BACKFILL_ENQUEUE_DONE !== "1"
   ) {
-    const generations = parseProductBackfillGenerations();
     try {
-      await drainProductBackfillShardJobs(queue);
-      const result = await enqueueProductBackfillFleet(queue, {
-        shardCount: parseShardCount(process.env.PRODUCT_BACKFILL_SHARD_COUNT),
-        generations,
-        priorityOnly: process.env.PRODUCT_BACKFILL_PRIORITY_ONLY === "1",
-        maxQueriesPerShard: (() => {
-          const raw = process.env.PRODUCT_BACKFILL_MAX_QUERIES;
-          if (!raw) return undefined;
-          const n = Number(raw);
-          return n > 0 ? n : undefined;
-        })(),
-      });
-      console.log("[worker] product backfill fleet enqueued:", JSON.stringify(result));
+      const claimed = await claimProductBackfillFleetEnqueue(
+        queueConnection,
+        fleetRunId
+      );
+      if (!claimed) {
+        console.log(
+          `[worker] product backfill fleet already enqueued for run ${fleetRunId} — skip`
+        );
+      } else {
+        if (process.env.PRODUCT_BACKFILL_DRAIN_QUEUE === "1") {
+          await drainProductBackfillShardJobs(queue);
+        }
+        const generations = parseProductBackfillGenerations();
+        const result = await enqueueProductBackfillFleet(queue, {
+          shardCount: parseShardCount(process.env.PRODUCT_BACKFILL_SHARD_COUNT),
+          generations,
+          priorityOnly: process.env.PRODUCT_BACKFILL_PRIORITY_ONLY === "1",
+          maxQueriesPerShard: (() => {
+            const raw = process.env.PRODUCT_BACKFILL_MAX_QUERIES;
+            if (!raw) return undefined;
+            const n = Number(raw);
+            return n > 0 ? n : undefined;
+          })(),
+        });
+        console.log("[worker] product backfill fleet enqueued:", JSON.stringify(result));
+      }
     } catch (err) {
       console.error(
         "[worker] product backfill fleet enqueue failed:",

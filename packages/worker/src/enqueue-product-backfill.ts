@@ -19,9 +19,22 @@ import {
 } from "@beyoracle/ingest";
 import type { Generation } from "@beyoracle/shared";
 import type { Queue } from "bullmq";
+import type { Redis } from "ioredis";
 import { parseProductBackfillGenerations } from "./backfill-generations.js";
 
 export { parseProductBackfillGenerations } from "./backfill-generations.js";
+
+const ENQUEUE_CLAIM_PREFIX = "beyoracle:product-backfill-enqueued:";
+
+/** One enqueue per run id — survives redeploys without PRODUCT_BACKFILL_ENQUEUE_DONE env churn. */
+export async function claimProductBackfillFleetEnqueue(
+  redis: Redis,
+  runId: string
+): Promise<boolean> {
+  const key = `${ENQUEUE_CLAIM_PREFIX}${runId}`;
+  const result = await redis.set(key, new Date().toISOString(), "EX", 60 * 60 * 24 * 14, "NX");
+  return result === "OK";
+}
 
 /** Drop waiting/delayed product.backfill.shard jobs so a new run id does not queue behind no-op shards. */
 export async function drainProductBackfillShardJobs(queue: Queue): Promise<number> {
