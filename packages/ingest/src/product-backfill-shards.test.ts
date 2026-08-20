@@ -8,6 +8,7 @@ import {
   parseShardCount,
   productShardIndex,
   PRODUCT_BACKFILL_SHARD_JOB,
+  resolveShardGenerations,
 } from "./product-backfill-shards.js";
 import { listPublishableProducts } from "./product-backfill-query-plan.js";
 import { MATCH_AUTO_ACCEPT_THRESHOLD } from "./match-confidence-routing.js";
@@ -80,6 +81,18 @@ describe("product backfill shards", () => {
     expect(gens.has("metal")).toBe(true);
     expect(gens.has("burst")).toBe(true);
     expect(gens.has("x")).toBe(true);
+  });
+
+  it("resolveShardGenerations treats env all as full catalog", () => {
+    const prev = process.env.PRODUCT_BACKFILL_GENERATIONS;
+    process.env.PRODUCT_BACKFILL_GENERATIONS = "all";
+    try {
+      expect(resolveShardGenerations()).toEqual(["plastic", "metal", "burst", "x"]);
+      expect(listProductsForShard(0, 64).length).toBeGreaterThan(0);
+    } finally {
+      if (prev === undefined) delete process.env.PRODUCT_BACKFILL_GENERATIONS;
+      else process.env.PRODUCT_BACKFILL_GENERATIONS = prev;
+    }
   });
 
   it("precision floor for product persist remains auto-accept ≥0.9", () => {

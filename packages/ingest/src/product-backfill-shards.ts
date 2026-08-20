@@ -19,6 +19,20 @@ export const PRODUCT_BACKFILL_SHARD_JOB = "product.backfill.shard";
 /** Default fleet size when env PRODUCT_BACKFILL_SHARD_COUNT is unset. */
 export const DEFAULT_PRODUCT_BACKFILL_SHARD_COUNT = 32;
 
+const ALL_GENERATIONS: Generation[] = ["plastic", "metal", "burst", "x"];
+
+/** Resolve generations for shard work — treats env `all`/`*` as full catalog. */
+export function resolveShardGenerations(opts?: Generation[]): Generation[] {
+  if (opts?.length) return opts;
+  const raw = process.env.PRODUCT_BACKFILL_GENERATIONS?.trim();
+  if (raw == null || raw === "" || raw === "all" || raw === "*") return ALL_GENERATIONS;
+  const gens = raw
+    .split(",")
+    .map((s) => s.trim())
+    .filter((s): s is Generation => (ALL_GENERATIONS as string[]).includes(s));
+  return gens.length ? gens : ALL_GENERATIONS;
+}
+
 export interface ProductShardTarget {
   productId: string;
   generation: Generation;
@@ -96,13 +110,7 @@ export function listProductsForShard(
   const count = parseShardCount(shardCount);
   const id = parseShardId(shardId, count);
 
-  const generations =
-    opts?.generations ??
-    (process.env.PRODUCT_BACKFILL_GENERATIONS
-      ? (process.env.PRODUCT_BACKFILL_GENERATIONS.split(",")
-          .map((s) => s.trim())
-          .filter(Boolean) as Generation[])
-      : (["plastic", "metal", "burst", "x"] as Generation[]));
+  const generations = resolveShardGenerations(opts?.generations);
 
   let products = listPublishableProducts({
     generations,
@@ -132,9 +140,7 @@ export function buildShardQueryPlan(
 ): { products: ProductDTO[]; queries: string[] } {
   const products = listProductsForShard(shardId, shardCount, opts);
   const idSet = new Set(products.map((p) => p.id));
-  const gens =
-    opts?.generations ??
-    (["plastic", "metal", "burst", "x"] as Generation[]);
+  const gens = resolveShardGenerations(opts?.generations);
   const targets = buildProductBackfillTargets({
     generations: gens,
     priorityOnly: opts?.priorityOnly,
