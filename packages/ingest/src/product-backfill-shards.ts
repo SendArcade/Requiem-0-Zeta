@@ -337,6 +337,10 @@ export function buildProductBackfillShardJobs(opts?: {
     opts?.runId?.trim() ||
     process.env.PRODUCT_BACKFILL_RUN_ID?.trim() ||
     "v1";
+  const maxQueriesPerShard =
+    opts?.maxQueriesPerShard != null && opts.maxQueriesPerShard > 0
+      ? opts.maxQueriesPerShard
+      : undefined;
   const jobs = [];
   for (let shardId = 0; shardId < shardCount; shardId++) {
     jobs.push({
@@ -347,7 +351,7 @@ export function buildProductBackfillShardJobs(opts?: {
         shardCount,
         generations: opts?.generations,
         priorityOnly: opts?.priorityOnly,
-        maxQueries: opts?.maxQueriesPerShard,
+        ...(maxQueriesPerShard != null ? { maxQueries: maxQueriesPerShard } : {}),
       },
     });
   }
