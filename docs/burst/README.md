@@ -3,9 +3,9 @@
 These files are the cheap backup if agents die mid-run. They are **not** published FMV.
 
 ## Act
-- `HANDOFF.md` — resume here first.
-- `verify-pass2.md` — Kaijin Postgres list + Souei full verify (all FAIL 2026-08-15).
-- `coverage.md` — Wave 0+1 board. All rows DOWN until Diablo passes.
+- `HANDOFF.md` — pointers to live docs (not a state snapshot).
+- `wave0-checklist.md` / `wave1-checklist.md` — scoped ingest + verify checklists.
+- `coverage.md` — Wave 0+1 board.
 - `venue-bands.md` — Souei opened-page comps. Default = complete_loose/used. Never mix 未開封 into default.
 - `takara-gaps.md` — Gabil: 28 live TT codes, 27 misnamed, 191 missing.
 

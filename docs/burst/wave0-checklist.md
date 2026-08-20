@@ -71,8 +71,7 @@ count drops; some Wave 0 marks may go null (correct — better no mark than wron
 
 ### C. Souei re-verify (Wave 0 rows only)
 
-Re-run venue+item verify for the 7 starter (+ sealed) rows. Update `verify-pass2.md` section
-"Wave 0" — do **not** republish until all 7 PASS.
+Re-run venue+item verify for the 7 starter (+ sealed) rows. Record results in this checklist — do **not** republish until all 7 PASS.
 
 ### D. Publish (Diablo only after 7/7 PASS)
 

@@ -31,7 +31,7 @@ Deploy: per-service Dockerfiles via `RAILWAY_DOCKERFILE_PATH` (`apps/web/Dockerf
 
 **Prod one-shot backfill:** `PRODUCT_BACKFILL=1` + `PRODUCT_BACKFILL_MAX_QUERIES=500` + `PRODUCT_BACKFILL_SOURCES=mercari_jp,yahoo_auctions_jp`. Set `PRODUCT_BACKFILL=0` and `PRODUCT_BACKFILL_DONE=1` after completion.
 
-**Parallel fleet (full catalog):** see [`docs/PRODUCT_BACKFILL_FLEET.md`](PRODUCT_BACKFILL_FLEET.md). Enqueue with `PRODUCT_BACKFILL_ENQUEUE=1` + `PRODUCT_BACKFILL_FLEET=1` + `PRODUCT_BACKFILL_SHARD_COUNT=64`, scale worker replicas; jobs `product.backfill.shard` drain via BullMQ. Preview: `pnpm backfill:products:fleet-plan`.
+**Parallel fleet (full catalog):** see [`docs/FULL_CATALOG_OKAYISH_RUN.md`](FULL_CATALOG_OKAYISH_RUN.md) and [`docs/PRODUCT_BACKFILL_FLEET.md`](PRODUCT_BACKFILL_FLEET.md). Enqueue with `PRODUCT_BACKFILL_ENQUEUE=1` + new `PRODUCT_BACKFILL_RUN_ID` (Redis claim dedupes redeploys). Scale worker replicas to drain `product.backfill.shard` jobs.
 
 **North-star metric:** publishable products with ≥3 sold comps — run `pnpm product:coverage`.
 
