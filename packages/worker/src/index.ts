@@ -34,6 +34,7 @@ import { dispatchCronTick, syncScheduledCronTick } from "./dispatch.js";
 import { enqueueOracleRecompute } from "./enqueue-oracle.js";
 import {
   enqueueProductBackfillFleet,
+  drainProductBackfillShardJobs,
   parseProductBackfillGenerations,
 } from "./enqueue-product-backfill.js";
 import { handleJob, logJobMetrics } from "./handlers.js";
@@ -201,6 +202,7 @@ async function main() {
   ) {
     const generations = parseProductBackfillGenerations();
     try {
+      await drainProductBackfillShardJobs(queue);
       const result = await enqueueProductBackfillFleet(queue, {
         shardCount: parseShardCount(process.env.PRODUCT_BACKFILL_SHARD_COUNT),
         generations,

@@ -23,6 +23,21 @@ import { parseProductBackfillGenerations } from "./backfill-generations.js";
 
 export { parseProductBackfillGenerations } from "./backfill-generations.js";
 
+/** Drop waiting/delayed product.backfill.shard jobs so a new run id does not queue behind no-op shards. */
+export async function drainProductBackfillShardJobs(queue: Queue): Promise<number> {
+  const waiting = await queue.getJobs(["waiting", "delayed", "paused"]);
+  let removed = 0;
+  for (const job of waiting) {
+    if (job.name !== PRODUCT_BACKFILL_SHARD) continue;
+    await job.remove();
+    removed++;
+  }
+  if (removed > 0) {
+    console.log(`[worker] drained ${removed} stale ${PRODUCT_BACKFILL_SHARD} jobs`);
+  }
+  return removed;
+}
+
 export async function enqueueProductBackfillFleet(
   queue: Queue,
   opts?: {
@@ -33,7 +48,11 @@ export async function enqueueProductBackfillFleet(
   }
 ): Promise<{ shardCount: number; enqueued: number; totalProducts: number }> {
   const shardCount = parseShardCount(opts?.shardCount);
-  const generations = opts?.generations ?? parseProductBackfillGenerations();
+  const parsedGenerations = opts?.generations ?? parseProductBackfillGenerations();
+  // Always persist explicit gens on the job — env `all` must not become ["all"] in workers.
+  const generations =
+    parsedGenerations ??
+    (["plastic", "metal", "burst", "x"] as Generation[]);
   const partition = assertShardPartition(shardCount, {
     generations,
     priorityOnly: opts?.priorityOnly,
