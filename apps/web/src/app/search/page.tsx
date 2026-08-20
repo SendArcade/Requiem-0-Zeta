@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { DEFAULT_PUBLISHED_MIN_COMPS } from "@beyoracle/shared";
+import { resolvePublishedMinComps } from "@beyoracle/shared";
 import { SearchBox } from "@/components/SearchBox";
 import { GENERATION_LABELS } from "@/lib/generation-labels";
 import type { Generation } from "@beyoracle/shared";
@@ -13,7 +13,8 @@ const SKU_LABELS: Record<string, string> = {
 };
 
 function isSparseSearchResult(p: { nComps: number; confidence?: string }) {
-  return p.nComps < DEFAULT_PUBLISHED_MIN_COMPS || p.confidence === "low";
+  const minComps = resolvePublishedMinComps();
+  return p.nComps < minComps || p.confidence === "low";
 }
 
 function formatJpy(n: number) {

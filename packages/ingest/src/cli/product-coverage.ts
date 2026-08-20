@@ -9,7 +9,7 @@ import {
   listPublishableProducts,
   PRIORITY_PRODUCT_IDS,
 } from "../product-backfill-query-plan.js";
-import { allSourcesMask, DEFAULT_PUBLISHED_MIN_COMPS, type Generation } from "@beyoracle/shared";
+import { allSourcesMask, resolvePublishedMinComps, type Generation } from "@beyoracle/shared";
 import { eq } from "drizzle-orm";
 
 async function main() {
@@ -28,7 +28,7 @@ async function main() {
     .where(eq(productOracleSnapshots.sourcesMask, allSourcesMask()));
 
   const snapByProduct = new Map(snaps.map((s) => [s.productId, s]));
-  const minComps = DEFAULT_PUBLISHED_MIN_COMPS;
+  const minComps = resolvePublishedMinComps();
 
   const withComps = publishable.filter(
     (p: (typeof publishable)[number]) => (snapByProduct.get(p.id)?.nComps ?? 0) >= 1

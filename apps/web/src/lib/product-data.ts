@@ -21,7 +21,7 @@ import {
   analyzeProductRecipe,
   convertCurrency,
   computeRetailReference,
-  DEFAULT_PUBLISHED_MIN_COMPS,
+  resolvePublishedMinComps,
   isLiveMarketplaceComp,
   productMarkConditions,
   feedsOracleMark,
@@ -56,6 +56,8 @@ export interface ProductData {
   parts: NonNullable<ReturnType<typeof getPartById>>[];
   recipe: ProductRecipeAnalysis;
   oracle: ReturnType<typeof computeOracleValue>;
+  /** Publish floor for this deploy (PUBLISHED_MIN_COMPS env, default 3). */
+  publishedMinComps: number;
   /** US retail shelf reference when sold comps are thin — not Oracle Value. */
   retailReference: RetailReference | null;
   comps: CompRow[];
@@ -214,9 +216,10 @@ export async function getProductDataFromDb(
   const sourcesMask =
     sources.length === SOURCES.length ? allSourcesMask() : maskFromSources(sources);
 
+  const minComps = resolvePublishedMinComps();
   const windowDays = resolveProductOracleWindowDays(product.generation, compsInput, {
     conditions: markConditions,
-    minComps: DEFAULT_PUBLISHED_MIN_COMPS,
+    minComps,
     sourcesMask,
   });
 
@@ -227,13 +230,13 @@ export async function getProductDataFromDb(
       : null;
 
   const oracle = recipe.canPublishMark
-    ? persisted && persisted.nComps >= DEFAULT_PUBLISHED_MIN_COMPS
+    ? persisted && persisted.nComps >= minComps
       ? oracleFromPersistedSnapshot(productId, persisted)
       : computeProductOracleValue(product, compsInput, {
           targetCurrency: displayCurrency,
           sourcesMask,
           conditions: markConditions,
-          minComps: DEFAULT_PUBLISHED_MIN_COMPS,
+          minComps,
         })
     : null;
 
@@ -270,6 +273,7 @@ export async function getProductDataFromDb(
     comps: allCompRows,
     chart,
     conditions: markConditions,
+    publishedMinComps: minComps,
   };
 }
 
@@ -316,9 +320,10 @@ export function getProductDataFromFixtures(
   const sourcesMask =
     sources.length === SOURCES.length ? allSourcesMask() : maskFromSources(sources);
 
+  const minComps = resolvePublishedMinComps();
   const windowDays = resolveProductOracleWindowDays(product.generation, compsInput, {
     conditions: markConditions,
-    minComps: DEFAULT_PUBLISHED_MIN_COMPS,
+    minComps,
     sourcesMask,
   });
 
@@ -327,7 +332,7 @@ export function getProductDataFromFixtures(
         targetCurrency: displayCurrency,
         sourcesMask: allSourcesMask(),
         conditions: markConditions,
-        minComps: DEFAULT_PUBLISHED_MIN_COMPS,
+        minComps,
       })
     : null;
 
@@ -381,6 +386,7 @@ export function getProductDataFromFixtures(
     comps,
     chart,
     conditions: markConditions,
+    publishedMinComps: minComps,
   };
 }
 

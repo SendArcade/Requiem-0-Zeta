@@ -22,6 +22,7 @@ import {
   computeLandedJpy,
   allSourcesMask,
   DEFAULT_PUBLISHED_MIN_COMPS,
+  resolvePublishedMinComps,
   isLiveMarketplaceComp,
   isIngestEligible,
   isProductCompEligible,
@@ -465,6 +466,7 @@ export async function recomputeProductOracleSnapshot(productId: string): Promise
   const snap = computeProductOracleValue(product, comps, {
     sourcesMask: allSourcesMask(),
     targetCurrency: "JPY",
+    minComps: resolvePublishedMinComps(),
   });
 
   if (!snap) {

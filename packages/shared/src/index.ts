@@ -347,6 +347,16 @@ export function productMarkConditions(skuType: SkuType): Condition[] {
  */
 export const DEFAULT_PUBLISHED_MIN_COMPS = 3;
 
+/** Runtime publish floor — set PUBLISHED_MIN_COMPS=1 for okayish breadth passes. */
+export function resolvePublishedMinComps(): number {
+  const raw = process.env.PUBLISHED_MIN_COMPS?.trim();
+  if (raw != null && raw !== "") {
+    const n = Number(raw);
+    if (Number.isFinite(n) && n >= 1) return Math.floor(n);
+  }
+  return DEFAULT_PUBLISHED_MIN_COMPS;
+}
+
 /** Product oracle lookback — multi-month secondary market (plastic/metal need longer windows). */
 export const PRODUCT_ORACLE_WINDOW_DAYS = 180;
 

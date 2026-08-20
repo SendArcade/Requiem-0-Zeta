@@ -3,7 +3,6 @@
 import Link from "next/link";
 import type { ProductData } from "@/lib/product-data";
 import { GENERATION_LABELS } from "@/lib/generation-labels";
-import { DEFAULT_PUBLISHED_MIN_COMPS } from "@beyoracle/shared";
 import { CompsChart, CompsTable } from "@/components/AssetClient";
 import { LiveSalesFeed } from "@/components/LiveSalesFeed";
 
@@ -38,9 +37,10 @@ function confidenceColor(c: string) {
 
 export function ProductPageClient({ initial }: { initial: ProductData }) {
   const { product, parts, recipe, oracle, retailReference, comps, chart } = initial;
+  const minComps = initial.publishedMinComps;
   const sparse =
     oracle != null &&
-    (oracle.nComps < DEFAULT_PUBLISHED_MIN_COMPS || oracle.confidence === "low");
+    (oracle.nComps < minComps || oracle.confidence === "low");
   const recipeBlocked = !recipe.canPublishMark;
 
   return (
@@ -116,7 +116,7 @@ export function ProductPageClient({ initial }: { initial: ProductData }) {
               {recipeBlocked
                 ? (recipe.blockReason ??
                   "This SKU needs a verified full component recipe before pricing.")
-                : `Need ≥${DEFAULT_PUBLISHED_MIN_COMPS} whole-SKU sold comps — ingest starter/sealed listings to populate this mark.`}
+                : `Need ≥${minComps} whole-SKU sold comp${minComps === 1 ? "" : "s"} — ingest starter/sealed listings to populate this mark.`}
             </p>
           </div>
         )}

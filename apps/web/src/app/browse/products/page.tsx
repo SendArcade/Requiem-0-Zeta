@@ -2,7 +2,7 @@ import Link from "next/link";
 import { Suspense } from "react";
 import { GENERATION_LABELS } from "@/lib/generation-labels";
 import type { Generation, SkuType } from "@beyoracle/shared";
-import { DEFAULT_PUBLISHED_MIN_COMPS, GENERATIONS, SKU_TYPES } from "@beyoracle/shared";
+import { resolvePublishedMinComps, GENERATIONS, SKU_TYPES } from "@beyoracle/shared";
 import { ProductBrowseFilters, type ProductBrowseFilterState } from "@/components/ProductBrowseFilters";
 import { browseProducts, type BrowseProductRow } from "@/lib/product-data";
 
@@ -14,7 +14,8 @@ const SKU_LABELS: Record<string, string> = {
 };
 
 function isSparseRow(p: BrowseProductRow) {
-  return p.nComps < DEFAULT_PUBLISHED_MIN_COMPS || p.confidence === "low";
+  const minComps = resolvePublishedMinComps();
+  return p.nComps < minComps || p.confidence === "low";
 }
 
 function formatJpy(n: number) {
@@ -91,7 +92,7 @@ function ProductTable({ products }: { products: BrowseProductRow[] }) {
                   {sparse && (
                     <span
                       className="ml-2 inline-flex rounded px-1.5 py-0.5 text-[10px] font-medium uppercase tracking-wide bg-amber-500/15 text-amber-400"
-                      title={`Fewer than ${DEFAULT_PUBLISHED_MIN_COMPS} comps or low confidence`}
+                          title={`Fewer than ${resolvePublishedMinComps()} comps or low confidence`}
                     >
                       sparse
                     </span>

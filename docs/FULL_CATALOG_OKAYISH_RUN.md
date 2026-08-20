@@ -13,7 +13,13 @@
 | **Realistic after one run** | **150–300** okayish marks |
 | **100% of 438** | Not guaranteed — many SKUs have zero JP sold liquidity |
 
-"Okayish" = live sold comps, matcher auto-accept ≥0.9, ≥3 comps, 180d window, no venue-band gate. **Not** Wave 0 Souei-verified.
+"Okayish" = live sold comp(s), matcher auto-accept ≥0.9, **`PUBLISHED_MIN_COMPS=1`** (one verified link is enough for now), 180d window. **Not** Wave 0 Souei-verified.
+
+Set on **worker + web**:
+```bash
+railway variable set PUBLISHED_MIN_COMPS=1 --service worker
+railway variable set PUBLISHED_MIN_COMPS=1 --service web
+```
 
 ## Railway one-shot
 
