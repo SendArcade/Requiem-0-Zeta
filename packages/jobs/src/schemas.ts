@@ -35,7 +35,11 @@ export const productBackfillShardPayload = z.object({
     .array(z.enum(["plastic", "metal", "burst", "x"]))
     .optional(),
   priorityOnly: z.boolean().optional(),
-  maxQueries: z.number().int().positive().optional(),
+  /** 0 or unset = unlimited queries for this shard (fleet env PRODUCT_BACKFILL_MAX_QUERIES=0). */
+  maxQueries: z.preprocess(
+    (v) => (v === 0 || v === "0" ? undefined : v),
+    z.number().int().positive().optional()
+  ),
   maxProducts: z.number().int().positive().optional(),
 });
 
