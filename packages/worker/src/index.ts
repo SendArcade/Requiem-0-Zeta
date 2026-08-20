@@ -385,9 +385,12 @@ async function main() {
         shardCount: parseShardCount(process.env.PRODUCT_BACKFILL_SHARD_COUNT),
         generations,
         priorityOnly: process.env.PRODUCT_BACKFILL_PRIORITY_ONLY === "1",
-        maxQueriesPerShard: process.env.PRODUCT_BACKFILL_MAX_QUERIES
-          ? Number(process.env.PRODUCT_BACKFILL_MAX_QUERIES)
-          : undefined,
+        maxQueriesPerShard: (() => {
+          const raw = process.env.PRODUCT_BACKFILL_MAX_QUERIES;
+          if (!raw) return undefined;
+          const n = Number(raw);
+          return n > 0 ? n : undefined;
+        })(),
       });
       console.log("[worker] product backfill fleet enqueued:", JSON.stringify(result));
     } catch (err) {
