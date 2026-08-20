@@ -135,6 +135,11 @@ export async function runSourceIngest(opts: {
 
     for (const query of queries) {
       report.queriesRun++;
+      if (process.env.PRODUCT_BACKFILL_FLEET === "1") {
+        console.log(
+          `[ingest ${opts.sourceId}] query ${report.queriesRun}/${queries.length}: ${query.slice(0, 60)}`
+        );
+      }
       try {
         const raw = await source.search(
           query,
