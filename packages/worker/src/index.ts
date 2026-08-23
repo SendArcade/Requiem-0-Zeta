@@ -205,6 +205,19 @@ async function main() {
   // PRODUCT_BACKFILL_FLEET=1 alone must NOT re-drain/re-enqueue on every redeploy.
   const fleetRunId =
     process.env.PRODUCT_BACKFILL_RUN_ID?.trim() || "run-default";
+
+  // Drop waiting shard jobs from prior run ids so v3/v4 no-op shards don't block v6.
+  if (
+    process.env.PRODUCT_BACKFILL_FLEET === "1" ||
+    process.env.PRODUCT_BACKFILL_DRAIN_QUEUE === "1"
+  ) {
+    try {
+      await drainProductBackfillShardJobs(queue, { keepRunId: fleetRunId });
+    } catch (err) {
+      console.warn("[worker] drain stale shard jobs failed:", (err as Error).message);
+    }
+  }
+
   if (
     process.env.PRODUCT_BACKFILL_ENQUEUE === "1" &&
     process.env.PRODUCT_BACKFILL_ENQUEUE_DONE !== "1"

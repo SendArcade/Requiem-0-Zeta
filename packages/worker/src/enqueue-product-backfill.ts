@@ -36,17 +36,27 @@ export async function claimProductBackfillFleetEnqueue(
   return result === "OK";
 }
 
-/** Drop waiting/delayed product.backfill.shard jobs so a new run id does not queue behind no-op shards. */
-export async function drainProductBackfillShardJobs(queue: Queue): Promise<number> {
+/** Drop waiting/delayed product.backfill.shard jobs. With keepRunId, only removes other runs. */
+export async function drainProductBackfillShardJobs(
+  queue: Queue,
+  opts?: { keepRunId?: string }
+): Promise<number> {
   const waiting = await queue.getJobs(["waiting", "delayed", "paused"]);
+  const keepPrefix = opts?.keepRunId?.trim()
+    ? `product-backfill-shard-${opts.keepRunId.trim()}-`
+    : undefined;
   let removed = 0;
   for (const job of waiting) {
     if (job.name !== PRODUCT_BACKFILL_SHARD) continue;
+    if (keepPrefix && String(job.id ?? "").startsWith(keepPrefix)) continue;
     await job.remove();
     removed++;
   }
   if (removed > 0) {
-    console.log(`[worker] drained ${removed} stale ${PRODUCT_BACKFILL_SHARD} jobs`);
+    console.log(
+      `[worker] drained ${removed} stale ${PRODUCT_BACKFILL_SHARD} jobs` +
+        (keepPrefix ? ` (kept ${keepPrefix}*)` : "")
+    );
   }
   return removed;
 }
