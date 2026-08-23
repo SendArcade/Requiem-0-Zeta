@@ -4,6 +4,7 @@ import {
   classifyListingShape,
   isCompEligible,
   isIngestEligible,
+  isProductCompEligible,
   looksLikeBeybladeListing,
   looksLikeBundle,
 } from "./shape.js";
@@ -46,6 +47,11 @@ describe("classifyListingShape", () => {
     expect(looksLikeBeybladeListing("SRAM X0 カーボンクランク BB30 MTB")).toBe(false);
     expect(looksLikeBeybladeListing("BAOBAO ISSEY MIYAKE BB71-AG053")).toBe(false);
     expect(looksLikeBeybladeListing("BB12 80s フランス軍 フィールドジャケット")).toBe(false);
+  });
+
+  it("rejects stadium and random booster accessory listings", () => {
+    expect(isProductCompEligible("BB51 エクストリームベイスタジアム")).toBe(false);
+    expect(isProductCompEligible("BB44 ランダムブースター Vol.4")).toBe(false);
   });
 
   it("accepts bare BB## when beyblade context is present", () => {

@@ -17,7 +17,8 @@ describe("buildProductBackfillQueryPlan", () => {
     expect(products.every((p) =>
       p.skuType === "starter" ||
       p.skuType === "complete_loose" ||
-      p.skuType === "complete_sealed"
+      p.skuType === "complete_sealed" ||
+      p.skuType === "sealed"
     )).toBe(true);
   });
 
@@ -30,6 +31,16 @@ describe("buildProductBackfillQueryPlan", () => {
     expect(plan.some((q) => /BB-28/i.test(q))).toBe(true);
     expect(plan.some((q) => /Beyblade Plastic/i.test(q) && /Dragoon/i.test(q))).toBe(true);
     expect(plan.some((q) => /Metal Fight/i.test(q) && /Pegasus/i.test(q))).toBe(true);
+  });
+
+  it("includes high-recall Mercari patterns from comp audit", () => {
+    const targets = buildProductBackfillTargets({
+      priorityOnly: true,
+      maxProducts: 20,
+    });
+    const b34 = targets.find((t) => t.productId === "prod-burst-b-34-starter");
+    expect(b34?.queries.some((q) => /タカラトミー B-34 スターター/.test(q))).toBe(true);
+    expect(b34?.queries.some((q) => /ベイブレード B-34 スターター/.test(q))).toBe(true);
   });
 
   it("includes Japanese whole-SKU terms", () => {

@@ -127,6 +127,27 @@ function buildQueriesForProduct(product: ProductDTO): string[] {
   }
   if (product.nameJp) add(product.nameJp);
 
+  // High-recall Mercari patterns from best-match audit (bey + code + starter/takara).
+  if (primaryCode) {
+    add(`ベイブレード ${primaryCode} スターター`);
+    add(`BEYBLADE ${primaryCode} スターター`);
+    add(`タカラトミー ${primaryCode} スターター`);
+    add(`ベイブレードX ${primaryCode} スターター`);
+    if (product.nameJp) add(`${primaryCode} ${product.nameJp} ベイブレード`);
+    if (product.nameEn) add(`タカラトミー ${primaryCode} ${product.nameEn}`);
+  }
+
+  // Metal/Plastic: sellers often omit hyphen (BB30 ロックレオーネ).
+  if (
+    (product.generation === "metal" || product.generation === "plastic") &&
+    primaryCode?.startsWith("BB-")
+  ) {
+    const bare = primaryCode.replace("-", "");
+    add(`メタルファイト ${bare}`);
+    add(`ベイブレード ${bare}`);
+    if (product.nameJp) add(`${bare} ${product.nameJp}`);
+  }
+
   return out;
 }
 

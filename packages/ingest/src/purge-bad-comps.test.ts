@@ -1,7 +1,13 @@
-import { describe, expect, it } from "vitest";
+import { describe, expect, it, beforeAll } from "vitest";
+import { loadMatcherContext, loadProductMatcherContext } from "@beyoracle/catalog";
 import { isStaleOrWrongMatch } from "./purge-bad-comps.js";
 
 describe("purge match re-validation", () => {
+  beforeAll(() => {
+    loadMatcherContext();
+    loadProductMatcherContext();
+  }, 30_000);
+
   it("flags non-Beyblade titles", () => {
     expect(
       isStaleOrWrongMatch("Foundation Addict jeans A01", "part", "x-bx-01-blade", 0.95)

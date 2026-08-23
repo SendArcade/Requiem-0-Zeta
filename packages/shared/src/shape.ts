@@ -3,6 +3,19 @@
  * Pattern from matcher v3 research (docs/MATCHING_RESEARCH.md).
  */
 
+import {
+  bareLegacyBbHasContext,
+  BEYBLADE_SIGNAL_RE,
+  BARE_BB_CODE_RE,
+  BURST_B_CODE_RE,
+  HYPHEN_BB_CODE_RE,
+  HYPHEN_CATALOG_CODE_RE,
+  isBeybladeAccessoryListing,
+  isNonBeybladeJunk,
+  METAL_PLASTIC_COMBO_RE,
+  X_COMBO_SUFFIX_RE,
+} from "./listing-quality.js";
+
 export type ListingShape = "single_part" | "complete_bey" | "lot";
 
 const LOT_PATTERNS: RegExp[] = [
@@ -14,34 +27,6 @@ const LOT_PATTERNS: RegExp[] = [
   /\bbundle\b|\block\b|\bset of\b|\bjoblot\b/i,
   /\b\d+\s*種\s*セット\b/,
 ];
-
-/** Beyblade / Takara-Tomy SKU tokens that must appear as printed (hyphenated), not 【A01】 tags. */
-const CATALOG_CODE_IN_TITLE =
-  /\b(BX-\d{2}|UX-\d{2}|CX-\d{2}|B-\d{2,3}|BB-\d{2}[A-Z]?|A-\d{2}|D-\d+|DS-\d+|MD-\d+|WD-[A-Z0-9]+|BB105|WF2|R2F|WD)\b/i;
-
-const BEYBLADE_SIGNAL =
-  /ベイ(?:ブレード|)|バースト|beyblade\s*x?|beybladex|takara|タカラ|戰鬥陀螺|战斗陀螺|爆旋陀螺/i;
-
-/** Bare B-XX collides with unrelated manufacturer SKUs (car parts, model kits, apparel). */
-const BURST_B_CODE = /\bB-\d{2,3}\b/i;
-
-/** Hyphenated Metal/Plastic SKU — BB-28, BB-01S (low false-positive rate). */
-const HYPHEN_BB_CODE = /\bBB-\d{2}[A-Z]?\b/i;
-
-/** Bare BB28 / BB12 — collides with Shimano BB, Honda parts, BAOBAO bags, car nav. */
-const BARE_BB_CODE = /\bBB\d{2}[A-Z]?\b/i;
-
-/** Legacy / X codes — low false-positive rate outside Bey listings (BB requires hyphen). */
-const LEGACY_CATALOG_CODE =
-  /\b(BX-\d{2}|UX-\d{2}|CX-\d{2}|A-\d{2}|D-\d+|DS-\d+|MD-\d+|WD-[A-Z0-9]+|BB105|WF2|R2F|WD)\b/i;
-
-/** Metal Fight / classic Takara context when a bare legacy BB token appears. */
-const LEGACY_BEY_CONTEXT =
-  /メタルファイト|metal fight|爆転シュート|ベイブレード|beyblade|タカラ|takara|完成品|スターター|starter/i;
-
-/** Known non-Beyblade categories that share manufacturer-style codes in titles. */
-const NON_BEYBLADE_JUNK =
-  /フジミ|プラモデル|トヨタ|toyota|\bbmw\b|ベンツ|mercedes|ヘッドランプ|headlamp|リーバイス|levis|levi'?s|denso|デンソー|\bosg\b|ルアー|\blure\b|ミラー|mirror|釣具|tackle|フィギュア(?!.*ベイ)|\bjeans\b|デニム|denim|シャツ|shirt|Masterworks|マスターワークス|パナソニック|panasonic|ストラーダ|メモリーナビ|カロッツェリア|carrozzeria|ホンダ|honda|シマノ|shimano|sram|baobao|バオバオ|isseymiyake|イッセイミヤケ|dickies|ディッキーズ|ミラジーノ|ソニカ|フィット|ムーヴ|三菱|mitsubishi|日産|nissan|給油キャップ|ボトムブラケット|bottom bracket|クランク|crankset|ワークパンツ|チノパン|古着|ミリタリー|フィールドジャケット|ユーロ|雑誌切抜|プーリー|リアホイール|ドラムブレーキ|イグニッション/i;
 
 /** Secondary Bey context when a bare Burst B-code appears without explicit bey signal. */
 const BURST_CONTEXT_SIGNAL =
@@ -55,9 +40,6 @@ const SINGLE_PART_MARKERS =
 /** Starter / booster / deck SKUs — priced as a full Bey, not one loose part. */
 const COMPLETE_BEY_MARKERS =
   /スターター|starter|ブースター|booster|スタートダッシュ|entry set|デッキセット|deck set|スタートダッシュセット|バトルエントリー|3on3|カスタマイズセット/i;
-
-/** X combo suffix: ratchet + bit, e.g. 3-60F, 4-80B, 3-60 f. */
-const COMBO_SUFFIX = /\d-\d{2}\s*[a-z]{1,3}\b/i;
 
 function canonicalizeShapeCode(code: string): string {
   const u = code.toUpperCase().replace(/\s+/g, "");
@@ -88,15 +70,16 @@ function looksLikeLot(title: string): boolean {
 
 /** Title looks like a Beyblade listing — gate before matcher auto-accept. */
 export function looksLikeBeybladeListing(title: string): boolean {
-  if (NON_BEYBLADE_JUNK.test(title)) return false;
-  if (BEYBLADE_SIGNAL.test(title)) return true;
-  if (HYPHEN_BB_CODE.test(title)) return true;
-  if (BARE_BB_CODE.test(title)) {
-    return LEGACY_BEY_CONTEXT.test(title) || BURST_CONTEXT_SIGNAL.test(title);
+  if (isNonBeybladeJunk(title)) return false;
+  if (isBeybladeAccessoryListing(title)) return false;
+  if (BEYBLADE_SIGNAL_RE.test(title)) return true;
+  if (HYPHEN_BB_CODE_RE.test(title)) return true;
+  if (BARE_BB_CODE_RE.test(title)) {
+    return bareLegacyBbHasContext(title) || BURST_CONTEXT_SIGNAL.test(title);
   }
-  if (LEGACY_CATALOG_CODE.test(title)) return true;
-  if (BURST_B_CODE.test(title)) return BURST_CONTEXT_SIGNAL.test(title);
-  return CATALOG_CODE_IN_TITLE.test(title);
+  if (HYPHEN_CATALOG_CODE_RE.test(title)) return true;
+  if (BURST_B_CODE_RE.test(title)) return BURST_CONTEXT_SIGNAL.test(title);
+  return false;
 }
 
 /** Part or whole-SKU ingest — never lots. */
@@ -107,11 +90,13 @@ export function isIngestEligible(title: string): boolean {
 
 /** Whole-product comps — complete Bey listings only (never loose singles). */
 export function isProductCompEligible(title: string): boolean {
+  if (isBeybladeAccessoryListing(title)) return false;
   return classifyListingShape(title) === "complete_bey";
 }
 
 export function classifyListingShape(title: string): ListingShape {
   if (looksLikeLot(title)) return "lot";
+  if (isBeybladeAccessoryListing(title)) return "single_part";
 
   if (SINGLE_PART_MARKERS.test(title)) return "single_part";
 
@@ -130,27 +115,35 @@ export function classifyListingShape(title: string): ListingShape {
     return "complete_bey";
   }
 
-  // Full X combo name without a single-part marker → starter-equivalent listing.
-  if (COMBO_SUFFIX.test(title) && !SINGLE_PART_MARKERS.test(title)) {
+  // X combo suffix needs catalog code or bey signal — blocks loose 9-65B bit listings.
+  if (
+    X_COMBO_SUFFIX_RE.test(title) &&
+    !SINGLE_PART_MARKERS.test(title) &&
+    (looksLikeBeybladeListing(title) || hasCatalogOrBeyContext(title))
+  ) {
     return "complete_bey";
   }
 
-  // Metal/Plastic whole tops often list as "BB-28 ストームペガシス 105RF" without
-  // スターター/完成品. Product code + track/tip combo (and no part-only marker) ≈ complete.
-  // Strip catalog codes first so "BB-01S" itself is not treated as a combo.
+  // Metal Fight bare BB30 + character/combo (hyphen optional in JP listings).
+  if (
+    BARE_BB_CODE_RE.test(title) &&
+    bareLegacyBbHasContext(title) &&
+    !SINGLE_PART_MARKERS.test(title)
+  ) {
+    return "complete_bey";
+  }
+
   const withoutCodes = title.replace(
     /\b(BX-?\d{2}|UX-?\d{2}|CX-?\d{2}|B-?\d{2,3}|BB-?\d{2}[A-Z]?|A-?\d{1,2})\b/gi,
     " "
   );
-  const METAL_OR_PLASTIC_COMBO =
-    /\b\d{2,3}[A-Z]{1,3}\b|\b[A-Z]{1,2}\d{2,3}[A-Z]{0,3}\b/;
   if (
     extractProductCodes(title).length > 0 &&
-    METAL_OR_PLASTIC_COMBO.test(withoutCodes) &&
+    METAL_PLASTIC_COMBO_RE.test(withoutCodes) &&
     !SINGLE_PART_MARKERS.test(title) &&
-    (BEYBLADE_SIGNAL.test(title) ||
-      LEGACY_BEY_CONTEXT.test(title) ||
-      HYPHEN_BB_CODE.test(title))
+    (BEYBLADE_SIGNAL_RE.test(title) ||
+      bareLegacyBbHasContext(title) ||
+      HYPHEN_BB_CODE_RE.test(title))
   ) {
     return "complete_bey";
   }
@@ -158,13 +151,21 @@ export function classifyListingShape(title: string): ListingShape {
   // Plastic-gen Takara A-codes (A-1 Dragoon S, …) listed with character name / bey signal.
   if (
     /\bA-?\d{1,2}\b/i.test(title) &&
-    BEYBLADE_SIGNAL.test(title) &&
+    BEYBLADE_SIGNAL_RE.test(title) &&
     !SINGLE_PART_MARKERS.test(title)
   ) {
     return "complete_bey";
   }
 
   return "single_part";
+}
+
+function hasCatalogOrBeyContext(title: string): boolean {
+  return (
+    HYPHEN_CATALOG_CODE_RE.test(title) ||
+    HYPHEN_BB_CODE_RE.test(title) ||
+    BEYBLADE_SIGNAL_RE.test(title)
+  );
 }
 
 /** Only loose single-part sold listings may feed a part-level oracle mark. */

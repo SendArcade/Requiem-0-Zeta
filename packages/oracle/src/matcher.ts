@@ -7,7 +7,10 @@ import type {
   SkuType,
 } from "@beyoracle/shared";
 import {
+  countStrongBeyMatchSignals,
+  isBeybladeAccessoryListing,
   isCompEligible,
+  isNonBeybladeJunk,
   isProductCompEligible,
   normalizeText,
   normalizedContains,
@@ -428,6 +431,13 @@ function scoreProductForTitle(product: ProductDTO, title: string): number {
     score -= 1;
   }
 
+  // Best-match audit: Takara/Tomy, Mercari おもちゃ, hyphen code, character names.
+  score += Math.min(4, countStrongBeyMatchSignals(title));
+
+  if (isNonBeybladeJunk(title) || isBeybladeAccessoryListing(title)) {
+    score -= 8;
+  }
+
   return score;
 }
 
@@ -497,6 +507,7 @@ export function matchToProduct(
   ctx: ProductMatcherContext,
   opts?: { generation?: Generation; minConfidence?: number }
 ): ProductMatchCandidate | null {
+  if (isNonBeybladeJunk(title) || isBeybladeAccessoryListing(title)) return null;
   if (!isProductCompEligible(title)) return null;
 
   const codes = extractProductCodes(title);

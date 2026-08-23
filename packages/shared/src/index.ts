@@ -206,6 +206,12 @@ export {
   type ListingShape,
 } from "./shape.js";
 export {
+  countStrongBeyMatchSignals,
+  hasHyphenatedCatalogCode,
+  isBeybladeAccessoryListing,
+  isNonBeybladeJunk,
+} from "./listing-quality.js";
+export {
   ASSEMBLED_SLOTS,
   analyzeProductRecipe,
   inferRecipeKind,
