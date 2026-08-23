@@ -40,6 +40,25 @@ describe("classifyListingShape", () => {
     expect(looksLikeBeybladeListing("ベイブレードバースト B-104 スターター")).toBe(true);
   });
 
+  it("rejects bare BB## without beyblade context (Shimano/Honda/nav collisions)", () => {
+    expect(looksLikeBeybladeListing("BB12 【ディオ FI AF68】プーリー ホンダ")).toBe(false);
+    expect(looksLikeBeybladeListing("Panasonic Strada CN-E330D (BB12)")).toBe(false);
+    expect(looksLikeBeybladeListing("SRAM X0 カーボンクランク BB30 MTB")).toBe(false);
+    expect(looksLikeBeybladeListing("BAOBAO ISSEY MIYAKE BB71-AG053")).toBe(false);
+    expect(looksLikeBeybladeListing("BB12 80s フランス軍 フィールドジャケット")).toBe(false);
+  });
+
+  it("accepts bare BB## when beyblade context is present", () => {
+    expect(looksLikeBeybladeListing("BB28 ストームペガシス 105RF スターター")).toBe(true);
+    expect(looksLikeBeybladeListing("メタルファイト BB28 完成品")).toBe(true);
+  });
+
+  it("does not classify Honda BB12 parts as complete bey", () => {
+    expect(classifyListingShape("BB12 【ディオ FI AF68】プーリー ホンダ")).toBe("single_part");
+    expect(isIngestEligible("BB12 【ディオ FI AF68】プーリー ホンダ")).toBe(true);
+    expect(isCompEligible("BB12 【ディオ FI AF68】プーリー ホンダ")).toBe(true);
+  });
+
   it("classifies complete beys as ingest-eligible", () => {
     expect(classifyListingShape("ベイブレードX BX-01 スターター")).toBe("complete_bey");
     expect(isIngestEligible("ベイブレードX BX-01 スターター")).toBe(true);

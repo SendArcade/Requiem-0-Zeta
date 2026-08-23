@@ -58,15 +58,22 @@ async function main() {
   }
 
   if (process.env.PURGE_BAD_COMPS === "1") {
-    console.log("[worker] PURGE_BAD_COMPS=1 — re-validating persisted matches…");
-    const generations = process.env.PURGE_GENERATIONS?.split(",").map((s) => s.trim()).filter(Boolean);
-    const purged = await purgeBadComps({
-      dryRun: process.env.PURGE_DRY_RUN === "1",
-      deleteObservations: process.env.PURGE_DELETE_OBSERVATIONS === "1",
-      generations: generations?.length ? (generations as import("@beyoracle/shared").Generation[]) : undefined,
-      skipPartMatches: process.env.PURGE_SKIP_PART_MATCHES === "1",
-    });
-    console.log("[worker] purge complete:", JSON.stringify(purged));
+    if (process.env.PURGE_BAD_COMPS_DONE === "1") {
+      console.log("[worker] PURGE_BAD_COMPS=1 but PURGE_BAD_COMPS_DONE=1 — skip");
+    } else {
+      console.log("[worker] PURGE_BAD_COMPS=1 — re-validating persisted matches…");
+      const generations = process.env.PURGE_GENERATIONS?.split(",").map((s) => s.trim()).filter(Boolean);
+      const purged = await purgeBadComps({
+        dryRun: process.env.PURGE_DRY_RUN === "1",
+        deleteObservations: process.env.PURGE_DELETE_OBSERVATIONS === "1",
+        generations: generations?.length ? (generations as import("@beyoracle/shared").Generation[]) : undefined,
+        skipPartMatches: process.env.PURGE_SKIP_PART_MATCHES === "1",
+      });
+      console.log("[worker] purge complete:", JSON.stringify(purged));
+      console.log(
+        "[worker] set PURGE_BAD_COMPS=0 and PURGE_BAD_COMPS_DONE=1 after reviewing purge logs"
+      );
+    }
   }
 
   if (process.env.BURST_WAVE0_MAINTENANCE === "1") {

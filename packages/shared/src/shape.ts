@@ -17,7 +17,7 @@ const LOT_PATTERNS: RegExp[] = [
 
 /** Beyblade / Takara-Tomy SKU tokens that must appear as printed (hyphenated), not 【A01】 tags. */
 const CATALOG_CODE_IN_TITLE =
-  /\b(BX-\d{2}|UX-\d{2}|CX-\d{2}|B-\d{2,3}|BB-?\d{2}[A-Z]?|A-\d{2}|D-\d+|DS-\d+|MD-\d+|WD-[A-Z0-9]+|BB105|WF2|R2F|WD)\b/i;
+  /\b(BX-\d{2}|UX-\d{2}|CX-\d{2}|B-\d{2,3}|BB-\d{2}[A-Z]?|A-\d{2}|D-\d+|DS-\d+|MD-\d+|WD-[A-Z0-9]+|BB105|WF2|R2F|WD)\b/i;
 
 const BEYBLADE_SIGNAL =
   /ベイ(?:ブレード|)|バースト|beyblade\s*x?|beybladex|takara|タカラ|戰鬥陀螺|战斗陀螺|爆旋陀螺/i;
@@ -25,13 +25,23 @@ const BEYBLADE_SIGNAL =
 /** Bare B-XX collides with unrelated manufacturer SKUs (car parts, model kits, apparel). */
 const BURST_B_CODE = /\bB-\d{2,3}\b/i;
 
-/** Legacy / X codes — low false-positive rate outside Bey listings. */
+/** Hyphenated Metal/Plastic SKU — BB-28, BB-01S (low false-positive rate). */
+const HYPHEN_BB_CODE = /\bBB-\d{2}[A-Z]?\b/i;
+
+/** Bare BB28 / BB12 — collides with Shimano BB, Honda parts, BAOBAO bags, car nav. */
+const BARE_BB_CODE = /\bBB\d{2}[A-Z]?\b/i;
+
+/** Legacy / X codes — low false-positive rate outside Bey listings (BB requires hyphen). */
 const LEGACY_CATALOG_CODE =
-  /\b(BX-\d{2}|UX-\d{2}|CX-\d{2}|BB-?\d{2}[A-Z]?|A-\d{2}|D-\d+|DS-\d+|MD-\d+|WD-[A-Z0-9]+|BB105|WF2|R2F|WD)\b/i;
+  /\b(BX-\d{2}|UX-\d{2}|CX-\d{2}|A-\d{2}|D-\d+|DS-\d+|MD-\d+|WD-[A-Z0-9]+|BB105|WF2|R2F|WD)\b/i;
+
+/** Metal Fight / classic Takara context when a bare legacy BB token appears. */
+const LEGACY_BEY_CONTEXT =
+  /メタルファイト|metal fight|爆転シュート|ベイブレード|beyblade|タカラ|takara|完成品|スターター|starter/i;
 
 /** Known non-Beyblade categories that share manufacturer-style codes in titles. */
 const NON_BEYBLADE_JUNK =
-  /フジミ|プラモデル|トヨタ|toyota|\bbmw\b|ヘッドランプ|headlamp|リーバイス|levis|levi'?s|denso|デンソー|\bosg\b|ルアー|\blure\b|ミラー|mirror|釣具|tackle|フィギュア(?!.*ベイ)|\bjeans\b|デニム|denim|シャツ|shirt|Masterworks|マスターワークス/i;
+  /フジミ|プラモデル|トヨタ|toyota|\bbmw\b|ベンツ|mercedes|ヘッドランプ|headlamp|リーバイス|levis|levi'?s|denso|デンソー|\bosg\b|ルアー|\blure\b|ミラー|mirror|釣具|tackle|フィギュア(?!.*ベイ)|\bjeans\b|デニム|denim|シャツ|shirt|Masterworks|マスターワークス|パナソニック|panasonic|ストラーダ|メモリーナビ|カロッツェリア|carrozzeria|ホンダ|honda|シマノ|shimano|sram|baobao|バオバオ|isseymiyake|イッセイミヤケ|dickies|ディッキーズ|ミラジーノ|ソニカ|フィット|ムーヴ|三菱|mitsubishi|日産|nissan|給油キャップ|ボトムブラケット|bottom bracket|クランク|crankset|ワークパンツ|チノパン|古着|ミリタリー|フィールドジャケット|ユーロ|雑誌切抜|プーリー|リアホイール|ドラムブレーキ|イグニッション/i;
 
 /** Secondary Bey context when a bare Burst B-code appears without explicit bey signal. */
 const BURST_CONTEXT_SIGNAL =
@@ -80,6 +90,10 @@ function looksLikeLot(title: string): boolean {
 export function looksLikeBeybladeListing(title: string): boolean {
   if (NON_BEYBLADE_JUNK.test(title)) return false;
   if (BEYBLADE_SIGNAL.test(title)) return true;
+  if (HYPHEN_BB_CODE.test(title)) return true;
+  if (BARE_BB_CODE.test(title)) {
+    return LEGACY_BEY_CONTEXT.test(title) || BURST_CONTEXT_SIGNAL.test(title);
+  }
   if (LEGACY_CATALOG_CODE.test(title)) return true;
   if (BURST_B_CODE.test(title)) return BURST_CONTEXT_SIGNAL.test(title);
   return CATALOG_CODE_IN_TITLE.test(title);
@@ -106,6 +120,7 @@ export function classifyListingShape(title: string): ListingShape {
   // Whole SKU with product code + complete/sealed packaging language (JP + EN).
   if (
     extractProductCodes(title).length > 0 &&
+    looksLikeBeybladeListing(title) &&
     (/完成品/.test(title) ||
       /\bcomplete\b/i.test(title) ||
       /\bassembled\b/i.test(title) ||
@@ -132,7 +147,10 @@ export function classifyListingShape(title: string): ListingShape {
   if (
     extractProductCodes(title).length > 0 &&
     METAL_OR_PLASTIC_COMBO.test(withoutCodes) &&
-    !SINGLE_PART_MARKERS.test(title)
+    !SINGLE_PART_MARKERS.test(title) &&
+    (BEYBLADE_SIGNAL.test(title) ||
+      LEGACY_BEY_CONTEXT.test(title) ||
+      HYPHEN_BB_CODE.test(title))
   ) {
     return "complete_bey";
   }
