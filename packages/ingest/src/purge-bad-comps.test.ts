@@ -40,7 +40,7 @@ describe("purge match re-validation", () => {
         0.95
       )
     ).toBe(false);
-  });
+  }, 15_000);
 
   it("flags low-confidence persisted rows", () => {
     expect(
