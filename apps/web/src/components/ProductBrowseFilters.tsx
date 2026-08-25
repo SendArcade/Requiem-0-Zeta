@@ -1,8 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import { useRouter } from "next/navigation";
-import { useCallback, useTransition } from "react";
 import { GENERATION_LABELS } from "@/lib/generation-labels";
 import type { Generation } from "@beyoracle/shared";
 import { GENERATIONS, SKU_TYPES } from "@beyoracle/shared";
@@ -14,23 +12,22 @@ const SKU_LABELS: Record<string, string> = {
   complete_sealed: "Complete (sealed)",
 };
 
-const CONFIDENCE_OPTIONS = [
-  { value: "", label: "All" },
-  { value: "has_mark", label: "Has mark" },
-  { value: "sparse", label: "Sparse" },
-] as const;
+// const CONFIDENCE_OPTIONS = [
+//   { value: "", label: "All" },
+//   { value: "has_mark", label: "Has mark" },
+//   { value: "sparse", label: "Sparse" },
+// ] as const;
 
 export interface ProductBrowseFilterState {
   generation?: Generation;
   skuType?: (typeof SKU_TYPES)[number];
-  confidence?: "has_mark" | "sparse";
+  // confidence?: "has_mark" | "sparse"; // hidden while catalog shows published marks only
 }
 
 function filterHref(base: string, next: ProductBrowseFilterState): string {
   const params = new URLSearchParams();
   if (next.generation) params.set("generation", next.generation);
   if (next.skuType) params.set("sku_type", next.skuType);
-  if (next.confidence) params.set("confidence", next.confidence);
   const q = params.toString();
   return q ? `${base}?${q}` : base;
 }
@@ -46,20 +43,8 @@ export function ProductBrowseFilters({
 }: {
   filters: ProductBrowseFilterState;
 }) {
-  const router = useRouter();
-  const [, startTransition] = useTransition();
-
-  const navigate = useCallback(
-    (next: ProductBrowseFilterState) => {
-      startTransition(() => {
-        router.push(filterHref("/browse/products", next));
-      });
-    },
-    [router]
-  );
-
   const basePath = "/browse/products";
-  const hasFilters = filters.generation || filters.skuType || filters.confidence;
+  const hasFilters = filters.generation || filters.skuType;
 
   return (
     <div className="mt-6 space-y-3">
@@ -115,43 +100,22 @@ export function ProductBrowseFilters({
         </div>
       </div>
 
+      {/* Mark filter hidden while catalog shows published oracle marks only.
       <div className="flex flex-wrap items-center gap-x-4 gap-y-3">
-        <span className="text-[10px] font-semibold uppercase tracking-widest text-[var(--muted)]">
-          Mark
-        </span>
-        <div className="flex flex-wrap gap-1.5">
-          {CONFIDENCE_OPTIONS.map(({ value, label }) => {
-            const active =
-              (value === "" && !filters.confidence) || filters.confidence === value;
-            return (
-              <button
-                key={value || "all"}
-                type="button"
-                onClick={() =>
-                  navigate({
-                    ...filters,
-                    confidence:
-                      value === ""
-                        ? undefined
-                        : (value as ProductBrowseFilterState["confidence"]),
-                  })
-                }
-                className={pillClass(active)}
-              >
-                {label}
-              </button>
-            );
-          })}
-        </div>
-        {hasFilters && (
+        ...
+      </div>
+      */}
+
+      {hasFilters && (
+        <div className="flex justify-end">
           <Link
             href={basePath}
-            className="ml-auto text-xs text-[var(--muted)] hover:text-[var(--accent)]"
+            className="text-xs text-[var(--muted)] hover:text-[var(--accent)]"
           >
             Clear all
           </Link>
-        )}
-      </div>
+        </div>
+      )}
     </div>
   );
 }

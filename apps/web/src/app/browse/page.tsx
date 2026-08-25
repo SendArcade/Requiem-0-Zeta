@@ -1,7 +1,7 @@
 import Link from "next/link";
-import { loadProducts } from "@beyoracle/catalog";
 import { GENERATION_LABELS } from "@/lib/generation-labels";
 import { GENERATIONS } from "@beyoracle/shared";
+import { browseProducts } from "@/lib/product-data";
 
 const GEN_DESCRIPTIONS: Record<(typeof GENERATIONS)[number], string> = {
   plastic: "Classic HMS & early tops",
@@ -10,8 +10,9 @@ const GEN_DESCRIPTIONS: Record<(typeof GENERATIONS)[number], string> = {
   x: "Beyblade X BX & UX lines",
 };
 
-export default function BrowsePage() {
-  const productCount = loadProducts().length;
+export default async function BrowsePage() {
+  const products = await browseProducts();
+  const productCount = products.length;
 
   return (
     <div className="space-y-10">
@@ -34,7 +35,7 @@ export default function BrowsePage() {
                 Whole-SKU products
               </div>
               <p className="mt-1.5 text-sm text-[var(--muted)]">
-                Starters, sealed boxes, and complete Bey sets — the primary oracle catalog.
+                Starters, sealed boxes, and complete Bey sets with calculated oracle marks.
               </p>
             </div>
             <span className="badge-gen shrink-0">{productCount.toLocaleString()} SKUs</span>

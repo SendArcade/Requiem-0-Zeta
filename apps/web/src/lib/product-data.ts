@@ -51,6 +51,19 @@ export interface BrowseProductRow {
   confidence: string;
 }
 
+/** Whole-SKU row has a publishable oracle mark (≥ min comps, not low confidence). */
+export function hasPublishedProductMark(row: { nComps: number; confidence: string }): boolean {
+  const minComps = resolvePublishedMinComps();
+  return row.nComps >= minComps && row.confidence !== "low";
+}
+
+function filterPublishedProductRows<T extends { nComps: number; confidence: string }>(
+  rows: T[],
+  publishedOnly: boolean
+): T[] {
+  return publishedOnly ? rows.filter(hasPublishedProductMark) : rows;
+}
+
 export interface ProductData {
   product: ProductDTO;
   parts: NonNullable<ReturnType<typeof getPartById>>[];
@@ -478,14 +491,22 @@ export function browseProductsFromFixtures(generation?: Generation): BrowseProdu
   });
 }
 
-export async function browseProducts(generation?: Generation): Promise<BrowseProductRow[]> {
-  if (await isDbAvailable()) {
-    return browseProductsFromDb(generation);
-  }
-  return browseProductsFromFixtures(generation);
+export async function browseProducts(
+  generation?: Generation,
+  opts?: { publishedOnly?: boolean }
+): Promise<BrowseProductRow[]> {
+  const publishedOnly = opts?.publishedOnly ?? true;
+  const rows = (await isDbAvailable())
+    ? await browseProductsFromDb(generation)
+    : browseProductsFromFixtures(generation);
+  return filterPublishedProductRows(rows, publishedOnly);
 }
 
-export async function searchProductsWithOracle(q: string) {
+export async function searchProductsWithOracle(
+  q: string,
+  opts?: { publishedOnly?: boolean }
+) {
+  const publishedOnly = opts?.publishedOnly ?? true;
   const results = searchProducts(q);
   if (results.length === 0) return [];
 
@@ -504,7 +525,7 @@ export async function searchProductsWithOracle(q: string) {
 
     const snapByProduct = new Map(snaps.map((s) => [s.productId, s]));
 
-    return results.map((p) => {
+    const mapped = results.map((p) => {
       const snap = snapByProduct.get(p.id);
       return {
         kind: "product" as const,
@@ -519,9 +540,10 @@ export async function searchProductsWithOracle(q: string) {
         confidence: snap?.confidence ?? "low",
       };
     });
+    return filterPublishedProductRows(mapped, publishedOnly);
   }
 
-  return results.map((p) => {
+  const mapped = results.map((p) => {
     const data = getProductDataFromFixtures(p.id);
     return {
       kind: "product" as const,
@@ -536,4 +558,5 @@ export async function searchProductsWithOracle(q: string) {
       confidence: data?.oracle?.confidence ?? "low",
     };
   });
+  return filterPublishedProductRows(mapped, publishedOnly);
 }

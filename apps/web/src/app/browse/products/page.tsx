@@ -2,7 +2,7 @@ import Link from "next/link";
 import { Suspense } from "react";
 import { GENERATION_LABELS } from "@/lib/generation-labels";
 import type { Generation, SkuType } from "@beyoracle/shared";
-import { resolvePublishedMinComps, GENERATIONS, SKU_TYPES } from "@beyoracle/shared";
+import { GENERATIONS, SKU_TYPES } from "@beyoracle/shared";
 import { ProductBrowseFilters, type ProductBrowseFilterState } from "@/components/ProductBrowseFilters";
 import { browseProducts, type BrowseProductRow } from "@/lib/product-data";
 
@@ -13,11 +13,6 @@ const SKU_LABELS: Record<string, string> = {
   complete_sealed: "Complete (sealed)",
 };
 
-function isSparseRow(p: BrowseProductRow) {
-  const minComps = resolvePublishedMinComps();
-  return p.nComps < minComps || p.confidence === "low";
-}
-
 function formatJpy(n: number) {
   return `¥${Math.round(n).toLocaleString("ja-JP")}`;
 }
@@ -25,7 +20,6 @@ function formatJpy(n: number) {
 function parseFilters(searchParams: {
   generation?: string;
   sku_type?: string;
-  confidence?: string;
 }): ProductBrowseFilterState {
   const generation = GENERATIONS.includes(searchParams.generation as Generation)
     ? (searchParams.generation as Generation)
@@ -33,11 +27,7 @@ function parseFilters(searchParams: {
   const skuType = SKU_TYPES.includes(searchParams.sku_type as SkuType)
     ? (searchParams.sku_type as SkuType)
     : undefined;
-  const confidence =
-    searchParams.confidence === "has_mark" || searchParams.confidence === "sparse"
-      ? searchParams.confidence
-      : undefined;
-  return { generation, skuType, confidence };
+  return { generation, skuType };
 }
 
 function applyFilters(
@@ -47,8 +37,6 @@ function applyFilters(
   return products.filter((p) => {
     if (filters.generation && p.generation !== filters.generation) return false;
     if (filters.skuType && p.skuType !== filters.skuType) return false;
-    if (filters.confidence === "has_mark" && isSparseRow(p)) return false;
-    if (filters.confidence === "sparse" && !isSparseRow(p)) return false;
     return true;
   });
 }
@@ -75,12 +63,10 @@ function ProductTable({ products }: { products: BrowseProductRow[] }) {
           </tr>
         </thead>
         <tbody>
-          {products.map((p) => {
-            const sparse = isSparseRow(p);
-            return (
+          {products.map((p) => (
               <tr
                 key={p.id}
-                className={`border-b border-[var(--border)]/40 transition-colors hover:bg-white/[0.02] ${sparse ? "opacity-70" : ""}`}
+                className="border-b border-[var(--border)]/40 transition-colors hover:bg-white/[0.02]"
               >
                 <td className="px-4 py-3">
                   <Link
@@ -89,14 +75,6 @@ function ProductTable({ products }: { products: BrowseProductRow[] }) {
                   >
                     {p.nameEn}
                   </Link>
-                  {sparse && (
-                    <span
-                      className="ml-2 inline-flex rounded px-1.5 py-0.5 text-[10px] font-medium uppercase tracking-wide bg-amber-500/15 text-amber-400"
-                          title={`Fewer than ${resolvePublishedMinComps()} comps or low confidence`}
-                    >
-                      sparse
-                    </span>
-                  )}
                 </td>
                 <td className="px-4 py-3 text-[var(--muted)]">
                   {SKU_LABELS[p.skuType] ?? p.skuType}
@@ -121,13 +99,10 @@ function ProductTable({ products }: { products: BrowseProductRow[] }) {
                   )}
                 </td>
                 <td className="px-4 py-3 text-right tabular-nums">
-                  <span className={sparse ? "text-amber-400" : "text-[var(--muted)]"}>
-                    {p.nComps}
-                  </span>
+                  <span className="text-[var(--muted)]">{p.nComps}</span>
                 </td>
               </tr>
-            );
-          })}
+          ))}
         </tbody>
       </table>
     </div>
@@ -137,12 +112,12 @@ function ProductTable({ products }: { products: BrowseProductRow[] }) {
 export default async function BrowseProductsPage({
   searchParams,
 }: {
-  searchParams: Promise<{ generation?: string; sku_type?: string; confidence?: string }>;
+  searchParams: Promise<{ generation?: string; sku_type?: string }>;
 }) {
   const params = await searchParams;
   const filters = parseFilters(params);
-  const allProducts = await browseProducts();
-  const filtered = applyFilters(allProducts, filters);
+  const products = await browseProducts();
+  const filtered = applyFilters(products, filters);
 
   const byGeneration = (filters.generation ? [filters.generation] : GENERATIONS)
     .map((gen) => ({
@@ -160,13 +135,11 @@ export default async function BrowseProductsPage({
         <div>
           <h1 className="text-2xl font-bold tracking-tight">Products</h1>
           <p className="mt-1 text-sm text-[var(--muted)]">
-            Whole-SKU catalog — starters, sealed boxes, complete Bey sets
+            Whole-SKU products with calculated oracle marks — starters, sealed boxes, complete Bey sets
           </p>
         </div>
         <p className="text-sm tabular-nums text-[var(--muted)]">
-          {filtered.length}
-          <span className="text-[var(--border)]"> / </span>
-          {allProducts.length}
+          {filtered.length} SKU{filtered.length !== 1 ? "s" : ""}
         </p>
       </div>
 
