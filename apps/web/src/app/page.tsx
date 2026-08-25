@@ -5,6 +5,8 @@ import { SearchBox } from "@/components/SearchBox";
 import { browseGeneration } from "@/lib/data";
 import { browseProducts } from "@/lib/product-data";
 
+export const dynamic = "force-dynamic";
+
 export default async function HomePage() {
   const [products, ...partsByGen] = await Promise.all([
     browseProducts(),

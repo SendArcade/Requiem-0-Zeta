@@ -5,6 +5,8 @@ import type { Generation } from "@beyoracle/shared";
 import { GENERATIONS } from "@beyoracle/shared";
 import { browseGeneration } from "@/lib/data";
 
+export const dynamic = "force-dynamic";
+
 function formatJpy(n: number) {
   return `¥${Math.round(n).toLocaleString("ja-JP")}`;
 }

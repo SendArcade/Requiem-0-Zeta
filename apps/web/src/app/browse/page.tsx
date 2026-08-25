@@ -3,6 +3,8 @@ import { GENERATION_LABELS } from "@/lib/generation-labels";
 import { GENERATIONS } from "@beyoracle/shared";
 import { browseProducts } from "@/lib/product-data";
 
+export const dynamic = "force-dynamic";
+
 const GEN_DESCRIPTIONS: Record<(typeof GENERATIONS)[number], string> = {
   plastic: "Classic HMS & early tops",
   metal: "Metal Fight Beyblade era",

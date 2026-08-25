@@ -6,6 +6,8 @@ import { GENERATIONS, SKU_TYPES } from "@beyoracle/shared";
 import { ProductBrowseFilters, type ProductBrowseFilterState } from "@/components/ProductBrowseFilters";
 import { browseProducts, type BrowseProductRow } from "@/lib/product-data";
 
+export const dynamic = "force-dynamic";
+
 const SKU_LABELS: Record<string, string> = {
   sealed: "Sealed",
   starter: "Starter",

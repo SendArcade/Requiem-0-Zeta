@@ -4,6 +4,8 @@ import type { Generation } from "@beyoracle/shared";
 import { SearchBox } from "@/components/SearchBox";
 import { searchUnified, type SearchResultItem } from "@/lib/data";
 
+export const dynamic = "force-dynamic";
+
 const SKU_LABELS: Record<string, string> = {
   sealed: "Sealed",
   starter: "Starter",
