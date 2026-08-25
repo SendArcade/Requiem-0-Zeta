@@ -35,11 +35,15 @@ export async function getAssetData(
   return getAssetDataFromFixtures(partId, sources, displayCurrency, conditions);
 }
 
-export async function browseGeneration(generation: Generation) {
+export async function browseGeneration(
+  generation: Generation,
+  opts?: { publishedOnly?: boolean }
+) {
+  const publishedOnly = opts?.publishedOnly ?? true;
   if (await isDbAvailable()) {
-    return browseGenerationFromDb(generation);
+    return browseGenerationFromDb(generation, { publishedOnly });
   }
-  return browseGenerationFromFixtures(generation);
+  return browseGenerationFromFixtures(generation, { publishedOnly });
 }
 
 export async function searchCatalog(q: string) {

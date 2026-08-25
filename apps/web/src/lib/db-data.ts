@@ -27,6 +27,7 @@ import {
 } from "@beyoracle/shared";
 import { and, eq, inArray } from "drizzle-orm";
 import type { CompRow, AssetData } from "./data-types";
+import { filterPublishedRows } from "./published-mark";
 
 let dbProbe: boolean | null = null;
 
@@ -180,7 +181,11 @@ export async function getAssetDataFromDb(
   };
 }
 
-export async function browseGenerationFromDb(generation: Generation) {
+export async function browseGenerationFromDb(
+  generation: Generation,
+  opts?: { publishedOnly?: boolean }
+) {
+  const publishedOnly = opts?.publishedOnly ?? true;
   const parts = getPartsByGeneration(generation);
   const partIds = parts.map((p) => p.id);
 
@@ -199,7 +204,7 @@ export async function browseGenerationFromDb(generation: Generation) {
 
   const snapByPart = new Map(snaps.map((s) => [s.assetId, s]));
 
-  return parts.map((p) => {
+  const rows = parts.map((p) => {
     const snap = snapByPart.get(p.id);
     return {
       ...p,
@@ -212,6 +217,7 @@ export async function browseGenerationFromDb(generation: Generation) {
       confidence: snap?.confidence ?? "low",
     };
   });
+  return filterPublishedRows(rows, publishedOnly);
 }
 
 export async function searchCatalogFromDb(q: string) {
@@ -219,7 +225,11 @@ export async function searchCatalogFromDb(q: string) {
 }
 
 /** Enrich part search results with oracle snapshots when DB is warm. */
-export async function searchPartsFromDbWithOracle(q: string) {
+export async function searchPartsFromDbWithOracle(
+  q: string,
+  opts?: { publishedOnly?: boolean }
+) {
+  const publishedOnly = opts?.publishedOnly ?? true;
   const results = searchParts(q);
   if (results.length === 0) return [];
 
@@ -237,7 +247,7 @@ export async function searchPartsFromDbWithOracle(q: string) {
 
   const snapByPart = new Map(snaps.map((s) => [s.assetId, s]));
 
-  return results.map((p) => {
+  const rows = results.map((p) => {
     const snap = snapByPart.get(p.id);
     return {
       kind: "part" as const,
@@ -252,6 +262,7 @@ export async function searchPartsFromDbWithOracle(q: string) {
       confidence: snap?.confidence ?? "low",
     };
   });
+  return filterPublishedRows(rows, publishedOnly);
 }
 
 /** @deprecated Use searchPartsFromDbWithOracle — kept for callers expecting raw part rows. */
@@ -332,9 +343,13 @@ export function getAssetDataFromFixtures(
   return { part, oracle, oracleByCondition, comps, chart, conditions };
 }
 
-export function browseGenerationFromFixtures(generation: Generation) {
+export function browseGenerationFromFixtures(
+  generation: Generation,
+  opts?: { publishedOnly?: boolean }
+) {
+  const publishedOnly = opts?.publishedOnly ?? true;
   const parts = getPartsByGeneration(generation);
-  return parts.map((p) => {
+  const rows = parts.map((p) => {
     const data = getAssetDataFromFixtures(p.id);
     return {
       ...p,
@@ -345,10 +360,12 @@ export function browseGenerationFromFixtures(generation: Generation) {
       confidence: data?.oracle?.confidence ?? "low",
     };
   });
+  return filterPublishedRows(rows, publishedOnly);
 }
 
-export function searchPartsFromFixtures(q: string) {
-  return searchParts(q).map((p) => {
+export function searchPartsFromFixtures(q: string, opts?: { publishedOnly?: boolean }) {
+  const publishedOnly = opts?.publishedOnly ?? true;
+  const rows = searchParts(q).map((p) => {
     const data = getAssetDataFromFixtures(p.id);
     return {
       kind: "part" as const,
@@ -363,6 +380,7 @@ export function searchPartsFromFixtures(q: string) {
       confidence: data?.oracle?.confidence ?? "low",
     };
   });
+  return filterPublishedRows(rows, publishedOnly);
 }
 
 /** @deprecated Use searchPartsFromFixtures */

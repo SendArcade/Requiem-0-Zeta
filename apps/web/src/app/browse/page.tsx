@@ -20,7 +20,7 @@ export default async function BrowsePage() {
         <p className="text-label mb-2">Catalog</p>
         <h1 className="text-3xl font-semibold tracking-tight">Browse</h1>
         <p className="mt-2 text-[var(--muted)]">
-          Whole-SKU products and individual parts across every Beyblade generation in the oracle.
+          Whole-SKU products and individual parts with calculated oracle marks.
         </p>
       </header>
 

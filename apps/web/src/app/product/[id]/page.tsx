@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import { ProductPageClient } from "@/components/ProductPageClient";
-import { getProductData, hasPublishedProductMark } from "@/lib/product-data";
+import { getProductData } from "@/lib/product-data";
+import { hasPublishedMark } from "@/lib/published-mark";
 
 export default async function ProductPage({
   params,
@@ -14,7 +15,7 @@ export default async function ProductPage({
   const oracle = data.oracle;
   if (
     !oracle ||
-    !hasPublishedProductMark({ nComps: oracle.nComps, confidence: oracle.confidence })
+    !hasPublishedMark({ nComps: oracle.nComps, confidence: oracle.confidence })
   ) {
     notFound();
   }

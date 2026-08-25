@@ -2,13 +2,8 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { GENERATION_LABELS } from "@/lib/generation-labels";
 import type { Generation } from "@beyoracle/shared";
-import { resolvePublishedMinComps, GENERATIONS } from "@beyoracle/shared";
+import { GENERATIONS } from "@beyoracle/shared";
 import { browseGeneration } from "@/lib/data";
-
-function isSparseCompRow(p: { nComps: number; confidence: string }) {
-  const minComps = resolvePublishedMinComps();
-  return p.nComps < minComps || p.confidence === "low";
-}
 
 function formatJpy(n: number) {
   return `¥${Math.round(n).toLocaleString("ja-JP")}`;
@@ -33,7 +28,9 @@ export default async function BrowseGenerationPage({
       <div className="mt-2 flex flex-wrap items-end justify-between gap-4">
         <div>
           <h1 className="text-2xl font-bold tracking-tight">{GENERATION_LABELS[gen]}</h1>
-          <p className="mt-1 text-sm text-[var(--muted)]">Part-level oracle marks</p>
+          <p className="mt-1 text-sm text-[var(--muted)]">
+            Parts with calculated oracle marks
+          </p>
         </div>
         <p className="text-sm tabular-nums text-[var(--muted)]">
           {parts.length} part{parts.length !== 1 ? "s" : ""}
@@ -41,24 +38,27 @@ export default async function BrowseGenerationPage({
       </div>
 
       <div className="card mt-6 overflow-hidden p-0">
-        <div className="overflow-x-auto">
-          <table className="w-full text-left text-sm">
-            <thead>
-              <tr className="border-b border-[var(--border)] bg-black/20 text-[10px] uppercase tracking-wider text-[var(--muted)]">
-                <th className="px-4 py-3 font-semibold">Part</th>
-                <th className="px-4 py-3 font-semibold">Type</th>
-                <th className="px-4 py-3 font-semibold">Code</th>
-                <th className="px-4 py-3 text-right font-semibold">Oracle Value</th>
-                <th className="px-4 py-3 text-right font-semibold">Comps</th>
-              </tr>
-            </thead>
-            <tbody>
-              {parts.map((p) => {
-                const sparse = isSparseCompRow(p);
-                return (
+        {parts.length === 0 ? (
+          <p className="px-4 py-8 text-center text-sm text-[var(--muted)]">
+            No parts with comps yet for this generation.
+          </p>
+        ) : (
+          <div className="overflow-x-auto">
+            <table className="w-full text-left text-sm">
+              <thead>
+                <tr className="border-b border-[var(--border)] bg-black/20 text-[10px] uppercase tracking-wider text-[var(--muted)]">
+                  <th className="px-4 py-3 font-semibold">Part</th>
+                  <th className="px-4 py-3 font-semibold">Type</th>
+                  <th className="px-4 py-3 font-semibold">Code</th>
+                  <th className="px-4 py-3 text-right font-semibold">Oracle Value</th>
+                  <th className="px-4 py-3 text-right font-semibold">Comps</th>
+                </tr>
+              </thead>
+              <tbody>
+                {parts.map((p) => (
                   <tr
                     key={p.id}
-                    className={`border-b border-[var(--border)]/40 transition-colors hover:bg-white/[0.02] ${sparse ? "opacity-70" : ""}`}
+                    className="border-b border-[var(--border)]/40 transition-colors hover:bg-white/[0.02]"
                   >
                     <td className="px-4 py-3">
                       <Link
@@ -67,14 +67,6 @@ export default async function BrowseGenerationPage({
                       >
                         {p.nameEn}
                       </Link>
-                      {sparse && (
-                        <span
-                          className="ml-2 inline-flex rounded px-1.5 py-0.5 text-[10px] font-medium uppercase tracking-wide bg-amber-500/15 text-amber-400"
-                          title={`Fewer than ${resolvePublishedMinComps()} comps or low confidence`}
-                        >
-                          sparse
-                        </span>
-                      )}
                     </td>
                     <td className="px-4 py-3 capitalize text-[var(--muted)]">{p.partType}</td>
                     <td className="px-4 py-3 font-mono text-xs text-[var(--muted)]">
@@ -96,17 +88,15 @@ export default async function BrowseGenerationPage({
                         <span className="text-[var(--muted)]">—</span>
                       )}
                     </td>
-                    <td className="px-4 py-3 text-right tabular-nums">
-                      <span className={sparse ? "text-amber-400" : "text-[var(--muted)]"}>
-                        {p.nComps}
-                      </span>
+                    <td className="px-4 py-3 text-right tabular-nums text-[var(--muted)]">
+                      {p.nComps}
                     </td>
                   </tr>
-                );
-              })}
-            </tbody>
-          </table>
-        </div>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        )}
       </div>
     </div>
   );

@@ -21,7 +21,6 @@ import {
   analyzeProductRecipe,
   convertCurrency,
   computeRetailReference,
-  resolvePublishedMinComps,
   isLiveMarketplaceComp,
   productMarkConditions,
   feedsOracleMark,
@@ -29,6 +28,7 @@ import {
   looksLikeBeybladeListing,
   maskFromSources,
   resolveEvidenceKind,
+  resolvePublishedMinComps,
   SOURCES,
   type ProductRecipeAnalysis,
   type RetailReference,
@@ -36,6 +36,9 @@ import {
 import { and, eq, inArray } from "drizzle-orm";
 import type { CompRow } from "./data-types";
 import { isDbAvailable } from "./db-data";
+import { filterPublishedRows, hasPublishedMark } from "./published-mark";
+
+export { hasPublishedMark as hasPublishedProductMark };
 
 export interface BrowseProductRow {
   id: string;
@@ -49,19 +52,6 @@ export interface BrowseProductRow {
   oracleHigh: number | null;
   nComps: number;
   confidence: string;
-}
-
-/** Whole-SKU row has a publishable oracle mark (≥ min comps, not low confidence). */
-export function hasPublishedProductMark(row: { nComps: number; confidence: string }): boolean {
-  const minComps = resolvePublishedMinComps();
-  return row.nComps >= minComps && row.confidence !== "low";
-}
-
-function filterPublishedProductRows<T extends { nComps: number; confidence: string }>(
-  rows: T[],
-  publishedOnly: boolean
-): T[] {
-  return publishedOnly ? rows.filter(hasPublishedProductMark) : rows;
 }
 
 export interface ProductData {
@@ -499,7 +489,7 @@ export async function browseProducts(
   const rows = (await isDbAvailable())
     ? await browseProductsFromDb(generation)
     : browseProductsFromFixtures(generation);
-  return filterPublishedProductRows(rows, publishedOnly);
+  return filterPublishedRows(rows, publishedOnly);
 }
 
 export async function searchProductsWithOracle(
@@ -540,7 +530,7 @@ export async function searchProductsWithOracle(
         confidence: snap?.confidence ?? "low",
       };
     });
-    return filterPublishedProductRows(mapped, publishedOnly);
+    return filterPublishedRows(mapped, publishedOnly);
   }
 
   const mapped = results.map((p) => {
@@ -558,5 +548,5 @@ export async function searchProductsWithOracle(
       confidence: data?.oracle?.confidence ?? "low",
     };
   });
-  return filterPublishedProductRows(mapped, publishedOnly);
+  return filterPublishedRows(mapped, publishedOnly);
 }
