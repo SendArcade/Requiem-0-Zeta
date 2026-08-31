@@ -34,3 +34,14 @@ products, parts, marks with n_comps >= 3 by generation
 ```
 
 Use `railway connect Postgres --ssh` or an authorized `DATABASE_URL` tunnel — never print secrets.
+
+## Cloud Agent auth: `RAILWAY_TOKEN` is a **project token**
+
+Cursor Cloud injects `RAILWAY_TOKEN` from environment secrets. For Beyoracle it is a **real Railway project token** (UUID shape), scoped to the `oracle` project + production environment — **not** a misconfigured or invalid secret.
+
+| Variable | Token type | Use for |
+|----------|------------|---------|
+| `RAILWAY_TOKEN` | **Project token** (env secret) | `railway redeploy`, `railway up`, `railway logs`, `railway deployment list`, `railway variable set` — no `railway link` needed |
+| `RAILWAY_API_TOKEN` | Account/dashboard token | `railway whoami`, `railway link`, `railway list`, `railway connect`, full MCP account ops |
+
+**Do not** treat `railway whoami` → Unauthorized as a bad `RAILWAY_TOKEN`. Project tokens cannot run dashboard/account commands. Use `-s web` / `-s worker` (and `--from-source` for latest GitHub deploy) instead of `link` + `whoami` preflight.

@@ -148,3 +148,19 @@ matcher, unrelated to setup): `product-eval.test.ts` passes only with a longer
 timeout (~123s vs vitest's 5s default), and the "Burst identity product matcher"
 case in `matcher.test.ts` asserts `.toMatch()` on a non-string object and fails
 fast. The rest of the suite (48/50) passes.
+
+### Railway CLI on Cloud Agents
+
+`RAILWAY_TOKEN` in this environment is a **project token** (UUID), not an account
+token. It is valid — `railway whoami` fails because that command needs a dashboard
+token (`RAILWAY_API_TOKEN`). Use project-scoped commands directly:
+
+```bash
+railway redeploy -s web -y --from-source
+railway redeploy -s worker -y --from-source
+railway variable set -s worker KEY=value
+railway deployment list -s worker --json
+railway logs -s worker
+```
+
+See `.cursor/rules/railway-only.mdc` for the full token-type table.

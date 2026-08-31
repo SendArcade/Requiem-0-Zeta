@@ -21,7 +21,14 @@ See constitution: `.specify/memory/constitution.md` and always-on rule: `.cursor
 | `pnpm test` / typecheck | Local |
 | Live ingest / product fleet | Railway worker |
 | Inspect counts | `railway connect Postgres --ssh` |
-| Deploy | `railway up --service worker` or GitHub integration |
+| Deploy | `railway redeploy -s web -y --from-source` (project token) or GitHub integration |
+
+### Cloud Agent / CI tokens
+
+- **`RAILWAY_TOKEN`** — project token (UUID). Scoped to one project/environment. Use for `redeploy`, `up`, `logs`, `variable set`. Does **not** support `whoami` or `link`.
+- **`RAILWAY_API_TOKEN`** — account/dashboard token. Required for `whoami`, `link`, `connect`, listing projects.
+
+Do not diagnose a valid project token as broken when `railway whoami` returns Unauthorized.
 
 ## Do not run for pricing work
 
