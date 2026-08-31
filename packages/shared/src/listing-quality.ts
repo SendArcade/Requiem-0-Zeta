@@ -10,7 +10,7 @@
 
 /** Known non-Beyblade categories that reuse catalog-like tokens in titles. */
 export const NON_BEYBLADE_JUNK_RE =
-  /フジミ|プラモデル|トヨタ|toyota|\bbmw\b|ベンツ|mercedes|ヘッドランプ|headlamp|リーバイス|levis|levi'?s|denso|デンソー|\bosg\b|ルアー|\blure\b|ミラー|mirror|釣具|tackle|フィギュア(?!.*ベイ)|\bjeans\b|デニム|denim|シャツ|shirt|Masterworks|マスターワークス|パナソニック|panasonic|ストラーダ|メモリーナビ|カロッツェリア|carrozzeria|ホンダ|honda|シマノ|shimano|sram|baobao|バオバオ|isseymiyake|イッセイミヤケ|dickies|ディッキーズ|ミラジーノ|ソニカ|フィット|ムーヴ|三菱|mitsubishi|日産|nissan|給油キャップ|ボトムブラケット|bottom bracket|クランク|crankset|ワークパンツ|チノパン|古着|ミリタリー|フィールドジャケット|ユーロ|雑誌切抜|プーリー|リアホイール|ドラムブレーキ|イグニッション|Panini|NFLカード|トレーディングカード|腕時計|QUARTZ|カシオ|CASIO|ドライブレコーダー|ドラレコ|HDDレコーダー|ミートスライサー|厨房|業務用|エレキバイオリン|弦楽器|パーツリスト|サービスマニュアル|配線図|純正部品|実働外し|検\)AF/i;
+  /フジミ|プラモデル|トヨタ|toyota|\bbmw\b|ベンツ|mercedes|ヘッドランプ|headlamp|リーバイス|levis|levi'?s|denso|デンソー|\bosg\b|ルアー|\blure\b|ミラー|mirror|釣具|tackle|フィギュア(?!.*ベイ)|\bjeans\b|デニム|denim|シャツ|shirt|Masterworks|マスターワークス|パナソニック|panasonic|ストラーダ|メモリーナビ|カロッツェリア|carrozzeria|ホンダ|honda|シマノ|shimano|sram|baobao|バオバオ|isseymiyake|イッセイミヤケ|dickies|ディッキーズ|ミラジーノ|ソニカ|フィット|ムーヴ|三菱|mitsubishi|日産|nissan|給油キャップ|ボトムブラケット|bottom bracket|クランク|crankset|ワークパンツ|チノパン|古着|ミリタリー|フィールドジャケット|ユーロ|雑誌切抜|プーリー|リアホイール|ドラムブレーキ|イグニッション|Panini|NFLカード|トレーディングカード|腕時計|QUARTZ|カシオ|CASIO|ドライブレコーダー|ドラレコ|HDDレコーダー|ミートスライサー|厨房|業務用|エレキバイオリン|弦楽器|パーツリスト|サービスマニュアル|配線図|純正部品|実働外し|検\)AF|アオシマ|aoshima|ハセガワ|hasegawa|タミヤ|tamiya|モデルキット|模型|1\/\d{2,3}|セドリック|cedric|スカイライン|skyline|フェアレディ|fairlady/i;
 
 export const BEYBLADE_SIGNAL_RE =
   /ベイ(?:ブレード|)|バースト|beyblade\s*x?|beybladex|takara|タカラ|戰鬥陀螺|战斗陀螺|爆旋陀螺|メタルファイト|metal fight|爆転シュート/i;
@@ -95,5 +95,20 @@ export function bareLegacyBbHasContext(title: string): boolean {
     ) ||
     STARTER_MARKER_RE.test(title) ||
     (CHARACTER_NAME_RE.test(title) && METAL_PLASTIC_COMBO_RE.test(title))
+  );
+}
+
+/**
+ * Bare Burst B-## needs real bey context — not 完成品 alone (car model kits reuse B-codes).
+ * Pattern from fleet v6 car-kit false-positive audit (アオシマ 1/24 330セドリック).
+ */
+export function bareBurstBCodeHasContext(title: string): boolean {
+  if (BEYBLADE_SIGNAL_RE.test(title)) return true;
+  if (TAKARA_TOMY_RE.test(title)) return true;
+  if (STARTER_MARKER_RE.test(title)) return true;
+  if (CHARACTER_NAME_RE.test(title)) return true;
+  if (MERCARI_TOY_CATEGORY_RE.test(title)) return true;
+  return /レイヤー|layer|ディスク|disc|ドライバー|driver|フレーム|frame|ランチャー|launcher|バースト|burst|未開封|開封|\bnib\b|new in box/i.test(
+    title
   );
 }

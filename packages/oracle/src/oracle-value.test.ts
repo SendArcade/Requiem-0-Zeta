@@ -21,6 +21,8 @@ import {
   BURST_FMV_FALLBACK_WINDOW_DAYS,
   BURST_FMV_PRIMARY_WINDOW_DAYS,
   DEFAULT_PUBLISHED_MIN_COMPS,
+  DEFAULT_SPARSE_ORACLE_WINDOW_DAYS,
+  PRODUCT_ORACLE_WINDOW_DAYS,
   productMarkConditions,
 } from "@beyoracle/shared";
 
@@ -374,5 +376,47 @@ describe("burst FMV windows and sealed isolation", () => {
     expect(snap!.nComps).toBe(3);
     expect(snap!.value).toBeGreaterThan(7000);
     expect(snap!.conditions).toEqual(["sealed"]);
+  });
+
+  it("extends to sparse window when burst comps are older than 90d", () => {
+    const comps = [soldComp({ price: 1500, daysAgo: 169, condition: "used" })];
+    const windowDays = resolveProductOracleWindowDays(starter.generation, comps, {
+      conditions: productMarkConditions("complete_loose"),
+      minComps: 1,
+    });
+    expect(windowDays).toBe(DEFAULT_SPARSE_ORACLE_WINDOW_DAYS);
+    const snap = computeProductOracleValue(
+      { ...starter, skuType: "complete_loose" },
+      comps,
+      { engine: "v1", minComps: 1 }
+    );
+    expect(snap).not.toBeNull();
+    expect(snap!.nComps).toBe(1);
+  });
+
+  it("extends X/plastic/metal to sparse window when comps exceed 180d", () => {
+    const xStarter = {
+      id: "prod-x-bx-02-starter",
+      generation: "x" as const,
+      skuType: "starter" as const,
+    };
+    const comps = [soldComp({ price: 3200, daysAgo: 200, condition: "used" })];
+    const windowDays = resolveProductOracleWindowDays(xStarter.generation, comps, {
+      conditions: productMarkConditions("starter"),
+      minComps: 1,
+    });
+    expect(windowDays).toBe(DEFAULT_SPARSE_ORACLE_WINDOW_DAYS);
+    const snap = computeProductOracleValue(xStarter, comps, { engine: "v1", minComps: 1 });
+    expect(snap).not.toBeNull();
+    expect(snap!.nComps).toBe(1);
+  });
+
+  it("keeps 180d window for X when comps are within range", () => {
+    const comps = [soldComp({ price: 3200, daysAgo: 90, condition: "used" })];
+    const windowDays = resolveProductOracleWindowDays("x", comps, {
+      conditions: productMarkConditions("starter"),
+      minComps: 1,
+    });
+    expect(windowDays).toBe(PRODUCT_ORACLE_WINDOW_DAYS);
   });
 });

@@ -210,6 +210,7 @@ export {
   hasHyphenatedCatalogCode,
   isBeybladeAccessoryListing,
   isNonBeybladeJunk,
+  bareBurstBCodeHasContext,
 } from "./listing-quality.js";
 export {
   ASSEMBLED_SLOTS,
@@ -421,6 +422,17 @@ export const PRODUCT_ORACLE_WINDOW_DAYS = 180;
 /** Burst FMV: prefer 7-day sold comps; fall back to 90d only if 7d has fewer than min comps. */
 export const BURST_FMV_PRIMARY_WINDOW_DAYS = 7;
 export const BURST_FMV_FALLBACK_WINDOW_DAYS = 90;
+
+/** Sparse liquidity lookback — Wave0 / thin-SKU tier (env override). */
+export const DEFAULT_SPARSE_ORACLE_WINDOW_DAYS = 365;
+
+/** Resolve sparse oracle window from env (SPARSE_ORACLE_WINDOW_DAYS or WAVE0_ORACLE_WINDOW_DAYS). */
+export function resolveSparseOracleWindowDays(): number {
+  const raw =
+    process.env.SPARSE_ORACLE_WINDOW_DAYS ?? process.env.WAVE0_ORACLE_WINDOW_DAYS;
+  if (raw != null && raw.trim() !== "") return Number(raw);
+  return DEFAULT_SPARSE_ORACLE_WINDOW_DAYS;
+}
 
 /**
  * Seed/demo fixtures never feed published product marks or product-page comps.

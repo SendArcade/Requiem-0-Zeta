@@ -13,6 +13,7 @@ import {
   productMarkConditions,
   resolveCompPriceJpy,
   resolveEvidenceKind,
+  resolveSparseOracleWindowDays,
   sourcesFromMask,
   resolveOracleConfidence,
 } from "@beyoracle/shared";
@@ -347,7 +348,7 @@ export function buildTimeSeries(
 }
 
 
-/** Burst: 7-day sold window, fall back to 90d only when 7d has fewer than min comps. */
+/** Burst: 7d → 90d → sparse; other gens: 180d → sparse when in-window n < minComps. */
 export function resolveProductOracleWindowDays(
   generation: Generation,
   comps: CompInput[],
@@ -357,16 +358,34 @@ export function resolveProductOracleWindowDays(
     sourcesMask?: number;
   }
 ): number {
-  if (generation !== "burst") return PRODUCT_ORACLE_WINDOW_DAYS;
   const minComps = opts.minComps ?? DEFAULT_PUBLISHED_MIN_COMPS;
   const sourcesMask = opts.sourcesMask ?? allSourcesMask();
-  const primary = filterComps(comps, {
-    windowDays: BURST_FMV_PRIMARY_WINDOW_DAYS,
-    sourcesMask,
-    conditions: opts.conditions,
-  });
-  if (primary.length >= minComps) return BURST_FMV_PRIMARY_WINDOW_DAYS;
-  return BURST_FMV_FALLBACK_WINDOW_DAYS;
+  const filterOpts = { sourcesMask, conditions: opts.conditions };
+  const sparseWindow = resolveSparseOracleWindowDays();
+
+  const countInWindow = (windowDays: number) =>
+    filterComps(comps, { windowDays, ...filterOpts }).length;
+
+  if (generation === "burst") {
+    if (countInWindow(BURST_FMV_PRIMARY_WINDOW_DAYS) >= minComps) {
+      return BURST_FMV_PRIMARY_WINDOW_DAYS;
+    }
+    if (countInWindow(BURST_FMV_FALLBACK_WINDOW_DAYS) >= minComps) {
+      return BURST_FMV_FALLBACK_WINDOW_DAYS;
+    }
+    if (countInWindow(sparseWindow) >= minComps) {
+      return sparseWindow;
+    }
+    return BURST_FMV_FALLBACK_WINDOW_DAYS;
+  }
+
+  if (countInWindow(PRODUCT_ORACLE_WINDOW_DAYS) >= minComps) {
+    return PRODUCT_ORACLE_WINDOW_DAYS;
+  }
+  if (countInWindow(sparseWindow) >= minComps) {
+    return sparseWindow;
+  }
+  return PRODUCT_ORACLE_WINDOW_DAYS;
 }
 
 export function computeProductOracleValue(
