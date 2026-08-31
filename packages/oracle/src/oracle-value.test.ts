@@ -223,6 +223,33 @@ describe("oracle v2 pipeline", () => {
     expect(snap!.nComps).toBe(5);
     expect(snap!.value).not.toBe(999);
   });
+
+  it("breadth mode: confidence follows best match quality, not comp count", () => {
+    const oneStrong = [
+      {
+        ...soldComp({ price: 1200, daysAgo: 3, condition: "used" }),
+        matchConfidence: 0.98,
+      },
+    ];
+    const manyWeak = [0.88, 0.88, 0.88].map((matchConfidence, i) => ({
+      ...soldComp({ price: 1000 + i, daysAgo: 3, condition: "used" }),
+      matchConfidence,
+    }));
+
+    const strong = computeOracleValue("prod-x-bx-02-starter", oneStrong, {
+      targetCurrency: "JPY",
+      minComps: 1,
+      engine: "v1",
+    });
+    const weak = computeOracleValue("prod-x-bx-02-starter", manyWeak, {
+      targetCurrency: "JPY",
+      minComps: 1,
+      engine: "v1",
+    });
+
+    expect(strong!.confidence).toBe("high");
+    expect(weak!.confidence).toBe("low");
+  });
 });
 
 function daysAgo(n: number): Date {

@@ -14,6 +14,7 @@ import {
   resolveCompPriceJpy,
   resolveEvidenceKind,
   sourcesFromMask,
+  resolveOracleConfidence,
 } from "@beyoracle/shared";
 import type { CohortIndex } from "./cohort-index.js";
 import { adjustPriceToAsOf } from "./cohort-index.js";
@@ -46,6 +47,8 @@ export interface CompInput {
   venueWeightMultiplier?: number;
   /** Provenance class — only confirmed_sale feeds default oracle median. */
   evidenceKind?: EvidenceKind;
+  /** Product/part match confidence — drives breadth-mode oracle confidence. */
+  matchConfidence?: number;
 }
 
 export interface OracleContext {
@@ -90,12 +93,8 @@ function quartiles(values: number[]): { q1: number; q3: number } {
   };
 }
 
-function confidenceFromN(n: number, nEffective?: number): "high" | "medium" | "low" {
-  // Effective-N drives high/medium when dense; raw n≥3 (publish floor) is never "low".
-  const score = nEffective ?? n;
-  if (score >= 5 || n >= 8) return "high";
-  if (score >= 3 || n >= 3) return "medium";
-  return "low";
+function maxMatchConfidence(comps: CompInput[]): number {
+  return comps.reduce((max, c) => Math.max(max, c.matchConfidence ?? 0), 0);
 }
 
 function filterComps(
@@ -152,7 +151,10 @@ function computeOracleV1(
     nComps: filtered.length,
     asOf: new Date(),
     currency: opts.targetCurrency,
-    confidence: confidenceFromN(filtered.length),
+    confidence: resolveOracleConfidence(filtered.length, {
+      minComps: opts.minComps,
+      maxMatchConfidence: maxMatchConfidence(filtered),
+    }),
     conditions: opts.conditions,
     engine: "v1",
   };
@@ -227,7 +229,11 @@ function computeOracleV2(
     outliersRemoved: madResult.removed,
     asOf,
     currency: opts.targetCurrency,
-    confidence: confidenceFromN(prices.length, nEffective),
+    confidence: resolveOracleConfidence(prices.length, {
+      minComps: opts.minComps,
+      nEffective,
+      maxMatchConfidence: maxMatchConfidence(filtered),
+    }),
     conditions: opts.conditions,
     engine: "v2",
     shrinkageApplied: shrink.applied,

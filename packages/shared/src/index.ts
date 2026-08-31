@@ -353,6 +353,9 @@ export function productMarkConditions(skuType: SkuType): Condition[] {
  */
 export const DEFAULT_PUBLISHED_MIN_COMPS = 3;
 
+/** Matcher auto-accept floor — comps below this are not persisted. */
+export const MATCH_AUTO_ACCEPT_MIN = 0.9;
+
 /** Runtime publish floor — set PUBLISHED_MIN_COMPS=1 for okayish breadth passes. */
 export function resolvePublishedMinComps(): number {
   const raw = process.env.PUBLISHED_MIN_COMPS?.trim();
@@ -364,15 +367,52 @@ export function resolvePublishedMinComps(): number {
 }
 
 /**
- * Okayish single-comp marks: only B-code / product_code matches or ≥0.95 confidence.
- * All comps still persist in DB — this gate applies to published oracle snapshots only.
+ * Breadth mode (PUBLISHED_MIN_COMPS=1): mark confidence from best comp match quality,
+ * not comp count — many weak links must not inflate a lone strong sale.
+ */
+export function resolveOracleConfidence(
+  n: number,
+  opts: { minComps?: number; nEffective?: number; maxMatchConfidence?: number } = {}
+): "high" | "medium" | "low" {
+  const minComps = opts.minComps ?? resolvePublishedMinComps();
+  if (minComps > 1) {
+    const score = opts.nEffective ?? n;
+    if (score >= 5 || n >= 8) return "high";
+    if (score >= 3 || n >= 3) return "medium";
+    return "low";
+  }
+  const q = opts.maxMatchConfidence ?? 0;
+  if (q >= 0.95) return "high";
+  if (q >= MATCH_AUTO_ACCEPT_MIN) return "medium";
+  return "low";
+}
+
+/** Row has a publishable oracle mark for browse / product pages. */
+export function hasPublishedMark(row: { nComps: number; confidence: string }): boolean {
+  const minComps = resolvePublishedMinComps();
+  if (row.nComps < minComps) return false;
+  // Breadth mode: comp count is the floor; match quality gates ingest / snapshot recompute.
+  if (minComps === 1) return true;
+  return row.confidence !== "low";
+}
+
+export function filterPublishedRows<T extends { nComps: number; confidence: string }>(
+  rows: T[],
+  publishedOnly = true
+): T[] {
+  return publishedOnly ? rows.filter(hasPublishedMark) : rows;
+}
+
+/**
+ * Breadth mode: any matcher auto-accept comp (≥0.90) may feed a published mark.
+ * Strict mode (minComps>1): all persisted comps already passed auto-accept.
  */
 export function isOkayishPublishComp(
   match: { method: string; confidence: number },
   publishedMinComps = resolvePublishedMinComps()
 ): boolean {
   if (publishedMinComps > 1) return true;
-  return match.method === "product_code" || match.confidence >= 0.95;
+  return match.confidence >= MATCH_AUTO_ACCEPT_MIN;
 }
 
 /** Product oracle lookback — multi-month secondary market (plastic/metal need longer windows). */

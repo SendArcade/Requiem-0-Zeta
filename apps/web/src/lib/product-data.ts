@@ -82,6 +82,7 @@ async function loadProductCompsFromDb(productId: string) {
       landedJpy: observations.landedJpy,
       fxRateAtSale: observations.fxRateAtSale,
       rawJson: observations.rawJson,
+      matchConfidence: productMatches.confidence,
     })
     .from(productMatches)
     .innerJoin(observations, eq(productMatches.observationId, observations.id))
@@ -101,6 +102,7 @@ async function loadProductCompsFromDb(productId: string) {
       landedJpy: r.landedJpy,
       fxRateAtSale: r.fxRateAtSale,
       evidenceKind: resolveEvidenceKind(r.source as SourceId, r.rawJson),
+      matchConfidence: r.matchConfidence,
     }));
 }
 
@@ -232,8 +234,13 @@ export async function getProductDataFromDb(
       ? await getProductSnapshotFromDb(productId)
       : null;
 
+  const usePersisted =
+    persisted &&
+    persisted.nComps >= minComps &&
+    (minComps > 1 || persisted.confidence !== "low");
+
   const oracle = recipe.canPublishMark
-    ? persisted && persisted.nComps >= minComps
+    ? usePersisted
       ? oracleFromPersistedSnapshot(productId, persisted)
       : computeProductOracleValue(product, compsInput, {
           targetCurrency: displayCurrency,
