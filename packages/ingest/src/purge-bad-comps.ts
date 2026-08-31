@@ -100,6 +100,10 @@ export async function purgeBadComps(
   const startedAt = Date.now();
 
   const db = getDb();
+  console.log(
+    `[purge] start dryRun=${dryRun} skipPartMatches=${skipPartMatches} titleGatesOnly=${titleGatesOnly}` +
+      (opts.generations?.length ? ` generations=${opts.generations.join(",")}` : "")
+  );
   const badPartMatchIds: string[] = [];
   const badProductMatchIds: string[] = [];
   const badObsIds = new Set<string>();
@@ -137,6 +141,7 @@ export async function purgeBadComps(
     title: observations.title,
   };
 
+  console.log("[purge] loading product match rows…");
   const productRows = opts.generations?.length
     ? await db
         .select(productSelect)
