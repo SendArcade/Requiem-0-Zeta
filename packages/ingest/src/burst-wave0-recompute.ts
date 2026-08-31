@@ -12,6 +12,7 @@ import {
   isProductMarkEligible,
   productMarkConditions,
   resolveCompPriceJpy,
+  resolveSparseOracleWindowDays,
   type Condition,
 } from "@beyoracle/shared";
 import { computeProductOracleValue, filterComps, type CompInput } from "@beyoracle/oracle";
@@ -25,9 +26,7 @@ const compEligibleFilter = eq(observations.isBundle, false);
 
 /** Burst Wave0 lookback — env override; default 365d for sparse starter liquidity. */
 export function wave0OracleWindowDays(): number {
-  const raw = process.env.WAVE0_ORACLE_WINDOW_DAYS;
-  if (raw != null && raw.trim() !== "") return Number(raw);
-  return 365;
+  return resolveSparseOracleWindowDays();
 }
 
 /** Fix Yahoo/API sealed tags on obvious starter_used titles (開封/中古). */
