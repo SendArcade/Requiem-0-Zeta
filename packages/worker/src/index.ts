@@ -68,6 +68,7 @@ async function main() {
         deleteObservations: process.env.PURGE_DELETE_OBSERVATIONS === "1",
         generations: generations?.length ? (generations as import("@beyoracle/shared").Generation[]) : undefined,
         skipPartMatches: process.env.PURGE_SKIP_PART_MATCHES === "1",
+        titleGatesOnly: process.env.PURGE_TITLE_GATES_ONLY === "1",
       });
       console.log("[worker] purge complete:", JSON.stringify(purged));
       console.log(

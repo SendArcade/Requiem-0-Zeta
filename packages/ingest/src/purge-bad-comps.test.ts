@@ -50,6 +50,18 @@ describe("purge match re-validation", () => {
     ).toBe(true);
   });
 
+  it("title-gates-only skips slow full rematch for valid titles", () => {
+    expect(
+      isStaleOrWrongMatch(
+        "ベイブレードX BX-01 ドランソード スターター 3-60F タカラトミー",
+        "product",
+        "prod-x-bx-99-starter",
+        0.95,
+        { titleGatesOnly: true }
+      )
+    ).toBe(false);
+  });
+
   it("accepts valid whole-SKU product match", () => {
     expect(
       isStaleOrWrongMatch(

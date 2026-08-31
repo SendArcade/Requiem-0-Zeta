@@ -31,6 +31,11 @@ export type PurgeBadCompsOptions = {
   generations?: Generation[];
   /** Skip part-level match purge (faster burst product pass). */
   skipPartMatches?: boolean;
+  /**
+   * Shape/title gates only — skip full product rematch (~5s/row).
+   * Use for junk/car-kit purge; set PURGE_TITLE_GATES_ONLY=1 on worker.
+   */
+  titleGatesOnly?: boolean;
 };
 
 export type PurgeBadCompsResult = {
@@ -67,9 +72,12 @@ export function isStaleOrWrongMatch(
   title: string,
   kind: "part" | "product",
   storedId: string,
-  storedConfidence: number
+  storedConfidence: number,
+  opts?: { titleGatesOnly?: boolean }
 ): boolean {
   if (isBadCompTitle(title, kind)) return true;
+  if (!shouldPersistMatch(storedConfidence)) return true;
+  if (opts?.titleGatesOnly) return false;
 
   const shape = classifyListingShape(title);
   const fresh = resolveIngestMatch(title, { shape });
@@ -77,9 +85,6 @@ export function isStaleOrWrongMatch(
   if (!shouldPersistMatch(freshMatchConfidence(fresh))) return true;
   if (fresh.kind !== kind) return true;
   if (freshMatchId(fresh) !== storedId) return true;
-
-  // Stored row below auto-accept should never have been persisted.
-  if (!shouldPersistMatch(storedConfidence)) return true;
 
   return false;
 }
@@ -90,6 +95,9 @@ export async function purgeBadComps(
   const dryRun = opts.dryRun ?? false;
   const deleteObservations = opts.deleteObservations ?? false;
   const skipPartMatches = opts.skipPartMatches ?? false;
+  const titleGatesOnly = opts.titleGatesOnly ?? false;
+  const matchOpts = { titleGatesOnly };
+  const startedAt = Date.now();
 
   const db = getDb();
   const badPartMatchIds: string[] = [];
@@ -112,7 +120,7 @@ export async function purgeBadComps(
       .innerJoin(observations, eq(matches.observationId, observations.id));
 
     for (const row of partRows) {
-      if (isStaleOrWrongMatch(row.title, "part", row.partId, row.confidence)) {
+      if (isStaleOrWrongMatch(row.title, "part", row.partId, row.confidence, matchOpts)) {
         badPartMatchIds.push(row.matchId);
         badObsIds.add(row.observationId);
         touchedPartIds.add(row.partId);
@@ -141,11 +149,19 @@ export async function purgeBadComps(
         .from(productMatches)
         .innerJoin(observations, eq(productMatches.observationId, observations.id));
 
+  console.log(
+    `[purge] scanning ${productRows.length} product matches` +
+      (opts.generations?.length ? ` (${opts.generations.join(",")})` : "") +
+      (titleGatesOnly ? " title-gates-only" : " full-rematch") +
+      "…"
+  );
+
   for (const [i, row] of productRows.entries()) {
-    if (i > 0 && i % 25 === 0) {
-      console.log(`[purge] scanned ${i}/${productRows.length} product matches…`);
+    if (i > 0 && i % 50 === 0) {
+      const elapsed = ((Date.now() - startedAt) / 1000).toFixed(0);
+      console.log(`[purge] scanned ${i}/${productRows.length} product matches (${elapsed}s)…`);
     }
-    if (isStaleOrWrongMatch(row.title, "product", row.productId, row.confidence)) {
+    if (isStaleOrWrongMatch(row.title, "product", row.productId, row.confidence, matchOpts)) {
       badProductMatchIds.push(row.matchId);
       badObsIds.add(row.observationId);
       touchedProductIds.add(row.productId);
