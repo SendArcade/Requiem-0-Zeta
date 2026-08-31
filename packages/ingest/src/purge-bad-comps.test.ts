@@ -31,6 +31,25 @@ describe("purge match re-validation", () => {
     ).toBe(true);
   });
 
+  it("flags car model kit false positives on burst B-codes", () => {
+    expect(
+      isStaleOrWrongMatch(
+        "【完成品】B-02 アオシマ 1/24 330セドリック",
+        "product",
+        "prod-burst-b-02-complete-loose",
+        0.98
+      )
+    ).toBe(true);
+    expect(
+      isStaleOrWrongMatch(
+        "【完成品】B-09 ハセガワ 1/24 セドリック",
+        "product",
+        "prod-burst-b-09-complete-loose",
+        0.98
+      )
+    ).toBe(true);
+  });
+
   it("accepts valid whole-SKU product match", () => {
     expect(
       isStaleOrWrongMatch(
