@@ -79,7 +79,9 @@ function venueMultiplierFromRaw(
   return 1;
 }
 
-export function rowToCompInput(r: Omit<ObsCompRow, "partId">): CompInput {
+export function rowToCompInput(
+  r: Omit<ObsCompRow, "partId"> & { matchConfidence?: number }
+): CompInput {
   return {
     price: r.price,
     currency: r.currency as CompInput["currency"],
@@ -91,6 +93,7 @@ export function rowToCompInput(r: Omit<ObsCompRow, "partId">): CompInput {
     fxRateAtSale: r.fxRateAtSale,
     venueWeightMultiplier: venueMultiplierFromRaw(r.source, r.rawJson),
     evidenceKind: resolveEvidenceKind(r.source, r.rawJson ?? undefined),
+    matchConfidence: r.matchConfidence,
   };
 }
 
@@ -383,7 +386,7 @@ export async function recomputeOracleSnapshot(partId: string): Promise<void> {
   const snap = computeOracleValue(partId, comps, {
     sourcesMask: allSourcesMask(),
     targetCurrency: "JPY",
-    minComps: DEFAULT_PUBLISHED_MIN_COMPS,
+    minComps: resolvePublishedMinComps(),
     context,
   });
 
@@ -472,7 +475,9 @@ export async function recomputeProductOracleSnapshot(productId: string): Promise
       )
     );
 
-  const comps = liveRows.map((r) => rowToCompInput(r));
+  const comps = liveRows.map((r) =>
+    rowToCompInput({ ...r, matchConfidence: r.matchConfidence })
+  );
 
   // Burst: 7d then 90d fallback. Other gens: multi-month window. Sealed never in default/starter pool.
   const snap = computeProductOracleValue(product, comps, {

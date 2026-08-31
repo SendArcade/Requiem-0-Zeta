@@ -127,6 +127,23 @@ describe("live product comps quality gates", () => {
     expect(resolveProductOracleWindowDays("metal", recent3, {
       conditions: productMarkConditions("starter"),
     })).toBe(PRODUCT_ORACLE_WINDOW_DAYS);
+    const d169 = new Date(now.getTime() - 169 * 24 * 3600 * 1000);
+    const sparseBurst = [
+      {
+        price: 1500,
+        currency: "JPY" as const,
+        source: "mercari_jp" as const,
+        observedAt: d169,
+        status: "sold" as const,
+        condition: "used" as const,
+      },
+    ];
+    expect(
+      resolveProductOracleWindowDays("burst", sparseBurst, {
+        conditions: productMarkConditions("complete_loose"),
+        minComps: 1,
+      })
+    ).toBeGreaterThan(BURST_FMV_FALLBACK_WINDOW_DAYS);
   });
 
   it("product page + snapshot recompute share live-only + 180d gates (structural)", async () => {

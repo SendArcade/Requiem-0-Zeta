@@ -10,6 +10,7 @@ import {
   BURST_B_CODE_RE,
   HYPHEN_BB_CODE_RE,
   HYPHEN_CATALOG_CODE_RE,
+  bareBurstBCodeHasContext,
   isBeybladeAccessoryListing,
   isNonBeybladeJunk,
   METAL_PLASTIC_COMBO_RE,
@@ -27,10 +28,6 @@ const LOT_PATTERNS: RegExp[] = [
   /\bbundle\b|\block\b|\bset of\b|\bjoblot\b/i,
   /\b\d+\s*種\s*セット\b/,
 ];
-
-/** Secondary Bey context when a bare Burst B-code appears without explicit bey signal. */
-const BURST_CONTEXT_SIGNAL =
-  /スターター|starter|ブースター|booster|スタートダッシュ|entry set|デッキセット|deck set|スタートダッシュセット|バトルエントリー|3on3|カスタマイズセット|完成品|未開封|開封|\bcomplete\b|\bassembled\b|\bnib\b|new in box|レイヤー|layer|ディスク|disc|ドライバー|driver|フレーム|frame|ランチャー|launcher|ヴァルキリー|valkyrie|ロンギヌス|longinus|スプリガン|spriggan|ペガサス|pegasus|フェニックス|phoenix|アキレス|achilles|ラグナルク|ragnaruk|ネメシス|nemesis|ベリアル|belial|ウィニング|winning|ビクトリー|victory|ナイトメア|nightmare|ブラッディ|bloody|レジェンド|legend|heaven|ヘブン|超Z|cho.?z|バースト|burst|タカラ|takara/i;
 
 const MULTI_ITEM_JOINER = /[＆&＋+]/;
 
@@ -75,10 +72,10 @@ export function looksLikeBeybladeListing(title: string): boolean {
   if (BEYBLADE_SIGNAL_RE.test(title)) return true;
   if (HYPHEN_BB_CODE_RE.test(title)) return true;
   if (BARE_BB_CODE_RE.test(title)) {
-    return bareLegacyBbHasContext(title) || BURST_CONTEXT_SIGNAL.test(title);
+    return bareLegacyBbHasContext(title);
   }
   if (HYPHEN_CATALOG_CODE_RE.test(title)) return true;
-  if (BURST_B_CODE_RE.test(title)) return BURST_CONTEXT_SIGNAL.test(title);
+  if (BURST_B_CODE_RE.test(title)) return bareBurstBCodeHasContext(title);
   return false;
 }
 

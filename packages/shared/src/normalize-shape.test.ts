@@ -27,6 +27,13 @@ describe("classifyListingShape", () => {
     expect(looksLikeBeybladeListing("BX-01 ドランソード 美品")).toBe(true);
   });
 
+  it("rejects car model kit false positives with bare B-code + 完成品", () => {
+    expect(looksLikeBeybladeListing("【完成品】B-02 アオシマ 1/24 330セドリック")).toBe(false);
+    expect(looksLikeBeybladeListing("【完成品】B-05 ハセガワ 1/24 スカイライン")).toBe(false);
+    expect(looksLikeBeybladeListing("【完成品】B-07 タミヤ 1/24 フェアレディZ")).toBe(false);
+    expect(isProductCompEligible("【完成品】B-02 アオシマ 1/24 330セドリック")).toBe(false);
+  });
+
   it("rejects bare B-code listings without beyblade context", () => {
     expect(looksLikeBeybladeListing("トヨタ ヘッドランプ B-104 中古")).toBe(false);
     expect(looksLikeBeybladeListing("フジミ 1/144 模型 B-03")).toBe(false);
