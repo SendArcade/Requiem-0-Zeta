@@ -1,0 +1,878 @@
+{
+ "arc_wizard.fbx": {
+  "ao": {
+   "CX_BladeCore": "CX_BladeCore_AO.png",
+   "AuxBlade_R": "AuxBlade_R_AO.png"
+  },
+  "decal": "BX01_DranSword_3-60f.png"
+ },
+ "AuxBlade_B.obj": {
+  "ao": {
+   "AuxBlade_B_0": "AuxBlade_B_AO.png"
+  }
+ },
+ "AuxBlade_Base.obj": {
+  "ao": {
+   "AuxBlade_Base_0": "AuxBlade_Base_AO.png"
+  }
+ },
+ "AuxBlade_R.obj": {
+  "ao": {
+   "AuxBlade_R_0": "AuxBlade_R_AO.png"
+  }
+ },
+ "AuxBlade_T.obj": {
+  "ao": {
+   "AuxBlade_T_0": "AuxBlade_T_AO.png"
+  }
+ },
+ "bite_croc.fbx": {
+  "ao": {
+   "Head_metal": "BiteCroc_Blade_AO.png",
+   "Head_parts01": "BiteCroc_Blade_AO.png",
+   "Head_parts02": "BiteCroc_BladeLower_AO.png",
+   "Head_top": "SharedAssetsBake_AO.png",
+   "RatchetRing_3": "RatchetRing_3_AO.png",
+   "RatchetBase_60": "RatchetBase_60_AO.png",
+   "Base_parts02": "SharedAssetsBake_AO.png",
+   "Base_parts03": "SharedAssetsBake_AO.png",
+   "Base_screw": "SharedAssetsBake_AO.png",
+   "Bit_LF": "Bit_LF_AO.png"
+  },
+  "decal": "BXORG06_CrocCrunch_3-60_lf.png"
+ },
+ "chain_incendio.fbx": {
+  "ao": {
+   "Head_metal": "ChainIncendio_Blade_AO.png",
+   "Head_parts01": "ChainIncendio_Blade_AO.png",
+   "Head_parts02": "ChainIncendio_BladeLower_AO.png",
+   "Head_top": "SharedAssetsBake_AO.png",
+   "Base_parts02": "SharedAssetsBake_AO.png",
+   "Base_parts03": "SharedAssetsBake_AO.png",
+   "Base_screw": "SharedAssetsBake_AO.png",
+   "RatchetRing_5": "RatchetRing_5_AO.png",
+   "RatchetBase_60": "RatchetBase_60_AO.png",
+   "Bit_HT": "Bit_HT_AO.png"
+  },
+  "decal": "BX21_HellsChain_5-60ht.png"
+ },
+ "cobalt_dragoon.fbx": {
+  "ao": {
+   "Head_metal": "CobaltDragoon_Blade_AO.png",
+   "Head_parts01": "CobaltDragoon_Blade_AO.png",
+   "Head_top": "SharedAssetsBake_AO.png",
+   "Head_parts02": "CobaltDragoon_Blade_AO.png"
+  },
+  "decal": "BX34_CobaltDragoon2-60c.png"
+ },
+ "courage_dran.fbx": {
+  "ao": {
+   "Head_metal": "CourageDran_Blade_AO.png",
+   "Head_parts01": "CourageDran_Blade_AO.png"
+  },
+  "decal": "BX01_DranSword_3-60f.png"
+ },
+ "dagger_dran.fbx": {
+  "ao": {
+   "Head_metal": "DaggerDran_Blade_AO.png",
+   "Head_parts01": "DaggerDran_Blade_AO.png",
+   "Head_top": "SharedAssetsBake_AO.png",
+   "head_parts02": "DaggerDran_BladeLower_AO.png",
+   "RatchetRing_4": "RatchetRing_4_AO.png",
+   "RatchetBase_60": "RatchetBase_60_AO.png",
+   "Base_parts02": "SharedAssetsBake_AO.png",
+   "Base_parts03": "SharedAssetsBake_AO.png",
+   "Base_screw": "SharedAssetsBake_AO.png",
+   "Bit_R": "Bit_R_AO.png"
+  },
+  "decal": "BX20_DranDagger_4-60R.png"
+ },
+ "dark_perseus.fbx": {
+  "ao": {
+   "AuxBlade_B": "AuxBlade_B_AO.png"
+  },
+  "decal": "BX01_DranSword_3-60f.png"
+ },
+ "dranzer_spiral.fbx": {
+  "ao": {
+   "Head_metal": "DranzerSpiral_Blade_AO.png",
+   "Head_top": "SharedAssetsBake_AO.png",
+   "RatchetRing_3": "RatchetRing_3_AO.png",
+   "RatchetBase_80": "RatchetBase_80_AO.png",
+   "Base_parts02": "SharedAssetsBake_AO.png",
+   "Base_parts03": "SharedAssetsBake_AO.png",
+   "Base_screw": "SharedAssetsBake_AO.png",
+   "Bit_T": "Bit_T_AO.png"
+  },
+  "decal": "BXG01_DranzerSpiral_3-80t_green.png"
+ },
+ "gale_wyvern.fbx": {
+  "ao": {
+   "Head_metal": "GaleWyvern_Blade_AO.png",
+   "Head_parts01": "GaleWyvern_Blade_AO.png",
+   "Head_parts02": "GaleWyvern_BladeLower_AO.png",
+   "Head_top": "SharedAssetsBake_AO.png",
+   "RatchetRing_5": "RatchetRing_5_AO.png",
+   "RatchetBase_80": "RatchetBase_80_AO.png",
+   "Base_parts02": "SharedAssetsBake_AO.png",
+   "Base_parts03": "SharedAssetsBake_AO.png",
+   "Base_screw": "SharedAssetsBake_AO.png",
+   "Bit_GB": "Bit_GB_AO.png"
+  },
+  "decal": "BX24_WyvernGale_5-80gb.png"
+ },
+ "helm_knight.fbx": {
+  "ao": {
+   "Head_metal": "HelmKnight_Blade_AO.png",
+   "Head_parts01": "HelmKnight_Blade_AO.png",
+   "Head_parts02": "HelmKnight_Blade_AO.png",
+   "Head_top": "SharedAssetsBake_AO.png",
+   "RatchetRing_3": "RatchetRing_3_AO.png",
+   "RatchetBase_80": "RatchetBase_80_AO.png",
+   "Base_parts02": "SharedAssetsBake_AO.png",
+   "Base_parts03": "SharedAssetsBake_AO.png",
+   "Base_screw": "SharedAssetsBake_AO.png",
+   "Bit_N": "Bit_N_AO.png"
+  },
+  "decal": "BX04_KnightShield3-80n.png"
+ },
+ "horn_rhino.fbx": {
+  "ao": {
+   "Head_top": "SharedAssetsBake_AO.png",
+   "RatchetRing_3": "RatchetRing_3_AO.png",
+   "RatchetBase_80": "RatchetBase_80_AO.png",
+   "Base_parts02": "SharedAssetsBake_AO.png",
+   "Base_parts03": "SharedAssetsBake_AO.png",
+   "Base_screw": "SharedAssetsBake_AO.png",
+   "Bit_S": "Bit_S_AO.png"
+  },
+  "decal": "BX19_RinoHorn_3-80S.png"
+ },
+ "keel_shark.fbx": {
+  "ao": {
+   "Head_metal": "KeelShark_Blade_AO.png",
+   "Head_parts01": "KeelShark_Blade_AO.png",
+   "Head_parts02": "KeelShark_BladeLower_AO.png",
+   "Head_top": "SharedAssetsBake_AO.png",
+   "RatchetRing_3": "RatchetRing_3_AO.png",
+   "RatchetBase_60": "RatchetBase_60_AO.png",
+   "Base_parts02": "SharedAssetsBake_AO.png",
+   "Base_parts03": "SharedAssetsBake_AO.png",
+   "Base_screw": "SharedAssetsBake_AO.png",
+   "Bit_LF": "Bit_LF_AO.png"
+  },
+  "decal": "BX14_SharkEdge_3-60lf.png"
+ },
+ "lance_knight.fbx": {
+  "ao": {
+   "Head_metal": "LanceKnight_Blade_AO.png",
+   "Head_parts01": "LanceKnight_Blade_AO.png",
+   "Head_parts02": "LanceKnight_BladeLower_AO.png",
+   "Head_top": "SharedAssetsBake_AO.png",
+   "RatchetRing_4": "RatchetRing_4_AO.png",
+   "RatchetBase_80": "RatchetBase_80_AO.png",
+   "Base_parts02": "SharedAssetsBake_AO.png",
+   "Base_parts03": "SharedAssetsBake_AO.png",
+   "Base_screw": "SharedAssetsBake_AO.png",
+   "Bit_HN": "Bit_HN_AO.png"
+  },
+  "decal": "BX13_KnightLance_4-80hn.png"
+ },
+ "mammo_tusk.fbx": {
+  "ao": {},
+  "decal": "BXORG08_MammoTusk_3-60_t.png"
+ },
+ "reaper_incendio.fbx": {
+  "ao": {
+   "Head_metal": "ReaperIncendio_Blade_AO.png",
+   "Head_parts01": "ReaperIncendio_Blade_AO.png",
+   "CX_BladeCore": "CX_BladeCore_AO.png",
+   "AuxBlade_Base": "AuxBlade_Base_AO.png",
+   "AuxBlade_T": "AuxBlade_T_AO.png"
+  },
+  "decal": "BX01_DranSword_3-60f.png"
+ },
+ "roar_tyrano.fbx": {
+  "ao": {
+   "Head_top": "SharedAssetsBake_AO.png",
+   "RatchetRing_9": "RatchetRing_9_AO.png",
+   "RatchetBase_60": "RatchetBase_60_AO.png",
+   "Base_parts02": "SharedAssetsBake_AO.png",
+   "Base_parts03": "SharedAssetsBake_AO.png",
+   "Base_screw": "SharedAssetsBake_AO.png",
+   "Bit_GF": "Bit_GF_AO.png"
+  },
+  "decal": "BXORG03_TyrannoRoar_9-60_gf.png"
+ },
+ "savage_bear.fbx": {
+  "ao": {
+   "Head_top": "SharedAssetsBake_AO.png",
+   "RatchetRing_3": "RatchetRing_3_AO.png",
+   "RatchetBase_60": "RatchetBase_60_AO.png",
+   "Base_parts02": "SharedAssetsBake_AO.png",
+   "Base_parts03": "SharedAssetsBake_AO.png",
+   "Base_screw": "SharedAssetsBake_AO.png",
+   "Bit_S": "Bit_S_AO.png"
+  },
+  "decal": "BXORG04_BearScratch_3-60_s.png"
+ },
+ "scythe_incendio.fbx": {
+  "ao": {
+   "Head_metal": "ScytheIncendio_Blade_AO.png",
+   "Head_parts01": "ScytheIncendio_Blade_AO.png",
+   "Head_parts02": "ScytheIncendio_BladeLower_AO.png",
+   "Head_top": "SharedAssetsBake_AO.png",
+   "RatchetRing_4": "RatchetRing_4_AO.png",
+   "RatchetBase_60": "RatchetBase_60_AO.png",
+   "Base_parts02": "SharedAssetsBake_AO.png",
+   "Base_parts03": "SharedAssetsBake_AO.png",
+   "Base_screw": "SharedAssetsBake_AO.png",
+   "Bit_T": "Bit_T_AO.png"
+  },
+  "decal": "logo.png"
+ },
+ "shinobi_knife.fbx": {
+  "ao": {
+   "Head_metal": "ShinobiKnife_Blade_AO.png",
+   "Head_parts01": "ShinobiKnife_Blade_AO.png",
+   "Head_parts02": "ShinobiKnife_Blade_AO.png",
+   "Head_top": "SharedAssetsBake_AO.png",
+   "RatchetRing_4": "RatchetRing_4_AO.png",
+   "RatchetBase_80": "RatchetBase_80_AO.png",
+   "Base_parts02": "SharedAssetsBake_AO.png",
+   "Base_parts03": "SharedAssetsBake_AO.png",
+   "Base_screw": "SharedAssetsBake_AO.png",
+   "Bit_HN": "Bit_HN_AO.png"
+  },
+  "decal": "BXORG05_ShinobiKnife_4-80_hn.png"
+ },
+ "soar_phoenix.fbx": {
+  "ao": {
+   "Head_metal": "SoarPhoenix_Blade_AO.png",
+   "Head_parts01": "SoarPhoenix_Blade_AO.png",
+   "Head_parts02": "SoarPhoenix_BladeLower_AO.png",
+   "Head_top": "SharedAssetsBake_AO.png",
+   "RatchetRing_9": "RatchetRing_9_AO.png",
+   "RatchetBase_60": "RatchetBase_60_AO.png",
+   "Base_parts02": "SharedAssetsBake_AO.png",
+   "Base_parts03": "SharedAssetsBake_AO.png",
+   "Base_screw": "SharedAssetsBake_AO.png",
+   "Bit_GF": "Bit_GF_AO.png"
+  },
+  "decal": "BX023_PhoenixWing_9-60gf.png"
+ },
+ "sword_dran.fbx": {
+  "ao": {
+   "Head_metal": "DranSword_Blade_AO.png",
+   "Head_parts01": "DranSword_Blade_AO.png",
+   "Head_parts02": "DranSword_BladeLower_AO.png",
+   "Head_top": "SharedAssetsBake_AO.png",
+   "RatchetRing_3": "RatchetRing_3_AO.png",
+   "RatchetBase_60": "RatchetBase_60_AO.png",
+   "Base_parts02": "SharedAssetsBake_AO.png",
+   "Base_parts03": "SharedAssetsBake_AO.png",
+   "Base_screw": "SharedAssetsBake_AO.png",
+   "Bit_F": "Bit_F_AO.png"
+  },
+  "decal": "BX17_DranSword_3-60f.png"
+ },
+ "tail_viper.fbx": {
+  "ao": {
+   "Head_metal": "TailViper_Blade_AO.png",
+   "Head_parts01": "TailViper_Blade_AO.png",
+   "Head_parts02": "TailViper_BladeLower_AO.png",
+   "Head_top": "SharedAssetsBake_AO.png",
+   "RatchetRing_5": "RatchetRing_5_AO.png",
+   "RatchetBase_80": "RatchetBase_80_AO.png",
+   "Base_parts02": "SharedAssetsBake_AO.png",
+   "Base_parts03": "SharedAssetsBake_AO.png",
+   "Base_screw": "SharedAssetsBake_AO.png",
+   "Bit_O": "Bit_O_AO.png"
+  },
+  "decal": "BX16_ViperTail_5-80o.png"
+ },
+ "talon_ptera.fbx": {
+  "ao": {
+   "Head_metal": "TalonPtera_Blade_AO.png",
+   "Head_parts01": "TalonPtera_Blade_AO.png",
+   "Head_parts02": "TalonPtera_BladeLower_AO.png",
+   "Head_top": "SharedAssetsBake_AO.png",
+   "RatchetRing_3": "RatchetRing_3_AO.png",
+   "RatchetBase_80": "RatchetBase_80_AO.png",
+   "Base_parts02": "SharedAssetsBake_AO.png",
+   "Base_parts03": "SharedAssetsBake_AO.png",
+   "Base_screw": "SharedAssetsBake_AO.png",
+   "Bit_B": "Bit_B_AO.png"
+  },
+  "decal": "BXORG02_PteraStroke_3-80_b.png"
+ },
+ "x_1_g1686_pearl_tiger_3_60u.fbx": {
+  "ao": {
+   "Head_metal": "PearlTiger_Blade_AO.png",
+   "Head_parts01": "PearlTiger_Blade_AO.png",
+   "Head_top": "SharedAssetsBake_AO.png",
+   "Head_parts02": "PearlTiger_BladeLower_AO.png"
+  },
+  "decal": "BX33_WeissTiger_3-60u.png"
+ },
+ "x_529279_bite_croc_3_60lf.fbx": {
+  "ao": {
+   "Head_metal": "BiteCroc_Blade_AO.png",
+   "Head_parts01": "BiteCroc_Blade_AO.png",
+   "Head_parts02": "BiteCroc_BladeLower_AO.png",
+   "Head_top": "SharedAssetsBake_AO.png",
+   "RatchetRing_3": "RatchetRing_3_AO.png",
+   "RatchetBase_60": "RatchetBase_60_AO.png",
+   "Base_parts02": "SharedAssetsBake_AO.png",
+   "Base_parts03": "SharedAssetsBake_AO.png",
+   "Base_screw": "SharedAssetsBake_AO.png",
+   "Bit_LF": "Bit_LF_AO.png"
+  },
+  "decal": "BXORG06_CrocCrunch_3-60_lf.png"
+ },
+ "x_529279_sting_unicorn_4_60_p_rdrc.fbx": {
+  "ao": {
+   "Head_parts02": "StingUnicorn_BladeLower_AO.png",
+   "Head_top": "SharedAssetsBake_AO.png"
+  },
+  "decal": "BXRDRC01_UnicornSting_4-60_p.png"
+ },
+ "x_533023_gale_wyvern_3_60t.fbx": {
+  "ao": {
+   "Head_metal": "GaleWyvern_Blade_AO.png",
+   "Head_parts01": "GaleWyvern_Blade_AO.png",
+   "Head_parts02": "GaleWyvern_BladeLower_AO.png",
+   "Head_top": "SharedAssetsBake_AO.png"
+  },
+  "decal": "BX24_WyvernGale_3-60t.png"
+ },
+ "x_533023_sword_dran_3_80b.fbx": {
+  "ao": {
+   "Head_metal": "DranSword_Blade_AO.png",
+   "Head_parts01": "DranSword_Blade_AO.png",
+   "Head_parts02": "DranSword_BladeLower_AO.png",
+   "Head_top": "SharedAssetsBake_AO.png"
+  },
+  "decal": "BX14_DranSword_3-80b.png"
+ },
+ "x_arc_wizard_r_4_55lo_blade_chip.fbx": {
+  "ao": {
+   "CX_BladeCore": "CX_BladeCore_AO.png"
+  },
+  "decal": "BX01_DranSword_3-60f.png"
+ },
+ "x_arc_wizard_r_4_55lo_blade_layer.fbx": {
+  "ao": {},
+  "decal": "BX01_DranSword_3-60f.png"
+ },
+ "x_arc_wizard_r_4_55lo_blade_ring.fbx": {
+  "ao": {
+   "AuxBlade_R": "AuxBlade_R_AO.png"
+  },
+  "decal": "BX01_DranSword_3-60f.png"
+ },
+ "x_arrow_wizard_4_60_n.fbx": {
+  "ao": {
+   "Head_metal": "ArrowWizard_Blade_AO.png",
+   "Head_parts01": "ArrowWizard_Blade_AO.png",
+   "Head_parts02": "ArrowWizard_BladeLower_AO.png",
+   "Head_top": "SharedAssetsBake_AO.png",
+   "RatchetRing_4": "RatchetRing_4_AO.png",
+   "RatchetBase_60": "RatchetBase_60_AO.png",
+   "Base_parts02": "SharedAssetsBake_AO.png",
+   "Base_parts03": "SharedAssetsBake_AO.png",
+   "Base_screw": "SharedAssetsBake_AO.png",
+   "Bit_N": "Bit_N_AO.png"
+  },
+  "decal": "BX08_WizardArrow4-60n.png"
+ },
+ "x_arrow_wizard_4_80b_st.fbx": {
+  "ao": {
+   "Head_metal": "ArrowWizard_Blade_AO.png",
+   "Head_parts01": "ArrowWizard_Blade_AO.png",
+   "Head_parts02": "ArrowWizard_BladeLower_AO.png",
+   "Head_top": "SharedAssetsBake_AO.png",
+   "Base_parts02": "SharedAssetsBake_AO.png",
+   "Base_parts03": "SharedAssetsBake_AO.png",
+   "Base_screw": "SharedAssetsBake_AO.png",
+   "RatchetRing_4": "RatchetRing_4_AO.png",
+   "RatchetBase_80": "RatchetBase_80_AO.png",
+   "Bit_B": "Bit_B_AO.png"
+  }
+ },
+ "x_arrow_wizard_4_80gb.fbx": {
+  "ao": {
+   "Head_metal": "ArrowWizard_Blade_AO.png",
+   "Head_parts01": "ArrowWizard_Blade_AO.png",
+   "Head_parts02": "ArrowWizard_BladeLower_AO.png",
+   "Head_top": "SharedAssetsBake_AO.png"
+  },
+  "decal": "BX24_WizardArrow_4-80gb.png"
+ },
+ "x_beat_tyranno_4_70q.fbx": {
+  "ao": {
+   "Head_metal": "BeatTyranno_Blade_AO.png",
+   "Head_parts01": "BeatTyranno_Blade_AO.png",
+   "Head_parts02": "BeatTyranno_BladeLower_AO.png",
+   "Head_top": "SharedAssetsBake_AO.png"
+  },
+  "decal": "BX31_TiranoBeat_4-70q.png"
+ },
+ "x_buster_dran_5_70db.fbx": {
+  "ao": {
+   "Head_metal": "DranBuster_Blade_AO.png",
+   "Head_parts02": "DranBuster_BladeLower_AO.png"
+  }
+ },
+ "x_bx14_keel_shark_3_60lf_ratchet_ui.fbx": {
+  "ao": {
+   "Base_parts01": "SharedAssetsBake_AO.png",
+   "Base_parts02": "SharedAssetsBake_AO.png",
+   "Base_parts03": "SharedAssetsBake_AO.png",
+   "Base_parts04": "SharedAssetsBake_AO.png",
+   "Base_screw": "SharedAssetsBake_AO.png",
+   "RatchetBase_60": "RatchetBase_60_AO.png",
+   "RatchetRing_3": "RatchetRing_3_AO.png"
+  }
+ },
+ "x_bx14_shark_edge_3_60lf.fbx": {
+  "ao": {},
+  "decal": "BX14_SharkEdge_3-60lf.png"
+ },
+ "x_bx14_shark_edge_3_60lf_blade_blue.fbx": {
+  "ao": {},
+  "decal": "BX14_SharkEdge_3-60lf.png"
+ },
+ "x_bx14_shark_edge_3_60lf_blade_red.fbx": {
+  "ao": {},
+  "decal": "BX14_SharkEdge_3-60lf.png"
+ },
+ "x_bx20_dagger_dran_4_60r.fbx": {
+  "ao": {},
+  "decal": "BX20_DranDagger_4-60R.png"
+ },
+ "x_bxg01_dranzer_spiral_3_80t_green.fbx": {
+  "ao": {
+   "Head_metal": "DranzerSpiral_Blade_AO.png",
+   "Head_top": "SharedAssetsBake_AO.png",
+   "RatchetRing_3": "RatchetRing_3_AO.png",
+   "RatchetBase_80": "RatchetBase_80_AO.png",
+   "Base_parts02": "SharedAssetsBake_AO.png",
+   "Base_parts03": "SharedAssetsBake_AO.png",
+   "Base_screw": "SharedAssetsBake_AO.png",
+   "Bit_T": "Bit_T_AO.png"
+  },
+  "decal": "BXG01_DranzerSpiral_3-80t_green.png"
+ },
+ "x_bxg01_dranzer_spiral_3_80t_red.fbx": {
+  "ao": {
+   "Head_metal": "DranzerSpiral_Blade_AO.png",
+   "Head_top": "SharedAssetsBake_AO.png",
+   "RatchetRing_3": "RatchetRing_3_AO.png",
+   "RatchetBase_80": "RatchetBase_80_AO.png",
+   "Base_parts02": "SharedAssetsBake_AO.png",
+   "Base_parts03": "SharedAssetsBake_AO.png",
+   "Base_screw": "SharedAssetsBake_AO.png",
+   "Bit_T": "Bit_T_AO.png"
+  },
+  "decal": "BXG01_DranzerSpiral_3-80t_red.png"
+ },
+ "x_bx_org01_samurai_steel_4_80t.fbx": {
+  "ao": {
+   "Head_metal": "SteelSamurai_Blade_AO.png",
+   "Head_parts01": "SteelSamurai_Blade_AO.png",
+   "Head_parts02": "SteelSamurai_BladeLower_AO.png",
+   "Head_top": "SharedAssetsBake_AO.png",
+   "RatchetRing_4": "RatchetRing_4_AO.png",
+   "RatchetBase_80": "RatchetBase_80_AO.png",
+   "Base_parts02": "SharedAssetsBake_AO.png",
+   "Base_parts03": "SharedAssetsBake_AO.png",
+   "Base_screw": "SharedAssetsBake_AO.png",
+   "Bit_T": "Bit_T_AO.png"
+  },
+  "decal": "BXORG01_SamuraiSteel_4-80_t.png"
+ },
+ "x_bx_org05_shinobi_knife_4_80hn.fbx": {
+  "ao": {
+   "Head_metal": "ShinobiKnife_Blade_AO.png",
+   "Head_parts01": "ShinobiKnife_Blade_AO.png",
+   "Head_parts02": "ShinobiKnife_Blade_AO.png",
+   "Head_top": "SharedAssetsBake_AO.png",
+   "RatchetRing_4": "RatchetRing_4_AO.png",
+   "RatchetBase_80": "RatchetBase_80_AO.png",
+   "Base_parts02": "SharedAssetsBake_AO.png",
+   "Base_parts03": "SharedAssetsBake_AO.png",
+   "Base_screw": "SharedAssetsBake_AO.png",
+   "Bit_HN": "Bit_HN_AO.png"
+  },
+  "decal": "BXORG05_ShinobiKnife_4-80_hn.png"
+ },
+ "x_bx_org08_mammo_tusk_3_60t.fbx": {
+  "ao": {},
+  "decal": "BXORG08_MammoTusk_3-60_t.png"
+ },
+ "x_claw_leon_5_60p.fbx": {
+  "ao": {
+   "Head_metal": "ClawLeon_Blade_AO.png",
+   "Head_parts01": "ClawLeon_Blade_AO.png",
+   "head_parts02": "ClawLeon_BladeLower_AO.png",
+   "Head_top": "SharedAssetsBake_AO.png"
+  },
+  "decal": "BX15_LeonCrow_5-60p.png"
+ },
+ "x_cobalt_dragoon_2_60c.fbx": {
+  "ao": {
+   "Head_metal": "CobaltDragoon_Blade_AO.png",
+   "Head_parts01": "CobaltDragoon_Blade_AO.png",
+   "Head_top": "SharedAssetsBake_AO.png",
+   "Head_parts02": "CobaltDragoon_Blade_AO.png"
+  },
+  "decal": "BX34_CobaltDragoon2-60c.png"
+ },
+ "x_courage_dran_s_6_60v_blade_chip.fbx": {
+  "ao": {},
+  "decal": "BX01_DranSword_3-60f.png"
+ },
+ "x_courage_dran_s_6_60v_blade_layer.fbx": {
+  "ao": {
+   "Head_metal": "CourageDran_Blade_AO.png",
+   "Head_parts01": "CourageDran_Blade_AO.png"
+  },
+  "decal": "BX01_DranSword_3-60f.png"
+ },
+ "x_courage_dran_s_6_60v_blade_ring.fbx": {
+  "ao": {},
+  "decal": "BX01_DranSword_3-60f.png"
+ },
+ "x_cowl_sphinx_1_80gf.fbx": {
+  "ao": {
+   "Head_metal": "SphinxCowl_Blade_AO.png",
+   "Head_parts01": "SphinxCowl_Blade_AO.png",
+   "Head_parts02": "SphinxCowl_BladeLower_AO.png",
+   "Head_top": "SharedAssetsBake_AO.png"
+  }
+ },
+ "x_cowl_sphinx_9_80gn.fbx": {
+  "ao": {
+   "Head_metal": "SphinxCowl_Blade_AO.png",
+   "Head_parts01": "SphinxCowl_Blade_AO.png",
+   "Head_parts02": "SphinxCowl_BladeLower_AO.png",
+   "Head_top": "SharedAssetsBake_AO.png"
+  },
+  "decal": "BX27_SphinxCowl_9-80gn.png"
+ },
+ "x_crest_leon_7_60gn.fbx": {
+  "ao": {
+   "Head_metal": "CrestLeon_Blade_AO.png",
+   "Head_parts02": "CrestLeon_BladeLower_AO.png"
+  }
+ },
+ "x_dagger_dran_4_70q.fbx": {
+  "ao": {
+   "Head_metal": "DaggerDran_Blade_AO.png",
+   "Head_parts01": "DaggerDran_Blade_AO.png",
+   "Head_top": "SharedAssetsBake_AO.png",
+   "head_parts02": "DaggerDran_BladeLower_AO.png"
+  },
+  "decal": "BX31_Drandagger_4-70p.png"
+ },
+ "x_dark_perseus_b_6_80w_blade_chip.fbx": {
+  "ao": {},
+  "decal": "BX01_DranSword_3-60f.png"
+ },
+ "x_dark_perseus_b_6_80w_blade_layer.fbx": {
+  "ao": {},
+  "decal": "BX01_DranSword_3-60f.png"
+ },
+ "x_dark_perseus_b_6_80w_blade_ring.fbx": {
+  "ao": {
+   "AuxBlade_B": "AuxBlade_B_AO.png"
+  },
+  "decal": "BX01_DranSword_3-60f.png"
+ },
+ "x_digital_beyblade.fbx": {
+  "ao": {
+   "Head_metal": "TailViper_Blade_AO.png",
+   "Head_parts01": "TailViper_Blade_AO.png"
+  },
+  "decal": "BX01_DranSword_3-60f.png"
+ },
+ "x_dranzer_spiral_3_80t.fbx": {
+  "ao": {
+   "Head_metal": "DranzerSpiral_Blade_AO.png"
+  },
+  "decal": "BXG01_DranzerSpiral_3-80t_green.png"
+ },
+ "x_dran_buster_1_60a.fbx": {
+  "ao": {
+   "Head_metal": "DranBuster_Blade_AO.png",
+   "Head_parts02": "DranBuster_BladeLower_AO.png"
+  }
+ },
+ "x_driger_slash_4_80p.fbx": {
+  "ao": {
+   "Head_metal": "DrigerSlash_Blade_AO.png",
+   "Head_parts01": "DrigerSlash_Blade_AO.png",
+   "Head_parts02": "DrigerSlash_BladeLower_AO.png"
+  },
+  "decal": "BXG04_DrigerSlash_4-80p.png"
+ },
+ "x_gill_shark_4_70o.fbx": {
+  "ao": {
+   "Head_metal": "GillShark_Blade_AO.png",
+   "Head_parts01": "GillShark_Blade_AO.png",
+   "Head_parts02": "GillShark_BladeLower_AO.png",
+   "Head_top": "SharedAssetsBake_AO.png"
+  }
+ },
+ "x_hammer_incendio_3_70h.fbx": {
+  "ao": {
+   "Head_metal": "HammerIncendio_Blade_AO.png"
+  }
+ },
+ "x_helm_knight_5_80_t.fbx": {
+  "ao": {
+   "Head_parts02": "HelmKnight_BladeLower_AO.png",
+   "Head_top": "SharedAssetsBake_AO.png"
+  },
+  "decal": "BX20_KnightShield_5-80t.png"
+ },
+ "x_impact_drake_9_60lr.fbx": {
+  "ao": {
+   "Head_metal": "ImpactDrake_Blade_AO.png",
+   "Head_parts02": "ImpactDrake_BladeLower_AO.png"
+  }
+ },
+ "x_keel_shark_1_60q.fbx": {
+  "ao": {
+   "Head_metal": "KeelShark_Blade_AO.png",
+   "Head_parts01": "KeelShark_Blade_AO.png",
+   "Head_parts02": "KeelShark_BladeLower_AO.png",
+   "Head_top": "SharedAssetsBake_AO.png"
+  },
+  "decal": "BX31_SharkEdge_1-60q.png"
+ },
+ "x_keel_shark_3_80_f.fbx": {
+  "ao": {
+   "Head_metal": "KeelShark_Blade_AO.png",
+   "Head_parts01": "KeelShark_Blade_AO.png",
+   "Head_parts02": "KeelShark_BladeLower_AO.png",
+   "Head_top": "SharedAssetsBake_AO.png",
+   "RatchetRing_3": "RatchetRing_3_AO.png",
+   "RatchetBase_80": "RatchetBase_80_AO.png",
+   "Base_parts02": "SharedAssetsBake_AO.png",
+   "Base_parts03": "SharedAssetsBake_AO.png",
+   "Base_screw": "SharedAssetsBake_AO.png",
+   "Bit_F": "Bit_F_AO.png"
+  },
+  "decal": "BX20_SharkEdge_3-80f.png"
+ },
+ "x_keel_shark_3_80_f_st.fbx": {
+  "ao": {
+   "Head_metal": "KeelShark_Blade_AO.png",
+   "Head_parts01": "KeelShark_Blade_AO.png",
+   "Head_parts02": "KeelShark_BladeLower_AO.png",
+   "Head_top": "SharedAssetsBake_AO.png",
+   "RatchetRing_3": "RatchetRing_3_AO.png",
+   "RatchetBase_80": "RatchetBase_80_AO.png",
+   "Base_parts02": "SharedAssetsBake_AO.png",
+   "Base_parts03": "SharedAssetsBake_AO.png",
+   "Base_screw": "SharedAssetsBake_AO.png",
+   "Bit_F": "Bit_F_AO.png"
+  },
+  "decal": "BX20_SharkEdge_3-80f_ST.png"
+ },
+ "x_knight_lance_4_80hn.fbx": {
+  "ao": {
+   "Head_parts02": "LanceKnight_BladeLower_AO.png",
+   "Head_top": "SharedAssetsBake_AO.png"
+  },
+  "decal": "BX13_KnightLance_4-80hn.png"
+ },
+ "x_obsidian_shell_4_60d.fbx": {
+  "ao": {
+   "Head_metal": "ObsidianShell_Blade_AO.png",
+   "Head_parts01": "ObsidianShell_Blade_AO.png",
+   "Head_parts02": "ObsidianShell_BladeLower_AO.png",
+   "Head_top": "SharedAssetsBake_AO.png"
+  },
+  "decal": "BX35_BlackShell4-60d.png"
+ },
+ "x_obsidian_shell_4_60d_ratchet_ui.fbx": {
+  "ao": {
+   "RatchetRing_4": "RatchetRing_4_AO.png",
+   "RatchetBase_60": "RatchetBase_60_AO.png",
+   "Base_parts02": "SharedAssetsBake_AO.png",
+   "Base_parts03": "SharedAssetsBake_AO.png",
+   "Base_screw": "SharedAssetsBake_AO.png"
+  }
+ },
+ "x_reaper_incendio_t_4_70k_blade_chip.fbx": {
+  "ao": {
+   "CX_BladeCore": "CX_BladeCore_AO.png"
+  },
+  "decal": "BX01_DranSword_3-60f.png"
+ },
+ "x_reaper_incendio_t_4_70k_blade_layer.fbx": {
+  "ao": {
+   "Head_metal": "ReaperIncendio_Blade_AO.png",
+   "Head_parts01": "ReaperIncendio_Blade_AO.png"
+  },
+  "decal": "BX01_DranSword_3-60f.png"
+ },
+ "x_reaper_incendio_t_4_70k_blade_ring.fbx": {
+  "ao": {
+   "AuxBlade_Base": "AuxBlade_Base_AO.png",
+   "AuxBlade_T": "AuxBlade_T_AO.png"
+  },
+  "decal": "BX01_DranSword_3-60f.png"
+ },
+ "x_saber_samurai_2_70l.fbx": {
+  "ao": {
+   "Head_metal": "SaberSamurai_Blade_AO.png",
+   "Head_parts02": "SaberSamurai_BladeLower_AO.png"
+  }
+ },
+ "x_scarlet_garuda_4_70tp.fbx": {
+  "ao": {
+   "Head_metal": "ScarletGaruda_Blade_AO.png",
+   "Head_parts01": "ScarletGaruda_Blade_AO.png",
+   "Head_top": "SharedAssetsBake_AO.png",
+   "Head_parts02": "ScarletGaruda_BladeLower_AO.png"
+  },
+  "decal": "BX38_CrimsonGaruda_4-70tp.png"
+ },
+ "x_scythe_incendio_3_80_b.fbx": {
+  "ao": {
+   "Head_parts02": "ScytheIncendio_BladeLower_AO.png",
+   "Head_top": "SharedAssetsBake_AO.png"
+  },
+  "decal": "BX08_ScytheIncendio3-80B.png"
+ },
+ "x_soar_phoenix_5_80h.fbx": {
+  "ao": {
+   "Head_metal": "SoarPhoenix_Blade_AO.png",
+   "Head_parts01": "SoarPhoenix_Blade_AO.png",
+   "Head_parts02": "SoarPhoenix_BladeLower_AO.png",
+   "Head_top": "SharedAssetsBake_AO.png"
+  },
+  "decal": "BX35_PhenixWing5-80h.png"
+ },
+ "x_soar_phoenix_9_60gf_st.fbx": {
+  "ao": {
+   "Head_metal": "SoarPhoenix_Blade_AO.png",
+   "Head_parts01": "SoarPhoenix_Blade_AO.png",
+   "Head_parts02": "SoarPhoenix_BladeLower_AO.png",
+   "Head_top": "SharedAssetsBake_AO.png",
+   "RatchetRing_9": "RatchetRing_9_AO.png",
+   "RatchetBase_60": "RatchetBase_60_AO.png",
+   "Base_parts02": "SharedAssetsBake_AO.png",
+   "Base_parts03": "SharedAssetsBake_AO.png",
+   "Base_screw": "SharedAssetsBake_AO.png",
+   "Bit_GF": "Bit_GF_AO.png"
+  },
+  "decal": "BX023_PhoenixWing_9-60gf_ST.png"
+ },
+ "x_steel_samurai_4_80t_st.fbx": {
+  "ao": {
+   "Head_metal": "SteelSamurai_Blade_AO.png",
+   "Head_parts01": "SteelSamurai_Blade_AO.png",
+   "Head_parts02": "SteelSamurai_BladeLower_AO.png",
+   "Head_top": "SharedAssetsBake_AO.png",
+   "RatchetRing_4": "RatchetRing_4_AO.png",
+   "RatchetBase_80": "RatchetBase_80_AO.png",
+   "Base_parts02": "SharedAssetsBake_AO.png",
+   "Base_parts03": "SharedAssetsBake_AO.png",
+   "Base_screw": "SharedAssetsBake_AO.png",
+   "Bit_T": "Bit_T_AO.png"
+  }
+ },
+ "x_sterling_wolf_3_80fb.fbx": {
+  "ao": {
+   "Head_metal": "SterlingWolf_Blade_AO.png",
+   "Head_parts01": "SterlingWolf_Blade_AO.png",
+   "Head_parts02": "SterlingWolf_BladeLower_AO.png"
+  }
+ },
+ "x_sting_unicorn_5_60gp.fbx": {
+  "ao": {
+   "Head_parts02": "StingUnicorn_BladeLower_AO.png",
+   "Head_top": "SharedAssetsBake_AO.png"
+  },
+  "decal": "BX26_UnicornSting_5-60gp.png"
+ },
+ "x_sword_dran_3_60_f.fbx": {
+  "ao": {
+   "Head_metal": "DranSword_Blade_AO.png",
+   "Head_parts01": "DranSword_Blade_AO.png",
+   "Head_parts02": "DranSword_BladeLower_AO.png",
+   "Head_top": "SharedAssetsBake_AO.png",
+   "RatchetRing_3": "RatchetRing_3_AO.png",
+   "RatchetBase_60": "RatchetBase_60_AO.png",
+   "Base_parts02": "SharedAssetsBake_AO.png",
+   "Base_parts03": "SharedAssetsBake_AO.png",
+   "Base_screw": "SharedAssetsBake_AO.png",
+   "Bit_F": "Bit_F_AO.png"
+  },
+  "decal": "BX17_DranSword_3-60f.png"
+ },
+ "x_tail_viber_3_80hn_rdrc.fbx": {
+  "ao": {
+   "Head_metal": "TailViper_Blade_AO.png",
+   "Head_parts01": "TailViper_Blade_AO.png",
+   "Head_parts02": "TailViper_BladeLower_AO.png",
+   "Head_top": "SharedAssetsBake_AO.png",
+   "RatchetRing_3": "RatchetRing_3_AO.png",
+   "RatchetBase_80": "RatchetBase_80_AO.png",
+   "Base_parts02": "SharedAssetsBake_AO.png",
+   "Base_parts03": "SharedAssetsBake_AO.png",
+   "Base_screw": "SharedAssetsBake_AO.png",
+   "Bit_HN": "Bit_HN_AO.png"
+  }
+ },
+ "x_tail_viper_3_80hn_rdrc.fbx": {
+  "ao": {
+   "Head_metal": "TailViper_Blade_AO.png",
+   "Head_parts01": "TailViper_Blade_AO.png",
+   "Head_parts02": "TailViper_BladeLower_AO.png",
+   "Head_top": "SharedAssetsBake_AO.png"
+  }
+ },
+ "x_tide_whale_5_80e.fbx": {
+  "ao": {
+   "Head_metal": "TideWhale_Blade_AO.png",
+   "Head_parts01": "TideWhale_Blade_AO.png",
+   "Head_top": "SharedAssetsBake_AO.png",
+   "Head_parts02": "ShadowShinobi_BladeLower_AO.png"
+  },
+  "decal": "BX36_WhaleWave_5-80e.png"
+ },
+ "x_wand_wizard_1_60r.fbx": {
+  "ao": {
+   "Head_metal": "WandWizard_Blade_AO.png",
+   "Head_parts02": "WandWizard_BladeLower_AO.png"
+  },
+  "decal": "BX35_WizardRod1-60r.png"
+ },
+ "x_wand_wizard_5_70db.fbx": {
+  "ao": {
+   "Head_metal": "WandWizard_Blade_AO.png",
+   "Head_parts02": "WandWizard_BladeLower_AO.png"
+  }
+ },
+ "yell_kong.fbx": {
+  "ao": {
+   "Head_metal": "YellKong_Blade_AO.png",
+   "Head_parts01": "YellKong_Blade_AO.png",
+   "Head_parts02": "YellKong_BladeLower_AO.png",
+   "Head_top": "SharedAssetsBake_AO.png",
+   "RatchetRing_3": "RatchetRing_3_AO.png",
+   "RatchetBase_60": "RatchetBase_60_AO.png",
+   "Base_parts02": "SharedAssetsBake_AO.png",
+   "Base_parts03": "SharedAssetsBake_AO.png",
+   "Base_screw": "SharedAssetsBake_AO.png",
+   "Bit_GB": "Bit_GB_AO.png"
+  },
+  "decal": "BXORG07_KongYell_3-60_gb.png"
+ }
+}

@@ -1,0 +1,167 @@
+.rb-morph-box {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  width: 160px;
+  height: 160px;
+  pointer-events: none;
+  opacity: 0;
+  mix-blend-mode: difference;
+  transition: opacity 0.12s ease;
+  --morph-ink: #ffea00;
+  --morph-rot: 0deg;
+  --morph-dur: 0.38s;
+  --morph-close: 0.28s;
+  will-change: transform, opacity;
+}
+
+.rb-morph-box.is-on {
+  opacity: 1;
+}
+
+.rb-morph-box.is-closing {
+  opacity: 1;
+}
+
+.rb-morph-inner {
+  position: absolute;
+  inset: 0;
+  transform-origin: center center;
+  opacity: 0;
+  transform: rotate(var(--morph-rot, 0deg));
+  overflow: visible;
+}
+
+.rb-morph-inner.is-pop,
+.rb-morph-inner.is-close {
+  opacity: 1;
+}
+
+.rb-morph-fill {
+  position: absolute;
+  inset: 0;
+  background: var(--morph-ink);
+  box-shadow: inset 0 0 0 1.5px var(--morph-ink);
+  clip-path: inset(50% 50% 50% 50%);
+  transform-origin: center center;
+}
+
+.rb-morph-inner.is-pop .rb-morph-fill {
+  animation: rbMorphUnfold var(--morph-dur, 0.38s) cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.rb-morph-inner.is-close .rb-morph-fill {
+  animation: rbMorphFold var(--morph-close, 0.28s) cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.rb-morph-inner i {
+  position: absolute;
+  z-index: 2;
+  width: 11px;
+  height: 11px;
+  background: var(--morph-ink);
+  border-radius: 50%;
+  opacity: 0;
+  transform: scale(0.35);
+  pointer-events: none;
+}
+
+.rb-morph-inner.is-pop i {
+  animation: rbMorphHandle 0.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation-delay: calc(var(--morph-dur, 0.38s) * 0.78);
+}
+
+.rb-morph-inner.is-close i {
+  animation: rbMorphHandleOut 0.12s cubic-bezier(0.4, 0, 1, 1) forwards;
+  animation-delay: 0s;
+}
+
+.rb-morph-inner i:nth-child(2) {
+  top: -5px;
+  left: -5px;
+}
+.rb-morph-inner i:nth-child(3) {
+  top: -5px;
+  right: -5px;
+}
+.rb-morph-inner.is-pop i:nth-child(3) {
+  animation-delay: calc(var(--morph-dur, 0.38s) * 0.78 + 0.03s);
+}
+.rb-morph-inner i:nth-child(4) {
+  right: -5px;
+  bottom: -5px;
+}
+.rb-morph-inner.is-pop i:nth-child(4) {
+  animation-delay: calc(var(--morph-dur, 0.38s) * 0.78 + 0.06s);
+}
+.rb-morph-inner i:nth-child(5) {
+  bottom: -5px;
+  left: -5px;
+}
+.rb-morph-inner.is-pop i:nth-child(5) {
+  animation-delay: calc(var(--morph-dur, 0.38s) * 0.78 + 0.09s);
+}
+
+/* open: pinpoint → slit → full */
+@keyframes rbMorphUnfold {
+  0% {
+    clip-path: inset(49.5% 49.5% 49.5% 49.5%);
+  }
+  42% {
+    clip-path: inset(48.5% 0 48.5% 0);
+  }
+  100% {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+/* close: full → slit → pinpoint */
+@keyframes rbMorphFold {
+  0% {
+    clip-path: inset(0 0 0 0);
+  }
+  45% {
+    clip-path: inset(48.5% 0 48.5% 0);
+  }
+  100% {
+    clip-path: inset(49.5% 49.5% 49.5% 49.5%);
+  }
+}
+
+@keyframes rbMorphHandle {
+  0% {
+    opacity: 0;
+    transform: scale(0.35);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes rbMorphHandleOut {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rb-morph-inner,
+  .rb-morph-inner.is-pop,
+  .rb-morph-inner.is-close,
+  .rb-morph-inner.is-pop .rb-morph-fill,
+  .rb-morph-inner.is-close .rb-morph-fill,
+  .rb-morph-inner.is-pop i,
+  .rb-morph-inner.is-close i {
+    animation: none !important;
+    opacity: 1;
+    clip-path: none;
+    transform: none;
+  }
+}

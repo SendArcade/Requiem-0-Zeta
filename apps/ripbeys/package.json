@@ -1,0 +1,35 @@
+{
+  "name": "@ripbeys/web",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "lint": "echo 'oxlint optional'",
+    "validate:assets": "node ../../scripts/validate-ripbeys-assets.mjs",
+    "build:oracle-bridge": "node ../../scripts/build-oracle-bridge.mjs",
+    "build:visual-assets": "node ../../scripts/build-visual-assets.mjs",
+    "typecheck": "tsc -b --pretty false",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "framer-motion": "^12.43.0",
+    "gsap": "^3.15.0",
+    "lucide-react": "^1.28.0",
+    "motion": "^12.43.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-router-dom": "^7.18.2",
+    "three": "^0.185.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.7",
+    "@types/react": "^19.0.7",
+    "@types/react-dom": "^19.0.3",
+    "@types/three": "^0.185.3",
+    "@vitejs/plugin-react": "^6.0.4",
+    "typescript": "^5.7.3",
+    "vite": "^8.2.0"
+  }
+}

@@ -1,0 +1,54 @@
+.rb-cursor-root {
+  display: contents;
+  pointer-events: none;
+}
+.rb-cursor-dot,
+.rb-cursor-ring,
+.rb-cursor-spark {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2147483647;
+  pointer-events: none;
+  border-radius: 50%;
+  translate: -50% -50%;
+  opacity: 0;
+}
+.rb-cursor-root.is-on .rb-cursor-dot,
+.rb-cursor-root.is-on .rb-cursor-ring,
+.rb-cursor-root.is-on .rb-cursor-spark {
+  opacity: 1;
+}
+.rb-cursor-dot {
+  z-index: 3;
+  width: 10px;
+  height: 10px;
+  background: #ffea00;
+  box-shadow: 0 0 14px #ffea00, 0 0 2px #fff;
+}
+.rb-cursor-ring {
+  z-index: 2;
+  width: 52px;
+  height: 52px;
+  border: 2px solid #ffea00;
+  background: transparent;
+  box-shadow: 0 0 22px rgba(255, 234, 0, 0.45);
+  transform: scale(var(--rb-s, 1));
+  transform-origin: center center;
+}
+.rb-cursor-ring.is-hover {
+  background: rgba(255, 234, 0, 0.22);
+  border-color: #fff34d;
+}
+.rb-cursor-spark {
+  z-index: 1;
+  width: 10px;
+  height: 10px;
+  background: #ffea00;
+  filter: blur(0.4px);
+}
+
+html.rb-cursor-on,
+html.rb-cursor-on * {
+  cursor: none !important;
+}

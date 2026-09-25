@@ -1,0 +1,61 @@
+---
+description: Requiem vs RIPBEYS ownership, identity bridge, and migration guardrails
+alwaysApply: true
+---
+
+# Requiem + RIPBEYS architecture
+
+**Requiem-0-Zeta is the canonical platform.**
+
+## Requiem owns
+
+- catalogue
+- canonical product and part identity
+- Oracle valuation
+- sold comparable data
+- ingestion
+- workers
+- database
+- backend APIs
+
+## RIPBEYS owns
+
+- consumer-facing UI
+- 3D experience
+- ModelViewer
+- recovered 3D models
+- textures
+- catalogue presentation
+- Lab
+- marketplace presentation
+- Locker
+- visual product experience
+
+## Identity bridge
+
+The canonical Requiem product/part identity is the bridge between Oracle data and RIPBEYS assets.
+
+- RIPBEYS IDs such as `bx-001`, `bx-002`, etc. are **presentation/listing IDs** and must **never** automatically be treated as Requiem BX product codes.
+- **Never map IDs by numeric similarity** (e.g. `bx-002` ≠ `BX-02`).
+- Every displayed valuation must resolve to a **confirmed** Requiem product or part.
+- Missing Oracle data must produce an **explicit unavailable state**.
+- Missing 3D assets must **not** crash the application.
+- **Never silently resolve catalogue conflicts.**
+
+## Oracle and backend
+
+- **Never fabricate Oracle values.**
+- **Never display hardcoded RIPBEYS prices as current market values.**
+- Preserve existing Requiem Oracle, matcher, ingestion, worker and database behavior unless explicitly instructed otherwise.
+
+## Engineering discipline
+
+- Prefer small, focused changes over unrelated refactors.
+- Inspect existing implementations before creating replacements.
+- Reuse existing APIs, types, services and utilities whenever appropriate.
+
+## Local-only defaults
+
+- **Never push, commit, deploy, modify GitHub or modify Railway unless explicitly instructed.**
+
+See also: `MIGRATION_PLAN.md`, `MIGRATION_STATUS.md`, `.cursor/rules/railway-only.mdc`.

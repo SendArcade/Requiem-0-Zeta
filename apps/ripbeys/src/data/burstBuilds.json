@@ -1,0 +1,531 @@
+{
+    "AceDragonD5":  {
+                        "layer":  {
+                                      "file":  "AceDragonD5_Layer.obj",
+                                      "texture":  "AceDragonD5_Layer_Color.png"
+                                  },
+                        "disk":  {
+                                     "name":  "Sting",
+                                     "file":  "AceDragon_Sting_Disk.obj"
+                                 },
+                        "driver":  {
+                                       "name":  "Charge",
+                                       "file":  "AceDragon_Charge_Tip.obj"
+                                   }
+                    },
+    "AceDragon":  {
+                      "layer":  {
+                                    "file":  "AceDragon_Layer.obj"
+                                },
+                      "disk":  {
+                                   "name":  "Sting",
+                                   "file":  "AceDragon_Sting_Disk.obj"
+                               },
+                      "driver":  {
+                                     "name":  "Charge",
+                                     "file":  "AceDragon_Charge_Tip.obj"
+                                 }
+                  },
+    "AchillesA5":  {
+                       "layer":  {
+                                     "file":  "AchillesA5_Layer.obj",
+                                     "texture":  "AchillesA5_Layer_Color.png"
+                                 },
+                       "disk":  {
+                                    "name":  "OO",
+                                    "file":  "AchillesA5_OO_Disk.obj"
+                                },
+                       "driver":  {
+                                      "name":  "DimentionS",
+                                      "file":  "AchillesA5_DimentionS_Tip.obj"
+                                  }
+                   },
+    "Amaterios":  {
+                      "layer":  {
+                                    "file":  "Amaterios_Layer.obj",
+                                    "texture":  "Amaterios_Layer_Color.png"
+                                },
+                      "disk":  {
+                                   "name":  "Forge",
+                                   "file":  "Amaterios_Disk.obj"
+                               },
+                      "driver":  {
+                                     "name":  "Standard",
+                                     "file":  "Amaterios_Tip.obj"
+                                 }
+                  },
+    "BraveValtryekV6":  {
+                            "layer":  {
+                                          "file":  "BraveValtryekV6_Layer.obj",
+                                          "texture":  "BraveValtryekV6_Layer_Color.png"
+                                      },
+                            "disk":  {
+                                         "name":  "Aero",
+                                         "file":  "BraveValtryekV6_Aero_Disk.obj"
+                                     },
+                            "driver":  {
+                                           "name":  "EvolutionST",
+                                           "file":  "BraveValtryekV6_EvolutionST_Tip.obj"
+                                       }
+                        },
+    "Brave_Valtryek":  {
+                           "layer":  {
+                                         "file":  "Brave_Valtryek_Layer.obj"
+                                     },
+                           "disk":  {
+                                        "name":  "Aero",
+                                        "file":  "BraveValtryekV6_Aero_Disk.obj"
+                                    },
+                           "driver":  {
+                                          "name":  "Valtryek",
+                                          "file":  "Brave_Valtryek_Tip.obj"
+                                      }
+                       },
+    "BushinAsuraA5":  {
+                          "layer":  {
+                                        "file":  "BushinAsuraA5_Layer.obj"
+                                    },
+                          "disk":  {
+                                       "name":  "Hurricane",
+                                       "file":  "BushinAsura_Hurricane_Disc.obj"
+                                   },
+                          "driver":  {
+                                         "name":  "KeepH",
+                                         "file":  "BushinAsura_KeepH_Tip.obj"
+                                     }
+                      },
+    "ChoZValtryekRed":  {
+                            "layer":  {
+                                          "file":  "ChoZValtryekRed_Layer.obj",
+                                          "texture":  "ChoZValtryekRed_Layer_Color.png"
+                                      },
+                            "disk":  {
+                                         "name":  "Zenith",
+                                         "file":  "ChoZValtryekRed_Zenith_Disk.obj"
+                                     },
+                            "driver":  {
+                                           "name":  "Destroy",
+                                           "file":  "ChoZValtryekRed_Destroy_Tip.obj"
+                                       }
+                        },
+    "ChoZValtryek":  {
+                         "layer":  {
+                                       "file":  "ChoZValtryek_Layer.obj",
+                                       "texture":  "ChoZValtryek_Layer_Color.png"
+                                   },
+                         "disk":  {
+                                      "name":  "Blitz",
+                                      "file":  "ChoZValtryek_Blitz_Disk.obj"
+                                  },
+                         "driver":  {
+                                        "name":  "Jolt",
+                                        "file":  "ChoZValtryek_Jolt_Tip.obj"
+                                    }
+                     },
+    "CommandDragonD5":  {
+                            "layer":  {
+                                          "file":  "CommandDragonD5_Layer.obj",
+                                          "texture":  "CommandDragonD5_Layer_Color.png"
+                                      },
+                            "disk":  {
+                                         "name":  "Vanguard",
+                                         "file":  "CommandDragon_Vanguard_Disc.obj"
+                                     },
+                            "driver":  {
+                                           "name":  "IgnitionH",
+                                           "file":  "CommandDragonD5_IgnitionH_Tip.obj"
+                                       }
+                        },
+    "CommandDragon":  {
+                          "layer":  {
+                                        "file":  "CommandDragon_Layer.obj",
+                                        "texture":  "CommandDragon_Layer_Color.png"
+                                    },
+                          "disk":  {
+                                       "name":  "Vanguard",
+                                       "file":  "CommandDragon_Vanguard_Disc.obj"
+                                   },
+                          "driver":  {
+                                         "name":  "QuickDash",
+                                         "file":  "CommandDragon_QuickDash_Tip.obj"
+                                     }
+                      },
+    "CommandValtryekV5":  {
+                              "layer":  {
+                                            "file":  "CommandValtryekV5_Layer.obj",
+                                            "texture":  "CommandValtryekV5_Layer_Color.png"
+                                        },
+                              "disk":  {
+                                           "name":  "Zenith",
+                                           "file":  "Valtryek_Zenith_Disk.obj"
+                                       },
+                              "driver":  {
+                                             "name":  "Evolution",
+                                             "file":  "Valtryek_Evolution_Tip.obj"
+                                         }
+                          },
+    "CosmicValtryek":  {
+                           "layer":  {
+                                         "file":  "CosmicValtryek_Layer.obj",
+                                         "texture":  "CosmicValtryek_Layer_Color.png"
+                                     },
+                           "disk":  {
+                                        "name":  "Zenith",
+                                        "file":  "Valtryek_Zenith_Disk.obj"
+                                    },
+                           "driver":  {
+                                          "name":  "Evolution",
+                                          "file":  "Valtryek_Evolution_Tip.obj"
+                                      }
+                       },
+    "GlyphValtryek":  {
+                          "layer":  {
+                                        "file":  "GlyphValtryek_Layer.obj",
+                                        "texture":  "GlyphValtryek_Layer_Color.png"
+                                    },
+                          "disk":  {
+                                       "name":  "Zenith",
+                                       "file":  "Valtryek_Zenith_Disk.obj"
+                                   },
+                          "driver":  {
+                                         "name":  "Evolution",
+                                         "file":  "Valtryek_Evolution_Tip.obj"
+                                     }
+                      },
+    "HyperSphere_LordSpryzenS5":  {
+                                      "layer":  {
+                                                    "file":  "HyperSphere_LordSpryzenS5_Layer.obj",
+                                                    "texture":  "HyperSphere_LordSpryzenS5_Layer_Color.png"
+                                                },
+                                      "disk":  {
+                                                   "name":  "Around",
+                                                   "file":  "LordSpryzen_Around_Disc.obj"
+                                               },
+                                      "driver":  {
+                                                     "name":  "DimensionH",
+                                                     "file":  "LordSpryzenS5_DimensionH_Tip.obj"
+                                                 }
+                                  },
+    "LordSpryzenS5":  {
+                          "layer":  {
+                                        "file":  "LordSpryzenS5_Layer.obj",
+                                        "texture":  "LordSpryzenS5_Layer_Color.png"
+                                    },
+                          "disk":  {
+                                       "name":  "Around",
+                                       "file":  "LordSpryzen_Around_Disc.obj"
+                                   },
+                          "driver":  {
+                                         "name":  "DimensionH",
+                                         "file":  "LordSpryzenS5_DimensionH_Tip.obj"
+                                     }
+                      },
+    "LordSpryzen":  {
+                        "layer":  {
+                                      "file":  "LordSpryzen_Layer.obj",
+                                      "texture":  "LordSpryzen_Layer_Color.png"
+                                  },
+                        "disk":  {
+                                     "name":  "Around",
+                                     "file":  "LordSpryzen_Around_Disc.obj"
+                                 },
+                        "driver":  {
+                                       "name":  "FusionDash",
+                                       "file":  "LordSpryzen_FusionDash_Tip.obj"
+                                   }
+                    },
+    "LuinorL4":  {
+                     "layer":  {
+                                   "file":  "LuinorL4_Layer.obj",
+                                   "texture":  "LuinorL4_Layer_Color.png"
+                               },
+                     "disk":  {
+                                     "name":  "Forge",
+                                  "file":  "LuinorL4_Disk.obj"
+                              },
+                     "driver":  {
+                                       "name":  "Standard",
+                                    "file":  "LuinorL4_Tip.obj"
+                                }
+                 },
+    "MasterDevolosProSeries":  {
+                                   "layer":  {
+                                                 "file":  "MasterDevolosProSeries_Layer.obj",
+                                                 "texture":  "MasterDevolosProSeries_Layer_Color.png"
+                                             },
+                                   "disk":  {
+                                                "name":  "Turn",
+                                                "file":  "MasterDevolosProSeries_Turn_Disk.obj"
+                                            },
+                                   "driver":  {
+                                                  "name":  "Zeta",
+                                                  "file":  "MasterDevolosProSeries_Zeta_Tip.obj"
+                                              }
+                               },
+    "OrbEngaard":  {
+                       "layer":  {
+                                     "file":  "OrbEngaard_Layer.obj",
+                                     "texture":  "OrbEngaard_Layer_Color.png"
+                                 },
+                       "disk":  {
+                                    "name":  "Sting",
+                                    "file":  "OrbEngaard_Sting_Disk.obj"
+                                },
+                       "driver":  {
+                                      "name":  "Quest",
+                                      "file":  "OrbEngaard_Quest_Tip.obj"
+                                  }
+                   },
+    "Orichalcum":  {
+                       "layer":  {
+                                     "file":  "Orichalcum_Layer.obj",
+                                     "texture":  "Orichalcum_Layer_Color.png"
+                                 },
+                       "disk":  {
+                                    "name":  "Forge",
+                                    "file":  "Orichalcum_Disk.obj"
+                                },
+                       "driver":  {
+                                      "name":  "Standard",
+                                      "file":  "Orichalcum_Tip.obj"
+                                  }
+                   },
+    "PerfectPhoenixP4":  {
+                             "layer":  {
+                                           "file":  "PerfectPhoenixP4_Layer.obj",
+                                           "texture":  "PerfectPhoenixP4_Layer_Color.png"
+                                       },
+                             "disk":  {
+                                          "name":  "8Proof",
+                                          "file":  "PerfectPhoenix_8Proof_Disk.obj"
+                                      },
+                             "driver":  {
+                                            "name":  "Friction",
+                                            "file":  "PerfectPhoenix_Friction_Tip.obj"
+                                        }
+                         },
+    "PerfectPhoenix":  {
+                           "layer":  {
+                                         "file":  "PerfectPhoenix_Layer.obj",
+                                         "texture":  "PerfectPhoenix_Layer_Color.png"
+                                     },
+                           "disk":  {
+                                        "name":  "8Proof",
+                                        "file":  "PerfectPhoenix_8Proof_Disk.obj"
+                                    },
+                           "driver":  {
+                                          "name":  "Friction",
+                                          "file":  "PerfectPhoenix_Friction_Tip.obj"
+                                      }
+                       },
+    "Premium_AceDragonD5":  {
+                                "layer":  {
+                                              "file":  "Premium_AceDragonD5_Layer.obj",
+                                              "texture":  "Premium_AceDragonD5_Layer_Color.png"
+                                          },
+                                "disk":  {
+                                             "name":  "Sting",
+                                             "file":  "AceDragon_Sting_Disk.obj"
+                                         },
+                                "driver":  {
+                                               "name":  "Charge",
+                                               "file":  "Premium_AceDragonD5_Charge_Tip.obj"
+                                           }
+                            },
+    "Premium_RoyalGenesisG5":  {
+                                   "layer":  {
+                                                 "file":  "Premium_RoyalGenesisG5_Layer.obj",
+                                                 "texture":  "Premium_RoyalGenesisG5_Layer_Color.png"
+                                             },
+                                   "disk":  {
+                                                "name":  "Swipe",
+                                                "file":  "RoyalGenesisG5_Swipe_Disk.obj"
+                                            },
+                                   "driver":  {
+                                                  "name":  "HybridH",
+                                                  "file":  "RoyalGenesisG5_HybridH_Tip.obj"
+                                              }
+                               },
+    "Premium_ViperHydraH5":  {
+                                 "layer":  {
+                                               "file":  "Premium_ViperHydraH5_Layer.obj",
+                                               "texture":  "Premium_ViperHydraH5_Layer_Color.png"
+                                           },
+                                 "disk":  {
+                                              "name":  "Python",
+                                              "file":  "ViperHydraH5_Python_Disc.obj"
+                                          },
+                                 "driver":  {
+                                                "name":  "CoilH",
+                                                "file":  "Premium_ViperHydraH5_CoilH_Tip.obj"
+                                            }
+                             },
+    "ProSeries_PerfectPhoenixP4":  {
+                                       "layer":  {
+                                                     "file":  "ProSeries_PerfectPhoenixP4_Layer.obj",
+                                                     "texture":  "ProSeries_PerfectPhoenixP4_Layer_Color.png"
+                                                 },
+                                       "disk":  {
+                                                    "name":  "8Proof",
+                                                    "file":  "PerfectPhoenix_8Proof_Disk.obj"
+                                                },
+                                       "driver":  {
+                                                      "name":  "Friction",
+                                                      "file":  "PerfectPhoenix_Friction_Tip.obj"
+                                                  }
+                                   },
+    "ProSoulBalkesh":  {
+                           "layer":  {
+                                         "file":  "ProSoulBalkesh_Layer.obj",
+                                         "texture":  "ProSoulBalkesh_Layer_Color.png"
+                                     },
+                           "disk":  {
+                                        "name":  "Paradox",
+                                        "file":  "ProSoulBalkesh_Paradox_Disk.obj"
+                                    },
+                           "driver":  {
+                                          "name":  "Eternal",
+                                          "file":  "ProSoulBalkesh_Eternal_Tip.obj"
+                                      }
+                       },
+    "RaidLuniorL6":  {
+                         "layer":  {
+                                       "file":  "RaidLuniorL6_Layer.obj",
+                                       "texture":  "RaidLuniorL6_Layer_Color.png"
+                                   },
+                         "disk":  {
+                                      "name":  "3AD",
+                                      "file":  "RaidLuniorL6_3AD_Disk.obj"
+                                  },
+                         "driver":  {
+                                        "name":  "DestroyerSPM",
+                                        "file":  "RaidLuniorL6_DestroyerSPM_Tip.obj"
+                                    }
+                     },
+    "RoyalGenesisG5":  {
+                           "layer":  {
+                                         "file":  "RoyalGenesisG5_Layer.obj",
+                                         "texture":  "RoyalGenesisG5_Layer_Color.png"
+                                     },
+                           "disk":  {
+                                        "name":  "Swipe",
+                                        "file":  "RoyalGenesisG5_Swipe_Disk.obj"
+                                    },
+                           "driver":  {
+                                          "name":  "HybridH",
+                                          "file":  "RoyalGenesisG5_HybridH_Tip.obj"
+                                      }
+                       },
+    "SpearValtryekV6":  {
+                            "layer":  {
+                                          "file":  "SpearValtryekV6_Layer.obj",
+                                          "texture":  "SpearValtryekV6_Layer_Color.png"
+                                      },
+                            "disk":  {
+                                         "name":  "Zenith",
+                                         "file":  "Valtryek_Zenith_Disk.obj"
+                                     },
+                            "driver":  {
+                                           "name":  "Evolution",
+                                           "file":  "Valtryek_Evolution_Tip.obj"
+                                       }
+                        },
+    "SwordAchillesA5":  {
+                            "layer":  {
+                                          "file":  "SwordAchillesA5_Layer.obj",
+                                          "texture":  "SwordAchillesA5_Layer_Color.png"
+                                      },
+                            "disk":  {
+                                         "name":  "OO",
+                                         "file":  "AchillesA5_OO_Disk.obj"
+                                     },
+                            "driver":  {
+                                           "name":  "Valtryek",
+                                           "file":  "Sword_Valtryek_Tip.obj"
+                                       }
+                        },
+    "UnionAchillesA5":  {
+                            "layer":  {
+                                          "file":  "UnionAchillesA5_Layer.obj",
+                                          "texture":  "UnionAchillesA5_Layer_Color.png"
+                                      },
+                            "disk":  {
+                                         "name":  "Convert",
+                                         "file":  "UnionAchillesA5_Convert_Disk.obj"
+                                     },
+                            "driver":  {
+                                           "name":  "XtenderH",
+                                           "file":  "UnionAchillesA5_XtenderH_Tip.obj"
+                                       }
+                        },
+    "UnionValtryek":  {
+                          "layer":  {
+                                        "file":  "UnionValtryek_Layer.obj",
+                                        "texture":  "UnionValtryek_Layer_Color.png"
+                                    },
+                          "disk":  {
+                                       "name":  "Zenith",
+                                       "file":  "Valtryek_Zenith_Disk.obj"
+                                   },
+                          "driver":  {
+                                         "name":  "Evolution",
+                                         "file":  "Valtryek_Evolution_Tip.obj"
+                                     }
+                      },
+    "V4":  {
+               "layer":  {
+                             "file":  "V4_Layer.obj",
+                             "texture":  "V4_Layer_Color.png"
+                         },
+               "disk":  {
+                             "name":  "Forge",
+                            "file":  "V4_Disk.obj"
+                        },
+               "driver":  {
+                               "name":  "Standard",
+                              "file":  "V4_Tip.obj"
+                          }
+           },
+    "Valtryek_V5":  {
+                        "layer":  {
+                                      "file":  "Valtryek_V5_Layer.obj",
+                                      "texture":  "Valtryek_V5_Layer_Color.png"
+                                  },
+                        "disk":  {
+                                     "name":  "Zenith",
+                                     "file":  "Valtryek_Zenith_Disk.obj"
+                                 },
+                        "driver":  {
+                                       "name":  "Evolution",
+                                       "file":  "Valtryek_Evolution_Tip.obj"
+                                   }
+                    },
+    "VexLuciusL6":  {
+                        "layer":  {
+                                      "file":  "VexLuciusL6_Layer.obj",
+                                      "texture":  "VexLuciusL6_Layer_Color.png"
+                                  },
+                        "disk":  {
+                                     "name":  "2DD",
+                                     "file":  "VexLuciusL6_2DD_Disc.obj"
+                                 },
+                        "driver":  {
+                                       "name":  "MobiusSP",
+                                       "file":  "VexLuciusL6_MobiusSP_Tip.obj"
+                                   }
+                    },
+    "Xcalius_X4":  {
+                       "layer":  {
+                                     "file":  "Xcalius_X4_Layer.obj",
+                                     "texture":  "Xcalius_X4_Layer_Color.png"
+                                 },
+                       "disk":  {
+                                    "name":  "1",
+                                    "file":  "Xcalius_1_Disk.obj"
+                                },
+                       "driver":  {
+                                      "name":  "SwordS",
+                                      "file":  "Xcalius_SwordS_Tip.obj"
+                                  }
+                   }
+}

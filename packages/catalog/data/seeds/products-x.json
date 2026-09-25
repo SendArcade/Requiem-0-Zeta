@@ -800,6 +800,27 @@
     ]
   },
   {
+    "id": "prod-x-dran-dagger-4-60r-complete-loose",
+    "generation": "x",
+    "skuType": "complete_loose",
+    "nameEn": "Dran Dagger (4-60R)",
+    "nameJp": null,
+    "productCodes": [
+      "BX-20"
+    ],
+    "attrs": {
+      "combo": "4-60R",
+      "line": "BX",
+      "recipeKind": "assembled",
+      "note": "Assembled Dran Dagger 4-60R. Shares Takara pack code BX-20 with Shark Edge products; never treat this row as Shark Edge or merge comps into prod-x-bx-20-*."
+    },
+    "partIds": [
+      "x-blade-dran-dagger",
+      "x-ratchet-4-60",
+      "x-bit-r"
+    ]
+  },
+  {
     "id": "prod-x-bx-21-sealed",
     "generation": "x",
     "skuType": "sealed",
@@ -3374,6 +3395,208 @@
       "x-blade-mummy-curse",
       "x-ratchet-7-55",
       "x-bit-g"
+    ]
+  },
+  {
+    "id": "prod-x-bx-16-complete-loose",
+    "generation": "x",
+    "skuType": "complete_loose",
+    "nameEn": "Viper Tail (5-80O)",
+    "nameJp": null,
+    "productCodes": [
+      "BX-16"
+    ],
+    "attrs": {
+      "combo": "5-80O",
+      "line": "BX",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "x-blade-viper-tail",
+      "x-ratchet-5-80",
+      "x-bit-o"
+    ]
+  },
+  {
+    "id": "prod-x-bx-19-complete-loose",
+    "generation": "x",
+    "skuType": "complete_loose",
+    "nameEn": "Rhino Horn (3-80S)",
+    "nameJp": null,
+    "productCodes": [
+      "BX-19"
+    ],
+    "attrs": {
+      "combo": "3-80S",
+      "line": "BX",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "x-blade-rhino-horn",
+      "x-ratchet-3-80",
+      "x-bit-s"
+    ]
+  },
+  {
+    "id": "prod-x-bx-21-complete-loose",
+    "generation": "x",
+    "skuType": "complete_loose",
+    "nameEn": "Hells Chain (5-60HT)",
+    "nameJp": null,
+    "productCodes": [
+      "BX-21"
+    ],
+    "attrs": {
+      "combo": "5-60HT",
+      "line": "BX",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "x-blade-hells-chain",
+      "x-ratchet-5-60",
+      "x-bit-ht"
+    ]
+  },
+  {
+    "id": "prod-x-bx-23-complete-loose",
+    "generation": "x",
+    "skuType": "complete_loose",
+    "nameEn": "Phoenix Wing (9-60GF)",
+    "nameJp": null,
+    "productCodes": [
+      "BX-23"
+    ],
+    "attrs": {
+      "combo": "9-60GF",
+      "line": "BX",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "x-blade-phoenix-wing",
+      "x-ratchet-9-60",
+      "x-bit-gf"
+    ]
+  },
+  {
+    "id": "prod-x-bx-26-complete-loose",
+    "generation": "x",
+    "skuType": "complete_loose",
+    "nameEn": "Unicorn Sting (5-60GP)",
+    "nameJp": null,
+    "productCodes": [
+      "BX-26"
+    ],
+    "attrs": {
+      "combo": "5-60GP",
+      "line": "BX",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "x-blade-unicorn-sting",
+      "x-ratchet-5-60",
+      "x-bit-gp"
+    ]
+  },
+  {
+    "id": "prod-x-bx-35-complete-loose",
+    "generation": "x",
+    "skuType": "complete_loose",
+    "nameEn": "Phoenix Wing (5-80H)",
+    "nameJp": null,
+    "productCodes": [
+      "BX-35"
+    ],
+    "attrs": {
+      "combo": "5-80H",
+      "line": "BX",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "x-blade-phoenix-wing",
+      "x-ratchet-5-80",
+      "x-bit-h"
+    ]
+  },
+  {
+    "id": "prod-x-hells-reaper-t4-70k-complete-loose",
+    "generation": "x",
+    "skuType": "complete_loose",
+    "nameEn": "Hells Reaper (T4-70K)",
+    "nameJp": null,
+    "productCodes": [
+      "CX-05"
+    ],
+    "attrs": {
+      "combo": "T4-70K",
+      "line": "CX",
+      "recipeKind": "assembled",
+      "note": "Assembled Hells Reaper T4-70K. Shares Takara pack code CX-05 with Whale Wave prod-x-cx-05-*; never merge comps into Whale Wave rows."
+    },
+    "partIds": [
+      "x-blade-reaper",
+      "x-ratchet-4-70",
+      "x-bit-k"
+    ]
+  },
+  {
+    "id": "prod-x-sphinx-cowl-1-80gf-complete-loose",
+    "generation": "x",
+    "skuType": "complete_loose",
+    "nameEn": "Sphinx Cowl (1-80GF)",
+    "nameJp": null,
+    "productCodes": [
+      "UX-07"
+    ],
+    "attrs": {
+      "combo": "1-80GF",
+      "line": "UX",
+      "recipeKind": "assembled",
+      "note": "Assembled Sphinx Cowl 1-80GF. Shares Takara pack code UX-07 with Wyvern Gale prod-x-ux-07-*; never merge comps into Wyvern Gale rows."
+    },
+    "partIds": [
+      "x-blade-sphinx-cowl",
+      "x-ratchet-1-80",
+      "x-bit-gf"
+    ]
+  },
+  {
+    "id": "prod-x-dranzer-spiral-3-80t-complete-loose",
+    "generation": "x",
+    "skuType": "complete_loose",
+    "nameEn": "Dranzer Spiral (3-80T)",
+    "nameJp": null,
+    "productCodes": [
+      "BX-00"
+    ],
+    "attrs": {
+      "combo": "3-80T",
+      "line": "BX",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "x-blade-dranzer-spiral",
+      "x-ratchet-3-80",
+      "x-bit-t"
+    ]
+  },
+  {
+    "id": "prod-x-driger-slash-4-80p-complete-loose",
+    "generation": "x",
+    "skuType": "complete_loose",
+    "nameEn": "Driger Slash (4-80P)",
+    "nameJp": null,
+    "productCodes": [
+      "BX-00"
+    ],
+    "attrs": {
+      "combo": "4-80P",
+      "line": "BX",
+      "recipeKind": "assembled"
+    },
+    "partIds": [
+      "x-blade-driger-slash",
+      "x-ratchet-4-80",
+      "x-bit-p"
     ]
   }
 ]

@@ -1,0 +1,20 @@
+.rb-blob {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  width: 86px;
+  height: 86px;
+  border-radius: 50%;
+  pointer-events: none;
+  background: #c084fc;
+  mix-blend-mode: difference;
+  filter: blur(0.2px);
+}
+.rb-blob.is-hot {
+  background: #e9d5ff;
+}
+html.rb-blob-on,
+html.rb-blob-on * {
+  cursor: none !important;
+}

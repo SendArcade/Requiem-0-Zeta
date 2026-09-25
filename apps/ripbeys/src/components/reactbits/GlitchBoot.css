@@ -1,0 +1,274 @@
+@property --boot-pull {
+  syntax: '<number>';
+  inherits: true;
+  initial-value: 0;
+}
+
+.rb-boot {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  background: #000;
+  isolation: isolate;
+  --boot-pull: 0;
+  pointer-events: auto;
+  opacity: 0;
+  transition: opacity 0.35s ease-out;
+  /* shutter lifts as you scroll */
+  transform: translate3d(0, calc(var(--boot-pull) * -108%), 0);
+  will-change: transform, opacity;
+}
+
+.rb-boot.is-ready {
+  opacity: 1;
+}
+
+.rb-boot.is-out {
+  pointer-events: none;
+  /* already at -108%; just fade remnants */
+  animation: rbBootOut 0.45s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.rb-boot-veil {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse 55% 40% at 50% 48%, rgba(255, 255, 255, 0.04), transparent 70%),
+    #000;
+}
+
+.rb-boot-stack {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  justify-items: center;
+  gap: 8px;
+  /* title drifts up + softens out ahead of the shutter */
+  transform:
+    translate3d(0, calc(var(--boot-pull) * -18vh), 0)
+    scale(calc(1 - var(--boot-pull) * 0.12));
+  opacity: calc(1 - var(--boot-pull) * 1.35);
+  filter: blur(calc(var(--boot-pull) * 1.2px));
+  will-change: transform, opacity, filter;
+  pointer-events: none;
+}
+
+.rb-boot-logo {
+  width: clamp(64px, 12vw, 96px);
+  height: clamp(64px, 12vw, 96px);
+  margin-bottom: 6px;
+  object-fit: contain;
+  border-radius: 18px;
+  filter: drop-shadow(0 8px 18px rgba(220, 20, 20, 0.35));
+}
+
+.rb-boot.is-pulling .rb-boot-glitch-text.glitch::after,
+.rb-boot.is-pulling .rb-boot-glitch-text.glitch::before {
+  animation-duration: 0.6s, 0.45s !important;
+  opacity: 0.7;
+}
+
+.rb-boot-glitch-text.glitch {
+  font-family: var(--pixel, 'Pixelify Sans', sans-serif);
+  font-size: clamp(56px, 14vw, 148px);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  line-height: 0.82;
+  text-transform: uppercase;
+  color: #f2f0f5;
+  text-shadow: 0 8px 0 rgba(140, 130, 160, 0.45);
+  cursor: default;
+  --after-shadow: -5px 0 rgba(255, 60, 120, 0.85);
+  --before-shadow: 5px 0 rgba(40, 255, 220, 0.75);
+}
+
+.rb-boot-glitch-text.glitch:not(.enable-on-hover)::after {
+  left: 5px;
+  background-color: #000;
+}
+
+.rb-boot-glitch-text.glitch:not(.enable-on-hover)::before {
+  left: -5px;
+  background-color: #000;
+}
+
+.rb-boot-scroll {
+  position: relative;
+  z-index: 3;
+  display: grid;
+  justify-items: center;
+  gap: 14px;
+  margin-top: 28px;
+  color: rgba(255, 255, 255, 0.42);
+  font: 500 10px/1 var(--ui, sans-serif);
+  letter-spacing: 0.34em;
+  text-transform: uppercase;
+  opacity: calc(1 - var(--boot-pull) * 2.2);
+}
+
+.rb-boot-scroll::before {
+  content: none;
+}
+
+.rb-boot-scroll-phone {
+  display: none;
+}
+
+.rb-boot-scroll i {
+  display: block;
+  width: 11px;
+  height: 11px;
+  border-right: 1.5px solid rgba(255, 255, 255, 0.45);
+  border-bottom: 1.5px solid rgba(255, 255, 255, 0.45);
+  transform: rotate(45deg);
+  animation: rbScrollCue 2s cubic-bezier(0.45, 0, 0.2, 1) infinite;
+}
+
+.rb-boot.is-pulling .rb-boot-scroll i {
+  animation-play-state: paused;
+}
+
+/* progress rail — fills as you scroll in */
+.rb-boot-rail {
+  position: absolute;
+  left: 50%;
+  bottom: max(28px, 4.5vh);
+  z-index: 4;
+  width: min(160px, 36vw);
+  height: 2px;
+  transform: translateX(-50%);
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+  overflow: hidden;
+  opacity: calc(1 - var(--boot-pull) * 1.4);
+  pointer-events: none;
+}
+
+.rb-boot-rail > span {
+  display: block;
+  height: 100%;
+  width: calc(var(--boot-pull) * 100%);
+  background: linear-gradient(90deg, #ffea00, #13fff3);
+  border-radius: inherit;
+  transform-origin: left center;
+}
+
+@keyframes rbScrollCue {
+  0% {
+    opacity: 0.2;
+    transform: rotate(45deg) translate(-3px, -3px);
+  }
+  50% {
+    opacity: 0.8;
+    transform: rotate(45deg) translate(2px, 2px);
+  }
+  100% {
+    opacity: 0.15;
+    transform: rotate(45deg) translate(6px, 6px);
+  }
+}
+
+@keyframes rbBootOut {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+@media (max-width: 700px) {
+  .rb-boot {
+    place-items: center;
+    padding: max(16px, env(safe-area-inset-top)) 16px max(24px, env(safe-area-inset-bottom));
+  }
+  .rb-boot.is-phone .rb-boot-stack {
+    width: min(100%, 20rem);
+    margin-inline: auto;
+    justify-items: center;
+    text-align: center;
+    filter: none;
+    animation: rbPhoneBootIn 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+  .rb-boot-title-plain {
+    margin: 0;
+    color: #f2f0f5;
+    font: 700 clamp(42px, 14vw, 68px)/0.9 var(--pixel, 'Pixelify Sans', sans-serif);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-align: center;
+    text-shadow:
+      2px 0 rgba(255, 60, 120, 0.75),
+      -2px 0 rgba(40, 255, 220, 0.65);
+  }
+  .rb-boot-scroll {
+    letter-spacing: 0.22em;
+    font-size: 9px;
+  }
+  .rb-boot-scroll-desk {
+    display: none;
+  }
+  .rb-boot-scroll-phone {
+    display: block;
+  }
+  .rb-boot-progress {
+    position: absolute;
+    left: 50%;
+    bottom: max(28px, calc(env(safe-area-inset-bottom) + 20px));
+    z-index: 4;
+    width: min(140px, 42vw);
+    height: 2px;
+    transform: translateX(-50%);
+    background: rgba(255, 255, 255, 0.12);
+    border-radius: 999px;
+    overflow: hidden;
+  }
+  .rb-boot-progress > span {
+    display: block;
+    height: 100%;
+    width: 0;
+    background: linear-gradient(90deg, #ffea00, #13fff3);
+    border-radius: inherit;
+    animation: rbPhoneProgress 1.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  }
+}
+
+@keyframes rbPhoneBootIn {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 18px, 0) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes rbPhoneProgress {
+  to {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rb-boot {
+    transition: none;
+    opacity: 1;
+    transform: none;
+  }
+  .rb-boot-stack {
+    filter: none;
+  }
+  .rb-boot-glitch-text.glitch::after,
+  .rb-boot-glitch-text.glitch::before,
+  .rb-boot-scroll i {
+    animation: none !important;
+  }
+  .rb-boot-progress > span,
+  .rb-boot.is-phone .rb-boot-stack {
+    animation: none !important;
+  }
+}

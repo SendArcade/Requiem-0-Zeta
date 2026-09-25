@@ -1,0 +1,5255 @@
+{
+  "generatedAt": "2026-09-24T19:23:35.088Z",
+  "source": "packages/catalog/data/ripbeys-asset-map.json",
+  "warning": "Visual assets are keyed by ripbeysListingId. Never pick a model by Requiem product code or numeric BX similarity.",
+  "stats": {
+    "total": 578,
+    "withAssembledModel": 578,
+    "assembledModelOnDisk": 578,
+    "withPoster": 578,
+    "posterOnDisk": 578,
+    "noPreview": 0,
+    "duplicateAssembledModelPaths": 5
+  },
+  "duplicateAssembledModelPaths": [
+    {
+      "model": "/assets/models/x_sword_dran_3_60_f.fbx",
+      "listings": [
+        "bx-001",
+        "bx-202"
+      ]
+    },
+    {
+      "model": "/assets/models/x_soar_phoenix_9_60gf_st.fbx",
+      "listings": [
+        "bx-003",
+        "bx-201"
+      ]
+    },
+    {
+      "model": "/assets/models/x_bx_org08_mammo_tusk_3_60t.fbx",
+      "listings": [
+        "bx-020",
+        "bx-257"
+      ]
+    },
+    {
+      "model": "/assets/models/x_bx_org05_shinobi_knife_4_80hn.fbx",
+      "listings": [
+        "bx-023",
+        "bx-256"
+      ]
+    },
+    {
+      "model": "/assets/models/x_bxg01_dranzer_spiral_3_80t_green.fbx",
+      "listings": [
+        "bx-024",
+        "bx-277"
+      ]
+    }
+  ],
+  "byListingId": {
+    "bx-001": {
+      "displayName": "Dran Sword 3-60F",
+      "series": "X",
+      "class": "Attack",
+      "assembledModel": "/assets/models/x_sword_dran_3_60_f.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/beys/BX17_DranSword_3-60f.png",
+      "posterExists": true
+    },
+    "bx-002": {
+      "displayName": "Dagger Dran 4-60R",
+      "series": "X",
+      "class": "Attack",
+      "assembledModel": "/assets/models/dagger_dran.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/x-sprites/DaggerDran_Product.png",
+      "posterExists": true
+    },
+    "bx-003": {
+      "displayName": "Soar Phoenix 9-60GF",
+      "series": "X",
+      "class": "Balance",
+      "assembledModel": "/assets/models/x_soar_phoenix_9_60gf_st.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/beys/BX023_PhoenixWing_9-60gf.png",
+      "posterExists": true
+    },
+    "bx-004": {
+      "displayName": "Cobalt Dragoon 2-60C",
+      "series": "X",
+      "class": "Attack",
+      "assembledModel": "/assets/models/cobalt_dragoon.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/beys/BX34_CobaltDragoon2-60c.png",
+      "posterExists": true
+    },
+    "bx-005": {
+      "displayName": "Tail Viper 5-80O",
+      "series": "X",
+      "class": "Stamina",
+      "assembledModel": "/assets/models/tail_viper.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/x-sprites/TailViper.png",
+      "posterExists": true
+    },
+    "bx-006": {
+      "displayName": "Horn Rhino 3-80S",
+      "series": "X",
+      "class": "Defense",
+      "assembledModel": "/assets/models/horn_rhino.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/x-sprites/HornRhino_Product.png",
+      "posterExists": true
+    },
+    "bx-007": {
+      "displayName": "Courage Dran S6-60V",
+      "series": "X",
+      "class": "Attack",
+      "assembledModel": "/assets/models/courage_dran.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/beys/BX01_DranSword_3-60f.png",
+      "posterExists": true
+    },
+    "bx-008": {
+      "displayName": "Reaper Incendio T4-70K",
+      "series": "X",
+      "class": "Attack",
+      "assembledModel": "/assets/models/reaper_incendio.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/beys/CX05_HellsReaperT_4-70k.png",
+      "posterExists": true
+    },
+    "bx-009": {
+      "displayName": "Arc Wizard R4-55LO",
+      "series": "X",
+      "class": "Balance",
+      "assembledModel": "/assets/models/arc_wizard.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/beys/CX02_WizardArcR_4-55lo.png",
+      "posterExists": true
+    },
+    "bx-010": {
+      "displayName": "Dark Perseus B6-80W",
+      "series": "X",
+      "class": "Defense",
+      "assembledModel": "/assets/models/dark_perseus.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/beys/CX03_PerseusDarkB_6-80w.png",
+      "posterExists": true
+    },
+    "bx-011": {
+      "displayName": "Keel Shark 3-60LF",
+      "series": "X",
+      "class": "Attack",
+      "assembledModel": "/assets/models/keel_shark.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/beys/BX14_SharkEdge_3-60lf.png",
+      "posterExists": true
+    },
+    "bx-012": {
+      "displayName": "Yell Kong 3-60GB",
+      "series": "X",
+      "class": "Attack",
+      "assembledModel": "/assets/models/yell_kong.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/x-sprites/YellKong.png",
+      "posterExists": true
+    },
+    "bx-013": {
+      "displayName": "Helm Knight 3-80N",
+      "series": "X",
+      "class": "Defense",
+      "assembledModel": "/assets/models/helm_knight.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/x-sprites/HelmKnightgreen.png",
+      "posterExists": true
+    },
+    "bx-014": {
+      "displayName": "Scythe Incendio 4-60T",
+      "series": "X",
+      "class": "Attack",
+      "assembledModel": "/assets/models/scythe_incendio.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/x-sprites/ScytheIncendioFull.png",
+      "posterExists": true
+    },
+    "bx-015": {
+      "displayName": "Chain Incendio 5-60HT",
+      "series": "X",
+      "class": "Balance",
+      "assembledModel": "/assets/models/chain_incendio.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/x-sprites/ChainIncendio_567.png",
+      "posterExists": true
+    },
+    "bx-016": {
+      "displayName": "Talon Ptera 3-80B",
+      "series": "X",
+      "class": "Attack",
+      "assembledModel": "/assets/models/talon_ptera.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/x-sprites/TalonPteraorange.png",
+      "posterExists": true
+    },
+    "bx-017": {
+      "displayName": "Savage Bear 3-60S",
+      "series": "X",
+      "class": "Defense",
+      "assembledModel": "/assets/models/savage_bear.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/beys/BXORG04_BearScratch_3-60_s.png",
+      "posterExists": true
+    },
+    "bx-018": {
+      "displayName": "Roar Tyrano 9-60GF",
+      "series": "X",
+      "class": "Attack",
+      "assembledModel": "/assets/models/roar_tyrano.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/beys/BXORG03_TyrannoRoar_9-60_gf.png",
+      "posterExists": true
+    },
+    "bx-019": {
+      "displayName": "Bite Croc 3-60LF",
+      "series": "X",
+      "class": "Attack",
+      "assembledModel": "/assets/models/bite_croc.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/beys/BXORG06_CrocCrunch_3-60_lf.png",
+      "posterExists": true
+    },
+    "bx-020": {
+      "displayName": "Mammo Tusk 3-60T",
+      "series": "X",
+      "class": "Defense",
+      "assembledModel": "/assets/models/x_bx_org08_mammo_tusk_3_60t.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/x-sprites/TuskMammoth.png",
+      "posterExists": true
+    },
+    "bx-021": {
+      "displayName": "Gale Wyvern 5-80GB",
+      "series": "X",
+      "class": "Stamina",
+      "assembledModel": "/assets/models/gale_wyvern.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/beys/BX24_WyvernGale_5-80gb.png",
+      "posterExists": true
+    },
+    "bx-022": {
+      "displayName": "Lance Knight 4-80HN",
+      "series": "X",
+      "class": "Defense",
+      "assembledModel": "/assets/models/lance_knight.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/x-sprites/LanceKnight_1954.png",
+      "posterExists": true
+    },
+    "bx-023": {
+      "displayName": "Shinobi Knife 4-80HN",
+      "series": "X",
+      "class": "Attack",
+      "assembledModel": "/assets/models/x_bx_org05_shinobi_knife_4_80hn.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/beys/BXORG05_ShinobiKnife_4-80_hn.png",
+      "posterExists": true
+    },
+    "bx-024": {
+      "displayName": "Dranzer Spiral",
+      "series": "X",
+      "class": "Balance",
+      "assembledModel": "/assets/models/x_bxg01_dranzer_spiral_3_80t_green.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/beys/BXG01_DranzerSpiral_3-80t_green.png",
+      "posterExists": true
+    },
+    "bb-019": {
+      "displayName": "Sky Clash Stadium",
+      "series": "Burst",
+      "class": "Arena",
+      "assembledModel": "/assets/models/Arena_SkyClash.obj",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/ArenaThumb_QuadstrikeThunderEdge.png",
+      "posterExists": true
+    },
+    "bb-020": {
+      "displayName": "Main Stadium",
+      "series": "Burst",
+      "class": "Arena",
+      "assembledModel": "/assets/models/Arena_Main.obj",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/ArenaThumb_Quadstrike.png",
+      "posterExists": true
+    },
+    "bb-101": {
+      "displayName": "Union Achilles A5 (Premium)",
+      "series": "Burst",
+      "class": "Balance",
+      "assembledModel": "/assets/models/achillesa5unionpremiumgeo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-102": {
+      "displayName": "Infinite Achilles A6",
+      "series": "Burst",
+      "class": "Attack",
+      "assembledModel": "/assets/models/achillesa6infinitegeo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/ArenaThumb_HyperSphere.png",
+      "posterExists": true
+    },
+    "bb-103": {
+      "displayName": "Origin Achilles A6",
+      "series": "Burst",
+      "class": "Attack",
+      "assembledModel": "/assets/models/achillesa6origingeo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_toy_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-104": {
+      "displayName": "Cho-Z Achilles (Black)",
+      "series": "Burst",
+      "class": "Attack",
+      "assembledModel": "/assets/models/achilliescho-zgeo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/ArenaThumb_QuadstrikeCreature.png",
+      "posterExists": true
+    },
+    "bb-105": {
+      "displayName": "Infinite Achilles (Pro)",
+      "series": "Burst",
+      "class": "Attack",
+      "assembledModel": "/assets/models/achillesinfinitegeo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-106": {
+      "displayName": "Union Achilles (Pro)",
+      "series": "Burst",
+      "class": "Balance",
+      "assembledModel": "/assets/models/achillesunionprogeo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/ArenaThumb_HyperSphere.png",
+      "posterExists": true
+    },
+    "bb-107": {
+      "displayName": "Prime Apocalypse A5",
+      "series": "Burst",
+      "class": "Attack",
+      "assembledModel": "/assets/models/apocalypsea5primegeov2.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_toy_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-109": {
+      "displayName": "Erase Balkesh B5",
+      "series": "Burst",
+      "class": "Attack",
+      "assembledModel": "/assets/models/balkeshb5erasegeo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-110": {
+      "displayName": "Soul Balkesh (Pro)",
+      "series": "Burst",
+      "class": "Attack",
+      "assembledModel": "/assets/models/balkeshsoulgeo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/ArenaThumb_HyperSphere.png",
+      "posterExists": true
+    },
+    "bb-111": {
+      "displayName": "Bushin Ashindra A5 (ReDeco)",
+      "series": "Burst",
+      "class": "Attack",
+      "assembledModel": "/assets/models/bushinashindraa5geov2.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_toy_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-112": {
+      "displayName": "Poison Cyclops C5",
+      "series": "Burst",
+      "class": "Attack",
+      "assembledModel": "/assets/models/cyclopsc5poisongeo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/ArenaThumb_QuadstrikeCreature.png",
+      "posterExists": true
+    },
+    "bb-113": {
+      "displayName": "Deathscyther 2",
+      "series": "Burst",
+      "class": "Attack",
+      "assembledModel": "/assets/models/deathscyther2geo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-114": {
+      "displayName": "Epic Evipero",
+      "series": "Burst",
+      "class": "Attack",
+      "assembledModel": "/assets/models/epiceviperogeo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/ArenaThumb_HyperSphere.png",
+      "posterExists": true
+    },
+    "bb-115": {
+      "displayName": "Evipero",
+      "series": "Burst",
+      "class": "Attack",
+      "assembledModel": "/assets/models/eviperogeo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_toy_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-116": {
+      "displayName": "Wizard Fafnir F5",
+      "series": "Burst",
+      "class": "Stamina",
+      "assembledModel": "/assets/models/fafnirf5wizardgeo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/ArenaThumb_QuadstrikeCreature.png",
+      "posterExists": true
+    },
+    "bb-117": {
+      "displayName": "Kolossal Fafnir F6",
+      "series": "Burst",
+      "class": "Stamina",
+      "assembledModel": "/assets/models/fafnirf6kolossalgeo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-118": {
+      "displayName": "Mirage Fafnir F6 (SpeedStorm)",
+      "series": "Burst",
+      "class": "Stamina",
+      "assembledModel": "/assets/models/fafnirf6miragespeedstormgeo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/ArenaThumb_HyperSphere.png",
+      "posterExists": true
+    },
+    "bb-119": {
+      "displayName": "Mirage Fafnir (Pro)",
+      "series": "Burst",
+      "class": "Stamina",
+      "assembledModel": "/assets/models/fafnirmiragegeo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_toy_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-120": {
+      "displayName": "Wizard Fafnir (Pro)",
+      "series": "Burst",
+      "class": "Stamina",
+      "assembledModel": "/assets/models/fafnirwizardgeo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/ArenaThumb_QuadstrikeCreature.png",
+      "posterExists": true
+    },
+    "bb-122": {
+      "displayName": "Royal Genesis G5 (Premium)",
+      "series": "Burst",
+      "class": "Attack",
+      "assembledModel": "/assets/models/genesisg5royalpremiumgeo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/ArenaThumb_HyperSphere.png",
+      "posterExists": true
+    },
+    "bb-123": {
+      "displayName": "King Helios H6",
+      "series": "Burst",
+      "class": "Attack",
+      "assembledModel": "/assets/models/heliosh6kolossalv2geo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_toy_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-124": {
+      "displayName": "Mirage Helios H6",
+      "series": "Burst",
+      "class": "Attack",
+      "assembledModel": "/assets/models/heliosh6miragegeo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/ArenaThumb_QuadstrikeCreature.png",
+      "posterExists": true
+    },
+    "bb-125": {
+      "displayName": "Demise Hyperion H6",
+      "series": "Burst",
+      "class": "Attack",
+      "assembledModel": "/assets/models/hyperionh6demisegeo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-126": {
+      "displayName": "Spear Hyperion H6",
+      "series": "Burst",
+      "class": "Attack",
+      "assembledModel": "/assets/models/hyperionh6speargeo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/ArenaThumb_HyperSphere.png",
+      "posterExists": true
+    },
+    "bb-127": {
+      "displayName": "Super Hyperion H6",
+      "series": "Burst",
+      "class": "Attack",
+      "assembledModel": "/assets/models/hyperionh6superv2geo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_toy_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-128": {
+      "displayName": "Ifritor",
+      "series": "Burst",
+      "class": "Attack",
+      "assembledModel": "/assets/models/ifritorgeo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/ArenaThumb_QuadstrikeCreature.png",
+      "posterExists": true
+    },
+    "bb-129": {
+      "displayName": "Shield Kerbeus K5",
+      "series": "Burst",
+      "class": "Defense",
+      "assembledModel": "/assets/models/kerbeusk5shieldgeo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-130": {
+      "displayName": "Shield Kraken K5",
+      "series": "Burst",
+      "class": "Defense",
+      "assembledModel": "/assets/models/krakenk5shieldgeo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/ArenaThumb_HyperSphere.png",
+      "posterExists": true
+    },
+    "bb-132": {
+      "displayName": "Tact Leviathan L5",
+      "series": "Burst",
+      "class": "Attack",
+      "assembledModel": "/assets/models/leviathanl5tactgeo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/ArenaThumb_QuadstrikeCreature.png",
+      "posterExists": true
+    },
+    "bb-133": {
+      "displayName": "Minoboros",
+      "series": "Burst",
+      "class": "Attack",
+      "assembledModel": "/assets/models/minoborosgeo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-134": {
+      "displayName": "Harmony Pegasus P5",
+      "series": "Burst",
+      "class": "Balance",
+      "assembledModel": "/assets/models/pegasusp5harmonygeo_v2.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/ArenaThumb_HyperSphere.png",
+      "posterExists": true
+    },
+    "bb-135": {
+      "displayName": "Perfect Phoenix",
+      "series": "Burst",
+      "class": "Attack",
+      "assembledModel": "/assets/models/perfectphoenixgeo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_toy_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-136": {
+      "displayName": "Brave Satomb S6",
+      "series": "Burst",
+      "class": "Attack",
+      "assembledModel": "/assets/models/satombs6bravegeo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/ArenaThumb_QuadstrikeCreature.png",
+      "posterExists": true
+    },
+    "bb-138": {
+      "displayName": "Lord Spryzen",
+      "series": "Burst",
+      "class": "Attack",
+      "assembledModel": "/assets/models/spryzenlordgeo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/ArenaThumb_HyperSphere.png",
+      "posterExists": true
+    },
+    "bb-139": {
+      "displayName": "Spryzen Requiem",
+      "series": "Burst",
+      "class": "Attack",
+      "assembledModel": "/assets/models/spryzenrequiemv2geo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_toy_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-140": {
+      "displayName": "Spryzen Requiem S5",
+      "series": "Burst",
+      "class": "Attack",
+      "assembledModel": "/assets/models/spryzens5geo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/ArenaThumb_QuadstrikeCreature.png",
+      "posterExists": true
+    },
+    "bb-141": {
+      "displayName": "World Spryzen S6",
+      "series": "Burst",
+      "class": "Stamina",
+      "assembledModel": "/assets/models/spryzens6worldgeo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-142": {
+      "displayName": "Brave Valtryek",
+      "series": "Burst",
+      "class": "Attack",
+      "assembledModel": "/assets/models/valtryekbravegeo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/ArenaThumb_HyperSphere.png",
+      "posterExists": true
+    },
+    "bb-143": {
+      "displayName": "Cho-Z Valtryek (Red)",
+      "series": "Burst",
+      "class": "Attack",
+      "assembledModel": "/assets/models/valtryekcho-zredgeo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_toy_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-144": {
+      "displayName": "Sword Valtryek",
+      "series": "Burst",
+      "class": "Attack",
+      "assembledModel": "/assets/models/valtryekswordgeo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/ArenaThumb_QuadstrikeCreature.png",
+      "posterExists": true
+    },
+    "bb-145": {
+      "displayName": "Union Valtryek V5",
+      "series": "Burst",
+      "class": "Balance",
+      "assembledModel": "/assets/models/valtryekv5uniongeo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-146": {
+      "displayName": "Spear Valtryek V6",
+      "series": "Burst",
+      "class": "Attack",
+      "assembledModel": "/assets/models/valtryekv6speargeo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/ArenaThumb_HyperSphere.png",
+      "posterExists": true
+    },
+    "bb-147": {
+      "displayName": "Wyvern 2",
+      "series": "Burst",
+      "class": "Attack",
+      "assembledModel": "/assets/models/wyvern2geo_v2.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_toy_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-148": {
+      "displayName": "Wyvern W6",
+      "series": "Burst",
+      "class": "Attack",
+      "assembledModel": "/assets/models/wyvernw6geo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/ArenaThumb_QuadstrikeCreature.png",
+      "posterExists": true
+    },
+    "bx-149": {
+      "displayName": "Arena Colossus",
+      "series": "X",
+      "class": "Arena",
+      "assembledModel": "/assets/models/arenacolossus.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/beys/BX01_DranSword_3-60f.png",
+      "posterExists": true
+    },
+    "bx-150": {
+      "displayName": "Arena Square",
+      "series": "X",
+      "class": "Arena",
+      "assembledModel": "/assets/models/arenasquare.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/x-chrome/bg-waiting-01.png",
+      "posterExists": true
+    },
+    "bx-151": {
+      "displayName": "Arena Strike",
+      "series": "X",
+      "class": "Arena",
+      "assembledModel": "/assets/models/arenastrike.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/x-chrome/bg-waiting-01.png",
+      "posterExists": true
+    },
+    "bx-152": {
+      "displayName": "Default Arena",
+      "series": "X",
+      "class": "Arena",
+      "assembledModel": "/assets/models/defaultarena.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/x-chrome/bg-waiting-01.png",
+      "posterExists": true
+    },
+    "bx-153": {
+      "displayName": "Switch Strike Tower",
+      "series": "X",
+      "class": "Arena",
+      "assembledModel": "/assets/models/arenaswitchstriketower.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/x-chrome/bg-waiting-01.png",
+      "posterExists": true
+    },
+    "bb-200": {
+      "displayName": "Ace Dragon D5",
+      "series": "Burst",
+      "class": "Attack",
+      "assembledModel": "/assets/models/acedragond5geo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-202": {
+      "displayName": "Ace Dragon D5 (Premium)",
+      "series": "Burst",
+      "class": "Stamina",
+      "assembledModel": "/assets/models/acedragond5premiumgeo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-204": {
+      "displayName": "Achilles A4",
+      "series": "Burst",
+      "class": "Attack",
+      "assembledModel": "/assets/models/achillesa4geov4.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-205": {
+      "displayName": "Turbo Achilles A4",
+      "series": "Burst",
+      "class": "Defense",
+      "assembledModel": "/assets/models/achillesa4turbogeo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-207": {
+      "displayName": "Sword Achilles A5",
+      "series": "Burst",
+      "class": "Balance",
+      "assembledModel": "/assets/models/achillesa5swordgeo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-208": {
+      "displayName": "Achilles A8",
+      "series": "Burst",
+      "class": "Attack",
+      "assembledModel": "/assets/models/achillesa8geo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-210": {
+      "displayName": "Achilles Ripfire",
+      "series": "Burst",
+      "class": "Stamina",
+      "assembledModel": "/assets/models/achillesripfiregeo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-211": {
+      "displayName": "Anubion 2",
+      "series": "Burst",
+      "class": "Balance",
+      "assembledModel": "/assets/models/anubion2geo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-212": {
+      "displayName": "Anubion A6",
+      "series": "Burst",
+      "class": "Attack",
+      "assembledModel": "/assets/models/anubiona6geo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-213": {
+      "displayName": "Cosmic Apocalypse A5",
+      "series": "Burst",
+      "class": "Defense",
+      "assembledModel": "/assets/models/apocalypsea5cosmicgeo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-214": {
+      "displayName": "Cosmic Apocalypse (Premium)",
+      "series": "Burst",
+      "class": "Stamina",
+      "assembledModel": "/assets/models/apocalypsecosmicpremiumgeo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-216": {
+      "displayName": "Balderov B7",
+      "series": "Burst",
+      "class": "Attack",
+      "assembledModel": "/assets/models/balderovb7geo_v3.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-217": {
+      "displayName": "Zone Balkesh B5",
+      "series": "Burst",
+      "class": "Defense",
+      "assembledModel": "/assets/models/balkeshb5zonegeo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-219": {
+      "displayName": "Balkesh B7",
+      "series": "Burst",
+      "class": "Balance",
+      "assembledModel": "/assets/models/balkeshb7geo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-221": {
+      "displayName": "Flare Cobra C5",
+      "series": "Burst",
+      "class": "Defense",
+      "assembledModel": "/assets/models/cobrac5flaregeo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-222": {
+      "displayName": "Cobra C7",
+      "series": "Burst",
+      "class": "Stamina",
+      "assembledModel": "/assets/models/cobrac7geo_v2.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-223": {
+      "displayName": "Poison Cobra",
+      "series": "Burst",
+      "class": "Balance",
+      "assembledModel": "/assets/models/cobrapoisongeo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-224": {
+      "displayName": "Command Dragon D5",
+      "series": "Burst",
+      "class": "Attack",
+      "assembledModel": "/assets/models/commanddragond5geo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-225": {
+      "displayName": "Cyclops C4",
+      "series": "Burst",
+      "class": "Defense",
+      "assembledModel": "/assets/models/cyclopsc4geo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-226": {
+      "displayName": "Behemoth Cyclops C5",
+      "series": "Burst",
+      "class": "Stamina",
+      "assembledModel": "/assets/models/cyclopsc5behemothgeo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-228": {
+      "displayName": "Abyss Devolos D6",
+      "series": "Burst",
+      "class": "Attack",
+      "assembledModel": "/assets/models/devolosd6abyssgeo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-229": {
+      "displayName": "Demise Devolos D6",
+      "series": "Burst",
+      "class": "Defense",
+      "assembledModel": "/assets/models/devolosd6demisegeo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-230": {
+      "displayName": "Mirage Devolos D6",
+      "series": "Burst",
+      "class": "Stamina",
+      "assembledModel": "/assets/models/devolosd6miragegeo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-231": {
+      "displayName": "Draciel F",
+      "series": "Burst",
+      "class": "Balance",
+      "assembledModel": "/assets/models/dracielfgeo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-232": {
+      "displayName": "Draciel S",
+      "series": "Burst",
+      "class": "Attack",
+      "assembledModel": "/assets/models/dracielsgeo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-233": {
+      "displayName": "Draciel S Guard",
+      "series": "Burst",
+      "class": "Defense",
+      "assembledModel": "/assets/models/dracielsguardgeo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-235": {
+      "displayName": "Dragon D8",
+      "series": "Burst",
+      "class": "Balance",
+      "assembledModel": "/assets/models/dragond8geo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-237": {
+      "displayName": "Dragon Myth",
+      "series": "Burst",
+      "class": "Defense",
+      "assembledModel": "/assets/models/dragonmythgeo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-238": {
+      "displayName": "Dranzer F Crystal",
+      "series": "X",
+      "class": "Stamina",
+      "assembledModel": "/assets/models/dranzerfcrystalgeo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-239": {
+      "displayName": "Dranzer F",
+      "series": "X",
+      "class": "Balance",
+      "assembledModel": "/assets/models/dranzerfgeo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-240": {
+      "displayName": "Driger F",
+      "series": "Burst",
+      "class": "Attack",
+      "assembledModel": "/assets/models/drigerfgeo2.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-241": {
+      "displayName": "Driger S Phantom",
+      "series": "Burst",
+      "class": "Defense",
+      "assembledModel": "/assets/models/drigersphantomgeo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-242": {
+      "displayName": "Demise Dullahan D6",
+      "series": "Burst",
+      "class": "Stamina",
+      "assembledModel": "/assets/models/dullahand6demisegeo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-243": {
+      "displayName": "Spear Dullahan D6",
+      "series": "Burst",
+      "class": "Balance",
+      "assembledModel": "/assets/models/dullahand6speargeo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-244": {
+      "displayName": "Erase Devolos D5",
+      "series": "Burst",
+      "class": "Attack",
+      "assembledModel": "/assets/models/erasedevolosd5geo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-245": {
+      "displayName": "Evo Valtryek",
+      "series": "Burst",
+      "class": "Defense",
+      "assembledModel": "/assets/models/evovaltryekv7geo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-248": {
+      "displayName": "Zone Fafnir F5",
+      "series": "Burst",
+      "class": "Attack",
+      "assembledModel": "/assets/models/fafnirf5zonegeo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-250": {
+      "displayName": "Fafnir F7",
+      "series": "Burst",
+      "class": "Stamina",
+      "assembledModel": "/assets/models/fafnirf7geo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-252": {
+      "displayName": "Oceanus Forneus F4",
+      "series": "Burst",
+      "class": "Attack",
+      "assembledModel": "/assets/models/forneusf4oceanusgeo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-253": {
+      "displayName": "Forneus F5",
+      "series": "Burst",
+      "class": "Defense",
+      "assembledModel": "/assets/models/forneusf5geo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-254": {
+      "displayName": "Forneus Ripfire",
+      "series": "Burst",
+      "class": "Stamina",
+      "assembledModel": "/assets/models/forneusripfiregeo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-255": {
+      "displayName": "Eclipse Genesis G5",
+      "series": "Burst",
+      "class": "Balance",
+      "assembledModel": "/assets/models/genesisg5eclipsegeo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-256": {
+      "displayName": "Glyph Dragon D5",
+      "series": "Burst",
+      "class": "Attack",
+      "assembledModel": "/assets/models/glyphdragond5geo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-257": {
+      "displayName": "Golden Judgement Dragon D5",
+      "series": "Burst",
+      "class": "Defense",
+      "assembledModel": "/assets/models/goldenjudgementdragond5geo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-258": {
+      "displayName": "Golden Judgement Dragon D5 (Virtual Championship)",
+      "series": "Burst",
+      "class": "Stamina",
+      "assembledModel": "/assets/models/goldenjudgementdragond5geo_virtualchampionship.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-259": {
+      "displayName": "Evo Helios H6 (Blazebringer)",
+      "series": "Burst",
+      "class": "Balance",
+      "assembledModel": "/assets/models/heliosh6evoblazebringergeo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-260": {
+      "displayName": "Cosmic Vector Arena",
+      "series": "Burst",
+      "class": "Arena",
+      "assembledModel": "/assets/models/arena_beycosmicvectorbattle.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/ArenaThumb_HyperSphere.png",
+      "posterExists": true
+    },
+    "bb-261": {
+      "displayName": "Interstellar Drop Arena",
+      "series": "Burst",
+      "class": "Arena",
+      "assembledModel": "/assets/models/arena_beyinterstellardrop.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/ArenaThumb_HyperSphere.png",
+      "posterExists": true
+    },
+    "bb-262": {
+      "displayName": "Billionth Battle Arena",
+      "series": "Burst",
+      "class": "Arena",
+      "assembledModel": "/assets/models/arena_billionthbattle.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/ArenaThumb_HyperSphere.png",
+      "posterExists": true
+    },
+    "bb-263": {
+      "displayName": "Championship Clash Arena",
+      "series": "Burst",
+      "class": "Arena",
+      "assembledModel": "/assets/models/arena_championshipclash.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/ArenaThumb_HyperSphere.png",
+      "posterExists": true
+    },
+    "bb-264": {
+      "displayName": "Collision Nebula Arena",
+      "series": "Burst",
+      "class": "Arena",
+      "assembledModel": "/assets/models/arena_collisionnebula.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/ArenaThumb_HyperSphere.png",
+      "posterExists": true
+    },
+    "bb-265": {
+      "displayName": "Cross Collision Arena",
+      "series": "Burst",
+      "class": "Arena",
+      "assembledModel": "/assets/models/arena_crosscollision.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/ArenaThumb_HyperSphere.png",
+      "posterExists": true
+    },
+    "bb-266": {
+      "displayName": "Extreme Challenger Arena",
+      "series": "Burst",
+      "class": "Arena",
+      "assembledModel": "/assets/models/arena_extremechallenger.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/ArenaThumb_HyperSphere.png",
+      "posterExists": true
+    },
+    "bb-267": {
+      "displayName": "Galaxy Orbit Arena",
+      "series": "Burst",
+      "class": "Arena",
+      "assembledModel": "/assets/models/arena_galaxyorbit.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/ArenaThumb_HyperSphere.png",
+      "posterExists": true
+    },
+    "bb-268": {
+      "displayName": "Hyper Sphere Arena",
+      "series": "Burst",
+      "class": "Arena",
+      "assembledModel": "/assets/models/arena_hypersphere.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/ArenaThumb_HyperSphere.png",
+      "posterExists": true
+    },
+    "bb-269": {
+      "displayName": "Infinity Brink Arena",
+      "series": "Burst",
+      "class": "Arena",
+      "assembledModel": "/assets/models/arena_infinitybrink.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/ArenaThumb_HyperSphere.png",
+      "posterExists": true
+    },
+    "bb-270": {
+      "displayName": "Light Ignite Arena",
+      "series": "Burst",
+      "class": "Arena",
+      "assembledModel": "/assets/models/arena_lightignite.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/ArenaThumb_HyperSphere.png",
+      "posterExists": true
+    },
+    "bb-271": {
+      "displayName": "Motor Strike Arena",
+      "series": "Burst",
+      "class": "Arena",
+      "assembledModel": "/assets/models/arena_motorstrike.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/ArenaThumb_HyperSphere.png",
+      "posterExists": true
+    },
+    "bb-272": {
+      "displayName": "Pro Series Arena",
+      "series": "Burst",
+      "class": "Arena",
+      "assembledModel": "/assets/models/arena_proseries.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/ArenaThumb_HyperSphere.png",
+      "posterExists": true
+    },
+    "bb-273": {
+      "displayName": "Pro Series Battle Arena",
+      "series": "Burst",
+      "class": "Arena",
+      "assembledModel": "/assets/models/arena_proseriesbattle.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/ArenaThumb_HyperSphere.png",
+      "posterExists": true
+    },
+    "bb-274": {
+      "displayName": "Quaddrive Arena",
+      "series": "Burst",
+      "class": "Arena",
+      "assembledModel": "/assets/models/arena_quaddrive.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/ArenaThumb_HyperSphere.png",
+      "posterExists": true
+    },
+    "bb-275": {
+      "displayName": "Quadstrike Arena",
+      "series": "Burst",
+      "class": "Arena",
+      "assembledModel": "/assets/models/arena_quadstrike.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/ArenaThumb_HyperSphere.png",
+      "posterExists": true
+    },
+    "bb-276": {
+      "displayName": "Quadstrike Creature Arena",
+      "series": "Burst",
+      "class": "Arena",
+      "assembledModel": "/assets/models/arena_quadstrikecreature.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/ArenaThumb_HyperSphere.png",
+      "posterExists": true
+    },
+    "bb-277": {
+      "displayName": "Thunder Edge Arena",
+      "series": "Burst",
+      "class": "Arena",
+      "assembledModel": "/assets/models/arena_quadstrikethunderedge.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/ArenaThumb_HyperSphere.png",
+      "posterExists": true
+    },
+    "bb-278": {
+      "displayName": "Slingshock Arena (Green)",
+      "series": "Burst",
+      "class": "Arena",
+      "assembledModel": "/assets/models/arena_slingshock_green.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/ArenaThumb_HyperSphere.png",
+      "posterExists": true
+    },
+    "bb-279": {
+      "displayName": "SpeedStorm Arena",
+      "series": "Burst",
+      "class": "Arena",
+      "assembledModel": "/assets/models/arena_speedstorm.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/ArenaThumb_HyperSphere.png",
+      "posterExists": true
+    },
+    "bb-280": {
+      "displayName": "Balkesh B5Zone Geo 2",
+      "series": "Burst",
+      "class": "Attack",
+      "assembledModel": "/assets/models/balkeshb5zonegeo2.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-201": {
+      "displayName": "Dead Phoenix P4Geo",
+      "series": "Burst",
+      "class": "Defense",
+      "assembledModel": "/assets/models/deadphoenixp4geov2.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-281": {
+      "displayName": "Fafnir F4Geo",
+      "series": "Burst",
+      "class": "Stamina",
+      "assembledModel": "/assets/models/fafnirf4geov2.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-203": {
+      "displayName": "Fafnir F6Abyss",
+      "series": "Burst",
+      "class": "Balance",
+      "assembledModel": "/assets/models/fafnirf6abyssgeo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-282": {
+      "displayName": "Helios H6Evo World",
+      "series": "Burst",
+      "class": "Attack",
+      "assembledModel": "/assets/models/heliosh6evoworldgeo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-283": {
+      "displayName": "Helios H8",
+      "series": "Burst",
+      "class": "Defense",
+      "assembledModel": "/assets/models/heliosh8geo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-206": {
+      "displayName": "Helios H8Geo",
+      "series": "Burst",
+      "class": "Stamina",
+      "assembledModel": "/assets/models/heliosh8geo_v2.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-284": {
+      "displayName": "Helios King",
+      "series": "Burst",
+      "class": "Balance",
+      "assembledModel": "/assets/models/helioskinggeo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-285": {
+      "displayName": "Hyperion H6Evo Flamebringer",
+      "series": "Burst",
+      "class": "Attack",
+      "assembledModel": "/assets/models/hyperionh6evoflamebringergeo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-209": {
+      "displayName": "Hyperion H8",
+      "series": "Burst",
+      "class": "Defense",
+      "assembledModel": "/assets/models/hyperionh8geo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-286": {
+      "displayName": "Hyperion Super Black",
+      "series": "Burst",
+      "class": "Stamina",
+      "assembledModel": "/assets/models/hyperionsuperblackgeo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-287": {
+      "displayName": "Hyperion Super",
+      "series": "Burst",
+      "class": "Balance",
+      "assembledModel": "/assets/models/hyperionsupergeo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-288": {
+      "displayName": "Ifritor I7Destruction",
+      "series": "Burst",
+      "class": "Attack",
+      "assembledModel": "/assets/models/ifritori7destructiongeo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-289": {
+      "displayName": "Ifritor I7",
+      "series": "Burst",
+      "class": "Defense",
+      "assembledModel": "/assets/models/ifritori7geo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-290": {
+      "displayName": "Ifritor I7Geo",
+      "series": "Burst",
+      "class": "Stamina",
+      "assembledModel": "/assets/models/ifritori7geo_v2.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-291": {
+      "displayName": "Istros I4",
+      "series": "Burst",
+      "class": "Balance",
+      "assembledModel": "/assets/models/istrosi4geo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-292": {
+      "displayName": "Jolt Cho-Z",
+      "series": "Burst",
+      "class": "Attack",
+      "assembledModel": "/assets/models/joltcho-zgeo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-293": {
+      "displayName": "Judgement Joker J5",
+      "series": "Burst",
+      "class": "Defense",
+      "assembledModel": "/assets/models/judgementjokerj5geo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-218": {
+      "displayName": "Kerbeus K4Gamestop",
+      "series": "Burst",
+      "class": "Stamina",
+      "assembledModel": "/assets/models/kerbeusk4gamestopgeo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-294": {
+      "displayName": "Kerbeus K4",
+      "series": "Burst",
+      "class": "Balance",
+      "assembledModel": "/assets/models/kerbeusk4geo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-220": {
+      "displayName": "Kerbeus K4Geo",
+      "series": "Burst",
+      "class": "Attack",
+      "assembledModel": "/assets/models/kerbeusk4geo_v2.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-295": {
+      "displayName": "Kerbeus K5Master",
+      "series": "Burst",
+      "class": "Defense",
+      "assembledModel": "/assets/models/kerbeusk5mastergeo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-296": {
+      "displayName": "Kerbeus K8",
+      "series": "Burst",
+      "class": "Stamina",
+      "assembledModel": "/assets/models/kerbeusk8geo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-297": {
+      "displayName": "Kerbeus K8Geo",
+      "series": "Burst",
+      "class": "Balance",
+      "assembledModel": "/assets/models/kerbeusk8geo_v2.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-298": {
+      "displayName": "Kiser Kerbeus 2",
+      "series": "Burst",
+      "class": "Attack",
+      "assembledModel": "/assets/models/kiserkerbeus2geo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-299": {
+      "displayName": "Kiser Kerbeus",
+      "series": "Burst",
+      "class": "Defense",
+      "assembledModel": "/assets/models/kiserkerbeusgeo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-300": {
+      "displayName": "Kraken K4",
+      "series": "Burst",
+      "class": "Stamina",
+      "assembledModel": "/assets/models/krakenk4geo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-227": {
+      "displayName": "Kraken K5Cosmic",
+      "series": "Burst",
+      "class": "Balance",
+      "assembledModel": "/assets/models/krakenk5cosmicgeo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-301": {
+      "displayName": "Lord Hydrax",
+      "series": "Burst",
+      "class": "Attack",
+      "assembledModel": "/assets/models/lordhydraxgeo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-302": {
+      "displayName": "Luinor L4",
+      "series": "Burst",
+      "class": "Defense",
+      "assembledModel": "/assets/models/luinorl4geo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-303": {
+      "displayName": "Luinor L4Target",
+      "series": "Burst",
+      "class": "Stamina",
+      "assembledModel": "/assets/models/luinorl4targetgeo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-304": {
+      "displayName": "Luinor L5",
+      "series": "Burst",
+      "class": "Balance",
+      "assembledModel": "/assets/models/luinorl5geo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-305": {
+      "displayName": "Luinor L5Soul",
+      "series": "Burst",
+      "class": "Attack",
+      "assembledModel": "/assets/models/luinorl5soulgeo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-306": {
+      "displayName": "Luinor L5Wizard",
+      "series": "Burst",
+      "class": "Defense",
+      "assembledModel": "/assets/models/luinorl5wizardgeo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-234": {
+      "displayName": "Luinor L6",
+      "series": "Burst",
+      "class": "Stamina",
+      "assembledModel": "/assets/models/luinorl6geo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-307": {
+      "displayName": "Luinor L6Kolossal",
+      "series": "Burst",
+      "class": "Balance",
+      "assembledModel": "/assets/models/luinorl6kolossalgeo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-236": {
+      "displayName": "Luinor L6Mirage",
+      "series": "Burst",
+      "class": "Attack",
+      "assembledModel": "/assets/models/luinorl6miragegeo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-308": {
+      "displayName": "Luinor L7",
+      "series": "Burst",
+      "class": "Defense",
+      "assembledModel": "/assets/models/luinorl7geo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-309": {
+      "displayName": "Luinor Rage",
+      "series": "Burst",
+      "class": "Stamina",
+      "assembledModel": "/assets/models/luinorragegeo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-310": {
+      "displayName": "Luinor Tact",
+      "series": "Burst",
+      "class": "Balance",
+      "assembledModel": "/assets/models/luinortactgeo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-311": {
+      "displayName": "Luinor Zwei",
+      "series": "Burst",
+      "class": "Attack",
+      "assembledModel": "/assets/models/luinorzweigeo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-312": {
+      "displayName": "Minoboros M4",
+      "series": "Burst",
+      "class": "Defense",
+      "assembledModel": "/assets/models/minoborosm4geo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-313": {
+      "displayName": "Minoboros M6",
+      "series": "Burst",
+      "class": "Stamina",
+      "assembledModel": "/assets/models/minoborosm6geo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-316": {
+      "displayName": "Pegasus Harmony Premium",
+      "series": "Burst",
+      "class": "Defense",
+      "assembledModel": "/assets/models/pegasusharmonypremiumgeo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-246": {
+      "displayName": "Glyph Pegasus P5",
+      "series": "Burst",
+      "class": "Stamina",
+      "assembledModel": "/assets/models/pegasusp5glyphgeo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-247": {
+      "displayName": "Perfect Phoenix P4",
+      "series": "Burst",
+      "class": "Balance",
+      "assembledModel": "/assets/models/perfectphoenixp4geo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-317": {
+      "displayName": "Perfect Phoenix P4 (Pro Series)",
+      "series": "Burst",
+      "class": "Attack",
+      "assembledModel": "/assets/models/perfectphoenixp4proseriesgeo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-318": {
+      "displayName": "Phoenix P7",
+      "series": "Burst",
+      "class": "Stamina",
+      "assembledModel": "/assets/models/phoenixp7geo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-327": {
+      "displayName": "Sub Strike Arena",
+      "series": "Burst",
+      "class": "Arena",
+      "assembledModel": "/assets/models/arena_substrike.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/ArenaThumb_HyperSphere.png",
+      "posterExists": true
+    },
+    "bb-328": {
+      "displayName": "Triangle Arena",
+      "series": "Burst",
+      "class": "Arena",
+      "assembledModel": "/assets/models/arena_triangle.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/ArenaThumb_HyperSphere.png",
+      "posterExists": true
+    },
+    "bb-329": {
+      "displayName": "Vertical Drop Arena",
+      "series": "Burst",
+      "class": "Arena",
+      "assembledModel": "/assets/models/arena_verticaldrop.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/ArenaThumb_HyperSphere.png",
+      "posterExists": true
+    },
+    "bb-330": {
+      "displayName": "Virtual Championship Arena",
+      "series": "Burst",
+      "class": "Arena",
+      "assembledModel": "/assets/models/arena_virtualchampionship.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/ArenaThumb_HyperSphere.png",
+      "posterExists": true
+    },
+    "bb-331": {
+      "displayName": "Volt Knockout Arena",
+      "series": "Burst",
+      "class": "Arena",
+      "assembledModel": "/assets/models/arena_voltknockout.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/ArenaThumb_HyperSphere.png",
+      "posterExists": true
+    },
+    "bb-332": {
+      "displayName": "Vortex Climb Arena",
+      "series": "Burst",
+      "class": "Arena",
+      "assembledModel": "/assets/models/arena_vortexclimb.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/ArenaThumb_HyperSphere.png",
+      "posterExists": true
+    },
+    "bb-333": {
+      "displayName": "Waterfall Arena",
+      "series": "Burst",
+      "class": "Arena",
+      "assembledModel": "/assets/models/arena_waterfall.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/ArenaThumb_HyperSphere.png",
+      "posterExists": true
+    },
+    "bb-336": {
+      "displayName": "Rock Dragon D5",
+      "series": "Burst",
+      "class": "Stamina",
+      "assembledModel": "/assets/models/rockdragond5geo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-337": {
+      "displayName": "Roktavor Q",
+      "series": "Burst",
+      "class": "Balance",
+      "assembledModel": "/assets/models/roktavorqgeo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-339": {
+      "displayName": "Roktavor R5",
+      "series": "Burst",
+      "class": "Defense",
+      "assembledModel": "/assets/models/roktavorr5geo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-341": {
+      "displayName": "Glide Roktavor R6",
+      "series": "Burst",
+      "class": "Balance",
+      "assembledModel": "/assets/models/roktavorr6glidegeo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-342": {
+      "displayName": "Curse Satomb S6",
+      "series": "Burst",
+      "class": "Attack",
+      "assembledModel": "/assets/models/satombs6cursegeo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-343": {
+      "displayName": "Demise Satomb S6",
+      "series": "Burst",
+      "class": "Defense",
+      "assembledModel": "/assets/models/satombs6demisegeo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-344": {
+      "displayName": "Super Satomb S6",
+      "series": "Burst",
+      "class": "Stamina",
+      "assembledModel": "/assets/models/satombs6supergeo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-345": {
+      "displayName": "Spriggan Rip Fire",
+      "series": "Burst",
+      "class": "Balance",
+      "assembledModel": "/assets/models/sprigganripfiregeo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-346": {
+      "displayName": "Dusk Spryzen S5",
+      "series": "Burst",
+      "class": "Attack",
+      "assembledModel": "/assets/models/spryzens5duskgeo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-347": {
+      "displayName": "Lord Spryzen S5",
+      "series": "Burst",
+      "class": "Defense",
+      "assembledModel": "/assets/models/spryzens5lordgeo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-348": {
+      "displayName": "Lord Spryzen S5 (Premium)",
+      "series": "Burst",
+      "class": "Stamina",
+      "assembledModel": "/assets/models/spryzens5lordpremiumgeo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-349": {
+      "displayName": "Lord Spryzen S5 (Pro Series)",
+      "series": "Burst",
+      "class": "Balance",
+      "assembledModel": "/assets/models/spryzens5lordproseriesgeo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-350": {
+      "displayName": "Spryzen S8",
+      "series": "Burst",
+      "class": "Attack",
+      "assembledModel": "/assets/models/spryzens8geo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-351": {
+      "displayName": "Sword Dragon D5",
+      "series": "Burst",
+      "class": "Defense",
+      "assembledModel": "/assets/models/sworddragond5geo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-353": {
+      "displayName": "Triumph Dragon D6",
+      "series": "Burst",
+      "class": "Balance",
+      "assembledModel": "/assets/models/triumphdragond6geo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-354": {
+      "displayName": "Valkyrie First",
+      "series": "Burst",
+      "class": "Attack",
+      "assembledModel": "/assets/models/valkyriefirstgeo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-355": {
+      "displayName": "Valkyrie",
+      "series": "Burst",
+      "class": "Defense",
+      "assembledModel": "/assets/models/valkyriegeo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-356": {
+      "displayName": "Valkyrie Rip Fire",
+      "series": "Burst",
+      "class": "Stamina",
+      "assembledModel": "/assets/models/valkyrieripfiregeo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-357": {
+      "displayName": "Rashad Valtryek",
+      "series": "Burst",
+      "class": "Balance",
+      "assembledModel": "/assets/models/valtryekrashadv7geo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-358": {
+      "displayName": "Command Valtryek V5",
+      "series": "Burst",
+      "class": "Attack",
+      "assembledModel": "/assets/models/valtryekv5commandgeo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-359": {
+      "displayName": "Cosmic Valtryek V5",
+      "series": "Burst",
+      "class": "Defense",
+      "assembledModel": "/assets/models/valtryekv5cosmicgeo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-360": {
+      "displayName": "Glyph Valtryek V5",
+      "series": "Burst",
+      "class": "Stamina",
+      "assembledModel": "/assets/models/valtryekv5glyphgeo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-361": {
+      "displayName": "Sword Valtryek V5",
+      "series": "Burst",
+      "class": "Balance",
+      "assembledModel": "/assets/models/valtryekv5swordgeo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-362": {
+      "displayName": "Sword Valtryek V5 (Premium)",
+      "series": "Burst",
+      "class": "Attack",
+      "assembledModel": "/assets/models/valtryekv5swordpremiumgeo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-363": {
+      "displayName": "Brave Valtryek V6",
+      "series": "Burst",
+      "class": "Defense",
+      "assembledModel": "/assets/models/valtryekv6bravegeo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-364": {
+      "displayName": "Vex Dragon D6",
+      "series": "Burst",
+      "class": "Stamina",
+      "assembledModel": "/assets/models/vexdragond6geo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bx-201": {
+      "displayName": "Soar Phoenix 9-60GF (st)",
+      "series": "X",
+      "class": "Balance",
+      "assembledModel": "/assets/models/x_soar_phoenix_9_60gf_st.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/x-chrome/bg-waiting-01.png",
+      "posterExists": true
+    },
+    "bx-202": {
+      "displayName": "Sword Dran 3-60 F",
+      "series": "X",
+      "class": "Attack",
+      "assembledModel": "/assets/models/x_sword_dran_3_60_f.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/x-chrome/bg-waiting-01.png",
+      "posterExists": true
+    },
+    "bx-203": {
+      "displayName": "Helm Knight 5-80 T",
+      "series": "X",
+      "class": "Defense",
+      "assembledModel": "/assets/models/x_helm_knight_5_80_t.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/x-chrome/bg-waiting-01.png",
+      "posterExists": true
+    },
+    "bx-204": {
+      "displayName": "Arrow Wizard 4-60-N",
+      "series": "X",
+      "class": "Stamina",
+      "assembledModel": "/assets/models/x_arrow_wizard_4_60_n.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/x-chrome/bg-waiting-01.png",
+      "posterExists": true
+    },
+    "bx-205": {
+      "displayName": "Arrow Wizard 4-80B (st)",
+      "series": "X",
+      "class": "Defense",
+      "assembledModel": "/assets/models/x_arrow_wizard_4_80b_st.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/x-chrome/bg-waiting-01.png",
+      "posterExists": true
+    },
+    "bx-206": {
+      "displayName": "Tail Viper 3-80HN (rdrc)",
+      "series": "X",
+      "class": "Attack",
+      "assembledModel": "/assets/models/x_tail_viper_3_80hn_rdrc.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/x-chrome/bg-waiting-01.png",
+      "posterExists": true
+    },
+    "bx-207": {
+      "displayName": "– Tail Viber 3-80HN (rdrc)",
+      "series": "X",
+      "class": "Balance",
+      "assembledModel": "/assets/models/x_tail_viber_3_80hn_rdrc.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/x-chrome/bg-waiting-01.png",
+      "posterExists": true
+    },
+    "bx-208": {
+      "displayName": "Knight Lance 4-80HN",
+      "series": "X",
+      "class": "Balance",
+      "assembledModel": "/assets/models/x_knight_lance_4_80hn.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/x-chrome/bg-waiting-01.png",
+      "posterExists": true
+    },
+    "bx-209": {
+      "displayName": "Steel Samurai 4-80T (st)",
+      "series": "X",
+      "class": "Stamina",
+      "assembledModel": "/assets/models/x_steel_samurai_4_80t_st.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/x-chrome/bg-waiting-01.png",
+      "posterExists": true
+    },
+    "bx-210": {
+      "displayName": "– Claw Leon 5-60P",
+      "series": "X",
+      "class": "Stamina",
+      "assembledModel": "/assets/models/x_claw_leon_5_60p.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/x-chrome/bg-waiting-01.png",
+      "posterExists": true
+    },
+    "bx-211": {
+      "displayName": "Sting Unicorn 5-60GP",
+      "series": "X",
+      "class": "Stamina",
+      "assembledModel": "/assets/models/x_sting_unicorn_5_60gp.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/x-chrome/bg-waiting-01.png",
+      "posterExists": true
+    },
+    "bx-212": {
+      "displayName": "Scythe Incendio 3-80 B",
+      "series": "X",
+      "class": "Defense",
+      "assembledModel": "/assets/models/x_scythe_incendio_3_80_b.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/x-chrome/bg-waiting-01.png",
+      "posterExists": true
+    },
+    "bx-213": {
+      "displayName": "533023 - Gale Wyvern 3-60T",
+      "series": "X",
+      "class": "Balance",
+      "assembledModel": "/assets/models/x_533023_gale_wyvern_3_60t.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/x-chrome/bg-waiting-01.png",
+      "posterExists": true
+    },
+    "bx-214": {
+      "displayName": "533023 - Sword Dran 3-80B",
+      "series": "X",
+      "class": "Defense",
+      "assembledModel": "/assets/models/x_533023_sword_dran_3_80b.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/x-chrome/bg-waiting-01.png",
+      "posterExists": true
+    },
+    "bx-215": {
+      "displayName": "Keel Shark 3-80-F",
+      "series": "X",
+      "class": "Defense",
+      "assembledModel": "/assets/models/x_keel_shark_3_80_f.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/x-chrome/bg-waiting-01.png",
+      "posterExists": true
+    },
+    "bx-216": {
+      "displayName": "Keel Shark 3-80-F (st)",
+      "series": "X",
+      "class": "Balance",
+      "assembledModel": "/assets/models/x_keel_shark_3_80_f_st.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/x-chrome/bg-waiting-01.png",
+      "posterExists": true
+    },
+    "bx-217": {
+      "displayName": "Impact Drake 9-60LR",
+      "series": "X",
+      "class": "Defense",
+      "assembledModel": "/assets/models/x_impact_drake_9_60lr.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/x-chrome/bg-waiting-01.png",
+      "posterExists": true
+    },
+    "bx-218": {
+      "displayName": "Cowl Sphinx 9-80GN",
+      "series": "X",
+      "class": "Attack",
+      "assembledModel": "/assets/models/x_cowl_sphinx_9_80gn.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/x-chrome/bg-waiting-01.png",
+      "posterExists": true
+    },
+    "bx-219": {
+      "displayName": "Arrow Wizard 4-80GB",
+      "series": "X",
+      "class": "Stamina",
+      "assembledModel": "/assets/models/x_arrow_wizard_4_80gb.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/x-chrome/bg-waiting-01.png",
+      "posterExists": true
+    },
+    "bx-220": {
+      "displayName": "Obsidian Shell 4-60D",
+      "series": "X",
+      "class": "Attack",
+      "assembledModel": "/assets/models/x_obsidian_shell_4_60d.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/x-chrome/bg-waiting-01.png",
+      "posterExists": true
+    },
+    "bx-221": {
+      "displayName": "Obsidian Shell 4-60D-RATCHET UI",
+      "series": "X",
+      "class": "Attack",
+      "assembledModel": "/assets/models/x_obsidian_shell_4_60d_ratchet_ui.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/x-chrome/bg-waiting-01.png",
+      "posterExists": true
+    },
+    "bx-222": {
+      "displayName": "Keel Shark 1-60Q",
+      "series": "X",
+      "class": "Defense",
+      "assembledModel": "/assets/models/x_keel_shark_1_60q.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/x-chrome/bg-waiting-01.png",
+      "posterExists": true
+    },
+    "bx-223": {
+      "displayName": "Wand Wizard 5-70DB",
+      "series": "X",
+      "class": "Attack",
+      "assembledModel": "/assets/models/x_wand_wizard_5_70db.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/x-chrome/bg-waiting-01.png",
+      "posterExists": true
+    },
+    "bx-224": {
+      "displayName": "Wand Wizard 1-60R",
+      "series": "X",
+      "class": "Balance",
+      "assembledModel": "/assets/models/x_wand_wizard_1_60r.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/x-chrome/bg-waiting-01.png",
+      "posterExists": true
+    },
+    "bx-225": {
+      "displayName": "Shadow Shinobi 1-80MN",
+      "series": "X",
+      "class": "Defense",
+      "assembledModel": "/assets/models/x_shadow_shinobi_1_80mn.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/x-chrome/bg-waiting-01.png",
+      "posterExists": true
+    },
+    "bx-226": {
+      "displayName": "Beat Tyranno 4-70Q",
+      "series": "X",
+      "class": "Attack",
+      "assembledModel": "/assets/models/x_beat_tyranno_4_70q.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/x-chrome/bg-waiting-01.png",
+      "posterExists": true
+    },
+    "bx-227": {
+      "displayName": "Soar Phoenix 5-80H",
+      "series": "X",
+      "class": "Attack",
+      "assembledModel": "/assets/models/x_soar_phoenix_5_80h.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/x-chrome/bg-waiting-01.png",
+      "posterExists": true
+    },
+    "bx-228": {
+      "displayName": "Cobalt Dragoon 2-60C",
+      "series": "X",
+      "class": "Balance",
+      "assembledModel": "/assets/models/x_cobalt_dragoon_2_60c.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/x-chrome/bg-waiting-01.png",
+      "posterExists": true
+    },
+    "bx-229": {
+      "displayName": "Dran Buster 1-60A",
+      "series": "X",
+      "class": "Defense",
+      "assembledModel": "/assets/models/x_dran_buster_1_60a.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/x-chrome/bg-waiting-01.png",
+      "posterExists": true
+    },
+    "bx-230": {
+      "displayName": "Tide Whale 5-80E",
+      "series": "X",
+      "class": "Attack",
+      "assembledModel": "/assets/models/x_tide_whale_5_80e.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/x-chrome/bg-waiting-01.png",
+      "posterExists": true
+    },
+    "bx-231": {
+      "displayName": "Dagger Dran 4-70Q",
+      "series": "X",
+      "class": "Attack",
+      "assembledModel": "/assets/models/x_dagger_dran_4_70q.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/x-chrome/bg-waiting-01.png",
+      "posterExists": true
+    },
+    "bx-232": {
+      "displayName": "Buster Dran 5-70DB",
+      "series": "X",
+      "class": "Defense",
+      "assembledModel": "/assets/models/x_buster_dran_5_70db.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/x-chrome/bg-waiting-01.png",
+      "posterExists": true
+    },
+    "bx-233": {
+      "displayName": "Hammer Incendio 3-70H",
+      "series": "X",
+      "class": "Stamina",
+      "assembledModel": "/assets/models/x_hammer_incendio_3_70h.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/x-chrome/bg-waiting-01.png",
+      "posterExists": true
+    },
+    "bx-234": {
+      "displayName": "Scarlet Garuda 4-70TP",
+      "series": "X",
+      "class": "Stamina",
+      "assembledModel": "/assets/models/x_scarlet_garuda_4_70tp.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/x-chrome/bg-waiting-01.png",
+      "posterExists": true
+    },
+    "bx-235": {
+      "displayName": "Sterling Wolf 3-80FB",
+      "series": "X",
+      "class": "Attack",
+      "assembledModel": "/assets/models/x_sterling_wolf_3_80fb.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/x-chrome/bg-waiting-01.png",
+      "posterExists": true
+    },
+    "bx-236": {
+      "displayName": "Courage Dran S 6-60V-BLADE Chip",
+      "series": "X",
+      "class": "Attack",
+      "assembledModel": "/assets/models/x_courage_dran_s_6_60v_blade_chip.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/x-chrome/bg-waiting-01.png",
+      "posterExists": true
+    },
+    "bx-237": {
+      "displayName": "Courage Dran S 6-60V-BLADE Layer",
+      "series": "X",
+      "class": "Defense",
+      "assembledModel": "/assets/models/x_courage_dran_s_6_60v_blade_layer.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/x-chrome/bg-waiting-01.png",
+      "posterExists": true
+    },
+    "bx-238": {
+      "displayName": "Courage Dran S 6-60V-BLADE Ring",
+      "series": "X",
+      "class": "Attack",
+      "assembledModel": "/assets/models/x_courage_dran_s_6_60v_blade_ring.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/x-chrome/bg-waiting-01.png",
+      "posterExists": true
+    },
+    "bx-239": {
+      "displayName": "Reaper Incendio T 4-70K-BLADE Chip",
+      "series": "X",
+      "class": "Attack",
+      "assembledModel": "/assets/models/x_reaper_incendio_t_4_70k_blade_chip.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/x-chrome/bg-waiting-01.png",
+      "posterExists": true
+    },
+    "bx-240": {
+      "displayName": "Reaper Incendio T 4-70K-BLADE Layer",
+      "series": "X",
+      "class": "Defense",
+      "assembledModel": "/assets/models/x_reaper_incendio_t_4_70k_blade_layer.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/x-chrome/bg-waiting-01.png",
+      "posterExists": true
+    },
+    "bx-241": {
+      "displayName": "Reaper Incendio T 4-70K-BLADE Ring",
+      "series": "X",
+      "class": "Attack",
+      "assembledModel": "/assets/models/x_reaper_incendio_t_4_70k_blade_ring.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/x-chrome/bg-waiting-01.png",
+      "posterExists": true
+    },
+    "bx-242": {
+      "displayName": "ARC Wizard R 4-55LO-BLADE Chip",
+      "series": "X",
+      "class": "Attack",
+      "assembledModel": "/assets/models/x_arc_wizard_r_4_55lo_blade_chip.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/x-chrome/bg-waiting-01.png",
+      "posterExists": true
+    },
+    "bx-243": {
+      "displayName": "ARC Wizard R 4-55LO-BLADE Layer",
+      "series": "X",
+      "class": "Defense",
+      "assembledModel": "/assets/models/x_arc_wizard_r_4_55lo_blade_layer.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/x-chrome/bg-waiting-01.png",
+      "posterExists": true
+    },
+    "bx-244": {
+      "displayName": "ARC Wizard R 4-55LO-BLADE Ring",
+      "series": "X",
+      "class": "Attack",
+      "assembledModel": "/assets/models/x_arc_wizard_r_4_55lo_blade_ring.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/x-chrome/bg-waiting-01.png",
+      "posterExists": true
+    },
+    "bx-245": {
+      "displayName": "Dark Perseus B 6-80W-BLADE Chip",
+      "series": "X",
+      "class": "Attack",
+      "assembledModel": "/assets/models/x_dark_perseus_b_6_80w_blade_chip.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/x-chrome/bg-waiting-01.png",
+      "posterExists": true
+    },
+    "bx-246": {
+      "displayName": "Dark Perseus B 6-80W-BLADE Layer",
+      "series": "X",
+      "class": "Defense",
+      "assembledModel": "/assets/models/x_dark_perseus_b_6_80w_blade_layer.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/x-chrome/bg-waiting-01.png",
+      "posterExists": true
+    },
+    "bx-247": {
+      "displayName": "Dark Perseus B 6-80W-BLADE Ring",
+      "series": "X",
+      "class": "Attack",
+      "assembledModel": "/assets/models/x_dark_perseus_b_6_80w_blade_ring.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/x-chrome/bg-waiting-01.png",
+      "posterExists": true
+    },
+    "bx-248": {
+      "displayName": "Cowl Sphinx 1-80GF",
+      "series": "X",
+      "class": "Attack",
+      "assembledModel": "/assets/models/x_cowl_sphinx_1_80gf.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/x-chrome/bg-waiting-01.png",
+      "posterExists": true
+    },
+    "bx-249": {
+      "displayName": "Crest Leon 7-60GN",
+      "series": "X",
+      "class": "Stamina",
+      "assembledModel": "/assets/models/x_crest_leon_7_60gn.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/x-chrome/bg-waiting-01.png",
+      "posterExists": true
+    },
+    "bx-250": {
+      "displayName": "Gill Shark 4-70O",
+      "series": "X",
+      "class": "Attack",
+      "assembledModel": "/assets/models/x_gill_shark_4_70o.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/x-chrome/bg-waiting-01.png",
+      "posterExists": true
+    },
+    "bx-251": {
+      "displayName": "1 - G1686 - Pearl Tiger 3-60U",
+      "series": "X",
+      "class": "Balance",
+      "assembledModel": "/assets/models/x_1_g1686_pearl_tiger_3_60u.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/x-chrome/bg-waiting-01.png",
+      "posterExists": true
+    },
+    "bx-252": {
+      "displayName": "Dranzer Spiral 3-80T",
+      "series": "X",
+      "class": "Balance",
+      "assembledModel": "/assets/models/x_dranzer_spiral_3_80t.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/x-chrome/bg-waiting-01.png",
+      "posterExists": true
+    },
+    "bx-253": {
+      "displayName": "Driger Slash 4-80P",
+      "series": "X",
+      "class": "Defense",
+      "assembledModel": "/assets/models/x_driger_slash_4_80p.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/x-chrome/bg-waiting-01.png",
+      "posterExists": true
+    },
+    "bx-254": {
+      "displayName": "Saber Samurai 2-70L",
+      "series": "X",
+      "class": "Defense",
+      "assembledModel": "/assets/models/x_saber_samurai_2_70l.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/x-chrome/bg-waiting-01.png",
+      "posterExists": true
+    },
+    "bx-255": {
+      "displayName": "Bx-org01 Samurai Steel 4-80T",
+      "series": "X",
+      "class": "Attack",
+      "assembledModel": "/assets/models/x_bx_org01_samurai_steel_4_80t.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/x-chrome/bg-waiting-01.png",
+      "posterExists": true
+    },
+    "bx-256": {
+      "displayName": "Bx-org05 Shinobi Knife 4-80HN",
+      "series": "X",
+      "class": "Attack",
+      "assembledModel": "/assets/models/x_bx_org05_shinobi_knife_4_80hn.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/x-chrome/bg-waiting-01.png",
+      "posterExists": true
+    },
+    "bx-257": {
+      "displayName": "Bx-org08 Mammo Tusk 3-60T",
+      "series": "X",
+      "class": "Defense",
+      "assembledModel": "/assets/models/x_bx_org08_mammo_tusk_3_60t.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/x-chrome/bg-waiting-01.png",
+      "posterExists": true
+    },
+    "bx-258": {
+      "displayName": "Bx04 Helm Knight 3-80N-BIT UI",
+      "series": "X",
+      "class": "Balance",
+      "assembledModel": "/assets/models/x_bx04_helm_knight_3_80n_bit_ui.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/x-chrome/bg-waiting-01.png",
+      "posterExists": true
+    },
+    "bx-259": {
+      "displayName": "Bx04 Helm Knight 3-80N",
+      "series": "X",
+      "class": "Defense",
+      "assembledModel": "/assets/models/x_bx04_helm_knight_3_80n.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/x-chrome/bg-waiting-01.png",
+      "posterExists": true
+    },
+    "bx-260": {
+      "displayName": "Bx04 Helm Knight 3-80N-RATCHET UI",
+      "series": "X",
+      "class": "Balance",
+      "assembledModel": "/assets/models/x_bx04_helm_knight_3_80n_ratchet_ui.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/x-chrome/bg-waiting-01.png",
+      "posterExists": true
+    },
+    "bx-261": {
+      "displayName": "Bx14 Keel Shark 3-60LF-BIT UI",
+      "series": "X",
+      "class": "Balance",
+      "assembledModel": "/assets/models/x_bx14_keel_shark_3_60lf_bit_ui.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/x-chrome/bg-waiting-01.png",
+      "posterExists": true
+    },
+    "bx-262": {
+      "displayName": "Bx14 Keel Shark 3-60LF",
+      "series": "X",
+      "class": "Defense",
+      "assembledModel": "/assets/models/x_bx14_keel_shark_3_60lf.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/x-chrome/bg-waiting-01.png",
+      "posterExists": true
+    },
+    "bx-263": {
+      "displayName": "Bx14 Keel Shark 3-60LF-RATCHET UI",
+      "series": "X",
+      "class": "Balance",
+      "assembledModel": "/assets/models/x_bx14_keel_shark_3_60lf_ratchet_ui.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/x-chrome/bg-waiting-01.png",
+      "posterExists": true
+    },
+    "bx-264": {
+      "displayName": "Bx14 Shark Edge 3-60LF",
+      "series": "X",
+      "class": "Balance",
+      "assembledModel": "/assets/models/x_bx14_shark_edge_3_60lf.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/x-chrome/bg-waiting-01.png",
+      "posterExists": true
+    },
+    "bx-265": {
+      "displayName": "Bx14 Shark Edge 3-60LF-BIT (blue)",
+      "series": "X",
+      "class": "Attack",
+      "assembledModel": "/assets/models/x_bx14_shark_edge_3_60lf_bit_blue.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/x-chrome/bg-waiting-01.png",
+      "posterExists": true
+    },
+    "bx-266": {
+      "displayName": "Bx14 Shark Edge 3-60LF-BIT (red)",
+      "series": "X",
+      "class": "Balance",
+      "assembledModel": "/assets/models/x_bx14_shark_edge_3_60lf_bit_red.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/x-chrome/bg-waiting-01.png",
+      "posterExists": true
+    },
+    "bx-267": {
+      "displayName": "Bx14 Shark Edge 3-60LF-BLADE (blue)",
+      "series": "X",
+      "class": "Defense",
+      "assembledModel": "/assets/models/x_bx14_shark_edge_3_60lf_blade_blue.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/x-chrome/bg-waiting-01.png",
+      "posterExists": true
+    },
+    "bx-268": {
+      "displayName": "Bx14 Shark Edge 3-60LF-BLADE (red)",
+      "series": "X",
+      "class": "Stamina",
+      "assembledModel": "/assets/models/x_bx14_shark_edge_3_60lf_blade_red.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/x-chrome/bg-waiting-01.png",
+      "posterExists": true
+    },
+    "bx-269": {
+      "displayName": "Bx14 Shark Edge 3-60LF-RATCHET (blue)",
+      "series": "X",
+      "class": "Attack",
+      "assembledModel": "/assets/models/x_bx14_shark_edge_3_60lf_ratchet_blue.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/x-chrome/bg-waiting-01.png",
+      "posterExists": true
+    },
+    "bx-270": {
+      "displayName": "Bx14 Shark Edge 3-60LF-RATCHET (red)",
+      "series": "X",
+      "class": "Balance",
+      "assembledModel": "/assets/models/x_bx14_shark_edge_3_60lf_ratchet_red.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/x-chrome/bg-waiting-01.png",
+      "posterExists": true
+    },
+    "bx-271": {
+      "displayName": "Bx19 Rhino Horn 3-80S-BIT UI",
+      "series": "X",
+      "class": "Stamina",
+      "assembledModel": "/assets/models/x_bx19_rhino_horn_3_80s_bit_ui.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/x-chrome/bg-waiting-01.png",
+      "posterExists": true
+    },
+    "bx-272": {
+      "displayName": "Bx19 Rhino Horn 3-80S",
+      "series": "X",
+      "class": "Stamina",
+      "assembledModel": "/assets/models/x_bx19_rhino_horn_3_80s.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/x-chrome/bg-waiting-01.png",
+      "posterExists": true
+    },
+    "bx-273": {
+      "displayName": "Bx19 Rhino Horn 3-80S-RATCHET UI",
+      "series": "X",
+      "class": "Stamina",
+      "assembledModel": "/assets/models/x_bx19_rhino_horn_3_80s_ratchet_ui.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/x-chrome/bg-waiting-01.png",
+      "posterExists": true
+    },
+    "bx-274": {
+      "displayName": "Bx20 Dagger Dran 4-60R-BIT UI",
+      "series": "X",
+      "class": "Attack",
+      "assembledModel": "/assets/models/x_bx20_dagger_dran_4_60r_bit_ui.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/x-chrome/bg-waiting-01.png",
+      "posterExists": true
+    },
+    "bx-275": {
+      "displayName": "Bx20 Dagger Dran 4-60R",
+      "series": "X",
+      "class": "Attack",
+      "assembledModel": "/assets/models/x_bx20_dagger_dran_4_60r.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/x-chrome/bg-waiting-01.png",
+      "posterExists": true
+    },
+    "bx-276": {
+      "displayName": "Bx20 Dagger Dran 4-60R-RATCHET UI",
+      "series": "X",
+      "class": "Attack",
+      "assembledModel": "/assets/models/x_bx20_dagger_dran_4_60r_ratchet_ui.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/x-chrome/bg-waiting-01.png",
+      "posterExists": true
+    },
+    "bx-277": {
+      "displayName": "Bxg01 Dranzer Spiral 3-80T Green",
+      "series": "X",
+      "class": "Attack",
+      "assembledModel": "/assets/models/x_bxg01_dranzer_spiral_3_80t_green.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/x-chrome/bg-waiting-01.png",
+      "posterExists": true
+    },
+    "bx-278": {
+      "displayName": "Bxg01 Dranzer Spiral 3-80T RED",
+      "series": "X",
+      "class": "Stamina",
+      "assembledModel": "/assets/models/x_bxg01_dranzer_spiral_3_80t_red.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/x-chrome/bg-waiting-01.png",
+      "posterExists": true
+    },
+    "bx-279": {
+      "displayName": "Digital Beyblade",
+      "series": "X",
+      "class": "Stamina",
+      "assembledModel": "/assets/models/x_digital_beyblade.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/x-chrome/bg-waiting-01.png",
+      "posterExists": true
+    },
+    "bx-280": {
+      "displayName": "529279 - Sting Unicorn 4-60 P (rdrc)",
+      "series": "X",
+      "class": "Defense",
+      "assembledModel": "/assets/models/x_529279_sting_unicorn_4_60_p_rdrc.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/x-chrome/bg-waiting-01.png",
+      "posterExists": true
+    },
+    "bx-281": {
+      "displayName": "529279 Bite Croc 3-60LF",
+      "series": "X",
+      "class": "Balance",
+      "assembledModel": "/assets/models/x_529279_bite_croc_3_60lf.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/x-chrome/bg-waiting-01.png",
+      "posterExists": true
+    },
+    "bb-401": {
+      "displayName": "Ace Dragon D5",
+      "series": "Burst",
+      "class": "Defense",
+      "assembledModel": "/assets/models/AceDragonD5_Layer.obj",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-402": {
+      "displayName": "Air Knight K4",
+      "series": "Burst",
+      "class": "Stamina",
+      "assembledModel": "/assets/models/AirKnightK4_Layer.obj",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-403": {
+      "displayName": "Anubion A6",
+      "series": "Burst",
+      "class": "Defense",
+      "assembledModel": "/assets/models/AnubionA6_Layer.obj",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-404": {
+      "displayName": "Apollos A5",
+      "series": "Burst",
+      "class": "Stamina",
+      "assembledModel": "/assets/models/ApollosA5_Layer.obj",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-405": {
+      "displayName": "Artemis A4",
+      "series": "Burst",
+      "class": "Stamina",
+      "assembledModel": "/assets/models/ArtemisA4_Layer.obj",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-406": {
+      "displayName": "Artemis A5",
+      "series": "Burst",
+      "class": "Balance",
+      "assembledModel": "/assets/models/ArtemisA5_Layer.obj",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-407": {
+      "displayName": "Balar B4",
+      "series": "Burst",
+      "class": "Stamina",
+      "assembledModel": "/assets/models/BalarB4_Layer.obj",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-408": {
+      "displayName": "Balor B4",
+      "series": "Burst",
+      "class": "Attack",
+      "assembledModel": "/assets/models/BalorB4_Layer.obj",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-409": {
+      "displayName": "Behemoth Cyclopse C5",
+      "series": "Burst",
+      "class": "Attack",
+      "assembledModel": "/assets/models/BehemothCyclopseC5_Layer.obj",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-410": {
+      "displayName": "Betromoth B6",
+      "series": "Burst",
+      "class": "Stamina",
+      "assembledModel": "/assets/models/BetromothB6_Layer.obj",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-411": {
+      "displayName": "Betromoth",
+      "series": "Burst",
+      "class": "Stamina",
+      "assembledModel": "/assets/models/Betromoth_Layer.obj",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-412": {
+      "displayName": "Brave Satomb S6",
+      "series": "Burst",
+      "class": "Balance",
+      "assembledModel": "/assets/models/BraveSatombS6_Layer.obj",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-413": {
+      "displayName": "Brave Valtryek V6",
+      "series": "Burst",
+      "class": "Stamina",
+      "assembledModel": "/assets/models/BraveValtryekV6_Layer.obj",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-414": {
+      "displayName": "Cho ZValtryek Red",
+      "series": "Burst",
+      "class": "Balance",
+      "assembledModel": "/assets/models/ChoZValtryekRed_Layer.obj",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-415": {
+      "displayName": "Command Dragon D5",
+      "series": "Burst",
+      "class": "Defense",
+      "assembledModel": "/assets/models/CommandDragonD5_Layer.obj",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-416": {
+      "displayName": "Command Valtryek V5",
+      "series": "Burst",
+      "class": "Attack",
+      "assembledModel": "/assets/models/CommandValtryekV5_Layer.obj",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-417": {
+      "displayName": "Cosmo Apocalypse A5",
+      "series": "Burst",
+      "class": "Stamina",
+      "assembledModel": "/assets/models/CosmoApocalypseA5_Layer.obj",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-418": {
+      "displayName": "Crystal Dranzer F",
+      "series": "Burst",
+      "class": "Stamina",
+      "assembledModel": "/assets/models/CrystalDranzerF_Layer.obj",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-419": {
+      "displayName": "Curse Satomb S6",
+      "series": "Burst",
+      "class": "Defense",
+      "assembledModel": "/assets/models/CurseSatombS6_Layer.obj",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-420": {
+      "displayName": "Cyclops C4",
+      "series": "Burst",
+      "class": "Stamina",
+      "assembledModel": "/assets/models/CyclopsC4_Layer.obj",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-421": {
+      "displayName": "Demise Devolos D6",
+      "series": "Burst",
+      "class": "Balance",
+      "assembledModel": "/assets/models/DemiseDevolosD6_Layer.obj",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-422": {
+      "displayName": "Demise Dullahan D6",
+      "series": "Burst",
+      "class": "Attack",
+      "assembledModel": "/assets/models/DemiseDullahanD6_Layer.obj",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-423": {
+      "displayName": "Demise Hyperion H6",
+      "series": "Burst",
+      "class": "Balance",
+      "assembledModel": "/assets/models/DemiseHyperionH6_Layer.obj",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-424": {
+      "displayName": "Demise Satomb S6",
+      "series": "Burst",
+      "class": "Stamina",
+      "assembledModel": "/assets/models/DemiseSatombS6_Layer.obj",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-425": {
+      "displayName": "Destruction Ifritor I7",
+      "series": "Burst",
+      "class": "Defense",
+      "assembledModel": "/assets/models/DestructionIfritorI7_Layer.obj",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-426": {
+      "displayName": "Draciel F",
+      "series": "Burst",
+      "class": "Attack",
+      "assembledModel": "/assets/models/DracielF_Layer.obj",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-427": {
+      "displayName": "Dread Bahamut B5",
+      "series": "Burst",
+      "class": "Balance",
+      "assembledModel": "/assets/models/DreadBahamutB5_Layer.obj",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-428": {
+      "displayName": "Dullahan D4",
+      "series": "Burst",
+      "class": "Balance",
+      "assembledModel": "/assets/models/DullahanD4_Layer.obj",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-429": {
+      "displayName": "Dullahan D5",
+      "series": "Burst",
+      "class": "Attack",
+      "assembledModel": "/assets/models/DullahanD5_Layer.obj",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-430": {
+      "displayName": "Dusk Spryzen S5",
+      "series": "Burst",
+      "class": "Stamina",
+      "assembledModel": "/assets/models/DuskSpryzenS5_Layer.obj",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-431": {
+      "displayName": "Eclipse Evo Devolos D5",
+      "series": "Burst",
+      "class": "Stamina",
+      "assembledModel": "/assets/models/EclipseEvoDevolosD5_Layer.obj",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-432": {
+      "displayName": "Eclipse Genesis G5",
+      "series": "Burst",
+      "class": "Defense",
+      "assembledModel": "/assets/models/EclipseGenesisG5_Layer.obj",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-433": {
+      "displayName": "Engaard E4_Egis E4",
+      "series": "Burst",
+      "class": "Defense",
+      "assembledModel": "/assets/models/EngaardE4_EgisE4_Layer.obj",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-434": {
+      "displayName": "Engaard E5",
+      "series": "Burst",
+      "class": "Stamina",
+      "assembledModel": "/assets/models/EngaardE5_Layer.obj",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-435": {
+      "displayName": "Erase Balkesh B5",
+      "series": "Burst",
+      "class": "Balance",
+      "assembledModel": "/assets/models/EraseBalkeshB5_Layer.obj",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-436": {
+      "displayName": "Erase Diablos D5",
+      "series": "Burst",
+      "class": "Balance",
+      "assembledModel": "/assets/models/EraseDiablosD5_Layer.obj",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-437": {
+      "displayName": "Evo Helios Blazebringer H6",
+      "series": "Burst",
+      "class": "Defense",
+      "assembledModel": "/assets/models/EvoHeliosBlazebringerH6_Layer.obj",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-438": {
+      "displayName": "Evo Lucius Endbringer",
+      "series": "Burst",
+      "class": "Defense",
+      "assembledModel": "/assets/models/EvoLuciusEndbringer_Layer.obj",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-439": {
+      "displayName": "Fang Dragoon F",
+      "series": "Burst",
+      "class": "Stamina",
+      "assembledModel": "/assets/models/FangDragoonF_Layer.obj",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-440": {
+      "displayName": "Flare Cobra C5",
+      "series": "Burst",
+      "class": "Balance",
+      "assembledModel": "/assets/models/FlareCobraC5_Layer.obj",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-441": {
+      "displayName": "Force Worlborg",
+      "series": "Burst",
+      "class": "Defense",
+      "assembledModel": "/assets/models/ForceWorlborg_Layer.obj",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-442": {
+      "displayName": "Forneus F4",
+      "series": "Burst",
+      "class": "Stamina",
+      "assembledModel": "/assets/models/ForneusF4_Layer.obj",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-443": {
+      "displayName": "Forneus F5",
+      "series": "Burst",
+      "class": "Balance",
+      "assembledModel": "/assets/models/ForneusF5_Layer.obj",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-444": {
+      "displayName": "Gaianon G6",
+      "series": "Burst",
+      "class": "Attack",
+      "assembledModel": "/assets/models/GaianonG6_Layer.obj",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-445": {
+      "displayName": "Galaxy Zeutron Z5",
+      "series": "Burst",
+      "class": "Attack",
+      "assembledModel": "/assets/models/GalaxyZeutronZ5_Layer.obj",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-446": {
+      "displayName": "Gargoyle G4",
+      "series": "Burst",
+      "class": "Defense",
+      "assembledModel": "/assets/models/GargoyleG4_Layer.obj",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-447": {
+      "displayName": "Gargoyle G5",
+      "series": "Burst",
+      "class": "Stamina",
+      "assembledModel": "/assets/models/GargoyleG5_Layer.obj",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-448": {
+      "displayName": "Gianon G4",
+      "series": "Burst",
+      "class": "Defense",
+      "assembledModel": "/assets/models/GianonG4_Layer.obj",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-449": {
+      "displayName": "Glide Roktavor R6",
+      "series": "Burst",
+      "class": "Defense",
+      "assembledModel": "/assets/models/GlideRoktavorR6_Layer.obj",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-450": {
+      "displayName": "Glyph Dragon D5",
+      "series": "Burst",
+      "class": "Stamina",
+      "assembledModel": "/assets/models/GlyphDragonD5_Layer.obj",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-451": {
+      "displayName": "Glyph Pegasus",
+      "series": "Burst",
+      "class": "Attack",
+      "assembledModel": "/assets/models/GlyphPegasus_Layer.obj",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-452": {
+      "displayName": "Glyph Valtryek",
+      "series": "Burst",
+      "class": "Stamina",
+      "assembledModel": "/assets/models/GlyphValtryek_Layer.obj",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-453": {
+      "displayName": "GTJudgement Dragon",
+      "series": "Burst",
+      "class": "Defense",
+      "assembledModel": "/assets/models/GTJudgementDragon_Layer.obj",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-454": {
+      "displayName": "Guard Draciel S",
+      "series": "Burst",
+      "class": "Stamina",
+      "assembledModel": "/assets/models/GuardDracielS_Layer.obj",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-455": {
+      "displayName": "Hades_H4",
+      "series": "Burst",
+      "class": "Attack",
+      "assembledModel": "/assets/models/Hades_H4_Layer.obj",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-456": {
+      "displayName": "Harmony Pegasus",
+      "series": "Burst",
+      "class": "Stamina",
+      "assembledModel": "/assets/models/HarmonyPegasus_Layer.obj",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-457": {
+      "displayName": "Hazard Kerbeus_K4",
+      "series": "Burst",
+      "class": "Balance",
+      "assembledModel": "/assets/models/HazardKerbeus_K4_Layer.obj",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-458": {
+      "displayName": "Hercules H4",
+      "series": "Burst",
+      "class": "Defense",
+      "assembledModel": "/assets/models/HerculesH4_Layer.obj",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-459": {
+      "displayName": "Hollow Doomscizor D6",
+      "series": "Burst",
+      "class": "Attack",
+      "assembledModel": "/assets/models/HollowDoomscizorD6_Layer.obj",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-460": {
+      "displayName": "Hyperion Flamebringer H6",
+      "series": "Burst",
+      "class": "Attack",
+      "assembledModel": "/assets/models/HyperionFlamebringerH6_Layer.obj",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-461": {
+      "displayName": "Hyper Sphere_Lord Spryzen S5",
+      "series": "Burst",
+      "class": "Attack",
+      "assembledModel": "/assets/models/HyperSphere_LordSpryzenS5_Layer.obj",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-462": {
+      "displayName": "Hyrus",
+      "series": "Burst",
+      "class": "Defense",
+      "assembledModel": "/assets/models/Hyrus_Layer.obj",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-463": {
+      "displayName": "Inferno Salamander",
+      "series": "Burst",
+      "class": "Balance",
+      "assembledModel": "/assets/models/InfernoSalamander_Layer.obj",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-464": {
+      "displayName": "Infinite Achilles A6",
+      "series": "Burst",
+      "class": "Attack",
+      "assembledModel": "/assets/models/InfiniteAchillesA6_Layer.obj",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-465": {
+      "displayName": "Jet Wyvron W6",
+      "series": "Burst",
+      "class": "Balance",
+      "assembledModel": "/assets/models/JetWyvronW6_Layer.obj",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-466": {
+      "displayName": "Jinnius J3",
+      "series": "Burst",
+      "class": "Balance",
+      "assembledModel": "/assets/models/JinniusJ3_Layer.obj",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-467": {
+      "displayName": "Jormunter J4",
+      "series": "Burst",
+      "class": "Attack",
+      "assembledModel": "/assets/models/JormunterJ4_Layer.obj",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-468": {
+      "displayName": "Jormuntor J6",
+      "series": "Burst",
+      "class": "Attack",
+      "assembledModel": "/assets/models/JormuntorJ6_Layer.obj",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-469": {
+      "displayName": "Kerbeus K4",
+      "series": "Burst",
+      "class": "Attack",
+      "assembledModel": "/assets/models/KerbeusK4_Layer.obj",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-470": {
+      "displayName": "King Helios H6",
+      "series": "Burst",
+      "class": "Defense",
+      "assembledModel": "/assets/models/KingHeliosH6_Layer.obj",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-471": {
+      "displayName": "Kolossal Fafnir F6",
+      "series": "Burst",
+      "class": "Attack",
+      "assembledModel": "/assets/models/KolossalFafnirF6_Layer.obj",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-472": {
+      "displayName": "Kolossal Helios H6",
+      "series": "Burst",
+      "class": "Attack",
+      "assembledModel": "/assets/models/KolossalHeliosH6_Layer.obj",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-473": {
+      "displayName": "Kraken K4",
+      "series": "Burst",
+      "class": "Defense",
+      "assembledModel": "/assets/models/KrakenK4_Layer.obj",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-474": {
+      "displayName": "Leopard L4",
+      "series": "Burst",
+      "class": "Balance",
+      "assembledModel": "/assets/models/LeopardL4_Layer.obj",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-475": {
+      "displayName": "Lord Hydrax",
+      "series": "Burst",
+      "class": "Defense",
+      "assembledModel": "/assets/models/LordHydrax_Layer.obj",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-476": {
+      "displayName": "Lord Spryzen S5",
+      "series": "Burst",
+      "class": "Stamina",
+      "assembledModel": "/assets/models/LordSpryzenS5_Layer.obj",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-477": {
+      "displayName": "Luinor L4",
+      "series": "Burst",
+      "class": "Balance",
+      "assembledModel": "/assets/models/LuinorL4_Layer.obj",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-478": {
+      "displayName": "Master Devolos D5",
+      "series": "Burst",
+      "class": "Balance",
+      "assembledModel": "/assets/models/MasterDevolosD5_Layer.obj",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-479": {
+      "displayName": "Master Devolos Pro Series",
+      "series": "Burst",
+      "class": "Stamina",
+      "assembledModel": "/assets/models/MasterDevolosProSeries_Layer.obj",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-480": {
+      "displayName": "Master Kerbeus K5",
+      "series": "Burst",
+      "class": "Balance",
+      "assembledModel": "/assets/models/MasterKerbeusK5_Layer.obj",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-481": {
+      "displayName": "Miniboros M6",
+      "series": "Burst",
+      "class": "Defense",
+      "assembledModel": "/assets/models/MiniborosM6_Layer.obj",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-482": {
+      "displayName": "Mirage Devolos D6",
+      "series": "Burst",
+      "class": "Defense",
+      "assembledModel": "/assets/models/MirageDevolosD6_Layer.obj",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-483": {
+      "displayName": "Mirage Helios H6",
+      "series": "Burst",
+      "class": "Balance",
+      "assembledModel": "/assets/models/MirageHeliosH6_Layer.obj",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-484": {
+      "displayName": "Mirage Lunior L6",
+      "series": "Burst",
+      "class": "Attack",
+      "assembledModel": "/assets/models/MirageLuniorL6_Layer.obj",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-485": {
+      "displayName": "Monster Devolos D5",
+      "series": "Burst",
+      "class": "Balance",
+      "assembledModel": "/assets/models/MonsterDevolosD5_Layer.obj",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-486": {
+      "displayName": "Monster Ogre O5",
+      "series": "Burst",
+      "class": "Defense",
+      "assembledModel": "/assets/models/MonsterOgreO5_Layer.obj",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-487": {
+      "displayName": "Morrigna M4",
+      "series": "Burst",
+      "class": "Attack",
+      "assembledModel": "/assets/models/MorrignaM4_Layer.obj",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-488": {
+      "displayName": "Morrigna M5",
+      "series": "Burst",
+      "class": "Defense",
+      "assembledModel": "/assets/models/MorrignaM5_Layer.obj",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-489": {
+      "displayName": "Myth Evo Dragon D5",
+      "series": "Burst",
+      "class": "Attack",
+      "assembledModel": "/assets/models/MythEvoDragonD5_Layer.obj",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-490": {
+      "displayName": "Myth Odax",
+      "series": "Burst",
+      "class": "Stamina",
+      "assembledModel": "/assets/models/MythOdax_Layer.obj",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-491": {
+      "displayName": "Nepstrius N4",
+      "series": "Burst",
+      "class": "Balance",
+      "assembledModel": "/assets/models/NepstriusN4_Layer.obj",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-492": {
+      "displayName": "Odax O6",
+      "series": "Burst",
+      "class": "Defense",
+      "assembledModel": "/assets/models/OdaxO6_Layer.obj",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-493": {
+      "displayName": "Ogre O4",
+      "series": "Burst",
+      "class": "Stamina",
+      "assembledModel": "/assets/models/OgreO4_Layer.obj",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-494": {
+      "displayName": "Orb Engaard",
+      "series": "Burst",
+      "class": "Balance",
+      "assembledModel": "/assets/models/OrbEngaard_Layer.obj",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-495": {
+      "displayName": "Orichalcum",
+      "series": "Burst",
+      "class": "Balance",
+      "assembledModel": "/assets/models/Orichalcum_Layer.obj",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-496": {
+      "displayName": "Origin Achilles A6",
+      "series": "Burst",
+      "class": "Stamina",
+      "assembledModel": "/assets/models/OriginAchillesA6_Layer.obj",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-497": {
+      "displayName": "Perfect Phoenix P4",
+      "series": "Burst",
+      "class": "Attack",
+      "assembledModel": "/assets/models/PerfectPhoenixP4_Layer.obj",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-498": {
+      "displayName": "Perfect Phoenix",
+      "series": "Burst",
+      "class": "Attack",
+      "assembledModel": "/assets/models/PerfectPhoenix_Layer.obj",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-499": {
+      "displayName": "Phantom Driger S",
+      "series": "Burst",
+      "class": "Balance",
+      "assembledModel": "/assets/models/PhantomDrigerS_Layer.obj",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-500": {
+      "displayName": "Pheonix P4",
+      "series": "Burst",
+      "class": "Defense",
+      "assembledModel": "/assets/models/PheonixP4_Layer.obj",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-501": {
+      "displayName": "Premium_Ace Dragon D5",
+      "series": "Burst",
+      "class": "Defense",
+      "assembledModel": "/assets/models/Premium_AceDragonD5_Layer.obj",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-502": {
+      "displayName": "Premium_Force Worlborg",
+      "series": "Burst",
+      "class": "Defense",
+      "assembledModel": "/assets/models/Premium_ForceWorlborg_Layer.obj",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-503": {
+      "displayName": "Premium_Harmony Pegasus",
+      "series": "Burst",
+      "class": "Stamina",
+      "assembledModel": "/assets/models/Premium_HarmonyPegasus_Layer.obj",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-504": {
+      "displayName": "Premium_Royal Genesis G5",
+      "series": "Burst",
+      "class": "Defense",
+      "assembledModel": "/assets/models/Premium_RoyalGenesisG5_Layer.obj",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-505": {
+      "displayName": "Premium_Viper Hydra H5",
+      "series": "Burst",
+      "class": "Balance",
+      "assembledModel": "/assets/models/Premium_ViperHydraH5_Layer.obj",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-506": {
+      "displayName": "Prime Apocalypse A5",
+      "series": "Burst",
+      "class": "Attack",
+      "assembledModel": "/assets/models/PrimeApocalypseA5_Layer.obj",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-507": {
+      "displayName": "Pro Series_Perfect Phoenix P4",
+      "series": "Burst",
+      "class": "Balance",
+      "assembledModel": "/assets/models/ProSeries_PerfectPhoenixP4_Layer.obj",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-508": {
+      "displayName": "Pro Soul Balkesh",
+      "series": "Burst",
+      "class": "Stamina",
+      "assembledModel": "/assets/models/ProSoulBalkesh_Layer.obj",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-509": {
+      "displayName": "Raid Lunior L6",
+      "series": "Burst",
+      "class": "Defense",
+      "assembledModel": "/assets/models/RaidLuniorL6_Layer.obj",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-510": {
+      "displayName": "Regulus R3",
+      "series": "Burst",
+      "class": "Attack",
+      "assembledModel": "/assets/models/RegulusR3_Layer.obj",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-511": {
+      "displayName": "Regulus R6",
+      "series": "Burst",
+      "class": "Balance",
+      "assembledModel": "/assets/models/RegulusR6_Layer.obj",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-512": {
+      "displayName": "Rocktavor R4",
+      "series": "Burst",
+      "class": "Balance",
+      "assembledModel": "/assets/models/RocktavorR4_Layer.obj",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-513": {
+      "displayName": "Roktavor R5",
+      "series": "Burst",
+      "class": "Balance",
+      "assembledModel": "/assets/models/RoktavorR5_Layer.obj",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-514": {
+      "displayName": "Royal Genesis G5",
+      "series": "Burst",
+      "class": "Defense",
+      "assembledModel": "/assets/models/RoyalGenesisG5_Layer.obj",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-515": {
+      "displayName": "Rudr R4",
+      "series": "Burst",
+      "class": "Defense",
+      "assembledModel": "/assets/models/RudrR4_Layer.obj",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-516": {
+      "displayName": "Salamander S4",
+      "series": "Burst",
+      "class": "Defense",
+      "assembledModel": "/assets/models/SalamanderS4_Layer.obj",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-517": {
+      "displayName": "Shield Kerbeus K5",
+      "series": "Burst",
+      "class": "Attack",
+      "assembledModel": "/assets/models/ShieldKerbeusK5_Layer.obj",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-518": {
+      "displayName": "Shield Kraken K5",
+      "series": "Burst",
+      "class": "Balance",
+      "assembledModel": "/assets/models/ShieldKrakenK5_Layer.obj",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-519": {
+      "displayName": "Sling Shock_Xcalius_X4",
+      "series": "Burst",
+      "class": "Stamina",
+      "assembledModel": "/assets/models/SlingShock_Xcalius_X4_Layer.obj",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-520": {
+      "displayName": "Soul Luinor L5",
+      "series": "Burst",
+      "class": "Balance",
+      "assembledModel": "/assets/models/SoulLuinorL5_Layer.obj",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-521": {
+      "displayName": "Spear Dullahan D6",
+      "series": "Burst",
+      "class": "Stamina",
+      "assembledModel": "/assets/models/SpearDullahanD6_Layer.obj",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-522": {
+      "displayName": "Spear Hyperion H6",
+      "series": "Burst",
+      "class": "Defense",
+      "assembledModel": "/assets/models/SpearHyperionH6_Layer.obj",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-523": {
+      "displayName": "Spear Valtryek V6",
+      "series": "Burst",
+      "class": "Balance",
+      "assembledModel": "/assets/models/SpearValtryekV6_Layer.obj",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-524": {
+      "displayName": "Sphinx S4",
+      "series": "Burst",
+      "class": "Balance",
+      "assembledModel": "/assets/models/SphinxS4_Layer.obj",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-525": {
+      "displayName": "Spiral Treptune T4",
+      "series": "Burst",
+      "class": "Attack",
+      "assembledModel": "/assets/models/SpiralTreptuneT4_Layer.obj",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-526": {
+      "displayName": "Spryzen S5",
+      "series": "Burst",
+      "class": "Balance",
+      "assembledModel": "/assets/models/SpryzenS5_Layer.obj",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-527": {
+      "displayName": "Super Hyperion H6",
+      "series": "Burst",
+      "class": "Balance",
+      "assembledModel": "/assets/models/SuperHyperionH6_Layer.obj",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-528": {
+      "displayName": "Super Satomb S6",
+      "series": "Burst",
+      "class": "Stamina",
+      "assembledModel": "/assets/models/SuperSatombS6_Layer.obj",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-529": {
+      "displayName": "Sword Achilles A5",
+      "series": "Burst",
+      "class": "Attack",
+      "assembledModel": "/assets/models/SwordAchillesA5_Layer.obj",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-530": {
+      "displayName": "Sword Dragon D5",
+      "series": "Burst",
+      "class": "Balance",
+      "assembledModel": "/assets/models/SwordDragonD5_Layer.obj",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-531": {
+      "displayName": "Tact Leviathan L5",
+      "series": "Burst",
+      "class": "Balance",
+      "assembledModel": "/assets/models/TactLeviathanL5_Layer.obj",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-532": {
+      "displayName": "Treptune T4",
+      "series": "Burst",
+      "class": "Balance",
+      "assembledModel": "/assets/models/TreptuneT4_Layer.obj",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-533": {
+      "displayName": "Triumph Devolos D6",
+      "series": "Burst",
+      "class": "Balance",
+      "assembledModel": "/assets/models/TriumphDevolosD6_Layer.obj",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-534": {
+      "displayName": "Triumph Dragon D6",
+      "series": "Burst",
+      "class": "Stamina",
+      "assembledModel": "/assets/models/TriumphDragonD6_Layer.obj",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-535": {
+      "displayName": "Typhon T4",
+      "series": "Burst",
+      "class": "Stamina",
+      "assembledModel": "/assets/models/TyphonT4_Layer.obj",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-536": {
+      "displayName": "Typhon T5",
+      "series": "Burst",
+      "class": "Balance",
+      "assembledModel": "/assets/models/TyphonT5_Layer.obj",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-537": {
+      "displayName": "Tyros T6",
+      "series": "Burst",
+      "class": "Defense",
+      "assembledModel": "/assets/models/TyrosT6_Layer.obj",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-538": {
+      "displayName": "Union Achilles A5",
+      "series": "Burst",
+      "class": "Stamina",
+      "assembledModel": "/assets/models/UnionAchillesA5_Layer.obj",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-539": {
+      "displayName": "Union Valtryek",
+      "series": "Burst",
+      "class": "Defense",
+      "assembledModel": "/assets/models/UnionValtryek_Layer.obj",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-540": {
+      "displayName": "V4",
+      "series": "Burst",
+      "class": "Attack",
+      "assembledModel": "/assets/models/V4_Layer.obj",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-541": {
+      "displayName": "Valtryek_V5",
+      "series": "Burst",
+      "class": "Attack",
+      "assembledModel": "/assets/models/Valtryek_V5_Layer.obj",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-542": {
+      "displayName": "Venom Diabolos D5",
+      "series": "Burst",
+      "class": "Balance",
+      "assembledModel": "/assets/models/VenomDiabolosD5_Layer.obj",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-543": {
+      "displayName": "Vex Dragon D6",
+      "series": "Burst",
+      "class": "Attack",
+      "assembledModel": "/assets/models/VexDragonD6_Layer.obj",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-544": {
+      "displayName": "Vex Lucius L6",
+      "series": "Burst",
+      "class": "Stamina",
+      "assembledModel": "/assets/models/VexLuciusL6_Layer.obj",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-545": {
+      "displayName": "Virtual Championship",
+      "series": "Burst",
+      "class": "Stamina",
+      "assembledModel": "/assets/models/VirtualChampionship_Layer.obj",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-546": {
+      "displayName": "Wizard Luinor L5",
+      "series": "Burst",
+      "class": "Balance",
+      "assembledModel": "/assets/models/WizardLuinorL5_Layer.obj",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-547": {
+      "displayName": "Worlborg",
+      "series": "Burst",
+      "class": "Stamina",
+      "assembledModel": "/assets/models/Worlborg_Layer.obj",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-548": {
+      "displayName": "World Evo Helios H6",
+      "series": "Burst",
+      "class": "Stamina",
+      "assembledModel": "/assets/models/WorldEvoHeliosH6_Layer.obj",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-549": {
+      "displayName": "World Spryzen S6",
+      "series": "Burst",
+      "class": "Stamina",
+      "assembledModel": "/assets/models/WorldSpryzenS6_Layer.obj",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-550": {
+      "displayName": "Wraith Driger F",
+      "series": "Burst",
+      "class": "Attack",
+      "assembledModel": "/assets/models/WraithDrigerF_Layer.obj",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-551": {
+      "displayName": "Wyvron W6",
+      "series": "Burst",
+      "class": "Stamina",
+      "assembledModel": "/assets/models/WyvronW6_Layer.obj",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-552": {
+      "displayName": "Xcalius_X4",
+      "series": "Burst",
+      "class": "Attack",
+      "assembledModel": "/assets/models/Xcalius_X4_Layer.obj",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-553": {
+      "displayName": "Zeutron Z4",
+      "series": "Burst",
+      "class": "Balance",
+      "assembledModel": "/assets/models/ZeutronZ4_Layer.obj",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-554": {
+      "displayName": "Zone Balkesh B5",
+      "series": "Burst",
+      "class": "Defense",
+      "assembledModel": "/assets/models/ZoneBalkeshB5_Layer.obj",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-555": {
+      "displayName": "Zone Balkesh",
+      "series": "Burst",
+      "class": "Stamina",
+      "assembledModel": "/assets/models/ZoneBalkesh_Layer.obj",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-556": {
+      "displayName": "Zone Fafnir F5",
+      "series": "Burst",
+      "class": "Defense",
+      "assembledModel": "/assets/models/ZoneFafnirF5_Layer.obj",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-557": {
+      "displayName": "Zone Luinor L5",
+      "series": "Burst",
+      "class": "Attack",
+      "assembledModel": "/assets/models/ZoneLuinorL5_Layer.obj",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-558": {
+      "displayName": "Zwei Lunior",
+      "series": "Burst",
+      "class": "Stamina",
+      "assembledModel": "/assets/models/ZweiLunior_Layer.obj",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-366": {
+      "displayName": "Union Achilles A5",
+      "series": "Burst",
+      "class": "Balance",
+      "assembledModel": "/assets/models/achillesa5uniongeo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_toy_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-367": {
+      "displayName": "Cho-Z Achilles (Onyx)",
+      "series": "Burst",
+      "class": "Attack",
+      "assembledModel": "/assets/models/achillescho-zblackgeo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/ArenaThumb_QuadstrikeCreature.png",
+      "posterExists": true
+    },
+    "bb-368": {
+      "displayName": "Mirage Fafnir F6",
+      "series": "Burst",
+      "class": "Stamina",
+      "assembledModel": "/assets/models/fafnirf6miragegeo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/ArenaThumb_HyperSphere.png",
+      "posterExists": true
+    },
+    "bb-369": {
+      "displayName": "Kolossal Helios H6",
+      "series": "Burst",
+      "class": "Attack",
+      "assembledModel": "/assets/models/heliosh6kolossalgeo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-370": {
+      "displayName": "Super Hyperion H6 (Rev A)",
+      "series": "Burst",
+      "class": "Attack",
+      "assembledModel": "/assets/models/hyperionh6supergeo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_toy_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-371": {
+      "displayName": "Perfect Phoenix P4",
+      "series": "Burst",
+      "class": "Stamina",
+      "assembledModel": "/assets/models/phoenixp4perfectv2geo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/ArenaThumb_QuadstrikeCreature.png",
+      "posterExists": true
+    },
+    "bb-372": {
+      "displayName": "Quad Roktavor R2",
+      "series": "Burst",
+      "class": "Attack",
+      "assembledModel": "/assets/models/roktavorqgeo_v3.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/ArenaThumb_Quadstrike.png",
+      "posterExists": true
+    },
+    "bb-373": {
+      "displayName": "Brave Roktavor R6 (Pro)",
+      "series": "Burst",
+      "class": "Attack",
+      "assembledModel": "/assets/models/roktavorr6bravegeo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/ArenaThumb_Quadstrike.png",
+      "posterExists": true
+    },
+    "bb-374": {
+      "displayName": "Spryzen Requiem S3",
+      "series": "Burst",
+      "class": "Balance",
+      "assembledModel": "/assets/models/spryzenrequiemgeo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_imagery_battle_friend.png",
+      "posterExists": true
+    },
+    "bb-375": {
+      "displayName": "Ultimate Spryzen Requiem",
+      "series": "Burst",
+      "class": "Balance",
+      "assembledModel": "/assets/models/spryzenrequiemultimategeo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_imagery_battle_friend.png",
+      "posterExists": true
+    },
+    "bx-154": {
+      "displayName": "Arena Square (Alt)",
+      "series": "X",
+      "class": "Arena",
+      "assembledModel": "/assets/models/arenasquarealt.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/x-chrome/bg-waiting-01.png",
+      "posterExists": true
+    },
+    "bb-559": {
+      "displayName": "Ace Dragon D5",
+      "series": "Burst",
+      "class": "Attack",
+      "assembledModel": "/assets/models/AceDragonD5GeoV2.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-560": {
+      "displayName": "Ace Dragon D5Premium",
+      "series": "Burst",
+      "class": "Attack",
+      "assembledModel": "/assets/models/AceDragonD5PremiumGeoV2.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-561": {
+      "displayName": "Achilles A4",
+      "series": "Burst",
+      "class": "Attack",
+      "assembledModel": "/assets/models/AchillesA4GeoV2.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-562": {
+      "displayName": "Achilles A4Turbo",
+      "series": "Burst",
+      "class": "Attack",
+      "assembledModel": "/assets/models/AchillesA4TurboGeoV2.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-563": {
+      "displayName": "Achilles A8",
+      "series": "Burst",
+      "class": "Attack",
+      "assembledModel": "/assets/models/AchillesA8Geo_V2.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-564": {
+      "displayName": "Achilles V2",
+      "series": "Burst",
+      "class": "Attack",
+      "assembledModel": "/assets/models/AchillesV2Geo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-565": {
+      "displayName": "Air Knight K4",
+      "series": "Burst",
+      "class": "Attack",
+      "assembledModel": "/assets/models/AirKnightK4Geo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-566": {
+      "displayName": "Air Knight K5",
+      "series": "Burst",
+      "class": "Attack",
+      "assembledModel": "/assets/models/AirKnightK5Geo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-567": {
+      "displayName": "Anubion A4",
+      "series": "Burst",
+      "class": "Balance",
+      "assembledModel": "/assets/models/AnubionA4Geo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-568": {
+      "displayName": "Apocalypse A5Prime",
+      "series": "Burst",
+      "class": "Balance",
+      "assembledModel": "/assets/models/ApocalypseA5PrimeGeo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-569": {
+      "displayName": "Balderov B7",
+      "series": "Burst",
+      "class": "Balance",
+      "assembledModel": "/assets/models/BalderovB7Geo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-570": {
+      "displayName": "Balkesh B5",
+      "series": "Burst",
+      "class": "Stamina",
+      "assembledModel": "/assets/models/BalkeshB5Geo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-571": {
+      "displayName": "Balkesh B7",
+      "series": "Burst",
+      "class": "Stamina",
+      "assembledModel": "/assets/models/BalkeshB7Geo_V2.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-572": {
+      "displayName": "Balor B4",
+      "series": "Burst",
+      "class": "Defense",
+      "assembledModel": "/assets/models/BalorB4Geo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-573": {
+      "displayName": "Bazilisk B8",
+      "series": "Burst",
+      "class": "Balance",
+      "assembledModel": "/assets/models/BaziliskB8Geo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-574": {
+      "displayName": "Belfyre B7",
+      "series": "Burst",
+      "class": "Attack",
+      "assembledModel": "/assets/models/BelfyreB7Geo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-575": {
+      "displayName": "Betromoth B4",
+      "series": "Burst",
+      "class": "Defense",
+      "assembledModel": "/assets/models/BetromothB4Geo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-576": {
+      "displayName": "Betromoth B6",
+      "series": "Burst",
+      "class": "Defense",
+      "assembledModel": "/assets/models/BetromothB6Geo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-577": {
+      "displayName": "Bushin Ashindra A5",
+      "series": "Burst",
+      "class": "Balance",
+      "assembledModel": "/assets/models/BushinAshindraA5Geo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-578": {
+      "displayName": "Cobra C7",
+      "series": "Burst",
+      "class": "Balance",
+      "assembledModel": "/assets/models/CobraC7Geo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-579": {
+      "displayName": "Dead Phoenix P4",
+      "series": "Burst",
+      "class": "Balance",
+      "assembledModel": "/assets/models/DeadPhoenixP4Geo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-580": {
+      "displayName": "Diomedes D4",
+      "series": "Burst",
+      "class": "Balance",
+      "assembledModel": "/assets/models/DiomedesD4Geo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-581": {
+      "displayName": "Draciel SV2",
+      "series": "Burst",
+      "class": "Balance",
+      "assembledModel": "/assets/models/DracielSV2Geo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-582": {
+      "displayName": "Dragon D8",
+      "series": "Burst",
+      "class": "Attack",
+      "assembledModel": "/assets/models/DragonD8Geo_V2.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-583": {
+      "displayName": "Dullahan D4",
+      "series": "Burst",
+      "class": "Balance",
+      "assembledModel": "/assets/models/DullahanD4Geo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-584": {
+      "displayName": "Dullahan D5",
+      "series": "Burst",
+      "class": "Balance",
+      "assembledModel": "/assets/models/DullahanD5Geo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-585": {
+      "displayName": "Engaard E4",
+      "series": "Burst",
+      "class": "Defense",
+      "assembledModel": "/assets/models/EngaardE4Geo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-586": {
+      "displayName": "Engaard E5",
+      "series": "Burst",
+      "class": "Defense",
+      "assembledModel": "/assets/models/EngaardE5Geo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-587": {
+      "displayName": "Evo Belfyre B7",
+      "series": "Burst",
+      "class": "Attack",
+      "assembledModel": "/assets/models/EvoBelfyreB7Geo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-588": {
+      "displayName": "Evo Belfyre B8",
+      "series": "Burst",
+      "class": "Attack",
+      "assembledModel": "/assets/models/EvoBelfyreB8Geo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-589": {
+      "displayName": "Evo Valtryek V8",
+      "series": "Burst",
+      "class": "Attack",
+      "assembledModel": "/assets/models/EvoValtryekV8Geo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-590": {
+      "displayName": "Evo XBelfyre B8",
+      "series": "Burst",
+      "class": "Attack",
+      "assembledModel": "/assets/models/EvoXBelfyreB8Geo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-591": {
+      "displayName": "Fafnir F4",
+      "series": "Burst",
+      "class": "Stamina",
+      "assembledModel": "/assets/models/FafnirF4Geo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-592": {
+      "displayName": "Fafnir F7",
+      "series": "Burst",
+      "class": "Stamina",
+      "assembledModel": "/assets/models/FafnirF7Geo_V2.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-593": {
+      "displayName": "Fengriff2",
+      "series": "Burst",
+      "class": "Balance",
+      "assembledModel": "/assets/models/Fengriff2Geo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-594": {
+      "displayName": "Gaianon G6",
+      "series": "Burst",
+      "class": "Stamina",
+      "assembledModel": "/assets/models/GaianonG6Geo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-595": {
+      "displayName": "Gaianon2",
+      "series": "Burst",
+      "class": "Stamina",
+      "assembledModel": "/assets/models/Gaianon2Geo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-596": {
+      "displayName": "Gargoyle G4",
+      "series": "Burst",
+      "class": "Defense",
+      "assembledModel": "/assets/models/GargoyleG4Geo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-597": {
+      "displayName": "Gargoyle G5",
+      "series": "Burst",
+      "class": "Defense",
+      "assembledModel": "/assets/models/GargoyleG5Geo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-598": {
+      "displayName": "Gianon G4",
+      "series": "Burst",
+      "class": "Stamina",
+      "assembledModel": "/assets/models/GianonG4Geo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-599": {
+      "displayName": "Hades H4",
+      "series": "Burst",
+      "class": "Defense",
+      "assembledModel": "/assets/models/HadesH4Geo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-600": {
+      "displayName": "Hercules H4",
+      "series": "Burst",
+      "class": "Balance",
+      "assembledModel": "/assets/models/HerculesH4Geo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-601": {
+      "displayName": "Hollow Doomscizor D6",
+      "series": "Burst",
+      "class": "Attack",
+      "assembledModel": "/assets/models/HollowDoomscizorD6Geo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-602": {
+      "displayName": "Hyrus H4",
+      "series": "Burst",
+      "class": "Balance",
+      "assembledModel": "/assets/models/HyrusH4Geo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-603": {
+      "displayName": "Jinnius J3",
+      "series": "Burst",
+      "class": "Balance",
+      "assembledModel": "/assets/models/JinniusJ3Geo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-604": {
+      "displayName": "Jormunter J4",
+      "series": "Burst",
+      "class": "Balance",
+      "assembledModel": "/assets/models/JormunterJ4Geo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-605": {
+      "displayName": "Jormuntor J6",
+      "series": "Burst",
+      "class": "Balance",
+      "assembledModel": "/assets/models/JormuntorJ6Geo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-606": {
+      "displayName": "Jormuntor2",
+      "series": "Burst",
+      "class": "Balance",
+      "assembledModel": "/assets/models/Jormuntor2Geo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-607": {
+      "displayName": "Knight K8",
+      "series": "Burst",
+      "class": "Attack",
+      "assembledModel": "/assets/models/KnightK8Geo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-608": {
+      "displayName": "Left Astro A4",
+      "series": "Burst",
+      "class": "Balance",
+      "assembledModel": "/assets/models/LeftAstroA4Geo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-609": {
+      "displayName": "Left Astro A5",
+      "series": "Burst",
+      "class": "Balance",
+      "assembledModel": "/assets/models/LeftAstroA5Geo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-610": {
+      "displayName": "Leopard L4",
+      "series": "Burst",
+      "class": "Balance",
+      "assembledModel": "/assets/models/LeopardL4Geo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-611": {
+      "displayName": "Linwyrm L7",
+      "series": "Burst",
+      "class": "Balance",
+      "assembledModel": "/assets/models/LinwyrmL7Geo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-612": {
+      "displayName": "Luinor2",
+      "series": "Burst",
+      "class": "Balance",
+      "assembledModel": "/assets/models/Luinor2Geo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-613": {
+      "displayName": "Morrigna M4",
+      "series": "Burst",
+      "class": "Balance",
+      "assembledModel": "/assets/models/MorrignaM4Geo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-614": {
+      "displayName": "Morrigna M5",
+      "series": "Burst",
+      "class": "Balance",
+      "assembledModel": "/assets/models/MorrignaM5Geo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-615": {
+      "displayName": "Muramasa M7",
+      "series": "Burst",
+      "class": "Balance",
+      "assembledModel": "/assets/models/MuramasaM7Geo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-616": {
+      "displayName": "Nemesis N7",
+      "series": "Burst",
+      "class": "Balance",
+      "assembledModel": "/assets/models/NemesisN7Geo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-617": {
+      "displayName": "Nepstrius N4",
+      "series": "Burst",
+      "class": "Balance",
+      "assembledModel": "/assets/models/NepstriusN4Geo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-618": {
+      "displayName": "Nyddhog N8",
+      "series": "Burst",
+      "class": "Balance",
+      "assembledModel": "/assets/models/NyddhogN8Geo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-619": {
+      "displayName": "Odax O6",
+      "series": "Burst",
+      "class": "Balance",
+      "assembledModel": "/assets/models/OdaxO6Geo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-620": {
+      "displayName": "Ogre O4",
+      "series": "Burst",
+      "class": "Balance",
+      "assembledModel": "/assets/models/OgreO4Geo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-621": {
+      "displayName": "Ogre O5",
+      "series": "Burst",
+      "class": "Balance",
+      "assembledModel": "/assets/models/OgreO5Geo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-622": {
+      "displayName": "Pandemonium P8",
+      "series": "Burst",
+      "class": "Balance",
+      "assembledModel": "/assets/models/PandemoniumP8Geo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-623": {
+      "displayName": "Pandora Endless P8",
+      "series": "Burst",
+      "class": "Balance",
+      "assembledModel": "/assets/models/PandoraEndlessP8Geo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-624": {
+      "displayName": "Pandora Epic P8",
+      "series": "Burst",
+      "class": "Balance",
+      "assembledModel": "/assets/models/PandoraEpicP8Geo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-625": {
+      "displayName": "Pandora Evasive P8",
+      "series": "Burst",
+      "class": "Balance",
+      "assembledModel": "/assets/models/PandoraEvasiveP8Geo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-626": {
+      "displayName": "Pandora Everlasting P8",
+      "series": "Burst",
+      "class": "Balance",
+      "assembledModel": "/assets/models/PandoraEverlastingP8Geo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-627": {
+      "displayName": "Perseus P7",
+      "series": "Burst",
+      "class": "Balance",
+      "assembledModel": "/assets/models/PerseusP7Geo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-628": {
+      "displayName": "Phoenix P4",
+      "series": "Burst",
+      "class": "Balance",
+      "assembledModel": "/assets/models/PhoenixP4Geo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-629": {
+      "displayName": "Poseidon P8",
+      "series": "Burst",
+      "class": "Balance",
+      "assembledModel": "/assets/models/PoseidonP8Geo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-630": {
+      "displayName": "Quetziko2",
+      "series": "Burst",
+      "class": "Balance",
+      "assembledModel": "/assets/models/Quetziko2Geo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-631": {
+      "displayName": "Regnar R7",
+      "series": "Burst",
+      "class": "Balance",
+      "assembledModel": "/assets/models/RegnarR7Geo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-632": {
+      "displayName": "Regulus R3",
+      "series": "Burst",
+      "class": "Balance",
+      "assembledModel": "/assets/models/RegulusR3Geo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-633": {
+      "displayName": "Regulus R6",
+      "series": "Burst",
+      "class": "Balance",
+      "assembledModel": "/assets/models/RegulusR6Geo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-634": {
+      "displayName": "Right Artemis A4",
+      "series": "Burst",
+      "class": "Balance",
+      "assembledModel": "/assets/models/RightArtemisA4Geo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-635": {
+      "displayName": "Right Artemis A5",
+      "series": "Burst",
+      "class": "Balance",
+      "assembledModel": "/assets/models/RightArtemisA5Geo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-636": {
+      "displayName": "Rising Ragnaruk2",
+      "series": "Burst",
+      "class": "Balance",
+      "assembledModel": "/assets/models/RisingRagnaruk2Geo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-637": {
+      "displayName": "Rocktavor R4",
+      "series": "Burst",
+      "class": "Balance",
+      "assembledModel": "/assets/models/RocktavorR4Geo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-638": {
+      "displayName": "Rudr R4",
+      "series": "Burst",
+      "class": "Balance",
+      "assembledModel": "/assets/models/RudrR4Geo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-639": {
+      "displayName": "Rudr R5",
+      "series": "Burst",
+      "class": "Balance",
+      "assembledModel": "/assets/models/RudrR5Geo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-640": {
+      "displayName": "Salamander S4",
+      "series": "Burst",
+      "class": "Balance",
+      "assembledModel": "/assets/models/SalamanderS4Geo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-641": {
+      "displayName": "Sphinx S4",
+      "series": "Burst",
+      "class": "Balance",
+      "assembledModel": "/assets/models/SphinxS4Geo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-642": {
+      "displayName": "Sphinx S5",
+      "series": "Burst",
+      "class": "Balance",
+      "assembledModel": "/assets/models/SphinxS5Geo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-643": {
+      "displayName": "Spryzen S7",
+      "series": "Burst",
+      "class": "Balance",
+      "assembledModel": "/assets/models/SpryzenS7Geo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-644": {
+      "displayName": "Stone XQuetziko Q4",
+      "series": "Burst",
+      "class": "Balance",
+      "assembledModel": "/assets/models/StoneXQuetzikoQ4Geo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-645": {
+      "displayName": "Surtr S4",
+      "series": "Burst",
+      "class": "Balance",
+      "assembledModel": "/assets/models/SurtrS4Geo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-646": {
+      "displayName": "Tornado Yegdrion Y4",
+      "series": "Burst",
+      "class": "Balance",
+      "assembledModel": "/assets/models/TornadoYegdrionY4Geo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-647": {
+      "displayName": "Treptune T4",
+      "series": "Burst",
+      "class": "Balance",
+      "assembledModel": "/assets/models/TreptuneT4Geo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-648": {
+      "displayName": "Typhon T4",
+      "series": "Burst",
+      "class": "Balance",
+      "assembledModel": "/assets/models/TyphonT4Geo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-649": {
+      "displayName": "Typhon T5",
+      "series": "Burst",
+      "class": "Balance",
+      "assembledModel": "/assets/models/TyphonT5Geo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-650": {
+      "displayName": "Tyros T6",
+      "series": "Burst",
+      "class": "Balance",
+      "assembledModel": "/assets/models/TyrosT6Geo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-651": {
+      "displayName": "Valtryek V5",
+      "series": "Burst",
+      "class": "Attack",
+      "assembledModel": "/assets/models/ValtryekV5Geo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-652": {
+      "displayName": "Valtryek V7",
+      "series": "Burst",
+      "class": "Attack",
+      "assembledModel": "/assets/models/ValtryekV7Geo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-653": {
+      "displayName": "Vanguard V2",
+      "series": "Burst",
+      "class": "Defense",
+      "assembledModel": "/assets/models/VanguardV2Geo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-654": {
+      "displayName": "Venom Devolos D5",
+      "series": "Burst",
+      "class": "Balance",
+      "assembledModel": "/assets/models/VenomDevolosD5Geo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-655": {
+      "displayName": "Vex Lucius L6",
+      "series": "Burst",
+      "class": "Balance",
+      "assembledModel": "/assets/models/VexLuciusL6Geo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-656": {
+      "displayName": "Viper Hydra H5Premium",
+      "series": "Burst",
+      "class": "Balance",
+      "assembledModel": "/assets/models/ViperHydraH5PremiumGeo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-657": {
+      "displayName": "Viper Hydrax H5",
+      "series": "Burst",
+      "class": "Balance",
+      "assembledModel": "/assets/models/ViperHydraxH5Geo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-658": {
+      "displayName": "Wyvern2",
+      "series": "Burst",
+      "class": "Stamina",
+      "assembledModel": "/assets/models/Wyvern2Geo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-659": {
+      "displayName": "Xcalius X4",
+      "series": "Burst",
+      "class": "Balance",
+      "assembledModel": "/assets/models/XcaliusX4Geo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-660": {
+      "displayName": "Xcalius X8",
+      "series": "Burst",
+      "class": "Balance",
+      "assembledModel": "/assets/models/XcaliusX8Geo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-661": {
+      "displayName": "Xcalius2",
+      "series": "Burst",
+      "class": "Balance",
+      "assembledModel": "/assets/models/Xcalius2Geo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-662": {
+      "displayName": "Yegdrion2",
+      "series": "Burst",
+      "class": "Balance",
+      "assembledModel": "/assets/models/Yegdrion2Geo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-663": {
+      "displayName": "Zeutron2",
+      "series": "Burst",
+      "class": "Balance",
+      "assembledModel": "/assets/models/Zeutron2Geo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    },
+    "bb-664": {
+      "displayName": "Zuetron Z4",
+      "series": "Burst",
+      "class": "Balance",
+      "assembledModel": "/assets/models/ZuetronZ4Geo.fbx",
+      "assembledModelExists": true,
+      "poster": "/assets/game/burst-chrome/battle_menu_quick_battle_imagery.png",
+      "posterExists": true
+    }
+  }
+}

@@ -1,0 +1,1463 @@
+{
+ "badges": [
+  {
+   "file": "BX01_DranSword3-60f.png",
+   "beast": "Dran Sword"
+  },
+  {
+   "file": "BX023_PhoenixWing_9-60gf.png",
+   "beast": "Phoenix Wing"
+  },
+  {
+   "file": "BX03_WizardArrow4-80b.png",
+   "beast": "Wizard Arrow"
+  },
+  {
+   "file": "BX04_KnightShield3-80n.png",
+   "beast": "Knight Shield"
+  },
+  {
+   "file": "BX08_ScytheIncendio3-80B.png",
+   "beast": "Scythe Incendio"
+  },
+  {
+   "file": "BX13_KnightLance_4-80hn.png",
+   "beast": "Knight Lance"
+  },
+  {
+   "file": "BX14_SharkEdge_3-60lf.png",
+   "beast": "Shark Edge"
+  },
+  {
+   "file": "BX15_LeonCrow_5-60p.png",
+   "beast": "Leon Crow"
+  },
+  {
+   "file": "BX16-03_ViperTail_3-80hn.png",
+   "beast": "Viper Tail"
+  },
+  {
+   "file": "BX19_RinoHorn_3-80S.png",
+   "beast": "Rino Horn"
+  },
+  {
+   "file": "BX20_DranDagger_4-60R.png",
+   "beast": "Dran Dagger"
+  },
+  {
+   "file": "BX21_HellsChain_5-60ht.png",
+   "beast": "Hells Chain"
+  },
+  {
+   "file": "BX24_WyvernGale_3-60t.png",
+   "beast": "Wyvern Gale"
+  },
+  {
+   "file": "BX26_UnicornSting_5-60gp.png",
+   "beast": "Unicorn Sting"
+  },
+  {
+   "file": "BX27_SphinxCowl_9-80gn.png",
+   "beast": "Sphinx Cowl"
+  },
+  {
+   "file": "BX31_Drandagger_4-70p.png",
+   "beast": "Drandagger"
+  },
+  {
+   "file": "BX31_TiranoBeat_4-70q.png",
+   "beast": "Tirano Beat"
+  },
+  {
+   "file": "BX33_WeissTiger_3-60u.png",
+   "beast": "Weiss Tiger"
+  },
+  {
+   "file": "BX34_CobaltDragoon2-60c.png",
+   "beast": "Cobalt Dragoon"
+  },
+  {
+   "file": "BX35_BlackShell4-60d.png",
+   "beast": "Black Shell"
+  },
+  {
+   "file": "BX35_PhenixWing5-80h.png",
+   "beast": "Phenix Wing"
+  },
+  {
+   "file": "BX35_WizardRod1-60r.png",
+   "beast": "Wizard Rod"
+  },
+  {
+   "file": "BX36_WhaleWave_5-80e.png",
+   "beast": "Whale Wave"
+  },
+  {
+   "file": "BX37_BearScratch_5-60F.png",
+   "beast": "Bear Scratch"
+  },
+  {
+   "file": "BX38_CrimsonGaruda_4-70tp.png",
+   "beast": "Crimson Garuda"
+  },
+  {
+   "file": "BX39_ShelterDrake5-70o.png",
+   "beast": "Shelter Drake"
+  },
+  {
+   "file": "BX45_SamuraiCalibur_6-70m.png",
+   "beast": "Samurai Calibur"
+  },
+  {
+   "file": "BX49_DranStrike_4-50ff.png",
+   "beast": "Dran Strike"
+  },
+  {
+   "file": "BX50_HeavensRing_0-80ds.png",
+   "beast": "Heavens Ring"
+  },
+  {
+   "file": "BXC07_CrocCrunch2-60q.png",
+   "beast": "Croc Crunch"
+  },
+  {
+   "file": "BXG01_DranzerSpiral_3-80t_green.png",
+   "beast": "Dranzer Spiral"
+  },
+  {
+   "file": "BXG04_DrigerSlash_4-80p.png",
+   "beast": "Driger Slash"
+  },
+  {
+   "file": "BXG11_DracielShield_7-60d.png",
+   "beast": "Draciel Shield"
+  },
+  {
+   "file": "BXG12_DragoonStorm4-60RA.png",
+   "beast": "Dragoon Storm"
+  },
+  {
+   "file": "BXG12_StormPegasis3-70RA.png",
+   "beast": "Storm Pegasis"
+  },
+  {
+   "file": "BXG12_VictoryValkyrie2-60RA.png",
+   "beast": "Victory Valkyrie"
+  },
+  {
+   "file": "BXORG01_SamuraiSteel_4-80_t.png",
+   "beast": "Samurai Steel"
+  },
+  {
+   "file": "BXORG02_PteraStroke_3-80_b.png",
+   "beast": "Ptera Stroke"
+  },
+  {
+   "file": "BXORG03_TyrannoRoar_9-60_gf.png",
+   "beast": "Tyranno Roar"
+  },
+  {
+   "file": "BXORG05_ShinobiKnife_4-80_hn.png",
+   "beast": "Shinobi Knife"
+  },
+  {
+   "file": "BXORG07_KongYell_3-60_gb.png",
+   "beast": "Kong Yell"
+  },
+  {
+   "file": "BXORG08_MammoTusk_3-60_t.png",
+   "beast": "Mammo Tusk"
+  },
+  {
+   "file": "BXORG15_GoatTackle_2-70n.png",
+   "beast": "Goat Tackle"
+  },
+  {
+   "file": "CX01_DranBraveS_6-60v.png",
+   "beast": "Dran Brave S"
+  },
+  {
+   "file": "CX02_WizardArcR_4-55lo.png",
+   "beast": "Wizard Arc R"
+  },
+  {
+   "file": "CX03_PerseusDarkB_6-80w.png",
+   "beast": "Perseus Dark B"
+  },
+  {
+   "file": "CX05_HellsReaperT_4-70k.png",
+   "beast": "Hells Reaper T"
+  },
+  {
+   "file": "CX05_PhoenixRudder_4-70lf.png",
+   "beast": "Phoenix Rudder"
+  },
+  {
+   "file": "CX05_RinoReaperC_4-55d.png",
+   "beast": "Rino Reaper C"
+  },
+  {
+   "file": "CX06_FoxBrushJ_9-70gr.png",
+   "beast": "Fox Brush J"
+  },
+  {
+   "file": "CX07_PegasusBlastATr_Logo.png",
+   "beast": "Pegasus Blast ATr"
+  },
+  {
+   "file": "CX08_CerberusFlameW_5-80wb_01.png",
+   "beast": "Cerberus Flame W"
+  },
+  {
+   "file": "CX11_EmperorMightH_op.png",
+   "beast": "Emperor Might H"
+  },
+  {
+   "file": "CX11_GolemRock_M-85hn.png",
+   "beast": "Golem Rock"
+  },
+  {
+   "file": "CX11_SharkGill_5-60fb.png",
+   "beast": "Shark Gill"
+  },
+  {
+   "file": "CX13_BahamutBlitzBK_1-50i.png",
+   "beast": "Bahamut Blitz BK"
+  },
+  {
+   "file": "CX14_KnightFortressGV_8-70un.png",
+   "beast": "Knight Fortress GV"
+  },
+  {
+   "file": "ORG09_RidgeToriceratops_9-80gn.png",
+   "beast": "Ridge Toriceratops"
+  },
+  {
+   "file": "ORG12_HornetFortR_7-60t.png",
+   "beast": "Hornet Fort R"
+  },
+  {
+   "file": "ORG13_WriggleKrakenS_3-85o.png",
+   "beast": "Wriggle Kraken S"
+  },
+  {
+   "file": "ORG14_AntlerStagB_2-60hn.png",
+   "beast": "Antler Stag B"
+  },
+  {
+   "file": "ORG16_StunMedusa_9-60gb.png",
+   "beast": "Stun Medusa"
+  },
+  {
+   "file": "ORG17_HackViking_4-55o.png",
+   "beast": "Hack Viking"
+  },
+  {
+   "file": "ORG19_ShinobiShuriken_lf.png",
+   "beast": "Shinobi Shuriken"
+  },
+  {
+   "file": "ORG20_BisonValor_fb.png",
+   "beast": "Bison Valor"
+  },
+  {
+   "file": "ORG21_EnlilHurricaneIS_7-55t_1.png",
+   "beast": "Enlil Hurricane IS"
+  },
+  {
+   "file": "ORG22_BatGust_3-85gp.png",
+   "beast": "Bat Gust"
+  },
+  {
+   "file": "ORG23_CrabClamp_9-65s.png",
+   "beast": "Crab Clamp"
+  },
+  {
+   "file": "ORG27_AigisRampart_gb.png",
+   "beast": "Aigis Rampart"
+  },
+  {
+   "file": "ORG30_HorusShatter_9-65gb.png",
+   "beast": "Horus Shatter"
+  },
+  {
+   "file": "RDRC02_BusterDran5-70DB_Logo.png",
+   "beast": "Buster Dran"
+  },
+  {
+   "file": "RDRC05_Obsidian_shell_3-85s.png",
+   "beast": "Obsidian"
+  },
+  {
+   "file": "RDRC06_CircleGhost_4-60lr.png",
+   "beast": "Circle Ghost"
+  },
+  {
+   "file": "RDRC07_LeonFangT_4-60u.png",
+   "beast": "Leon Fang T"
+  },
+  {
+   "file": "RDRC08_TailViper_3-85lo.png",
+   "beast": "Tail Viper"
+  },
+  {
+   "file": "RDRC09_CrestLeon_4-55a.png",
+   "beast": "Crest Leon"
+  },
+  {
+   "file": "spirit_thumb_aceDragon.png",
+   "beast": "ace Dragon"
+  },
+  {
+   "file": "spirit_thumb_achiles.png",
+   "beast": "achiles"
+  },
+  {
+   "file": "spirit_thumb_aether.png",
+   "beast": "aether"
+  },
+  {
+   "file": "spirit_thumb_airKnight.png",
+   "beast": "air Knight"
+  },
+  {
+   "file": "spirit_thumb_alterCognite.png",
+   "beast": "alter Cognite"
+  },
+  {
+   "file": "spirit_thumb_amaterios.png",
+   "beast": "amaterios"
+  },
+  {
+   "file": "spirit_thumb_apocalypse.png",
+   "beast": "apocalypse"
+  },
+  {
+   "file": "spirit_thumb_archerHercules.png",
+   "beast": "archer Hercules"
+  },
+  {
+   "file": "spirit_thumb_atlasAnubion.png",
+   "beast": "atlas Anubion"
+  },
+  {
+   "file": "spirit_thumb_bakul.png",
+   "beast": "bakul"
+  },
+  {
+   "file": "spirit_thumb_balderov.png",
+   "beast": "balderov"
+  },
+  {
+   "file": "spirit_thumb_balor.png",
+   "beast": "balor"
+  },
+  {
+   "file": "spirit_thumb_bazilisk.png",
+   "beast": "bazilisk"
+  },
+  {
+   "file": "spirit_thumb_belfyre.png",
+   "beast": "belfyre"
+  },
+  {
+   "file": "spirit_thumb_betromoth.png",
+   "beast": "betromoth"
+  },
+  {
+   "file": "spirit_thumb_blastJinnius.png",
+   "beast": "blast Jinnius"
+  },
+  {
+   "file": "spirit_thumb_bumblebee.png",
+   "beast": "bumblebee"
+  },
+  {
+   "file": "spirit_thumb_bushinAshindra.png",
+   "beast": "bushin Ashindra"
+  },
+  {
+   "file": "spirit_thumb_caynox.png",
+   "beast": "caynox"
+  },
+  {
+   "file": "spirit_thumb_cobra.png",
+   "beast": "cobra"
+  },
+  {
+   "file": "spirit_thumb_cyclops.png",
+   "beast": "cyclops"
+  },
+  {
+   "file": "spirit_thumb_devolos.png",
+   "beast": "devolos"
+  },
+  {
+   "file": "spirit_thumb_diomedes.png",
+   "beast": "diomedes"
+  },
+  {
+   "file": "spirit_thumb_doomscizor.png",
+   "beast": "doomscizor"
+  },
+  {
+   "file": "spirit_thumb_draciel.png",
+   "beast": "draciel"
+  },
+  {
+   "file": "spirit_thumb_dragoon.png",
+   "beast": "dragoon"
+  },
+  {
+   "file": "spirit_thumb_drainFafnir.png",
+   "beast": "drain Fafnir"
+  },
+  {
+   "file": "spirit_thumb_dranzer.png",
+   "beast": "dranzer"
+  },
+  {
+   "file": "spirit_thumb_driger.png",
+   "beast": "driger"
+  },
+  {
+   "file": "spirit_thumb_dullahan.png",
+   "beast": "dullahan"
+  },
+  {
+   "file": "spirit_thumb_engaard.png",
+   "beast": "engaard"
+  },
+  {
+   "file": "spirit_thumb_fengriff.png",
+   "beast": "fengriff"
+  },
+  {
+   "file": "spirit_thumb_forneus.png",
+   "beast": "forneus"
+  },
+  {
+   "file": "spirit_thumb_gargoyle.png",
+   "beast": "gargoyle"
+  },
+  {
+   "file": "spirit_thumb_genesis.png",
+   "beast": "genesis"
+  },
+  {
+   "file": "spirit_thumb_gigaGaianon.png",
+   "beast": "giga Gaianon"
+  },
+  {
+   "file": "spirit_thumb_gloryRegnar.png",
+   "beast": "glory Regnar"
+  },
+  {
+   "file": "spirit_thumb_hades.png",
+   "beast": "hades"
+  },
+  {
+   "file": "spirit_thumb_heatSalamander.png",
+   "beast": "heat Salamander"
+  },
+  {
+   "file": "spirit_thumb_helios.png",
+   "beast": "helios"
+  },
+  {
+   "file": "spirit_thumb_horusood.png",
+   "beast": "horusood"
+  },
+  {
+   "file": "spirit_thumb_hyperion.png",
+   "beast": "hyperion"
+  },
+  {
+   "file": "spirit_thumb_hyrus.png",
+   "beast": "hyrus"
+  },
+  {
+   "file": "spirit_thumb_ifritor.png",
+   "beast": "ifritor"
+  },
+  {
+   "file": "spirit_thumb_ifritor2.png",
+   "beast": "ifritor2"
+  },
+  {
+   "file": "spirit_thumb_istros.png",
+   "beast": "istros"
+  },
+  {
+   "file": "spirit_thumb_joker.png",
+   "beast": "joker"
+  },
+  {
+   "file": "spirit_thumb_jormuntor.png",
+   "beast": "jormuntor"
+  },
+  {
+   "file": "spirit_thumb_KALZAR.png",
+   "beast": "KALZAR"
+  },
+  {
+   "file": "spirit_thumb_kerbeus.png",
+   "beast": "kerbeus"
+  },
+  {
+   "file": "spirit_thumb_kineticSatomb.png",
+   "beast": "kinetic Satomb"
+  },
+  {
+   "file": "spirit_thumb_kraken.png",
+   "beast": "kraken"
+  },
+  {
+   "file": "spirit_thumb_legendSpryzen.png",
+   "beast": "legend Spryzen"
+  },
+  {
+   "file": "spirit_thumb_leviathan.png",
+   "beast": "leviathan"
+  },
+  {
+   "file": "spirit_thumb_linwyrm.png",
+   "beast": "linwyrm"
+  },
+  {
+   "file": "spirit_thumb_lostLuinor.png",
+   "beast": "lost Luinor"
+  },
+  {
+   "file": "spirit_thumb_maximumGaruda.png",
+   "beast": "maximum Garuda"
+  },
+  {
+   "file": "spirit_thumb_megatron.png",
+   "beast": "megatron"
+  },
+  {
+   "file": "spirit_thumb_minoboros.png",
+   "beast": "minoboros"
+  },
+  {
+   "file": "spirit_thumb_morigna.png",
+   "beast": "morigna"
+  },
+  {
+   "file": "spirit_thumb_muramasa.png",
+   "beast": "muramasa"
+  },
+  {
+   "file": "spirit_thumb_nepstrius.png",
+   "beast": "nepstrius"
+  },
+  {
+   "file": "spirit_thumb_noctemis.png",
+   "beast": "noctemis"
+  },
+  {
+   "file": "spirit_thumb_nyddhog.png",
+   "beast": "nyddhog"
+  },
+  {
+   "file": "spirit_thumb_odax.png",
+   "beast": "odax"
+  },
+  {
+   "file": "spirit_thumb_ogre.png",
+   "beast": "ogre"
+  },
+  {
+   "file": "spirit_thumb_optimusprime.png",
+   "beast": "optimusprime"
+  },
+  {
+   "file": "spirit_thumb_orichalcum.png",
+   "beast": "orichalcum"
+  },
+  {
+   "file": "spirit_thumb_orpheus.png",
+   "beast": "orpheus"
+  },
+  {
+   "file": "spirit_thumb_pandora.png",
+   "beast": "pandora"
+  },
+  {
+   "file": "spirit_thumb_pandoraFlame.png",
+   "beast": "pandora Flame"
+  },
+  {
+   "file": "spirit_thumb_pandoraTidal.png",
+   "beast": "pandora Tidal"
+  },
+  {
+   "file": "spirit_thumb_pandoraTwister.png",
+   "beast": "pandora Twister"
+  },
+  {
+   "file": "spirit_thumb_pegasus.png",
+   "beast": "pegasus"
+  },
+  {
+   "file": "spirit_thumb_perseus.png",
+   "beast": "perseus"
+  },
+  {
+   "file": "spirit_thumb_phantazus.png",
+   "beast": "phantazus"
+  },
+  {
+   "file": "spirit_thumb_poseidon.png",
+   "beast": "poseidon"
+  },
+  {
+   "file": "spirit_thumb_quetziko.png",
+   "beast": "quetziko"
+  },
+  {
+   "file": "spirit_thumb_ragnaruck.png",
+   "beast": "ragnaruck"
+  },
+  {
+   "file": "spirit_thumb_regalus.png",
+   "beast": "regalus"
+  },
+  {
+   "file": "spirit_thumb_revivePhoenix.png",
+   "beast": "revive Phoenix"
+  },
+  {
+   "file": "spirit_thumb_rudr.png",
+   "beast": "rudr"
+  },
+  {
+   "file": "spirit_thumb_ruinPandemonium.png",
+   "beast": "ruin Pandemonium"
+  },
+  {
+   "file": "spirit_thumb_sphinx.png",
+   "beast": "sphinx"
+  },
+  {
+   "file": "spirit_thumb_spryzen.png",
+   "beast": "spryzen"
+  },
+  {
+   "file": "spirit_thumb_spryzenRequiem.png",
+   "beast": "spryzen Requiem"
+  },
+  {
+   "file": "spirit_thumb_surtr.png",
+   "beast": "surtr"
+  },
+  {
+   "file": "spirit_thumb_sX.png",
+   "beast": "s X"
+  },
+  {
+   "file": "spirit_thumb_T1.png",
+   "beast": "T1"
+  },
+  {
+   "file": "spirit_thumb_typhon.png",
+   "beast": "typhon"
+  },
+  {
+   "file": "spirit_thumb_tyros.png",
+   "beast": "tyros"
+  },
+  {
+   "file": "spirit_thumb_unicrest.png",
+   "beast": "unicrest"
+  },
+  {
+   "file": "spirit_thumb_uranus.png",
+   "beast": "uranus"
+  },
+  {
+   "file": "spirit_thumb_valtryek.png",
+   "beast": "valtryek"
+  },
+  {
+   "file": "spirit_thumb_Vex Lucius.png",
+   "beast": "Vex Lucius"
+  },
+  {
+   "file": "spirit_thumb_viceLeopard.png",
+   "beast": "vice Leopard"
+  },
+  {
+   "file": "spirit_thumb_viperHydrax.png",
+   "beast": "viper Hydrax"
+  },
+  {
+   "file": "spirit_thumb_wolborg.png",
+   "beast": "wolborg"
+  },
+  {
+   "file": "spirit_thumb_wyvron.png",
+   "beast": "wyvron"
+  },
+  {
+   "file": "spirit_thumb_zeutron.png",
+   "beast": "zeutron"
+  },
+  {
+   "file": "UX01_DranBuster_1-60a.png",
+   "beast": "Dran Buster"
+  },
+  {
+   "file": "UX02_HellsHammer_3-70h.png",
+   "beast": "Hells Hammer"
+  },
+  {
+   "file": "UX05_ShinobiShadow_1-80mn.png",
+   "beast": "Shinobi Shadow"
+  },
+  {
+   "file": "UX06_LeonCrest7-60gn.png",
+   "beast": "Leon Crest"
+  },
+  {
+   "file": "UX08_SilverWolf_3-80fb.png",
+   "beast": "Silver Wolf"
+  },
+  {
+   "file": "UX09_SamuraiSaber_2-70l.png",
+   "beast": "Samurai Saber"
+  },
+  {
+   "file": "UX10_KnightMail_3-85bs.png",
+   "beast": "Knight Mail"
+  },
+  {
+   "file": "UX11_ImpactDrake_9-60lr.png",
+   "beast": "Impact Drake"
+  },
+  {
+   "file": "UX12_PhoenixFether_2-60n.png",
+   "beast": "Phoenix Fether"
+  },
+  {
+   "file": "UX14_ScorpioSpear_0-70z.png",
+   "beast": "Scorpio Spear"
+  },
+  {
+   "file": "UX15_SharkScale_4-50uf.png",
+   "beast": "Shark Scale"
+  },
+  {
+   "file": "UX17_MeteorDragoon_3-70j.png",
+   "beast": "Meteor Dragoon"
+  },
+  {
+   "file": "UX18_MummyCurse_7-55w.png",
+   "beast": "Mummy Curse"
+  },
+  {
+   "file": "UX19_BulletGriffon_h.png",
+   "beast": "Bullet Griffon"
+  },
+  {
+   "file": "UX20_GloryValkyrie_lf.png",
+   "beast": "Glory Valkyrie"
+  },
+  {
+   "file": "UXORG12_WyvernHover_3-85n.png",
+   "beast": "Wyvern Hover"
+  }
+ ],
+ "floors": [
+  "Environment_Blue.png",
+  "Environment_Chaos.png",
+  "Environment_Digital.png",
+  "Environment_Orange.png",
+  "Environment_Spirit.png",
+  "Environment_Strike.png",
+  "Floor_Chaos.png",
+  "Floor_ChaosAlt2.png",
+  "Floor_Cosmic.png",
+  "Floor_CrossCollision.png",
+  "Floor_GalaxyOrbit.png",
+  "Floor_McDonalds.png",
+  "Floor_ProSeries.png",
+  "Floor_QuadDrive.png",
+  "Floor_Spirit.png",
+  "Floor_Strike.png",
+  "Floor_SwitchStrikeTower_D.png",
+  "Floor_Waterfall.png"
+ ],
+ "byBeast": {
+  "x": {
+   "dran": "BX01_DranSword3-60f.png",
+   "sword": "BX01_DranSword3-60f.png",
+   "phoenix": "BX023_PhoenixWing_9-60gf.png",
+   "wing": "BX023_PhoenixWing_9-60gf.png",
+   "wizard": "BX03_WizardArrow4-80b.png",
+   "arrow": "BX03_WizardArrow4-80b.png",
+   "knight": "BX04_KnightShield3-80n.png",
+   "shield": "BX04_KnightShield3-80n.png",
+   "scythe": "BX08_ScytheIncendio3-80B.png",
+   "incendio": "BX08_ScytheIncendio3-80B.png",
+   "lance": "BX13_KnightLance_4-80hn.png",
+   "shark": "BX14_SharkEdge_3-60lf.png",
+   "edge": "BX14_SharkEdge_3-60lf.png",
+   "leon": "BX15_LeonCrow_5-60p.png",
+   "crow": "BX15_LeonCrow_5-60p.png",
+   "viper": "BX16-03_ViperTail_3-80hn.png",
+   "tail": "BX16-03_ViperTail_3-80hn.png",
+   "rino": "BX19_RinoHorn_3-80S.png",
+   "horn": "BX19_RinoHorn_3-80S.png",
+   "dagger": "BX20_DranDagger_4-60R.png",
+   "hells": "BX21_HellsChain_5-60ht.png",
+   "chain": "BX21_HellsChain_5-60ht.png",
+   "wyvern": "BX24_WyvernGale_3-60t.png",
+   "gale": "BX24_WyvernGale_3-60t.png",
+   "unicorn": "BX26_UnicornSting_5-60gp.png",
+   "sting": "BX26_UnicornSting_5-60gp.png",
+   "sphinx": "BX27_SphinxCowl_9-80gn.png",
+   "cowl": "BX27_SphinxCowl_9-80gn.png",
+   "drandagger": "BX31_Drandagger_4-70p.png",
+   "tirano": "BX31_TiranoBeat_4-70q.png",
+   "beat": "BX31_TiranoBeat_4-70q.png",
+   "weiss": "BX33_WeissTiger_3-60u.png",
+   "tiger": "BX33_WeissTiger_3-60u.png",
+   "cobalt": "BX34_CobaltDragoon2-60c.png",
+   "dragoon": "BX34_CobaltDragoon2-60c.png",
+   "black": "BX35_BlackShell4-60d.png",
+   "shell": "BX35_BlackShell4-60d.png",
+   "phenix": "BX35_PhenixWing5-80h.png",
+   "whale": "BX36_WhaleWave_5-80e.png",
+   "wave": "BX36_WhaleWave_5-80e.png",
+   "bear": "BX37_BearScratch_5-60F.png",
+   "scratch": "BX37_BearScratch_5-60F.png",
+   "crimson": "BX38_CrimsonGaruda_4-70tp.png",
+   "garuda": "BX38_CrimsonGaruda_4-70tp.png",
+   "shelter": "BX39_ShelterDrake5-70o.png",
+   "drake": "BX39_ShelterDrake5-70o.png",
+   "samurai": "BX45_SamuraiCalibur_6-70m.png",
+   "calibur": "BX45_SamuraiCalibur_6-70m.png",
+   "strike": "BX49_DranStrike_4-50ff.png",
+   "heavens": "BX50_HeavensRing_0-80ds.png",
+   "ring": "BX50_HeavensRing_0-80ds.png",
+   "croc": "BXC07_CrocCrunch2-60q.png",
+   "crunch": "BXC07_CrocCrunch2-60q.png",
+   "dranzer": "BXG01_DranzerSpiral_3-80t_green.png",
+   "spiral": "BXG01_DranzerSpiral_3-80t_green.png",
+   "driger": "BXG04_DrigerSlash_4-80p.png",
+   "slash": "BXG04_DrigerSlash_4-80p.png",
+   "draciel": "BXG11_DracielShield_7-60d.png",
+   "storm": "BXG12_DragoonStorm4-60RA.png",
+   "pegasis": "BXG12_StormPegasis3-70RA.png",
+   "victory": "BXG12_VictoryValkyrie2-60RA.png",
+   "valkyrie": "BXG12_VictoryValkyrie2-60RA.png",
+   "steel": "BXORG01_SamuraiSteel_4-80_t.png",
+   "ptera": "BXORG02_PteraStroke_3-80_b.png",
+   "stroke": "BXORG02_PteraStroke_3-80_b.png",
+   "tyranno": "BXORG03_TyrannoRoar_9-60_gf.png",
+   "roar": "BXORG03_TyrannoRoar_9-60_gf.png",
+   "shinobi": "BXORG05_ShinobiKnife_4-80_hn.png",
+   "knife": "BXORG05_ShinobiKnife_4-80_hn.png",
+   "kong": "BXORG07_KongYell_3-60_gb.png",
+   "yell": "BXORG07_KongYell_3-60_gb.png",
+   "mammo": "BXORG08_MammoTusk_3-60_t.png",
+   "tusk": "BXORG08_MammoTusk_3-60_t.png",
+   "goat": "BXORG15_GoatTackle_2-70n.png",
+   "tackle": "BXORG15_GoatTackle_2-70n.png",
+   "brave": "CX01_DranBraveS_6-60v.png",
+   "perseus": "CX03_PerseusDarkB_6-80w.png",
+   "dark": "CX03_PerseusDarkB_6-80w.png",
+   "reaper": "CX05_HellsReaperT_4-70k.png",
+   "rudder": "CX05_PhoenixRudder_4-70lf.png",
+   "brush": "CX06_FoxBrushJ_9-70gr.png",
+   "pegasus": "CX07_PegasusBlastATr_Logo.png",
+   "blast": "CX07_PegasusBlastATr_Logo.png",
+   "cerberus": "CX08_CerberusFlameW_5-80wb_01.png",
+   "flame": "CX08_CerberusFlameW_5-80wb_01.png",
+   "emperor": "CX11_EmperorMightH_op.png",
+   "might": "CX11_EmperorMightH_op.png",
+   "golem": "CX11_GolemRock_M-85hn.png",
+   "rock": "CX11_GolemRock_M-85hn.png",
+   "gill": "CX11_SharkGill_5-60fb.png",
+   "bahamut": "CX13_BahamutBlitzBK_1-50i.png",
+   "blitz": "CX13_BahamutBlitzBK_1-50i.png",
+   "fortress": "CX14_KnightFortressGV_8-70un.png",
+   "ridge": "ORG09_RidgeToriceratops_9-80gn.png",
+   "toriceratops": "ORG09_RidgeToriceratops_9-80gn.png",
+   "hornet": "ORG12_HornetFortR_7-60t.png",
+   "fort": "ORG12_HornetFortR_7-60t.png",
+   "wriggle": "ORG13_WriggleKrakenS_3-85o.png",
+   "kraken": "ORG13_WriggleKrakenS_3-85o.png",
+   "antler": "ORG14_AntlerStagB_2-60hn.png",
+   "stag": "ORG14_AntlerStagB_2-60hn.png",
+   "stun": "ORG16_StunMedusa_9-60gb.png",
+   "medusa": "ORG16_StunMedusa_9-60gb.png",
+   "hack": "ORG17_HackViking_4-55o.png",
+   "viking": "ORG17_HackViking_4-55o.png",
+   "shuriken": "ORG19_ShinobiShuriken_lf.png",
+   "bison": "ORG20_BisonValor_fb.png",
+   "valor": "ORG20_BisonValor_fb.png",
+   "enlil": "ORG21_EnlilHurricaneIS_7-55t_1.png",
+   "hurricane": "ORG21_EnlilHurricaneIS_7-55t_1.png",
+   "gust": "ORG22_BatGust_3-85gp.png",
+   "crab": "ORG23_CrabClamp_9-65s.png",
+   "clamp": "ORG23_CrabClamp_9-65s.png",
+   "aigis": "ORG27_AigisRampart_gb.png",
+   "rampart": "ORG27_AigisRampart_gb.png",
+   "horus": "ORG30_HorusShatter_9-65gb.png",
+   "shatter": "ORG30_HorusShatter_9-65gb.png",
+   "buster": "RDRC02_BusterDran5-70DB_Logo.png",
+   "obsidian": "RDRC05_Obsidian_shell_3-85s.png",
+   "circle": "RDRC06_CircleGhost_4-60lr.png",
+   "ghost": "RDRC06_CircleGhost_4-60lr.png",
+   "fang": "RDRC07_LeonFangT_4-60u.png",
+   "crest": "RDRC09_CrestLeon_4-55a.png",
+   "hammer": "UX02_HellsHammer_3-70h.png",
+   "shadow": "UX05_ShinobiShadow_1-80mn.png",
+   "silver": "UX08_SilverWolf_3-80fb.png",
+   "wolf": "UX08_SilverWolf_3-80fb.png",
+   "saber": "UX09_SamuraiSaber_2-70l.png",
+   "mail": "UX10_KnightMail_3-85bs.png",
+   "impact": "UX11_ImpactDrake_9-60lr.png",
+   "fether": "UX12_PhoenixFether_2-60n.png",
+   "scorpio": "UX14_ScorpioSpear_0-70z.png",
+   "spear": "UX14_ScorpioSpear_0-70z.png",
+   "scale": "UX15_SharkScale_4-50uf.png",
+   "meteor": "UX17_MeteorDragoon_3-70j.png",
+   "mummy": "UX18_MummyCurse_7-55w.png",
+   "curse": "UX18_MummyCurse_7-55w.png",
+   "bullet": "UX19_BulletGriffon_h.png",
+   "griffon": "UX19_BulletGriffon_h.png",
+   "glory": "UX20_GloryValkyrie_lf.png",
+   "hover": "UXORG12_WyvernHover_3-85n.png"
+  },
+  "burst": {
+   "dragon": "spirit_thumb_aceDragon.png",
+   "achiles": "spirit_thumb_achiles.png",
+   "achilles": "spirit_thumb_achiles.png",
+   "aether": "spirit_thumb_aether.png",
+   "knight": "spirit_thumb_airKnight.png",
+   "alter": "spirit_thumb_alterCognite.png",
+   "cognite": "spirit_thumb_alterCognite.png",
+   "amaterios": "spirit_thumb_amaterios.png",
+   "apocalypse": "spirit_thumb_apocalypse.png",
+   "archer": "spirit_thumb_archerHercules.png",
+   "hercules": "spirit_thumb_archerHercules.png",
+   "atlas": "spirit_thumb_atlasAnubion.png",
+   "anubion": "spirit_thumb_atlasAnubion.png",
+   "bakul": "spirit_thumb_bakul.png",
+   "balderov": "spirit_thumb_balderov.png",
+   "balor": "spirit_thumb_balor.png",
+   "bazilisk": "spirit_thumb_bazilisk.png",
+   "basilisk": "spirit_thumb_bazilisk.png",
+   "belfyre": "spirit_thumb_belfyre.png",
+   "betromoth": "spirit_thumb_betromoth.png",
+   "blast": "spirit_thumb_blastJinnius.png",
+   "jinnius": "spirit_thumb_blastJinnius.png",
+   "bumblebee": "spirit_thumb_bumblebee.png",
+   "bushin": "spirit_thumb_bushinAshindra.png",
+   "ashindra": "spirit_thumb_bushinAshindra.png",
+   "caynox": "spirit_thumb_caynox.png",
+   "cobra": "spirit_thumb_cobra.png",
+   "cyclops": "spirit_thumb_cyclops.png",
+   "devolos": "spirit_thumb_devolos.png",
+   "diomedes": "spirit_thumb_diomedes.png",
+   "doomscizor": "spirit_thumb_doomscizor.png",
+   "deathscyther": "spirit_thumb_doomscizor.png",
+   "draciel": "spirit_thumb_draciel.png",
+   "dragoon": "spirit_thumb_dragoon.png",
+   "drain": "spirit_thumb_drainFafnir.png",
+   "fafnir": "spirit_thumb_drainFafnir.png",
+   "dranzer": "spirit_thumb_dranzer.png",
+   "driger": "spirit_thumb_driger.png",
+   "dullahan": "spirit_thumb_dullahan.png",
+   "engaard": "spirit_thumb_engaard.png",
+   "fengriff": "spirit_thumb_fengriff.png",
+   "forneus": "spirit_thumb_forneus.png",
+   "gargoyle": "spirit_thumb_gargoyle.png",
+   "genesis": "spirit_thumb_genesis.png",
+   "giga": "spirit_thumb_gigaGaianon.png",
+   "gaianon": "spirit_thumb_gigaGaianon.png",
+   "glory": "spirit_thumb_gloryRegnar.png",
+   "regnar": "spirit_thumb_gloryRegnar.png",
+   "hades": "spirit_thumb_hades.png",
+   "heat": "spirit_thumb_heatSalamander.png",
+   "salamander": "spirit_thumb_heatSalamander.png",
+   "helios": "spirit_thumb_helios.png",
+   "horusood": "spirit_thumb_horusood.png",
+   "hyperion": "spirit_thumb_hyperion.png",
+   "hyrus": "spirit_thumb_hyrus.png",
+   "ifritor": "spirit_thumb_ifritor.png",
+   "istros": "spirit_thumb_istros.png",
+   "joker": "spirit_thumb_joker.png",
+   "jormuntor": "spirit_thumb_jormuntor.png",
+   "kalzar": "spirit_thumb_KALZAR.png",
+   "kerbeus": "spirit_thumb_kerbeus.png",
+   "kinetic": "spirit_thumb_kineticSatomb.png",
+   "satomb": "spirit_thumb_kineticSatomb.png",
+   "kraken": "spirit_thumb_kraken.png",
+   "legend": "spirit_thumb_legendSpryzen.png",
+   "spryzen": "spirit_thumb_legendSpryzen.png",
+   "spriggan": "spirit_thumb_legendSpryzen.png",
+   "leviathan": "spirit_thumb_leviathan.png",
+   "linwyrm": "spirit_thumb_linwyrm.png",
+   "lost": "spirit_thumb_lostLuinor.png",
+   "luinor": "spirit_thumb_lostLuinor.png",
+   "maximum": "spirit_thumb_maximumGaruda.png",
+   "garuda": "spirit_thumb_maximumGaruda.png",
+   "megatron": "spirit_thumb_megatron.png",
+   "minoboros": "spirit_thumb_minoboros.png",
+   "morigna": "spirit_thumb_morigna.png",
+   "muramasa": "spirit_thumb_muramasa.png",
+   "nepstrius": "spirit_thumb_nepstrius.png",
+   "noctemis": "spirit_thumb_noctemis.png",
+   "nyddhog": "spirit_thumb_nyddhog.png",
+   "odax": "spirit_thumb_odax.png",
+   "ogre": "spirit_thumb_ogre.png",
+   "optimusprime": "spirit_thumb_optimusprime.png",
+   "orichalcum": "spirit_thumb_orichalcum.png",
+   "orpheus": "spirit_thumb_orpheus.png",
+   "pandora": "spirit_thumb_pandora.png",
+   "flame": "spirit_thumb_pandoraFlame.png",
+   "tidal": "spirit_thumb_pandoraTidal.png",
+   "twister": "spirit_thumb_pandoraTwister.png",
+   "pegasus": "spirit_thumb_pegasus.png",
+   "perseus": "spirit_thumb_perseus.png",
+   "phantazus": "spirit_thumb_phantazus.png",
+   "poseidon": "spirit_thumb_poseidon.png",
+   "quetziko": "spirit_thumb_quetziko.png",
+   "ragnaruck": "spirit_thumb_ragnaruck.png",
+   "regalus": "spirit_thumb_regalus.png",
+   "revive": "spirit_thumb_revivePhoenix.png",
+   "phoenix": "spirit_thumb_revivePhoenix.png",
+   "rudr": "spirit_thumb_rudr.png",
+   "ruin": "spirit_thumb_ruinPandemonium.png",
+   "pandemonium": "spirit_thumb_ruinPandemonium.png",
+   "sphinx": "spirit_thumb_sphinx.png",
+   "requiem": "spirit_thumb_spryzenRequiem.png",
+   "surtr": "spirit_thumb_surtr.png",
+   "typhon": "spirit_thumb_typhon.png",
+   "tyros": "spirit_thumb_tyros.png",
+   "unicrest": "spirit_thumb_unicrest.png",
+   "uranus": "spirit_thumb_uranus.png",
+   "valtryek": "spirit_thumb_valtryek.png",
+   "valkyrie": "spirit_thumb_valtryek.png",
+   "lucius": "spirit_thumb_Vex Lucius.png",
+   "vice": "spirit_thumb_viceLeopard.png",
+   "leopard": "spirit_thumb_viceLeopard.png",
+   "viper": "spirit_thumb_viperHydrax.png",
+   "hydrax": "spirit_thumb_viperHydrax.png",
+   "wolborg": "spirit_thumb_wolborg.png",
+   "wyvron": "spirit_thumb_wyvron.png",
+   "zeutron": "spirit_thumb_zeutron.png"
+  }
+ },
+ "spirits": [
+  {
+   "file": "spirit_thumb_aceDragon.png",
+   "beast": "Ace Dragon"
+  },
+  {
+   "file": "spirit_thumb_achiles.png",
+   "beast": "Achiles"
+  },
+  {
+   "file": "spirit_thumb_aether.png",
+   "beast": "Aether"
+  },
+  {
+   "file": "spirit_thumb_airKnight.png",
+   "beast": "Air Knight"
+  },
+  {
+   "file": "spirit_thumb_alterCognite.png",
+   "beast": "Alter Cognite"
+  },
+  {
+   "file": "spirit_thumb_amaterios.png",
+   "beast": "Amaterios"
+  },
+  {
+   "file": "spirit_thumb_apocalypse.png",
+   "beast": "Apocalypse"
+  },
+  {
+   "file": "spirit_thumb_archerHercules.png",
+   "beast": "Archer Hercules"
+  },
+  {
+   "file": "spirit_thumb_atlasAnubion.png",
+   "beast": "Atlas Anubion"
+  },
+  {
+   "file": "spirit_thumb_bakul.png",
+   "beast": "Bakul"
+  },
+  {
+   "file": "spirit_thumb_balderov.png",
+   "beast": "Balderov"
+  },
+  {
+   "file": "spirit_thumb_balor.png",
+   "beast": "Balor"
+  },
+  {
+   "file": "spirit_thumb_bazilisk.png",
+   "beast": "Bazilisk"
+  },
+  {
+   "file": "spirit_thumb_belfyre.png",
+   "beast": "Belfyre"
+  },
+  {
+   "file": "spirit_thumb_betromoth.png",
+   "beast": "Betromoth"
+  },
+  {
+   "file": "spirit_thumb_blastJinnius.png",
+   "beast": "Blast Jinnius"
+  },
+  {
+   "file": "spirit_thumb_bumblebee.png",
+   "beast": "Bumblebee"
+  },
+  {
+   "file": "spirit_thumb_bushinAshindra.png",
+   "beast": "Bushin Ashindra"
+  },
+  {
+   "file": "spirit_thumb_caynox.png",
+   "beast": "Caynox"
+  },
+  {
+   "file": "spirit_thumb_cobra.png",
+   "beast": "Cobra"
+  },
+  {
+   "file": "spirit_thumb_cyclops.png",
+   "beast": "Cyclops"
+  },
+  {
+   "file": "spirit_thumb_devolos.png",
+   "beast": "Devolos"
+  },
+  {
+   "file": "spirit_thumb_diomedes.png",
+   "beast": "Diomedes"
+  },
+  {
+   "file": "spirit_thumb_doomscizor.png",
+   "beast": "Doomscizor"
+  },
+  {
+   "file": "spirit_thumb_draciel.png",
+   "beast": "Draciel"
+  },
+  {
+   "file": "spirit_thumb_dragoon.png",
+   "beast": "Dragoon"
+  },
+  {
+   "file": "spirit_thumb_drainFafnir.png",
+   "beast": "Drain Fafnir"
+  },
+  {
+   "file": "spirit_thumb_dranzer.png",
+   "beast": "Dranzer"
+  },
+  {
+   "file": "spirit_thumb_driger.png",
+   "beast": "Driger"
+  },
+  {
+   "file": "spirit_thumb_dullahan.png",
+   "beast": "Dullahan"
+  },
+  {
+   "file": "spirit_thumb_E1.png",
+   "beast": "E1"
+  },
+  {
+   "file": "spirit_thumb_engaard.png",
+   "beast": "Engaard"
+  },
+  {
+   "file": "spirit_thumb_fengriff.png",
+   "beast": "Fengriff"
+  },
+  {
+   "file": "spirit_thumb_forneus.png",
+   "beast": "Forneus"
+  },
+  {
+   "file": "spirit_thumb_gargoyle.png",
+   "beast": "Gargoyle"
+  },
+  {
+   "file": "spirit_thumb_genesis.png",
+   "beast": "Genesis"
+  },
+  {
+   "file": "spirit_thumb_gigaGaianon.png",
+   "beast": "Giga Gaianon"
+  },
+  {
+   "file": "spirit_thumb_gloryRegnar.png",
+   "beast": "Glory Regnar"
+  },
+  {
+   "file": "spirit_thumb_hades.png",
+   "beast": "Hades"
+  },
+  {
+   "file": "spirit_thumb_heatSalamander.png",
+   "beast": "Heat Salamander"
+  },
+  {
+   "file": "spirit_thumb_helios.png",
+   "beast": "Helios"
+  },
+  {
+   "file": "spirit_thumb_horusood.png",
+   "beast": "Horusood"
+  },
+  {
+   "file": "spirit_thumb_hyperion.png",
+   "beast": "Hyperion"
+  },
+  {
+   "file": "spirit_thumb_hyrus.png",
+   "beast": "Hyrus"
+  },
+  {
+   "file": "spirit_thumb_ifritor.png",
+   "beast": "Ifritor"
+  },
+  {
+   "file": "spirit_thumb_ifritor2.png",
+   "beast": "Ifritor2"
+  },
+  {
+   "file": "spirit_thumb_istros.png",
+   "beast": "Istros"
+  },
+  {
+   "file": "spirit_thumb_joker.png",
+   "beast": "Joker"
+  },
+  {
+   "file": "spirit_thumb_jormuntor.png",
+   "beast": "Jormuntor"
+  },
+  {
+   "file": "spirit_thumb_KALZAR.png",
+   "beast": "KALZAR"
+  },
+  {
+   "file": "spirit_thumb_kerbeus.png",
+   "beast": "Kerbeus"
+  },
+  {
+   "file": "spirit_thumb_kineticSatomb.png",
+   "beast": "Kinetic Satomb"
+  },
+  {
+   "file": "spirit_thumb_kraken.png",
+   "beast": "Kraken"
+  },
+  {
+   "file": "spirit_thumb_legendSpryzen.png",
+   "beast": "Legend Spryzen"
+  },
+  {
+   "file": "spirit_thumb_leviathan.png",
+   "beast": "Leviathan"
+  },
+  {
+   "file": "spirit_thumb_linwyrm.png",
+   "beast": "Linwyrm"
+  },
+  {
+   "file": "spirit_thumb_lostLuinor.png",
+   "beast": "Lost Luinor"
+  },
+  {
+   "file": "spirit_thumb_maximumGaruda.png",
+   "beast": "Maximum Garuda"
+  },
+  {
+   "file": "spirit_thumb_megatron.png",
+   "beast": "Megatron"
+  },
+  {
+   "file": "spirit_thumb_minoboros.png",
+   "beast": "Minoboros"
+  },
+  {
+   "file": "spirit_thumb_morigna.png",
+   "beast": "Morigna"
+  },
+  {
+   "file": "spirit_thumb_muramasa.png",
+   "beast": "Muramasa"
+  },
+  {
+   "file": "spirit_thumb_nepstrius.png",
+   "beast": "Nepstrius"
+  },
+  {
+   "file": "spirit_thumb_noctemis.png",
+   "beast": "Noctemis"
+  },
+  {
+   "file": "spirit_thumb_nyddhog.png",
+   "beast": "Nyddhog"
+  },
+  {
+   "file": "spirit_thumb_odax.png",
+   "beast": "Odax"
+  },
+  {
+   "file": "spirit_thumb_ogre.png",
+   "beast": "Ogre"
+  },
+  {
+   "file": "spirit_thumb_optimusprime.png",
+   "beast": "Optimusprime"
+  },
+  {
+   "file": "spirit_thumb_orichalcum.png",
+   "beast": "Orichalcum"
+  },
+  {
+   "file": "spirit_thumb_orpheus.png",
+   "beast": "Orpheus"
+  },
+  {
+   "file": "spirit_thumb_pandora.png",
+   "beast": "Pandora"
+  },
+  {
+   "file": "spirit_thumb_pandoraFlame.png",
+   "beast": "Pandora Flame"
+  },
+  {
+   "file": "spirit_thumb_pandoraTidal.png",
+   "beast": "Pandora Tidal"
+  },
+  {
+   "file": "spirit_thumb_pandoraTwister.png",
+   "beast": "Pandora Twister"
+  },
+  {
+   "file": "spirit_thumb_pegasus.png",
+   "beast": "Pegasus"
+  },
+  {
+   "file": "spirit_thumb_perseus.png",
+   "beast": "Perseus"
+  },
+  {
+   "file": "spirit_thumb_phantazus.png",
+   "beast": "Phantazus"
+  },
+  {
+   "file": "spirit_thumb_poseidon.png",
+   "beast": "Poseidon"
+  },
+  {
+   "file": "spirit_thumb_quetziko.png",
+   "beast": "Quetziko"
+  },
+  {
+   "file": "spirit_thumb_ragnaruck.png",
+   "beast": "Ragnaruck"
+  },
+  {
+   "file": "spirit_thumb_regalus.png",
+   "beast": "Regalus"
+  },
+  {
+   "file": "spirit_thumb_revivePhoenix.png",
+   "beast": "Revive Phoenix"
+  },
+  {
+   "file": "spirit_thumb_rudr.png",
+   "beast": "Rudr"
+  },
+  {
+   "file": "spirit_thumb_ruinPandemonium.png",
+   "beast": "Ruin Pandemonium"
+  },
+  {
+   "file": "spirit_thumb_sphinx.png",
+   "beast": "Sphinx"
+  },
+  {
+   "file": "spirit_thumb_spryzen.png",
+   "beast": "Spryzen"
+  },
+  {
+   "file": "spirit_thumb_spryzenRequiem.png",
+   "beast": "Spryzen Requiem"
+  },
+  {
+   "file": "spirit_thumb_surtr.png",
+   "beast": "Surtr"
+  },
+  {
+   "file": "spirit_thumb_sX.png",
+   "beast": "S X"
+  },
+  {
+   "file": "spirit_thumb_T1.png",
+   "beast": "T1"
+  },
+  {
+   "file": "spirit_thumb_typhon.png",
+   "beast": "Typhon"
+  },
+  {
+   "file": "spirit_thumb_tyros.png",
+   "beast": "Tyros"
+  },
+  {
+   "file": "spirit_thumb_unicrest.png",
+   "beast": "Unicrest"
+  },
+  {
+   "file": "spirit_thumb_uranus.png",
+   "beast": "Uranus"
+  },
+  {
+   "file": "spirit_thumb_valtryek.png",
+   "beast": "Valtryek"
+  },
+  {
+   "file": "spirit_thumb_Vex Lucius.png",
+   "beast": "Vex Lucius"
+  },
+  {
+   "file": "spirit_thumb_viceLeopard.png",
+   "beast": "Vice Leopard"
+  },
+  {
+   "file": "spirit_thumb_viperHydrax.png",
+   "beast": "Viper Hydrax"
+  },
+  {
+   "file": "spirit_thumb_wolborg.png",
+   "beast": "Wolborg"
+  },
+  {
+   "file": "spirit_thumb_wyvron.png",
+   "beast": "Wyvron"
+  },
+  {
+   "file": "spirit_thumb_zeutron.png",
+   "beast": "Zeutron"
+  }
+ ]
+}

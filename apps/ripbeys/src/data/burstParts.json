@@ -1,0 +1,642 @@
+{
+ "disks": [
+  {
+   "file": "A4_Disk.obj",
+   "name": "Forge"
+  },
+  {
+   "file": "AceDragon_Sting_Disk.obj",
+   "name": "Sting"
+  },
+  {
+   "file": "AchillesA5_OO_Disk.obj",
+   "name": "OO"
+  },
+  {
+   "file": "AirKnightK4_12_Disk.obj",
+   "name": "12"
+  },
+  {
+   "file": "Amaterios_Disk.obj",
+   "name": "Forge"
+  },
+  {
+   "file": "BraveValtryekV6_Aero_Disk.obj",
+   "name": "Aero"
+  },
+  {
+   "file": "BushinAsura_Hurricane_Disc.obj",
+   "name": "Hurricane"
+  },
+  {
+   "file": "ChoZValtryekRed_Zenith_Disk.obj",
+   "name": "Zenith"
+  },
+  {
+   "file": "ChoZValtryek_Blitz_Disk.obj",
+   "name": "Blitz"
+  },
+  {
+   "file": "CommandDragon_Vanguard_Disc.obj",
+   "name": "Vanguard"
+  },
+  {
+   "file": "CosmoKraken_Lore_Disc.obj",
+   "name": "Lore"
+  },
+  {
+   "file": "CycloneRoktavorR7_AquilonQ_Disc.obj",
+   "name": "AquilonQ"
+  },
+  {
+   "file": "D2FJ_Disk.obj",
+   "name": "Forge"
+  },
+  {
+   "file": "Drake_Disk.obj",
+   "name": "Forge"
+  },
+  {
+   "file": "FafnirF4_8_Disk.obj",
+   "name": "8"
+  },
+  {
+   "file": "GildedBalderovB7_DiagronQ_Disk.obj",
+   "name": "DiagronQ"
+  },
+  {
+   "file": "JudgementJoker_0Glaive_Disk.obj",
+   "name": "0Glaive"
+  },
+  {
+   "file": "Knockout_Odax_Disc.obj",
+   "name": "Odax"
+  },
+  {
+   "file": "LeopardL4_Disk.obj",
+   "name": "Forge"
+  },
+  {
+   "file": "LordSpryzen_Around_Disc.obj",
+   "name": "Around"
+  },
+  {
+   "file": "LuinorL4_Disk.obj",
+   "name": "Forge"
+  },
+  {
+   "file": "MasterDevolosProSeries_Turn_Disk.obj",
+   "name": "Turn"
+  },
+  {
+   "file": "OrbEngaard_Sting_Disk.obj",
+   "name": "Sting"
+  },
+  {
+   "file": "Orichalcum_Disk.obj",
+   "name": "Forge"
+  },
+  {
+   "file": "PerfectPhoenix_8Proof_Disk.obj",
+   "name": "8Proof"
+  },
+  {
+   "file": "PheonixP4_Disk.obj",
+   "name": "Forge"
+  },
+  {
+   "file": "PoisonCobraProSeries_7_Disk.obj",
+   "name": "7"
+  },
+  {
+   "file": "ProSoulBalkesh_Paradox_Disk.obj",
+   "name": "Paradox"
+  },
+  {
+   "file": "R2_Disk.obj",
+   "name": "Forge"
+  },
+  {
+   "file": "RaidLuniorL6_3AD_Disk.obj",
+   "name": "3AD"
+  },
+  {
+   "file": "RoyalGenesisG5_Swipe_Disk.obj",
+   "name": "Swipe"
+  },
+  {
+   "file": "SlashValkyrie_Blitz_Disc.obj",
+   "name": "Blitz"
+  },
+  {
+   "file": "SpryzenS5_Forge0_Disk.obj",
+   "name": "Forge0"
+  },
+  {
+   "file": "StoneNemesisN7_CiquexQ_Disk.obj",
+   "name": "CiquexQ"
+  },
+  {
+   "file": "Tact_Luinor_Disc.obj",
+   "name": "Luinor"
+  },
+  {
+   "file": "U2DN_Disk.obj",
+   "name": "Forge"
+  },
+  {
+   "file": "UnionAchillesA5_Convert_Disk.obj",
+   "name": "Convert"
+  },
+  {
+   "file": "Union_Achilles_Pro_Disc.obj",
+   "name": "Pro"
+  },
+  {
+   "file": "V4_Disk.obj",
+   "name": "Forge"
+  },
+  {
+   "file": "Valtryek_Zenith_Disk.obj",
+   "name": "Zenith"
+  },
+  {
+   "file": "Vanguard_Disk.obj",
+   "name": "Forge"
+  },
+  {
+   "file": "VanishFafnirF7_TaperedQ_Disk.obj",
+   "name": "TaperedQ"
+  },
+  {
+   "file": "VexLuciusL6_2DD_Disc.obj",
+   "name": "2DD"
+  },
+  {
+   "file": "ViperHydraH5_Python_Disc.obj",
+   "name": "Python"
+  },
+  {
+   "file": "W2VO_Disk.obj",
+   "name": "Forge"
+  },
+  {
+   "file": "WizardFafnir_Ratche_Disc.obj",
+   "name": "Ratche"
+  },
+  {
+   "file": "Wiz_Faf_disc.obj",
+   "name": "Faf"
+  },
+  {
+   "file": "Xcalius_1_Disk.obj",
+   "name": "1"
+  }
+ ],
+ "drivers": [
+  {
+   "file": "A4_Tip.obj",
+   "name": "Standard"
+  },
+  {
+   "file": "AceDragon_Charge_Tip.obj",
+   "name": "Charge"
+  },
+  {
+   "file": "AchillesA4RipFire_Tip.obj",
+   "name": "Standard"
+  },
+  {
+   "file": "AchillesA5_DimentionS_Tip.obj",
+   "name": "DimentionS"
+  },
+  {
+   "file": "Amaterios_Tip.obj",
+   "name": "Standard"
+  },
+  {
+   "file": "AnubionA4_Tip.obj",
+   "name": "Standard"
+  },
+  {
+   "file": "AtomicS_Tip.obj",
+   "name": "Standard"
+  },
+  {
+   "file": "BalarB4_EvolutionS_Tip.obj",
+   "name": "EvolutionS"
+  },
+  {
+   "file": "BalorB4_Spiral_S_Tip.obj",
+   "name": "S"
+  },
+  {
+   "file": "BraveValtryekV6_EvolutionST_Tip.obj",
+   "name": "EvolutionST"
+  },
+  {
+   "file": "Brave_Valtryek_Tip.obj",
+   "name": "Valtryek"
+  },
+  {
+   "file": "BulletIH_Tip.obj",
+   "name": "Standard"
+  },
+  {
+   "file": "BulletIIH_Tip.obj",
+   "name": "Standard"
+  },
+  {
+   "file": "BushinAsura_KeepH_Tip.obj",
+   "name": "KeepH"
+  },
+  {
+   "file": "ChargeIIIH_Tip.obj",
+   "name": "Standard"
+  },
+  {
+   "file": "ChoZAchillesBlack_Absorb_Tip.obj",
+   "name": "Absorb"
+  },
+  {
+   "file": "ChoZAchilles_DimentionS_Tip.obj",
+   "name": "DimentionS"
+  },
+  {
+   "file": "ChoZValtryekRed_Destroy_Tip.obj",
+   "name": "Destroy"
+  },
+  {
+   "file": "ChoZValtryek_Jolt_Tip.obj",
+   "name": "Jolt"
+  },
+  {
+   "file": "CommandDragonD5_IgnitionH_Tip.obj",
+   "name": "IgnitionH"
+  },
+  {
+   "file": "CommandDragon_QuickDash_Tip.obj",
+   "name": "QuickDash"
+  },
+  {
+   "file": "CosmoKraken_ValorH_Tip.obj",
+   "name": "ValorH"
+  },
+  {
+   "file": "CrystalDranzerF_TowerS_Tip.obj",
+   "name": "TowerS"
+  },
+  {
+   "file": "CurseDevolosD6_ZephyrySP_Tip.obj",
+   "name": "ZephyrySP"
+  },
+  {
+   "file": "CurseSatombS6_UniverseSPM_Tip.obj",
+   "name": "UniverseSPM"
+  },
+  {
+   "file": "D2FJ_Tip.obj",
+   "name": "Standard"
+  },
+  {
+   "file": "DemiseDevolosD6_MergerSP_Tip.obj",
+   "name": "MergerSP"
+  },
+  {
+   "file": "DemiseHyperionH6_MergeSPL_Tip.obj",
+   "name": "MergeSPL"
+  },
+  {
+   "file": "DrigerF_PowerS_Tip.obj",
+   "name": "PowerS"
+  },
+  {
+   "file": "EclipseGenesisG5_Tip.obj",
+   "name": "Standard"
+  },
+  {
+   "file": "EngaardE4_QuestS_Tip.obj",
+   "name": "QuestS"
+  },
+  {
+   "file": "EvoHeliosBlazebringerH6_ZoningSPM_Tip.obj",
+   "name": "ZoningSPM"
+  },
+  {
+   "file": "EvoLuciusEndbringer_DriftSP_Tip.obj",
+   "name": "DriftSP"
+  },
+  {
+   "file": "FangDragoonF_JaggyS_Tip.obj",
+   "name": "JaggyS"
+  },
+  {
+   "file": "FarnirF4_AbsorbS_Tip.obj",
+   "name": "AbsorbS"
+  },
+  {
+   "file": "FlameCobraC5_PlanetaryH_Tip.obj",
+   "name": "PlanetaryH"
+  },
+  {
+   "file": "ForneusF4RipFire_Tip.obj",
+   "name": "Standard"
+  },
+  {
+   "file": "ForneusF4_Tip.obj",
+   "name": "Standard"
+  },
+  {
+   "file": "GalaxyZeutronZ5_RevolverH_Tip.obj",
+   "name": "RevolverH"
+  },
+  {
+   "file": "GargoyleG4_MassiveS_Tip.obj",
+   "name": "MassiveS"
+  },
+  {
+   "file": "GuardDracielS_AtomicS_Tip.obj",
+   "name": "AtomicS"
+  },
+  {
+   "file": "Harmony_Pegasus_Pro_Tip.obj",
+   "name": "Pro"
+  },
+  {
+   "file": "HyperionFlamebringerH6_ExceedPlusX_Tip.obj",
+   "name": "ExceedPlusX"
+  },
+  {
+   "file": "InfiniteAchillesA6_DimensioningSP_Tip.obj",
+   "name": "DimensioningSP"
+  },
+  {
+   "file": "JudgmentJoker_UltimateReboot_Tip.obj",
+   "name": "UltimateReboot"
+  },
+  {
+   "file": "KerbeusK4_Tip.obj",
+   "name": "Standard"
+  },
+  {
+   "file": "KingHeliosH6_ZoningST_Tip.obj",
+   "name": "ZoningST"
+  },
+  {
+   "file": "KolossalHeliosH6_ZoningSPM_Tip.obj",
+   "name": "ZoningSPM"
+  },
+  {
+   "file": "LordSpryzenS5_DimensionH_Tip.obj",
+   "name": "DimensionH"
+  },
+  {
+   "file": "LordSpryzen_FusionDash_Tip.obj",
+   "name": "FusionDash"
+  },
+  {
+   "file": "LuinorL4_Tip.obj",
+   "name": "Standard"
+  },
+  {
+   "file": "MasterDevolosD5_GenerateH_Tip.obj",
+   "name": "GenerateH"
+  },
+  {
+   "file": "MasterDevolosProSeries_Zeta_Tip.obj",
+   "name": "Zeta"
+  },
+  {
+   "file": "MinoborosM4_Tip.obj",
+   "name": "Standard"
+  },
+  {
+   "file": "MirageFafnirF6_NothingnessSP_Tip.obj",
+   "name": "NothingnessSP"
+  },
+  {
+   "file": "MonsterOgreO5_OctaveH_Tip.obj",
+   "name": "OctaveH"
+  },
+  {
+   "file": "MorrignaM4_LoopS_Tip.obj",
+   "name": "LoopS"
+  },
+  {
+   "file": "MythOdax_DestroyerH_Tip.obj",
+   "name": "DestroyerH"
+  },
+  {
+   "file": "OrbEngaard_Quest_Tip.obj",
+   "name": "Quest"
+  },
+  {
+   "file": "OrbitalH_Tip.obj",
+   "name": "Standard"
+  },
+  {
+   "file": "Orichalcum_Tip.obj",
+   "name": "Standard"
+  },
+  {
+   "file": "PerfectPhoenix_Friction_Tip.obj",
+   "name": "Friction"
+  },
+  {
+   "file": "PhantomDrigerS_ZetaS_Tip.obj",
+   "name": "ZetaS"
+  },
+  {
+   "file": "PoisonCobraProSeries_Keep_Tip.obj",
+   "name": "Keep"
+  },
+  {
+   "file": "PoisonCyclopsC5_GuardianH_Tip.obj",
+   "name": "GuardianH"
+  },
+  {
+   "file": "Premium_AceDragonD5_Charge_Tip.obj",
+   "name": "Charge"
+  },
+  {
+   "file": "Premium_CosmicApocalypseA5_RebootH_Tip.obj",
+   "name": "RebootH"
+  },
+  {
+   "file": "Premium_ForceWorlborg_PrevailS_Tip.obj",
+   "name": "PrevailS"
+  },
+  {
+   "file": "Premium_HarmonyPegasus_YardH_Tip.obj",
+   "name": "YardH"
+  },
+  {
+   "file": "Premium_ViperHydraH5_CoilH_Tip.obj",
+   "name": "CoilH"
+  },
+  {
+   "file": "PrimeApocalypseA5_UltimateRebootH_Tip.obj",
+   "name": "UltimateRebootH"
+  },
+  {
+   "file": "Prime_Apocalypse_Pro_Tip.obj",
+   "name": "Pro"
+  },
+  {
+   "file": "ProSoulBalkesh_Eternal_Tip.obj",
+   "name": "Eternal"
+  },
+  {
+   "file": "Pro_B159_SuperHyperion_Tip.obj",
+   "name": "SuperHyperion"
+  },
+  {
+   "file": "Pro_B178_SuperHyperion_Black_Tip.obj",
+   "name": "Black"
+  },
+  {
+   "file": "Pro_Infinite_Achilles_Tip.obj",
+   "name": "Achilles"
+  },
+  {
+   "file": "Pro_Lucius_Lucifer_Tip.obj",
+   "name": "Lucifer"
+  },
+  {
+   "file": "Pro_Mirage_Fafnir_Tip.obj",
+   "name": "Fafnir"
+  },
+  {
+   "file": "R2_Tip.obj",
+   "name": "Standard"
+  },
+  {
+   "file": "RaidLuniorL6_DestroyerSPM_Tip.obj",
+   "name": "DestroyerSPM"
+  },
+  {
+   "file": "RockDragonD5_ChargeIIH_Tip.obj",
+   "name": "ChargeIIH"
+  },
+  {
+   "file": "RocktavorR4_Tip.obj",
+   "name": "Standard"
+  },
+  {
+   "file": "RoyalGenesisG5_HybridH_Tip.obj",
+   "name": "HybridH"
+  },
+  {
+   "file": "Rudr_LinearH_TIP.obj",
+   "name": "LinearH"
+  },
+  {
+   "file": "SlashValkyrie_PowerHS_Tip.obj",
+   "name": "PowerHS"
+  },
+  {
+   "file": "SolarSphinxS5_JaggedH_Tip.obj",
+   "name": "JaggedH"
+  },
+  {
+   "file": "SpearDullahanD6_FusionalSP_Tip.obj",
+   "name": "FusionalSP"
+  },
+  {
+   "file": "SphinxS4_KeeperS_Tip.obj",
+   "name": "KeeperS"
+  },
+  {
+   "file": "SpiroH_Tip.obj",
+   "name": "Standard"
+  },
+  {
+   "file": "SuperHyperionH6_ExceedSPM_Tip.obj",
+   "name": "ExceedSPM"
+  },
+  {
+   "file": "SuperHyperionH6_ExceedSP_Tip.obj",
+   "name": "ExceedSP"
+  },
+  {
+   "file": "Sword_Valtryek_Tip.obj",
+   "name": "Valtryek"
+  },
+  {
+   "file": "TactLeviathanL5_ZephyrusH_Tip.obj",
+   "name": "ZephyrusH"
+  },
+  {
+   "file": "Trick_H_Tip.obj",
+   "name": "H"
+  },
+  {
+   "file": "U2DN_Tip.obj",
+   "name": "Standard"
+  },
+  {
+   "file": "UnionAchillesA5_XtenderH_Tip.obj",
+   "name": "XtenderH"
+  },
+  {
+   "file": "V4_Tip.obj",
+   "name": "Standard"
+  },
+  {
+   "file": "Valtryek_Evolution_Tip.obj",
+   "name": "Evolution"
+  },
+  {
+   "file": "VexLuciusL6_MobiusSP_Tip.obj",
+   "name": "MobiusSP"
+  },
+  {
+   "file": "ViperHydraH5_CoilH_Tip.obj",
+   "name": "CoilH"
+  },
+  {
+   "file": "WizardFafnir_RiseHS_Tip.obj",
+   "name": "RiseHS"
+  },
+  {
+   "file": "Wiz_Faf_Tip.obj",
+   "name": "Faf"
+  },
+  {
+   "file": "WorldSpryzenS6_UnitedSP_Tip.obj",
+   "name": "UnitedSP"
+  },
+  {
+   "file": "WyvronW6_NeedlingSP_Tip.obj",
+   "name": "NeedlingSP"
+  },
+  {
+   "file": "X1FX_Tip.obj",
+   "name": "Standard"
+  },
+  {
+   "file": "Xcalius_SwordS_Tip.obj",
+   "name": "SwordS"
+  },
+  {
+   "file": "Y2GY_Tip.obj",
+   "name": "Standard"
+  },
+  {
+   "file": "YardH_Tip.obj",
+   "name": "Standard"
+  },
+  {
+   "file": "ZetaS_Performance_Tip.obj",
+   "name": "Performance"
+  },
+  {
+   "file": "ZuetronZ4_Tip.obj",
+   "name": "Standard"
+  },
+  {
+   "file": "ZweiLunior_XtendPlus_Tip.obj",
+   "name": "XtendPlus"
+  }
+ ]
+}

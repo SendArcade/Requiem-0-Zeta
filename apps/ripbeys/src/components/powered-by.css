@@ -1,0 +1,30 @@
+.rb-powered {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+  color: rgba(245, 245, 245, 0.45);
+  font: 500 9px/1 var(--ui, sans-serif);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+.rb-powered > i {
+  width: 1px;
+  height: 14px;
+  background: rgba(255, 255, 255, 0.2);
+}
+.rb-powered-link {
+  display: inline-flex;
+  align-items: center;
+  opacity: 0.85;
+  transition: opacity 0.15s ease;
+}
+.rb-powered-link:hover {
+  opacity: 1;
+}
+.rb-powered-link img {
+  display: block;
+  height: 18px;
+  width: auto;
+}
