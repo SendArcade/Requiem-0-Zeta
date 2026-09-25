@@ -32,7 +32,7 @@ export function SiteHeader() {
     <header className="sticky top-0 z-50 border-b border-[var(--border)] header-blur">
       <div className="mx-auto flex h-[var(--header-height)] max-w-7xl items-center gap-4 px-4 sm:px-6 lg:px-8">
         <Link
-          href="/"
+          href="/requiem"
           className="shrink-0 text-lg font-semibold tracking-tight text-[var(--text)] transition-colors hover:text-[var(--accent)]"
         >
           Beyoracle
