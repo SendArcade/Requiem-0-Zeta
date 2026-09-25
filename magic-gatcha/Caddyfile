@@ -1,0 +1,9 @@
+{
+	admin off
+}
+
+:8080 {
+	reverse_proxy {$GATCHA_UPSTREAM} {
+		header_up Host {http.reverse_proxy.upstream.hostport}
+	}
+}
