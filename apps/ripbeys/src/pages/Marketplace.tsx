@@ -2,7 +2,6 @@ import { useEffect, useMemo, useState } from 'react'
 import { ChevronDown, Search } from 'lucide-react'
 import type { CSSProperties } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import { ModelViewer } from '../components/ModelViewer'
 import { ModelSlot, ModelStageProvider } from '../components/ModelStage'
 import { MarketingNav } from '../components/MarketingNav'
 import CountUp from '../components/reactbits/CountUp'
@@ -11,7 +10,6 @@ import { SoftErrorBoundary } from '../components/SoftErrorBoundary'
 import { marketplaceListings, type Listing } from '../lib/assets'
 import { DEMO_SHOWCASE } from '../lib/marketGate'
 import {
-  catalogueStatusLabel,
   getOracleBridgeEntry,
   isProductOracleEligible,
 } from '../lib/oracleBridge'
@@ -214,8 +212,6 @@ export function Marketplace() {
 
   const shown = visible.slice(0, page * pageSize)
   const hero = catalog.find((item) => item.id === 'bx-002') ?? catalog[0]
-  const heroModel = hero ? modelPathForListing(hero) : undefined
-  const heroPoster = hero ? posterForListing(hero) : undefined
   const beyCount = catalog.filter((item) => item.class !== 'Arena').length
   const openDetail = (item: Listing) => navigate(`/market/${item.id}`)
 
@@ -224,113 +220,43 @@ export function Marketplace() {
       <main className="shop-page">
         <MarketingNav active="shop" />
 
-        <section className="shop-intro">
-          <div className="shop-intro-copy">
-            <span className="shop-eyebrow">Catalogue / Requiem Oracle</span>
-            <h1>
-              Shop
-              <br />
-              <em>the build.</em>
-            </h1>
+        <section className="pit-head">
+          <div className="pit-head-copy">
+            <p className="pit-kicker">Marketplace</p>
+            <h1>Every Bey in the pit.</h1>
             <p>
-              Every recovered listing shows its own RIPBEYS mesh — not a lookalike by product code.
-              Open a Bey for the full 3D + Oracle product page.
+              {visible.length} listings. Open one for the model. The Oracle price shows when BeyOracle has a mark.
             </p>
-            <div className="shop-intro-stats">
-              <span>
-                <b>
-                  <CountUp to={beyCount} separator="," />
-                </b>
-                <small>Beys</small>
-              </span>
-              <span>
-                <b>
-                  <CountUp to={visualAssetStats.assembledModelOnDisk} separator="," />
-                </b>
-                <small>3D models</small>
-              </span>
-              <span>
-                <b>
-                  <CountUp to={productOracleCount} separator="," />
-                </b>
-                <small>Product Oracle</small>
-              </span>
-            </div>
           </div>
-          <div
-            className="shop-intro-product shop-intro-product--link"
-            role="link"
-            tabIndex={0}
-            onClick={() => openDetail(hero)}
-            onKeyDown={(event) => {
-              if (event.key === 'Enter' || event.key === ' ') {
-                event.preventDefault()
-                openDetail(hero)
-              }
-            }}
-            aria-label={`Open featured ${hero.name}`}
-          >
-            <span>Featured / {hero.id.toUpperCase()}</span>
-            {heroModel ? (
-              <ModelViewer
-                src={heroModel}
-                texture={hero.texture}
-                tint={hero.tint}
-                poster={heroPoster ?? hero.image}
-                height="100%"
-                interactive={false}
-                ground={false}
-                autoRotate={false}
-                spinAxis
-                spin={1.15}
-                presentation="hero"
-              />
-            ) : (
-              <img className="model-poster" src={heroPoster ?? hero.image} alt="" />
-            )}
+          <button type="button" className="pit-launch" onClick={() => openDetail(hero)}>
+            <span>Launch</span>
             <strong>{hero.name}</strong>
-            <small>
-              {hero.series} series · {hero.class} · Open product
-            </small>
-          </div>
+            <small>{hero.series} · {hero.id}</small>
+          </button>
+          <dl className="pit-counts">
+            <div>
+              <dt>Beys</dt>
+              <dd><CountUp to={beyCount} separator="," /></dd>
+            </div>
+            <div>
+              <dt>Models</dt>
+              <dd><CountUp to={visualAssetStats.assembledModelOnDisk} separator="," /></dd>
+            </div>
+            <div>
+              <dt>Product marks</dt>
+              <dd><CountUp to={productOracleCount} separator="," /></dd>
+            </div>
+          </dl>
         </section>
 
-        <section className="shop-showcase" aria-label="Investor demo states">
-          <header className="shop-showcase-head">
-            <span className="shop-eyebrow">Demo states</span>
-            <p>Four real catalogue outcomes — no invented coverage.</p>
-          </header>
-          <div className="shop-showcase-grid">
-            {DEMO_SHOWCASE.map((slot) => {
-              const item = catalog.find((entry) => entry.id === slot.id)
-              if (!item) return null
-              const status = catalogueStatusLabel(item.id)
-              return (
-                <button
-                  key={slot.id}
-                  type="button"
-                  className={`shop-showcase-card shop-showcase-card--${slot.tone}`}
-                  onClick={() => openDetail(item)}
-                >
-                  <span className={`shop-showcase-tone shop-showcase-tone--${slot.tone}`}>{slot.label}</span>
-                  <strong>{item.name}</strong>
-                  <small>{slot.blurb}</small>
-                  <code>{item.id}</code>
-                  <span className="shop-showcase-status">{status.label}</span>
-                </button>
-              )
-            })}
-          </div>
-        </section>
-
-        <section className="shop-catalogue" id="market">
+        <section className="shop-catalogue pit-catalogue" id="market">
           <header className="shop-section-head">
             <div>
-              <span className="shop-eyebrow">All releases</span>
+              <span className="shop-eyebrow">Full list</span>
               <h2>Catalogue</h2>
             </div>
             <p>
-              {shown.length} of {visible.length} listings
+              {shown.length} of {visible.length}
             </p>
           </header>
           <div className="shop-controls">
