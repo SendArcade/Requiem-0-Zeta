@@ -13,12 +13,11 @@ export default async function ProductPage({
   if (!data) notFound();
 
   const oracle = data.oracle;
-  if (
-    !oracle ||
-    !hasPublishedMark({ nComps: oracle.nComps, confidence: oracle.confidence })
-  ) {
-    notFound();
-  }
+  const hasMark =
+    !!oracle &&
+    hasPublishedMark({ nComps: oracle.nComps, confidence: oracle.confidence });
+  const hasHistory = data.comps.length > 0 || data.chart.length > 0;
+  if (!hasMark && !hasHistory) notFound();
 
   return (
     <div className="mx-auto max-w-4xl">

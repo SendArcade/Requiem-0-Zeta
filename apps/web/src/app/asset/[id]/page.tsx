@@ -20,12 +20,16 @@ export default async function AssetPage({
   if (!data) notFound();
 
   const oracle = data.oracle;
-  if (
-    !oracle ||
-    !hasPublishedMark({ nComps: oracle.nComps, confidence: oracle.confidence })
-  ) {
-    notFound();
-  }
+  const conditionMarks = Object.values(data.oracleByCondition ?? {});
+  const hasMark =
+    (!!oracle &&
+      hasPublishedMark({ nComps: oracle.nComps, confidence: oracle.confidence })) ||
+    conditionMarks.some(
+      (snap) =>
+        !!snap && hasPublishedMark({ nComps: snap.nComps, confidence: snap.confidence })
+    );
+  const hasHistory = data.comps.length > 0 || data.chart.length > 0;
+  if (!hasMark && !hasHistory) notFound();
 
   const inWatchlist = await isOnWatchlist(id);
 

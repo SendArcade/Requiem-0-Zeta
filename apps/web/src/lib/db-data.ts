@@ -23,6 +23,7 @@ import {
   looksLikeBeybladeListing,
   maskFromSources,
   resolveEvidenceKind,
+  resolvePublishedMinComps,
   SOURCES,
 } from "@beyoracle/shared";
 import { and, eq, inArray } from "drizzle-orm";
@@ -147,17 +148,21 @@ export async function getAssetDataFromDb(
   const compsInput = await loadCompsForPart(partId);
   const sourcesMask =
     sources.length === SOURCES.length ? allSourcesMask() : maskFromSources(sources);
+  const minComps = resolvePublishedMinComps();
 
-  const oracle =
+  let activeConditions = conditions;
+  let oracle =
     sources.length === SOURCES.length
       ? computeOracleValue(partId, compsInput, {
           targetCurrency: displayCurrency,
           sourcesMask: allSourcesMask(),
           conditions,
+          minComps,
         })
       : recomputeWithSources(partId, compsInput, sources, {
           targetCurrency: displayCurrency,
           conditions,
+          minComps,
         });
 
   const oracleByCondition = computeOracleByCondition(partId, compsInput, {
@@ -165,19 +170,36 @@ export async function getAssetDataFromDb(
     sourcesMask,
   });
 
+  // Loose/used pool can be below the publish floor while sealed or another
+  // condition still has a real mark and sales. Show that pool instead of 404.
+  if (!oracle) {
+    const fallback = (Object.entries(oracleByCondition) as Array<
+      [Condition, (typeof oracleByCondition)[Condition]]
+    >)
+      .filter((entry): entry is [Condition, NonNullable<(typeof entry)[1]>] => {
+        const snap = entry[1];
+        return !!snap && snap.value != null && snap.nComps >= 1;
+      })
+      .sort((a, b) => b[1].nComps - a[1].nComps)[0];
+    if (fallback) {
+      activeConditions = [fallback[0]];
+      oracle = fallback[1];
+    }
+  }
+
   const chart = buildTimeSeries(compsInput, {
     sourcesMask,
     targetCurrency: displayCurrency,
-    conditions,
+    conditions: activeConditions,
   });
 
   return {
     part,
     oracle,
     oracleByCondition,
-    comps: await loadCompRows(partId, sources, displayCurrency, conditions),
+    comps: await loadCompRows(partId, sources, displayCurrency, activeConditions),
     chart,
-    conditions,
+    conditions: activeConditions,
   };
 }
 
