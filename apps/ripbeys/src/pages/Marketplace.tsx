@@ -13,8 +13,8 @@ import { DEMO_SHOWCASE } from '../lib/marketGate'
 import {
   catalogueStatusLabel,
   getOracleBridgeEntry,
+  isOracleFetchEligible,
   isProductOracleEligible,
-  oracleBridgeStats,
 } from '../lib/oracleBridge'
 import { fetchListingOracle } from '../lib/requiemOracle'
 import {
@@ -132,6 +132,7 @@ export function Marketplace() {
   const [query, setQuery] = useState('')
   const [page, setPage] = useState(1)
   const [oracleValues, setOracleValues] = useState<Record<string, number | null>>({})
+  const [oracleChecked, setOracleChecked] = useState(false)
   const pageSize = 24
 
   const catalog = useMemo(
@@ -147,6 +148,7 @@ export function Marketplace() {
   const visible = useMemo(() => {
     const term = query.trim().toLowerCase()
     const filtered = catalog.filter((item) => {
+      if (!oracleChecked || typeof oracleValues[item.id] !== 'number') return false
       const bridge = getOracleBridgeEntry(item.id)
       const hay = `${item.name} ${item.series} ${item.class} ${item.id} ${bridge?.requiemProductId ?? ''} ${bridge?.requiemPartId ?? ''}`.toLowerCase()
       return (
@@ -190,13 +192,12 @@ export function Marketplace() {
         Number(resolveListingVisual(b.id).modelExists) - Number(resolveListingVisual(a.id).modelExists) ||
         a.name.localeCompare(b.name),
     )
-  }, [catalog, oracleValues, query, series, sort, type])
+  }, [catalog, oracleChecked, oracleValues, query, series, sort, type])
 
   useEffect(() => setPage(1), [query, series, sort, type])
 
   useEffect(() => {
-    if (sort !== 'Oracle high' && sort !== 'Oracle low') return
-    const eligible = catalog.filter((item) => isProductOracleEligible(item.id))
+    const eligible = catalog.filter((item) => isOracleFetchEligible(item.id))
     let cancelled = false
     ;(async () => {
       const next: Record<string, number | null> = {}
@@ -206,18 +207,22 @@ export function Marketplace() {
           next[item.id] = v.status === 'available' && v.value != null ? v.value : null
         }),
       )
-      if (!cancelled) setOracleValues((prev) => ({ ...prev, ...next }))
+      if (!cancelled) {
+        setOracleValues(next)
+        setOracleChecked(true)
+      }
     })()
     return () => {
       cancelled = true
     }
-  }, [catalog, sort])
+  }, [catalog])
 
   const shown = visible.slice(0, page * pageSize)
-  const hero = catalog.find((item) => item.id === 'bx-002') ?? catalog[0]
+  const priced = catalog.filter((item) => typeof oracleValues[item.id] === 'number')
+  const hero = priced.find((item) => item.id === 'bx-002') ?? priced[0] ?? catalog.find((item) => item.id === 'bx-002') ?? catalog[0]
   const heroModel = hero ? modelPathForListing(hero) : undefined
   const heroPoster = hero ? posterForListing(hero) : undefined
-  const beyCount = catalog.filter((item) => item.class !== 'Arena').length
+  const beyCount = oracleChecked ? priced.length : 0
   const openDetail = (item: Listing) => navigate(`/market/${item.id}`)
 
   return (
@@ -242,7 +247,7 @@ export function Marketplace() {
                 <b>
                   <CountUp to={beyCount} separator="," />
                 </b>
-                <small>Beys</small>
+                <small>With Oracle</small>
               </span>
               <span>
                 <b>
@@ -304,7 +309,7 @@ export function Marketplace() {
           <div className="shop-showcase-grid">
             {DEMO_SHOWCASE.map((slot) => {
               const item = catalog.find((entry) => entry.id === slot.id)
-              if (!item) return null
+              if (!item || typeof oracleValues[item.id] !== 'number') return null
               const status = catalogueStatusLabel(item.id)
               return (
                 <button
@@ -331,8 +336,9 @@ export function Marketplace() {
               <h2>Catalogue</h2>
             </div>
             <p>
-              {shown.length} of {visible.length} · {visualAssetStats.assembledModelOnDisk} models ·{' '}
-              {oracleBridgeStats.productOracle} Product Oracle
+              {oracleChecked
+                ? `${shown.length} of ${visible.length} with an Oracle value`
+                : 'Checking Oracle values…'}
             </p>
           </header>
           <div className="shop-controls">
@@ -379,6 +385,11 @@ export function Marketplace() {
               <ChevronDown size={14} />
             </label>
           </div>
+          {!oracleChecked ? (
+            <p className="shop-intro-copy">Checking which Beys have an Oracle value.</p>
+          ) : shown.length === 0 ? (
+            <p className="shop-intro-copy">No Beys with an Oracle value match these filters.</p>
+          ) : null}
           <div className="shop-grid">
             {shown.map((item) => (
               <ProductCard
