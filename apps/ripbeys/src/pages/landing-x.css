@@ -271,8 +271,6 @@ html.rb-locked {
   rotate: -8deg;
   clip-path: polygon(50% 0%, 63% 18%, 88% 12%, 82% 38%, 100% 50%, 82% 62%, 88% 88%, 63% 82%, 50% 100%, 37% 82%, 12% 88%, 18% 62%, 0% 50%, 18% 38%, 12% 12%, 37% 18%);
 }
-.rb-tag,
-.rb-sticker { display: none; }
 .rb-hero-copy {
   position: relative;
   z-index: 6;
