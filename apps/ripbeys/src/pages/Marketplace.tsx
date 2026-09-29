@@ -358,29 +358,31 @@ export function Marketplace() {
         <MarketingNav active="shop" />
 
         <section className="pit-head">
+          <div className="pit-crt" aria-hidden="true">
           <CRTWarp
             className="pit-atmosphere"
             color="#ffea00"
             backgroundColor="#050505"
             speed={0.5}
-            curvature={0.25}
-            scanlineStrength={0.25}
+            curvature={0.18}
+            scanlineStrength={0.2}
             scanlineFrequency={160}
-            waveAmplitude={0.24}
+            waveAmplitude={0.16}
             waveFrequency={2.2}
-            bloom={0.85}
+            bloom={0.7}
             bloomRadius={1}
-            noise={0.07}
-            vignette={0.55}
-            brightness={0.38}
+            noise={0.05}
+            vignette={0.28}
+            brightness={0.62}
             pixelation={1}
-            rgbShift={0.01}
+            rgbShift={0.008}
             mouseReact={!reduceMotion}
-            mouseStrength={0.5}
+            mouseStrength={0.35}
             dpr={1}
             fps={30}
             paused={reduceMotion}
           />
+          </div>
           <div className="pit-head-copy">
             <p className="pit-kicker">
               <ShinyText text="Marketplace" speed={3.4} delay={1.2} disabled={reduceMotion} color="#a3a3a3" shineColor="#ffea00" />
