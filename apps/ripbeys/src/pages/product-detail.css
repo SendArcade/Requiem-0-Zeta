@@ -477,13 +477,35 @@
   letter-spacing: 0.08em;
 }
 .oracle-ranges button.is-on { color: #111; background: #ffea00; border-color: #ffea00; }
-.oracle-plot { display: grid; gap: 10px; }
-.oracle-chart { display: block; width: 100%; height: 280px; background: #050505; border: 1px solid rgba(255, 255, 255, 0.1); }
-.oracle-legend { display: flex; flex-wrap: wrap; gap: 16px; margin: 0; color: #808080; font: 700 10px var(--ui); letter-spacing: 0.12em; text-transform: uppercase; }
+.oracle-plot {
+  display: grid;
+  gap: 12px;
+  padding: 18px 16px 14px;
+  background: #141420;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+}
+.oracle-plot .oracle-ranges button.is-on {
+  color: #c4b5fd;
+  background: transparent;
+  border-color: #c4b5fd;
+}
+.oracle-chart-frame { width: 100%; height: 280px; }
+.oracle-tooltip {
+  padding: 8px 10px;
+  color: #f4f4f5;
+  background: #1a1a28;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 10px;
+  font: 500 12px var(--ui);
+}
+.oracle-tooltip p { margin: 0; color: #a1a1aa; }
+.oracle-tooltip strong { display: block; margin-top: 4px; color: #7c50fc; font-size: 14px; }
+.oracle-legend .is-line { height: 2px; background: #7c50fc; }
+.oracle-legend .is-dot { width: 8px; height: 8px; border-radius: 50%; background: #8b6cf6; }
+.oracle-legend .is-mark { height: 0; border-top: 2px dashed #7c50fc; }
+.oracle-legend { display: flex; flex-wrap: wrap; gap: 16px; margin: 0; color: #a1a1aa; font: 700 10px var(--ui); letter-spacing: 0.12em; text-transform: uppercase; }
 .oracle-legend i { display: inline-block; width: 14px; height: 8px; margin-right: 6px; vertical-align: middle; }
-.oracle-legend .is-line { height: 2px; background: #13fff3; }
-.oracle-legend .is-dot { width: 8px; height: 8px; border-radius: 50%; background: #9ca3af; }
-.oracle-legend .is-mark { height: 0; border-top: 2px dashed #ffea00; }
 .oracle-scroll { overflow-x: auto; }
 .oracle-sheet { width: 100%; border-collapse: collapse; font-size: 13px; }
 .oracle-sheet th { padding: 10px 8px; color: #808080; font: 700 10px var(--ui); letter-spacing: 0.12em; text-transform: uppercase; text-align: left; border-bottom: 1px solid rgba(255, 255, 255, 0.14); }

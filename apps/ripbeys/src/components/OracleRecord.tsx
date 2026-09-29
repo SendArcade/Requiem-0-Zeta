@@ -1,4 +1,5 @@
-import { useEffect, useMemo, useState } from 'react'
+import { OracleHistory } from './OracleHistory'
+import { useEffect, useState } from 'react'
 
 const SOURCES = [
   ['mercari_jp', 'Mercari JP'],
@@ -20,8 +21,6 @@ const CONDITIONS = [
 ] as const
 
 const DEFAULT_CONDITIONS = ['used', 'like_new', 'unknown']
-const RANGES = ['1M', '3M', '6M', '1Y', 'ALL'] as const
-type Range = (typeof RANGES)[number]
 
 const EVIDENCE: Record<string, string> = {
   confirmed_sale: 'Confirmed sale',
@@ -80,125 +79,8 @@ function money(n: number, currency = 'JPY') {
   return new Intl.NumberFormat('en-US', { style: 'currency', currency, maximumFractionDigits: 2 }).format(n)
 }
 
-function cutoff(range: Range) {
-  const day = 86400000
-  if (range === '1M') return Date.now() - 30 * day
-  if (range === '3M') return Date.now() - 90 * day
-  if (range === '6M') return Date.now() - 180 * day
-  if (range === '1Y') return Date.now() - 365 * day
-  return null
-}
-
-function when(date: string) {
-  return new Date(date.length > 10 ? date : `${date}T12:00:00`).getTime()
-}
-
-function median(values: number[]) {
-  if (!values.length) return 0
-  const sorted = [...values].sort((a, b) => a - b)
-  const mid = Math.floor(sorted.length / 2)
-  return sorted.length % 2 ? sorted[mid] : (sorted[mid - 1] + sorted[mid]) / 2
-}
-
 function priced(comp: Comp) {
   return typeof comp.displayPrice === 'number' ? comp.displayPrice : comp.price
-}
-
-function OracleChart({ comps, mark, low, high }: { comps: Comp[]; mark: number | null; low: number | null; high: number | null }) {
-  const [range, setRange] = useState<Range>('6M')
-  const [tip, setTip] = useState<string | null>(null)
-  const points = useMemo(() => {
-    const limit = cutoff(range)
-    return comps
-      .map((comp) => {
-        const price = priced(comp)
-        const ts = comp.observedAt ? when(comp.observedAt) : NaN
-        return {
-          ts,
-          price,
-          title: comp.title || '',
-          source: SOURCES.find(([id]) => id === comp.source)?.[1] || comp.source || '',
-          date: comp.observedAt?.slice(0, 10) || '',
-        }
-      })
-      .filter((point): point is { ts: number; price: number; title: string; source: string; date: string } => (
-        Number.isFinite(point.ts) && typeof point.price === 'number' && (limit == null || point.ts >= limit)
-      ))
-      .sort((a, b) => a.ts - b.ts)
-  }, [comps, range])
-
-  const width = 760
-  const height = 280
-  const padL = 56
-  const padR = 16
-  const padT = 18
-  const padB = 28
-  const prices = points.map((point) => point.price)
-  const floor = Math.min(...prices, low ?? Infinity, mark ?? Infinity)
-  const ceil = Math.max(...prices, high ?? -Infinity, mark ?? -Infinity)
-  const empty = points.length === 0 || !Number.isFinite(floor) || !Number.isFinite(ceil)
-  const span = empty ? 1 : Math.max(ceil - floor, 1)
-  const lo = empty ? 0 : floor - span * 0.12
-  const hi = empty ? 1 : ceil + span * 0.12
-  const t0 = points[0]?.ts ?? 0
-  const t1 = points[points.length - 1]?.ts ?? 1
-  const x = (ts: number) => padL + (points.length < 2 ? (width - padL - padR) / 2 : ((ts - t0) / Math.max(t1 - t0, 1)) * (width - padL - padR))
-  const y = (price: number) => padT + (1 - (price - lo) / Math.max(hi - lo, 1)) * (height - padT - padB)
-  const rolling = useMemo(() => {
-    const bag: number[] = []
-    return points.map((point) => {
-      bag.push(point.price)
-      return { ts: point.ts, median: median(bag) }
-    })
-  }, [points])
-  const path = rolling.map((point, index) => `${index ? 'L' : 'M'}${x(point.ts).toFixed(1)},${y(point.median).toFixed(1)}`).join(' ')
-
-  return (
-    <div className="oracle-plot">
-      <div className="oracle-ranges" role="tablist" aria-label="Price history window">
-        {RANGES.map((item) => (
-          <button key={item} type="button" className={item === range ? 'is-on' : ''} onClick={() => setRange(item)}>
-            {item}
-          </button>
-        ))}
-      </div>
-      {empty ? <p className="pdp-muted">No sold comps in {range}.</p> : (
-        <svg className="oracle-chart" viewBox={`0 0 ${width} ${height}`} role="img" aria-label="Oracle price history">
-          {[0, 1, 2, 3].map((step) => {
-            const price = lo + ((hi - lo) * step) / 3
-            return (
-              <g key={step}>
-                <line x1={padL} x2={width - padR} y1={y(price)} y2={y(price)} stroke="rgba(255,255,255,0.08)" />
-                <text x={padL - 8} y={y(price) + 4} textAnchor="end" fill="#808080" fontSize="11">{money(price).replace('¥', '¥')}</text>
-              </g>
-            )
-          })}
-          {low != null && high != null && low < high ? (
-            <rect x={padL} y={y(high)} width={width - padL - padR} height={Math.max(y(low) - y(high), 1)} fill="rgba(19,255,243,0.08)" />
-          ) : null}
-          {path ? <path d={path} fill="none" stroke="#13fff3" strokeWidth="2" /> : null}
-          {mark != null ? <line x1={padL} x2={width - padR} y1={y(mark)} y2={y(mark)} stroke="#ffea00" strokeDasharray="6 4" /> : null}
-          {points.map((point) => (
-            <circle
-              key={`${point.ts}-${point.price}-${point.title}`}
-              cx={x(point.ts)}
-              cy={y(point.price)}
-              r="4"
-              fill="#a3a3a3"
-              onMouseEnter={() => setTip(`${point.date} · ${money(point.price)} · ${point.source}${point.title ? ` · ${point.title}` : ''}`)}
-              onMouseLeave={() => setTip(null)}
-            />
-          ))}
-        </svg>
-      )}
-      <p className="oracle-legend">
-        <i className="is-line" /> Rolling median
-        <i className="is-dot" /> Sold comp
-        <i className="is-mark" /> Current mark
-      </p>
-      {tip ? <p className="oracle-tip">{tip}</p> : null}
-    </div>
-  )
 }
 
 /** Beyoracle product/part record: filters, history chart, and sold comps. Never invents a number. */
@@ -329,7 +211,7 @@ export function OracleRecord({ productId, partId }: { productId?: string | null;
       </div>
 
       <h3>Price history</h3>
-      <OracleChart comps={comps} mark={oracle?.value ?? null} low={oracle?.low ?? null} high={oracle?.high ?? null} />
+      <OracleHistory comps={comps} mark={oracle?.value ?? null} low={oracle?.low ?? null} high={oracle?.high ?? null} />
 
       <h3>Sold comps</h3>
       {comps.length ? (
