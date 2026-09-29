@@ -6,6 +6,8 @@ type GlitchTextProps = {
   enableShadows?: boolean
   enableOnHover?: boolean
   className?: string
+  afterShadow?: string
+  beforeShadow?: string
 }
 
 export default function GlitchText({
@@ -14,12 +16,14 @@ export default function GlitchText({
   enableShadows = true,
   enableOnHover = false,
   className = '',
+  afterShadow = '-5px 0 rgba(255, 60, 120, 0.85)',
+  beforeShadow = '5px 0 rgba(40, 255, 220, 0.75)',
 }: GlitchTextProps) {
   const inlineStyles = {
     ['--after-duration' as string]: `${speed * 3}s`,
     ['--before-duration' as string]: `${speed * 2}s`,
-    ['--after-shadow' as string]: enableShadows ? '-5px 0 rgba(255, 60, 120, 0.85)' : 'none',
-    ['--before-shadow' as string]: enableShadows ? '5px 0 rgba(40, 255, 220, 0.75)' : 'none',
+    ['--after-shadow' as string]: enableShadows ? afterShadow : 'none',
+    ['--before-shadow' as string]: enableShadows ? beforeShadow : 'none',
   }
 
   const hoverClass = enableOnHover ? 'enable-on-hover' : ''

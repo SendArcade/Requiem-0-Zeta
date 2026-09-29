@@ -1,10 +1,16 @@
-import { useEffect, useMemo, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
+import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { ChevronDown, Search } from 'lucide-react'
 import type { CSSProperties } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import { ModelSlot, ModelStageProvider } from '../components/ModelStage'
 import { MarketingNav } from '../components/MarketingNav'
+import BlurText from '../components/reactbits/BlurText'
 import CountUp from '../components/reactbits/CountUp'
+import CRTWarp from '../components/reactbits/CRTWarp'
+import GlareHover from '../components/reactbits/GlareHover'
+import Magnet from '../components/reactbits/Magnet'
+import ShinyText from '../components/reactbits/ShinyText'
 import { OracleValuation } from '../components/OracleValuation'
 import { SoftErrorBoundary } from '../components/SoftErrorBoundary'
 import { marketplaceListings, type Listing } from '../lib/assets'
@@ -23,21 +29,33 @@ import {
 import { spiritUrl } from '../lib/spirits'
 import './marketplace.css'
 
+gsap.registerPlugin(ScrollTrigger)
+
 type SortMode = 'Featured' | 'Name A-Z' | 'Oracle ready' | 'Oracle high' | 'Oracle low'
 
-function stackOf(item: Listing) {
-  return item.assembly === 'burst' && item.parts?.every((part) => part.src)
-    ? item.parts.map((part) => ({ src: part.src!, texture: part.texture, tint: item.tint, role: part.role }))
-    : undefined
-}
-
-function ProductCard({ item, index, onOpen }: { item: Listing; index: number; onOpen: () => void }) {
+function ProductCard({ item, index, onOpen, reduceMotion }: { item: Listing; index: number; onOpen: () => void; reduceMotion: boolean }) {
+  const artRef = useRef<HTMLDivElement>(null)
   const visual = resolveListingVisual(item.id)
   const modelSrc = modelPathForListing(item)
   const poster = posterForListing(item)
   const hasModel = Boolean(modelSrc)
   const spirit = spiritUrl(item.name)
-  const stack = stackOf(item)
+  const [playSpin, setPlaySpin] = useState(false)
+  const [spinFailed, setSpinFailed] = useState(false)
+
+  useEffect(() => {
+    const el = artRef.current
+    if (!el || !hasModel) return
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) setPlaySpin(true)
+      },
+      { rootMargin: '240px' },
+    )
+    observer.observe(el)
+    return () => observer.disconnect()
+  }, [hasModel])
 
   return (
     <article
@@ -54,37 +72,46 @@ function ProductCard({ item, index, onOpen }: { item: Listing; index: number; on
       role="button"
       aria-label={`Open ${item.name} details`}
     >
-      <div className="shop-card-art">
+      <div className="shop-card-art" ref={artRef}>
+        <GlareHover
+          className="shop-card-glare"
+          width="100%"
+          height="100%"
+          background="transparent"
+          borderRadius="0"
+          borderColor="transparent"
+          glareColor="#ffea00"
+          glareOpacity={reduceMotion ? 0 : 0.28}
+          glareSize={160}
+          transitionDuration={480}
+        >
         <span className="shop-card-number">{String(index + 1).padStart(2, '0')}</span>
         {spirit && <img className="shop-card-spirit" src={spirit} alt="" loading="lazy" />}
         {item.badge && <img className="shop-card-chip" src={item.badge} alt="" loading="lazy" />}
-        {poster && (
+        {poster && (!playSpin || spinFailed) && (
           <img
-            className={`shop-card-poster${hasModel ? ' shop-card-poster--under' : ''}`}
+            className="shop-card-poster"
             src={poster}
             alt=""
             loading="lazy"
+            decoding="async"
             onError={(event) => {
               event.currentTarget.style.display = 'none'
             }}
           />
         )}
-        {hasModel && (
-          <SoftErrorBoundary
-            label={`card-model:${item.id}`}
-            fallback={<span className="shop-card-empty">No preview</span>}
-          >
-            <ModelSlot
-              src={modelSrc!}
-              texture={item.texture}
-              tint={item.tint}
-              stack={stack}
-              className="shop-card-model"
-            />
-          </SoftErrorBoundary>
+        {hasModel && playSpin && !spinFailed && (
+          <img
+            className="shop-card-spin"
+            src={`/assets/spins/${item.id}.gif?v=2`}
+            alt=""
+            decoding="async"
+            onError={() => setSpinFailed(true)}
+          />
         )}
         {!hasModel && !poster && <span className="shop-card-empty">No preview</span>}
         <span className="shop-card-foil" aria-hidden="true" />
+        </GlareHover>
       </div>
       <div className="shop-card-copy">
         <h2>{item.name}</h2>
@@ -128,8 +155,9 @@ export function Marketplace() {
   const [sort, setSort] = useState<SortMode>('Featured')
   const [query, setQuery] = useState('')
   const [page, setPage] = useState(1)
+  const [reduceMotion, setReduceMotion] = useState(false)
   const [oracleValues, setOracleValues] = useState<Record<string, number | null>>({})
-  const pageSize = 24
+  const pageSize = 12
 
   const catalog = useMemo(
     () => marketplaceListings.filter((item): item is Listing => Boolean(item?.id && item?.name)),
@@ -192,6 +220,14 @@ export function Marketplace() {
   useEffect(() => setPage(1), [query, series, sort, type])
 
   useEffect(() => {
+    const media = window.matchMedia('(prefers-reduced-motion: reduce)')
+    const sync = () => setReduceMotion(media.matches)
+    sync()
+    media.addEventListener('change', sync)
+    return () => media.removeEventListener('change', sync)
+  }, [])
+
+  useEffect(() => {
     if (sort !== 'Oracle high' && sort !== 'Oracle low') return
     const eligible = catalog.filter((item) => isProductOracleEligible(item.id))
     let cancelled = false
@@ -214,86 +250,191 @@ export function Marketplace() {
   const hero = catalog.find((item) => item.id === 'bx-002') ?? catalog[0]
   const beyCount = catalog.filter((item) => item.class !== 'Arena').length
   const openDetail = (item: Listing) => navigate(`/market/${item.id}`)
+  const pageRef = useRef<HTMLElement>(null)
+
+  useEffect(() => {
+    const root = pageRef.current
+    if (!root || reduceMotion) return
+    const ctx = gsap.context(() => {
+      const heroScroll = () => ({ trigger: '.pit-head', start: 'top top', end: 'bottom top', scrub: 0.6 })
+      gsap.to('.pit-atmosphere', {
+        yPercent: 46,
+        scale: 1.45,
+        ease: 'none',
+        scrollTrigger: heroScroll(),
+      })
+      gsap.to('.pit-head-copy', {
+        y: -280,
+        scale: 0.82,
+        opacity: 0,
+        ease: 'none',
+        scrollTrigger: { trigger: '.pit-head', start: 'top top', end: '70% top', scrub: 0.6 },
+      })
+      gsap.to('.pit-launch-magnet', {
+        y: 140,
+        x: -90,
+        rotation: -6,
+        opacity: 0,
+        ease: 'none',
+        scrollTrigger: heroScroll(),
+      })
+      gsap.to('.pit-counts', {
+        y: 180,
+        x: 70,
+        opacity: 0,
+        ease: 'none',
+        scrollTrigger: heroScroll(),
+      })
+      gsap.from('.nk-section h2', {
+        y: 160,
+        scale: 0.72,
+        opacity: 0,
+        duration: 1,
+        ease: 'power4.out',
+        scrollTrigger: { trigger: '.nk-section', start: 'top 92%' },
+      })
+      gsap.from('.nk-section-tools > *', {
+        y: 70,
+        opacity: 0,
+        duration: 0.8,
+        stagger: 0.1,
+        ease: 'power3.out',
+        scrollTrigger: { trigger: '.nk-section', start: 'top 90%' },
+      })
+      gsap.from('.nk-tools', {
+        y: 80,
+        opacity: 0,
+        duration: 0.8,
+        ease: 'power3.out',
+        scrollTrigger: { trigger: '.nk-tools', start: 'top 92%' },
+      })
+      gsap.utils.toArray<HTMLElement>('.nk-grid .shop-card').forEach((card, index) => {
+        const spin = card.querySelector('.shop-card-spin, .shop-card-poster')
+        gsap.from(card, {
+          y: 90,
+          opacity: 0,
+          duration: 0.7,
+          delay: (index % 3) * 0.06,
+          ease: 'power3.out',
+          scrollTrigger: { trigger: card, start: 'top 90%' },
+        })
+        if (spin) {
+          gsap.fromTo(spin, { y: 24, scale: 1.06 }, {
+            y: -16,
+            scale: 1,
+            ease: 'none',
+            scrollTrigger: { trigger: card, start: 'top bottom', end: 'bottom top', scrub: 0.5 },
+          })
+        }
+      })
+      gsap.from('.nk-more', {
+        scale: 0.8,
+        y: 50,
+        opacity: 0,
+        duration: 0.7,
+        ease: 'power3.out',
+        scrollTrigger: { trigger: '.nk-more', start: 'top 96%' },
+      })
+      gsap.from('.shop-footer > *', {
+        y: 60,
+        opacity: 0,
+        duration: 0.8,
+        stagger: 0.12,
+        ease: 'power3.out',
+        scrollTrigger: { trigger: '.shop-footer', start: 'top 98%' },
+      })
+    }, root)
+    return () => ctx.revert()
+  }, [reduceMotion, shown.length, series, type, sort, query])
 
   return (
-    <ModelStageProvider>
-      <main className="shop-page">
+      <main className="shop-page nk-page" ref={pageRef}>
         <MarketingNav active="shop" />
 
         <section className="pit-head">
+          <CRTWarp
+            className="pit-atmosphere"
+            color="#ffea00"
+            backgroundColor="#050505"
+            speed={0.5}
+            curvature={0.25}
+            scanlineStrength={0.25}
+            scanlineFrequency={160}
+            waveAmplitude={0.24}
+            waveFrequency={2.2}
+            bloom={0.85}
+            bloomRadius={1}
+            noise={0.07}
+            vignette={0.55}
+            brightness={0.38}
+            pixelation={1}
+            rgbShift={0.01}
+            mouseReact={!reduceMotion}
+            mouseStrength={0.5}
+            dpr={1}
+            fps={30}
+            paused={reduceMotion}
+          />
           <div className="pit-head-copy">
-            <p className="pit-kicker">Marketplace</p>
-            <h1>Every Bey in the pit.</h1>
+            <p className="pit-kicker">
+              <ShinyText text="Marketplace" speed={3.4} delay={1.2} disabled={reduceMotion} color="#a3a3a3" shineColor="#ffea00" />
+            </p>
+            <BlurText
+              as="h1"
+              text="Every Bey in the pit."
+              animateBy="words"
+              delay={reduceMotion ? 0 : 50}
+              stepDuration={reduceMotion ? 0 : 0.28}
+              animationFrom={reduceMotion ? { filter: 'blur(0px)', opacity: 1, y: 0 } : { filter: 'blur(6px)', opacity: 0, y: 10 }}
+              animationTo={[{ filter: 'blur(0px)', opacity: 1, y: 0 }]}
+            />
             <p>
               {visible.length} listings. Open one for the model. The Oracle price shows when BeyOracle has a mark.
             </p>
           </div>
-          <button type="button" className="pit-launch" onClick={() => openDetail(hero)}>
-            <span>Launch</span>
-            <strong>{hero.name}</strong>
-            <small>{hero.series} · {hero.id}</small>
-          </button>
+          <Magnet disabled={reduceMotion} padding={80} magnetStrength={3} wrapperClassName="pit-launch-magnet">
+            <button type="button" className="pit-launch" onClick={() => openDetail(hero)}>
+              <span>Launch</span>
+              <strong>{hero.name}</strong>
+              <small>{hero.series} · {hero.id}</small>
+            </button>
+          </Magnet>
           <dl className="pit-counts">
             <div>
               <dt>Beys</dt>
-              <dd><CountUp to={beyCount} separator="," /></dd>
+              <dd><CountUp to={beyCount} separator="," duration={1.1} /></dd>
             </div>
             <div>
               <dt>Models</dt>
-              <dd><CountUp to={visualAssetStats.assembledModelOnDisk} separator="," /></dd>
+              <dd><CountUp to={visualAssetStats.assembledModelOnDisk} separator="," duration={1.1} /></dd>
             </div>
             <div>
               <dt>Product marks</dt>
-              <dd><CountUp to={productOracleCount} separator="," /></dd>
+              <dd><CountUp to={productOracleCount} separator="," duration={1.1} /></dd>
             </div>
           </dl>
         </section>
 
-        <section className="shop-catalogue pit-catalogue" id="market">
-          <header className="shop-section-head">
-            <div>
-              <span className="shop-eyebrow">Full list</span>
-              <h2>Catalogue</h2>
-            </div>
-            <p>
-              {shown.length} of {visible.length}
-            </p>
-          </header>
-          <div className="shop-controls">
-            <div className="shop-tabs">
+        <section className="nk-archive" id="market">
+          <header className="nk-section">
+            <h2>Archive</h2>
+            <div className="nk-section-tools">
               {(['All', 'X', 'Burst'] as const).map((value) => (
-                <button
-                  key={value}
-                  type="button"
-                  className={series === value ? 'active' : ''}
-                  onClick={() => setSeries(value)}
-                >
-                  {value === 'All' ? 'All products' : `${value} series`}
+                <button key={value} type="button" className={series === value ? 'active' : ''} onClick={() => { setSeries(value); setType('All') }}>
+                  {value === 'All' ? 'All' : value}
                 </button>
               ))}
+              <span>{shown.length} / {visible.length}</span>
             </div>
+          </header>
+          <div className="nk-tools">
             <label className="shop-search">
               <Search size={15} />
-              <input
-                value={query}
-                onChange={(event) => setQuery(event.target.value)}
-                placeholder="Search name, series, listing id…"
-              />
+              <input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Search" aria-label="Search the catalogue" />
             </label>
             <label className="shop-select">
-              <select value={type} onChange={(event) => setType(event.target.value as typeof type)}>
-                <option value="All">All types</option>
-                <option value="Attack">Attack</option>
-                <option value="Defense">Defense</option>
-                <option value="Stamina">Stamina</option>
-                <option value="Balance">Balance</option>
-                <option value="Arena">Arenas</option>
-                <option value="Part">Parts</option>
-              </select>
-              <ChevronDown size={14} />
-            </label>
-            <label className="shop-select">
-              <select value={sort} onChange={(event) => setSort(event.target.value as SortMode)}>
+              <span className="sr-only">Sort</span>
+              <select value={sort} aria-label="Sort catalogue" onChange={(event) => setSort(event.target.value as SortMode)}>
                 <option value="Featured">Featured</option>
                 <option value="Name A-Z">Name A-Z</option>
                 <option value="Oracle ready">Oracle ready</option>
@@ -303,22 +444,22 @@ export function Marketplace() {
               <ChevronDown size={14} />
             </label>
           </div>
-          {shown.length === 0 ? (
-            <p className="shop-intro-copy">No listings match these filters.</p>
-          ) : null}
-          <div className="shop-grid">
-            {shown.map((item) => (
-              <ProductCard
-                key={item.id}
-                item={item}
-                index={visible.indexOf(item)}
-                onOpen={() => openDetail(item)}
-              />
-            ))}
-          </div>
+          {shown.length === 0 ? <p className="shop-intro-copy">No listings match these filters.</p> : (
+            <div className="nk-grid">
+              {shown.map((item) => (
+                <ProductCard
+                  key={item.id}
+                  item={item}
+                  index={visible.indexOf(item)}
+                  reduceMotion={reduceMotion}
+                  onOpen={() => openDetail(item)}
+                />
+              ))}
+            </div>
+          )}
           {shown.length < visible.length && (
-            <button className="shop-more" type="button" onClick={() => setPage((value) => value + 1)}>
-              Load more products
+            <button className="nk-more" type="button" onClick={() => setPage((value) => value + 1)}>
+              View all
             </button>
           )}
         </section>
@@ -329,6 +470,5 @@ export function Marketplace() {
           <Link to="/lab">Open the 3D Lab</Link>
         </footer>
       </main>
-    </ModelStageProvider>
   )
 }

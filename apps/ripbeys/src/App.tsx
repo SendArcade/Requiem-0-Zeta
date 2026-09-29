@@ -10,6 +10,9 @@ const GalleryPage = lazy(() => import('./pages/Gallery').then((module) => ({ def
 const ReferenceScreens = lazy(() => import('./pages/ReferenceScreens').then((module) => ({ default: module.ReferenceScreens })))
 const ComingSoon = lazy(() => import('./pages/ComingSoon').then((module) => ({ default: module.ComingSoon })))
 const Marketplace = lazy(() => import('./pages/Marketplace').then((module) => ({ default: module.Marketplace })))
+const SpinBake = import.meta.env.DEV
+  ? lazy(() => import('./pages/SpinBake').then((module) => ({ default: module.SpinBake })))
+  : null
 const ProductDetail = lazy(() => import('./pages/ProductDetail').then((module) => ({ default: module.ProductDetail })))
 // Landing is eager so the glitch intro is the first paint — no "Opening archive" screen
 // const Landing = lazy(() => import('./pages/Landing').then((module) => ({ default: module.Landing })))
@@ -91,6 +94,7 @@ export default function App() {
           <Routes>
             <Route path="/" element={<Landing />} />
             <Route path="/market" element={<MarketOrGate />} />
+            {SpinBake ? <Route path="/spin-bake" element={<SpinBake />} /> : null}
             <Route path="/market/:listingId" element={<ProductOrGate />} />
             <Route path="/game" element={<Splash />} />
             <Route path="/hub" element={<Hub />} />

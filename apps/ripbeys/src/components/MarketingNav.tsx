@@ -2,6 +2,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { useCallback, useEffect, type MouseEvent } from 'react'
 import { StaggeredMenu, type StaggeredMenuItem } from './reactbits/StaggeredMenu'
 import './reactbits/reactbits-overrides.css'
+import FluidGlass from './reactbits/FluidGlass'
 import './site-nav.css'
 
 type NavArea = 'home' | 'shop' | 'lab' | 'hub'
@@ -64,7 +65,7 @@ function isLinkActive(link: NavLink, pathname: string, hash: string, area: NavAr
   return area === link.area && pathname === link.to
 }
 
-export function MarketingNav({ active, overlay = false }: { active: NavArea; overlay?: boolean }) {
+export function MarketingNav({ active, overlay = false, glass = false }: { active: NavArea; overlay?: boolean; glass?: boolean }) {
   const { pathname, hash } = useLocation()
   const navigate = useNavigate()
 
@@ -93,7 +94,8 @@ export function MarketingNav({ active, overlay = false }: { active: NavArea; ove
   return (
     <>
       <HashScroll />
-      <header className={`site-nav${overlay ? ' site-nav-overlay' : ''}`} data-active={active}>
+      <header className={`site-nav${overlay ? ' site-nav-overlay' : ''}${glass ? ' site-nav--glass' : ''}`} data-active={active}>
+        {glass ? <FluidGlass className="site-nav-glass" /> : null}
         <Link to="/" className="site-brand cursor-target" aria-label="Rip Beys home" onClick={(e) => go(e, links[0])}>
           <img className="site-brand-mark" src="/assets/ripbeys-logo.png" alt="" width={36} height={36} />
           <span>RIPBEYS</span>

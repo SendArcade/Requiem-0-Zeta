@@ -1,5 +1,9 @@
 @import '../pages/theme.css';
 
+.site-nav--glass { overflow: hidden; }
+.site-nav-glass { position: absolute; inset: 0; z-index: 0; pointer-events: none; }
+.site-nav--glass > :not(.site-nav-glass) { position: relative; z-index: 1; }
+
 .site-nav {
   position: fixed;
   top: 16px;

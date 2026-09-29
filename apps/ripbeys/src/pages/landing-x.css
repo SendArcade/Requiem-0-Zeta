@@ -235,7 +235,7 @@ html.rb-locked {
 .rb-page.is-live .rb-hero-art {
   opacity: 1;
   transform: translate3d(0, 0, 0) scale(1.06);
-  transition: opacity 0.5s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  transition: opacity 0.5s cubic-bezier(0.22, 1, 0.36, 1);
 }
 .rb-hero-shade {
   position: absolute;
@@ -271,6 +271,8 @@ html.rb-locked {
   rotate: -8deg;
   clip-path: polygon(50% 0%, 63% 18%, 88% 12%, 82% 38%, 100% 50%, 82% 62%, 88% 88%, 63% 82%, 50% 100%, 37% 82%, 12% 88%, 18% 62%, 0% 50%, 18% 38%, 12% 12%, 37% 18%);
 }
+.rb-tag,
+.rb-sticker { display: none; }
 .rb-hero-copy {
   position: relative;
   z-index: 6;
@@ -279,6 +281,7 @@ html.rb-locked {
   display: grid;
   justify-items: center;
   gap: 16px;
+  max-width: min(720px, 100%);
   padding: 0 20px 6vh;
   text-align: center;
   opacity: calc(var(--boot-pull, 0) * 1.15);
@@ -297,10 +300,7 @@ html.rb-locked {
   opacity: 1;
   transform: none;
   clip-path: none;
-  transition:
-    opacity 0.55s cubic-bezier(0.22, 1, 0.36, 1),
-    transform 0.55s cubic-bezier(0.22, 1, 0.36, 1),
-    clip-path 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+  transition: opacity 0.55s cubic-bezier(0.22, 1, 0.36, 1), clip-path 0.55s cubic-bezier(0.22, 1, 0.36, 1);
 }
 .rb-hero-kicker {
   margin: 0;
@@ -317,17 +317,13 @@ html.rb-locked {
   gap: 0.04em;
   margin: 0;
   color: #fff;
-  font: 700 clamp(64px, 14vw, 160px)/0.8 var(--pixel);
-  letter-spacing: 0.08em;
+  font: 700 clamp(56px, 7vw, 92px)/0.86 var(--pixel);
+  letter-spacing: 0.06em;
   text-transform: uppercase;
-  filter: url(#rb-spray);
-  text-shadow:
-    2px 0 rgba(255, 77, 154, 0.9),
-    -2px 0 rgba(19, 255, 243, 0.8),
-    0 3px 0 #111,
-    0 12px 32px rgba(0, 0, 0, 0.5);
-  -webkit-text-stroke: 7px #000;
-  paint-order: stroke fill;
+  filter: none;
+  text-shadow: 0 18px 48px rgba(0, 0, 0, 0.65);
+  -webkit-text-stroke: 0;
+  paint-order: fill;
 }
 .rb-hero-punk span {
   display: block;
@@ -336,18 +332,15 @@ html.rb-locked {
   display: block;
   color: var(--sticker);
   font-style: normal;
-  font-family: var(--script);
-  font-weight: 400;
-  font-size: 1.05em;
-  letter-spacing: 0.04em;
-  text-transform: lowercase;
-  rotate: -7deg;
+  font-family: var(--pixel);
+  font-weight: 700;
+  font-size: 1em;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  rotate: 0deg;
   -webkit-text-stroke: 0;
-  text-shadow:
-    2px 0 #ff4d9a,
-    -2px 0 #13fff3,
-    4px 6px 0 #111;
-  mix-blend-mode: screen;
+  text-shadow: 0 18px 48px rgba(0, 0, 0, 0.65);
+  mix-blend-mode: normal;
 }
 .rb-hero-line {
   margin: 0;

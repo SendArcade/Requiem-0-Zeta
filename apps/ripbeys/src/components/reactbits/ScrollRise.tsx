@@ -43,9 +43,10 @@ export default function ScrollRise({ children, className = '', stagger = 70, as:
     return () => io.disconnect()
   }, [stagger])
 
+  const Root = Tag as 'div'
   return (
-    <Tag ref={root} id={id} className={`rb-rise ${className}`.trim()} data-rise>
+    <Root ref={root} id={id} className={`rb-rise ${className}`.trim()} data-rise>
       {children}
-    </Tag>
+    </Root>
   )
 }
