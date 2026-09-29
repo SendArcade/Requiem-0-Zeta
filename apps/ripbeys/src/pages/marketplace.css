@@ -2,6 +2,12 @@
 
 /* --------------------------- marketing ground --------------------------- */
 .shop-page, .viewer-page, .pdp-page { min-height: 100%; padding-top: 84px; color: var(--ink); background: var(--paper); font-family: var(--ui); overflow-x: clip; }
+.nk-page.shop-page { padding-top: 0; }
+.nk-page .site-nav {
+  background: transparent;
+  border-color: rgba(255, 255, 255, 0.28);
+  backdrop-filter: none;
+}
 #root:has(.shop-page),
 #root:has(.viewer-page),
 #root:has(.pdp-page),
@@ -314,8 +320,28 @@
     linear-gradient(90deg, rgba(0, 0, 0, 0.72) 0%, rgba(0, 0, 0, 0.28) 42%, rgba(0, 0, 0, 0.45) 100%),
     linear-gradient(180deg, rgba(0, 0, 0, 0.2), transparent 30%, rgba(0, 0, 0, 0.55));
 }
-.pit-head-copy { position: relative; z-index: 2; max-width: 760px; }
-.pit-launch-magnet { position: absolute; z-index: 2; right: clamp(28px, 6vw, 96px); bottom: 148px; }
+.pit-head-copy { position: relative; z-index: 2; max-width: 920px; }
+.pit-title {
+  margin: 14px 0 0;
+  color: #fff;
+  font: 700 clamp(72px, 11vw, 140px)/0.8 var(--pixel);
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  text-shadow: 0 8px 32px rgba(0, 0, 0, 0.55);
+}
+.pit-title span { display: block; }
+.pit-title span:last-child { color: #ffea00; }
+.pit-down {
+  display: inline-flex;
+  margin-top: 22px;
+  color: #fff;
+  font: 700 12px/1 var(--ui);
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.55);
+  padding-bottom: 6px;
+}
+.pit-down:hover { color: #ffea00; border-color: #ffea00; }
 .pit-counts { position: relative; z-index: 2; }
 .pit-head-copy h1,
 .pit-head-copy .pit-kicker,
@@ -348,8 +374,7 @@
     padding: 108px 20px 32px;
     align-items: start;
   }
-  .pit-launch-magnet { position: static; }
-  .pit-head-copy h1 { max-width: 8ch; font-size: clamp(48px, 14vw, 72px); }
+  .pit-title { font-size: clamp(52px, 14vw, 84px); }
 }
 .market-shutter .shop-catalogue { max-width: none; padding-top: 12px; }
 .pit-atmosphere { z-index: 0; opacity: 0.9; pointer-events: none; }
@@ -450,7 +475,7 @@
   padding: 12px;
 }
 @media (max-width: 860px) {
-  .pit-launch-magnet { position: static; }
+  .pit-title { font-size: clamp(48px, 16vw, 72px); }
 }
 @media (prefers-reduced-motion: reduce) {
   .shop-card, .shop-card:hover { transform: none; transition: none; }

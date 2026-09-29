@@ -5,11 +5,9 @@ import { ChevronDown, Search } from 'lucide-react'
 import type { CSSProperties } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { MarketingNav } from '../components/MarketingNav'
-import BlurText from '../components/reactbits/BlurText'
 import CountUp from '../components/reactbits/CountUp'
 import CRTWarp from '../components/reactbits/CRTWarp'
 import GlareHover from '../components/reactbits/GlareHover'
-import Magnet from '../components/reactbits/Magnet'
 import ShinyText from '../components/reactbits/ShinyText'
 import { OracleValuation } from '../components/OracleValuation'
 import { SoftErrorBoundary } from '../components/SoftErrorBoundary'
@@ -253,7 +251,6 @@ export function Marketplace() {
 
   const shown = visible.slice(0, page * pageSize)
   const priced = catalog.filter((item) => typeof oracleValues[item.id] === 'number')
-  const hero = priced.find((item) => item.id === 'bx-002') ?? priced[0] ?? catalog.find((item) => item.id === 'bx-002') ?? catalog[0]
   const beyCount = oracleChecked ? priced.length : 0
   const openDetail = (item: Listing) => navigate(`/market/${item.id}`)
   const pageRef = useRef<HTMLElement>(null)
@@ -276,10 +273,8 @@ export function Marketplace() {
         ease: 'none',
         scrollTrigger: { trigger: '.pit-head', start: 'top top', end: '70% top', scrub: 0.6 },
       })
-      gsap.to('.pit-launch-magnet', {
-        y: 140,
-        x: -90,
-        rotation: -6,
+      gsap.to('.pit-down', {
+        y: 40,
         opacity: 0,
         ease: 'none',
         scrollTrigger: heroScroll(),
@@ -385,30 +380,19 @@ export function Marketplace() {
           </div>
           <div className="pit-head-copy">
             <p className="pit-kicker">
-              <ShinyText text="Marketplace" speed={3.4} delay={1.2} disabled={reduceMotion} color="#a3a3a3" shineColor="#ffea00" />
+              <ShinyText text="Marketplace" speed={3.4} delay={1.2} disabled={reduceMotion} color="#ffea00" shineColor="#ffffff" />
             </p>
-            <BlurText
-              as="h1"
-              text="Every Bey in the pit."
-              animateBy="words"
-              delay={reduceMotion ? 0 : 50}
-              stepDuration={reduceMotion ? 0 : 0.28}
-              animationFrom={reduceMotion ? { filter: 'blur(0px)', opacity: 1, y: 0 } : { filter: 'blur(6px)', opacity: 0, y: 10 }}
-              animationTo={[{ filter: 'blur(0px)', opacity: 1, y: 0 }]}
-            />
+            <h1 className="pit-title">
+              <span>Every Bey</span>
+              <span>in the pit.</span>
+            </h1>
             <p>
               {oracleChecked
-                ? `${visible.length} with an Oracle value. Open one for the model.`
+                ? `${visible.length} with a live Oracle mark.`
                 : 'Checking which Beys have an Oracle value.'}
             </p>
+            <a className="pit-down" href="#market">Into the archive</a>
           </div>
-          <Magnet disabled={reduceMotion} padding={80} magnetStrength={3} wrapperClassName="pit-launch-magnet">
-            <button type="button" className="pit-launch" onClick={() => openDetail(hero)}>
-              <span>Launch</span>
-              <strong>{hero.name}</strong>
-              <small>{hero.series} · {hero.id}</small>
-            </button>
-          </Magnet>
           <dl className="pit-counts">
             <div>
               <dt>Beys</dt>
