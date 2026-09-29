@@ -4,6 +4,7 @@ import { ArrowLeft, Check, Copy, Heart, Share2 } from 'lucide-react'
 import type { CSSProperties } from 'react'
 import { ModelViewer } from '../components/ModelViewer'
 import { MarketingNav } from '../components/MarketingNav'
+import { OracleRecord } from '../components/OracleRecord'
 import { OracleValuation } from '../components/OracleValuation'
 import { SoftErrorBoundary } from '../components/SoftErrorBoundary'
 import { listingById, type BeyPart, type Listing } from '../lib/assets'
@@ -288,6 +289,7 @@ export function ProductDetail() {
             >
               <OracleValuation listingId={item.id} variant="detail" />
             </SoftErrorBoundary>
+            <OracleRecord productId={bridge?.requiemProductId} partId={bridge?.requiemPartId} />
             <p className="pdp-status-note">{status.detail}</p>
           </div>
 
