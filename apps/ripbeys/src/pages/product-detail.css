@@ -459,6 +459,12 @@
 .oracle-record h3 { margin: 8px 0 0; color: #f5f5f5; font: 700 12px var(--ui); letter-spacing: 0.16em; text-transform: uppercase; }
 .oracle-hero { display: flex; justify-content: space-between; gap: 24px; align-items: flex-end; }
 .oracle-record-value.is-empty { color: #808080; font-size: 32px; }
+.oracle-live { margin-left: 10px; color: #808080; letter-spacing: 0.12em; }
+.oracle-live.is-on { color: #13fff3; }
+.oracle-warn { margin: 12px 0 0; color: #f5d76e; font: 600 13px/1.45 var(--ui); }
+.oracle-cond-marks { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+.oracle-cond-marks span { padding: 6px 8px; border: 1px solid rgba(255,255,255,0.14); color: #a3a3a3; font: 600 12px var(--ui); }
+.oracle-tip { margin: 0; color: #f5f5f5; font: 600 13px var(--ui); }
 .oracle-ranges { display: flex; flex-wrap: wrap; gap: 8px; }
 .oracle-ranges button {
   min-height: 32px;
