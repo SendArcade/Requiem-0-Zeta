@@ -289,7 +289,6 @@ export function ProductDetail() {
             >
               <OracleValuation listingId={item.id} variant="detail" />
             </SoftErrorBoundary>
-            <OracleRecord productId={bridge?.requiemProductId} partId={bridge?.requiemPartId} />
             <p className="pdp-status-note">{status.detail}</p>
           </div>
 
@@ -321,6 +320,9 @@ export function ProductDetail() {
             Hardcoded listing prices are not market values.
           </small>
         </div>
+      </section>
+      <section className="oracle-board">
+        <OracleRecord productId={bridge?.requiemProductId} partId={bridge?.requiemPartId} />
       </section>
     </main>
   )

@@ -380,7 +380,8 @@
 }
 .market-shutter .shop-catalogue { max-width: none; padding-top: 12px; }
 .pit-atmosphere { z-index: 0; opacity: 0.9; pointer-events: none; }
-.pit-head > *:not(.crt-warp-container) { position: relative; z-index: 2; }
+.pit-head > *:not(.crt-warp-container):not(.pit-crt) { position: relative; z-index: 2; }
+.pit-head > .pit-crt { position: absolute; inset: 0; z-index: 0; width: auto; height: auto; }
 .click-spark { position: relative; }
 .click-spark canvas { position: absolute; inset: 0; z-index: 30; width: 100%; height: 100%; pointer-events: none; }
 .archive-rail { max-width: 1180px; margin: 0 auto; padding: 0 20px 8px; }
