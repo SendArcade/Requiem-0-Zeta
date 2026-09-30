@@ -23,6 +23,7 @@ import {
   modelPathForListing,
   posterForListing,
   resolveListingVisual,
+  oracleTitleForListing,
   visualAssetStats,
 } from '../lib/visualAssets'
 import { spiritUrl } from '../lib/spirits'
@@ -69,7 +70,7 @@ function ProductCard({ item, index, onOpen, reduceMotion }: { item: Listing; ind
       }}
       tabIndex={0}
       role="button"
-      aria-label={`Open ${item.name} details`}
+      aria-label={`Open ${oracleTitleForListing(item)} details`}
     >
       <div className="shop-card-art" ref={artRef}>
         <GlareHover
@@ -113,7 +114,7 @@ function ProductCard({ item, index, onOpen, reduceMotion }: { item: Listing; ind
         </GlareHover>
       </div>
       <div className="shop-card-copy">
-        <h2>{item.name}</h2>
+        <h2>{oracleTitleForListing(item)}</h2>
         <span className="shop-card-meta">
           {item.series} · {item.class}
         </span>

@@ -4,6 +4,7 @@
  */
 import visualAssets from '../data/visual-assets.json'
 import type { Listing } from './assets'
+import { oracleNames } from './oracleNames'
 
 export type ListingVisual = {
   listingId: string
@@ -79,7 +80,13 @@ export function modelPathForListing(item: Listing): string | undefined {
 /** Poster fallback for this listing — map poster, else x-sprites product art. */
 export function posterForListing(item: Listing): string | undefined {
   const v = resolveListingVisual(item.id)
-  if (v.poster && v.posterExists) return v.poster
+  if (v.poster && v.posterExists && !v.poster.includes('bg-waiting')) return v.poster
+  if (v.model && v.modelExists) return `/assets/spins/${item.id}.gif?v=2`
   if (/\/game\/x-sprites\//i.test(item.image)) return item.image
   return undefined
+}
+
+/** Name of the confirmed Requiem product or part. Falls back to the RIPBEYS label. */
+export function oracleTitleForListing(item: Listing): string {
+  return oracleNames[item.id] ?? item.name
 }

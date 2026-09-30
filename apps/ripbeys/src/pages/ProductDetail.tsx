@@ -14,7 +14,7 @@ import {
   getOracleBridgeEntry,
 } from '../lib/oracleBridge'
 import { isFavorite, toggleFavorite } from '../lib/favorites'
-import { modelPathForListing, posterForListing } from '../lib/visualAssets'
+import { modelPathForListing, oracleTitleForListing, posterForListing } from '../lib/visualAssets'
 import './marketplace.css'
 import './product-detail.css'
 
@@ -222,7 +222,7 @@ export function ProductDetail() {
           {item.id === 'bx-002' && (
             <p className="pdp-kicker">Showcase product — Dagger Dran with confirmed Product Oracle mapping</p>
           )}
-          <h1>{item.name}</h1>
+          <h1>{oracleTitleForListing(item)}</h1>
           <p className="pdp-lede">
             RIPBEYS listing <code>{item.id}</code>
             {bridge?.requiemProductId ? (
