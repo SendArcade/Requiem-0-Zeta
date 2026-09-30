@@ -5,7 +5,7 @@ import './reactbits/reactbits-overrides.css'
 import FluidGlass from './reactbits/FluidGlass'
 import './site-nav.css'
 
-type NavArea = 'home' | 'shop' | 'lab' | 'hub'
+type NavArea = 'home' | 'shop' | 'lab' | 'hub' | 'docs'
 
 type NavLink = {
   to: string
@@ -18,7 +18,7 @@ const links: NavLink[] = [
   { to: '/', label: 'Home', area: 'home' },
   { to: '/#beys', label: 'Beys', area: 'home', hash: 'beys' },
   { to: '/lab', label: 'Lab', area: 'lab' },
-  { to: '/#crew', label: 'Crew', area: 'home', hash: 'crew' },
+  { to: '/docs', label: 'Docs', area: 'docs' },
   { to: '/market', label: 'Catalogue', area: 'shop' },
 ]
 
@@ -26,7 +26,7 @@ const menuItems: StaggeredMenuItem[] = [
   { label: 'Home', ariaLabel: 'Go to home page', link: '/' },
   { label: 'Beys', ariaLabel: 'Open beys', link: '/#beys' },
   { label: 'Lab', ariaLabel: 'Open 3D Lab', link: '/lab' },
-  { label: 'Crew', ariaLabel: 'Open crew', link: '/#crew' },
+  { label: 'Docs', ariaLabel: 'Open documentation', link: '/docs' },
   { label: 'Catalogue', ariaLabel: 'Open catalogue', link: '/market' },
 ]
 
@@ -62,6 +62,7 @@ function isLinkActive(link: NavLink, pathname: string, hash: string, area: NavAr
   if (link.hash) return pathname === '/' && hash === `#${link.hash}`
   if (link.to === '/') return pathname === '/' && !hash
   if (link.to === '/market') return pathname === '/market' || pathname.startsWith('/market/')
+  if (link.to === '/docs') return pathname === '/docs' || pathname.startsWith('/docs/')
   return area === link.area && pathname === link.to
 }
 

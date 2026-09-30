@@ -16,6 +16,8 @@ const CONSUMER_ROUTES = [
   "/hub",
   "/game",
   "/screens",
+  "/docs",
+  "/docs/:path*",
   "/x",
   "/x/:path*",
   "/burst",
