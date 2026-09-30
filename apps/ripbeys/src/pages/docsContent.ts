@@ -15,6 +15,86 @@ export type DocPage = {
 
 export const docPages: DocPage[] = [
   {
+    slug: 'brief',
+    group: 'Start',
+    title: 'Product brief',
+    lede: 'BeyOracle is the sold-comp price for a whole Beyblade. RIPBEYS is the showroom for that price. One catalogue, one Oracle, and a number only when the comps are actually there.',
+    blocks: [
+      { kind: 'h2', text: 'The product' },
+      {
+        kind: 'p',
+        text: 'Beyblade’s primary business is in its most mainstream stretch. The collectibles layer around it — a shared price, a grade, a vault — is still near zero. Trading cards already closed that gap after their boom. Beyblade has not. This product is the price index for a whole Bey, across Plastic, Metal, Burst, and X, and the place a person looks at the Bey and the number together.',
+      },
+      {
+        kind: 'p',
+        text: 'BeyOracle is the engine: catalogue, matching, sold comps, and the median. RIPBEYS is the public face: catalogue, Bey page, Lab, and the model. A card shows a yen median only for a confirmed whole product with enough sold comps. A missing mark says the data is insufficient. It does not print zero, and it does not add the blade, the ratchet, and the bit into a fake total. The site does not transfer ownership. A vault and a checkout are later layers. They are not being pretended into today’s prices.',
+      },
+      { kind: 'h2', text: 'Why the timing holds' },
+      {
+        kind: 'p',
+        text: 'The project note puts Beyblade X at about 30 million units shipped worldwide by April 2025, roughly 18 months after the July 2023 Japan launch, across dozens of regions. It cites Circana, via Takara Tomy, for X as the number-one battling-toy property in 11 markets including the United States in 2024, and a Hasbro battle set as the top action-figure item in Canada that year. TOMY’s fiscal 2024 report describes popularity across ages and tournaments with no age limit. A US national event for ages 13 and up feeds a world championship. Earlier generations did not have adult competition at this scale. Those citations are the note. They were not re-audited for this brief, and they are not Oracle prices.',
+      },
+      {
+        kind: 'p',
+        text: 'The note’s comparison with cards is about infrastructure, not about Beyblade becoming a $15.8 billion trading-card market. Cards already have online retail, digital grading submissions, and platforms that wrap a vault, an oracle, and a marketplace. Beyblade secondary trade is still scattered across Mercari, Yahoo Auctions, Shopee, and Facebook. The claim is that pricing, authentication, a vault, and liquidity can grow several times from near zero as X pulls Metal, Plastic, and Burst collectors into one pool, and can at least sit next to a category the size of Hot Wheels.',
+      },
+      {
+        kind: 'p',
+        text: 'Taiwan is the early read of an unpriced gray market. The note’s example is UX-03 Wizard Rod: about NT$295 at retail and about NT$2,500 on Shopee, lots at several times retail, overnight lines, players spending on the order of one to three thousand US dollars, and 458 Beyblade scam cases with about NT$22.9 million in losses through July 2025. That is demand arriving before a reference price. Wizard Rod is a real catalogue product, 5-70DB. No RIPBEYS listing is bridged to it, so that Shopee number is not shown as its Oracle value.',
+      },
+      { kind: 'h2', text: 'How a price is made' },
+      {
+        kind: 'p',
+        text: 'Workers poll sold listings. Mercari Japan and Yahoo Auctions Japan are live. Shopee Taiwan is partial. Ruten, Suruga-ya, eBay, Mandarake, and Rakuma are named as next and are not all in the mark. Lots, bundles, launcher-only sales, and junk lots are rejected. A large share of raw listings are bundles, and they must never become comps. What remains is matched to a catalogue product. The accept floor is 0.9. Each kept sale stores its source and a link back to the listing.',
+      },
+      {
+        kind: 'p',
+        text: 'The mark is the median of those sales, in yen, not the mean, so one extreme sale does not drag it. The band is the middle half of the sales. The default pool is used, like new, and unknown. Sealed boxes are their own pool. Fewer than three comps is not published as a confident whole-Bey price. The Bey page can include or exclude sources and conditions. Those controls recompute stored comps. They do not scrape again, and they cannot be cleared to an empty set.',
+      },
+      {
+        kind: 'ul',
+        items: [
+          'A listing id such as bx-002 chooses the card and the 3D file. It is not a product code.',
+          'A bridge says product, part, or neither. bx-002 is Dran Dagger 4-60R, not BX-02 Wizard Arrow. Wizard Arrow is bx-205.',
+          'A product calls the product API. A part calls the asset API and is labeled a part mark. Neither means no call.',
+          'Only a numeric whole-Bey median appears on the public catalogue.',
+        ],
+      },
+      { kind: 'h2', text: 'What is built' },
+      {
+        kind: 'p',
+        text: 'The catalogue holds about 1,105 parts and 448 products, split across Plastic, Metal, Burst, and X at the same evidence bar. The public showroom holds 578 listings. Twenty-six may ask for a whole-Bey mark. One hundred and four may ask for a blade or layer mark, which never appears as the Bey’s price. Four hundred and forty-eight are not fetched, including 18 assembled X Beys that have parts but no complete product yet. On 30 September 2026, 12 of those products returned a yen median. Two are shared by two listing ids, so 14 listings qualified that day. The count moves when comps move. Dran Dagger can return an empty Oracle with a successful request. That page says the data is insufficient.',
+      },
+      {
+        kind: 'p',
+        text: 'The Bey page and the Lab load one live model for that listing. Catalogue cards play a spin of the same file so the grid does not open a 3D context per Bey. A missing file shows a poster. It does not crash, and a new sculpt is not passed off as the real Bey. Names on the cards are the confirmed English catalogue names. Hasbro and Takara word order can differ and still be one Bey. Four Dagger Dran rows that are a different combo, a partial recipe, or a UI piece stay unmatched on purpose.',
+      },
+      {
+        kind: 'table',
+        headers: ['Already running', 'Written down, not yet the product'],
+        rows: [
+          ['Sold-comp ingest, match, median, and band', 'Letter grades from L10 to L3, and buyback rates'],
+          ['Whole-Bey catalogue and part pages', 'A vault, a checkout, or an onchain market'],
+          ['Showroom, model, chart, and docs', 'The $5,000 buy plan and its planned totals'],
+          ['Source and condition controls on stored comps', 'Time-weighted marks, a generation index, and a Japan versus Taiwan display'],
+        ],
+      },
+      { kind: 'h2', text: 'Grading and inventory, as plans' },
+      {
+        kind: 'p',
+        text: 'There is no PSA for Beyblade. The grading note authenticates first: box code, shrink, print, a beycode QR on X, mold, screw type, and weight within about 8 to 10 percent of the catalogue reference. Weight never overrides a mold check. Sealed boxes run from S10, factory sealed, down to S7, a worn box with mint contents. A loose Bey is six scores — completeness, stickers, wear, performance, structure, and weight — out of 100, then a band and a buyback rate from 80 percent at the top to none below 40. The live site sorts comps into sealed, like new, used, and unknown. It does not issue the certificate and does not pay the rate.',
+      },
+      {
+        kind: 'p',
+        text: 'A separate note is a $5,000 plan to buy lots off-platform and sort them into about 309 whole Beys, with about $4,480 of product spend and a planned Oracle total near $9,440. Lots are never listed as lots. X is the volume, Metal the planned return, Plastic and HMS the collector hook. If a future pull hits a Bey that only exists as someone else’s listing, the note says buy that listing and ship it. None of those dollars are in the database or on the cards. The 448 products are the catalogue. The 309 is a shopping list.',
+      },
+      {
+        kind: 'note',
+        text: 'Open the catalogue for Beys that have a live median today. Open one Bey for the model, the recipe, and the sold history. The deeper pages in this sidebar are the same system, written out one subject at a time.',
+      },
+    ],
+  },
+  {
     slug: 'overview',
     group: 'Start',
     title: 'What this is',
@@ -391,7 +471,7 @@ export const docPages: DocPage[] = [
 ]
 
 export function docBySlug(slug: string | undefined): DocPage | undefined {
-  if (!slug || slug === 'overview') return docPages[0]
+  if (!slug || slug === 'brief') return docPages[0]
   return docPages.find((page) => page.slug === slug)
 }
 

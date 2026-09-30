@@ -59,7 +59,7 @@ export function DocsPage() {
   const index = page ? docPages.findIndex((item) => item.slug === page.slug) : -1
   const previous = index > 0 ? docPages[index - 1] : null
   const next = index >= 0 ? docPages[index + 1] : null
-  const hrefFor = (item: (typeof docPages)[number]) => (item.slug === 'overview' ? '/docs' : `/docs/${item.slug}`)
+  const hrefFor = (item: (typeof docPages)[number]) => (item.slug === 'brief' ? '/docs' : `/docs/${item.slug}`)
 
   useEffect(() => {
     document.title = page ? `${page.title} · RIPBEYS docs` : 'Docs · RIPBEYS'
@@ -87,8 +87,8 @@ export function DocsPage() {
                 {visible
                   .filter((item) => item.group === group)
                   .map((item) => {
-                    const href = item.slug === 'overview' ? '/docs' : `/docs/${item.slug}`
-                    const current = (slug || 'overview') === item.slug
+                    const href = item.slug === 'brief' ? '/docs' : `/docs/${item.slug}`
+                    const current = (slug || 'brief') === item.slug
                     return (
                       <li key={item.slug}>
                         <Link to={href} aria-current={current ? 'page' : undefined}>
