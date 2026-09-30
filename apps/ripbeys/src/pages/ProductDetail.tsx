@@ -228,12 +228,13 @@ export function ProductDetail() {
             {bridge?.requiemProductId ? (
               <>
                 {' '}
-                → Requiem product <code>{bridge.requiemProductId}</code>
+                → Requiem product{' '}
+                <a href={`/product/${bridge.requiemProductId}`}>{bridge.requiemProductId}</a>
               </>
             ) : bridge?.requiemPartId ? (
               <>
                 {' '}
-                → part <code>{bridge.requiemPartId}</code>
+                → part <a href={`/asset/${bridge.requiemPartId}`}>{bridge.requiemPartId}</a>
               </>
             ) : (
               <> → no confirmed Requiem product</>
@@ -259,13 +260,17 @@ export function ProductDetail() {
             {bridge?.requiemProductId && (
               <div>
                 <dt>Requiem product</dt>
-                <dd title={bridge.requiemProductId}>{bridge.requiemProductId}</dd>
+                <dd title={bridge.requiemProductId}>
+                  <a href={`/product/${bridge.requiemProductId}`}>{bridge.requiemProductId}</a>
+                </dd>
               </div>
             )}
             {!bridge?.requiemProductId && bridge?.requiemPartId && (
               <div>
                 <dt>Requiem part</dt>
-                <dd title={bridge.requiemPartId}>{bridge.requiemPartId}</dd>
+                <dd title={bridge.requiemPartId}>
+                  <a href={`/asset/${bridge.requiemPartId}`}>{bridge.requiemPartId}</a>
+                </dd>
               </div>
             )}
           </dl>

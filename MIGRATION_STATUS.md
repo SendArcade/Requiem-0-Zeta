@@ -1,4 +1,6 @@
-# Migration status (local only)
+# Migration status (historical)
+
+The RIPBEYS consumer now ships inside the Requiem web service. Current identity, Oracle, and asset rules are in `docs/ORACLE_LINKING.md`, `docs/CATALOGUE_IDENTITY_MAP.md`, and `docs/FINAL_SYSTEM_AUDIT.md`. This file is the 2026-09-24 snapshot only.
 
 Updated: 2026-09-24 (Stage 11 — investor demo refinement)
 

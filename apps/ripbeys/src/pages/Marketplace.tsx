@@ -15,7 +15,6 @@ import { marketplaceListings, type Listing } from '../lib/assets'
 import { DEMO_SHOWCASE } from '../lib/marketGate'
 import {
   getOracleBridgeEntry,
-  isOracleFetchEligible,
   isProductOracleEligible,
 } from '../lib/oracleBridge'
 import { fetchListingOracle } from '../lib/requiemOracle'
@@ -173,9 +172,10 @@ export function Marketplace() {
   const visible = useMemo(() => {
     const term = query.trim().toLowerCase()
     const filtered = catalog.filter((item) => {
+      if (!isProductOracleEligible(item.id)) return false
       if (!oracleChecked || typeof oracleValues[item.id] !== 'number') return false
       const bridge = getOracleBridgeEntry(item.id)
-      const hay = `${item.name} ${item.series} ${item.class} ${item.id} ${bridge?.requiemProductId ?? ''} ${bridge?.requiemPartId ?? ''}`.toLowerCase()
+      const hay = `${oracleTitleForListing(item)} ${item.name} ${item.series} ${item.class} ${item.id} ${bridge?.requiemProductId ?? ''} ${bridge?.requiemPartId ?? ''}`.toLowerCase()
       return (
         (series === 'All' || item.series === series) &&
         (type === 'All' || item.class === type) &&
@@ -195,7 +195,7 @@ export function Marketplace() {
       return [...filtered].sort(byOracleReady)
     }
     if (sort === 'Name A-Z') {
-      return [...filtered].sort((a, b) => a.name.localeCompare(b.name))
+      return [...filtered].sort((a, b) => oracleTitleForListing(a).localeCompare(oracleTitleForListing(b)))
     }
     if (sort === 'Oracle high' || sort === 'Oracle low') {
       const dir = sort === 'Oracle high' ? -1 : 1
@@ -230,7 +230,7 @@ export function Marketplace() {
   }, [])
 
   useEffect(() => {
-    const eligible = catalog.filter((item) => isOracleFetchEligible(item.id))
+    const eligible = catalog.filter((item) => isProductOracleEligible(item.id))
     let cancelled = false
     ;(async () => {
       const next: Record<string, number | null> = {}
@@ -251,7 +251,9 @@ export function Marketplace() {
   }, [catalog])
 
   const shown = visible.slice(0, page * pageSize)
-  const priced = catalog.filter((item) => typeof oracleValues[item.id] === 'number')
+  const priced = catalog.filter(
+    (item) => isProductOracleEligible(item.id) && typeof oracleValues[item.id] === 'number',
+  )
   const beyCount = oracleChecked ? priced.length : 0
   const openDetail = (item: Listing) => navigate(`/market/${item.id}`)
   const pageRef = useRef<HTMLElement>(null)
@@ -389,7 +391,7 @@ export function Marketplace() {
             </h1>
             <p>
               {oracleChecked
-                ? `${visible.length} with a live Oracle mark.`
+                ? `${visible.length} with a live Product Oracle value.`
                 : 'Checking which Beys have an Oracle value.'}
             </p>
             <a className="pit-down" href="#market">Into the archive</a>

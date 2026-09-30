@@ -155,7 +155,7 @@ export function OracleRecord({ productId, partId }: { productId?: string | null;
       <div className="oracle-hero">
         <div>
           <p className="oracle-record-kicker">
-            Oracle value · sold comps
+            {kind === 'asset' ? 'Part mark · not a whole-Bey price' : 'Product Oracle · sold comps'}
             <span className={live ? 'oracle-live is-on' : 'oracle-live'}>{live ? 'Live' : 'Offline'}</span>
           </p>
           {oracle?.value != null ? (
