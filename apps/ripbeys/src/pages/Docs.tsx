@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { MarketingNav } from '../components/MarketingNav'
-import { docBySlug, docPages, type DocBlock } from './docsContent'
+import { docBySlug, docHaystack, docPages, type DocBlock } from './docsContent'
 import './docs.css'
 
 function Block({ block }: { block: DocBlock }) {
@@ -50,12 +50,16 @@ export function DocsPage() {
     () =>
       docPages.filter((item) => {
         if (!term) return true
-        const hay = `${item.title} ${item.group} ${item.lede}`.toLowerCase()
-        return hay.includes(term)
+        return docHaystack(item).includes(term)
       }),
     [term],
   )
   const groups = [...new Set(visible.map((item) => item.group))]
+
+  const index = page ? docPages.findIndex((item) => item.slug === page.slug) : -1
+  const previous = index > 0 ? docPages[index - 1] : null
+  const next = index >= 0 ? docPages[index + 1] : null
+  const hrefFor = (item: (typeof docPages)[number]) => (item.slug === 'overview' ? '/docs' : `/docs/${item.slug}`)
 
   useEffect(() => {
     document.title = page ? `${page.title} · RIPBEYS docs` : 'Docs · RIPBEYS'
@@ -102,9 +106,13 @@ export function DocsPage() {
             <p className="docs-kicker">{page.group}</p>
             <h1>{page.title}</h1>
             <p className="docs-lede">{page.lede}</p>
-            {page.blocks.map((block) => (
-              <Block key={block.kind === 'table' ? block.headers.join('|') + block.rows.length : JSON.stringify(block)} block={block} />
+            {page.blocks.map((block, index) => (
+              <Block key={`${page.slug}-${index}`} block={block} />
             ))}
+            <nav className="docs-pager" aria-label="Adjacent pages">
+              {previous ? <Link to={hrefFor(previous)}>{previous.title}</Link> : <span />}
+              {next ? <Link to={hrefFor(next)}>{next.title}</Link> : <span />}
+            </nav>
           </article>
         ) : (
           <article className="docs-article">
