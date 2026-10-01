@@ -1,9 +1,12 @@
-import { useCallback, useEffect, useRef, useState } from 'react'
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { ModelViewer } from '../components/ModelViewer'
 import { MarketingNav } from '../components/MarketingNav'
 import { PoweredBy } from '../components/PoweredBy'
-import { FEATURED_BEY_IDS, listingById, productRenderFor } from '../lib/assets'
+import { FEATURED_BEY_IDS, listingById, marketplaceListings, productRenderFor, type Listing } from '../lib/assets'
+import { getOracleBridgeEntry, isProductOracleEligible } from '../lib/oracleBridge'
+import { fetchListingOracle } from '../lib/requiemOracle'
+import { oracleTitleForListing } from '../lib/visualAssets'
 // Once-only boot gate — disabled so GlitchBoot plays on every home reload.
 // import { hasSeenBoot, markBootSeen } from '../lib/bootGate'
 import { useCompact } from '../lib/media'
@@ -35,22 +38,31 @@ const tags = [
   { label: 'Let it rip', color: '#ffea00', ink: '#111', rot: 12, style: { bottom: '18%', right: '12%' } },
 ]
 
-/** Curated tiles use the same lab mesh (static) for each featured bey. */
-const work = FEATURED_BEY_IDS.map((id) => listingById(id)).flatMap((item) =>
-  item?.model
-    ? [
-        {
-          id: item.id,
-          model: item.model,
-          texture: item.texture,
-          tint: item.tint,
-          poster: productRenderFor(item) ?? item.image,
-          label: item.name.replace(/\s+[A-Z]*\d-\d{2}[A-Z]+$/i, '').trim() || item.name,
-          to: `/market/${item.id}`,
-        },
-      ]
-    : [],
-)
+/** Home grid stays six tiles. Only whole-Bey marks that return a number qualify. */
+const ORACLE_TILE_CAP = 6
+
+type HomeTile = {
+  id: string
+  model: string
+  texture?: string
+  tint?: string
+  poster?: string
+  label: string
+  to: string
+}
+
+function tileFromListing(item: Listing): HomeTile | null {
+  if (!item.model) return null
+  return {
+    id: item.id,
+    model: item.model,
+    texture: item.texture,
+    tint: item.tint,
+    poster: productRenderFor(item) ?? item.image,
+    label: oracleTitleForListing(item),
+    to: `/market/${item.id}`,
+  }
+}
 
 const types = [
   { n: '01', kicker: 'Type', title: 'Attack', accent: '#13fff3', points: ['Rail burst first', 'High burst risk', 'Sword Dran family'] },
@@ -123,6 +135,43 @@ export function Landing() {
   const potato = isPotatoDevice()
   const light = compact || potato
   const heroArt = useHeroParallax(bootGone && !light)
+  const oracleCandidates = useMemo(() => {
+    const seenProducts = new Set<string>()
+    return marketplaceListings.filter((item) => {
+      if (!isProductOracleEligible(item.id) || !item.model) return false
+      const productId = getOracleBridgeEntry(item.id)?.requiemProductId
+      if (productId && seenProducts.has(productId)) return false
+      if (productId) seenProducts.add(productId)
+      return true
+    })
+  }, [])
+  const [work, setWork] = useState<HomeTile[]>([])
+  const [oracleReady, setOracleReady] = useState(false)
+
+  useEffect(() => {
+    let cancelled = false
+    ;(async () => {
+      const checks = await Promise.all(
+        oracleCandidates.map(async (item) => {
+          const valuation = await fetchListingOracle(item.id)
+          return valuation.status === 'available' && valuation.value != null ? item : null
+        }),
+      )
+      if (cancelled) return
+      const tiles = checks
+        .flatMap((item) => {
+          const tile = item ? tileFromListing(item) : null
+          return tile ? [tile] : []
+        })
+        .sort((a, b) => a.label.localeCompare(b.label))
+        .slice(0, ORACLE_TILE_CAP)
+      setWork(tiles)
+      setOracleReady(true)
+    })()
+    return () => {
+      cancelled = true
+    }
+  }, [oracleCandidates])
 
   useEffect(() => {
     if (!bootGone) return
@@ -199,7 +248,7 @@ export function Landing() {
 
         <ScrollRise as="section" className="rb-section rb-head" id="beys">
           <Mega label="Beys" />
-          <p className="rb-under" data-rise-item>A curated collection</p>
+          <p className="rb-under" data-rise-item>With a live Oracle mark</p>
         </ScrollRise>
 
         <ScrollRise className="rb-masonry" stagger={light ? 0 : 55}>
@@ -230,6 +279,9 @@ export function Landing() {
               <b>{item.label}</b>
             </Link>
           ))}
+          {oracleReady && work.length === 0 ? (
+            <p className="rb-under" data-rise-item>No Bey with a live Product Oracle right now.</p>
+          ) : null}
         </ScrollRise>
 
         <ScrollRise as="section" className="rb-section rb-head" id="lab">
