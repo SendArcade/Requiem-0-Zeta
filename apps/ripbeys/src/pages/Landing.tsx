@@ -1,11 +1,9 @@
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { ModelViewer } from '../components/ModelViewer'
 import { MarketingNav } from '../components/MarketingNav'
 import { PoweredBy } from '../components/PoweredBy'
-import { FEATURED_BEY_IDS, listingById, marketplaceListings, productRenderFor, type Listing } from '../lib/assets'
-import { getOracleBridgeEntry, isProductOracleEligible } from '../lib/oracleBridge'
-import { fetchListingOracle } from '../lib/requiemOracle'
+import { FEATURED_BEY_IDS, listingById, productRenderFor, type Listing } from '../lib/assets'
 import { oracleTitleForListing } from '../lib/visualAssets'
 // Once-only boot gate — disabled so GlitchBoot plays on every home reload.
 // import { hasSeenBoot, markBootSeen } from '../lib/bootGate'
@@ -38,31 +36,29 @@ const tags = [
   { label: 'Let it rip', color: '#ffea00', ink: '#111', rot: 12, style: { bottom: '18%', right: '12%' } },
 ]
 
-/** Home grid stays six tiles. Only whole-Bey marks that return a number qualify. */
-const ORACLE_TILE_CAP = 6
+/** Product Oracle listings that returned a live mark. Shown as images, same as the old home tiles. */
+const ORACLE_HOME_IDS = ['bx-004', 'bx-009', 'bx-010', 'bx-022', 'bx-217', 'bx-229'] as const
 
-type HomeTile = {
-  id: string
-  model: string
-  texture?: string
-  tint?: string
-  poster?: string
-  label: string
-  to: string
+function tilePoster(item: Listing) {
+  if (item.image && !item.image.includes('bg-waiting')) return productRenderFor(item) ?? item.image
+  return `/assets/spins/${item.id}.gif`
 }
 
-function tileFromListing(item: Listing): HomeTile | null {
-  if (!item.model) return null
-  return {
-    id: item.id,
-    model: item.model,
-    texture: item.texture,
-    tint: item.tint,
-    poster: productRenderFor(item) ?? item.image,
-    label: oracleTitleForListing(item),
-    to: `/market/${item.id}`,
-  }
-}
+const work = ORACLE_HOME_IDS.map((id) => listingById(id)).flatMap((item) =>
+  item?.model
+    ? [
+        {
+          id: item.id,
+          model: item.model,
+          texture: item.texture,
+          tint: item.tint,
+          poster: tilePoster(item),
+          label: oracleTitleForListing(item).replace(/\s*\([^)]*\)\s*$/, '').trim() || item.name,
+          to: `/market/${item.id}`,
+        },
+      ]
+    : [],
+)
 
 const types = [
   { n: '01', kicker: 'Type', title: 'Attack', accent: '#13fff3', points: ['Rail burst first', 'High burst risk', 'Sword Dran family'] },
@@ -135,43 +131,6 @@ export function Landing() {
   const potato = isPotatoDevice()
   const light = compact || potato
   const heroArt = useHeroParallax(bootGone && !light)
-  const oracleCandidates = useMemo(() => {
-    const seenProducts = new Set<string>()
-    return marketplaceListings.filter((item) => {
-      if (!isProductOracleEligible(item.id) || !item.model) return false
-      const productId = getOracleBridgeEntry(item.id)?.requiemProductId
-      if (productId && seenProducts.has(productId)) return false
-      if (productId) seenProducts.add(productId)
-      return true
-    })
-  }, [])
-  const [work, setWork] = useState<HomeTile[]>([])
-  const [oracleReady, setOracleReady] = useState(false)
-
-  useEffect(() => {
-    let cancelled = false
-    ;(async () => {
-      const checks = await Promise.all(
-        oracleCandidates.map(async (item) => {
-          const valuation = await fetchListingOracle(item.id)
-          return valuation.status === 'available' && valuation.value != null ? item : null
-        }),
-      )
-      if (cancelled) return
-      const tiles = checks
-        .flatMap((item) => {
-          const tile = item ? tileFromListing(item) : null
-          return tile ? [tile] : []
-        })
-        .sort((a, b) => a.label.localeCompare(b.label))
-        .slice(0, ORACLE_TILE_CAP)
-      setWork(tiles)
-      setOracleReady(true)
-    })()
-    return () => {
-      cancelled = true
-    }
-  }, [oracleCandidates])
 
   useEffect(() => {
     if (!bootGone) return
@@ -279,9 +238,6 @@ export function Landing() {
               <b>{item.label}</b>
             </Link>
           ))}
-          {oracleReady && work.length === 0 ? (
-            <p className="rb-under" data-rise-item>No Bey with a live Product Oracle right now.</p>
-          ) : null}
         </ScrollRise>
 
         <ScrollRise as="section" className="rb-section rb-head" id="lab">
