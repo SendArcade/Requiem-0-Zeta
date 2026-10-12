@@ -24,6 +24,7 @@
     "backfill:products:fleet-plan": "pnpm --filter @beyoracle/ingest backfill:products:fleet-plan",
     "product:coverage": "pnpm --filter @beyoracle/ingest product:coverage",
     "audit:identity": "node scripts/audit-ripbeys-identity.mjs",
+    "gacha:oracle-plan": "node scripts/gacha-oracle-pipeline.mjs",
     "docker:up": "echo 'DEPRECATED for pricing DB — use Railway (docs/RAILWAY_ONLY.md). Refusing.' && exit 1",
     "docker:down": "echo 'DEPRECATED for pricing DB — use Railway (docs/RAILWAY_ONLY.md).' && exit 1",
     "docker:up:legacy": "docker compose up -d",

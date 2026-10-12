@@ -15,6 +15,7 @@ const SpinBake = import.meta.env.DEV
   : null
 const ProductDetail = lazy(() => import('./pages/ProductDetail').then((module) => ({ default: module.ProductDetail })))
 const DocsPage = lazy(() => import('./pages/Docs').then((module) => ({ default: module.DocsPage })))
+const GachaPage = lazy(() => import('./pages/Gacha').then((module) => ({ default: module.GachaPage })))
 // Landing is eager so the glitch intro is the first paint — no "Opening archive" screen
 // const Landing = lazy(() => import('./pages/Landing').then((module) => ({ default: module.Landing })))
 const XRoutesLayout = lazy(() => import('./pages/XPages').then((module) => ({ default: module.XRoutesLayout })))
@@ -100,6 +101,7 @@ export default function App() {
             <Route path="/game" element={<Splash />} />
             <Route path="/hub" element={<Hub />} />
             <Route path="/lab" element={<GalleryPage />} />
+            <Route path="/gacha" element={<GachaPage />} />
             <Route path="/docs" element={<DocsPage />} />
             <Route path="/docs/:slug" element={<DocsPage />} />
             <Route path="/gallery" element={<Navigate to="/lab" replace />} />

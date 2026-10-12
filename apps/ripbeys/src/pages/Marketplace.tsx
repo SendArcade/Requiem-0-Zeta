@@ -173,7 +173,6 @@ export function Marketplace() {
     const term = query.trim().toLowerCase()
     const filtered = catalog.filter((item) => {
       if (!isProductOracleEligible(item.id)) return false
-      if (!oracleChecked || typeof oracleValues[item.id] !== 'number') return false
       const bridge = getOracleBridgeEntry(item.id)
       const hay = `${oracleTitleForListing(item)} ${item.name} ${item.series} ${item.class} ${item.id} ${bridge?.requiemProductId ?? ''} ${bridge?.requiemPartId ?? ''}`.toLowerCase()
       return (
@@ -217,7 +216,7 @@ export function Marketplace() {
         Number(resolveListingVisual(b.id).modelExists) - Number(resolveListingVisual(a.id).modelExists) ||
         a.name.localeCompare(b.name),
     )
-  }, [catalog, oracleChecked, oracleValues, query, series, sort, type])
+  }, [catalog, oracleValues, query, series, sort, type])
 
   useEffect(() => setPage(1), [query, series, sort, type])
 
@@ -254,7 +253,7 @@ export function Marketplace() {
   const priced = catalog.filter(
     (item) => isProductOracleEligible(item.id) && typeof oracleValues[item.id] === 'number',
   )
-  const beyCount = oracleChecked ? priced.length : 0
+  const beyCount = productOracleCount
   const openDetail = (item: Listing) => navigate(`/market/${item.id}`)
   const pageRef = useRef<HTMLElement>(null)
 
@@ -391,8 +390,8 @@ export function Marketplace() {
             </h1>
             <p>
               {oracleChecked
-                ? `${visible.length} with a live Product Oracle value.`
-                : 'Checking which Beys have an Oracle value.'}
+                ? `${priced.length} with a live Product Oracle value. ${productOracleCount} in the archive.`
+                : 'Loading the Product Oracle archive.'}
             </p>
             <a className="pit-down" href="#market">Into the archive</a>
           </div>
@@ -441,10 +440,8 @@ export function Marketplace() {
               <ChevronDown size={14} />
             </label>
           </div>
-          {!oracleChecked ? (
-            <p className="shop-intro-copy">Checking which Beys have an Oracle value.</p>
-          ) : shown.length === 0 ? (
-            <p className="shop-intro-copy">No listings with an Oracle value match these filters.</p>
+          {shown.length === 0 ? (
+            <p className="shop-intro-copy">No Product Oracle Beys match these filters.</p>
           ) : (
             <div className="nk-grid">
               {shown.map((item) => (

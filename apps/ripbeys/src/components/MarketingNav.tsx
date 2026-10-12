@@ -5,7 +5,7 @@ import './reactbits/reactbits-overrides.css'
 import FluidGlass from './reactbits/FluidGlass'
 import './site-nav.css'
 
-type NavArea = 'home' | 'shop' | 'lab' | 'hub' | 'docs'
+type NavArea = 'home' | 'shop' | 'lab' | 'hub' | 'docs' | 'gacha'
 
 type NavLink = {
   to: string
@@ -20,6 +20,7 @@ const links: NavLink[] = [
   { to: '/lab', label: 'Lab', area: 'lab' },
   { to: '/docs', label: 'Docs', area: 'docs' },
   { to: '/market', label: 'Catalogue', area: 'shop' },
+  { to: '/gacha', label: 'Gacha', area: 'gacha' },
 ]
 
 const menuItems: StaggeredMenuItem[] = [
@@ -28,6 +29,7 @@ const menuItems: StaggeredMenuItem[] = [
   { label: 'Lab', ariaLabel: 'Open 3D Lab', link: '/lab' },
   { label: 'Docs', ariaLabel: 'Open documentation', link: '/docs' },
   { label: 'Catalogue', ariaLabel: 'Open catalogue', link: '/market' },
+  { label: 'Gacha', ariaLabel: 'Open gacha', link: '/gacha' },
 ]
 
 const NAV_OFFSET = 72

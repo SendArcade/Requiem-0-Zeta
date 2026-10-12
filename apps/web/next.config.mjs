@@ -16,6 +16,7 @@ const CONSUMER_ROUTES = [
   "/hub",
   "/game",
   "/screens",
+  "/gacha",
   "/docs",
   "/docs/:path*",
   "/x",
