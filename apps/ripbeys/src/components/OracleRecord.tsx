@@ -1,5 +1,6 @@
 import { OracleHistory } from './OracleHistory'
 import { useEffect, useState } from 'react'
+import { oracleApiUrl } from '../lib/requiemOracle'
 
 const SOURCES = [
   ['mercari_jp', 'Mercari JP'],
@@ -85,46 +86,66 @@ function priced(comp: Comp) {
 
 /** Beyoracle product/part record: filters, history chart, and sold comps. Never invents a number. */
 export function OracleRecord({ productId, partId }: { productId?: string | null; partId?: string | null }) {
+  return <OracleRecordContent key={`${productId || ''}:${partId || ''}`} productId={productId} partId={partId} />
+}
+
+function OracleRecordContent({ productId, partId }: { productId?: string | null; partId?: string | null }) {
   const id = productId || partId || ''
   const kind = productId ? 'product' : 'asset'
   const [sources, setSources] = useState<string[]>(SOURCES.map(([source]) => source))
-  const [conditions, setConditions] = useState<string[]>(DEFAULT_CONDITIONS)
-  const [data, setData] = useState<Payload | null>(null)
-  const [error, setError] = useState(false)
+  const [conditions, setConditions] = useState<string[] | null>(null)
+  const [retry, setRetry] = useState(0)
+  const [defaultConditions, setDefaultConditions] = useState<string[]>(DEFAULT_CONDITIONS)
+  const qs = new URLSearchParams({ sources: sources.join(',') })
+  if (conditions) qs.set('conditions', conditions.join(','))
+  const requestKey = `${kind}:${id}?${qs}&retry=${retry}`
+  const [result, setResult] = useState<{ key: string; data?: Payload; error?: boolean } | null>(null)
+  const data = result?.key === requestKey ? result.data : undefined
+  const error = result?.key === requestKey && result.error
+  const activeConditions = conditions ?? defaultConditions
   const [live, setLive] = useState(false)
 
   useEffect(() => {
     if (!id) return
-    let cancel = false
-    setError(false)
-    const qs = new URLSearchParams({ sources: sources.join(','), conditions: conditions.join(',') })
-    fetch(`/api/${kind}/${encodeURIComponent(id)}?${qs}`, { headers: { Accept: 'application/json' } })
+    const controller = new AbortController()
+    let cancelled = false
+    const timer = window.setTimeout(() => controller.abort(), 12_000)
+    fetch(oracleApiUrl(`/api/${kind}/${encodeURIComponent(id)}?${qs}`), {
+      headers: { Accept: 'application/json' },
+      signal: controller.signal,
+    })
       .then(async (res) => {
         if (!res.ok) throw new Error(String(res.status))
         return (await res.json()) as Payload
       })
       .then((json) => {
-        if (!cancel) setData(json)
+        if (!cancelled) {
+          if (!conditions) setDefaultConditions(json.conditions ?? DEFAULT_CONDITIONS)
+          setResult({ key: requestKey, data: json })
+        }
       })
       .catch(() => {
-        if (!cancel) setError(true)
+        if (!cancelled) setResult({ key: requestKey, error: true })
       })
+      .finally(() => window.clearTimeout(timer))
     return () => {
-      cancel = true
+      cancelled = true
+      window.clearTimeout(timer)
+      controller.abort()
     }
-  }, [id, kind, sources, conditions])
+  }, [requestKey])
 
   useEffect(() => {
     if (!id) return
     const params = new URLSearchParams(productId ? { productId } : { partId: partId || '' })
-    const stream = new EventSource(`/api/events?${params}`)
+    const stream = new EventSource(oracleApiUrl(`/api/events?${params}`))
     stream.onopen = () => setLive(true)
     stream.onerror = () => setLive(false)
     stream.onmessage = (message) => {
       try {
         const event = JSON.parse(message.data) as { type?: string }
         if (event.type === 'sale') {
-          setSources((current) => [...current])
+          setRetry((current) => current + 1)
         }
       } catch {
         /* ignore malformed events */
@@ -142,17 +163,18 @@ export function OracleRecord({ productId, partId }: { productId?: string | null;
   }
 
   if (!id) return <p className="pdp-muted">No confirmed Requiem identity for this listing.</p>
-  if (error) return <p className="pdp-muted">Oracle request failed. No price invented.</p>
-  if (!data) return <p className="pdp-muted">Loading Oracle…</p>
 
-  const oracle = data.oracle ?? null
+  const oracle = data?.oracle ?? null
   const currency = oracle?.currency || 'JPY'
-  const comps = data.comps ?? []
-  const byCondition = data.oracleByCondition ?? {}
+  const comps = data?.comps ?? []
+  const byCondition = data?.oracleByCondition ?? {}
 
   return (
     <div className="oracle-record">
-      <div className="oracle-hero">
+      {error ? (
+        <p role="alert" className="pdp-muted">Oracle request failed. <button type="button" onClick={() => setRetry((value) => value + 1)}>Retry</button></p>
+      ) : !data ? <p role="status" className="pdp-muted">Loading Oracle…</p> : null}
+      {data && <div className="oracle-hero">
         <div>
           <p className="oracle-record-kicker">
             {kind === 'asset' ? 'Part mark · not a whole-Bey price' : 'Product Oracle · sold comps'}
@@ -187,7 +209,7 @@ export function OracleRecord({ productId, partId }: { productId?: string | null;
             })}
           </div>
         </div>
-      </div>
+      </div>}
 
       <div>
         <h3>Include sources</h3>
@@ -203,13 +225,14 @@ export function OracleRecord({ productId, partId }: { productId?: string | null;
         <h3>Conditions</h3>
         <div className="oracle-ranges">
           {CONDITIONS.map(([condition, label]) => (
-            <button key={condition} type="button" className={conditions.includes(condition) ? 'is-on' : ''} onClick={() => setConditions((current) => toggle(current, condition, true))}>
+            <button key={condition} type="button" className={activeConditions.includes(condition) ? 'is-on' : ''} onClick={() => setConditions((current) => toggle(current ?? activeConditions, condition, true))}>
               {label}
             </button>
           ))}
         </div>
       </div>
 
+      {data && <>
       <h3>Price history</h3>
       <OracleHistory comps={comps} mark={oracle?.value ?? null} low={oracle?.low ?? null} high={oracle?.high ?? null} />
 
@@ -257,6 +280,7 @@ export function OracleRecord({ productId, partId }: { productId?: string | null;
       ) : (
         <p className="pdp-muted">No sold comps for these filters.</p>
       )}
+      </>}
     </div>
   )
 }

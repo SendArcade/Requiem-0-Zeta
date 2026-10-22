@@ -1,10 +1,11 @@
+import { readJsonObject, validId, withApiErrors } from "@/lib/api-input";
 import { NextResponse } from "next/server";
 import { getDb, watchlistAlerts } from "@beyoracle/db";
 import { getSessionId } from "@/lib/watchlist";
 import { isDbAvailable } from "@/lib/db-data";
 import { and, desc, eq } from "drizzle-orm";
 
-export async function GET() {
+export const GET = withApiErrors(async () => {
   const sessionId = await getSessionId();
   if (!(await isDbAvailable())) {
     return NextResponse.json({ alerts: [] });
@@ -31,10 +32,12 @@ export async function GET() {
     })),
     unread: rows.filter((r) => r.read === 0).length,
   });
-}
+});
 
-export async function PATCH(req: Request) {
-  const body = (await req.json()) as { markAllRead?: boolean; alertId?: string };
+export const PATCH = withApiErrors(async (req: Request) => {
+  const body = await readJsonObject(req);
+  if (body.markAllRead !== true && !validId(body.alertId)) return NextResponse.json({ error: "markAllRead or alertId required" }, { status: 400 });
+  if (body.markAllRead != null && typeof body.markAllRead !== "boolean") return NextResponse.json({ error: "markAllRead must be boolean" }, { status: 400 });
   const sessionId = await getSessionId();
 
   if (!(await isDbAvailable())) {
@@ -48,7 +51,7 @@ export async function PATCH(req: Request) {
       .update(watchlistAlerts)
       .set({ read: 1 })
       .where(and(eq(watchlistAlerts.sessionId, sessionId), eq(watchlistAlerts.read, 0)));
-  } else if (body.alertId) {
+  } else if (validId(body.alertId)) {
     await db
       .update(watchlistAlerts)
       .set({ read: 1 })
@@ -61,4 +64,4 @@ export async function PATCH(req: Request) {
   }
 
   return NextResponse.json({ ok: true });
-}
+});

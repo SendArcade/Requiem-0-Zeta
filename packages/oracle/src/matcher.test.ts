@@ -1,3 +1,11 @@
+import { beforeEach, afterEach, vi } from "vitest";
+
+beforeEach(() => {
+  vi.useFakeTimers({ toFake: ["Date"] });
+  vi.setSystemTime(new Date("2026-07-25T00:00:00Z"));
+});
+afterEach(() => vi.useRealTimers());
+
 import { describe, it, expect, beforeAll } from "vitest";
 import type { AliasDTO, PartDTO } from "@beyoracle/shared";
 import {

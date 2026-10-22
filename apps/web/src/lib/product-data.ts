@@ -287,16 +287,29 @@ export async function getProductDataFromDb(
   };
 }
 
+let fixtureMatches: Map<string, ReturnType<typeof loadAllFixtures>> | null = null;
+
+/** Fixture files are immutable for the lifetime of a web process. Match each title once. */
+function matchedProductFixtures(productId: string) {
+  if (!fixtureMatches) {
+    fixtureMatches = new Map();
+    const ctx = loadProductMatcherContext();
+    for (const fixture of loadAllFixtures()) {
+      const id = matchToProduct(fixture.title, ctx)?.productId;
+      if (!id) continue;
+      const rows = fixtureMatches.get(id) ?? [];
+      rows.push(fixture);
+      fixtureMatches.set(id, rows);
+    }
+  }
+  return fixtureMatches.get(productId) ?? [];
+}
+
 function fixtureCompsForProduct(productId: string) {
   const product = getProductById(productId);
   if (!product) return [];
 
-  const productCtx = loadProductMatcherContext();
-  return loadAllFixtures()
-    .filter((f) => {
-      const m = matchToProduct(f.title, productCtx);
-      return m?.productId === productId;
-    })
+  return matchedProductFixtures(productId)
     .map((f) => ({
       price: f.price,
       currency: f.currency,
@@ -321,10 +334,7 @@ export function getProductDataFromFixtures(
   const parts = productParts(product);
   const recipe = analyzeProductRecipe(product, parts);
 
-  const matchedFixtures = loadAllFixtures().filter((f) => {
-    const m = matchToProduct(f.title, loadProductMatcherContext());
-    return m?.productId === productId;
-  });
+  const matchedFixtures = matchedProductFixtures(productId);
 
   const compsInput = fixtureCompsForProduct(productId);
   const sourcesMask =
@@ -340,7 +350,7 @@ export function getProductDataFromFixtures(
   const oracle = recipe.canPublishMark
     ? computeProductOracleValue(product, compsInput, {
         targetCurrency: displayCurrency,
-        sourcesMask: allSourcesMask(),
+        sourcesMask,
         conditions: markConditions,
         minComps,
       })

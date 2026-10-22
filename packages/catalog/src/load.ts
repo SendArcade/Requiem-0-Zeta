@@ -1,4 +1,4 @@
-import { existsSync, readdirSync, readFileSync } from "node:fs";
+import { existsSync, readdirSync, readFileSync, statSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import {
@@ -131,8 +131,16 @@ export const GENERATION_LABELS: Record<Generation, string> = {
   x: "X",
 };
 
+let partIndex: { signature: string; byId: Map<string, PartDTO> } | null = null;
+
+/** Avoid parsing the entire parts catalogue per recipe slot; refresh after local rebuilds. */
 export function getPartById(id: string): PartDTO | undefined {
-  return loadParts().find((p) => p.id === id);
+  const stat = statSync(join(dataDir, "parts.json"));
+  const signature = `${stat.mtimeMs}:${stat.ctimeMs}:${stat.size}`;
+  if (!partIndex || partIndex.signature !== signature) {
+    partIndex = { signature, byId: new Map(loadParts().map(part => [part.id, part])) };
+  }
+  return partIndex.byId.get(id);
 }
 
 export function searchParts(query: string): PartDTO[] {

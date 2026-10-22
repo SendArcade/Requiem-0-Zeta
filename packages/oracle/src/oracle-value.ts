@@ -60,6 +60,8 @@ export interface OracleContext {
 }
 
 export interface OracleOptions {
+  /** One valuation instant, shared by filtering, decay and output metadata. */
+  asOf?: Date;
   windowDays?: number;
   minComps?: number;
   targetCurrency?: Currency;
@@ -102,17 +104,25 @@ function filterComps(
   comps: CompInput[],
   opts: {
     windowDays: number;
+    asOf?: Date;
     sourcesMask: number;
     conditions: Condition[];
   }
 ): CompInput[] {
-  const cutoff = new Date();
+  const asOf = opts.asOf ?? new Date();
+  const cutoff = new Date(asOf);
   cutoff.setDate(cutoff.getDate() - opts.windowDays);
   const activeSources = sourcesFromMask(opts.sourcesMask);
   const conditionSet = new Set(opts.conditions);
 
   return comps.filter((c) => {
     if (c.status !== "sold") return false;
+    if (!Number.isFinite(c.price) || c.price <= 0) return false;
+    if (!["JPY", "TWD", "USD"].includes(c.currency)) return false;
+    if (c.fxRateAtSale != null && (!Number.isFinite(c.fxRateAtSale) || c.fxRateAtSale <= 0)) return false;
+    if (!Number.isFinite(c.observedAt.getTime()) || c.observedAt > asOf) return false;
+    if (c.landedJpy != null && (!Number.isFinite(c.landedJpy) || c.landedJpy <= 0)) return false;
+    if (c.venueWeightMultiplier != null && (!Number.isFinite(c.venueWeightMultiplier) || c.venueWeightMultiplier <= 0)) return false;
     const kind = c.evidenceKind ?? resolveEvidenceKind(c.source);
     if (!feedsOracleMark(kind)) return false;
     if (c.observedAt < cutoff) return false;
@@ -131,7 +141,7 @@ function computeOracleV1(
   assetId: string,
   filtered: CompInput[],
   opts: Required<
-    Pick<OracleOptions, "targetCurrency" | "sourcesMask" | "conditions" | "minComps">
+    Pick<OracleOptions, "targetCurrency" | "sourcesMask" | "conditions" | "minComps" | "asOf">
   >
 ): OracleSnapshotDTO | null {
   if (filtered.length < opts.minComps) return null;
@@ -150,7 +160,7 @@ function computeOracleV1(
     low: round2(Math.max(0, q1)),
     high: round2(q3),
     nComps: filtered.length,
-    asOf: new Date(),
+    asOf: opts.asOf,
     currency: opts.targetCurrency,
     confidence: resolveOracleConfidence(filtered.length, {
       minComps: opts.minComps,
@@ -167,13 +177,13 @@ function computeOracleV2(
   opts: Required<
     Pick<
       OracleOptions,
-      "targetCurrency" | "sourcesMask" | "conditions" | "minComps" | "halfLifeDays" | "madThreshold"
+      "targetCurrency" | "sourcesMask" | "conditions" | "minComps" | "asOf" | "halfLifeDays" | "madThreshold"
     >
   > & { context?: OracleContext }
 ): OracleSnapshotDTO | null {
   if (filtered.length < opts.minComps) return null;
 
-  const asOf = new Date();
+  const asOf = opts.asOf;
   const index = opts.context?.cohortIndex;
 
   const priceRows = filtered.map((c) => {
@@ -249,6 +259,7 @@ export function computeOracleValue(
   opts: OracleOptions = {}
 ): OracleSnapshotDTO | null {
   const {
+    asOf = new Date(),
     windowDays = 90,
     minComps = DEFAULT_PUBLISHED_MIN_COMPS,
     targetCurrency = "JPY",
@@ -260,10 +271,11 @@ export function computeOracleValue(
     context,
   } = opts;
 
-  const filtered = filterComps(comps, { windowDays, sourcesMask, conditions });
+  const filtered = filterComps(comps, { windowDays, sourcesMask, conditions, asOf });
 
   if (engine === "v1") {
     return computeOracleV1(assetId, filtered, {
+      asOf,
       targetCurrency,
       sourcesMask,
       conditions,
@@ -272,6 +284,7 @@ export function computeOracleValue(
   }
 
   return computeOracleV2(assetId, filtered, {
+    asOf,
     targetCurrency,
     sourcesMask,
     conditions,
@@ -318,17 +331,20 @@ export function buildTimeSeries(
     sourcesMask?: number;
     targetCurrency?: Currency;
     windowDays?: number;
+    asOf?: Date;
     conditions?: Condition[];
   } = {}
 ): Array<{ date: string; price: number }> {
   const {
     sourcesMask = allSourcesMask(),
     targetCurrency = "JPY",
+    asOf = new Date(),
     windowDays = 90,
     conditions = DEFAULT_ORACLE_CONDITIONS,
   } = opts;
 
   const filtered = filterComps(comps, {
+    asOf,
     windowDays,
     sourcesMask,
     conditions,
@@ -355,12 +371,13 @@ export function resolveProductOracleWindowDays(
   opts: {
     conditions: import("@beyoracle/shared").Condition[];
     minComps?: number;
+    asOf?: Date;
     sourcesMask?: number;
   }
 ): number {
   const minComps = opts.minComps ?? DEFAULT_PUBLISHED_MIN_COMPS;
   const sourcesMask = opts.sourcesMask ?? allSourcesMask();
-  const filterOpts = { sourcesMask, conditions: opts.conditions };
+  const filterOpts = { sourcesMask, conditions: opts.conditions, asOf: opts.asOf };
   const sparseWindow = resolveSparseOracleWindowDays();
 
   const countInWindow = (windowDays: number) =>
@@ -398,6 +415,7 @@ export function computeProductOracleValue(
     windowDays?: number;
   } = {}
 ) {
+  const asOf = opts.asOf ?? new Date();
   const conditions = opts.conditions ?? productMarkConditions(product.skuType as SkuType);
   const minComps = opts.minComps ?? DEFAULT_PUBLISHED_MIN_COMPS;
   const windowDays =
@@ -406,9 +424,11 @@ export function computeProductOracleValue(
       conditions,
       minComps,
       sourcesMask: opts.sourcesMask,
+      asOf,
     });
   return computeOracleValue(product.id, comps, {
     ...opts,
+    asOf,
     conditions,
     minComps,
     windowDays,

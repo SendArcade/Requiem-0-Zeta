@@ -5,9 +5,12 @@ import { approveReviewQueueItem, rejectReviewQueueItem } from "@beyoracle/ingest
 import { isDbAvailable } from "@/lib/db-data";
 import { desc, eq } from "drizzle-orm";
 
-// v1: no auth — local dev tool only; protect with admin session before prod deploy
+import { requireAdmin } from "@/lib/admin-auth";
+import { readJsonObject, validId, withApiErrors } from "@/lib/api-input";
 
-export async function GET() {
+export const GET = withApiErrors(async (req: Request) => {
+  const denied = requireAdmin(req);
+  if (denied) return denied;
   if (!(await isDbAvailable())) {
     return NextResponse.json({ items: [], db: false });
   }
@@ -17,7 +20,8 @@ export async function GET() {
     .select()
     .from(matchReviewQueue)
     .where(eq(matchReviewQueue.status, "pending"))
-    .orderBy(desc(matchReviewQueue.createdAt));
+    .orderBy(desc(matchReviewQueue.createdAt))
+    .limit(100);
 
   const items = rows.map((row) => {
     const part = row.suggestedPartId ? getPartById(row.suggestedPartId) : null;
@@ -36,12 +40,14 @@ export async function GET() {
   });
 
   return NextResponse.json({ db: true, items });
-}
+});
 
-export async function POST(req: Request) {
-  const body = (await req.json()) as { id?: string; action?: "approve" | "reject" };
+export const POST = withApiErrors(async (req: Request) => {
+  const denied = requireAdmin(req);
+  if (denied) return denied;
+  const body = await readJsonObject(req);
 
-  if (!body.id || !body.action) {
+  if (!validId(body.id) || (body.action !== "approve" && body.action !== "reject")) {
     return NextResponse.json({ error: "id and action required" }, { status: 400 });
   }
 
@@ -58,7 +64,8 @@ export async function POST(req: Request) {
     await rejectReviewQueueItem(body.id);
     return NextResponse.json({ ok: true, action: "rejected" });
   } catch (e) {
-    const message = e instanceof Error ? e.message : "Review action failed";
+    console.error("[admin] review failed", e instanceof Error ? e.name : "UnknownError");
+    const message = "Review action failed";
     return NextResponse.json({ error: message }, { status: 400 });
   }
-}
+});

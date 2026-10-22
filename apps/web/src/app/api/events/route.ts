@@ -1,3 +1,4 @@
+import { getSessionId } from "@/lib/watchlist";
 import {
   createSubscriber,
   EVENTS_CHANNEL,
@@ -54,11 +55,13 @@ export async function GET(req: Request) {
   const url = new URL(req.url);
   const partId = url.searchParams.get("partId") ?? undefined;
   const productId = url.searchParams.get("productId") ?? undefined;
-  const sessionId = url.searchParams.get("sessionId") ?? undefined;
+  const sessionId = await getSessionId();
+  let cleanup = () => {};
 
   const stream = new ReadableStream<Uint8Array>({
     start(controller) {
       let closed = false;
+      let polling = true;
       let subscriber: ReturnType<typeof createSubscriber> | null = null;
       let pollTimer: ReturnType<typeof setInterval> | null = null;
       let heartbeat: ReturnType<typeof setInterval> | null = null;
@@ -70,14 +73,17 @@ export async function GET(req: Request) {
         closed = true;
         if (heartbeat) clearInterval(heartbeat);
         if (pollTimer) clearInterval(pollTimer);
-        subscriber?.unsubscribe(EVENTS_CHANNEL);
+        subscriber?.unsubscribe(EVENTS_CHANNEL).catch(() => undefined);
         subscriber?.quit().catch(() => undefined);
+        req.signal.removeEventListener("abort", close);
         try {
           controller.close();
         } catch {
           /* already closed */
         }
       };
+
+      cleanup = close;
 
       const push = (payload: unknown) => {
         if (closed) return;
@@ -93,13 +99,14 @@ export async function GET(req: Request) {
         if (!saleMatchesFilter(event, partId, productId)) return;
         if (seenObservationIds.has(event.observationId)) return;
         seenObservationIds.add(event.observationId);
+        if (seenObservationIds.size > 1000) seenObservationIds.delete(seenObservationIds.values().next().value!);
         push(event);
       };
 
       const filterEvent = (raw: string) => {
         const event = parseEvent(raw);
         if (!event) return;
-        if (sessionId && event.type === "alert" && event.sessionId !== sessionId) {
+        if (event.type === "alert" && event.sessionId !== sessionId) {
           return;
         }
         if (event.type === "sale") {
@@ -176,7 +183,7 @@ export async function GET(req: Request) {
         }
       }, HEARTBEAT_MS);
 
-      void replayFromDb();
+      void replayFromDb().finally(() => { polling = false; });
 
       if (redisEnabled()) {
         subscriber = createSubscriber();
@@ -185,6 +192,8 @@ export async function GET(req: Request) {
       }
 
       pollTimer = setInterval(async () => {
+        if (closed || polling) return;
+        polling = true;
         try {
           const replay = await fetchSaleEventsSince({
             since,
@@ -237,11 +246,13 @@ export async function GET(req: Request) {
           since = new Date();
         } catch {
           /* DB may be down — keep stream alive */
-        }
+        } finally { polling = false; }
       }, DB_POLL_MS);
 
-      req.signal.addEventListener("abort", close);
+      req.signal.addEventListener("abort", close, { once: true });
+      if (req.signal.aborted) close();
     },
+    cancel() { cleanup(); },
   });
 
   return new Response(stream, { headers: sseHeaders() });

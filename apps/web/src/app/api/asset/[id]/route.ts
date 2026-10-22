@@ -1,11 +1,12 @@
+import { withApiErrors } from "@/lib/api-input";
 import { NextResponse } from "next/server";
 import { getAssetData } from "@/lib/data";
 import { parseConditionsParam, parseSourcesParam } from "@/lib/watchlist";
 
-export async function GET(
+export const GET = withApiErrors(async (
   _req: Request,
   { params }: { params: Promise<{ id: string }> }
-) {
+) => {
   const { id } = await params;
   const url = new URL(_req.url);
   const sources = parseSourcesParam(url.searchParams.get("sources"));
@@ -15,4 +16,4 @@ export async function GET(
     return NextResponse.json({ error: "Not found" }, { status: 404 });
   }
   return NextResponse.json(data);
-}
+});

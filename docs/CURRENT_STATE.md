@@ -1,10 +1,28 @@
 # Beyoracle — Current State
 
-_Last updated: 2026-08-07_
+_Last updated: 2026-10-22_
 
 Architecture, thesis, and navigation live in
 [`blueprint/README.md`](../blueprint/README.md). This document tracks what is
 shipped right now.
+
+## Website pricing fixes
+
+- Oracle records keep source/condition controls and Retry available after request failures, hide stale marks during reloads, and use `VITE_REQUIEM_API_BASE` for both records and live events.
+- Product API requests without an explicit condition filter preserve the SKU's default pool (sealed products use sealed comps).
+- Catalogue “Oracle ready” ordering and “Product marks” counts use fetched finite valuations rather than identity mappings.
+- Regression checks: `pnpm --filter @ripbeys/web test` and `pnpm --filter @beyoracle/web test`.
+
+## Backend reliability
+
+- The complete suite passes: 300 tests with original assertion thresholds and runner timeouts. Product matching selects code candidates before conflict checks; catalogue part lookup refreshes an index when the file changes.
+- Valuation accepts an explicit `asOf` for historical replay and rejects non-finite/non-positive prices, invalid dates and future sales. Scoreboard folds use the same valuation clock.
+- Production requires Railway `DATABASE_URL`; it no longer silently falls back to fixture pricing during an outage. Database connections have connect/idle/statement timeouts.
+- Admin review reads, writes and the page fail closed in production. To enable API access, set `ADMIN_API_TOKEN` securely on Railway and supply `Authorization: Bearer <token>`. The browser admin page has no token-entry UI; do not place this credential in frontend code.
+- Mutations validate bounded JSON, identifier types, threshold ranges and same-origin browser requests. API failures return generic errors without database/credential details.
+- SSE alerts use the server-side cookie session, never a caller-selected session. Streams clean up on reader cancellation/abort, bound deduplication history, and avoid overlapping database polls.
+- `/api/health` returns liveness; `/api/ready` checks database connectivity and returns 503 when unavailable. Explicit fixture mode is identified separately.
+- Docker runtimes and CI use Node 24. CI runs frozen installation, deterministic dependency bootstrap, all production builds, type checks, tests and fixture smoke on main/PRs. Web Docker builds include the jobs package before ingest.
 
 ## Production (Railway)
 

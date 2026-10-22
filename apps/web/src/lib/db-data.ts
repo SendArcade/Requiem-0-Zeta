@@ -30,21 +30,27 @@ import { and, eq, inArray } from "drizzle-orm";
 import type { CompRow, AssetData } from "./data-types";
 import { filterPublishedRows } from "./published-mark";
 
-let dbProbe: boolean | null = null;
+let dbProbe: { available: boolean; at: number } | null = null;
+let dbProbePending: Promise<boolean> | null = null;
 
 export async function isDbAvailable(): Promise<boolean> {
   if (process.env.DATA_SOURCE === "fixtures") return false;
-  if (process.env.DATA_SOURCE === "db") return true;
-  if (dbProbe !== null) return dbProbe;
-
-  try {
-    const db = getDb();
-    const rows = await db.select({ id: observations.id }).from(observations).limit(1);
-    dbProbe = rows.length > 0;
-  } catch {
-    dbProbe = false;
-  }
-  return dbProbe;
+  // Never silently serve fixture prices during a production database outage.
+  if (process.env.DATA_SOURCE === "db" || process.env.NODE_ENV === "production") return true;
+  if (dbProbe && Date.now() - dbProbe.at < 30_000) return dbProbe.available;
+  if (dbProbePending) return dbProbePending;
+  dbProbePending = (async () => {
+    let available = false;
+    try {
+      const db = getDb();
+      const rows = await db.select({ id: observations.id }).from(observations).limit(1);
+      available = rows.length > 0;
+    } catch { /* explicit fixture development can run without Railway */ }
+    dbProbe = { available, at: Date.now() };
+    return available;
+  })();
+  try { return await dbProbePending; }
+  finally { dbProbePending = null; }
 }
 
 async function loadCompsForPart(partId: string): Promise<CompInput[]> {

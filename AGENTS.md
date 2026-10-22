@@ -137,17 +137,11 @@ Fast, reliable local paths (no product matcher): part/asset oracle —
 `GET /api/asset/{partId}` and page `/asset/{partId}` (Oracle Value + IQR band +
 per-condition marks + source toggles via `?sources=` / `?conditions=`).
 
-Slow/avoid in fixtures mode: broad `GET /api/search`, `/product/{id}`,
-`/browse/products`. The product matcher rebuilds its full context **per fixture**
-and is CPU-bound; a broad search can peg Node's single thread and block the
-whole dev server (kill the `next-server` PID and restart if that happens). The
-**watchlist** needs Postgres (Railway), so it does nothing in fixtures mode.
+Product fixture matches are grouped once per web process, and part lookup indexes refresh after catalogue file changes. A first broad fixture request still builds its matcher context; repeated requests reuse the matches. Watchlists require Railway Postgres.
 
-Known pre-existing `pnpm test` failures in `packages/oracle` (WIP product
-matcher, unrelated to setup): `product-eval.test.ts` passes only with a longer
-timeout (~123s vs vitest's 5s default), and the "Burst identity product matcher"
-case in `matcher.test.ts` asserts `.toMatch()` on a non-string object and fails
-fast. The rest of the suite (48/50) passes.
+The full suite now runs with normal timeouts. Historical oracle tests pin only their own Date clock; valuation APIs also accept an explicit `asOf` for reproducible replays. Preserve the real assertions and timeouts when modifying matcher performance.
+
+Production backend defaults: Node 24, explicit `DATABASE_URL`, bounded DB queries, no automatic fixture fallback on production outages. `/api/health` is liveness; `/api/ready` checks the database or reports explicit fixture mode. Admin API and page fail closed in production unless `ADMIN_API_TOKEN` is configured and a matching bearer header is supplied. Never print or commit the token.
 
 ### Railway CLI on Cloud Agents
 

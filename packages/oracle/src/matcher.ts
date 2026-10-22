@@ -514,14 +514,15 @@ export function matchToProduct(
   if (codes.length === 0) return null;
 
   const candidates: Array<{ product: ProductDTO; score: number }> = [];
+  const titleCodes = new Set(codes.map(canonicalizeProductCode));
 
   for (const product of ctx.products) {
     if (opts?.generation && product.generation !== opts.generation) continue;
     if (!isWholeBeyProductCandidate(product)) continue;
-    if (titleNamesConflictingProduct(title, product, ctx.products)) continue;
     for (const code of product.productCodes) {
       const catalogCode = canonicalizeProductCode(code);
-      if (codes.some((c) => canonicalizeProductCode(c) === catalogCode)) {
+      if (titleCodes.has(catalogCode)) {
+        if (titleNamesConflictingProduct(title, product, ctx.products)) break;
         candidates.push({ product, score: scoreProductForTitle(product, title) });
         break;
       }

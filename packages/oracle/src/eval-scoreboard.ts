@@ -90,7 +90,7 @@ export function scoreboardLeaveOneOut(
   panels: ScoreboardPanel[],
   opts: { asOf?: Date; revisionThreshold?: number } = {}
 ): ScoreboardReport {
-  const asOf = opts.asOf ?? new Date("2026-07-15T00:00:00Z");
+  const asOf = opts.asOf ?? new Date();
   const revisionThreshold = opts.revisionThreshold ?? 0.05;
   const folds: ScoreboardFoldResult[] = [];
   const v1Errors: number[] = [];
@@ -104,11 +104,13 @@ export function scoreboardLeaveOneOut(
     const allComps = panel.comps.map((c) => fixtureToComp(c, asOf));
 
     const fullV1 = computeOracleValue(panel.assetId, allComps, {
+      asOf,
       engine: "v1",
       minComps: 3,
       windowDays: 90,
     });
     const fullV2 = computeOracleValue(panel.assetId, allComps, {
+      asOf,
       engine: "v2",
       minComps: 3,
       windowDays: 90,
@@ -135,11 +137,13 @@ export function scoreboardLeaveOneOut(
           : heldOut.price;
 
       const v1 = computeOracleValue(panel.assetId, train, {
+        asOf,
         engine: "v1",
         minComps: 3,
         windowDays: 90,
       });
       const v2 = computeOracleValue(panel.assetId, train, {
+        asOf,
         engine: "v2",
         minComps: 3,
         windowDays: 90,

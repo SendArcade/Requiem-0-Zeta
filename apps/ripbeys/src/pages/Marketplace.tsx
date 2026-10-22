@@ -18,6 +18,7 @@ import {
   isProductOracleEligible,
 } from '../lib/oracleBridge'
 import { fetchListingOracle } from '../lib/requiemOracle'
+import { compareOracleAvailability, hasOracleValue } from '../lib/oracleAvailability'
 import {
   modelPathForListing,
   posterForListing,
@@ -183,7 +184,7 @@ export function Marketplace() {
     })
 
     const byOracleReady = (a: Listing, b: Listing) =>
-      Number(isProductOracleEligible(b.id)) - Number(isProductOracleEligible(a.id))
+      compareOracleAvailability(a, b, oracleValues)
 
     const showcaseRank = (id: string) => {
       const i = DEMO_SHOWCASE.findIndex((s) => s.id === id)
@@ -201,8 +202,8 @@ export function Marketplace() {
       return [...filtered].sort((a, b) => {
         const av = oracleValues[a.id]
         const bv = oracleValues[b.id]
-        const aOk = typeof av === 'number'
-        const bOk = typeof bv === 'number'
+        const aOk = hasOracleValue(av)
+        const bOk = hasOracleValue(bv)
         if (aOk && bOk) return dir * (av! - bv!)
         if (aOk !== bOk) return aOk ? -1 : 1
         return byOracleReady(a, b) || a.name.localeCompare(b.name)
@@ -236,7 +237,7 @@ export function Marketplace() {
       await Promise.all(
         eligible.map(async (item) => {
           const v = await fetchListingOracle(item.id)
-          next[item.id] = v.status === 'available' && v.value != null ? v.value : null
+          next[item.id] = v.status === 'available' && hasOracleValue(v.value) ? v.value : null
         }),
       )
       if (!cancelled) {
@@ -251,7 +252,7 @@ export function Marketplace() {
 
   const shown = visible.slice(0, page * pageSize)
   const priced = catalog.filter(
-    (item) => isProductOracleEligible(item.id) && typeof oracleValues[item.id] === 'number',
+    (item) => isProductOracleEligible(item.id) && hasOracleValue(oracleValues[item.id]),
   )
   const beyCount = productOracleCount
   const openDetail = (item: Listing) => navigate(`/market/${item.id}`)
@@ -406,7 +407,7 @@ export function Marketplace() {
             </div>
             <div>
               <dt>Product marks</dt>
-              <dd><CountUp to={productOracleCount} separator="," duration={1.1} /></dd>
+              <dd>{oracleChecked ? <CountUp to={priced.length} separator="," duration={1.1} /> : '…'}</dd>
             </div>
           </dl>
         </section>

@@ -1,3 +1,6 @@
+import { headers } from "next/headers";
+import { notFound } from "next/navigation";
+import { requireAdmin } from "@/lib/admin-auth";
 import { getPartById } from "@beyoracle/catalog";
 import { getDb, matchReviewQueue } from "@beyoracle/db";
 import { isDbAvailable } from "@/lib/db-data";
@@ -5,6 +8,7 @@ import { ReviewQueueClient } from "@/components/ReviewQueueClient";
 import { eq } from "drizzle-orm";
 
 export default async function AdminReviewPage() {
+  if (requireAdmin(new Request("http://internal/admin/review", { headers: await headers() }))) notFound();
   const dbOk = await isDbAvailable();
 
   if (!dbOk) {
@@ -12,8 +16,7 @@ export default async function AdminReviewPage() {
       <div>
         <h1 className="text-2xl font-bold">Match review queue</h1>
         <p className="mt-4 text-[var(--muted)]">
-          Requires Postgres. Run{" "}
-          <code className="text-[var(--accent)]">pnpm docker:up && pnpm db:migrate && pnpm db:seed</code>.
+          Requires the Railway Postgres connection. Configure DATABASE_URL securely.
         </p>
       </div>
     );

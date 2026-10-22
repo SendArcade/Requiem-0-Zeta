@@ -1,4 +1,5 @@
-FROM node:20-alpine AS base
+FROM node:24-alpine AS base
+ENV NODE_USE_ENV_PROXY=1
 RUN corepack enable && corepack prepare pnpm@9.15.4 --activate
 WORKDIR /app
 
@@ -15,6 +16,7 @@ ENV VITE_REQUIEM_API_BASE=
 RUN pnpm --filter @beyoracle/shared build \
  && pnpm --filter @beyoracle/db build \
  && pnpm --filter @beyoracle/events build \
+ && pnpm --filter @beyoracle/jobs build \
  && pnpm --filter @beyoracle/catalog build \
  && pnpm --filter @beyoracle/oracle build \
  && pnpm --filter @beyoracle/ingest build \

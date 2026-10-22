@@ -1,3 +1,11 @@
+import { beforeEach, afterEach, vi } from "vitest";
+
+beforeEach(() => {
+  vi.useFakeTimers({ toFake: ["Date"] });
+  vi.setSystemTime(new Date("2026-07-25T00:00:00Z"));
+});
+afterEach(() => vi.useRealTimers());
+
 import { describe, it, expect } from "vitest";
 import {
   buildCohortIndex,

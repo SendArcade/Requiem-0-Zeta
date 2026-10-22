@@ -1,3 +1,4 @@
+import { readJsonObject, validId, validThreshold, withApiErrors } from "@/lib/api-input";
 import { randomUUID } from "node:crypto";
 import { NextResponse } from "next/server";
 import { getPartById } from "@beyoracle/catalog";
@@ -13,7 +14,7 @@ async function listFromDb(sessionId: string) {
   return db.select().from(watchlist).where(eq(watchlist.sessionId, sessionId));
 }
 
-export async function GET() {
+export const GET = withApiErrors(async () => {
   const sessionId = await getSessionId();
   if (!(await isDbAvailable())) {
     return NextResponse.json({ partIds: [], alerts: [], db: false });
@@ -29,23 +30,21 @@ export async function GET() {
       alertThresholdPct: r.alertThresholdPct,
     })),
   });
-}
+});
 
-export async function POST(req: Request) {
-  const body = (await req.json()) as {
-    partId?: string;
-    alertThresholdPct?: number;
-  };
-  if (!body.partId || !getPartById(body.partId)) {
+export const POST = withApiErrors(async (req: Request) => {
+  const body = await readJsonObject(req);
+  if (!validId(body.partId) || !getPartById(body.partId)) {
     return NextResponse.json({ error: "Invalid partId" }, { status: 400 });
   }
 
   const sessionId = await getSessionId();
   const threshold = body.alertThresholdPct ?? DEFAULT_THRESHOLD;
+  if (!validThreshold(threshold)) return NextResponse.json({ error: "alertThresholdPct must be between 0 and 100 (exclusive of 0)" }, { status: 400 });
 
   if (!(await isDbAvailable())) {
     return NextResponse.json(
-      { error: "Database required for watchlist — run pnpm db:seed" },
+      { error: "Railway database required for watchlist" },
       { status: 503 }
     );
   }
@@ -73,11 +72,11 @@ export async function POST(req: Request) {
 
   const rows = await listFromDb(sessionId);
   return NextResponse.json({ partIds: rows.map((r) => r.partId) });
-}
+});
 
-export async function DELETE(req: Request) {
-  const body = (await req.json()) as { partId?: string };
-  if (!body.partId) {
+export const DELETE = withApiErrors(async (req: Request) => {
+  const body = await readJsonObject(req);
+  if (!validId(body.partId)) {
     return NextResponse.json({ error: "partId required" }, { status: 400 });
   }
 
@@ -93,18 +92,18 @@ export async function DELETE(req: Request) {
 
   const rows = await listFromDb(sessionId);
   return NextResponse.json({ partIds: rows.map((r) => r.partId) });
-}
+});
 
-export async function PATCH(req: Request) {
-  const body = (await req.json()) as {
-    partId?: string;
-    alertThresholdPct?: number;
-    resetBaseline?: boolean;
-  };
+export const PATCH = withApiErrors(async (req: Request) => {
+  const body = await readJsonObject(req);
 
-  if (!body.partId) {
+  if (!validId(body.partId)) {
     return NextResponse.json({ error: "partId required" }, { status: 400 });
   }
+
+  if (body.alertThresholdPct != null && !validThreshold(body.alertThresholdPct)) return NextResponse.json({ error: "Invalid alertThresholdPct" }, { status: 400 });
+  if (body.resetBaseline != null && typeof body.resetBaseline !== "boolean") return NextResponse.json({ error: "resetBaseline must be boolean" }, { status: 400 });
+  if (body.alertThresholdPct == null && body.resetBaseline !== true) return NextResponse.json({ error: "No updates provided" }, { status: 400 });
 
   const sessionId = await getSessionId();
   if (!(await isDbAvailable())) {
@@ -118,7 +117,7 @@ export async function PATCH(req: Request) {
     lastAlertAt: null;
   }> = {};
 
-  if (body.alertThresholdPct != null) {
+  if (validThreshold(body.alertThresholdPct)) {
     updates.alertThresholdPct = body.alertThresholdPct;
   }
 
@@ -135,4 +134,4 @@ export async function PATCH(req: Request) {
 
   const rows = await listFromDb(sessionId);
   return NextResponse.json({ partIds: rows.map((r) => r.partId) });
-}
+});

@@ -53,8 +53,10 @@ export type RequiemOracleMark = {
   error?: string
 }
 
-const base = () =>
-  (import.meta.env.VITE_REQUIEM_API_BASE as string | undefined)?.replace(/\/$/, '') || ''
+export function oracleApiUrl(path: string): string {
+  const base = (import.meta.env.VITE_REQUIEM_API_BASE as string | undefined)?.replace(/\/+$/, '') || ''
+  return `${base}${path}`
+}
 
 type CacheEntry = { at: number; value: ListingOracleValuation }
 const cache = new Map<string, CacheEntry>()
@@ -184,7 +186,7 @@ async function fetchOracleByTarget(
     const controller = new AbortController()
     const timer = setTimeout(() => controller.abort(), ORACLE_TIMEOUT_MS)
     try {
-      const res = await fetch(`${base()}${path}`, {
+      const res = await fetch(oracleApiUrl(path), {
         headers: { Accept: 'application/json' },
         signal: controller.signal,
       })

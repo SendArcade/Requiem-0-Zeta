@@ -1,3 +1,4 @@
+import { randomUUID } from "node:crypto";
 import { cookies } from "next/headers";
 import type { Condition, SourceId } from "@beyoracle/shared";
 import { DEFAULT_ORACLE_CONDITIONS, SOURCES } from "@beyoracle/shared";
@@ -6,7 +7,8 @@ export const SESSION_COOKIE = "beyoracle_session";
 
 export async function getSessionId(): Promise<string> {
   const jar = await cookies();
-  return jar.get(SESSION_COOKIE)?.value ?? "anonymous";
+  const session = jar.get(SESSION_COOKIE)?.value;
+  return session && /^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(session) ? session : randomUUID();
 }
 
 export function parseSourcesParam(param: string | null): SourceId[] {
