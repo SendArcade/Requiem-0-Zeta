@@ -35,7 +35,11 @@ claiming production-grade numbers.
 ## Map of the whole repo
 
 ```
-apps/web/                 Next.js App Router UI (search, browse, asset, watchlist)
+apps/web/                 Next.js consumer UI, collector pages and pricing APIs
+apps/worker/              BullMQ ingestion and recomputation worker
+packages/pricing-service/ Shared pricing queries and persistence
+packages/catalog-sync/    Runtime catalogue synchronization
+tools/catalog-maintenance/ Catalogue generators, seed and sync CLI
 packages/shared/          Types, generation taxonomy, FX, source bitmasks
 packages/catalog/         Seed data (parts, aliases, fixtures) + loaders
 packages/db/              Drizzle Postgres schema + migrations

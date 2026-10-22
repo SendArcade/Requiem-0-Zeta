@@ -55,10 +55,13 @@ coverage; it cannot corrupt the catalog or crash the UI.
 | `packages/db` | L0–L2 | Drizzle Postgres schema and migrations | `src/schema.ts` |
 | `packages/ingest` | L1 | `PricingSource` interface and adapters | `src/types.ts`, `src/adapters/` |
 | `packages/oracle` | L2 | Matcher and Oracle Value | `src/matcher.ts`, `src/oracle-value.ts` |
+| `packages/catalog-sync` | L0 | Runtime DB catalogue sync | `src/index.ts` |
+| `packages/pricing-service` | L2–L3 | Queries, persistence, review and recomputation | `src/product-data.ts`, `src/persist.ts` |
+| `apps/worker` | Runtime | BullMQ scheduling and ingestion | `src/index.ts` |
+| `tools/catalog-maintenance` | Tooling | Generators, validation and seed/sync commands | `scripts/`, `src/` |
 | `apps/web` | L3 | Next.js App Router UI and route handlers | `src/app/`, `src/lib/data.ts` |
 
-Dependencies point one way: `web → oracle → catalog → shared`, with `ingest`
-depending on `catalog`, `oracle`, and `shared`.
+The enforced workspace graph is acyclic. Web queries use `pricing-service`, which depends on `oracle`, `catalog` and `db`; ingestion adapters also call pricing services. Runtime catalogue synchronization lives in `catalog-sync`, independent of the pure catalogue loaders. Worker is a deployable app under `apps/worker`; generators and seed commands live in `tools/catalog-maintenance`. See [the current repository map](../docs/architecture/repository.md).
 
 ## The provider interface
 
@@ -91,7 +94,7 @@ still run the whole stack. See [11-verification](11-verification.md).
 
 ## The live Mercari path
 
-[`packages/ingest/src/adapters/mercari/`](../packages/ingest/src/adapters/mercari/)
+[`packages/ingest/src/adapters/mercari/`](../packages/ingest/src/adapters/mercari)
 is the reference implementation for a real adapter.
 
 - `dpop.ts` builds an RFC 9449 DPoP proof: an ES256 JWT over an ephemeral P-256
@@ -113,16 +116,9 @@ Sources are a bitmask in
 **already-stored comps** — it never triggers a new fetch. That keeps the
 interaction instant and makes the toggle safe to expose publicly.
 
-## Deliberate deferrals
+## Runtime services
 
-Present in the plan, absent from the code, and fine for now:
-
-- **BullMQ and Redis** for scheduled ingest. Ingest is currently CLI-driven.
-- **Postgres in the read path.** The web app reads catalog and fixtures from
-  JSON, so the UI runs with no database at all.
-
-Neither blocks correctness work, and both are cheap to add once matching is
-fixed. Rationale in [09-decisions](09-decisions.md).
+BullMQ and Redis schedule ingestion in `apps/worker`. Production web queries use Railway Postgres through `packages/pricing-service`; explicit fixture mode supports local UI checks. Both apps build from the same acyclic package graph.
 
 ---
 

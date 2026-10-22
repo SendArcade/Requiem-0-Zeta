@@ -2,7 +2,7 @@
 #
 # Per-service Dockerfile (set as service variables in Railway):
 #   web:    RAILWAY_DOCKERFILE_PATH=apps/web/Dockerfile
-#   worker: RAILWAY_DOCKERFILE_PATH=packages/worker/Dockerfile
+#   worker: RAILWAY_DOCKERFILE_PATH=apps/worker/Dockerfile
 #
 # Deploy:
 #   railway service link web && railway up --detach

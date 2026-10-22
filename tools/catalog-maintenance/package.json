@@ -1,0 +1,29 @@
+{
+  "name": "@beyoracle/catalog-maintenance",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "seed": "tsx src/seed.ts",
+    "catalog:sync": "tsx src/sync.ts",
+    "catalog:build": "tsx scripts/build-catalog.ts",
+    "products:build": "tsx scripts/build-products.ts",
+    "products:burst": "node scripts/generate-products-burst.mjs",
+    "products:enrich": "tsx scripts/enrich-product-recipes.ts",
+    "products:validate": "tsx scripts/validate-product-recipes-cli.ts",
+    "products:refresh": "node scripts/generate-products-burst.mjs && tsx scripts/enrich-product-recipes.ts && tsx scripts/validate-product-recipes-cli.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@beyoracle/catalog": "workspace:*",
+    "@beyoracle/catalog-sync": "workspace:*",
+    "@beyoracle/db": "workspace:*",
+    "@beyoracle/oracle": "workspace:*",
+    "@beyoracle/shared": "workspace:*",
+    "drizzle-orm": "^0.39.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.7",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.3"
+  }
+}

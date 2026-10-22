@@ -1,0 +1,37 @@
+{
+  "name": "@beyoracle/pricing-service",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./*": {
+      "types": "./dist/*.d.ts",
+      "import": "./dist/*.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run --passWithNoTests"
+  },
+  "dependencies": {
+    "@beyoracle/catalog": "workspace:*",
+    "@beyoracle/db": "workspace:*",
+    "@beyoracle/oracle": "workspace:*",
+    "@beyoracle/shared": "workspace:*",
+    "@beyoracle/events": "workspace:*",
+    "drizzle-orm": "^0.39.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.7",
+    "typescript": "^5.7.3",
+    "vitest": "^3.0.5"
+  },
+  "files": [
+    "dist"
+  ]
+}

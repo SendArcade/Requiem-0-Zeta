@@ -1,5 +1,5 @@
 # Worker service config — set in Railway UI as custom config path: /railway.worker.toml
-# Or set service variable: RAILWAY_DOCKERFILE_PATH=packages/worker/Dockerfile
+# Or set service variable: RAILWAY_DOCKERFILE_PATH=apps/worker/Dockerfile
 #
 # Cron ingest: worker boot removes Redis repeatable `scheduled-cron-tick` then re-adds
 # it without a frozen tickId. BACKFILL_PAUSE_CRON_INGEST=1 actually pauses only because
@@ -14,7 +14,7 @@
 
 [build]
 builder = "DOCKERFILE"
-dockerfilePath = "packages/worker/Dockerfile"
+dockerfilePath = "apps/worker/Dockerfile"
 
 [deploy]
 restartPolicyType = "ON_FAILURE"

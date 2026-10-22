@@ -2,10 +2,10 @@
 
 Source files:
 
-- Listings: `apps/ripbeys/src/lib/assets.ts` (`marketplaceListings`)
-- Bridge: `apps/ripbeys/src/data/oracle-bridge.json` (generated 2026-09-24 from `packages/catalog/data/ripbeys-asset-map.json`)
-- Names shown in the UI: `apps/ripbeys/src/lib/oracleNames.ts` (Requiem `nameEn` for confirmed rows)
-- Visuals: `apps/ripbeys/src/data/visual-assets.json`
+- Listings: `apps/web/src/consumer/lib/assets.ts` (`marketplaceListings`)
+- Bridge: `apps/web/src/consumer/data/oracle-bridge.json` (generated 2026-09-24 from `packages/catalog/data/ripbeys-asset-map.json`)
+- Names shown in the UI: `apps/web/src/consumer/lib/oracleNames.ts` (Requiem `nameEn` for confirmed rows)
+- Visuals: `apps/web/src/consumer/data/visual-assets.json`
 
 ## Inventory
 

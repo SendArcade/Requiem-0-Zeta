@@ -6,7 +6,7 @@ Patterns and inspiration borrowed for Beyoracle MVP.
 
 | Source | What we adapted | Where |
 |--------|-----------------|-------|
-| [warmachine](https://github.com/memeticmachines/warmachine) | Typed job catalog, cron.tick fan-out, ingest_runs observability | `packages/jobs`, `packages/worker`, `packages/ingest/src/runs.ts` |
+| [warmachine](https://github.com/memeticmachines/warmachine) | Typed job catalog, cron.tick fan-out, ingest_runs observability | `packages/jobs`, `apps/worker`, `packages/ingest/src/runs.ts` |
 | [PokeDao](https://github.com/ChicoPanama/PokeDao) | Cascading CardMatcher (code → alias → fuzzy) | `packages/oracle/src/matcher.ts` |
 | [opencc-js](https://github.com/nk2028/opencc-js) | Traditional→Simplified Chinese folding for TW listings | `packages/shared/src/normalize-match.ts` |
 | [wanakana](https://github.com/WaniKani/WanaKana) | Katakana fold + romaji bridge for JP titles | `packages/shared/src/normalize-match.ts` |
@@ -41,3 +41,9 @@ External data is **import-only**; Beyoracle owns its schema and does not mirror 
 ## Legal note
 
 Live scrapers are env-gated. Prefer commercial parsers or official APIs in production. See ingest adapter comments for ToS sensitivity.
+
+## Web navigation and mobile
+
+- [Next.js App Router](https://nextjs.org/docs/app/api-reference/functions/use-router) and [native history integration](https://nextjs.org/docs/app/building-your-application/routing/linking-and-navigating#using-the-native-history-api): the consumer navigation adapter delegates routing to Next.
+- [Next.js manifest convention](https://nextjs.org/docs/app/api-reference/file-conventions/metadata/manifest): standalone web app metadata and local icons.
+- [WAI dialog keyboard guidance](https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/): focus containment, Escape dismissal and focus restoration in the mobile menu.

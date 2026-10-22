@@ -15,26 +15,19 @@
   "scripts": {
     "build": "tsc",
     "typecheck": "tsc --noEmit",
-    "seed": "tsx src/seed.ts",
-    "catalog:sync": "tsx src/cli/sync-catalog-cli.ts",
-    "catalog:build": "tsx scripts/build-catalog.ts",
-    "products:build": "tsx scripts/build-products.ts",
-    "products:burst": "node scripts/generate-products-burst.mjs",
-    "products:enrich": "tsx scripts/enrich-product-recipes.ts",
-    "products:validate": "tsx scripts/validate-product-recipes-cli.ts",
-    "products:refresh": "node scripts/generate-products-burst.mjs && tsx scripts/enrich-product-recipes.ts && tsx scripts/validate-product-recipes-cli.ts",
     "test": "vitest run --passWithNoTests"
   },
   "dependencies": {
-    "@beyoracle/db": "workspace:*",
-    "@beyoracle/shared": "workspace:*",
-    "@beyoracle/oracle": "workspace:*",
-    "drizzle-orm": "^0.39.1"
+    "@beyoracle/shared": "workspace:*"
   },
   "devDependencies": {
     "@types/node": "^22.10.7",
     "tsx": "^4.19.2",
     "typescript": "^5.7.3",
     "vitest": "^3.0.5"
-  }
+  },
+  "files": [
+    "dist",
+    "data"
+  ]
 }

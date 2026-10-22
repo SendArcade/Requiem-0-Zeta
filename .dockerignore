@@ -2,7 +2,7 @@
 node_modules
 **/node_modules
 **/.next
-apps/ripbeys/dist
+**/dist
 **/*.tsbuildinfo
 agent-transcripts
 *.md

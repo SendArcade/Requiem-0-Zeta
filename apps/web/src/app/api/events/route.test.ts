@@ -2,7 +2,7 @@ import { EventEmitter } from 'node:events';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { GET } from './route';
 import { createSubscriber } from '@beyoracle/events';
-import { fetchSaleEventsSince } from '@beyoracle/ingest';
+import { fetchSaleEventsSince } from '@beyoracle/pricing-service';
 
 vi.mock('@/lib/watchlist', () => ({ getSessionId: async () => 'own-session' }));
 vi.mock('@beyoracle/events', () => ({
@@ -10,7 +10,7 @@ vi.mock('@beyoracle/events', () => ({
   normalizeSaleEvent: (event: unknown) => event,
   parseEvent: (raw: string) => JSON.parse(raw),
 }));
-vi.mock('@beyoracle/ingest', () => ({
+vi.mock('@beyoracle/pricing-service', () => ({
   fetchSaleEventsSince: vi.fn(async () => []), fetchRecentSales: async () => [], fetchRecentProductSales: async () => [],
 }));
 let subscriber: EventEmitter & { subscribe: ReturnType<typeof vi.fn>; unsubscribe: ReturnType<typeof vi.fn>; quit: ReturnType<typeof vi.fn> };

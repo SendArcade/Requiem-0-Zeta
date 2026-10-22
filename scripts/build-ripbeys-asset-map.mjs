@@ -9,11 +9,11 @@ import { fileURLToPath } from 'url'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const ROOT = path.resolve(__dirname, '..')
-const ASSETS_TS = path.join(ROOT, 'apps/ripbeys/src/lib/assets.ts')
-const PART_MAPS = path.join(ROOT, 'apps/ripbeys/src/data/partMaps.json')
-const VAULT = path.join(ROOT, 'apps/ripbeys/public/assets')
+const ASSETS_TS = path.join(ROOT, 'apps/web/src/consumer/lib/assets.ts')
+const PART_MAPS = path.join(ROOT, 'apps/web/src/consumer/data/partMaps.json')
+const VAULT = path.join(ROOT, 'apps/web/public/assets')
 const OUT = path.join(ROOT, 'packages/catalog/data/ripbeys-asset-map.json')
-const REPORT = path.join(ROOT, 'MAPPING_REPORT.md')
+const REPORT = path.join(ROOT, 'docs/audits/MAPPING_REPORT.md')
 
 const parts = JSON.parse(fs.readFileSync(path.join(ROOT, 'packages/catalog/data/parts.json'), 'utf8'))
 const products = [
@@ -121,8 +121,8 @@ function norm(s) {
 function fileExists(relUrl) {
   if (!relUrl) return false
   const rel = relUrl.replace(/^\//, '')
-  // vault is apps/ripbeys/public — urls are /assets/...
-  const full = path.join(ROOT, 'apps/ripbeys/public', rel)
+  // vault is apps/web/public — urls are /assets/...
+  const full = path.join(ROOT, 'apps/web/public', rel)
   return fs.existsSync(full)
 }
 
@@ -911,7 +911,7 @@ Assembled model missing: **${stats.assembledModelMissing}**
 
 ## Decisions required before Stage 2 (Oracle UI)
 
-1. **Dual-app layout** — keep \`apps/web\` + \`apps/ripbeys\`? (recommended)
+1. **Single-app layout** — consumer and pricing routes run in \`apps/web\`.
 2. **Dagger Dran / BX-20** — part-only Oracle vs new product seed (do not use Shark Edge)
 3. **Duplicate recipes** (e.g. BX-01 vs BX-22 Dran Sword) — which product id is canonical for Oracle?
 4. **Asset commit strategy** — LFS / as-is / gitignore for ~1.5 GB vault

@@ -1,9 +1,9 @@
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import { GET, POST } from './route';
 import { isDbAvailable } from '@/lib/db-data';
-import { approveReviewQueueItem, rejectReviewQueueItem } from '@beyoracle/ingest';
+import { approveReviewQueueItem, rejectReviewQueueItem } from '@beyoracle/pricing-service';
 vi.mock('@/lib/db-data', () => ({ isDbAvailable: vi.fn(async () => false) }));
-vi.mock('@beyoracle/ingest', () => ({ approveReviewQueueItem: vi.fn(), rejectReviewQueueItem: vi.fn() }));
+vi.mock('@beyoracle/pricing-service', () => ({ approveReviewQueueItem: vi.fn(), rejectReviewQueueItem: vi.fn() }));
 afterEach(() => { vi.unstubAllEnvs(); vi.clearAllMocks(); });
 describe('admin route authorization', () => {
   it('denies both reads and writes before database access in production', async () => {

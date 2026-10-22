@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { getPartById } from "@beyoracle/catalog";
 import { getDb, matchReviewQueue } from "@beyoracle/db";
-import { approveReviewQueueItem, rejectReviewQueueItem } from "@beyoracle/ingest";
+import { approveReviewQueueItem, rejectReviewQueueItem } from "@beyoracle/pricing-service";
 import { isDbAvailable } from "@/lib/db-data";
 import { desc, eq } from "drizzle-orm";
 

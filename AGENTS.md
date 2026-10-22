@@ -35,7 +35,7 @@ This repo is Spec Kit–initialized. Prefer **Spec → Plan → Tasks → Implem
 
 ## Know this before you touch anything
 
-- **Catalog:** 1,105 parts (Plastic 154 · Metal 164 · Burst 576 · X 211) + **448 products** (Plastic 85 · Metal 119 · Burst 86 · X 158) via seed JSON under `packages/catalog/data/seeds/`; parts rebuild: `pnpm catalog:build`
+- **Catalog:** 1,107 parts (Plastic 154 · Metal 164 · Burst 578 · X 211) + **449 products** (Plastic 85 · Metal 119 · Burst 76 · X 169) via seed JSON under `packages/catalog/data/seeds/`; parts rebuild: `pnpm catalog:build`
 - **Matcher v3.1** runs end-to-end. Labeled eval **100% shape + 100% match** (~213 titles).
   Live probes: Mercari **21.2%** (v3.1, 2026-08-05 — stricter gen scoring; v2 was 27.8%),
   Yahoo **48.0%** (2026-07-29). ~24–40% of listings are bundles that must never become comps.
@@ -45,11 +45,14 @@ This repo is Spec Kit–initialized. Prefer **Spec → Plan → Tasks → Implem
 
 | Path | Role |
 |------|------|
-| `apps/web` | Next.js App Router — search, browse, asset pages |
+| `apps/web` | One Next app — RIPBEYS UI, collector pages and pricing APIs |
 | `packages/db` | Drizzle schema + migrations |
-| `packages/catalog` | Generation taxonomy, seed data, import scripts |
-| `packages/ingest` | `PricingSource` interface; Mercari/Yahoo/Shopee + Ruten/Mandarake/Suruga-ya adapters; product-first match + persist + scheduled ingest |
-| `packages/worker` | BullMQ cron worker — poll sources, recompute marks, fire watchlist alerts |
+| `packages/catalog` | Generation taxonomy, seed data and pure loaders |
+| `packages/ingest` | `PricingSource` interface, marketplace adapters and ingestion orchestration |
+| `packages/pricing-service` | Pricing queries, match persistence, review and recomputation |
+| `packages/catalog-sync` | Runtime DB catalogue synchronization |
+| `tools/catalog-maintenance` | Catalogue generators, seed and sync CLI |
+| `apps/worker` | BullMQ cron worker — poll sources, recompute marks, fire watchlist alerts |
 | `packages/events` | Redis pub/sub bus for live sales + alert push |
 | `packages/oracle` | Matcher + Oracle Value aggregation |
 | `packages/shared` | Shared types, FX helpers |
@@ -101,31 +104,21 @@ Fixtures validate plumbing, not accuracy. Full checklist in
 
 ## Cursor Cloud specific instructions
 
-Toolchain: Node ≥20 (VM has 22.x) + pnpm 9.15.4 via Corepack. Install with
+Toolchain: Node 24 + pnpm 9.15.4 via Corepack. Install with
 `pnpm install --frozen-lockfile` (this is the environment update script). No
 Postgres/Redis/Docker is needed for local dev — the Railway-only rule stands.
 
 **Internal packages must be compiled to `dist/` before `pnpm typecheck`, `pnpm test`,
 and `pnpm dev`.** Every `@beyoracle/*` package resolves via its `package.json`
-`exports` → `dist/` (the web app also lists `db`/`ingest`/`events` in
+`exports` → `dist/` (the web app also lists `db`/`pricing-service`/`events` in
 `serverExternalPackages`, so they are loaded from `dist/`, not source). A fresh
 checkout has no `dist/`, so those commands fail until you build.
 
-Build gotcha — `catalog` ↔ `oracle` package.json cycle: a single clean
-`pnpm build` is non-deterministic and usually fails because `oracle` compiles
-before `catalog/dist` exists. `catalog` builds fine without `oracle`
-(`tsconfig` excludes `src/seed.ts`, the only file importing `oracle`), so build
-`catalog` first. Deterministic recipe from a clean tree:
+The workspace graph is acyclic. `pnpm build` performs a normal topological build and assembles the standalone web deployment. `pnpm build:web` and `pnpm build:worker` build the respective application dependency graphs. No catalogue bootstrap exception is needed. Rebuild changed internal packages and restart a running server because their exports load `dist`.
 
-```bash
-pnpm --filter @beyoracle/shared --filter @beyoracle/db --filter @beyoracle/events --filter @beyoracle/jobs build
-pnpm --filter @beyoracle/catalog exec tsc
-pnpm -r build            # oracle now resolves catalog; builds ingest/worker/web too
-```
+Consumer routes are native Next routes under `apps/web/src/app/(consumer)`; their UI lives in `src/consumer`. Collector pages use `(oracle)` and retain their URLs. Public assets are canonical in `apps/web/public`. There is no separate Vite server or frontend copy step. Stop a running Next dev server before a production build because both write `.next`.
 
-Once `dist/` exists, a plain `pnpm build` succeeds in one pass. Hot reload does
-NOT pick up edits to internal packages — rebuild the changed package (e.g.
-`pnpm --filter @beyoracle/oracle build`) and restart `pnpm dev`.
+Runtime catalogue sync lives in `packages/catalog-sync`; pricing queries/persistence/review operations live in `packages/pricing-service`. The web app must not depend on `packages/ingest`. Catalogue generators and seed/sync commands live in `tools/catalog-maintenance`. `pnpm check:architecture` enforces boundaries and is included in `pnpm test`.
 
 Run the web app locally on fixtures (no DB/Redis):
 
@@ -145,9 +138,7 @@ Production backend defaults: Node 24, explicit `DATABASE_URL`, bounded DB querie
 
 ### Railway CLI on Cloud Agents
 
-`RAILWAY_TOKEN` in this environment is a **project token** (UUID), not an account
-token. It is valid — `railway whoami` fails because that command needs a dashboard
-token (`RAILWAY_API_TOKEN`). Use project-scoped commands directly:
+When configured, `RAILWAY_TOKEN` should be a **project token**, rather than an account token. Some cloud snapshots have no saved credential binding; check availability before claiming a deployment. `railway whoami` needs an account token (`RAILWAY_API_TOKEN`) and cannot validate project-token access. Use project-scoped commands directly:
 
 ```bash
 railway redeploy -s web -y --from-source
@@ -158,3 +149,5 @@ railway logs -s worker
 ```
 
 See `.cursor/rules/railway-only.mdc` for the full token-type table.
+
+Structure and deployment details: [repository architecture](docs/architecture/repository.md), [deployment operations](docs/operations/deployment.md).

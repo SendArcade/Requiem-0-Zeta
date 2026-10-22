@@ -12,7 +12,7 @@ import {
   fetchRecentProductSales,
   fetchRecentSales,
   fetchSaleEventsSince,
-} from "@beyoracle/ingest";
+} from "@beyoracle/pricing-service";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";

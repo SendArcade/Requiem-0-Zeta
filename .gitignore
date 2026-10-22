@@ -31,3 +31,7 @@ agent-transcripts/
 *.pgdump
 backups/
 data/exports/
+
+# Browser verification artifacts
+playwright-report/
+test-results/

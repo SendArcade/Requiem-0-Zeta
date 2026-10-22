@@ -12,12 +12,12 @@ import { fileURLToPath } from 'node:url'
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 const bridge = JSON.parse(
-  fs.readFileSync(path.join(root, 'apps/ripbeys/src/data/oracle-bridge.json'), 'utf8'),
+  fs.readFileSync(path.join(root, 'apps/web/src/consumer/data/oracle-bridge.json'), 'utf8'),
 )
 const visuals = JSON.parse(
-  fs.readFileSync(path.join(root, 'apps/ripbeys/src/data/visual-assets.json'), 'utf8'),
+  fs.readFileSync(path.join(root, 'apps/web/src/consumer/data/visual-assets.json'), 'utf8'),
 )
-const namesSrc = fs.readFileSync(path.join(root, 'apps/ripbeys/src/lib/oracleNames.ts'), 'utf8')
+const namesSrc = fs.readFileSync(path.join(root, 'apps/web/src/consumer/lib/oracleNames.ts'), 'utf8')
 const oracleNames = Object.fromEntries(
   [...namesSrc.matchAll(/"([^"]+)":\s*"([^"]*)"/g)].map((m) => [m[1], m[2]]),
 )

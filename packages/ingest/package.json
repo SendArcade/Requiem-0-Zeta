@@ -44,12 +44,16 @@
     "@beyoracle/events": "workspace:*",
     "@beyoracle/oracle": "workspace:*",
     "@beyoracle/shared": "workspace:*",
-    "drizzle-orm": "^0.39.1"
+    "drizzle-orm": "^0.39.1",
+    "@beyoracle/pricing-service": "workspace:*"
   },
   "devDependencies": {
     "@types/node": "^22.10.7",
     "tsx": "^4.19.2",
     "typescript": "^5.7.3",
     "vitest": "^3.0.5"
-  }
+  },
+  "files": [
+    "dist"
+  ]
 }

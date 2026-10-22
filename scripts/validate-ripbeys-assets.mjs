@@ -9,7 +9,7 @@ import { fileURLToPath } from 'url'
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const ROOT = path.resolve(__dirname, '..')
 const MAP = path.join(ROOT, 'packages/catalog/data/ripbeys-asset-map.json')
-const PUBLIC = path.join(ROOT, 'apps/ripbeys/public')
+const PUBLIC = path.join(ROOT, 'apps/web/public')
 
 function exists(relUrl) {
   if (!relUrl) return false

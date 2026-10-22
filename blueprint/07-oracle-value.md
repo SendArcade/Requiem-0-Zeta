@@ -98,7 +98,7 @@ sophistication.
 5. A market-wide index for "is Beyblade X up this month."
 
 Research into robust estimators and sparse-comps methods is in flight; check
-[docs/](../docs/) for a valuation research document before designing step 4
+[docs/](../docs) for a valuation research document before designing step 4
 from scratch.
 
 ## Rules

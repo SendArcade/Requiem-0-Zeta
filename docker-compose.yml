@@ -28,7 +28,7 @@ services:
   worker:
     build:
       context: .
-      dockerfile: packages/worker/Dockerfile
+      dockerfile: apps/worker/Dockerfile
     environment:
       DATABASE_URL: postgres://postgres:postgres@postgres:5432/beyoracle
       REDIS_URL: redis://redis:6379

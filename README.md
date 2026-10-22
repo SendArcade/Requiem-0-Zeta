@@ -1,59 +1,36 @@
-# Requiem-0-Zeta
+# Requiem / RIPBEYS
 
-ALT-style Beyblade oracle — multi-generation catalog, dual-corridor comps (Mercari JP + Shopee TW), transparent Oracle Value with source toggles.
+Beyblade catalogue, 3D collection experience and transparent market valuations.
 
-**New here?** Read [`blueprint/README.md`](blueprint/README.md) — the project's
-second brain, covering thesis, architecture, sources, and known defects.
+One Next.js application serves consumer pages, collector tools and pricing APIs. A separate worker runs ingestion and scheduled valuation jobs on Railway.
 
-## Quick start
-
-```bash
-pnpm install
-cp .env.example .env   # local unit tests / optional web only
-pnpm typecheck && pnpm test
-pnpm dev               # UI; pricing data is on Railway in production
-```
-
-**Pricing database = Railway only** (not local Docker). See
-[`docs/RAILWAY_ONLY.md`](docs/RAILWAY_ONLY.md) and Spec Kit constitution
-[`.specify/memory/constitution.md`](.specify/memory/constitution.md).
-
-Open [http://localhost:3000](http://localhost:3000) for UI; production:
-[web on Railway](https://web-production-5c33a.up.railway.app).
-
-## Spec Kit
-
-```bash
-uv tool install specify-cli   # once
-# In agent: /speckit-specify → /speckit-plan → /speckit-tasks → /speckit-implement
-```
-
-## Stack
-
-- **Monorepo:** pnpm + TypeScript
-- **Web:** Next.js App Router + Tailwind
-- **DB:** Postgres + Drizzle ORM
-- **Oracle:** Median + IQR from sold comps
-
-## Packages
-
-| Package | Description |
-|---------|-------------|
-| `apps/web` | Search, browse, asset pages, watchlist |
-| `packages/db` | Schema + migrations |
-| `packages/catalog` | Seed data + import |
-| `packages/ingest` | Mercari JP + Shopee TW adapters |
-| `packages/oracle` | Matcher + Oracle Value |
-| `packages/shared` | Types + FX helpers |
-
-## Verify
-
-```bash
+```sh
+pnpm install --frozen-lockfile
+DATA_SOURCE=fixtures REDIS_ENABLED=0 pnpm build
 pnpm typecheck
 pnpm test
-pnpm ingest:fixtures
+DATA_SOURCE=fixtures REDIS_ENABLED=0 pnpm dev
 ```
 
-## Env vars
+Node 24 and pnpm 9.15.4 are the supported toolchain. Builds follow workspace dependencies automatically; no bootstrap order is required. Internal libraries export compiled `dist` files, so rebuild a changed package before restarting a running server.
 
-See `.env.example`.
+| Location | Responsibility |
+|---|---|
+| `apps/web` | Next routes, RIPBEYS UI, collector pages, API handlers and canonical public assets |
+| `apps/worker` | BullMQ ingestion and scheduled jobs |
+| `packages/shared` | Shared types and domain rules |
+| `packages/catalog` | Catalogue files and pure loaders/validation |
+| `packages/catalog-sync` | Live-safe catalogue persistence |
+| `packages/oracle` | Matching and valuation algorithms |
+| `packages/pricing-service` | Pricing queries, persistence, recomputation and review operations |
+| `packages/ingest` | Marketplace adapters and ingestion orchestration |
+| `packages/db`, `packages/events`, `packages/jobs` | Database, event bus and job contracts |
+| `tools/catalog-maintenance` | Catalogue generation, validation, sync and seed commands |
+
+`pnpm build:web` builds and assembles a standalone web deployment. `pnpm build:worker` builds the worker and its dependencies. See [deployment operations](docs/operations/deployment.md).
+
+Pricing databases, Redis and workers belong on **Railway**. Fixture development needs no database. Never run seed or maintenance writes against production without the authorization and tally requirements in [the constitution](.specify/memory/constitution.md).
+
+Mobile browser checks: after `pnpm build:web`, run `pnpm --filter @beyoracle/web exec playwright install chromium` and `pnpm --filter @beyoracle/web test:e2e`. The checks cover compact phones, standard phones and landscape. The web app supports standalone home-screen launches through its manifest.
+
+Start with [the blueprint](blueprint/README.md), [architecture](docs/architecture/repository.md), [current state](docs/CURRENT_STATE.md), and [documentation index](docs/README.md).

@@ -1,6 +1,6 @@
 # 3D asset map
 
-Models are resolved by listing id from `apps/ripbeys/src/data/visual-assets.json`. `modelPathForListing` returns that path only when the map says the file exists. A missing model shows the poster or “No preview”. It does not throw.
+Models are resolved by listing id from `apps/web/src/consumer/data/visual-assets.json`. `modelPathForListing` returns that path only when the map says the file exists. A missing model shows the poster or “No preview”. It does not throw.
 
 ## Counts (current map)
 
@@ -8,7 +8,7 @@ Models are resolved by listing id from `apps/ripbeys/src/data/visual-assets.json
 |---|---|
 | 578 | Listing rows, and rows flagged `assembledModelOnDisk` |
 | 573 | Unique assembled paths (5 paths are shared by two listing ids) |
-| 781 | `.fbx` / `.obj` / `.glb` files under `apps/ripbeys/public/assets/models`, including piece files that are not the assembled map |
+| 781 | `.fbx` / `.obj` / `.glb` files under `apps/web/public/assets/models`, including piece files that are not the assembled map |
 | 578 | Spin GIFs under `public/assets/spins` |
 
 An earlier UI snapshot said 378 models. That number is not `assembledModelOnDisk` in the current JSON. The hero “Models” figure is that JSON field (578). It was not rewritten to 378.

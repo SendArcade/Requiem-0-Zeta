@@ -18,4 +18,4 @@ Requiem already is the price index the page says does not exist elsewhere: sold 
 
 UX-03 Wizard Rod is a canonical product, `prod-x-ux-03-complete-loose`, parts `x-blade-wizard-rod`, `x-ratchet-5-70`, `x-bit-db`. No RIPBEYS listing id points at it. The page’s Shopee resale (NT$295 retail, NT$2,500 resale) is not an Oracle value and was not inserted into a listing.
 
-A sprite filename `BX35_WizardRod1-60r.png` exists in `apps/ripbeys/src/data/art.json`. Product code BX-35 on the X seed is Phoenix Wing (5-80H), not Wizard Rod. That filename was not used to reassign a model or a listing.
+A sprite filename `BX35_WizardRod1-60r.png` exists in `apps/web/src/consumer/data/art.json`. Product code BX-35 on the X seed is Phoenix Wing (5-80H), not Wizard Rod. That filename was not used to reassign a model or a listing.

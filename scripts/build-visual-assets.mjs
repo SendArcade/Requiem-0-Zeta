@@ -8,8 +8,8 @@ import { fileURLToPath } from 'url'
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 const MAP = path.join(ROOT, 'packages/catalog/data/ripbeys-asset-map.json')
-const OUT = path.join(ROOT, 'apps/ripbeys/src/data/visual-assets.json')
-const PUBLIC = path.join(ROOT, 'apps/ripbeys/public')
+const OUT = path.join(ROOT, 'apps/web/src/consumer/data/visual-assets.json')
+const PUBLIC = path.join(ROOT, 'apps/web/public')
 
 function exists(relUrl) {
   if (!relUrl) return false

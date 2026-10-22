@@ -37,7 +37,7 @@ Use `railway connect Postgres --ssh` or an authorized `DATABASE_URL` tunnel — 
 
 ## Cloud Agent auth: `RAILWAY_TOKEN` is a **project token**
 
-Cursor Cloud injects `RAILWAY_TOKEN` from environment secrets. For Beyoracle it is a **real Railway project token** (UUID shape), scoped to the `oracle` project + production environment — **not** a misconfigured or invalid secret.
+Configure `RAILWAY_TOKEN` as a Railway project token scoped to the `oracle` project and intended environment. A cloud environment secret declaration does not guarantee that a saved credential is bound. Check availability and a project-scoped read command before claiming deployment access; never print the token.
 
 | Variable | Token type | Use for |
 |----------|------------|---------|

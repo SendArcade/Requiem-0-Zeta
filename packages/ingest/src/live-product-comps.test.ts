@@ -152,12 +152,12 @@ describe("live product comps quality gates", () => {
     const { fileURLToPath } = await import("node:url");
     const here = dirname(fileURLToPath(import.meta.url));
     const webProductData = readFileSync(
-      join(here, "../../../apps/web/src/lib/product-data.ts"),
+      join(here, "../../pricing-service/src/product-data.ts"),
       "utf-8"
     );
-    const persist = readFileSync(join(here, "persist.ts"), "utf-8");
+    const persist = readFileSync(join(here, "../../pricing-service/src/persist.ts"), "utf-8");
     const seed = readFileSync(
-      join(here, "../../catalog/src/seed.ts"),
+      join(here, "../../../tools/catalog-maintenance/src/seed.ts"),
       "utf-8"
     );
 

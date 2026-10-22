@@ -83,7 +83,7 @@ Worker boot runs Drizzle migrate automatically unless `SKIP_DB_BOOTSTRAP=1`.
 ## Railway setup (sketch)
 
 1. Duplicate the existing `worker` service twice → `worker-walmart`, `worker-amazon`.
-2. Same Dockerfile (`packages/worker/Dockerfile`), same `DATABASE_URL` / `REDIS_URL`.
+2. Same Dockerfile (`apps/worker/Dockerfile`), same `DATABASE_URL` / `REDIS_URL`.
 3. Set env per table above; **remove** `WALMART_*` / `AMAZON_*` from main `worker`.
 4. Scale each retail worker to **1 replica** initially (HTML scrape is fragile).
 5. Trigger boot ingest once per corridor, then rely on cron.

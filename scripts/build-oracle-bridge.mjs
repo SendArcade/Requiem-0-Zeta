@@ -1,5 +1,5 @@
 /**
- * Emit apps/ripbeys/src/data/oracle-bridge.json from ripbeys-asset-map.json.
+ * Emit apps/web/src/consumer/data/oracle-bridge.json from ripbeys-asset-map.json.
  * Run after Stage 1 map rebuild. Does not modify catalogue seeds or the Stage 1 map.
  *
  * Stage 2B Option B: assembled X listings without a canonical product are demoted to
@@ -121,7 +121,7 @@ const out = {
   byListingId: bridge,
 }
 
-const dest = path.join(ROOT, 'apps/ripbeys/src/data/oracle-bridge.json')
+const dest = path.join(ROOT, 'apps/web/src/consumer/data/oracle-bridge.json')
 fs.mkdirSync(path.dirname(dest), { recursive: true })
 fs.writeFileSync(dest, JSON.stringify(out, null, 2))
 console.log(JSON.stringify(out.stats, null, 2))

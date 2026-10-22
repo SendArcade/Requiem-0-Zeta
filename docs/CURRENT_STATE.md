@@ -6,23 +6,27 @@ Architecture, thesis, and navigation live in
 [`blueprint/README.md`](../blueprint/README.md). This document tracks what is
 shipped right now.
 
+## Repository structure
+
+The source tree now has one Next web application and a separate worker application. Consumer routes and collector pages retain their URLs; shared pricing services no longer require ingestion adapters. See [repository architecture](architecture/repository.md) and [deployment operations](operations/deployment.md). This describes the source migration, not a confirmed Railway rollout.
+
 ## Website pricing fixes
 
-- Oracle records keep source/condition controls and Retry available after request failures, hide stale marks during reloads, and use `VITE_REQUIEM_API_BASE` for both records and live events.
+- Oracle records keep source/condition controls and Retry available after request failures, hide stale marks during reloads, and use `NEXT_PUBLIC_REQUIEM_API_BASE` for both records and live events.
 - Product API requests without an explicit condition filter preserve the SKU's default pool (sealed products use sealed comps).
 - Catalogue “Oracle ready” ordering and “Product marks” counts use fetched finite valuations rather than identity mappings.
-- Regression checks: `pnpm --filter @ripbeys/web test` and `pnpm --filter @beyoracle/web test`.
+- Regression checks: `pnpm --filter @beyoracle/web test`.
 
 ## Backend reliability
 
-- The complete suite passes: 300 tests with original assertion thresholds and runner timeouts. Product matching selects code candidates before conflict checks; catalogue part lookup refreshes an index when the file changes.
+- The complete suite passes: 309 tests plus six architecture checks with original assertion thresholds and runner timeouts. Product matching selects code candidates before conflict checks; catalogue part lookup refreshes an index when the file changes.
 - Valuation accepts an explicit `asOf` for historical replay and rejects non-finite/non-positive prices, invalid dates and future sales. Scoreboard folds use the same valuation clock.
 - Production requires Railway `DATABASE_URL`; it no longer silently falls back to fixture pricing during an outage. Database connections have connect/idle/statement timeouts.
 - Admin review reads, writes and the page fail closed in production. To enable API access, set `ADMIN_API_TOKEN` securely on Railway and supply `Authorization: Bearer <token>`. The browser admin page has no token-entry UI; do not place this credential in frontend code.
 - Mutations validate bounded JSON, identifier types, threshold ranges and same-origin browser requests. API failures return generic errors without database/credential details.
 - SSE alerts use the server-side cookie session, never a caller-selected session. Streams clean up on reader cancellation/abort, bound deduplication history, and avoid overlapping database polls.
 - `/api/health` returns liveness; `/api/ready` checks database connectivity and returns 503 when unavailable. Explicit fixture mode is identified separately.
-- Docker runtimes and CI use Node 24. CI runs frozen installation, deterministic dependency bootstrap, all production builds, type checks, tests and fixture smoke on main/PRs. Web Docker builds include the jobs package before ingest.
+- Docker runtimes and CI use Node 24. CI runs frozen installation, a topological workspace build, all production builds, type checks, tests and fixture smoke on main/PRs. Web builds exclude ingestion adapters and use shared pricing services.
 
 ## Production (Railway)
 
@@ -32,7 +36,7 @@ shipped right now.
 | **Worker** | BullMQ cron + one-shot flags (`ORACLE_BACKFILL`, `PRODUCT_BACKFILL`, `PURGE_BAD_COMPS`) |
 | **Postgres + Redis** | Railway internal URLs via `DATABASE_URL` / `REDIS_URL` on web + worker |
 
-Deploy: per-service Dockerfiles via `RAILWAY_DOCKERFILE_PATH` (`apps/web/Dockerfile`, `packages/worker/Dockerfile`).
+Deploy: per-service Dockerfiles via `RAILWAY_DOCKERFILE_PATH` (`apps/web/Dockerfile`, `apps/worker/Dockerfile`).
 
 ## Phase 2 — product coverage (2026-08-07)
 
@@ -55,8 +59,8 @@ Deploy: per-service Dockerfiles via `RAILWAY_DOCKERFILE_PATH` (`apps/web/Dockerf
 
 ## Shipped (MVP + Matcher v3 + Realtime)
 
-- **Monorepo:** pnpm workspace with `apps/web`, `packages/{db,catalog,ingest,oracle,shared,events,worker}`
-- **Catalog:** **1,105 parts** + **448 whole products** (Plastic 85 · Metal 119 · Burst 86 · X 158) — parts via `pnpm catalog:build`; products merged from `packages/catalog/data/seeds/products-*.json` (e.g. **products-metal.json**, 119 SKUs); **1,763 alias rows**
+- **Monorepo:** pnpm workspace with `apps/{web,worker}`, `packages/{db,catalog,catalog-sync,ingest,oracle,pricing-service,shared,events,jobs}`, and `tools/catalog-maintenance`
+- **Catalog:** **1,107 parts** + **449 whole products** (Plastic 85 · Metal 119 · Burst 76 · X 169) — parts via `pnpm catalog:build`; products merged from `packages/catalog/data/seeds/products-*.json` (e.g. **products-metal.json**, 119 SKUs); **1,763 alias rows**
 - **Schema:** Postgres via Drizzle — parts, aliases, observations, matches, oracle_snapshots, watchlist, watchlist_alerts
 - **Ingest:** `PricingSource` interface; **Mercari JP** (live DPoP sold comps), **Yahoo Auctions JP** (live closed-search sold comps), **Shopee TW** (fixtures; live blocked by anti-bot)
 - **Scheduled ingest:** BullMQ worker — `cron.tick` fans out to per-source `ingest.source` jobs; alerts decoupled on delay
@@ -239,7 +243,7 @@ Six defects fixed in one pass:
 Accuracy is materially improved but still imperfect — fuzzy false positives on
 generic terms and product-code ambiguity on starter SKUs remain. Re-run probes
 after any matcher or catalog change. Matcher v3 roadmap:
-[`docs/MATCHING_RESEARCH.md`](../docs/MATCHING_RESEARCH.md).
+[`docs/MATCHING_RESEARCH.md`](MATCHING_RESEARCH.md).
 
 ## Not in v1
 
