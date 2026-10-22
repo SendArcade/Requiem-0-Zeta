@@ -30,7 +30,16 @@ jobs:
       - run: pnpm typecheck
       - run: pnpm test
       - run: pnpm ingest:fixtures
-      - run: pnpm --filter @beyoracle/web exec playwright install --with-deps chromium
+      - name: Prepare browser
+        shell: bash
+        run: |
+          browser_bin="$(command -v google-chrome || command -v chromium || true)"
+          if [ -n "$browser_bin" ]; then
+            "$browser_bin" --version
+            echo "PLAYWRIGHT_CHROMIUM_PATH=$browser_bin" >> "$GITHUB_ENV"
+          else
+            pnpm --filter @beyoracle/web exec playwright install --with-deps --only-shell chromium
+          fi
       - run: pnpm --filter @beyoracle/web test:e2e
       - uses: actions/upload-artifact@v4
         if: failure()
